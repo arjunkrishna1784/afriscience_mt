@@ -1,0 +1,228 @@
+# Multilingual vs Bilingual comparison experiment
+# Supports N-to-N multilingual training (any language to any language)
+
+experiment:
+  name: multilingual_comparison
+  type: multilingual_analysis
+  description: "Compare multilingual vs bilingual training approaches"
+
+# Models to compare - configurable, will train both bilingual and multilingual variants
+# The best models from each category will be selected based on config
+models:
+  # Seq2seq models for multilingual comparison
+  seq2seq:
+    default: nllb_1_3b  # Default model for comparison
+    candidates:
+      - nllb_600m
+      - nllb_1_3b
+      # Note: M2M100 has limited African language support compared to NLLB
+
+  # LLM models for multilingual comparison (LoRA fine-tuning)
+  llm:
+    default: gemma3_4b  # Default model for comparison
+    candidates:
+      - gemma3_4b
+      - gemma3_12b
+      - llama3_3_8b
+
+# Languages configuration
+languages:
+  all: [eng, amh, hau, lug, nso, yor, zul]
+
+  # Language groupings for analysis
+  african: [amh, hau, lug, nso, yor, zul]
+  high_resource: [eng]
+
+# Training configurations
+training:
+  # ====================
+  # BILINGUAL TRAINING
+  # ====================
+  # Train separate model for each language pair
+  bilingual:
+    enabled: true
+    train_separately: true
+
+    # Generate all pairs from languages (N*(N-1) pairs for N languages)
+    # Can be overridden with explicit list
+    generate_pairs_from: all  # Use all languages
+    include_reverse: true     # Include both directions
+
+    # Or specify explicit pairs
+    # explicit_pairs:
+    #   - eng-amh
+    #   - eng-hau
+    #   ...
+
+  # ====================
+  # MULTILINGUAL TRAINING (N-to-N)
+  # ====================
+  # Train single model for all language pairs
+  multilingual:
+    enabled: true
+    train_jointly: true
+
+    # N-to-N configuration: any source to any target
+    mode: n_to_n  # Options: n_to_n, many_to_one, one_to_many, many_to_many
+
+    # Languages to include (all combinations will be trained)
+    source_languages: [eng, amh, hau, lug, nso, yor, zul]
+    target_languages: [eng, amh, hau, lug, nso, yor, zul]
+
+    # Exclude same-language pairs (e.g., eng-eng)
+    exclude_same_language: true
+
+    # This generates: 7*6 = 42 language pairs for training
+
+    # Data mixing strategy
+    mixing:
+      strategy: temperature_sampling  # proportional, temperature_sampling, equal
+      temperature: 5.0  # Higher = more uniform, Lower = more proportional to data size
+
+      # Per-direction weighting (optional)
+      direction_weights:
+        eng_to_african: 1.0    # eng -> {afr languages}
+        african_to_eng: 1.0    # {afr languages} -> eng
+        african_to_african: 1.5  # {afr} -> {afr} - upweight for better transfer
+
+    # Language tags for multilingual training
+    language_tags:
+      enabled: true
+      format: "[{lang}]"  # e.g., "[hau]" prepended to text
+      position: prefix    # prefix or suffix
+      use_full_name: false  # Use "Hausa" instead of "hau"
+
+    # Special tokens for language indication (alternative to tags)
+    special_tokens:
+      enabled: false
+      source_prefix: ">>src<<"
+      target_prefix: ">>tgt<<"
+
+# Hyperparameters for multilingual training
+hyperparameters:
+  seq2seq:
+    # Multilingual models may need different hyperparameters
+    multilingual:
+      learning_rate: 1.0e-5  # Lower LR for more languages
+      num_epochs: 15         # More epochs for convergence
+      warmup_ratio: 0.1
+      batch_size: 16
+      gradient_accumulation_steps: 4
+      label_smoothing: 0.1
+
+    bilingual:
+      learning_rate: 2.0e-5
+      num_epochs: 10
+      warmup_ratio: 0.1
+      batch_size: 16
+      gradient_accumulation_steps: 2
+
+  llm:
+    multilingual:
+      learning_rate: 1.0e-4
+      num_epochs: 5
+      lora_rank: 32  # Higher rank for multilingual
+      batch_size: 4
+      gradient_accumulation_steps: 8
+
+    bilingual:
+      learning_rate: 2.0e-4
+      num_epochs: 3
+      lora_rank: 16
+      batch_size: 4
+      gradient_accumulation_steps: 4
+
+# Analysis configurations
+analysis:
+  # Compare bilingual vs multilingual performance
+  comparison_metrics:
+    - absolute_difference
+    - relative_improvement
+    - statistical_significance
+
+  # Zero-shot transfer evaluation (key advantage of multilingual)
+  zero_shot_transfer:
+    enabled: true
+    # Test on African-to-African pairs (often not in training for bilingual)
+    test_pairs:
+      - amh-hau
+      - amh-yor
+      - amh-zul
+      - hau-amh
+      - hau-yor
+      - hau-lug
+      - yor-amh
+      - yor-hau
+      - yor-zul
+      - zul-hau
+      - zul-yor
+      - lug-hau
+      - lug-yor
+      - nso-hau
+      - nso-yor
+
+  # Cross-lingual transfer analysis
+  transfer_analysis:
+    enabled: true
+    measure_similarity: true
+    # Analyze which language pairs benefit most from multilingual training
+    analyze_per_pair_improvement: true
+
+  # Language family analysis
+  language_family_analysis:
+    enabled: true
+    families:
+      niger_congo: [yor, zul, lug]
+      afroasiatic: [amh, hau]
+      bantu: [zul, lug, nso]
+      chadic: [hau]
+
+# Resource tracking
+resources:
+  track_training_time: true
+  track_memory_usage: true
+  track_model_size: true
+  track_inference_speed: true
+
+  # Cost analysis
+  compute_cost_comparison: true
+
+  # Compare total resources
+  # Bilingual: N*(N-1) models vs Multilingual: 1 model
+  compare_total_resources: true
+
+# Evaluation
+evaluation:
+  metrics:
+    - ssa_comet
+    - bleu
+    - chrf
+
+  # Evaluation sets
+  test_sets:
+    - in_domain          # Standard test set (seen directions)
+    - zero_shot_pairs    # Unseen directions (for multilingual)
+    - held_out_domain    # Held-out scientific domain
+
+  # Per-direction evaluation
+  per_direction: true
+
+  # Aggregate scores
+  aggregation:
+    - mean_all_pairs
+    - mean_to_english
+    - mean_from_english
+    - mean_african_to_african
+
+# Output
+output:
+  save_comparison_tables: true
+  generate_visualizations: true
+  save_statistical_tests: true
+  save_per_pair_results: true
+
+  # LaTeX tables for paper
+  latex_tables:
+    - bilingual_vs_multilingual
+    - zero_shot_transfer
+    - per_language_breakdown

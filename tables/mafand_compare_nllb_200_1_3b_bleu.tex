@@ -1,0 +1,13 @@
+\begin{table}[t]
+\centering
+\caption{BLEU by (model, dataset) × lang-pair}
+\begin{tabular}{lrrrrrrrrrrrr}
+\toprule
+Model (dataset) & amh-eng & eng-amh & eng-hau & eng-lug & eng-nso & eng-yor & eng-zul & hau-eng & lug-eng & nso-eng & yor-eng & zul-eng \\
+\midrule
+nllb\_200\_1\_3b (dcs) & \textbf{39.75} & \textbf{19.28} & \textbf{46.91} & \textbf{22.18} & \textbf{43.31} & \textbf{5.84} & \textbf{37.55} & \textbf{45.20} & \textbf{35.25} & \textbf{46.37} & \textbf{32.13} & 49.44 \\
+nllb\_200\_1\_3b (dcs\_mafand) & -- & -- & 46.19 & 20.94 & -- & 5.70 & 36.95 & 44.26 & 34.80 & -- & 31.35 & \textbf{49.55} \\
+nllb\_200\_1\_3b (mafand) & -- & -- & 27.63 & 12.89 & -- & 3.87 & 31.55 & 35.53 & 27.11 & -- & 24.08 & 45.63 \\
+\bottomrule
+\end{tabular}
+\end{table}

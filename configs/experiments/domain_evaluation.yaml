@@ -1,0 +1,87 @@
+# Domain-level evaluation experiment configuration
+
+experiment:
+  name: domain_evaluation
+  type: domain_analysis
+  description: "Evaluate best models across scientific domains"
+
+# Models to compare (best from each category)
+models:
+  seq2seq:
+    - nllb_1_3b  # Best seq2seq baseline
+
+  lora:
+    - gemma3_4b  # With best LoRA rank
+    - llama3_3_8b
+
+  icl:
+    - gpt4o
+    - gemini_1_5_pro
+
+# Domains to evaluate
+domains:
+  - agriculture
+  - biochemistry
+  - biology
+  - chemistry
+  - computer_science
+  - engineering
+  - geography
+  - health
+  - indigenous_knowledge
+  - sociology
+  - statistics
+
+# Language pairs
+language_pairs:
+  - eng-amh
+  - eng-hau
+  - eng-lug
+  - eng-nso
+  - eng-yor
+  - eng-zul
+  - amh-eng
+  - hau-eng
+  - lug-eng
+  - nso-eng
+  - yor-eng
+  - zul-eng
+
+# Analysis settings
+analysis:
+  # Per-domain metrics
+  per_domain_metrics: true
+
+  # Cross-domain comparison
+  domain_difficulty_ranking: true
+
+  # Domain-specific terminology analysis
+  terminology_analysis:
+    enabled: true
+    use_glossary: true
+
+  # Statistical significance testing
+  statistical_tests:
+    enabled: true
+    test: paired_bootstrap
+    num_samples: 1000
+    confidence_level: 0.95
+
+# Evaluation metrics
+evaluation:
+  metrics:
+    - ssa_comet
+    - bleu
+    - chrf
+
+  # Breakdown by
+  breakdown_by:
+    - domain
+    - language_pair
+    - direction  # eng-xxx vs xxx-eng
+
+# Output
+output:
+  save_per_domain_results: true
+  generate_domain_heatmap: true
+  generate_comparison_tables: true

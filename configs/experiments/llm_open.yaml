@@ -1,0 +1,147 @@
+# =============================================================================
+# AfriScience-MT — Open Models Config (GPU / vLLM)
+# =============================================================================
+# All open-weight models evaluated with vLLM (fast batched inference).
+# Run with run_open.sh or directly:
+#   python -m afriscience_mt.scripts.run_llm_experiments \
+#       --config afriscience_mt/configs/experiments/llm_open.yaml
+#
+# REQUIRES: CUDA GPU (24 GB recommended)
+#           pip install vllm
+# =============================================================================
+
+data_dir: "./data"
+output_dir: "./experiments/llm"
+directions: "eng_african_only"   # 12 pairs: eng↔{amh,hau,lug,nso,yor,zul}
+                                  # Set to "all" for all 42 pairs incl. African↔African
+metrics:
+  - "bleu"
+  - "chrf"
+  - "ssa_comet"
+
+backend: "vllm"
+max_new_tokens: 256
+# 8192 gives 7168 input tokens at doc-level (8192 - 1024 max_new_tokens).
+# Sentence-level prompts are ~200-500 tokens so this has no effect there.
+# AfriqueLlama / AfriqueQwen / Llama-3.1 are all based on architectures with
+# ≥128 k native context; we cap here only to bound KV-cache on the A5000.
+# TranslateGemma-12B overrides this to 1024 at the model level (see below).
+max_model_len: 8192
+gpu_memory_utilization: 0.90
+tensor_parallel_size: 1
+
+skip_completed: true  # set false or use --force to re-run
+
+# =============================================================================
+# Models
+# =============================================================================
+models:
+  # ---------------------------------------------------------------------------
+  # Africa-focused instruction-tuned LLMs
+  # ---------------------------------------------------------------------------
+  # - id: "McGill-NLP/AfriqueLlama-8B"
+  #   name: "afriquellama_8b"
+  #   type: "llama"
+
+  - id: "CohereLabs/tiny-aya-earth"
+    name: "tiny_aya_earth"
+    type: "aya"
+
+#  - id: "McGill-NLP/AfriqueQwen-8B"
+#    name: "afriqueqwen_8b"
+#    type: "qwen"
+
+#  - id: "CohereLabs/tiny-aya-global"
+#    name: "tiny_aya_global"
+#    type: "aya"
+
+  # ---------------------------------------------------------------------------
+  # Multilingual baselines (not Africa-specific)
+  # ---------------------------------------------------------------------------
+  - id: "meta-llama/Llama-3.1-8B-Instruct"
+    name: "llama3_8b"
+    type: "llama"
+
+  # Gemma 2 9B Instruct — zero-shot/ICL baseline that pairs with the
+  # fine-tuned gemma2_9b adapter in the finetuned section below.
+  # Comparison: instruct prompting vs. domain fine-tuning from base.
+
+  - id: "google/gemma-2-9b-it"
+    name: "gemma2_9b_it"
+    type: "gemma"
+    gpu_memory_utilization: 0.95
+
+  # ---------------------------------------------------------------------------
+  # TranslateGemma 12B — translation-specialized model
+  #
+  # NOTE: This 12B model requires ~24 GB in fp16 for weights alone.
+  # The settings below (max_model_len=1024, gpu_memory_utilization=0.92)
+  # minimise KV-cache overhead.  If you still see OOM, try either:
+  #   a) quantization: "bitsandbytes"   # int8 → ~12 GB weights
+  #   b) quantization: "awq"            # int4 → ~6 GB weights (needs AWQ ckpt)
+  #   c) backend: "hf"                  # slower but more memory-flexible
+  # lora_skip: true — inference-only model; excluded from LoRA fine-tuning
+  # ---------------------------------------------------------------------------
+  - id: "Infomaniak-AI/vllm-translategemma-12b-it"
+    name: "translategemma_12b"
+    max_model_len: 1024          # keeps KV-cache small; sentence prompts fit in 1 K
+    doc_max_model_len: 8192      # override for document-level; pitori has more VRAM
+    gpu_memory_utilization: 0.92
+    lora_skip: true              # inference-only; not fine-tuned with LoRA
+    # quantization: "bitsandbytes"   # uncomment if still OOM
+
+# =============================================================================
+# Experiments
+# =============================================================================
+experiments:
+
+  zero_shot:
+    enabled: true
+    template: "explicit"
+    use_glossary: false    # set true for glossary ablation → zero_shot_gloss/
+
+  icl:
+    enabled: true
+    shots: [5]
+    template: "few_shot"
+    selection_method: "random"
+    use_glossary: false
+
+  # ---------------------------------------------------------------------------
+  # Document-level: translate full papers (grouped sentences)
+  # shots=[0,1] — 0-shot baseline + 1-shot example for style/terminology
+  # Models with doc_max_model_len (or max_model_len) < min_context_length are
+  # auto-skipped.  Set doc_max_model_len on a model to override its sentence-
+  # level max_model_len for document experiments (e.g. TranslateGemma: 1024→8192)
+  # Results: experiments/llm/doc_zero_shot/{model}/ and doc_1shot/{model}/
+  # ---------------------------------------------------------------------------
+  document:
+    enabled: true
+    shots: [0, 1]
+    template: "explicit"
+    max_new_tokens: 1024         # documents need longer outputs than sentences
+    min_context_length: 4096     # skip models whose max_model_len is below this
+    use_glossary: false
+
+  # ---------------------------------------------------------------------------
+  # LoRA fine-tuning — uses the same models as ICL (top-level models list).
+  # Models with lora_skip: true are excluded automatically.
+  # run_open.sh reads ranks from here; models come from the top-level list.
+  # ---------------------------------------------------------------------------
+  lora:
+    enabled: true
+    ranks: [64, 4]   # r64 is the primary condition; r4 is the minimal-rank ablation
+
+  finetuned:
+    enabled: false   # flip to true once adapters are trained
+    adapters:
+      # ── Completed ──────────────────────────────────────────────────────
+      - path: "./experiments/lora/gemma2_9b/r64"
+        name: "gemma2_9b_ft"
+      # ── Pending ────────────────────────────────────────────────────────
+      - path: "./experiments/lora/afriqueqwen_8b/r64"
+        name: "afriqueqwen_8b_ft"
+      - path: "./experiments/lora/afriquellama_8b/r64"
+        name: "afriquellama_8b_ft"
+      - path: "./experiments/lora/llama3_8b/r64"
+        name: "llama3_8b_ft"

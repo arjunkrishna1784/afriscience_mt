@@ -1,0 +1,351 @@
+# Sentence-level translation prompt templates for AfriScience-MT
+# Improved templates based on recent MT research
+
+# =============================================================================
+# Language name mappings (for explicit language names in prompts)
+# =============================================================================
+language_names:
+  eng: "English"
+  amh: "Amharic"
+  hau: "Hausa"
+  lug: "Luganda"
+  nso: "Northern Sotho (Sepedi)"
+  yor: "Yorùbá"
+  zul: "Zulu (isiZulu)"
+
+# =============================================================================
+# Main Templates
+# =============================================================================
+templates:
+  # -------------------------------------------------------------------------
+  # Template 1: Basic - Simple instruction (baseline)
+  # -------------------------------------------------------------------------
+  basic:
+    id: 1
+    description: "Simple translation instruction - baseline"
+    template: |
+      Translate the following {source_language} text to {target_language}.
+
+      {source_language}: {source_text}
+      {target_language}:
+    variables:
+      - source_language
+      - target_language
+      - source_text
+
+  # -------------------------------------------------------------------------
+  # Template 2: Explicit - Full language names (better for LLMs)
+  # -------------------------------------------------------------------------
+  explicit:
+    id: 2
+    description: "Explicit full language names - recommended for LLMs"
+    template: |
+      Translate from {source_language_full} to {target_language_full}:
+
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - source_text
+
+  # -------------------------------------------------------------------------
+  # Template 3: Expert Role - Scientific domain expertise
+  # -------------------------------------------------------------------------
+  expert_role:
+    id: 3
+    description: "Expert translator role with domain context"
+    template: |
+      You are an expert translator specializing in scientific and technical texts.
+      Translate the following {source_language_full} text into {target_language_full}.
+      Preserve technical accuracy while ensuring natural fluency.
+
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - source_text
+
+  # -------------------------------------------------------------------------
+  # Template 4: Domain-Aware - With specific scientific domain
+  # -------------------------------------------------------------------------
+  domain_aware:
+    id: 4
+    description: "Translation with scientific domain context"
+    template: |
+      You are a professional translator specializing in {domain} texts.
+      Translate the following {source_language_full} scientific text to {target_language_full}.
+      Maintain scientific accuracy and use appropriate terminology.
+
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - domain
+      - source_text
+
+  # -------------------------------------------------------------------------
+  # Template 5: Few-shot - With examples
+  # -------------------------------------------------------------------------
+  few_shot:
+    id: 5
+    description: "Translation with few-shot examples"
+    template: |
+      Translate {source_language_full} scientific texts to {target_language_full}.
+
+      Examples:
+      {examples}
+
+      Now translate:
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - examples
+      - source_text
+    example_format: |
+      {source_language_full}: {src}
+      {target_language_full}: {tgt}
+
+  # -------------------------------------------------------------------------
+  # Template 6: Structured Few-shot - Clearer separation
+  # -------------------------------------------------------------------------
+  structured_few_shot:
+    id: 6
+    description: "Structured few-shot with clear task definition"
+    template: |
+      Task: Translate {source_language_full} scientific text to {target_language_full}
+
+      Here are some examples:
+      {examples}
+      ---
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - examples
+      - source_text
+    example_format: |
+      {source_language_full}: {src}
+      {target_language_full}: {tgt}
+
+  # -------------------------------------------------------------------------
+  # Template 7: Glossary-Augmented - Terminology first
+  # -------------------------------------------------------------------------
+  glossary_augmented:
+    id: 7
+    description: "Translation with terminology glossary"
+    template: |
+      You are translating scientific text from {source_language_full} to {target_language_full}.
+      Use the following glossary for domain-specific terminology:
+
+      Glossary:
+      {glossary}
+
+      Now translate using the terminology above:
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - glossary
+      - source_text
+    glossary_format: "- {src_term} → {tgt_term}"
+
+  # -------------------------------------------------------------------------
+  # Template 8: Glossary-First - Prime model with terminology
+  # -------------------------------------------------------------------------
+  glossary_first:
+    id: 8
+    description: "Glossary-first to prime the model"
+    template: |
+      Scientific terminology ({source_language_full} → {target_language_full}):
+      {glossary}
+
+      Using the terminology above where applicable, translate:
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - glossary
+      - source_text
+    glossary_format: "{src_term} = {tgt_term}"
+
+  # -------------------------------------------------------------------------
+  # Template 9: Few-shot + Glossary - Combined (best for low-resource)
+  # -------------------------------------------------------------------------
+  few_shot_glossary:
+    id: 9
+    description: "Translation with both examples and glossary - best for low-resource"
+    template: |
+      You are translating {source_language_full} scientific texts to {target_language_full}.
+
+      Terminology glossary:
+      {glossary}
+
+      Translation examples:
+      {examples}
+
+      Now translate the following text using the provided glossary and following the style of the examples:
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - glossary
+      - examples
+      - source_text
+
+  # -------------------------------------------------------------------------
+  # Template 10: Chain-of-Thought - For complex terminology
+  # -------------------------------------------------------------------------
+  chain_of_thought:
+    id: 10
+    description: "Chain-of-thought for complex scientific text"
+    template: |
+      Translate the following {source_language_full} scientific text to {target_language_full}.
+
+      First, identify any technical terms that need careful translation.
+      Then, provide the translation.
+
+      {source_language_full}: {source_text}
+
+      Technical terms identified:
+    variables:
+      - source_language_full
+      - target_language_full
+      - source_text
+    post_process: "extract_after_translation"
+
+  # -------------------------------------------------------------------------
+  # Template 11: Literal vs Natural - Explicit fluency instruction
+  # -------------------------------------------------------------------------
+  natural_fluent:
+    id: 11
+    description: "Emphasis on natural, fluent output"
+    template: |
+      Translate the following {source_language_full} scientific text into natural, fluent {target_language_full}.
+      The translation should sound like it was originally written in {target_language_full}, not like a translation.
+      Preserve the scientific meaning accurately.
+
+      {source_language_full}: {source_text}
+      {target_language_full}:
+    variables:
+      - source_language_full
+      - target_language_full
+      - source_text
+
+# =============================================================================
+# Chat Format Templates (for instruction-tuned models)
+# =============================================================================
+chat_templates:
+  basic:
+    system: "You are a professional scientific translator."
+    user: |
+      Translate this {source_language_full} scientific text to {target_language_full}:
+
+      {source_text}
+
+  expert_role:
+    system: "You are an expert translator specializing in scientific and technical texts for African languages. You produce accurate, natural translations."
+    user: |
+      Translate to {target_language_full}:
+
+      {source_text}
+
+  domain_aware:
+    system: "You are a professional translator specializing in {domain} texts."
+    user: |
+      Translate this {source_language_full} text to {target_language_full}, maintaining scientific accuracy:
+
+      {source_text}
+
+  few_shot:
+    system: "You are a professional scientific translator. Learn from the examples provided and match their style."
+    user: |
+      Examples of {source_language_full} to {target_language_full} translations:
+
+      {examples}
+
+      Now translate:
+      {source_text}
+
+  glossary_augmented:
+    system: "You are a professional scientific translator. Use the provided glossary for technical terms."
+    user: |
+      Glossary ({source_language_full} → {target_language_full}):
+      {glossary}
+
+      Translate:
+      {source_text}
+
+  few_shot_glossary:
+    system: "You are a professional scientific translator. Use the glossary for terminology and match the style of the examples."
+    user: |
+      Glossary:
+      {glossary}
+
+      Examples:
+      {examples}
+
+      Translate:
+      {source_text}
+
+# =============================================================================
+# Template Groups (for batch experiments)
+# =============================================================================
+template_groups:
+  # Minimal set for quick experiments
+  minimal:
+    - basic
+    - few_shot
+
+  # Standard set for regular experiments
+  standard:
+    - basic
+    - explicit
+    - few_shot
+    - glossary_augmented
+
+  # Full set for comprehensive evaluation
+  full:
+    - basic
+    - explicit
+    - expert_role
+    - domain_aware
+    - few_shot
+    - structured_few_shot
+    - glossary_augmented
+    - glossary_first
+    - few_shot_glossary
+    - natural_fluent
+
+  # Best performing (based on research)
+  recommended:
+    - explicit
+    - few_shot_glossary
+    - natural_fluent
+
+# =============================================================================
+# Default template for each scenario
+# =============================================================================
+defaults:
+  zero_shot: explicit
+  zero_shot_with_domain: domain_aware
+  few_shot: structured_few_shot
+  with_glossary: glossary_first
+  few_shot_with_glossary: few_shot_glossary
+  best_quality: few_shot_glossary
+
+# =============================================================================
+# Shot count recommendations
+# =============================================================================
+shot_counts:
+  minimal: [0, 5]
+  standard: [0, 5, 10, 20]
+  comprehensive: [0, 1, 3, 5, 10, 20, 50]

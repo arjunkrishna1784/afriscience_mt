@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "afriscience-mt"
+version = "0.1.0"
+description = "DCS-MT: machine translation framework for African scientific text"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{name = "Idris Abdulmumin", email = "afriannotate@gmail.com"}]
+license = {text = "Apache-2.0"}
+
+dependencies = [
+    "torch>=2.0",
+    "transformers>=4.40",
+    "datasets>=2.14",
+    "accelerate>=0.30",
+    "peft>=0.11",
+    "sentencepiece",
+    "sacrebleu>=2.4",
+    "unbabel-comet>=2.2",
+    "matplotlib",
+    "pyyaml",
+    "tqdm",
+    "pandas",
+    "python-dotenv",
+]
+
+[project.scripts]
+afriscience-mt = "afriscience_mt.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["afriscience_mt*"]

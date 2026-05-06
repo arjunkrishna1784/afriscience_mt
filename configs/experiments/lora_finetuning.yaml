@@ -1,0 +1,140 @@
+# LoRA fine-tuning experiment configuration for LLMs
+
+experiment:
+  name: lora_finetuning
+  type: lora_finetuning
+  description: "QLoRA fine-tuning of open models on AfriScience scientific translation"
+
+# ---------------------------------------------------------------------------
+# Models to fine-tune
+#
+# Already completed:
+#   gemma2_9b   unsloth/gemma-2-9b-bnb-4bit  (Unsloth pre-quantised 4-bit)
+#
+# Remaining (run in order — AfriqueQwen first as strongest expected):
+#   afriqueqwen_8b    McGill-NLP/AfriqueQwen-8B      Africa-specialised, Qwen 3 base
+#   afriquellama_8b   McGill-NLP/AfriqueLlama-8B     Africa-specialised, Llama 3.1 base
+#   llama3_8b         meta-llama/Llama-3.1-8B-Instruct  Generic baseline (no Africa CPT)
+# ---------------------------------------------------------------------------
+models:
+  # ── Completed ────────────────────────────────────────────────────────────
+  - id: unsloth/gemma-2-9b-bnb-4bit
+    name: gemma2_9b
+    adapter_path: ./experiments/lora/gemma2_9b/r64
+    status: done
+
+  # ── Africa-specialised (primary paper models) ─────────────────────────
+  - id: McGill-NLP/AfriqueQwen-8B
+    name: afriqueqwen_8b
+    # No Unsloth 4-bit release; bnb QLoRA via bitsandbytes (see quantization)
+
+  - id: McGill-NLP/AfriqueLlama-8B
+    name: afriquellama_8b
+    # No Unsloth 4-bit release; bnb QLoRA via bitsandbytes
+
+  # ── Generic baselines ─────────────────────────────────────────────────
+  - id: meta-llama/Llama-3.1-8B-Instruct
+    name: llama3_8b
+    # Unsloth 4-bit drop-in available if preferred:
+    # id: unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit
+
+  - id: google/gemma-2-9b-it
+    name: gemma2_9b_it
+
+# LoRA configurations to test
+lora:
+  ranks: [4, 64]       # r4 = minimal ablation, r64 = paper primary condition
+  default_rank: 64
+
+  # LoRA hyperparameters
+  config:
+    lora_alpha_ratio: 1.0  # alpha = rank * ratio
+    lora_dropout: 0.05
+    bias: none
+    task_type: CAUSAL_LM
+    target_modules:
+      - q_proj
+      - k_proj
+      - v_proj
+      - o_proj
+      - gate_proj
+      - up_proj
+      - down_proj
+
+# Quantization settings (QLoRA)
+quantization:
+  enabled: true
+  bits: 4
+  bnb_4bit_compute_dtype: bfloat16
+  bnb_4bit_quant_type: nf4
+  bnb_4bit_use_double_quant: true
+
+# Training mode
+training:
+  mode: bilingual
+
+  bilingual:
+    language_pairs:
+      - eng-amh
+      - eng-hau
+      - eng-lug
+      - eng-nso
+      - eng-yor
+      - eng-zul
+      - amh-eng
+      - hau-eng
+      - lug-eng
+      - nso-eng
+      - yor-eng
+      - zul-eng
+
+  multilingual:
+    source_languages: [eng]
+    target_languages: [amh, hau, lug, nso, yor, zul]
+    bidirectional: true
+
+# Training hyperparameters
+hyperparameters:
+  learning_rate: 2.0e-4
+  warmup_ratio: 0.03
+  weight_decay: 0.001
+  max_grad_norm: 0.3
+  num_epochs: 3
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  optim: paged_adamw_32bit
+  lr_scheduler_type: cosine
+
+  # Per-model overrides (only set when different from defaults above)
+  per_model:
+    gemma2_9b:
+      # 9B is slightly larger — halve batch to avoid OOM on A5000
+      batch_size: 2
+      gradient_accumulation_steps: 8
+
+# Data settings
+data:
+  max_source_length: 512
+  max_target_length: 512
+
+  # Instruction format
+  instruction_template: "Translate the following {source_language} scientific text to {target_language}."
+
+# Evaluation
+evaluation:
+  eval_during_training: true
+  eval_steps: 100
+  metrics:
+    - bleu
+
+# Checkpointing
+checkpointing:
+  save_steps: 100
+  save_total_limit: 2
+  metric_for_best: eval_loss
+  load_best_at_end: true
+
+# Output
+output:
+  save_adapter_only: true
+  merge_and_save: false  # Optionally merge LoRA with base model

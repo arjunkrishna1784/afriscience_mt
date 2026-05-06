@@ -1,0 +1,112 @@
+# In-context learning experiment configuration for sentence-level translation
+
+experiment:
+  name: icl_sentence
+  type: in_context_learning
+  description: "Few-shot and zero-shot ICL for sentence-level translation"
+
+# Models for ICL
+models:
+  # Open models (via TogetherAI for large ones)
+  open:
+    - gemma3_4b
+    - gemma3_12b
+    - gemma3_27b
+    - llama3_3_8b
+    - llama3_3_70b
+
+  # Closed models (via API)
+  closed:
+    - gpt4o
+    - gpt4o_mini
+    - gemini_1_5_pro
+    - gemini_1_5_flash
+    - gemini_2_0_flash
+
+# Shot configurations
+shots:
+  counts: [0, 5, 10, 20, 50]
+
+  # Example selection strategy
+  selection:
+    method: random  # random, semantic_similarity, domain_balanced
+
+    semantic_similarity:
+      embedding_model: text-embedding-3-small
+      cache_embeddings: true
+
+    domain_balanced:
+      balance_across_domains: true
+      examples_per_domain: null  # Auto-calculate based on shot count
+
+# Prompt templates to use
+prompts:
+  zero_shot:
+    - basic
+    - domain_aware
+
+  few_shot:
+    - few_shot
+    - few_shot_glossary
+
+  with_glossary:
+    - glossary_augmented
+    - few_shot_glossary
+
+# Glossary settings
+glossary:
+  enabled: true
+  max_terms: 20
+  selection: relevant  # all, relevant, random
+  relevance_threshold: 0.7
+
+# Language pairs
+language_pairs:
+  # English to African
+  - eng-amh
+  - eng-hau
+  - eng-lug
+  - eng-nso
+  - eng-yor
+  - eng-zul
+  # African to English
+  - amh-eng
+  - hau-eng
+  - lug-eng
+  - nso-eng
+  - yor-eng
+  - zul-eng
+
+# Inference settings
+inference:
+  temperature: 0.0
+  max_tokens: 256
+  top_p: 1.0
+
+  # Batching
+  batch_size: 10
+
+  # Rate limiting
+  requests_per_minute: 60
+  delay_between_requests: 0.5
+
+# Evaluation
+evaluation:
+  metrics:
+    - ssa_comet
+    - bleu
+    - chrf
+
+  # Compare with and without glossary
+  compare_glossary_effect: true
+
+  # Denormalization analysis
+  denormalization:
+    enabled: true
+    languages: [yor, hau, nso]
+
+# Output
+output:
+  save_predictions: true
+  save_prompts: true
+  save_per_sample_metrics: true

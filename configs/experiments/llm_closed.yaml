@@ -1,0 +1,72 @@
+# =============================================================================
+# AfriScience-MT — Closed Models Config (API)
+# =============================================================================
+# Closed-weight models accessed via commercial APIs.
+# Run with run_closed.sh or directly:
+#   python -m afriscience_mt.scripts.run_llm_experiments \
+#       --config afriscience_mt/configs/experiments/llm_closed.yaml
+#
+# REQUIRES:
+#   export OPENAI_API_KEY="sk-..."
+#   export GOOGLE_API_KEY="..."
+# =============================================================================
+
+data_dir: "./data"
+output_dir: "./experiments/llm"
+directions: "eng_african_only"   # 12 pairs: eng↔{amh,hau,lug,nso,yor,zul}
+metrics:
+  - "bleu"
+  - "chrf"
+  - "ssa_comet"
+
+max_new_tokens: 256
+skip_completed: true
+
+# =============================================================================
+# Models
+# =============================================================================
+models:
+
+  # OpenAI GPT-5
+  - id: "gpt-5"
+    name: "gpt5"
+    backend: "openai"
+    # api_key: "sk-..."   # or set OPENAI_API_KEY env var
+    delay: 1.0            # seconds between API calls (rate limiting)
+
+  # Google Gemini 3.1 Pro
+  - id: "gemini-3-flash-preview"
+    name: "gemini_3_flash"
+    backend: "google"
+    # api_key: "..."   # or set GOOGLE_API_KEY env var
+    delay: 1.0
+
+# =============================================================================
+# Experiments
+# =============================================================================
+experiments:
+
+  zero_shot:
+    enabled: true
+    template: "explicit"
+    use_glossary: false
+
+  icl:
+    enabled: true
+    shots: [5]
+    template: "few_shot"
+    selection_method: "random"
+    use_glossary: false
+
+  # Document-level: all closed models support long context natively
+  document:
+    enabled: true
+    shots: [0, 1]
+    template: "explicit"
+    max_new_tokens: 1024
+    min_context_length: 4096
+    use_glossary: false
+
+  finetuned:
+    enabled: false
+    adapters: []

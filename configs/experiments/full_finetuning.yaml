@@ -1,0 +1,101 @@
+# Full fine-tuning experiment configuration for seq2seq models
+
+experiment:
+  name: full_finetuning
+  type: seq2seq_finetuning
+  description: "Full fine-tuning of M2M100 and NLLB models"
+
+# Models to fine-tune
+models:
+  - m2m100_418m
+  - m2m100_1_2b
+  - nllb_600m
+  - nllb_1_3b
+
+# Training mode
+training:
+  mode: bilingual  # bilingual or multilingual
+
+  # Bilingual settings (train separate model per language pair)
+  bilingual:
+    language_pairs:
+      - eng-amh
+      - eng-hau
+      - eng-lug
+      - eng-nso
+      - eng-yor
+      - eng-zul
+      - amh-eng
+      - hau-eng
+      - lug-eng
+      - nso-eng
+      - yor-eng
+      - zul-eng
+
+  # Multilingual settings (train single model for all pairs)
+  multilingual:
+    source_languages: [eng]
+    target_languages: [amh, hau, lug, nso, yor, zul]
+    bidirectional: true
+
+# Training hyperparameters (per model size)
+hyperparameters:
+  small:  # 418M, 600M
+    learning_rate: 2.0e-5
+    warmup_ratio: 0.1
+    weight_decay: 0.01
+    max_grad_norm: 1.0
+    num_epochs: 10
+    batch_size: 16
+    gradient_accumulation_steps: 2
+    fp16: true
+    label_smoothing: 0.1
+    eval_steps: 500
+    save_steps: 500
+    logging_steps: 100
+
+  large:  # 1.2B, 1.3B
+    learning_rate: 1.0e-5
+    warmup_ratio: 0.1
+    weight_decay: 0.01
+    max_grad_norm: 1.0
+    num_epochs: 10
+    batch_size: 8
+    gradient_accumulation_steps: 4
+    fp16: true
+    label_smoothing: 0.1
+    eval_steps: 500
+    save_steps: 500
+    logging_steps: 100
+
+# Data settings
+data:
+  max_source_length: 256
+  max_target_length: 256
+  preprocessing:
+    lowercase: false
+    remove_extra_whitespace: true
+
+# Evaluation during training
+evaluation:
+  eval_during_training: true
+  metrics:
+    - bleu
+    - chrf
+  early_stopping:
+    enabled: true
+    patience: 3
+    metric: bleu
+    mode: max
+
+# Checkpointing
+checkpointing:
+  save_best_only: true
+  save_total_limit: 3
+  metric_for_best: bleu
+
+# Output
+output:
+  save_model: true
+  save_tokenizer: true
+  save_training_args: true

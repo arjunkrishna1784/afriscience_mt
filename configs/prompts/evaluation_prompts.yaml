@@ -1,0 +1,184 @@
+# GPT-4o evaluation prompts for LLM-as-judge assessment
+# Based on the research paper's evaluation methodology
+
+evaluation_prompts:
+  # Fluency evaluation (1-5 scale)
+  fluency:
+    name: "Fluency Assessment"
+    description: "Evaluates naturalness and grammatical correctness"
+    prompt: |
+      You are an expert evaluator of {target_language} text quality.
+
+      Evaluate the FLUENCY of the following translation on a scale of 1-5:
+      - 5: Native-level fluency, completely natural
+      - 4: Minor issues but reads naturally overall
+      - 3: Noticeable errors but still understandable
+      - 2: Significant fluency problems, awkward phrasing
+      - 1: Very unnatural, difficult to read
+
+      Source ({source_language}):
+      {source_text}
+
+      Translation ({target_language}):
+      {hypothesis}
+
+      Provide your evaluation in the following format:
+      Score: [1-5]
+      Justification: [Brief explanation of your score]
+    output_format:
+      score_range: [1, 5]
+      requires_justification: true
+
+  # Adequacy/Accuracy evaluation (1-5 scale)
+  accuracy:
+    name: "Accuracy Assessment"
+    description: "Evaluates meaning preservation and completeness"
+    prompt: |
+      You are an expert evaluator of translation accuracy.
+
+      Evaluate the ACCURACY of the following translation on a scale of 1-5:
+      - 5: Perfect meaning preservation, no omissions or additions
+      - 4: Minor semantic differences, meaning largely preserved
+      - 3: Some meaning lost or distorted but main ideas present
+      - 2: Significant meaning errors or omissions
+      - 1: Translation fails to convey the original meaning
+
+      Reference translation:
+      {reference}
+
+      Candidate translation:
+      {hypothesis}
+
+      Source text ({source_language}):
+      {source_text}
+
+      Provide your evaluation in the following format:
+      Score: [1-5]
+      Justification: [Brief explanation of your score]
+    output_format:
+      score_range: [1, 5]
+      requires_justification: true
+
+  # Document-level cohesion evaluation (1-5 scale)
+  cohesion:
+    name: "Cohesion Assessment"
+    description: "Evaluates document-level coherence and consistency"
+    prompt: |
+      You are an expert evaluator of document translation quality.
+
+      Evaluate the COHESION of the following document translation on a scale of 1-5:
+      - 5: Excellent cohesion, consistent terminology, natural flow
+      - 4: Good cohesion with minor inconsistencies
+      - 3: Moderate cohesion, some terminology inconsistencies
+      - 2: Poor cohesion, notable inconsistencies
+      - 1: No cohesion, reads as disconnected sentences
+
+      Consider:
+      - Consistency of terminology throughout
+      - Natural flow between sentences
+      - Appropriate use of discourse markers
+      - Preservation of document structure
+
+      Source document ({source_language}):
+      {source_document}
+
+      Translation ({target_language}):
+      {hypothesis_document}
+
+      Provide your evaluation in the following format:
+      Score: [1-5]
+      Justification: [Brief explanation focusing on cohesion aspects]
+    output_format:
+      score_range: [1, 5]
+      requires_justification: true
+
+  # Terminology accuracy evaluation
+  terminology:
+    name: "Terminology Assessment"
+    description: "Evaluates scientific terminology accuracy"
+    prompt: |
+      You are an expert evaluator of scientific translation terminology.
+
+      Evaluate the TERMINOLOGY ACCURACY of the following translation:
+
+      Source ({source_language}):
+      {source_text}
+
+      Translation ({target_language}):
+      {hypothesis}
+
+      Reference glossary terms used (if available):
+      {glossary_terms}
+
+      Evaluate on a scale of 1-5:
+      - 5: All scientific terms translated correctly and consistently
+      - 4: Minor terminology issues, mostly accurate
+      - 3: Some incorrect or inconsistent terminology
+      - 2: Multiple terminology errors
+      - 1: Widespread incorrect terminology
+
+      Provide your evaluation in the following format:
+      Score: [1-5]
+      Terminology Issues: [List any specific term translation errors]
+      Justification: [Brief explanation]
+    output_format:
+      score_range: [1, 5]
+      requires_justification: true
+
+  # Diacritics evaluation (for languages with tone marks/special characters)
+  diacritics:
+    name: "Diacritics Assessment"
+    description: "Evaluates correctness of diacritics and tone marks"
+    prompt: |
+      You are an expert in {target_language} orthography.
+
+      Evaluate the DIACRITICS/TONE MARKS in the following translation:
+
+      Translation ({target_language}):
+      {hypothesis}
+
+      Reference translation:
+      {reference}
+
+      For {target_language}, evaluate:
+      - Presence of required diacritics/tone marks
+      - Correctness of diacritic placement
+      - Consistency of diacritic usage
+
+      Provide your evaluation in the following format:
+      Score: [1-5]
+      - 5: All diacritics present and correct
+      - 4: Minor diacritic errors
+      - 3: Several missing or incorrect diacritics
+      - 2: Most diacritics missing or wrong
+      - 1: No diacritics or completely incorrect
+
+      Examples of errors found: [List specific examples if any]
+    output_format:
+      score_range: [1, 5]
+      applicable_languages:
+        - yor
+        - hau
+        - nso
+        - amh
+
+# Batch evaluation settings
+batch_settings:
+  max_concurrent_requests: 5
+  delay_between_batches: 1.0
+  retry_on_failure: true
+  max_retries: 3
+
+# Output aggregation
+aggregation:
+  compute_mean: true
+  compute_std: true
+  per_language_breakdown: true
+  per_domain_breakdown: true
+  correlation_with_automatic: true
+
+# Model settings for evaluation
+model:
+  name: gpt-4o
+  temperature: 0.0
+  max_tokens: 256

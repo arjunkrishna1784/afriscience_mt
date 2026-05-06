@@ -1,0 +1,127 @@
+# =============================================================================
+# AfriScience-MT — LLM Paper Experiments Config
+# =============================================================================
+# Single config for ALL LLM experiments (open + closed models).
+# Run with:
+#   python -m afriscience_mt.scripts.run_llm_experiments \
+#       --config afriscience_mt/configs/experiments/llm_paper.yaml
+#
+# EXPERIMENT CONDITIONS (per model):
+#   zero_shot          → explicit template, 0 examples              → experiments/llm/zero_shot/{model}/
+#   zero_shot_gloss    → glossary_augmented template, 0 examples    → experiments/llm/zero_shot_gloss/{model}/
+#   icl_5shot          → few_shot template, 5 random examples       → experiments/llm/icl_5shot/{model}/
+#   (glossary ICL not enabled by default; see icl.use_glossary)
+#
+# BACKEND TYPES:
+#   vllm    — fast batched inference (open/local models, GPU required)
+#   hf      — HuggingFace + bitsandbytes (fallback when vLLM unavailable)
+#   openai  — OpenAI API (requires OPENAI_API_KEY env var)
+#   google  — Google AI API (requires GOOGLE_API_KEY env var)
+# =============================================================================
+
+data_dir: "./data"
+output_dir: "./experiments/llm"
+directions: "eng_african_only"   # 12 pairs: eng↔{amh,hau,lug,nso,yor,zul}
+                                  # Set to "all" for all 42 pairs (incl. African↔African)
+metrics:
+  - "bleu"
+  - "chrf"
+  - "ssa_comet"
+
+# Global backend (can be overridden per model below)
+backend: "vllm"
+max_new_tokens: 256
+gpu_memory_utilization: 0.9
+tensor_parallel_size: 1
+# max_model_len: null  # uncomment and set if a model requires a specific context limit
+
+skip_completed: true  # set to false (or use --force flag) to re-run everything
+
+# =============================================================================
+# Models
+# =============================================================================
+models:
+  # ---------------------------------------------------------------------------
+  # Open models — Africa-focused instruction-tuned LLMs (vLLM backend)
+  # ---------------------------------------------------------------------------
+  - id: "McGill-NLP/AfriqueLlama-8B"
+    name: "afriquellama_8b"
+    # backend: vllm  ← inherits global
+
+  - id: "McGill-NLP/AfriqueQwen-8B"
+    name: "afriqueqwen_8b"
+
+  - id: "CohereLabs/tiny-aya-global"
+    name: "tiny_aya_global"
+
+  # Multilingual baseline (Llama 3.1 8B — not Africa-specific)
+  - id: "meta-llama/Llama-3.1-8B-Instruct"
+    name: "llama3_8b"
+
+  # Uncomment to add more open models:
+  # - id: "CohereForAI/aya-expanse-32b"
+  #   name: "aya_expanse_32b"
+  # - id: "google/gemma-3-12b-it"
+  #   name: "gemma3_12b"
+
+  # ---------------------------------------------------------------------------
+  # Closed models — API-based (per-model backend override)
+  # API keys read from environment variables by default.
+  # ---------------------------------------------------------------------------
+
+  # OpenAI
+  - id: "gpt-5"
+    name: "gpt5"
+    backend: "openai"
+    # api_key: "sk-..."   # or set OPENAI_API_KEY env var
+    delay: 1.0            # seconds between API calls (rate limiting)
+
+  # Google Gemini 3.1 Pro
+  - id: "gemini-3.1-pro-preview"
+    name: "gemini_31_pro"
+    backend: "google"
+    # api_key: "..."   # or set GOOGLE_API_KEY env var
+    delay: 1.0
+
+# =============================================================================
+# Experiments
+# =============================================================================
+experiments:
+
+  # ---------------------------------------------------------------------------
+  # Zero-shot: 0 examples, explicit template
+  # This is the canonical zero-shot condition for the paper.
+  # Results: experiments/llm/zero_shot/{model}/
+  # ---------------------------------------------------------------------------
+  zero_shot:
+    enabled: true
+    template: "explicit"
+    use_glossary: false    # set true to run glossary ablation
+                           # (saves to zero_shot_gloss/ to avoid overwriting zero_shot/)
+
+  # ---------------------------------------------------------------------------
+  # ICL: N-shot, few_shot template
+  # Results: experiments/llm/icl_{N}shot/{model}/
+  #
+  # NOTE: Do NOT include 0 in shots — that is zero_shot's job.
+  #       Including 0 here uses the few_shot template with no examples,
+  #       which is a DIFFERENT condition from zero_shot (explicit template).
+  # ---------------------------------------------------------------------------
+  icl:
+    enabled: true
+    shots: [5]             # primary condition for paper
+                           # add [1, 10, 20] for ablation over shot counts
+    template: "few_shot"
+    selection_method: "random"   # "random" (fast) or "semantic" (similarity-based, slower)
+    use_glossary: false    # set true for glossary ablation (saves to icl_5shot_gloss/)
+
+  # ---------------------------------------------------------------------------
+  # Fine-tuned: LoRA adapter evaluation (optional, disabled by default)
+  # Results: experiments/llm/finetuned_{adapter_name}/{model}/
+  # ---------------------------------------------------------------------------
+  finetuned:
+    enabled: false
+    adapters: []
+    # adapters:
+    #   - path: "./experiments/lora/gemma3_4b/r16"
+    #     name: "gemma3_4b_r16"

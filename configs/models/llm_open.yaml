@@ -1,0 +1,164 @@
+# Open LLM configurations for AfriScience-MT (LoRA fine-tuning and ICL)
+# Priority models: Gemma3 4B and 12B
+
+# =============================================================================
+# Gemma 3 Models (Google) - PRIORITY
+# =============================================================================
+
+gemma3_4b:
+  name: google/gemma-3-4b-it
+  type: gemma
+  size: 4B
+  priority: high  # Priority model
+  max_length: 2048
+  context_window: 8192
+  supports_quantization: true
+  lora:
+    target_modules:
+      - q_proj
+      - k_proj
+      - v_proj
+      - o_proj
+      - gate_proj
+      - up_proj
+      - down_proj
+    default_rank: 32
+    ranks: [8, 16, 32, 64, 128]
+    lora_alpha_ratio: 1.0  # alpha = rank
+    lora_dropout: 0.05
+  training:
+    learning_rate: 2.0e-4
+    warmup_ratio: 0.03
+    weight_decay: 0.001
+    max_grad_norm: 0.3
+    num_epochs: 3
+    batch_size: 4
+    gradient_accumulation_steps: 4
+    quantization: 4bit
+    optim: paged_adamw_32bit
+    lr_scheduler: cosine
+
+gemma3_12b:
+  name: google/gemma-3-12b-it
+  type: gemma
+  size: 12B
+  priority: high  # Priority model
+  max_length: 2048
+  context_window: 8192
+  supports_quantization: true
+  lora:
+    target_modules:
+      - q_proj
+      - k_proj
+      - v_proj
+      - o_proj
+      - gate_proj
+      - up_proj
+      - down_proj
+    default_rank: 32
+    ranks: [8, 16, 32, 64, 128]
+    lora_alpha_ratio: 1.0
+    lora_dropout: 0.05
+  training:
+    learning_rate: 1.0e-4
+    warmup_ratio: 0.03
+    weight_decay: 0.001
+    max_grad_norm: 0.3
+    num_epochs: 3
+    batch_size: 2
+    gradient_accumulation_steps: 8
+    quantization: 4bit
+    optim: paged_adamw_32bit
+    lr_scheduler: cosine
+
+gemma3_27b:
+  name: google/gemma-3-27b-it
+  type: gemma
+  size: 27B
+  priority: medium
+  max_length: 2048
+  context_window: 8192
+  supports_quantization: true
+  provider: together
+  inference_only: true  # Too large for local LoRA
+  together_model_id: google/gemma-2-27b-it
+
+# =============================================================================
+# Llama 3.3 Models (Meta) - For comparison
+# =============================================================================
+
+llama3_3_8b:
+  name: meta-llama/Llama-3.3-8B-Instruct
+  type: llama
+  size: 8B
+  priority: medium
+  max_length: 2048
+  context_window: 8192
+  supports_quantization: true
+  lora:
+    target_modules:
+      - q_proj
+      - k_proj
+      - v_proj
+      - o_proj
+      - gate_proj
+      - up_proj
+      - down_proj
+    default_rank: 32
+    ranks: [8, 16, 32, 64, 128]
+    lora_alpha_ratio: 1.0
+    lora_dropout: 0.05
+  training:
+    learning_rate: 2.0e-4
+    warmup_ratio: 0.03
+    weight_decay: 0.001
+    max_grad_norm: 0.3
+    num_epochs: 3
+    batch_size: 4
+    gradient_accumulation_steps: 4
+    quantization: 4bit
+    optim: paged_adamw_32bit
+    lr_scheduler: cosine
+
+llama3_3_70b:
+  name: meta-llama/Llama-3.3-70B-Instruct
+  type: llama
+  size: 70B
+  priority: low
+  max_length: 2048
+  context_window: 8192
+  provider: together
+  inference_only: true
+  together_model_id: meta-llama/Llama-3.3-70B-Instruct-Turbo
+
+# =============================================================================
+# ICL settings
+# =============================================================================
+
+icl:
+  shot_counts: [0, 5, 10, 20, 50]  # Include 0-shot
+  example_selection:
+    methods:
+      - random
+      - semantic_similarity
+      - domain_balanced
+    default: random
+    semantic_similarity:
+      embedding_model: text-embedding-3-small
+      batch_size: 100
+
+# =============================================================================
+# Priority model groups
+# =============================================================================
+
+priority_models:
+  - gemma3_4b
+  - gemma3_12b
+
+all_lora_models:
+  - gemma3_4b
+  - gemma3_12b
+  - llama3_3_8b
+
+# Default model
+default: gemma3_4b

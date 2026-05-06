@@ -1,0 +1,173 @@
+# Seq2Seq model configurations for AfriScience-MT
+# Priority models: NLLB (all sizes), M2M100 (all sizes)
+
+# =============================================================================
+# M2M100 Models (Facebook's Multilingual Translation)
+# =============================================================================
+
+m2m100_418m:
+  name: facebook/m2m100_418M
+  type: m2m100
+  size: 418M
+  priority: high  # Priority model
+  max_length: 256
+  supports_languages:
+    - eng
+    - amh
+    - hau
+    - lug
+    - yor
+    - zul
+  # Note: nso not in original M2M100
+  training:
+    learning_rate: 2.0e-5
+    warmup_ratio: 0.1
+    weight_decay: 0.01
+    max_grad_norm: 1.0
+    num_epochs: 10
+    batch_size: 16
+    gradient_accumulation_steps: 2
+    fp16: true
+    label_smoothing: 0.1
+
+m2m100_1_2b:
+  name: facebook/m2m100_1.2B
+  type: m2m100
+  size: 1.2B
+  priority: high  # Priority model
+  max_length: 256
+  supports_languages:
+    - eng
+    - amh
+    - hau
+    - lug
+    - yor
+    - zul
+  training:
+    learning_rate: 1.0e-5
+    warmup_ratio: 0.1
+    weight_decay: 0.01
+    max_grad_norm: 1.0
+    num_epochs: 10
+    batch_size: 8
+    gradient_accumulation_steps: 4
+    fp16: true
+    label_smoothing: 0.1
+
+# =============================================================================
+# NLLB Models (Meta's No Language Left Behind)
+# =============================================================================
+
+nllb_600m:
+  name: facebook/nllb-200-distilled-600M
+  type: nllb
+  size: 600M
+  priority: high  # Priority model
+  max_length: 256
+  supports_languages:
+    - eng
+    - amh
+    - hau
+    - lug
+    - nso
+    - yor
+    - zul
+  # NLLB language codes (different from ISO)
+  nllb_lang_codes:
+    eng: eng_Latn
+    amh: amh_Ethi
+    hau: hau_Latn
+    lug: lug_Latn
+    nso: nso_Latn
+    yor: yor_Latn
+    zul: zul_Latn
+  training:
+    learning_rate: 2.0e-5
+    warmup_ratio: 0.1
+    weight_decay: 0.01
+    max_grad_norm: 1.0
+    num_epochs: 10
+    batch_size: 16
+    gradient_accumulation_steps: 2
+    fp16: true
+    label_smoothing: 0.1
+
+nllb_1_3b:
+  name: facebook/nllb-200-1.3B
+  type: nllb
+  size: 1.3B
+  priority: high  # Priority model
+  max_length: 256
+  supports_languages:
+    - eng
+    - amh
+    - hau
+    - lug
+    - nso
+    - yor
+    - zul
+  nllb_lang_codes:
+    eng: eng_Latn
+    amh: amh_Ethi
+    hau: hau_Latn
+    lug: lug_Latn
+    nso: nso_Latn
+    yor: yor_Latn
+    zul: zul_Latn
+  training:
+    learning_rate: 1.0e-5
+    warmup_ratio: 0.1
+    weight_decay: 0.01
+    max_grad_norm: 1.0
+    num_epochs: 10
+    batch_size: 8
+    gradient_accumulation_steps: 4
+    fp16: true
+    label_smoothing: 0.1
+
+nllb_3_3b:
+  name: facebook/nllb-200-3.3B
+  type: nllb
+  size: 3.3B
+  priority: high  # Priority model
+  max_length: 256
+  supports_languages:
+    - eng
+    - amh
+    - hau
+    - lug
+    - nso
+    - yor
+    - zul
+  nllb_lang_codes:
+    eng: eng_Latn
+    amh: amh_Ethi
+    hau: hau_Latn
+    lug: lug_Latn
+    nso: nso_Latn
+    yor: yor_Latn
+    zul: zul_Latn
+  training:
+    learning_rate: 5.0e-6
+    warmup_ratio: 0.1
+    weight_decay: 0.01
+    max_grad_norm: 1.0
+    num_epochs: 10
+    batch_size: 4
+    gradient_accumulation_steps: 8
+    fp16: true
+    label_smoothing: 0.1
+
+# =============================================================================
+# Priority model groups for experiments
+# =============================================================================
+
+priority_models:
+  - nllb_600m
+  - nllb_1_3b
+  - nllb_3_3b
+  - m2m100_418m
+  - m2m100_1_2b
+
+# Default model for quick tests
+default: nllb_600m

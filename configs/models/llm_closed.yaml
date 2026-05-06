@@ -1,0 +1,112 @@
+# Closed LLM configurations for AfriScience-MT (API-based models)
+
+# OpenAI GPT models
+gpt4o:
+  name: gpt-4o
+  provider: openai
+  type: gpt
+  max_tokens: 1024
+  temperature: 0.0
+  top_p: 1.0
+  api_settings:
+    requests_per_minute: 500
+    tokens_per_minute: 150000
+    max_retries: 3
+    retry_delay: 1.0
+
+gpt4o_mini:
+  name: gpt-4o-mini
+  provider: openai
+  type: gpt
+  max_tokens: 1024
+  temperature: 0.0
+  top_p: 1.0
+  api_settings:
+    requests_per_minute: 1000
+    tokens_per_minute: 200000
+    max_retries: 3
+    retry_delay: 1.0
+
+# Google Gemini models
+gemini_1_5_pro:
+  name: gemini-1.5-pro
+  provider: google
+  type: gemini
+  max_tokens: 1024
+  temperature: 0.0
+  top_p: 1.0
+  api_settings:
+    requests_per_minute: 60
+    max_retries: 3
+    retry_delay: 2.0
+
+gemini_1_5_flash:
+  name: gemini-1.5-flash
+  provider: google
+  type: gemini
+  max_tokens: 1024
+  temperature: 0.0
+  top_p: 1.0
+  api_settings:
+    requests_per_minute: 100
+    max_retries: 3
+    retry_delay: 1.0
+
+gemini_2_0_flash:
+  name: gemini-2.0-flash-exp
+  provider: google
+  type: gemini
+  max_tokens: 1024
+  temperature: 0.0
+  top_p: 1.0
+  api_settings:
+    requests_per_minute: 100
+    max_retries: 3
+    retry_delay: 1.0
+
+# TogetherAI hosted models (for large open models)
+together_llama_70b:
+  name: meta-llama/Llama-3.3-70B-Instruct-Turbo
+  provider: together
+  type: llama
+  max_tokens: 1024
+  temperature: 0.0
+  top_p: 1.0
+  api_settings:
+    requests_per_minute: 100
+    max_retries: 3
+    retry_delay: 1.0
+
+together_gemma_27b:
+  name: google/gemma-2-27b-it
+  provider: together
+  type: gemma
+  max_tokens: 1024
+  temperature: 0.0
+  top_p: 1.0
+  api_settings:
+    requests_per_minute: 100
+    max_retries: 3
+    retry_delay: 1.0
+
+# ICL settings for closed models
+icl:
+  shot_counts: [0, 5, 10, 20, 50]
+  example_selection:
+    methods:
+      - random
+      - semantic_similarity
+    default: random
+
+# Evaluation model for LLM-as-judge
+evaluation_model:
+  name: gpt-4o
+  provider: openai
+  temperature: 0.0
+  max_tokens: 512
+
+# Default models
+defaults:
+  openai: gpt4o
+  google: gemini_1_5_pro
+  together: together_llama_70b

@@ -1,0 +1,123 @@
+# Document-level translation prompt templates for AfriScience-MT
+# For translating entire scientific abstracts/documents
+
+templates:
+  # Template 1: Basic document translation
+  basic:
+    id: 1
+    description: "Simple document translation instruction"
+    template: |
+      Translate the following {source_language} scientific document to {target_language}.
+      Maintain the structure, coherence, and scientific terminology throughout.
+
+      Document:
+      {source_document}
+
+      Translation:
+    variables:
+      - source_language
+      - target_language
+      - source_document
+
+  # Template 2: Document with domain context
+  domain_aware:
+    id: 2
+    description: "Document translation with domain context"
+    template: |
+      You are a professional translator specializing in scientific documents.
+      Translate the following {source_language} document from the {domain} domain to {target_language}.
+
+      Requirements:
+      - Maintain document structure and coherence
+      - Preserve scientific terminology accuracy
+      - Ensure consistency of terms throughout the document
+
+      Document:
+      {source_document}
+
+      Translation:
+    variables:
+      - source_language
+      - target_language
+      - domain
+      - source_document
+
+  # Template 3: Document with glossary
+  glossary_augmented:
+    id: 3
+    description: "Document translation with terminology glossary"
+    template: |
+      Translate the following {source_language} scientific document to {target_language}.
+
+      Use this glossary for domain-specific terminology (use these translations consistently):
+      {glossary}
+
+      Document:
+      {source_document}
+
+      Translation:
+    variables:
+      - source_language
+      - target_language
+      - glossary
+      - source_document
+
+# Chat format templates for document translation
+chat_templates:
+  basic:
+    system: |
+      You are a professional scientific document translator.
+      When translating documents:
+      - Maintain the original structure and formatting
+      - Ensure coherence across sentences
+      - Preserve scientific accuracy
+    user: |
+      Translate this {source_language} scientific document to {target_language}:
+
+      {source_document}
+
+  domain_aware:
+    system: |
+      You are a professional translator specializing in {domain} documents.
+      Ensure:
+      - Accurate domain-specific terminology
+      - Consistent term usage throughout
+      - Preservation of scientific meaning
+    user: |
+      Translate this {source_language} document to {target_language}:
+
+      {source_document}
+
+  glossary_augmented:
+    system: |
+      You are a professional scientific document translator.
+      Use the provided glossary consistently throughout the document.
+    user: |
+      Terminology glossary ({source_language} → {target_language}):
+      {glossary}
+
+      Translate this document:
+      {source_document}
+
+# Document processing settings
+document_settings:
+  # Maximum tokens for document context
+  max_document_tokens: 4096
+
+  # Whether to segment long documents
+  segment_long_documents: true
+  segment_overlap_sentences: 2
+
+  # Coherence preservation
+  maintain_paragraph_breaks: true
+
+  # For multi-segment documents
+  context_from_previous:
+    enabled: true
+    num_sentences: 3
+
+# Default template
+defaults:
+  zero_shot: basic
+  with_glossary: glossary_augmented
+  domain_specific: domain_aware

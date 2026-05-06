@@ -1,0 +1,33 @@
+# Git auto-push configuration
+git:
+  # GitHub repository URL (HTTPS or SSH)
+  # Examples:
+  #   https://github.com/username/afriscience-mt.git
+  #   git@github.com:username/afriscience-mt.git
+  repo_url: "https://github.com/username/afriscience-mt.git"
+
+  # Branch to push to
+  branch: main
+
+  # Commit message prefix
+  commit_prefix: "[auto]"
+
+  # Push interval in seconds (3600 = 1 hour)
+  push_interval: 3600
+
+  # Whether to force push (use with caution)
+  force_push: false
+
+  # Git user info (optional, uses global config if not set)
+  user_name: ""
+  user_email: ""
+
+# Paths to include (relative to project root)
+# Leave empty to include all (respecting .gitignore)
+include_paths: []
+
+# Additional paths to exclude (beyond .gitignore)
+exclude_paths:
+  - models/
+  - "*.log"
+  - ".env"

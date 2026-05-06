@@ -1,0 +1,79 @@
+# =============================================================================
+# AfriScience-MT — Document-Level Translation Config
+# =============================================================================
+# Reference config documenting the document experiment settings.
+# Experiments are now driven by the document block inside llm_open.yaml
+# and llm_closed.yaml, run via run_llm_experiments.py.
+#
+# This file is kept as documentation / for the legacy run_experiments.sh
+# document experiment type.
+# =============================================================================
+
+experiment:
+  name: icl_document
+  type: document_translation
+  description: "Zero-shot and 1-shot document-level translation"
+
+# Models for document translation (long-context only)
+# Open models (all ≥ 128K context via vLLM):
+#   - masakhane/AfriqueLlama-3.2-8B-Instruct   → afriquellama_8b
+#   - masakhane/AfriqueQwen2.5-7B-Instruct      → afriqueqwen_8b
+#   - CohereLabs/tiny-aya-global                → tiny_aya_global
+#   - meta-llama/Llama-3.1-8B-Instruct         → llama3_8b
+#   NOTE: Infomaniak-AI/vllm-translategemma-12b-it is EXCLUDED
+#         (max_model_len=1024 set for OOM reasons — too short for documents)
+#
+# Closed models (all support long context natively):
+#   - gpt-5               → gpt5      (OpenAI)
+#   - gemini-3.1-pro-preview → gemini_31_pro  (Google)
+
+# Shot configurations
+shots:
+  counts: [0, 1]   # 0-shot baseline + 1-shot (shortest training doc as style example)
+                    # More shots impractical: full document pairs exhaust context fast
+
+# Prompt templates
+prompts:
+  zero_shot:
+    - explicit       # canonical zero-shot template
+  one_shot:
+    - few_shot       # standard few-shot template with 1 document example
+
+# Language pairs
+language_pairs:
+  - eng-amh
+  - eng-hau
+  - eng-lug
+  - eng-nso
+  - eng-yor
+  - eng-zul
+  - amh-eng
+  - hau-eng
+  - lug-eng
+  - nso-eng
+  - yor-eng
+  - zul-eng
+
+# Document handling
+document:
+  max_new_tokens: 1024         # output budget per document
+  min_context_length: 4096     # models below this are skipped automatically
+
+# Inference settings
+inference:
+  temperature: 0.0
+  max_new_tokens: 1024
+  top_p: 1.0
+  delay_between_requests: 2.0  # API models: longer delay for larger payloads
+
+# Evaluation (same metrics as sentence-level)
+evaluation:
+  metrics:
+    - bleu
+    - chrf
+    - ssa_comet
+
+# Output
+output:
+  save_predictions: true
+  save_full_documents: true

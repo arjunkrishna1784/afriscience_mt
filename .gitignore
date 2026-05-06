@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# --- Model files: never ship ---
+# Local training/inference checkpoints
+checkpoints/
+runs/
+wandb/
+outputs/
+
+# Model weight formats (any size, anywhere)
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.gguf
+*.tflite
+*.h5
+
+# HF cache and adapter weight dirs
+hf_cache/
+.cache/huggingface/
+adapter/
+adapter_model.*
+adapter_config.json
+tokenizer.json
+tokenizer.model
+tokenizer_config.json
+special_tokens_map.json
+generation_config.json
+chat_template.json
+preprocessor_config.json
+processor_config.json
+
+# Migration backup (kept locally, not for git)
+experiments_legacy/
+
+# Symlinks that point to large external dirs
+hf_cache
+lora_adapters
