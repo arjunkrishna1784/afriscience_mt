@@ -114,8 +114,32 @@ def collect_stop_token_ids(tokenizer) -> list[int]:
     return ids
 
 
+def _patch_vllm_lora_embedding_quant_method() -> None:
+    """vLLM 0.19.x's ``VocabParallelEmbeddingWithLoRA`` doesn't expose
+    ``quant_method`` (the attribute lives on its wrapped ``base_layer``),
+    so engine init crashes with ``AttributeError`` for models that apply
+    LoRA to the embedding layer (e.g. tied-embedding Cohere/Aya checkpoints).
+
+    Forward the attribute to ``base_layer`` as a class property.
+    """
+    try:
+        from vllm.lora.layers.vocal_parallel_embedding import (
+            VocabParallelEmbeddingWithLoRA,
+        )
+    except Exception:
+        return  # different vLLM layout; nothing to patch
+    if "quant_method" in VocabParallelEmbeddingWithLoRA.__dict__:
+        return  # already present
+
+    def _get_quant_method(self):
+        return self.base_layer.quant_method
+
+    VocabParallelEmbeddingWithLoRA.quant_method = property(_get_quant_method)
+
+
 def make_llm(gpu_mem_util: float, max_model_len: int):
     """Build a vLLM LLM with LoRA enabled."""
+    _patch_vllm_lora_embedding_quant_method()
     from vllm import LLM
     return LLM(
         model=BASE_MODEL,
@@ -184,7 +208,8 @@ def backup(path: Path) -> None:
             shutil.copy2(path, bk)
 
 
-def update_pair_files(src: str, tgt: str, samples: list[dict], metrics: dict) -> None:
+def update_pair_files(src: str, tgt: str, samples: list[dict],
+                      metrics: dict | None) -> None:
     pair_dir = EXP_DIR / f"{src}-{tgt}"
     pair_dir.mkdir(parents=True, exist_ok=True)
 
@@ -229,7 +254,10 @@ def update_pair_files(src: str, tgt: str, samples: list[dict], metrics: dict) ->
         }
 
     res["timestamp"] = datetime.utcnow().isoformat()
-    res["metrics"] = metrics
+    if metrics is not None:
+        res["metrics"] = metrics
+    elif "metrics" not in res:
+        res["metrics"] = {"num_samples": len(samples)}
     res.setdefault("metadata", {})
     res["metadata"]["regenerated_at"] = datetime.utcnow().isoformat()
     res["metadata"]["regenerated_reason"] = (
@@ -255,6 +283,10 @@ def main() -> int:
     ap.add_argument("--gpu-mem-util", type=float, default=0.9)
     ap.add_argument("--dry-run", action="store_true",
                     help="generate but don't overwrite files (writes to .new instead)")
+    ap.add_argument("--skip-scoring", action="store_true",
+                    help="generate + write predictions only; defer metrics "
+                         "(use when the inference env doesn't have COMET, "
+                         "then rescore with afriscience-mt evaluate --mode rescore)")
     args = ap.parse_args()
 
     if args.all:
@@ -299,9 +331,18 @@ def main() -> int:
         print(f"  generated {n} hyps in {gen_t:.1f}s; "
               f"exact-half duplication: {dup}/{n} ({100*dup/n:.1f}%)")
 
-        metrics = score(samples)
-        print(f"  BLEU={metrics['bleu']:.2f}  ChrF={metrics['chrf']:.2f}  "
-              f"SSA-COMET={100*metrics['ssa_comet']:.1f}")
+        if args.skip_scoring:
+            metrics = None
+            print("  scoring deferred (--skip-scoring)")
+        else:
+            try:
+                metrics = score(samples)
+                print(f"  BLEU={metrics['bleu']:.2f}  ChrF={metrics['chrf']:.2f}  "
+                      f"SSA-COMET={100*metrics['ssa_comet']:.1f}")
+            except Exception as e:
+                metrics = None
+                print(f"  scoring failed ({type(e).__name__}: {e}); "
+                      "writing predictions without metrics — rescore later")
 
         if args.dry_run:
             out = EXP_DIR / pair / "predictions.json.new"
@@ -311,10 +352,23 @@ def main() -> int:
             print(f"  dry-run, wrote {out}")
         else:
             update_pair_files(src, tgt, samples, metrics)
-            print(f"  updated predictions.json + results.json")
+            print(f"  updated predictions.json + results.json"
+                  f"{' (no metrics)' if metrics is None else ''}")
 
     print(f"\ntotal: {time.time()-t0:.1f}s")
-    print("now run: python scripts/build_paper_tables.py")
+    if args.skip_scoring:
+        print("predictions written without metrics. now rescore in the dcs env:")
+        print("  python -m afriscience_mt evaluate --mode rescore "
+              "--src experiments/llm/open/finetune/tiny_aya_global/r64 "
+              "--metric bleu")
+        print("  python -m afriscience_mt evaluate --mode rescore "
+              "--src experiments/llm/open/finetune/tiny_aya_global/r64 "
+              "--metric chrf")
+        print("  python -m afriscience_mt evaluate --mode rescore "
+              "--src experiments/llm/open/finetune/tiny_aya_global/r64 "
+              "--metric ssa_comet")
+    else:
+        print("now run: python scripts/build_paper_tables.py")
     return 0
 
 
