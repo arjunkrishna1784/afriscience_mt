@@ -46,7 +46,7 @@ MODEL_DISP = {
     "gemma2_9b_it": "Gemma2-9B",
     "tiny_aya_global": "Tiny-Aya-G",
     "tiny_aya_earth": "Tiny-Aya-E",
-    "translategemma_12b": "TransGemma",
+    "translategemma_12b": "TranslateGemma",
     "gpt4o": "GPT-4o",
     "gemini_15_flash": "Gemini-1.5",
 }

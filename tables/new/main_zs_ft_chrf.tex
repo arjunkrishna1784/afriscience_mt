@@ -22,7 +22,7 @@ Gemma2-9B & 8.6 & 30.6 & 12.1 & 18.5 & 10.2 & 20.5 & 39.3 & 45.9 & \emph{29.7} &
 Llama3-8B & 7.9 & 29.0 & 13.0 & 12.4 & 8.5 & 15.5 & 25.5 & 43.3 & 22.7 & 19.5 & 21.9 & 31.5 & 20.9 \\
 Tiny-Aya-E & 27.4 & \emph{52.5} & 10.7 & 11.5 & \textbf{14.5} & \emph{44.8} & 47.9 & 45.7 & 20.1 & 17.3 & 28.5 & 49.6 & 30.9 \\
 Tiny-Aya-G & \emph{28.1} & 51.6 & 10.2 & 11.7 & 14.5 & 44.5 & 47.8 & 46.2 & 19.9 & 17.2 & 28.0 & \emph{49.9} & 30.8 \\
-TransGemma-12B & 18.8 & 38.3 & 17.3 & \emph{23.7} & 13.5 & 39.4 & \emph{51.0} & \emph{53.5} & 27.5 & \emph{41.4} & \emph{34.3} & 35.7 & \emph{32.9} \\
+TranslateGemma-12B & 18.8 & 38.3 & 17.3 & \emph{23.7} & 13.5 & 39.4 & \emph{51.0} & \emph{53.5} & 27.5 & \emph{41.4} & \emph{34.3} & 35.7 & \emph{32.9} \\
 \midrule\midrule
 \multicolumn{14}{l}{\textit{Fine-tuned}} \\
 \midrule
@@ -39,6 +39,6 @@ Tiny-Aya-E & 37.8 & \emph{62.0} & 46.9 & 57.7 & 39.5 & 56.1 & 58.5 & 61.6 & 50.4
 Tiny-Aya-G & 38.1 & 60.9 & 47.3 & 57.6 & 38.3 & \emph{56.2} & 56.9 & 60.1 & 49.2 & 55.9 & 48.2 & 63.4 & 52.7 \\
 \bottomrule
 \end{tabular}
-\caption{Sentence-level zero-shot vs. fine-tuned performance (chrF). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; the \textit{Zero-shot} group additionally includes TransGemma-12B (evaluated but not fine-tuned). LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
+\caption{Sentence-level zero-shot vs. fine-tuned performance (chrF). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; the \textit{Zero-shot} group additionally includes TranslateGemma-12B (evaluated but not fine-tuned). LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
 \label{tab:main_zs_ft_chrf}
 \end{table*}

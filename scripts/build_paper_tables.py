@@ -47,7 +47,7 @@ MODEL_DISP = {
     "llama3_8b":              "Llama3-8B",
     "tiny_aya_earth":         "Tiny-Aya-E",
     "tiny_aya_global":        "Tiny-Aya-G",
-    "translategemma_12b":     "TransGemma-12B",
+    "translategemma_12b":     "TranslateGemma-12B",
     "gpt4o":                  "GPT-4o",
     "gemini_15_flash":        "Gemini-1.5",
     # Synthetic row label (no underlying model_short).
@@ -388,7 +388,7 @@ def build_lora(rows, metric):
 def build_doc(rows, metric):
     """**Main paper Table 4 (or appendix).** Document-level zero-shot vs.\
     1-shot ICL. Two major groups; each has closed (Gemini-1.5, GPT-4o) and
-    open (7 LLMs incl. TransGemma-12B) sub-blocks. Same hierarchical
+    open (7 LLMs incl. TranslateGemma-12B) sub-blocks. Same hierarchical
     bolding as Tables 1/2 and an Avg column."""
     metric_label = "chrF" if metric == "chrf" else "COMET"
     closed_models = ["gemini_15_flash", "gpt4o"]
@@ -442,7 +442,7 @@ def build_main_zs_ft(rows, metric):
     SEQ2SEQ_ALL = ["m2m100_418m", "nllb_200_distilled_600m",
                    "m2m100_1_2b", "nllb_200_1_3b"]
     # Fine-tuned LLMs share the same six open models; the zero-shot block
-    # additionally includes TransGemma-12B (which we evaluate but don't fine-tune).
+    # additionally includes TranslateGemma-12B (which we evaluate but don't fine-tune).
     LLM_HEADLINE_FT = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
                        "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global"]
     LLM_HEADLINE_ZS = LLM_HEADLINE_FT + ["translategemma_12b"]
@@ -472,7 +472,7 @@ def build_main_zs_ft(rows, metric):
                  f"({metric_label}). The four seq2seq backbones (M2M100-418M, "
                  "NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source "
                  "LLMs appear in both major groups; the \\textit{Zero-shot} "
-                 "group additionally includes TransGemma-12B (evaluated but "
+                 "group additionally includes TranslateGemma-12B (evaluated but "
                  "not fine-tuned). LLMs in the \\textit{Fine-tuned} group "
                  "use per-pair LoRA $r{=}64$. Models are alphabetically "
                  "sorted within each sub-block. \\textbf{Bold}: column "
@@ -494,7 +494,7 @@ def build_open_vs_closed_icl(rows, metric):
     against the closed APIs.
     """
     metric_label = "chrF" if metric == "chrf" else "COMET"
-    # Open-weight LLMs include TransGemma-12B in zero-shot and ICL
+    # Open-weight LLMs include TranslateGemma-12B in zero-shot and ICL
     # (we evaluate it but don't fine-tune it — same convention as Table 1).
     open_models = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
                    "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global",
