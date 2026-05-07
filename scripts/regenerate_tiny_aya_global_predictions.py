@@ -174,6 +174,7 @@ def make_llm(gpu_mem_util: float, max_model_len: int):
 
 
 def regenerate_pair(llm, tokenizer, src: str, tgt: str, *,
+                    lora_int_id: int,
                     max_new_tokens: int, stop_ids: list[int],
                     rep_penalty: float, freq_penalty: float) -> list[dict]:
     from vllm import SamplingParams
@@ -191,9 +192,13 @@ def regenerate_pair(llm, tokenizer, src: str, tgt: str, *,
         stop_token_ids=stop_ids,
         skip_special_tokens=True,
     )
+    # IMPORTANT: each pair uses a unique lora_int_id. With max_loras=1, reusing
+    # the same int_id across pairs caused vLLM to skip evicting/reloading the
+    # adapter, so subsequent pairs ran against a stale (or wrong) adapter,
+    # producing wrong-target-language outputs (e.g. eng-lug emitting Shona).
     lora_req = LoRARequest(
         lora_name=f"{src}-{tgt}",
-        lora_int_id=1,
+        lora_int_id=lora_int_id,
         lora_path=ADAPTER_FMT.format(src=src, tgt=tgt),
     )
 
@@ -345,13 +350,14 @@ def main() -> int:
     stop_ids = collect_stop_token_ids(tokenizer)
     print(f"  base model loaded ({time.time()-t0:.1f}s)  stop_ids={stop_ids}")
 
-    for pair in pairs:
+    for idx, pair in enumerate(pairs, start=1):
         src, tgt = pair.split("-")
         ts = time.time()
-        print(f"\n=== {pair} ===")
+        print(f"\n=== {pair} (lora_int_id={idx}) ===")
 
         samples = regenerate_pair(
             llm, tokenizer, src, tgt,
+            lora_int_id=idx,
             max_new_tokens=args.max_new_tokens,
             stop_ids=stop_ids,
             rep_penalty=args.rep_penalty,

@@ -30,12 +30,12 @@ M2M100\textunderscore{}418M & 58.6 & 58.8 & 65.2 & 66.8 & 64.4 & 59.7 & 61.9 & 6
 NLLB\textunderscore{}1.3B & \textbf{66.0} & \textbf{63.3} & \textbf{70.0} & \textbf{70.7} & \textbf{67.3} & \textbf{66.0} & \textbf{68.6} & \textbf{68.0} & \textbf{65.9} & \textbf{69.0} & \textbf{64.8} & \textbf{68.2} & \textbf{67.3} \\
 NLLB\textunderscore{}600M & 65.1 & 62.9 & 69.5 & 70.3 & 66.8 & 65.7 & 68.0 & 67.3 & 65.1 & 68.3 & 63.9 & 67.8 & 66.7 \\
 \midrule
-AfriqueLlama-8B & 49.6 & 51.5 & 58.7 & 58.7 & 55.5 & 51.6 & \emph{60.9} & 53.5 & 54.7 & 58.7 & 55.7 & 56.4 & 55.5 \\
+AfriqueLlama-8B & 49.6 & 51.5 & 58.7 & 58.7 & 55.5 & 51.6 & 60.9 & 53.5 & 54.7 & 58.7 & 55.7 & 56.4 & 55.5 \\
 AfriqueQwen-8B & 23.8 & 37.2 & 45.1 & 52.1 & 21.2 & 28.7 & 36.6 & 28.2 & 22.8 & 25.8 & 41.3 & 26.5 & 32.4 \\
-Gemma2-9B & 54.0 & 50.5 & \emph{62.7} & \emph{62.8} & \emph{58.9} & 48.4 & 60.4 & 60.6 & \emph{58.4} & \emph{61.1} & \emph{56.3} & 60.4 & \emph{57.9} \\
+Gemma2-9B & 54.0 & 50.5 & 62.7 & 62.8 & 58.9 & 48.4 & 60.4 & 60.6 & 58.4 & \emph{61.1} & 56.3 & 60.4 & 57.9 \\
 Llama3-8B & 42.4 & 51.3 & 61.1 & 60.6 & 56.8 & 50.3 & 58.1 & 60.2 & 57.7 & 60.4 & 55.6 & 59.0 & 56.1 \\
-Tiny-Aya-E & \emph{54.3} & 54.3 & 59.8 & 59.2 & 57.1 & \emph{55.7} & 57.8 & \emph{61.0} & 56.5 & 58.7 & 50.2 & \emph{60.5} & 57.1 \\
-Tiny-Aya-G & 53.4 & \emph{54.5} & 59.1 & 59.3 & 56.8 & 53.9 & 49.0 & 55.4 & 21.9 & 43.3 & 20.5 & 33.1 & 46.7 \\
+Tiny-Aya-E & 54.3 & 54.3 & 59.8 & 59.2 & 57.1 & 55.7 & 57.8 & \emph{61.0} & 56.5 & 58.7 & 50.2 & 60.5 & 57.1 \\
+Tiny-Aya-G & \emph{60.8} & \emph{61.7} & \emph{65.0} & \emph{65.2} & \emph{63.8} & \emph{61.8} & \emph{64.8} & 59.4 & \emph{63.9} & 48.5 & \emph{61.2} & \emph{63.5} & \emph{61.6} \\
 \bottomrule
 \end{tabular}
 \caption{Sentence-level zero-shot vs.\ fine-tuned performance (COMET). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
