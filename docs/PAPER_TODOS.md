@@ -175,6 +175,76 @@ attributable to data starvation from the 91% volume cut.
 
 ---
 
+---
+
+## 2026-05-07 — Prompt-template structure audit (closed APIs only)
+
+**Status:** audit complete; concrete prose ready to drop into the
+methodology paragraph and Figure 4 caption. Numbers already in the
+2026-05-06 bookmark above.
+
+### What we have (5 sentence-level templates from `prompt-templates.tex`)
+
+| # | Description | `{examples}` slot? | `{glossary}` slot? | Few-shot capable? |
+|---|---|---|---|---|
+| T1 | Basic translation | No | No | **0-shot only** |
+| T2 | Scientific translation | No | No | **0-shot only** |
+| T3 | Translation with examples | **Yes** | No | Yes |
+| T4 | Translation with glossary | No | Yes | **0-shot only** |
+| T5 | Translation with examples + glossary | **Yes** | Yes | Yes |
+
+Plus a **"Template 5 (sem.\ prompt)"** variant: identical to T5 but with
+**semantically-retrieved** few-shot examples instead of randomly-sampled
+ones, evaluated only on Eng→xxx (no semantic ICL run for X→Eng).
+
+Doc-level templates are a **separate set** (D1 basic, D2 domain-specific,
+D3 simplified) that share numbers with the sentence-level set — a
+paper-internal collision worth disambiguating.
+
+### Three findings the paper text should address
+
+1. **Templates 1, 2, 4 are 0-shot only.** They have no `{examples}`
+   placeholder, so few-shot examples have nowhere to go. Figure 4 shows
+   them as isolated points at $x=0$ while T3 / T5 / T5-sem show full
+   curves across shots. Without explanation, a reader sees "three flat
+   lines" and wonders if the data is missing.
+2. **Template 5 (sem.\ prompt)** is template 5 with semantic-retrieval,
+   not a 6th template — the figure legend phrasing already implies
+   this but the methodology section doesn't.
+3. **Doc-level Template 3 ≠ sentence-level Template 3.** They share a
+   number across `prompt-templates.tex` figures. As long as no figure
+   in the paper sits adjacent to both (which the current ordering
+   avoids), the numbering can stand; otherwise rename one set as
+   D1/D2/D3.
+
+### Proposed addition — methodology section, one sentence
+
+> Sentence-level closed-API templates differ in what context they admit:
+> templates 1, 2, and 4 contain no \texttt{\{examples\}} placeholder and
+> are reported at 0-shot only; templates 3 and 5 vary across shot counts.
+> "Template 5 (sem.\ prompt)" denotes template 5 with
+> semantically-retrieved few-shot examples in place of randomly-sampled
+> ones, evaluated only on \texttt{eng}$\to$\texttt{xxx}.
+
+### Proposed Figure 4 caption (replaces the current one)
+
+> ChrF (or COMET, depending on metric figure) for GPT-4o and
+> Gemini-1.5-Flash on \texttt{eng}$\to$\texttt{xxx}, across five prompt
+> templates and shot counts $\in\{0, 5, 10, 20, 50\}$. Templates 1, 2,
+> and 4 contain no \texttt{\{examples\}} slot and are reported at
+> 0-shot only (single markers); templates 3, 5, and 5 (sem.\ prompt)
+> vary across shot counts (full curves). 5 (sem.\ prompt) uses
+> semantically-retrieved few-shot examples; templates 3 and 5 use
+> randomly-sampled ones.
+
+### Cross-reference
+
+The "up to 10 ChrF" overstatement claim is fixed in the bookmark above
+(2026-05-06): true max is 6.3 ChrF, median ~1 ChrF, p90 ~4 ChrF. Apply
+the methodology footnote there in the same edit pass.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
