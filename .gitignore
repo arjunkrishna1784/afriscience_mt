@@ -24,6 +24,9 @@ dist/
 # Logs
 *.log
 
+# Local backup files (e.g. predictions.json.bak from regen scripts)
+*.bak
+
 # --- Model files: never ship ---
 # Local training/inference checkpoints
 checkpoints/
