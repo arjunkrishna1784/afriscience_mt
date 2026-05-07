@@ -386,29 +386,50 @@ def build_lora(rows, metric):
 
 
 def build_doc(rows, metric):
+    """**Main paper Table 4 (or appendix).** Document-level zero-shot vs.\
+    1-shot ICL. Two major groups; each has closed (Gemini-1.5, GPT-4o) and
+    open (7 LLMs incl. TransGemma-12B) sub-blocks. Same hierarchical
+    bolding as Tables 1/2 and an Avg column."""
     metric_label = "chrF" if metric == "chrf" else "COMET"
-    zs_rows = []
-    one_rows = []
-    for m in LLM_MODELS:
-        # accept both new (doc_0shot) and legacy (doc_0shot_legacy) prompt strategies
-        d_zs = first_with_pred(rows, metric=metric, candidates=[
-            dict(experiment_type="llm_doc", prompt_strategy="doc_0shot",
-                 model_short=m, is_ablation="False"),
-            dict(experiment_type="llm_doc", prompt_strategy="doc_0shot_legacy",
-                 model_short=m, is_ablation="False"),
+    closed_models = ["gemini_15_flash", "gpt4o"]
+    open_models = LLM_MODELS  # already includes translategemma_12b
+
+    def by_disp(model_list):
+        return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
+
+    def doc_lookup(model, shot):
+        """shot in {0, 1}; accept both new and legacy prompt strategies."""
+        new_key = f"doc_{shot}shot"
+        legacy_key = f"doc_{shot}shot_legacy"
+        return first_with_pred(rows, metric=metric, candidates=[
+            dict(experiment_type="llm_doc", prompt_strategy=new_key,
+                 model_short=model, is_ablation="False"),
+            dict(experiment_type="llm_doc", prompt_strategy=legacy_key,
+                 model_short=model, is_ablation="False"),
         ])
-        d_one = first_with_pred(rows, metric=metric, candidates=[
-            dict(experiment_type="llm_doc", prompt_strategy="doc_1shot",
-                 model_short=m, is_ablation="False"),
-            dict(experiment_type="llm_doc", prompt_strategy="doc_1shot_legacy",
-                 model_short=m, is_ablation="False"),
-        ])
-        zs_rows.append((m, vec(d_zs)))
-        one_rows.append((m, vec(d_one)))
-    return render_table(
+
+    def rows_for(models, shot):
+        return [(m, vec(doc_lookup(m, shot))) for m in by_disp(models)]
+
+    return render_grouped_table(
         label=f"tab:doc_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=f"Document-level: zero-shot vs.\\ 1-shot ({metric_label})",
-        blocks=[("Zero-shot", zs_rows), ("1-shot", one_rows)],
+        caption=("Document-level zero-shot vs.\\ 1-shot in-context learning "
+                 f"({metric_label}). Two major groups; each has closed-API "
+                 "and open-LLM sub-blocks. Models alphabetically sorted "
+                 "within each sub-block. \\textbf{Bold}: column maximum "
+                 "within the major group (\\textit{Zero-shot} or "
+                 "\\textit{1-shot}); \\emph{italic}: column maximum within "
+                 "the sub-block (closed or open)."),
+        major_groups=[
+            ("Zero-shot", [
+                (None, rows_for(closed_models, 0)),
+                (None, rows_for(open_models,   0)),
+            ]),
+            ("1-shot", [
+                (None, rows_for(closed_models, 1)),
+                (None, rows_for(open_models,   1)),
+            ]),
+        ],
     )
 
 
@@ -515,17 +536,16 @@ def build_open_vs_closed_icl(rows, metric):
 
     return render_grouped_table(
         label=f"tab:open_vs_closed_icl_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=("Closed-API zero-shot and 5-shot in-context learning "
-                 "alongside per-model open-LLM 5-shot ICL "
-                 f"({metric_label}). \\textit{{Best open}} in the "
-                 "zero-shot block is the per-cell maximum across all open "
-                 "LLMs (per-model open zero-shot rows appear in "
-                 "Table~\\ref{tab:main_zs_ft_" +
-                 ("chrf" if metric == "chrf" else "comet") + "}). "
-                 "\\textbf{Bold}: column maximum within the major group "
-                 "(\\textit{Zero-shot} or \\textit{5-shot ICL}); "
-                 "\\emph{italic}: column maximum within the sub-block "
-                 "(open or closed)."),
+        caption=("Open vs.\\ closed-source LLMs at sentence-level "
+                 f"in-context learning ({metric_label}). "
+                 "\\textit{Best open} rows are the per-language best "
+                 "performances across the seven open LLMs in "
+                 "\\Cref{tab:main_zs_ft_" +
+                 ("chrf" if metric == "chrf" else "comet") + "}. "
+                 "\\textbf{Bold}: best performance across "
+                 "\\textit{zero-shot} and \\textit{5-shot ICL}; "
+                 "\\emph{italic}: best performance within open or closed "
+                 "model group."),
         major_groups=[
             ("Zero-shot", [
                 (None, [("best_open", vec(best_open_zs()))]),
