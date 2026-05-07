@@ -173,7 +173,7 @@ def render_balance_table(*, label: str, caption: str, blocks: list):
 def build_balance_tables():
     for metric, suffix, label_metric in [
         ("chrf",      "chrf",  "ChrF"),
-        ("ssa_comet", "comet", "SSA-COMET"),
+        ("ssa_comet", "comet", "COMET"),
     ]:
         rows = []
         for tau_short, dir_name, tau_disp in CONDITIONS:
@@ -362,13 +362,111 @@ def render_domain_x_lang_table(*, label: str, caption: str,
     return "\n".join(lines) + "\n"
 
 
-def build_domain_x_lang_table():
-    """One Table 7-style table per (compared-condition × direction).
+def render_dual_metric_domain_table(*, label: str, caption: str,
+                                    chrf_block: dict, comet_block: dict):
+    """Render a single \\begin{table*} with two \\begin{subtable}, one per
+    metric (ChrF on top, COMET below). Each subtable: rows = 11 domains
+    + all-domains; cols = 6 Eng→X langs; cells = ``score (Δ vs base)``."""
+    targets = LANGS
+    head = " & ".join("\\texttt{\\textbf{" + l + "}}" for l in targets)
 
-    For now: τ=∞ vs τ=1 (the cleanest balance ablation contrast),
-    Eng→xxx direction, ChrF only (SSA-COMET would need GPU rescore on
-    the τ=1 baseline since it lacks per_domain in results.json).
-    """
+    def cell(score: float | None, delta: float | None) -> str:
+        if score is None:
+            return "--"
+        if delta is None:
+            return f"{score:.1f}"
+        sign = "+" if delta >= 0 else ""
+        col = "blue" if delta >= 0 else "red"
+        return f"{score:.1f} (\\textcolor{{{col}}}{{{sign}{delta:.1f}}})"
+
+    def subtable(metric_name: str, block: dict) -> list[str]:
+        cmp_dom = block["cmp_dom"]
+        base_dom = block["base_dom"]
+        cmp_overall = block["cmp_overall"]
+        base_overall = block["base_overall"]
+
+        out = [
+            r"    \begin{subtable}{\textwidth}",
+            r"        \centering",
+            r"        \resizebox{\textwidth}{!}{",
+            r"        \begin{tabular}{lrrrrrrr}",
+            r"        \toprule",
+            (r"            \multirow{2}{*}{\textbf{domain}} & "
+             r"\multirow{2}{*}{\textbf{\#sents}} & "
+             rf"\multicolumn{{6}}{{c}}{{\textbf{{domain-level {metric_name}}}}} \\"),
+            r"            \cmidrule(lr){3-8}",
+            f"            & & {head} \\\\",
+            r"        \midrule",
+        ]
+        # all-domains row
+        cells = []
+        for tgt in targets:
+            pair = f"eng-{tgt}"
+            v = cmp_overall.get(pair); b = base_overall.get(pair)
+            d = (v - b) if (v is not None and b is not None) else None
+            cells.append(cell(v, d))
+        out.append(r"            \textit{all-domains} & 5{,}792 & "
+                   + " & ".join(cells) + r" \\")
+        out.append(r"        \midrule")
+        for dom_key, _disp, dom_n in DOMAINS:
+            cells = []
+            for tgt in targets:
+                pair = f"eng-{tgt}"
+                v = cmp_dom.get(pair, {}).get(dom_key)
+                b = base_dom.get(pair, {}).get(dom_key)
+                d = (v - b) if (v is not None and b is not None) else None
+                cells.append(cell(v, d))
+            out.append(f"            {dom_key} & {dom_n} & "
+                       + " & ".join(cells) + r" \\")
+        out += [
+            r"        \bottomrule",
+            r"        \end{tabular}",
+            r"        }",
+            f"        \\caption{{{metric_name}}}",
+            r"    \end{subtable}",
+        ]
+        return out
+
+    lines = [f"% ---- {label.split(':',1)[1]} ----",
+             r"\begin{table*}[t]"]
+    lines += subtable("ChrF",  chrf_block)
+    lines.append("")
+    lines += subtable("COMET", comet_block)
+    lines += [
+        f"    \\caption{{{caption}}}",
+        f"    \\label{{{label}}}",
+        r"\end{table*}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def per_domain_metric_for_pair(cond: str, pair: str, metric: str) -> dict[str, float]:
+    """Get per-domain `metric` for one (condition, pair) cell.
+
+    Reads stored results.json.metrics.per_domain when available
+    (balance_t2, balance_tinf, and now dcs after the GPU rescore);
+    falls back to chrF-on-the-fly for chrf only."""
+    base = NLLB_BASE / cond / pair
+    res = base / "results.json"
+    if res.exists():
+        pd = (json.loads(res.read_text()).get("metrics") or {}).get("per_domain") or {}
+        if pd:
+            out = {}
+            for dom, stats in pd.items():
+                v = (stats or {}).get(metric)
+                if v is None:
+                    continue
+                out[dom] = v * 100 if metric == "ssa_comet" else v
+            if out:
+                return out
+    if metric == "chrf":
+        src, tgt = pair.split("-")
+        return per_domain_chrf(base / "predictions.json", src, tgt)
+    return {}
+
+
+def build_domain_x_lang_table():
+    """ChrF-only Table-7-style for τ=∞ vs τ=1, Eng→X."""
     base, cmp = {}, {}
     base_overall, cmp_overall = {}, {}
     for tgt in LANGS:
@@ -483,12 +581,64 @@ def fig_balance_spider():
     _per_pair_spider_subdir(subdir_name="spider_balance", systems=systems)
 
 
+def build_dual_metric_domain_table():
+    """Two-subtable τ=∞ vs τ=1 domain × lang table — ChrF (top) + COMET (bottom).
+
+    Mirrors the page-26 Table 7 layout the user pasted, but for the
+    temperature-sampling ablation (no `paper(s) id` / `#sents` columns
+    since τ-sampling holds the total corpus at 5,792 sentences).
+    """
+    chrf_base, chrf_cmp, chrf_base_o, chrf_cmp_o = {}, {}, {}, {}
+    comet_base, comet_cmp, comet_base_o, comet_cmp_o = {}, {}, {}, {}
+    for tgt in LANGS:
+        pair = f"eng-{tgt}"
+        chrf_base[pair]  = per_domain_metric_for_pair("dcs",          pair, "chrf")
+        chrf_cmp[pair]   = per_domain_metric_for_pair("balance_tinf", pair, "chrf")
+        comet_base[pair] = per_domain_metric_for_pair("dcs",          pair, "ssa_comet")
+        comet_cmp[pair]  = per_domain_metric_for_pair("balance_tinf", pair, "ssa_comet")
+        for cond, sink_chrf, sink_comet in [
+            ("dcs",          chrf_base_o,  comet_base_o),
+            ("balance_tinf", chrf_cmp_o,   comet_cmp_o),
+        ]:
+            r = NLLB_BASE / cond / pair / "results.json"
+            if r.exists():
+                m = json.loads(r.read_text()).get("metrics", {})
+                if m.get("chrf") is not None:
+                    sink_chrf[pair] = m["chrf"]
+                if m.get("ssa_comet") is not None:
+                    sink_comet[pair] = m["ssa_comet"] * 100
+
+    out = TABLES_DIR / "balance_domain_x_lang_eng_xxx_dual.tex"
+    out.write_text(render_dual_metric_domain_table(
+        label="tab:balance_domain_eng_xxx_dual",
+        caption=(
+            "Domain-level performance of NLLB-1.3B on \\texttt{eng}$\\to$"
+            "\\texttt{xxx} translation under uniform temperature sampling "
+            "($\\tau{=}\\infty$). Numbers in parentheses are the change "
+            "relative to the natural-distribution baseline ($\\tau{=}1$); "
+            "blue = improvement, red = decrease. Total training volume is "
+            "held at 5{,}792 sentences across both conditions; only the "
+            "per-example sampling weight changes. Needs \\texttt{xcolor}."
+        ),
+        chrf_block={
+            "cmp_dom": chrf_cmp, "base_dom": chrf_base,
+            "cmp_overall": chrf_cmp_o, "base_overall": chrf_base_o,
+        },
+        comet_block={
+            "cmp_dom": comet_cmp, "base_dom": comet_base,
+            "cmp_overall": comet_cmp_o, "base_overall": comet_base_o,
+        },
+    ))
+    print(f"  ✓ {out.relative_to(ROOT)}")
+
+
 def main():
     print("Building §4 balance ablation assets...")
     print()
     print("[tables]")
     build_balance_tables()
     build_domain_x_lang_table()
+    build_dual_metric_domain_table()
     print()
     print("[figures]")
     pdom = fig_balance_heatmap()

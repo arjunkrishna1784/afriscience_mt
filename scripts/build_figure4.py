@@ -166,11 +166,10 @@ def _legend_handles(eng_to_x: bool):
 
 def build_one_direction(eng_to_x: bool, fname: str, metric: str = "ssa_comet"):
     """3 rows × 2 lang-cols, each cell = paired (gemini | gpt-4o) plot."""
-    direction = "Eng$\\to$" if eng_to_x else "$\\to$Eng"
-    metric_label = "SSA-COMET" if metric == "ssa_comet" else "ChrF"
-    fig = plt.figure(figsize=(7.5, 5.6))
+    metric_label = "COMET" if metric == "ssa_comet" else "ChrF"
+    fig = plt.figure(figsize=(7.5, 5.0))
     # outer grid: 3 rows × 2 columns; inner per cell: 1 row × 2 cols (paired plot)
-    outer = fig.add_gridspec(3, 2, hspace=0.55, wspace=0.20,
+    outer = fig.add_gridspec(3, 2, hspace=0.32, wspace=0.20,
                              left=0.06, right=0.99, top=0.96, bottom=0.10)
 
     pair_grid_order = [
@@ -185,9 +184,10 @@ def build_one_direction(eng_to_x: bool, fname: str, metric: str = "ssa_comet"):
         axR = fig.add_subplot(inner[0, 1])
         # Tiny pair label centred above the paired cell.
         bb = outer[r, c].get_position(fig)
+        pair_label = f"eng→{lang}" if eng_to_x else f"{lang}→eng"
         fig.text(bb.x0 + bb.width / 2, bb.y0 + bb.height + 0.005,
-                 f"{direction.replace('$\\\\to$', '→')}{lang}",
-                 ha="center", va="bottom", fontsize=7, fontweight="bold")
+                 pair_label, ha="center", va="bottom",
+                 fontsize=7, family="monospace")
         _plot_pair_cell(axL, axR, eng_to_x=eng_to_x, lang=lang, metric=metric)
         # Hide y tick labels on the right subplot of each pair (shared scale).
         axR.set_yticklabels([])

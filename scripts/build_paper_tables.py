@@ -199,7 +199,7 @@ def _seq2seq_blocks(rows, metric, models):
 
 def build_seq2seq(rows, metric):
     """Main-paper seq2seq table: M2M100-1.2B and NLLB-1.3B only."""
-    metric_label = "chrF" if metric == "chrf" else "SSA-COMET"
+    metric_label = "chrF" if metric == "chrf" else "COMET"
     return render_table(
         label=f"tab:seq2seq_{'chrf' if metric=='chrf' else 'comet'}",
         caption=f"Seq2Seq: zero-shot vs.\\ fine-tuned ({metric_label})",
@@ -209,7 +209,7 @@ def build_seq2seq(rows, metric):
 
 def build_seq2seq_appendix(rows, metric):
     """Appendix seq2seq table: smaller backbones (M2M100-418M, NLLB-600M)."""
-    metric_label = "chrF" if metric == "chrf" else "SSA-COMET"
+    metric_label = "chrF" if metric == "chrf" else "COMET"
     return render_table(
         label=f"tab:seq2seq_smaller_{'chrf' if metric=='chrf' else 'comet'}",
         caption=("Smaller seq2seq backbones (M2M100-418M, NLLB-600M): "
@@ -221,7 +221,7 @@ def build_seq2seq_appendix(rows, metric):
 
 
 def build_llm_sentence(rows, metric):
-    metric_label = "chrF" if metric == "chrf" else "SSA-COMET"
+    metric_label = "chrF" if metric == "chrf" else "COMET"
     zs_rows = [
         (m, vec(lookup(rows, metric=metric, model_short=m,
                        experiment_type="llm_zero_shot", is_ablation="False")))
@@ -245,7 +245,7 @@ def build_llm_sentence(rows, metric):
 
 
 def build_lora(rows, metric):
-    metric_label = "chrF" if metric == "chrf" else "SSA-COMET"
+    metric_label = "chrF" if metric == "chrf" else "COMET"
     r4_rows = [
         (m, vec(lookup(rows, metric=metric, model_short=m,
                        experiment_type="lora_finetune", lora_rank="4",
@@ -266,7 +266,7 @@ def build_lora(rows, metric):
 
 
 def build_doc(rows, metric):
-    metric_label = "chrF" if metric == "chrf" else "SSA-COMET"
+    metric_label = "chrF" if metric == "chrf" else "COMET"
     zs_rows = []
     one_rows = []
     for m in LLM_MODELS:
