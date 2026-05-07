@@ -307,19 +307,20 @@ report.
 
 ## 2026-05-07 — Tiny-Aya-G xxx→eng degeneration discovered via spot-check
 
-**Status:** bookmarked. Pending: re-run inference with
-`scripts/regenerate_tiny_aya_global_predictions.py` (vLLM) and update Table 1.
-The finding itself is worth a one-sentence note in the paper recommending
-that practitioners eyeball generations rather than trust scalar metrics
-blindly.
+**Status:** RESOLVED in tables; prose locked in for both Methodology
+appendix (full paragraph) and Discussion (one sentence). Run that fixed
+the issue: vLLM regeneration with unique `lora_int_id` per pair,
+`repetition_penalty=1.08`, explicit chat-template stop tokens. Tiny-Aya-G
+COMET row recovered to the 60+ range across all 12 pairs (avg 64.9, best
+LLM in Table~\ref{tab:main_zs_ft_comet}).
 
-**What we found.** While verifying Table 1, the user asked for a random spot
-check of Tiny-Aya-G (`CohereLabs/tiny-aya-global` LoRA r=64). The fine-tuned
-xxx→eng predictions are *sentence-doubled* — each output is roughly
-"`<sentence>.<sentence>`". ChrF/BLEU survive duplication (n-grams just
-appear twice), but SSA-COMET catches the broken fluency:
+**What we found.** While verifying Table 1, a random spot-check of
+Tiny-Aya-G (`CohereLabs/tiny-aya-global` LoRA r=64) revealed sentence-
+doubled outputs on the xxx→eng direction — each hyp roughly
+"`<sentence>.<sentence>`". ChrF/BLEU survive duplication (n-grams appear
+twice), but SSA-COMET caught the broken fluency:
 
-| pair | COMET | exact-half-dup |
+| pair | COMET (broken) | exact-half-dup |
 |---|---:|---:|
 | lug-eng | 21.9 | 63.1% |
 | yor-eng | 20.5 | 67.2% |
@@ -329,38 +330,43 @@ appear twice), but SSA-COMET catches the broken fluency:
 | hau-eng | 55.4 | 14.1% |
 | eng→xxx | 53–59 | 0–8% |
 
-The bug is direction-specific (eng→xxx is essentially clean) and severity-
-graded by language. Likely cause: at-inference EOS / end-of-turn handling
-on the chat-template-trained adapter. Fixed by regenerating with explicit
-chat-template stop tokens + `repetition_penalty=1.15` +
-`frequency_penalty=0.3`.
+The bug was direction-specific and severity-graded by language. The fix
+was inference-side only (no retraining): vLLM with
+`repetition_penalty=1.08`, `frequency_penalty=0.0`, explicit chat-template
+end-of-turn stop tokens, and a unique `lora_int_id` per adapter (an
+earlier `--all` run with `lora_int_id=1` reused the slot and produced
+wrong-target-language outputs).
 
-### Proposed text — Discussion / Limitations (one sentence)
+### Final prose — Methodology appendix (Decoding controls and manual inspection)
 
-> A spot-check of fine-tuned outputs revealed a systematic
-> sentence-doubling failure on one of our LoRA adapters that lowered
-> SSA-COMET by 20–40 points while leaving ChrF largely unaffected (n-gram
-> overlap is preserved under repetition). We therefore caution
-> practitioners that scalar metrics — especially surface-form metrics like
-> ChrF/BLEU — should be paired with manual inspection of a sample of
-> generations: had we relied on ChrF alone we would have shipped degraded
-> predictions for six of the twelve pairs.
+> All fine-tuned LLM inference runs greedy decoding with the model's
+> chat-template end-of-turn tokens as explicit stop conditions and a
+> mild repetition penalty (1.08). We adopted these controls after a
+> routine spot-check caught one adapter (Tiny-Aya-Global) emitting
+> sentence-doubled outputs (\texttt{<sent>.<sent>}) on the six
+> $\rightarrow$English pairs. This halved its COMET score (20–33 instead
+> of 60+) while leaving ChrF largely intact, because n-gram overlap
+> survives duplication. The lesson is broader than one bug: we recommend
+> pairing scalar metrics with a quick manual look at a sample of
+> generations, and treating large inter-metric (COMET and ChrF here)
+> gaps as a cheap degeneration signal in their own right.
 
-### What this implies for tooling
+### Final prose — Discussion (one sentence)
+
+> Pairing scalar metrics with a quick manual look at generations matters:
+> a late spot-check caught one of our LoRA adapters emitting duplicated
+> sentences in a way that halved COMET while leaving ChrF intact, and
+> the COMET--ChrF gap itself was the cheapest signal that anything was
+> wrong.
+
+### What this implies for tooling (kept for future reference)
 
 - Inference scripts should default to `repetition_penalty>1` and explicit
   stop tokens for chat-template models.
+- vLLM with `max_loras=1` requires a unique `lora_int_id` per adapter;
+  reusing the same id silently serves stale weights.
 - Result-aggregation pipelines should flag rows where COMET ≪ ChrF
   (large divergence is a degeneration signal worth eyeballing).
-
-### What's still missing
-
-1. Run `python scripts/regenerate_tiny_aya_global_predictions.py` on a GPU
-   box and verify duplication rate drops to ≤2%.
-2. Re-run `python scripts/build_paper_tables.py` and confirm
-   Table 1's Tiny-Aya-G row in `→eng` recovers to the 50–60 range.
-3. Decide whether the Limitations sentence above goes in the main paper
-   or as an appendix-level methodology note.
 
 ---
 
