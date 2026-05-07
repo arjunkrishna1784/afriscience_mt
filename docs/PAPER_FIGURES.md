@@ -54,6 +54,7 @@ component.
 | `lora_comet.tex` (`tab:lora_comet`) | LoRA fine-tuning of open-source LLMs on AfriScience-MT, $r{=}4$ vs.\ $r{=}64$, SSA-COMET. Best per column in bold. |
 | `doc_comet.tex` (`tab:doc_comet`) | Document-level SSA-COMET for open-source LLMs, zero-shot vs.\ 1-shot. Best per column in bold. |
 | `balance_comet.tex` (`tab:balance_comet`) | Domain-balance ablation on NLLB-1.3B fine-tuned on AfriScience-MT (SSA-COMET). $\tau{=}1$ uses the natural domain proportions; $\tau{=}2$ applies sqrt smoothing; $\tau{=}\infty$ samples uniformly across all 11 domains. Best per column in bold. |
+| `mafand_nllb.tex` (`tab:mafand_nllb`) | Cross-domain transfer for NLLB-1.3B fine-tuned on AfriScience-MT (AS-MT), MAFAND-MT (MF), or their union (\texttt{+MF}); SSA-COMET (top block) and ChrF (bottom block) on the four MAFAND-supported language pairs in both directions. Best per column within each metric block is in bold. **Note:** the two metrics disagree — under SSA-COMET, AS-MT alone wins every cell over AS-MT+MF; under ChrF, AS-MT+MF wins most cells. Worth one sentence in §3 prose. |
 
 ---
 
