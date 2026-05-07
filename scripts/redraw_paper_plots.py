@@ -409,6 +409,7 @@ def fig_seq2seq_7x7(rows, model_short, model_disp, metric_disp, metric, fname):
     cbar = fig.colorbar(im, ax=axes, fraction=0.025, pad=0.03)
     cbar.ax.tick_params(labelsize=6)
     out = FIG_DIR / fname
+    out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, bbox_inches="tight")
     plt.close(fig)
     return out
@@ -435,6 +436,7 @@ def fig_lora_7x7(rows, model_short, model_disp, lora_rank, fname):
                      hmin, hmax, show_xlabel=True, show_ylabel=False)
     fig.colorbar(im_h, ax=axes, fraction=0.025, pad=0.03)
     out = FIG_DIR / fname
+    out.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out, bbox_inches="tight")
     plt.close(fig)
     return out
@@ -511,7 +513,35 @@ SPIDER_DOMAIN_SHORT = {
 }
 
 
-def fig_spider_per_pair_subdir():
+def per_domain_metric(pred_path: Path, src_lang: str, tgt_lang: str,
+                      metric: str) -> dict[str, float]:
+    """Per-domain `metric` for one (system, pair) cell.
+
+    For SSA-COMET we read the stored ``metrics.per_domain[<cat>].ssa_comet``
+    block from the sibling results.json (populated by
+    ``scripts/rescore_per_domain_ssa.py``). For chrF we compute on the fly
+    from predictions.json + the test split's category column.
+    """
+    if metric == "chrf":
+        return per_domain_chrf(pred_path, src_lang, tgt_lang)
+    if metric != "ssa_comet":
+        raise ValueError(metric)
+    res = pred_path.parent / "results.json"
+    if not res.exists():
+        return {}
+    pd = (json.loads(res.read_text()).get("metrics") or {}).get("per_domain")
+    if not pd:
+        return {}
+    out = {}
+    for cat, stats in pd.items():
+        v = stats.get("ssa_comet")
+        if v is None:
+            continue
+        out[cat] = v * 100  # 0..1 -> 0..100 for plotting
+    return out
+
+
+def fig_spider_per_pair_subdir(metric: str = "chrf"):
     """Per-pair spider PDFs in two flavours:
 
       figures/new/spider_per_pair/<pair>.pdf       -- 3 systems
@@ -578,8 +608,13 @@ def fig_spider_per_pair_subdir():
             src, tgt = pair.split("-")
             for sys in systems_fn(pair):
                 base = sys[1]
-                d = per_domain_chrf(base / pair / "predictions.json", src, tgt)
+                d = per_domain_metric(base / pair / "predictions.json",
+                                      src, tgt, metric)
                 all_vals.extend(d.values())
+        if not all_vals:
+            print(f"  ! {subdir_name}: no per-domain {metric} data found "
+                  "(run scripts/rescore_per_domain_ssa.py first?)")
+            return None
         y_top = int(np.ceil(max(all_vals))) + 1
         y_ticks = [v for v in (20, 40, 60, 80) if v < y_top]
 
@@ -592,7 +627,8 @@ def fig_spider_per_pair_subdir():
             fig = plt.figure(figsize=(1.9, 1.9))
             ax = fig.add_subplot(111, polar=True)
             for (sys_name, base, line_c, fill_c, ls, marker) in systems_fn(pair):
-                d = per_domain_chrf(base / pair / "predictions.json", src, tgt)
+                d = per_domain_metric(base / pair / "predictions.json",
+                                      src, tgt, metric)
                 vals = [d.get(dom, 0.0) for dom in domain_order]
                 vals += vals[:1]
                 ax.plot(angles, vals, color=line_c, linewidth=0.6,
@@ -620,8 +656,9 @@ def fig_spider_per_pair_subdir():
         print(f"  ✓ 12 PDFs in {out_dir.relative_to(ROOT)}/")
         return out_dir
 
-    emit(systems3, "spider_per_pair/3sys")     # 3-system version
-    emit(systems4, "spider_per_pair/4sys")     # 4-system (+ Tiny-Aya-E)
+    sub = "comet" if metric == "ssa_comet" else "chrf"
+    emit(systems3, f"spider_per_pair/3sys/{sub}")
+    emit(systems4, f"spider_per_pair/4sys/{sub}")
     return FIG_DIR / "spider_per_pair"
 
 
@@ -819,34 +856,35 @@ def main():
     written.append(fig_n2n_heatmap(rows))
 
     # Figure 7-style 7×7 zero-shot vs fine-tuned, per backbone × metric.
-    # Bigger backbones (main): only eng↔X is fine-tuned -> right panel is sparse.
-    # Smaller backbones (appendix): full 7×7 fine-tune is on the server,
-    # picked up automatically once those rows land in summary.csv.
+    # Output mirrored under fig7/{comet,chrf}/<short>.pdf.
     fig7_targets = [
-        # (model_short, display, "main"/"appendix")
-        ("m2m100_1_2b",            "M2M100-1.2B", "main"),
-        ("nllb_200_1_3b",          "NLLB-1.3B",   "main"),
-        ("m2m100_418m",            "M2M100-418M", "appendix"),
-        ("nllb_200_distilled_600m","NLLB-600M",   "appendix"),
+        ("m2m100_1_2b",            "M2M100-1.2B"),
+        ("nllb_200_1_3b",          "NLLB-1.3B"),
+        ("m2m100_418m",            "M2M100-418M"),
+        ("nllb_200_distilled_600m","NLLB-600M"),
     ]
-    for model_short, disp, _kind in fig7_targets:
-        for metric_disp, metric, suffix in [("ChrF", "chrf", "chrf"),
-                                            ("SSA-COMET", "ssa_comet", "comet")]:
+    for model_short, disp in fig7_targets:
+        for metric_disp, metric, sub in [("ChrF",      "chrf",      "chrf"),
+                                          ("SSA-COMET", "ssa_comet", "comet")]:
             short = (model_short
                      .replace("nllb_200_distilled_600m", "nllb_600m")
                      .replace("nllb_200_1_3b", "nllb_1_3b"))
-            fname = f"fig7_{short}_{suffix}.pdf"
+            fname = f"fig7/{sub}/{short}.pdf"
             written.append(fig_seq2seq_7x7(rows, model_short, disp,
                                            metric_disp, metric, fname))
-    # Figure 8-style 7×7 LoRA, COMET + chrF side-by-side
+    # Figure 8-style 7×7 LoRA — keep both metrics side-by-side in one PDF
     written.append(fig_lora_7x7(rows, "gemma2_9b_it", "Gemma2-9B", "64",
-                                "fig8_gemma2_9b_r64.pdf"))
+                                "fig8/gemma2_9b_r64.pdf"))
 
     print("Computing per-domain chrF (this takes a few seconds per system)...")
     written.append(fig_per_domain_radar())
     written.append(fig_per_domain_weighted())
     written.append(fig_spider_per_pair())
-    fig_spider_per_pair_subdir()  # per-pair PDFs for LaTeX \subfigure use
+    # Mirrored chrf/ + comet/ subfolders. The comet/ branch only fills if
+    # results.json files have per-domain SSA-COMET (run
+    # scripts/rescore_per_domain_ssa.py first to populate them).
+    fig_spider_per_pair_subdir(metric="chrf")
+    fig_spider_per_pair_subdir(metric="ssa_comet")
 
     for p in written:
         print(f"  {p.relative_to(ROOT)}")
