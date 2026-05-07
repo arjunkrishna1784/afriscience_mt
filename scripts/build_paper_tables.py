@@ -322,7 +322,7 @@ def build_seq2seq(rows, metric):
     metric_label = "chrF" if metric == "chrf" else "COMET"
     return render_table(
         label=f"tab:seq2seq_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=f"Seq2Seq: zero-shot vs.\\ fine-tuned ({metric_label})",
+        caption=f"Seq2Seq: zero-shot vs. fine-tuned ({metric_label})",
         blocks=_seq2seq_blocks(rows, metric, SEQ2SEQ_MODELS_MAIN),
     )
 
@@ -333,7 +333,7 @@ def build_seq2seq_appendix(rows, metric):
     return render_table(
         label=f"tab:seq2seq_smaller_{'chrf' if metric=='chrf' else 'comet'}",
         caption=("Smaller seq2seq backbones (M2M100-418M, NLLB-600M): "
-                 f"zero-shot vs.\\ fine-tuned ({metric_label}). "
+                 f"zero-shot vs. fine-tuned ({metric_label}). "
                  "These are reported for completeness; the main paper "
                  "discusses the larger M2M100-1.2B and NLLB-1.3B."),
         blocks=_seq2seq_blocks(rows, metric, SEQ2SEQ_MODELS_APPENDIX),
@@ -359,7 +359,7 @@ def build_llm_sentence(rows, metric):
         icl_rows.append((m, vec(d)))
     return render_table(
         label=f"tab:llm_sentence_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=f"LLM sentence-level: zero-shot vs.\\ 5-shot ICL ({metric_label})",
+        caption=f"LLM sentence-level: zero-shot vs. 5-shot ICL ({metric_label})",
         blocks=[("Zero-shot", zs_rows), ("5-shot ICL", icl_rows)],
     )
 
@@ -380,7 +380,7 @@ def build_lora(rows, metric):
     ]
     return render_table(
         label=f"tab:lora_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=f"LoRA fine-tuning: $r{{=}}4$ vs.\\ $r{{=}}64$ ({metric_label})",
+        caption=f"LoRA fine-tuning: $r{{=}}4$ vs. $r{{=}}64$ ({metric_label})",
         blocks=[("LoRA $r{=}4$", r4_rows), ("LoRA $r{=}64$", r64_rows)],
     )
 
@@ -413,7 +413,7 @@ def build_doc(rows, metric):
 
     return render_grouped_table(
         label=f"tab:doc_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=("Document-level zero-shot vs.\\ 1-shot in-context learning "
+        caption=("Document-level zero-shot vs. 1-shot in-context learning "
                  f"({metric_label}). Two major groups; each has closed-API "
                  "and open-LLM sub-blocks. Models alphabetically sorted "
                  "within each sub-block. \\textbf{Bold}: column maximum "
@@ -468,7 +468,7 @@ def build_main_zs_ft(rows, metric):
 
     return render_grouped_table(
         label=f"tab:main_zs_ft_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=(f"Sentence-level zero-shot vs.\\ fine-tuned performance "
+        caption=(f"Sentence-level zero-shot vs. fine-tuned performance "
                  f"({metric_label}). The four seq2seq backbones (M2M100-418M, "
                  "NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source "
                  "LLMs appear in both major groups; the \\textit{Zero-shot} "
@@ -536,7 +536,7 @@ def build_open_vs_closed_icl(rows, metric):
 
     return render_grouped_table(
         label=f"tab:open_vs_closed_icl_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=("Open vs.\\ closed-source LLMs at sentence-level "
+        caption=("Open vs. closed-source LLMs at sentence-level "
                  f"in-context learning ({metric_label}). "
                  "\\textit{Best open} rows are the per-language best "
                  "performances across the seven open LLMs in "

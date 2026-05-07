@@ -39,7 +39,7 @@ Tiny-Aya-E & 37.8 & \emph{62.0} & 46.9 & 57.7 & 39.5 & 56.1 & 58.5 & 61.6 & 50.4
 Tiny-Aya-G & 38.1 & 60.9 & 47.3 & 57.6 & 38.3 & \emph{56.2} & 56.9 & 60.1 & 49.2 & 55.9 & 48.2 & 63.4 & 52.7 \\
 \bottomrule
 \end{tabular}
-\caption{Sentence-level zero-shot vs.\ fine-tuned performance (chrF). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; the \textit{Zero-shot} group additionally includes TransGemma-12B (evaluated but not fine-tuned). LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
+\caption{Sentence-level zero-shot vs. fine-tuned performance (chrF). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; the \textit{Zero-shot} group additionally includes TransGemma-12B (evaluated but not fine-tuned). LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
 \label{tab:main_zs_ft_chrf}
 \end{table*}
 
@@ -84,7 +84,7 @@ Tiny-Aya-E & 54.3 & 54.3 & 59.8 & 59.2 & 57.1 & 55.7 & 57.8 & 61.0 & 56.5 & 58.7
 Tiny-Aya-G & \emph{61.9} & \emph{61.6} & \emph{65.7} & \emph{65.3} & \emph{65.2} & \emph{63.1} & \emph{67.3} & \emph{67.2} & \emph{64.3} & \emph{66.4} & \emph{63.8} & \emph{67.2} & \emph{64.9} \\
 \bottomrule
 \end{tabular}
-\caption{Sentence-level zero-shot vs.\ fine-tuned performance (COMET). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; the \textit{Zero-shot} group additionally includes TransGemma-12B (evaluated but not fine-tuned). LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
+\caption{Sentence-level zero-shot vs. fine-tuned performance (COMET). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; the \textit{Zero-shot} group additionally includes TransGemma-12B (evaluated but not fine-tuned). LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
 \label{tab:main_zs_ft_comet}
 \end{table*}
 
@@ -120,7 +120,7 @@ Tiny-Aya-G & 29.9 & \emph{56.3} & 10.0 & 12.0 & 19.2 & 51.6 & 52.2 & 55.0 & 24.4
 TransGemma-12B & 26.2 & 45.4 & \emph{23.1} & \emph{32.2} & \textbf{23.9} & 43.8 & \emph{55.4} & 49.3 & 35.2 & 33.2 & 32.5 & 33.1 & \emph{36.1} \\
 \bottomrule
 \end{tabular}
-\caption{Open vs.\ closed-source LLMs at sentence-level in-context learning (chrF). \textit{Best open} rows are the per-language best performances across the seven open LLMs in \Cref{tab:main_zs_ft_chrf}. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{5-shot ICL}; \emph{italic}: best performance within open or closed model group.}
+\caption{Open vs. closed-source LLMs at sentence-level in-context learning (chrF). \textit{Best open} rows are the per-language best performances across the seven open LLMs in \Cref{tab:main_zs_ft_chrf}. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{5-shot ICL}; \emph{italic}: best performance within open or closed model group.}
 \label{tab:open_vs_closed_icl_chrf}
 \end{table*}
 
@@ -156,7 +156,7 @@ Tiny-Aya-G & \emph{37.5} & \textbf{60.3} & 33.6 & 32.4 & \emph{48.2} & \emph{49.
 TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 39.4 & 37.7 & 44.4 & 37.0 & 37.6 \\
 \bottomrule
 \end{tabular}
-\caption{Open vs.\ closed-source LLMs at sentence-level in-context learning (COMET). \textit{Best open} rows are the per-language best performances across the seven open LLMs in \Cref{tab:main_zs_ft_comet}. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{5-shot ICL}; \emph{italic}: best performance within open or closed model group.}
+\caption{Open vs. closed-source LLMs at sentence-level in-context learning (COMET). \textit{Best open} rows are the per-language best performances across the seven open LLMs in \Cref{tab:main_zs_ft_comet}. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{5-shot ICL}; \emph{italic}: best performance within open or closed model group.}
 \label{tab:open_vs_closed_icl_comet}
 \end{table*}
 
@@ -165,7 +165,7 @@ TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{Seq2Seq: zero-shot vs.\ fine-tuned (chrF)}
+\caption{Seq2Seq: zero-shot vs. fine-tuned (chrF)}
 \label{tab:seq2seq_chrf}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
@@ -187,7 +187,7 @@ TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{Seq2Seq: zero-shot vs.\ fine-tuned (COMET)}
+\caption{Seq2Seq: zero-shot vs. fine-tuned (COMET)}
 \label{tab:seq2seq_comet}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
@@ -209,7 +209,7 @@ TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{Smaller seq2seq backbones (M2M100-418M, NLLB-600M): zero-shot vs.\ fine-tuned (chrF). These are reported for completeness; the main paper discusses the larger M2M100-1.2B and NLLB-1.3B.}
+\caption{Smaller seq2seq backbones (M2M100-418M, NLLB-600M): zero-shot vs. fine-tuned (chrF). These are reported for completeness; the main paper discusses the larger M2M100-1.2B and NLLB-1.3B.}
 \label{tab:seq2seq_smaller_chrf}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
@@ -231,7 +231,7 @@ TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{Smaller seq2seq backbones (M2M100-418M, NLLB-600M): zero-shot vs.\ fine-tuned (COMET). These are reported for completeness; the main paper discusses the larger M2M100-1.2B and NLLB-1.3B.}
+\caption{Smaller seq2seq backbones (M2M100-418M, NLLB-600M): zero-shot vs. fine-tuned (COMET). These are reported for completeness; the main paper discusses the larger M2M100-1.2B and NLLB-1.3B.}
 \label{tab:seq2seq_smaller_comet}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
@@ -253,7 +253,7 @@ TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{LLM sentence-level: zero-shot vs.\ 5-shot ICL (chrF)}
+\caption{LLM sentence-level: zero-shot vs. 5-shot ICL (chrF)}
 \label{tab:llm_sentence_chrf}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
@@ -285,7 +285,7 @@ TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{LLM sentence-level: zero-shot vs.\ 5-shot ICL (COMET)}
+\caption{LLM sentence-level: zero-shot vs. 5-shot ICL (COMET)}
 \label{tab:llm_sentence_comet}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
@@ -317,7 +317,7 @@ TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{LoRA fine-tuning: $r{=}4$ vs.\ $r{=}64$ (chrF)}
+\caption{LoRA fine-tuning: $r{=}4$ vs. $r{=}64$ (chrF)}
 \label{tab:lora_chrf}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
@@ -347,7 +347,7 @@ TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \emph{52.3} & 38.4 & 
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{LoRA fine-tuning: $r{=}4$ vs.\ $r{=}64$ (COMET)}
+\caption{LoRA fine-tuning: $r{=}4$ vs. $r{=}64$ (COMET)}
 \label{tab:lora_comet}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
@@ -410,7 +410,7 @@ Tiny-Aya-G & 14.2 & 33.8 & 7.3 & 7.6 & 6.3 & \emph{38.4} & 13.6 & 43.1 & 13.8 & 
 TransGemma-12B & \textbf{20.4} & 33.3 & \emph{15.6} & \emph{21.5} & \emph{7.0} & 32.7 & \emph{58.7} & \emph{63.1} & \emph{50.1} & \emph{52.2} & \emph{40.4} & \emph{66.3} & \emph{38.4} \\
 \bottomrule
 \end{tabular}
-\caption{Document-level zero-shot vs.\ 1-shot in-context learning (chrF). Two major groups; each has closed-API and open-LLM sub-blocks. Models alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{1-shot}); \emph{italic}: column maximum within the sub-block (closed or open).}
+\caption{Document-level zero-shot vs. 1-shot in-context learning (chrF). Two major groups; each has closed-API and open-LLM sub-blocks. Models alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{1-shot}); \emph{italic}: column maximum within the sub-block (closed or open).}
 \label{tab:doc_chrf}
 \end{table*}
 
@@ -452,6 +452,6 @@ Tiny-Aya-G & 34.5 & 30.3 & 35.7 & 33.5 & 37.0 & 32.5 & 44.5 & 35.2 & 40.7 & 42.5
 TransGemma-12B & 36.9 & 30.9 & \textbf{40.5} & 41.0 & \textbf{43.7} & 36.4 & \textbf{50.9} & \textbf{49.1} & \textbf{50.0} & \textbf{47.5} & \textbf{51.1} & \textbf{49.8} & \textbf{44.0} \\
 \bottomrule
 \end{tabular}
-\caption{Document-level zero-shot vs.\ 1-shot in-context learning (COMET). Two major groups; each has closed-API and open-LLM sub-blocks. Models alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{1-shot}); \emph{italic}: column maximum within the sub-block (closed or open).}
+\caption{Document-level zero-shot vs. 1-shot in-context learning (COMET). Two major groups; each has closed-API and open-LLM sub-blocks. Models alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{1-shot}); \emph{italic}: column maximum within the sub-block (closed or open).}
 \label{tab:doc_comet}
 \end{table*}

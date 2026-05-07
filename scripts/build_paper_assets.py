@@ -330,8 +330,8 @@ def build_mafand(rows) -> str:
         ("SSA-COMET", block("ssa_comet")),
     ]
     return render_two_col_table(
-        caption=("Cross-domain transfer: MAFAND-MT (general news) vs.\\ "
-                 "AfriScience-MT (in-domain) vs.\\ their union, fine-tuning "
+        caption=("Cross-domain transfer: MAFAND-MT (general news) vs. "
+                 "AfriScience-MT (in-domain) vs. their union, fine-tuning "
                  "NLLB-1.3B. Best value per column in bold."),
         label="tab:mafand_compare",
         pair_subset=pairs,
@@ -426,7 +426,7 @@ def build_bilingual_vs_multilingual(rows) -> str:
     note = (r"\textbf{Note.} Multilingual LoRA (mmt) was trained on "
             r"\texttt{eng}$\to$\texttt{xxx} only, so reverse-direction cells are intentionally empty.")
     return render_pair_table(
-        caption=("Bilingual (per-pair) vs.\\ multilingual training on the same backbone. "
+        caption=("Bilingual (per-pair) vs. multilingual training on the same backbone. "
                  "Best per column in bold."),
         label="tab:bil_vs_multi",
         blocks=blocks,
@@ -496,7 +496,7 @@ def build_open_vs_closed(rows) -> str:
 
     blocks = [("ChrF", block("chrf")), ("SSA-COMET", block("ssa_comet"))]
     return render_pair_table(
-        caption=("Open vs.\\ closed-source LLMs. ``Best open'' is the per-cell maximum "
+        caption=("Open vs. closed-source LLMs. ``Best open'' is the per-cell maximum "
                  "across LLaMA-3.1-8B, Gemma2-9B, AfriqueLlama-8B, Tiny-Aya-G, and "
                  "TranslateGemma-12B."),
         label="tab:open_vs_closed",
