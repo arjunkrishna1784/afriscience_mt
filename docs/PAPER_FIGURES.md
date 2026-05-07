@@ -38,8 +38,8 @@ component.
 |---|---|---|
 | `zs_vs_ft_delta.pdf` | Per-language SSA-COMET (avg both directions) for NLLB-1.3B and LLaMA-3.1-8B, before vs after fine-tuning. | Effect of in-domain fine-tuning on AfriScience-MT for the strongest seq2seq backbone (NLLB-1.3B) and the per-pair LoRA on LLaMA-3.1-8B. Bars show pre-/post-FT SSA-COMET averaged over both translation directions. |
 | `lora_rank_curve.pdf` | Avg SSA-COMET vs LoRA rank (LLaMA-3.1-8B), separate Eng→X and X→Eng curves. | LoRA rank vs.\ SSA-COMET on LLaMA-3.1-8B fine-tuned on AfriScience-MT. Note: $r{=}4$ and $r{=}64$ use the vanilla \texttt{Llama-3.1-8B-Instruct} base; other ranks use Unsloth 4-bit, so absolute levels across bases are not directly comparable. |
-| `fig4/comet/eng_xxx.pdf` | 6 lang × (Gemini \| GPT-4o), SSA-COMET vs shots, lines for Templates 1–5 + Template 5 (sem.). | SSA-COMET on Eng→xxx for Gemini-1.5-Flash and GPT-4o across five prompt templates and shot counts $\in\{0,5,10,20,50\}$. Template 5 (sem.\ prompt) is the semantic-similarity-retrieved variant available only for this direction. |
-| `fig4/comet/xxx_eng.pdf` | Same shape for X→Eng. | SSA-COMET on xxx→Eng for Gemini-1.5-Flash and GPT-4o across five prompt templates and shot counts. |
+| `gpt-vs-gemini/comet/eng_xxx.pdf` | 6 lang × (Gemini \| GPT-4o), SSA-COMET vs shots, lines for Templates 1–5 + Template 5 (sem.). | SSA-COMET on Eng→xxx for Gemini-1.5-Flash and GPT-4o across five prompt templates and shot counts $\in\{0,5,10,20,50\}$. Template 5 (sem.\ prompt) is the semantic-similarity-retrieved variant available only for this direction. |
+| `gpt-vs-gemini/comet/xxx_eng.pdf` | Same shape for X→Eng. | SSA-COMET on xxx→Eng for Gemini-1.5-Flash and GPT-4o across five prompt templates and shot counts. |
 | `fig7/comet/m2m100_1_2b.pdf` | M2M100-1.2B 7×7 panels: zero-shot \| fine-tuned, SSA-COMET. Fine-tuned X↔X cells empty. | Sentence-level SSA-COMET for M2M100-1.2B before and after fine-tuning on AfriScience-MT. African↔African fine-tunes were not run for the larger backbone. |
 | `fig7/comet/nllb_1_3b.pdf` | NLLB-1.3B 7×7, same caveat. | Sentence-level SSA-COMET for NLLB-1.3B before and after fine-tuning on AfriScience-MT. |
 | `spider_per_pair/3sys/comet/<pair>.pdf` (12 files) | Per-pair radar: NLLB-1.3B (FT) vs Gemma2-9B (LoRA $r{=}64$) vs GPT-4o (template-3, 5-shot ICL). 11 domains. **Populated only after `scripts/rescore_per_domain_ssa.py` runs on a GPU.** | Per-domain SSA-COMET for NLLB-1.3B, Gemma2-9B (LoRA), and GPT-4o (5-shot ICL) on the 12 directional pairs. Solid: NLLB-1.3B, dashed: Gemma2-9B, dotted: GPT-4o. |
@@ -81,8 +81,8 @@ component.
 
 | File | What it shows | Suggested LaTeX caption |
 |---|---|---|
-| `fig4/chrf/eng_xxx.pdf` | ChrF mirror of `fig4/comet/eng_xxx.pdf`. | ChrF version of the closed-API template/shot sweep on Eng→xxx (cf.\ Fig.~\ref{fig:fig4_eng_xxx_comet}); reported for cross-metric reference. |
-| `fig4/chrf/xxx_eng.pdf` | ChrF mirror of `fig4/comet/xxx_eng.pdf`. | ChrF version of the closed-API template/shot sweep on xxx→Eng. |
+| `gpt-vs-gemini/chrf/eng_xxx.pdf` | ChrF mirror of `gpt-vs-gemini/comet/eng_xxx.pdf`. | ChrF scores comparison of GPT and Gemini models across different templates and in-context examples on Eng→xxx (cross-metric reference for the COMET version above). |
+| `gpt-vs-gemini/chrf/xxx_eng.pdf` | ChrF mirror of `gpt-vs-gemini/comet/xxx_eng.pdf`. | ChrF scores comparison of GPT and Gemini models across different templates and in-context examples on xxx→Eng. |
 | `fig7/chrf/m2m100_1_2b.pdf` | ChrF mirror of fig7 main. | ChrF for M2M100-1.2B zero-shot vs.\ fine-tuned (cf.\ Fig.~\ref{fig:fig7_m2m100_1_2b_comet}). |
 | `fig7/chrf/nllb_1_3b.pdf` | ChrF mirror of fig7 main. | ChrF for NLLB-1.3B zero-shot vs.\ fine-tuned. |
 | `fig7/comet/m2m100_418m.pdf` | M2M100-418M 7×7. **Both panels filled** (X↔X imported from `dcs_n2n/`). | Smaller M2M100 backbone (418M): zero-shot vs.\ fine-tuned SSA-COMET over the full eng+African 7×7 grid. Reported for completeness alongside the larger M2M100-1.2B. |

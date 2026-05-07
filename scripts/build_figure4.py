@@ -225,13 +225,16 @@ def main():
     # Output layout (mirrored: same filenames in comet/ and chrf/):
     #   figures/new/fig4/comet/eng_xxx.pdf, xxx_eng.pdf
     #   figures/new/fig4/chrf/eng_xxx.pdf,  xxx_eng.pdf
-    print("Figure 4 — closed-API template/shot curves:")
+    # Output layout (mirrored: same filenames in comet/ and chrf/):
+    #   figures/new/gpt-vs-gemini/comet/{eng_xxx,xxx_eng}.pdf
+    #   figures/new/gpt-vs-gemini/chrf/{eng_xxx,xxx_eng}.pdf
+    print("GPT-vs-Gemini template/shot curves:")
     print("  [primary, SSA-COMET]")
-    build_one_direction(True,  "fig4/comet/eng_xxx.pdf", metric="ssa_comet")
-    build_one_direction(False, "fig4/comet/xxx_eng.pdf", metric="ssa_comet")
-    print("  [appendix, ChrF]")
-    build_one_direction(True,  "fig4/chrf/eng_xxx.pdf",  metric="chrf")
-    build_one_direction(False, "fig4/chrf/xxx_eng.pdf",  metric="chrf")
+    build_one_direction(True,  "gpt-vs-gemini/comet/eng_xxx.pdf", metric="ssa_comet")
+    build_one_direction(False, "gpt-vs-gemini/comet/xxx_eng.pdf", metric="ssa_comet")
+    print("  [secondary, ChrF]")
+    build_one_direction(True,  "gpt-vs-gemini/chrf/eng_xxx.pdf",  metric="chrf")
+    build_one_direction(False, "gpt-vs-gemini/chrf/xxx_eng.pdf",  metric="chrf")
 
 
 if __name__ == "__main__":
