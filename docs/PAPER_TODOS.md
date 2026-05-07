@@ -274,30 +274,14 @@ they look at.
 
 ### Appendix paragraph (drop-in)
 
-> \paragraph{Per-language metric disagreement.}
-> \label{sec:multilingual_nllb_metric_divergence}
-> At the 400k checkpoint, COMET and ChrF rank the six languages
-> differently in both directions. Yor\`ub\'a is the most striking
-> case: it scores worst of the six on \texttt{eng}$\to$ ChrF (13.1)
-> but third on COMET (44.6), and on the reverse direction it is the
-> \emph{best} language under COMET (\texttt{yor}$\to$\texttt{eng},
-> 49.0) yet only fifth under ChrF (24.8). Hausa moves in the opposite
-> direction --- second on \texttt{eng}$\to$ ChrF (42.4) but fifth on
-> COMET (35.6). Luganda is first under \texttt{eng}$\to$ COMET (46.2)
-> but third on ChrF (33.9). A plausible explanation is that ChrF's
-> character-level matching penalises Yor\`ub\'a's diacritics and tonal
-> orthography heavily, while SSA-COMET --- trained specifically on
-> sub-Saharan African languages --- treats those orthographic
-> differences semantically. The same effect likely inflates Hausa's
-> ChrF (Latin-script with consistent ASCII-friendly forms) above its
-> COMET rank.
->
-> Direction also affects the training-curve shape: \texttt{eng}$\to$
-> \texttt{xxx} keeps improving with more training updates (avg.\
-> $+9.8$ COMET, $+12.7$ ChrF across 40k$\to$400k), while
-> \texttt{xxx}$\to$\texttt{eng} plateaus early (avg.\ $+2.7$ on both
-> metrics) --- consistent with the model's much stronger English
-> representation as the target.
+\paragraph{Per-language metric disagreement.}
+\label{sec:multilingual_nllb_metric_divergence}
+
+At the 400k checkpoint, COMET and ChrF rank the six languages differently in both directions. Yor\`ub\'a is the most striking case: it scores worst of the six on \texttt{eng}$\to$ ChrF (13.1) but third on COMET (44.6), and on the reverse direction it is the best language under COMET (\texttt{yor}$\to$\texttt{eng}, 49.0) yet only fifth under ChrF (24.8). Hausa moves in the opposite direction, second on \texttt{eng}$\to$ ChrF (42.4) but fifth on COMET (35.6). Luganda is first under \texttt{eng}$\to$ COMET (46.2) but third on ChrF (33.9).
+
+A plausible explanation is that ChrF's character-level matching penalises \yoruba's diacritics and tonal orthography heavily, while SSA-COMET, trained specifically on sub-Saharan African languages, treats those orthographic differences semantically. The same effect likely inflates Hausa's ChrF (Latin-script with consistent ASCII-friendly forms) above its COMET rank.
+
+Direction also affects the training-curve shape: \texttt{eng}$\to$ \texttt{xxx} keeps improving with more training updates (avg. $+9.8$ COMET, $+12.7$ ChrF across 40k$\to$400k), while \texttt{xxx}$\to$\texttt{eng} plateaus early (avg. $+2.7$ on both metrics). This is consistent with the model's much stronger English representation as the target.
 
 ### Why appendix and not caption
 
@@ -318,6 +302,65 @@ Either:
 
 If space-constrained, (b) is acceptable; if not, (a) is the cleaner
 report.
+
+---
+
+## 2026-05-07 — Tiny-Aya-G xxx→eng degeneration discovered via spot-check
+
+**Status:** bookmarked. Pending: re-run inference with
+`scripts/regenerate_tiny_aya_global_predictions.py` (vLLM) and update Table 1.
+The finding itself is worth a one-sentence note in the paper recommending
+that practitioners eyeball generations rather than trust scalar metrics
+blindly.
+
+**What we found.** While verifying Table 1, the user asked for a random spot
+check of Tiny-Aya-G (`CohereLabs/tiny-aya-global` LoRA r=64). The fine-tuned
+xxx→eng predictions are *sentence-doubled* — each output is roughly
+"`<sentence>.<sentence>`". ChrF/BLEU survive duplication (n-grams just
+appear twice), but SSA-COMET catches the broken fluency:
+
+| pair | COMET | exact-half-dup |
+|---|---:|---:|
+| lug-eng | 21.9 | 63.1% |
+| yor-eng | 20.5 | 67.2% |
+| zul-eng | 33.1 | 60.1% |
+| nso-eng | 43.3 | 29.2% |
+| amh-eng | 49.0 | 19.0% |
+| hau-eng | 55.4 | 14.1% |
+| eng→xxx | 53–59 | 0–8% |
+
+The bug is direction-specific (eng→xxx is essentially clean) and severity-
+graded by language. Likely cause: at-inference EOS / end-of-turn handling
+on the chat-template-trained adapter. Fixed by regenerating with explicit
+chat-template stop tokens + `repetition_penalty=1.15` +
+`frequency_penalty=0.3`.
+
+### Proposed text — Discussion / Limitations (one sentence)
+
+> A spot-check of fine-tuned outputs revealed a systematic
+> sentence-doubling failure on one of our LoRA adapters that lowered
+> SSA-COMET by 20–40 points while leaving ChrF largely unaffected (n-gram
+> overlap is preserved under repetition). We therefore caution
+> practitioners that scalar metrics — especially surface-form metrics like
+> ChrF/BLEU — should be paired with manual inspection of a sample of
+> generations: had we relied on ChrF alone we would have shipped degraded
+> predictions for six of the twelve pairs.
+
+### What this implies for tooling
+
+- Inference scripts should default to `repetition_penalty>1` and explicit
+  stop tokens for chat-template models.
+- Result-aggregation pipelines should flag rows where COMET ≪ ChrF
+  (large divergence is a degeneration signal worth eyeballing).
+
+### What's still missing
+
+1. Run `python scripts/regenerate_tiny_aya_global_predictions.py` on a GPU
+   box and verify duplication rate drops to ≤2%.
+2. Re-run `python scripts/build_paper_tables.py` and confirm
+   Table 1's Tiny-Aya-G row in `→eng` recovers to the 50–60 range.
+3. Decide whether the Limitations sentence above goes in the main paper
+   or as an appendix-level methodology note.
 
 ---
 
