@@ -22,20 +22,40 @@ end-of-turn stop tokens + repetition_penalty + frequency_penalty, rescore
 BLEU/ChrF/SSA-COMET, and overwrites predictions.json / results.json under
 ``experiments/llm/open/finetune/tiny_aya_global/r64/<pair>/``.
 
+Decoding-penalty notes
+----------------------
+Two regimes have been tried so far:
+
+  * v1: rep_penalty=1.15, freq_penalty=0.3 — initial fix. Killed
+    duplication and recovered SSA-COMET to ~60+ on lug/yor/zul/amh, but
+    over-pressured lexical reuse: nso-eng and hau-eng paraphrased
+    aggressively (ChrF dropped 30+ points; nso-eng outputs hallucinated).
+
+  * v2 (current default): rep_penalty=1.08, freq_penalty=0.0 — softer.
+    Still kills duplication via the chat-template stop tokens + mild
+    repetition_penalty, no frequency_penalty so the model is free to
+    reuse n-grams that legitimately appear in the source.
+
+The script runs v2 by default; flags ``--rep-penalty`` and
+``--freq-penalty`` let you override. Each run records the values it used
+in ``results.json``->``metadata.regenerated_rep_penalty/freq_penalty``,
+so the v1->v2 comparison serves as a decoding-ablation table.
+
 Usage (on a GPU box, project env with vllm + comet):
 
-    # Just the broken xxx->eng pairs (default; 6 pairs)
+    # Default (v2: soft penalties), all 6 broken xxx->eng pairs
     python scripts/regenerate_tiny_aya_global_predictions.py
 
-    # Specific pairs
+    # Just the two pairs that were over-corrected by v1
     python scripts/regenerate_tiny_aya_global_predictions.py \
-        --pairs lug-eng yor-eng zul-eng
+        --pairs nso-eng hau-eng
 
-    # All 12 pairs (also redoes the eng->xxx ones, which were already clean)
+    # Reproduce v1 for the ablation
+    python scripts/regenerate_tiny_aya_global_predictions.py \
+        --rep-penalty 1.15 --freq-penalty 0.3 --dry-run
+
+    # All 12 pairs
     python scripts/regenerate_tiny_aya_global_predictions.py --all
-
-    # Dry-run: write to predictions.json.new instead of overwriting
-    python scripts/regenerate_tiny_aya_global_predictions.py --dry-run
 
 After it finishes:
     python scripts/build_paper_tables.py
@@ -154,7 +174,8 @@ def make_llm(gpu_mem_util: float, max_model_len: int):
 
 
 def regenerate_pair(llm, tokenizer, src: str, tgt: str, *,
-                    max_new_tokens: int, stop_ids: list[int]) -> list[dict]:
+                    max_new_tokens: int, stop_ids: list[int],
+                    rep_penalty: float, freq_penalty: float) -> list[dict]:
     from vllm import SamplingParams
     from vllm.lora.request import LoRARequest
 
@@ -165,8 +186,8 @@ def regenerate_pair(llm, tokenizer, src: str, tgt: str, *,
         temperature=0.0,
         top_p=1.0,
         max_tokens=max_new_tokens,
-        repetition_penalty=1.15,
-        frequency_penalty=0.3,
+        repetition_penalty=rep_penalty,
+        frequency_penalty=freq_penalty,
         stop_token_ids=stop_ids,
         skip_special_tokens=True,
     )
@@ -209,7 +230,8 @@ def backup(path: Path) -> None:
 
 
 def update_pair_files(src: str, tgt: str, samples: list[dict],
-                      metrics: dict | None) -> None:
+                      metrics: dict | None,
+                      rep_penalty: float, freq_penalty: float) -> None:
     pair_dir = EXP_DIR / f"{src}-{tgt}"
     pair_dir.mkdir(parents=True, exist_ok=True)
 
@@ -261,12 +283,15 @@ def update_pair_files(src: str, tgt: str, samples: list[dict],
     res.setdefault("metadata", {})
     res["metadata"]["regenerated_at"] = datetime.utcnow().isoformat()
     res["metadata"]["regenerated_reason"] = (
-        "Original LoRA r=64 predictions exhibited sentence-doubling on xxx->eng "
-        "pairs, collapsing SSA-COMET while ChrF/BLEU were largely unaffected. "
-        "Regenerated with vLLM: temperature=0, repetition_penalty=1.15, "
-        "frequency_penalty=0.3, explicit chat-template stop tokens."
+        f"Original LoRA r=64 predictions exhibited sentence-doubling on xxx->eng "
+        f"pairs, collapsing SSA-COMET while ChrF/BLEU were largely unaffected. "
+        f"Regenerated with vLLM: temperature=0, "
+        f"repetition_penalty={rep_penalty}, frequency_penalty={freq_penalty}, "
+        f"explicit chat-template stop tokens."
     )
     res["metadata"]["regenerated_engine"] = "vllm"
+    res["metadata"]["regenerated_rep_penalty"] = rep_penalty
+    res["metadata"]["regenerated_freq_penalty"] = freq_penalty
     res_path.write_text(json.dumps(res, indent=2, ensure_ascii=False))
 
 
@@ -281,6 +306,13 @@ def main() -> int:
     ap.add_argument("--max-new-tokens", type=int, default=512)
     ap.add_argument("--max-model-len", type=int, default=2048)
     ap.add_argument("--gpu-mem-util", type=float, default=0.9)
+    ap.add_argument("--rep-penalty", type=float, default=1.08,
+                    help="vLLM repetition_penalty. Default 1.08 (soft); "
+                         "use 1.15 for stronger anti-repetition (initial run).")
+    ap.add_argument("--freq-penalty", type=float, default=0.0,
+                    help="vLLM frequency_penalty. Default 0.0 (soft); "
+                         "0.3 was used in the initial run but over-pressured "
+                         "lexical reuse on nso-eng / hau-eng (ChrF collapse).")
     ap.add_argument("--dry-run", action="store_true",
                     help="generate but don't overwrite files (writes to .new instead)")
     ap.add_argument("--skip-scoring", action="store_true",
@@ -302,6 +334,8 @@ def main() -> int:
         return 2
 
     print(f"regenerating {len(pairs)} pairs with vLLM: {pairs}")
+    print(f"  decoding: temperature=0  rep_penalty={args.rep_penalty}  "
+          f"freq_penalty={args.freq_penalty}  max_new_tokens={args.max_new_tokens}")
     t0 = time.time()
 
     llm = make_llm(args.gpu_mem_util, args.max_model_len)
@@ -320,6 +354,8 @@ def main() -> int:
             llm, tokenizer, src, tgt,
             max_new_tokens=args.max_new_tokens,
             stop_ids=stop_ids,
+            rep_penalty=args.rep_penalty,
+            freq_penalty=args.freq_penalty,
         )
         gen_t = time.time() - ts
 
@@ -351,7 +387,9 @@ def main() -> int:
                                        indent=2, ensure_ascii=False))
             print(f"  dry-run, wrote {out}")
         else:
-            update_pair_files(src, tgt, samples, metrics)
+            update_pair_files(src, tgt, samples, metrics,
+                              rep_penalty=args.rep_penalty,
+                              freq_penalty=args.freq_penalty)
             print(f"  updated predictions.json + results.json"
                   f"{' (no metrics)' if metrics is None else ''}")
 
