@@ -420,14 +420,18 @@ def build_main_zs_ft(rows, metric):
     metric_label = "chrF" if metric == "chrf" else "COMET"
     SEQ2SEQ_ALL = ["m2m100_418m", "nllb_200_distilled_600m",
                    "m2m100_1_2b", "nllb_200_1_3b"]
-    LLM_HEADLINE = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
-                    "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global"]
+    # Fine-tuned LLMs share the same six open models; the zero-shot block
+    # additionally includes TransGemma-12B (which we evaluate but don't fine-tune).
+    LLM_HEADLINE_FT = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
+                       "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global"]
+    LLM_HEADLINE_ZS = LLM_HEADLINE_FT + ["translategemma_12b"]
 
     def by_disp(model_list):
         return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
 
     SEQ2SEQ_SORTED = by_disp(SEQ2SEQ_ALL)
-    LLM_SORTED = by_disp(LLM_HEADLINE)
+    LLM_ZS_SORTED = by_disp(LLM_HEADLINE_ZS)
+    LLM_FT_SORTED = by_disp(LLM_HEADLINE_FT)
 
     def rows_for(models, **filters):
         return [(m, vec(lookup(rows, metric=metric, model_short=m, **filters)))
@@ -436,9 +440,9 @@ def build_main_zs_ft(rows, metric):
     zs_seq = rows_for(SEQ2SEQ_SORTED, experiment_type="zero_shot")
     ft_seq = rows_for(SEQ2SEQ_SORTED, experiment_type="seq2seq_finetune",
                       dataset="dcs", is_ablation="False")
-    zs_llm = rows_for(LLM_SORTED, experiment_type="llm_zero_shot",
+    zs_llm = rows_for(LLM_ZS_SORTED, experiment_type="llm_zero_shot",
                       is_ablation="False")
-    ft_llm = rows_for(LLM_SORTED, experiment_type="lora_finetune",
+    ft_llm = rows_for(LLM_FT_SORTED, experiment_type="lora_finetune",
                       lora_rank="64", is_ablation="False")
 
     return render_grouped_table(
@@ -446,13 +450,14 @@ def build_main_zs_ft(rows, metric):
         caption=(f"Sentence-level zero-shot vs.\\ fine-tuned performance "
                  f"({metric_label}). The four seq2seq backbones (M2M100-418M, "
                  "NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source "
-                 "LLMs appear in both major groups; LLMs in the "
-                 "\\textit{Fine-tuned} group use per-pair LoRA $r{=}64$. "
-                 "Models are alphabetically sorted within each sub-block. "
-                 "\\textbf{Bold}: column maximum within the major group "
-                 "(\\textit{Zero-shot} or \\textit{Fine-tuned}); "
-                 "\\emph{italic}: column maximum within the sub-block "
-                 "(seq2seq or LLM)."),
+                 "LLMs appear in both major groups; the \\textit{Zero-shot} "
+                 "group additionally includes TransGemma-12B (evaluated but "
+                 "not fine-tuned). LLMs in the \\textit{Fine-tuned} group "
+                 "use per-pair LoRA $r{=}64$. Models are alphabetically "
+                 "sorted within each sub-block. \\textbf{Bold}: column "
+                 "maximum within the major group (\\textit{Zero-shot} or "
+                 "\\textit{Fine-tuned}); \\emph{italic}: column maximum "
+                 "within the sub-block (seq2seq or LLM)."),
         major_groups=[
             ("Zero-shot",  [(None, zs_seq), (None, zs_llm)]),
             ("Fine-tuned", [(None, ft_seq), (None, ft_llm)]),
@@ -461,43 +466,24 @@ def build_main_zs_ft(rows, metric):
 
 
 def build_open_vs_closed_icl(rows, metric):
-    """**Main paper Table 2.** Open vs.\ closed-source LLMs at sentence-level
-    in-context learning. Per-cell best-open ICL row vs.\ Gemini and GPT-4o.
+    """**Main paper Table 2.** Closed-API zero-shot + 5-shot ICL alongside
+    per-model open-LLM 5-shot ICL. Open-LLM zero-shot rows are deliberately
+    omitted — they already appear in Table 1 (main_zs_ft).
     """
     metric_label = "chrF" if metric == "chrf" else "COMET"
     open_models = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
                    "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global"]
 
-    def best_open_zs():
-        out = {p: None for p in PAIRS}
-        for m in open_models:
-            d = lookup(rows, metric=metric, model_short=m,
-                       experiment_type="llm_zero_shot", is_ablation="False")
-            for p, v in d.items():
-                if out.get(p) is None or v > out[p]:
-                    out[p] = v
-        return out
-
-    def best_open_icl():
-        out = {p: None for p in PAIRS}
-        for m in open_models:
-            d = first_with_pred(rows, metric=metric, candidates=[
-                dict(experiment_type="llm_icl", prompt_strategy="icl_5shot",
-                     model_short=m, is_ablation="False"),
-                dict(experiment_type="llm_icl", prompt_strategy="icl_5shot_semantic",
-                     model_short=m, is_ablation="False"),
-            ])
-            for p, v in d.items():
-                if out.get(p) is None or v > out[p]:
-                    out[p] = v
-        return out
+    def by_disp(model_list):
+        return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
 
     def closed_zs(model):
         return lookup(rows, metric=metric, model_short=model,
                       experiment_type="llm_zero_shot", is_ablation="False")
 
-    def closed_icl(model):
-        # GPT-4o eng-X via 5shot_semantic, X-eng via 5shot; Gemini has both.
+    def llm_icl(model):
+        # GPT-4o eng-X via 5shot_semantic, X-eng via 5shot; Gemini + open
+        # LLMs cover all 12 pairs with 5shot.
         return first_with_pred(rows, metric=metric, candidates=[
             dict(experiment_type="llm_icl", prompt_strategy="icl_5shot",
                  model_short=model, is_ablation="False"),
@@ -505,23 +491,17 @@ def build_open_vs_closed_icl(rows, metric):
                  model_short=model, is_ablation="False"),
         ])
 
-    # Major groups: Zero-shot, 5-shot ICL.
-    # Sub-blocks: Open (1 row: best-open), Closed (Gemini, GPT-4o).
-    # Closed rows alphabetically sorted by display name.
-    closed_zs_rows = sorted(
-        [("gemini_15_flash", vec(closed_zs("gemini_15_flash"))),
-         ("gpt4o",            vec(closed_zs("gpt4o")))],
-        key=lambda r: MODEL_DISP.get(r[0], r[0]).lower())
-    closed_icl_rows = sorted(
-        [("gemini_15_flash", vec(closed_icl("gemini_15_flash"))),
-         ("gpt4o",            vec(closed_icl("gpt4o")))],
-        key=lambda r: MODEL_DISP.get(r[0], r[0]).lower())
+    closed = ["gemini_15_flash", "gpt4o"]
+    closed_zs_rows = [(m, vec(closed_zs(m))) for m in by_disp(closed)]
+    closed_icl_rows = [(m, vec(llm_icl(m)))  for m in by_disp(closed)]
+    open_icl_rows  = [(m, vec(llm_icl(m)))   for m in by_disp(open_models)]
 
     return render_grouped_table(
         label=f"tab:open_vs_closed_icl_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=("Open vs.\\ closed-source LLMs at sentence-level in-context "
-                 f"learning ({metric_label}). \\textit{{Best open}} rows are "
-                 "the per-cell maximum across the six open LLMs in "
+        caption=("Closed-API zero-shot and 5-shot in-context learning "
+                 "alongside per-model open-LLM 5-shot ICL "
+                 f"({metric_label}). Open-LLM zero-shot rows are not "
+                 "duplicated here — they appear in "
                  "Table~\\ref{tab:main_zs_ft_" +
                  ("chrf" if metric == "chrf" else "comet") + "}. "
                  "\\textbf{Bold}: column maximum within the major group "
@@ -530,12 +510,11 @@ def build_open_vs_closed_icl(rows, metric):
                  "(open or closed)."),
         major_groups=[
             ("Zero-shot", [
-                (None, [("best_open", vec(best_open_zs()))]),
                 (None, closed_zs_rows),
             ]),
             ("5-shot ICL", [
-                (None, [("best_open", vec(best_open_icl()))]),
                 (None, closed_icl_rows),
+                (None, open_icl_rows),
             ]),
         ],
     )
