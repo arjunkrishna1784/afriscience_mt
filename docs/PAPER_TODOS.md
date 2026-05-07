@@ -245,6 +245,82 @@ the methodology footnote there in the same edit pass.
 
 ---
 
+---
+
+## 2026-05-07 — Multilingual NLLB-600M: per-language metric disagreement
+
+**Status:** appendix paragraph drafted; revisit when writing §6 / appendix.
+The figure caption stays tight (just a pointer); this paragraph carries the
+per-language analysis so readers don't have to absorb five language names
+and ten numbers from a caption.
+
+### Why we need it
+
+At the 400k multilingual NLLB-600M checkpoint, COMET and ChrF rank the
+six languages **differently** — not just by a small margin. Yorùbá is
+the most striking case (worst under ChrF on Eng→Yor, third under COMET;
+best under COMET on Yor→Eng, fifth under ChrF). Without explanation,
+readers will see different "winners" depending on which metric panel
+they look at.
+
+### Tight figure caption (caption only points to the paragraph)
+
+> Multilingual NLLB-600M performance as a function of training updates
+> (40k, 80k, 200k, 400k); each language is plotted as its own bar group
+> with an in-group trend line. COMET and ChrF disagree substantially on
+> which languages are hardest --- see
+> §\ref{sec:multilingual_nllb_metric_divergence} for the per-language
+> breakdown.
+
+### Appendix paragraph (drop-in)
+
+> \paragraph{Per-language metric disagreement.}
+> \label{sec:multilingual_nllb_metric_divergence}
+> At the 400k checkpoint, COMET and ChrF rank the six languages
+> differently in both directions. Yor\`ub\'a is the most striking
+> case: it scores worst of the six on \texttt{eng}$\to$ ChrF (13.1)
+> but third on COMET (44.6), and on the reverse direction it is the
+> \emph{best} language under COMET (\texttt{yor}$\to$\texttt{eng},
+> 49.0) yet only fifth under ChrF (24.8). Hausa moves in the opposite
+> direction --- second on \texttt{eng}$\to$ ChrF (42.4) but fifth on
+> COMET (35.6). Luganda is first under \texttt{eng}$\to$ COMET (46.2)
+> but third on ChrF (33.9). A plausible explanation is that ChrF's
+> character-level matching penalises Yor\`ub\'a's diacritics and tonal
+> orthography heavily, while SSA-COMET --- trained specifically on
+> sub-Saharan African languages --- treats those orthographic
+> differences semantically. The same effect likely inflates Hausa's
+> ChrF (Latin-script with consistent ASCII-friendly forms) above its
+> COMET rank.
+>
+> Direction also affects the training-curve shape: \texttt{eng}$\to$
+> \texttt{xxx} keeps improving with more training updates (avg.\
+> $+9.8$ COMET, $+12.7$ ChrF across 40k$\to$400k), while
+> \texttt{xxx}$\to$\texttt{eng} plateaus early (avg.\ $+2.7$ on both
+> metrics) --- consistent with the model's much stronger English
+> representation as the target.
+
+### Why appendix and not caption
+
+The dense five-language list with ten numbers crowds a caption; readers
+who only skim figures still get the headline finding (metrics disagree)
+from the tight caption above. Per-language detail belongs where readers
+expect detailed analysis. The diacritics / SSA-trained interpretation
+is also the kind of claim a reviewer will want to engage with — prose
+in an appendix subsection invites that, captions don't.
+
+### Decision pending
+
+Either:
+- (a) **Add the appendix paragraph** plus the tight caption above
+  (preferred), OR
+- (b) **Use the one-line caption fallback** without per-language detail
+  (drop the paragraph entirely).
+
+If space-constrained, (b) is acceptable; if not, (a) is the cleaner
+report.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
