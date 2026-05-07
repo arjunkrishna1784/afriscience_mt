@@ -467,12 +467,17 @@ def build_main_zs_ft(rows, metric):
 
 def build_open_vs_closed_icl(rows, metric):
     """**Main paper Table 2.** Closed-API zero-shot + 5-shot ICL alongside
-    per-model open-LLM 5-shot ICL. Open-LLM zero-shot rows are deliberately
-    omitted — they already appear in Table 1 (main_zs_ft).
+    per-model open-LLM 5-shot ICL. Open-LLM per-model zero-shot rows are
+    deliberately omitted (they appear in Table 1); a single per-cell
+    \"Best open\" row keeps the zero-shot block readable as a baseline
+    against the closed APIs.
     """
     metric_label = "chrF" if metric == "chrf" else "COMET"
+    # Open-weight LLMs include TransGemma-12B in zero-shot and ICL
+    # (we evaluate it but don't fine-tune it — same convention as Table 1).
     open_models = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
-                   "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global"]
+                   "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global",
+                   "translategemma_12b"]
 
     def by_disp(model_list):
         return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
@@ -491,25 +496,39 @@ def build_open_vs_closed_icl(rows, metric):
                  model_short=model, is_ablation="False"),
         ])
 
+    def best_open_zs():
+        out = {p: None for p in PAIRS}
+        for m in open_models:
+            d = lookup(rows, metric=metric, model_short=m,
+                       experiment_type="llm_zero_shot", is_ablation="False")
+            for p, v in d.items():
+                if v is None:
+                    continue
+                if out.get(p) is None or v > out[p]:
+                    out[p] = v
+        return out
+
     closed = ["gemini_15_flash", "gpt4o"]
-    closed_zs_rows = [(m, vec(closed_zs(m))) for m in by_disp(closed)]
-    closed_icl_rows = [(m, vec(llm_icl(m)))  for m in by_disp(closed)]
-    open_icl_rows  = [(m, vec(llm_icl(m)))   for m in by_disp(open_models)]
+    closed_zs_rows  = [(m, vec(closed_zs(m))) for m in by_disp(closed)]
+    closed_icl_rows = [(m, vec(llm_icl(m)))   for m in by_disp(closed)]
+    open_icl_rows   = [(m, vec(llm_icl(m)))   for m in by_disp(open_models)]
 
     return render_grouped_table(
         label=f"tab:open_vs_closed_icl_{'chrf' if metric=='chrf' else 'comet'}",
         caption=("Closed-API zero-shot and 5-shot in-context learning "
                  "alongside per-model open-LLM 5-shot ICL "
-                 f"({metric_label}). Open-LLM zero-shot rows are not "
-                 "duplicated here — they appear in "
+                 f"({metric_label}). \\textit{{Best open}} in the "
+                 "zero-shot block is the per-cell maximum across all open "
+                 "LLMs (per-model open zero-shot rows appear in "
                  "Table~\\ref{tab:main_zs_ft_" +
-                 ("chrf" if metric == "chrf" else "comet") + "}. "
+                 ("chrf" if metric == "chrf" else "comet") + "}). "
                  "\\textbf{Bold}: column maximum within the major group "
                  "(\\textit{Zero-shot} or \\textit{5-shot ICL}); "
                  "\\emph{italic}: column maximum within the sub-block "
                  "(open or closed)."),
         major_groups=[
             ("Zero-shot", [
+                (None, [("best_open", vec(best_open_zs()))]),
                 (None, closed_zs_rows),
             ]),
             ("5-shot ICL", [

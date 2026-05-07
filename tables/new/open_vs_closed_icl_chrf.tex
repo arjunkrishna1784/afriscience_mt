@@ -11,6 +11,8 @@
 \midrule
 \multicolumn{14}{l}{\textit{Zero-shot}} \\
 \midrule
+Best open & \emph{28.1} & \emph{52.5} & \emph{17.7} & \emph{23.7} & \emph{14.5} & \emph{44.8} & \emph{51.0} & \emph{53.5} & \emph{29.7} & \emph{41.4} & \emph{34.3} & \emph{49.9} & \emph{36.7} \\
+\midrule
 Gemini-1.5 & \textbf{36.4} & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & \textbf{58.5} & 56.7 & 47.6 & 52.1 & 42.0 & 60.3 & 46.4 \\
 GPT-4o & 21.1 & \textbf{58.0} & \textbf{41.9} & \textbf{47.3} & \textbf{16.3} & \textbf{58.5} & 53.0 & \textbf{60.7} & \textbf{51.1} & \textbf{58.5} & \textbf{49.0} & \textbf{65.8} & \textbf{48.4} \\
 \midrule\midrule
@@ -19,14 +21,15 @@ GPT-4o & 21.1 & \textbf{58.0} & \textbf{41.9} & \textbf{47.3} & \textbf{16.3} & 
 Gemini-1.5 & \textbf{38.8} & 56.9 & 40.0 & 47.9 & 17.5 & 51.7 & \textbf{60.1} & 58.9 & 49.1 & 55.5 & 45.2 & 63.2 & 48.7 \\
 GPT-4o & 26.4 & \textbf{62.0} & \textbf{42.3} & \textbf{53.6} & \emph{20.7} & \textbf{57.9} & 54.0 & \textbf{62.1} & \textbf{52.5} & \textbf{60.1} & \textbf{49.8} & \textbf{67.5} & \textbf{50.7} \\
 \midrule
-AfriqueLlama-8B & 25.2 & 33.2 & \emph{20.6} & \emph{27.2} & \textbf{23.7} & 32.7 & 44.8 & 31.7 & 22.9 & 26.3 & 27.4 & 32.7 & 29.0 \\
+AfriqueLlama-8B & 25.2 & 33.2 & 20.6 & 27.2 & 23.7 & 32.7 & 44.8 & 31.7 & 22.9 & 26.3 & 27.4 & 32.7 & 29.0 \\
 AfriqueQwen-8B & 12.1 & 30.1 & 14.1 & 14.3 & 11.0 & 23.1 & 20.8 & 21.3 & 14.5 & 10.1 & 18.9 & 24.5 & 17.9 \\
 Gemma2-9B & 12.1 & 37.2 & 11.9 & 20.7 & 11.0 & 24.0 & 43.9 & 51.7 & \emph{35.5} & \emph{37.7} & 30.2 & 51.0 & 30.6 \\
 Llama3-8B & 9.2 & 30.1 & 15.5 & 17.4 & 14.8 & 16.9 & 29.0 & 43.7 & 29.9 & 28.7 & 25.9 & 33.7 & 24.6 \\
-Tiny-Aya-E & \emph{30.2} & 56.0 & 10.0 & 12.7 & 19.0 & \emph{51.7} & \emph{52.8} & \emph{55.6} & 24.8 & 21.9 & \emph{37.1} & \emph{58.9} & \emph{35.9} \\
+Tiny-Aya-E & \emph{30.2} & 56.0 & 10.0 & 12.7 & 19.0 & \emph{51.7} & 52.8 & \emph{55.6} & 24.8 & 21.9 & \emph{37.1} & \emph{58.9} & 35.9 \\
 Tiny-Aya-G & 29.9 & \emph{56.3} & 10.0 & 12.0 & 19.2 & 51.6 & 52.2 & 55.0 & 24.4 & 21.9 & 36.4 & 58.6 & 35.6 \\
+TransGemma-12B & 26.2 & 45.4 & \emph{23.1} & \emph{32.2} & \textbf{23.9} & 43.8 & \emph{55.4} & 49.3 & 35.2 & 33.2 & 32.5 & 33.1 & \emph{36.1} \\
 \bottomrule
 \end{tabular}
-\caption{Closed-API zero-shot and 5-shot in-context learning alongside per-model open-LLM 5-shot ICL (chrF). Open-LLM zero-shot rows are not duplicated here — they appear in Table~\ref{tab:main_zs_ft_chrf}. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{5-shot ICL}); \emph{italic}: column maximum within the sub-block (open or closed).}
+\caption{Closed-API zero-shot and 5-shot in-context learning alongside per-model open-LLM 5-shot ICL (chrF). \textit{Best open} in the zero-shot block is the per-cell maximum across all open LLMs (per-model open zero-shot rows appear in Table~\ref{tab:main_zs_ft_chrf}). \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{5-shot ICL}); \emph{italic}: column maximum within the sub-block (open or closed).}
 \label{tab:open_vs_closed_icl_chrf}
 \end{table*}
