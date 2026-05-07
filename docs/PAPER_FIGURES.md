@@ -24,6 +24,18 @@ python3 scripts/redraw_paper_plots.py    # everything else
 | `fig7_nllb_1_3b_comet.pdf` | Same as above, SSA-COMET. | Same panel pair, SSA-COMET. |
 | `lora_rank_curve.pdf` | Avg SSA-COMET vs LoRA rank (LLaMA-3.1-8B), separate eng→X and X→eng curves. | LoRA rank vs.\ SSA-COMET on LLaMA-3.1-8B fine-tuned on AfriScience-MT. r=4 and r=64 use the vanilla base; other ranks use Unsloth 4-bit (footnote). |
 | `spider_per_pair_eng_xxx.pdf` | Six spider charts (3×2), one per Eng→X target. Two systems: NLLB-1.3B fine-tuned vs.\ GPT-4o 5-shot ICL, 11 domains. Page-23 style. | Domain-level ChrF for NLLB-1.3B (fine-tuned) and GPT-4o (5-shot ICL) on Eng→xxx translation, broken down by scientific domain. |
+| `spider_per_pair/<eng-X>.pdf` (6 files) | Per-pair PDFs of the same NLLB vs GPT-4o spider, one per target language, suitable for LaTeX `\subfigure`. | Drop into a `subfigure` block; share a single caption that names the two systems (NLLB blue, GPT-4o red). |
+
+## §4 Domain-balance ablation
+
+| File | What it shows | Suggested LaTeX caption |
+|---|---|---|
+| `balance_heatmap.pdf` | 3-row × 11-column heatmap. Rows = τ ∈ {1, 2, ∞}; columns = domains ordered by training-set size $N_d$; cells = mean ChrF over the 12 directional pairs. | Per-domain ChrF for NLLB-1.3B fine-tuned with three temperature sampling settings (τ=1 natural, τ=2 sqrt-smoothed, τ=∞ uniform). Domains ordered by training-set size; balancing hurts every domain. |
+| `balance_delta_by_size.pdf` | Bar chart of $\Delta$ ChrF $= \mathrm{ChrF}(\tau{=}\infty) - \mathrm{ChrF}(\tau{=}1)$ per domain, ordered by $N_d$. | Effect of uniform domain sampling on ChrF, by domain. The hypothesis that low-resource domains gain from balancing is rejected — every bar is negative. |
+
+Tables:
+- [`balance_chrf.tex`](../tables/new/balance_chrf.tex), [`balance_comet.tex`](../tables/new/balance_comet.tex) — overall 3 × 12-pair tables
+- [`balance_domain_x_lang_eng_xxx.tex`](../tables/new/balance_domain_x_lang_eng_xxx.tex) — Table-7-style 11-domain × 6-target table with red/blue Δ deltas (τ=∞ vs τ=1, ChrF; needs `\usepackage{xcolor}`)
 
 ## Appendix
 

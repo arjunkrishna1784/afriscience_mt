@@ -1,0 +1,30 @@
+% ---- balance_domain_eng_xxx ----
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\caption{Domain-level ChrF for NLLB-1.3B on Eng$\to$xxx with uniform-temperature sampling ($\tau{=}\infty$). Numbers in parentheses are the change relative to the natural-distribution baseline ($\tau{=}1$); blue = improvement, red = decrease. Total training volume is identical across the two conditions (5\,792 sentences) --- only the per-example sampling weight changes.}
+\label{tab:balance_domain_eng_xxx}
+\begin{tabular}{lrrrrrrr}
+\toprule
+\textbf{domain} & \textbf{\#sents} & \multicolumn{6}{c}{\textbf{domain-level ChrF}} \\
+\cmidrule(lr){3-8}
+  &       & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
+\midrule
+\textit{all-domains} & 5{,}792 & 43.7 \textcolor{red}{(-1.8)} & 66.3 \textcolor{red}{(-1.4)} & 50.5 \textcolor{red}{(-1.0)} & 63.4 \textcolor{red}{(-0.9)} & 17.4 \textcolor{red}{(-0.3)} & 65.0 \textcolor{red}{(-2.2)} \\
+\midrule
+chemistry & 46 & 37.9 \textcolor{red}{(-0.6)} & 71.2 \textcolor{red}{(-0.3)} & 50.7 \textcolor{red}{(-1.5)} & 69.1 \textcolor{red}{(-1.4)} & 18.6 \textcolor{blue}{(+0.4)} & 69.1 \textcolor{red}{(-4.0)} \\
+Indigenous knowledge & 92 & 40.2 \textcolor{red}{(-0.7)} & 65.0 \textcolor{red}{(-2.8)} & 54.5 \textcolor{blue}{(+0.0)} & 63.6 \textcolor{red}{(-0.9)} & 17.7 \textcolor{blue}{(+0.2)} & 67.3 \textcolor{red}{(-0.5)} \\
+engineering & 93 & 43.7 \textcolor{red}{(-1.4)} & 63.3 \textcolor{red}{(-2.1)} & 45.9 \textcolor{red}{(-1.0)} & 61.8 \textcolor{blue}{(+0.1)} & 12.3 \textcolor{red}{(-0.3)} & 71.3 \textcolor{red}{(-2.9)} \\
+statistics & 184 & 44.1 \textcolor{red}{(-2.7)} & 64.9 \textcolor{red}{(-0.2)} & 54.8 \textcolor{red}{(-2.5)} & 66.8 \textcolor{blue}{(+1.0)} & 18.9 \textcolor{blue}{(+0.2)} & 52.0 \textcolor{blue}{(+0.6)} \\
+computer science & 213 & 42.7 \textcolor{red}{(-1.7)} & 72.7 \textcolor{blue}{(+0.3)} & 55.4 \textcolor{blue}{(+0.7)} & 70.5 \textcolor{blue}{(+0.5)} & 16.8 \textcolor{red}{(-0.3)} & 49.5 \textcolor{red}{(-0.9)} \\
+geography & 218 & 51.2 \textcolor{red}{(-2.1)} & 69.8 \textcolor{red}{(-1.3)} & 47.4 \textcolor{red}{(-1.2)} & 63.4 \textcolor{red}{(-1.5)} & 13.1 \textcolor{red}{(-0.1)} & 69.8 \textcolor{red}{(-0.5)} \\
+agriculture & 388 & 48.6 \textcolor{red}{(-2.6)} & 70.8 \textcolor{red}{(-2.5)} & 48.6 \textcolor{blue}{(+0.8)} & 64.4 \textcolor{red}{(-1.5)} & 13.3 \textcolor{red}{(-0.2)} & 68.4 \textcolor{red}{(-3.6)} \\
+biology & 632 & 43.6 \textcolor{red}{(-1.9)} & 65.8 \textcolor{red}{(-1.6)} & 51.0 \textcolor{red}{(-0.9)} & 61.5 \textcolor{red}{(-0.0)} & 26.6 \textcolor{red}{(-0.4)} & 63.5 \textcolor{red}{(-2.8)} \\
+biochemistry & 651 & 45.1 \textcolor{red}{(-2.5)} & 67.4 \textcolor{red}{(-1.9)} & 56.5 \textcolor{red}{(-0.8)} & 66.7 \textcolor{red}{(-2.0)} & 16.4 \textcolor{red}{(-0.1)} & 69.0 \textcolor{red}{(-2.4)} \\
+sociology & 670 & 46.6 \textcolor{red}{(-1.4)} & 68.2 \textcolor{red}{(-1.8)} & 52.6 \textcolor{red}{(-1.1)} & 64.2 \textcolor{red}{(-1.0)} & 14.4 \textcolor{red}{(-0.4)} & 69.6 \textcolor{red}{(-1.6)} \\
+health & 2605 & 41.2 \textcolor{red}{(-1.8)} & 63.3 \textcolor{red}{(-0.9)} & 48.3 \textcolor{red}{(-1.4)} & 61.3 \textcolor{red}{(-0.9)} & 18.0 \textcolor{red}{(-0.6)} & 61.7 \textcolor{red}{(-2.4)} \\
+\bottomrule
+\end{tabular}
+\end{table*}

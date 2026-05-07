@@ -501,6 +501,130 @@ def fig_n2n_heatmap(rows):
     return out
 
 
+SPIDER_DOMAIN_SHORT = {
+    "chemistry": "Chem.", "biology": "Biology",
+    "biochemistry": "Biochem.", "agriculture": "Agric.",
+    "statistics": "Stat.", "sociology": "Soc.",
+    "Indigenous knowledge": "Indig.",
+    "health": "Health", "geography": "Geog.",
+    "engineering": "Eng.", "computer science": "CS",
+}
+
+
+def fig_spider_per_pair_subdir():
+    """Per-pair spider PDFs in two flavours:
+
+      figures/new/spider_per_pair/<pair>.pdf       -- 3 systems
+        (NLLB-1.3B FT, Gemma2-9B LoRA r=64, GPT-4o template3-5shot)
+
+      figures/new/spider_per_pair_4sys/<pair>.pdf  -- 4 systems
+        (adds Tiny-Aya-Earth LoRA r=64)
+
+    Both directions (12 pairs each). Drop into LaTeX as `\\subfigure`s.
+
+    GPT-4o uses the same template (template3-5shot) on both directions to
+    keep the polygon apples-to-apples (template3 wins 53% of GPT-4o
+    per-cell template comparisons, the highest frequency).
+
+    Backbone rationale:
+      * best seq2seq:    NLLB-1.3B fine-tuned on dcs
+      * best open LLM:   Gemma2-9B at LoRA r=64 (avg SSA-COMET 57.9 — top of
+                         the open LoRA backbone matrix)
+      * best closed LLM: GPT-4o template3 5-shot ICL
+      * + Tiny-Aya-Earth LoRA r=64 for the 4-system version (Africa-focused
+        open backbone; avg SSA-COMET 57.1, second only to Gemma).
+    """
+    domain_order = [
+        "chemistry", "biology", "biochemistry", "agriculture", "statistics",
+        "sociology", "Indigenous knowledge", "health", "geography",
+        "engineering", "computer science",
+    ]
+    nllb_base   = EXP_DIR / "seq2seq" / "finetune" / "nllb_200_1_3b" / "dcs"
+    gemma_base  = EXP_DIR / "llm" / "open" / "finetune" / "gemma2_9b_it" / "r64"
+    aya_base    = EXP_DIR / "llm" / "open" / "finetune" / "tiny_aya_earth" / "r64"
+    gpt_e2x     = EXP_DIR / "llm" / "closed" / "t06" / "icl" / "gpt4o" / "template3_5shot"
+    gpt_x2e     = EXP_DIR / "llm" / "closed" / "t0"  / "icl" / "gpt4o" / "template3_5shot"
+
+    # Each system: (name, base_dir, line_color, fill_color, linestyle, marker).
+    # Distinct linestyle+marker per system so the spider remains legible in
+    # colorless print.
+    def systems3(pair: str):
+        gpt_base = gpt_e2x if pair.startswith("eng-") else gpt_x2e
+        return [
+            ("NLLB-1.3B",        nllb_base,  "#3b67c4", "#a9bde6", "-",  "o"),
+            ("Gemma2-9B (LoRA)", gemma_base, "#2ca25f", "#b8e0c8", "--", "s"),
+            ("GPT-4o",           gpt_base,   "#d24a4a", "#f5c1c1", ":",  "^"),
+        ]
+
+    def systems4(pair: str):
+        gpt_base = gpt_e2x if pair.startswith("eng-") else gpt_x2e
+        return [
+            ("NLLB-1.3B",        nllb_base,  "#3b67c4", "#a9bde6", "-",   "o"),
+            ("Gemma2-9B (LoRA)", gemma_base, "#2ca25f", "#b8e0c8", "--",  "s"),
+            ("Tiny-Aya-E (LoRA)", aya_base,  "#9467bd", "#d8c8e8", "-.",  "^"),
+            ("GPT-4o",           gpt_base,   "#d24a4a", "#f5c1c1", ":",   "D"),
+        ]
+
+    pairs = [f"eng-{l}" for l in LANGS] + [f"{l}-eng" for l in LANGS]
+
+    angles = np.linspace(0, 2 * np.pi, len(domain_order), endpoint=False).tolist()
+    angles += angles[:1]
+
+    def emit(systems_fn, subdir_name):
+        # Global y_top — tightest circle that still contains every polygon
+        # value plus a 1-pt buffer (avoids polygons touching the outer edge).
+        all_vals = []
+        for pair in pairs:
+            src, tgt = pair.split("-")
+            for sys in systems_fn(pair):
+                base = sys[1]
+                d = per_domain_chrf(base / pair / "predictions.json", src, tgt)
+                all_vals.extend(d.values())
+        y_top = int(np.ceil(max(all_vals))) + 1
+        y_ticks = [v for v in (20, 40, 60, 80) if v < y_top]
+
+        out_dir = FIG_DIR / subdir_name
+        out_dir.mkdir(parents=True, exist_ok=True)
+        for pair in pairs:
+            src, tgt = pair.split("-")
+            # Smaller figsize -> smaller native circle, no need for LaTeX
+            # \includegraphics scaling tricks to fit on one page.
+            fig = plt.figure(figsize=(1.9, 1.9))
+            ax = fig.add_subplot(111, polar=True)
+            for (sys_name, base, line_c, fill_c, ls, marker) in systems_fn(pair):
+                d = per_domain_chrf(base / pair / "predictions.json", src, tgt)
+                vals = [d.get(dom, 0.0) for dom in domain_order]
+                vals += vals[:1]
+                ax.plot(angles, vals, color=line_c, linewidth=0.6,
+                        linestyle=ls, marker=marker, markersize=1.6,
+                        markeredgewidth=0.3, markerfacecolor=line_c,
+                        label=sys_name)
+                ax.fill(angles, vals, color=fill_c, alpha=0.12)
+            ax.set_xticks(angles[:-1])
+            ax.set_xticklabels([SPIDER_DOMAIN_SHORT[d] for d in domain_order],
+                               fontsize=5)
+            ax.set_ylim(0, y_top)
+            ax.set_yticks(y_ticks)
+            ax.set_yticklabels([str(t) for t in y_ticks],
+                               fontsize=4, color="gray")
+            ax.tick_params(pad=0.5)
+            ax.grid(linestyle=":", alpha=0.5, linewidth=0.4)
+            ax.spines["polar"].set_visible(True)
+            ax.spines["polar"].set_linewidth(0.5)
+            ax.patch.set_alpha(0)
+            fig.tight_layout()
+            fig.savefig(out_dir / f"{pair}.pdf",
+                        bbox_inches="tight",
+                        transparent=True)
+            plt.close(fig)
+        print(f"  ✓ 12 PDFs in {out_dir.relative_to(ROOT)}/")
+        return out_dir
+
+    emit(systems3, "spider_per_pair/3sys")     # 3-system version
+    emit(systems4, "spider_per_pair/4sys")     # 4-system (+ Tiny-Aya-E)
+    return FIG_DIR / "spider_per_pair"
+
+
 def fig_spider_per_pair():
     """Page-23-style spider charts: one polygon per system per Eng→X pair, six
     panels in a 3×2 grid. Two systems compared: NLLB-1.3B (fine-tuned) and
@@ -722,6 +846,7 @@ def main():
     written.append(fig_per_domain_radar())
     written.append(fig_per_domain_weighted())
     written.append(fig_spider_per_pair())
+    fig_spider_per_pair_subdir()  # per-pair PDFs for LaTeX \subfigure use
 
     for p in written:
         print(f"  {p.relative_to(ROOT)}")

@@ -62,32 +62,51 @@ is the most credible kind of ablation report.
 
 ## §4 Domain composition: temperature-sampled balance (ablation)
 
-The new ablation from this session. Three points along the τ axis on the
-same training corpus and the same per-pair test set (NLLB-1.3B):
+Three points along the τ axis on the same training corpus and the same
+per-pair test set (NLLB-1.3B):
 
 | τ | per-example weight | source |
 |---|---|---|
-| 1 (proportional) | uniform | existing `seq2seq/finetune/nllb_200_1_3b/dcs/` |
-| 2 (sqrt) | `(1/N_d)^(1/2)` | new `balance_t2/` runs |
-| ∞ (uniform) | `1/N_d` | new `balance_tinf/` runs |
+| 1 (proportional) | natural | existing `seq2seq/finetune/nllb_200_1_3b/dcs/` |
+| 2 (sqrt) | `(1/N_d)^(1/2)` | `balance_t2/` runs |
+| ∞ (uniform) | `1/N_d` | `balance_tinf/` runs |
 
-**Two figures, not just a table.** This is where domain comparison shines.
+### Result (computed 2026-05-07): balance hurts uniformly, no small-domain win
 
-Figure 1: a 2×11 heatmap where rows are τ ∈ {1, 2, ∞} and columns are the
-11 scientific domains. Cell = average SSA-COMET across the 12 pairs. Use
-`afriscience-mt plot` once we wire per-domain plotting. The visual asks
-"does balance help small domains?"; if yes, the ∞ row should brighten on
-the chemistry / Indigenous knowledge / engineering columns and dim on
-health.
+The hypothesis was "small domains gain, large domains lose under
+balancing." **The data contradicts that.** Every domain loses ChrF when
+moving from τ=1 → τ=∞, including the smallest (chemistry, N=46,
+−1.5 ChrF). τ=2 sits in the middle, also worse than τ=1 everywhere.
 
-Figure 2 (or a paired plot): per-domain delta `COMET(τ=∞) − COMET(τ=1)`
-sorted by N_d. If there's a clean monotonic relationship — small domains
-gain, large domains lose — that's the paper's most quotable plot.
+| metric | τ=1 best cells | τ=2 best | τ=∞ best |
+|---|---|---|---|
+| SSA-COMET (12 pairs) | 11 / 12 | 1 / 12 (zul→eng tie) | 0 / 12 |
+| Avg ChrF (avg over 11 domains) | 57.5 | 56.4 | 56.0 |
 
-**Claim shape:** "Hard data balancing (τ=∞) trades A points on health
-(N=2 605) for B points on chemistry (N=46), with sqrt smoothing (τ=2)
-recovering most of the lost head while preserving most of the tail gains."
-Include a numerical anchor at each end of the curve.
+Per-domain Δ ChrF (τ=∞ − τ=1) ranges from **−0.6 (CS) to −1.9 (Biology)**;
+no domain is positive. Assets:
+- [tables/new/balance_chrf.tex](../tables/new/balance_chrf.tex), [tables/new/balance_comet.tex](../tables/new/balance_comet.tex)
+- [figures/new/balance_heatmap.pdf](../_ACL2026__Decolonizing_Science_in_Africa_through_Text_Translation_/figures/new/balance_heatmap.pdf) — 3 × 11 heatmap
+- [figures/new/balance_delta_by_size.pdf](../_ACL2026__Decolonizing_Science_in_Africa_through_Text_Translation_/figures/new/balance_delta_by_size.pdf) — Δ ChrF per domain
+
+### Revised claim shape
+
+> "Re-weighting the training distribution toward smaller domains via
+> temperature sampling (τ ∈ {2, ∞}) hurts performance across **every**
+> domain, not just the dominant one. Even the smallest domain
+> (chemistry, N = 46) loses 1.5 ChrF under uniform sampling. Volume
+> dominates balance: under data-constrained fine-tuning, the model
+> benefits more from the quantity of (any-domain) examples than from
+> equalised per-domain proportions."
+
+This is actually a more useful negative result than the original
+hypothesised "trade-off" framing — it's a clean finding the paper can
+make a contribution out of, and aligns with the existing
+`acl_latex.tex` line 438 claim that "training on all available data,
+despite natural domain imbalances, yields superior performance compared
+to artificially balanced datasets" (which earlier in the draft was
+based on a *truncation* experiment, not temperature sampling — now we
+have the cleaner temperature-sampled evidence).
 
 ## §5 LoRA rank ablation
 
