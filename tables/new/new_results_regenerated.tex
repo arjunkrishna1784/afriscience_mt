@@ -1,3 +1,151 @@
+% ---- main_zs_ft_chrf ----
+\begin{table*}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+\textbf{Model} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$eng}} & \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-13}
+   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
+\midrule
+\multicolumn{14}{l}{\textit{Zero-shot}} \\
+\midrule
+M2M100\textunderscore{}1.2B & 11.9 & 30.6 & 6.1 & 15.1 & \emph{13.3} & 30.3 & 36.6 & 39.7 & 20.3 & 18.9 & 15.7 & 45.8 & 23.7 \\
+M2M100\textunderscore{}418M & 6.2 & 14.8 & 5.6 & 7.6 & 8.6 & 16.9 & 27.7 & 27.5 & 16.4 & 17.6 & 15.2 & 33.7 & 16.5 \\
+NLLB\textunderscore{}1.3B & \textbf{37.4} & \textbf{59.4} & \textbf{43.2} & \textbf{51.4} & 13.0 & \textbf{60.1} & \textbf{57.6} & \textbf{57.5} & \textbf{49.5} & \textbf{58.5} & \textbf{46.0} & \textbf{63.2} & \textbf{49.7} \\
+NLLB\textunderscore{}600M & 37.1 & 56.2 & 40.4 & 50.5 & 12.3 & 60.1 & 55.1 & 56.2 & 47.2 & 56.1 & 43.6 & 61.2 & 48.0 \\
+\midrule
+AfriqueLlama-8B & 23.6 & 31.0 & \emph{17.7} & \emph{23.2} & 13.0 & 31.5 & 39.4 & 27.5 & 20.0 & 21.8 & 22.3 & 28.9 & 25.0 \\
+AfriqueQwen-8B & 5.8 & 11.2 & 8.2 & 10.4 & 8.5 & 10.2 & 6.2 & 14.3 & 12.9 & 12.4 & 13.6 & 21.4 & 11.3 \\
+Gemma2-9B & 8.6 & 30.6 & 12.1 & 18.5 & 10.2 & 20.5 & 39.3 & 45.9 & \emph{29.7} & \emph{32.0} & 23.6 & 43.8 & 26.2 \\
+Llama3-8B & 7.9 & 29.0 & 13.0 & 12.4 & 8.5 & 15.5 & 25.5 & 43.3 & 22.7 & 19.5 & 21.9 & 31.5 & 20.9 \\
+Tiny-Aya-E & 27.4 & \emph{52.5} & 10.7 & 11.5 & \textbf{14.5} & \emph{44.8} & \emph{47.9} & 45.7 & 20.1 & 17.3 & \emph{28.5} & 49.6 & \emph{30.9} \\
+Tiny-Aya-G & \emph{28.1} & 51.6 & 10.2 & 11.7 & 14.5 & 44.5 & 47.8 & \emph{46.2} & 19.9 & 17.2 & 28.0 & \emph{49.9} & 30.8 \\
+\midrule\midrule
+\multicolumn{14}{l}{\textit{Fine-tuned}} \\
+\midrule
+M2M100\textunderscore{}1.2B & 39.0 & 63.1 & 49.5 & 62.4 & 16.6 & 58.4 & 46.9 & 55.2 & 48.0 & 57.0 & 43.3 & 52.2 & 49.3 \\
+M2M100\textunderscore{}418M & 38.8 & 62.9 & 48.6 & 61.1 & 16.6 & 55.8 & 50.7 & 54.3 & 46.8 & 53.9 & 45.1 & 55.7 & 49.2 \\
+NLLB\textunderscore{}1.3B & \textbf{45.5} & \textbf{67.7} & \textbf{51.5} & \textbf{64.3} & \emph{17.7} & \textbf{67.2} & \textbf{63.1} & \textbf{64.3} & \textbf{55.4} & \textbf{65.8} & \textbf{53.3} & \textbf{68.6} & \textbf{57.0} \\
+NLLB\textunderscore{}600M & 44.4 & 66.9 & 50.6 & 64.2 & 17.6 & 66.3 & 60.1 & 62.1 & 53.2 & 63.2 & 50.7 & 66.6 & 55.5 \\
+\midrule
+AfriqueLlama-8B & 36.1 & 59.8 & 45.5 & 54.9 & 20.9 & 53.3 & \emph{59.3} & 56.6 & 47.0 & 58.6 & \emph{50.7} & 62.4 & 50.4 \\
+AfriqueQwen-8B & 27.7 & 59.2 & 39.1 & 59.2 & 13.4 & 35.5 & 40.4 & 34.6 & 24.0 & 29.9 & 35.2 & 35.7 & 36.1 \\
+Gemma2-9B & \emph{39.7} & 58.8 & \emph{50.1} & \emph{61.6} & \textbf{41.6} & 50.2 & 58.6 & \emph{62.7} & \emph{54.3} & \emph{62.5} & 50.7 & \emph{65.3} & \emph{54.7} \\
+Llama3-8B & 32.9 & 60.3 & 49.3 & 59.0 & 39.9 & 52.4 & 53.0 & 60.3 & 52.6 & 60.2 & 48.8 & 61.2 & 52.5 \\
+Tiny-Aya-E & 37.8 & \emph{62.0} & 46.9 & 57.7 & 39.5 & \emph{56.1} & 58.5 & 61.6 & 50.4 & 57.1 & 46.2 & 64.7 & 53.2 \\
+Tiny-Aya-G & 37.9 & 62.0 & 46.7 & 57.8 & 39.4 & 55.3 & 55.0 & 60.1 & 44.9 & 53.1 & 41.3 & 58.8 & 51.0 \\
+\bottomrule
+\end{tabular}
+\caption{Sentence-level zero-shot vs.\ fine-tuned performance (chrF). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
+\label{tab:main_zs_ft_chrf}
+\end{table*}
+
+% ---- main_zs_ft_comet ----
+\begin{table*}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+\textbf{Model} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$eng}} & \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-13}
+   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
+\midrule
+\multicolumn{14}{l}{\textit{Zero-shot}} \\
+\midrule
+M2M100\textunderscore{}1.2B & 31.7 & 36.1 & 31.6 & 32.8 & 42.1 & 43.9 & 53.6 & 55.6 & 42.0 & 40.1 & 42.9 & 58.4 & 42.6 \\
+M2M100\textunderscore{}418M & 23.5 & 27.9 & 32.2 & 30.6 & 29.1 & 33.0 & 46.8 & 47.0 & 37.9 & 39.6 & 37.7 & 51.3 & 36.4 \\
+NLLB\textunderscore{}1.3B & \textbf{62.8} & \textbf{61.9} & \textbf{67.7} & \textbf{70.7} & \textbf{61.9} & \textbf{66.0} & \textbf{67.8} & \textbf{67.3} & \textbf{65.0} & \textbf{68.3} & \textbf{63.3} & \textbf{67.8} & \textbf{65.9} \\
+NLLB\textunderscore{}600M & 62.2 & 60.2 & 65.7 & 70.2 & 59.3 & 65.5 & 67.2 & 66.6 & 63.8 & 67.2 & 62.0 & 67.2 & 64.8 \\
+\midrule
+AfriqueLlama-8B & 33.9 & 35.5 & \emph{42.2} & 38.2 & \emph{40.4} & 36.8 & 36.1 & 35.1 & 40.9 & 39.8 & 39.4 & 35.8 & 37.8 \\
+AfriqueQwen-8B & 33.6 & 35.8 & 36.5 & 33.9 & 37.8 & 32.7 & 28.7 & 31.2 & 37.1 & 32.7 & 33.9 & 30.8 & 33.7 \\
+Gemma2-9B & \emph{35.7} & \emph{36.2} & 40.3 & \emph{40.4} & 37.2 & \emph{36.8} & 41.1 & 39.5 & \emph{42.3} & \emph{42.7} & 39.9 & \emph{40.5} & \emph{39.4} \\
+Llama3-8B & 21.6 & 24.6 & 35.9 & 34.0 & 29.2 & 27.1 & \emph{42.3} & \emph{41.3} & 41.6 & 41.0 & 40.6 & 39.5 & 34.9 \\
+Tiny-Aya-E & 27.1 & 28.1 & 37.9 & 36.6 & 37.9 & 33.3 & 39.1 & 37.4 & 41.0 & 38.0 & \emph{41.8} & 38.6 & 36.4 \\
+Tiny-Aya-G & 26.8 & 28.4 & 36.7 & 35.9 & 37.8 & 33.2 & 40.8 & 37.4 & 41.6 & 36.9 & 41.6 & 39.0 & 36.3 \\
+\midrule\midrule
+\multicolumn{14}{l}{\textit{Fine-tuned}} \\
+\midrule
+M2M100\textunderscore{}1.2B & 59.7 & 59.8 & 66.0 & 68.0 & 64.5 & 61.9 & 60.0 & 63.8 & 61.7 & 65.0 & 59.6 & 61.1 & 62.6 \\
+M2M100\textunderscore{}418M & 58.6 & 58.8 & 65.2 & 66.8 & 64.4 & 59.7 & 61.9 & 63.0 & 61.2 & 63.4 & 60.0 & 62.5 & 62.1 \\
+NLLB\textunderscore{}1.3B & \textbf{66.0} & \textbf{63.3} & \textbf{70.0} & \textbf{70.7} & \textbf{67.3} & \textbf{66.0} & \textbf{68.6} & \textbf{68.0} & \textbf{65.9} & \textbf{69.0} & \textbf{64.8} & \textbf{68.2} & \textbf{67.3} \\
+NLLB\textunderscore{}600M & 65.1 & 62.9 & 69.5 & 70.3 & 66.8 & 65.7 & 68.0 & 67.3 & 65.1 & 68.3 & 63.9 & 67.8 & 66.7 \\
+\midrule
+AfriqueLlama-8B & 49.6 & 51.5 & 58.7 & 58.7 & 55.5 & 51.6 & \emph{60.9} & 53.5 & 54.7 & 58.7 & 55.7 & 56.4 & 55.5 \\
+AfriqueQwen-8B & 23.8 & 37.2 & 45.1 & 52.1 & 21.2 & 28.7 & 36.6 & 28.2 & 22.8 & 25.8 & 41.3 & 26.5 & 32.4 \\
+Gemma2-9B & 54.0 & 50.5 & \emph{62.7} & \emph{62.8} & \emph{58.9} & 48.4 & 60.4 & 60.6 & \emph{58.4} & \emph{61.1} & \emph{56.3} & 60.4 & \emph{57.9} \\
+Llama3-8B & 42.4 & 51.3 & 61.1 & 60.6 & 56.8 & 50.3 & 58.1 & 60.2 & 57.7 & 60.4 & 55.6 & 59.0 & 56.1 \\
+Tiny-Aya-E & \emph{54.3} & 54.3 & 59.8 & 59.2 & 57.1 & \emph{55.7} & 57.8 & \emph{61.0} & 56.5 & 58.7 & 50.2 & \emph{60.5} & 57.1 \\
+Tiny-Aya-G & 53.4 & \emph{54.5} & 59.1 & 59.3 & 56.8 & 53.9 & 49.0 & 55.4 & 21.9 & 43.3 & 20.5 & 33.1 & 46.7 \\
+\bottomrule
+\end{tabular}
+\caption{Sentence-level zero-shot vs.\ fine-tuned performance (COMET). The four seq2seq backbones (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
+\label{tab:main_zs_ft_comet}
+\end{table*}
+
+% ---- open_vs_closed_icl_chrf ----
+\begin{table*}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+\textbf{Model} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$eng}} & \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-13}
+   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
+\midrule
+\multicolumn{14}{l}{\textit{Zero-shot}} \\
+\midrule
+Best open & \emph{28.1} & \emph{52.5} & \emph{17.7} & \emph{23.2} & \emph{14.5} & \emph{44.8} & \emph{47.9} & \emph{46.2} & \emph{29.7} & \emph{32.0} & \emph{28.5} & \emph{49.9} & \emph{34.6} \\
+\midrule
+Gemini-1.5 & \textbf{36.4} & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & \textbf{58.5} & 56.7 & 47.6 & 52.1 & 42.0 & 60.3 & 46.4 \\
+GPT-4o & 21.1 & \textbf{58.0} & \textbf{41.9} & \textbf{47.3} & \textbf{16.3} & \textbf{58.5} & 53.0 & \textbf{60.7} & \textbf{51.1} & \textbf{58.5} & \textbf{49.0} & \textbf{65.8} & \textbf{48.4} \\
+\midrule\midrule
+\multicolumn{14}{l}{\textit{5-shot ICL}} \\
+\midrule
+Best open & \emph{30.2} & \emph{56.3} & \emph{20.6} & \emph{27.2} & \textbf{23.7} & \emph{51.7} & \emph{52.8} & \emph{55.6} & \emph{35.5} & \emph{37.7} & \emph{37.1} & \emph{58.9} & \emph{40.6} \\
+\midrule
+Gemini-1.5 & \textbf{38.8} & 56.9 & 40.0 & 47.9 & 17.5 & 51.7 & \textbf{60.1} & 58.9 & 49.1 & 55.5 & 45.2 & 63.2 & 48.7 \\
+GPT-4o & 26.4 & \textbf{62.0} & \textbf{42.3} & \textbf{53.6} & \emph{20.7} & \textbf{57.9} & 54.0 & \textbf{62.1} & \textbf{52.5} & \textbf{60.1} & \textbf{49.8} & \textbf{67.5} & \textbf{50.7} \\
+\bottomrule
+\end{tabular}
+\caption{Open vs.\ closed-source LLMs at sentence-level in-context learning (chrF). \textit{Best open} rows are the per-cell maximum across the six open LLMs in Table~\ref{tab:main_zs_ft_chrf}. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{5-shot ICL}); \emph{italic}: column maximum within the sub-block (open or closed).}
+\label{tab:open_vs_closed_icl_chrf}
+\end{table*}
+
+% ---- open_vs_closed_icl_comet ----
+\begin{table*}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+\textbf{Model} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$eng}} & \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-13}
+   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
+\midrule
+\multicolumn{14}{l}{\textit{Zero-shot}} \\
+\midrule
+Best open & \emph{35.7} & \emph{36.2} & \emph{42.2} & \emph{40.4} & \emph{40.4} & \emph{36.8} & \emph{42.3} & \emph{41.3} & \emph{42.3} & \emph{42.7} & \emph{41.8} & \emph{40.5} & \emph{40.2} \\
+\midrule
+Gemini-1.5 & \textbf{57.9} & 55.8 & 59.4 & 62.2 & \textbf{57.5} & 53.9 & \textbf{62.6} & 61.4 & 58.1 & 59.8 & 54.8 & 60.8 & \textbf{58.7} \\
+GPT-4o & 39.4 & \textbf{56.8} & \textbf{60.7} & \textbf{62.6} & 54.6 & \textbf{58.3} & 60.5 & \textbf{62.3} & \textbf{59.3} & \textbf{62.0} & \textbf{57.8} & \textbf{62.1} & 58.0 \\
+\midrule\midrule
+\multicolumn{14}{l}{\textit{5-shot ICL}} \\
+\midrule
+Best open & \emph{37.5} & \textbf{60.3} & \emph{43.2} & \emph{41.7} & \emph{48.2} & \emph{49.3} & \emph{46.9} & \emph{44.0} & \emph{44.6} & \emph{45.8} & \emph{50.2} & \textbf{66.4} & \emph{48.2} \\
+\midrule
+Gemini-1.5 & \textbf{58.3} & 56.0 & 60.8 & 63.6 & 56.8 & 54.5 & \textbf{62.8} & 61.7 & 58.4 & 60.7 & 56.0 & 61.2 & 59.2 \\
+GPT-4o & 47.4 & \emph{56.3} & \textbf{64.4} & \textbf{65.0} & \textbf{57.7} & \textbf{58.3} & 60.9 & \textbf{62.7} & \textbf{59.9} & \textbf{62.4} & \textbf{58.1} & \emph{62.3} & \textbf{59.6} \\
+\bottomrule
+\end{tabular}
+\caption{Open vs.\ closed-source LLMs at sentence-level in-context learning (COMET). \textit{Best open} rows are the per-cell maximum across the six open LLMs in Table~\ref{tab:main_zs_ft_comet}. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{5-shot ICL}); \emph{italic}: column maximum within the sub-block (open or closed).}
+\label{tab:open_vs_closed_icl_comet}
+\end{table*}
+
 % ---- seq2seq_chrf ----
 \begin{table*}[t]
 \centering
@@ -9,13 +157,13 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{2}{*}{\textit{Zero-shot}} & m2m100\textunderscore{}1.2B & 11.9 & 30.6 & 6.1 & 15.1 & \textbf{13.3} & 30.3 & 36.6 & 39.7 & 20.3 & 18.9 & 15.7 & 45.8 \\
- & nllb\textunderscore{}1.3B & \textbf{37.4} & \textbf{59.4} & \textbf{43.2} & \textbf{51.4} & 13.0 & \textbf{60.1} & \textbf{57.6} & \textbf{57.5} & \textbf{49.5} & \textbf{58.5} & \textbf{46.0} & \textbf{63.2} \\
+\multirow{2}{*}{\textit{Zero-shot}} & M2M100\textunderscore{}1.2B & 11.9 & 30.6 & 6.1 & 15.1 & \emph{13.3} & 30.3 & 36.6 & 39.7 & 20.3 & 18.9 & 15.7 & 45.8 \\
+ & NLLB\textunderscore{}1.3B & \emph{37.4} & \emph{59.4} & \emph{43.2} & \emph{51.4} & 13.0 & \emph{60.1} & \emph{57.6} & \emph{57.5} & \emph{49.5} & \emph{58.5} & \emph{46.0} & \emph{63.2} \\
 \midrule
-\multirow{2}{*}{\textit{Fine-tuned}} & m2m100\textunderscore{}1.2B & 39.0 & 63.1 & 49.5 & 62.4 & 16.6 & 58.4 & 46.9 & 55.2 & 48.0 & 57.0 & 43.3 & 52.2 \\
- & nllb\textunderscore{}1.3B & \textbf{45.5} & \textbf{67.7} & \textbf{51.5} & \textbf{64.3} & \textbf{17.7} & \textbf{67.2} & \textbf{63.1} & \textbf{64.3} & \textbf{55.4} & \textbf{65.8} & \textbf{53.3} & \textbf{68.6} \\
+\multirow{2}{*}{\textit{Fine-tuned}} & M2M100\textunderscore{}1.2B & 39.0 & 63.1 & 49.5 & 62.4 & 16.6 & 58.4 & 46.9 & 55.2 & 48.0 & 57.0 & 43.3 & 52.2 \\
+ & NLLB\textunderscore{}1.3B & \textbf{45.5} & \textbf{67.7} & \textbf{51.5} & \textbf{64.3} & \textbf{17.7} & \textbf{67.2} & \textbf{63.1} & \textbf{64.3} & \textbf{55.4} & \textbf{65.8} & \textbf{53.3} & \textbf{68.6} \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -31,13 +179,13 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{2}{*}{\textit{Zero-shot}} & m2m100\textunderscore{}1.2B & 31.7 & 36.1 & 31.6 & 32.8 & 42.1 & 43.9 & 53.6 & 55.6 & 42.0 & 40.1 & 42.9 & 58.4 \\
- & nllb\textunderscore{}1.3B & \textbf{62.8} & \textbf{61.9} & \textbf{67.7} & \textbf{70.7} & \textbf{61.9} & \textbf{66.0} & \textbf{67.8} & \textbf{67.3} & \textbf{65.0} & \textbf{68.3} & \textbf{63.3} & \textbf{67.8} \\
+\multirow{2}{*}{\textit{Zero-shot}} & M2M100\textunderscore{}1.2B & 31.7 & 36.1 & 31.6 & 32.8 & 42.1 & 43.9 & 53.6 & 55.6 & 42.0 & 40.1 & 42.9 & 58.4 \\
+ & NLLB\textunderscore{}1.3B & \emph{62.8} & \emph{61.9} & \emph{67.7} & \textbf{70.7} & \emph{61.9} & \emph{66.0} & \emph{67.8} & \emph{67.3} & \emph{65.0} & \emph{68.3} & \emph{63.3} & \emph{67.8} \\
 \midrule
-\multirow{2}{*}{\textit{Fine-tuned}} & m2m100\textunderscore{}1.2B & 59.7 & 59.8 & 66.0 & 68.0 & 64.5 & 61.9 & 60.0 & 63.8 & 61.7 & 65.0 & 59.6 & 61.1 \\
- & nllb\textunderscore{}1.3B & \textbf{66.0} & \textbf{63.3} & \textbf{70.0} & \textbf{70.7} & \textbf{67.3} & \textbf{66.0} & \textbf{68.6} & \textbf{68.0} & \textbf{65.9} & \textbf{69.0} & \textbf{64.8} & \textbf{68.2} \\
+\multirow{2}{*}{\textit{Fine-tuned}} & M2M100\textunderscore{}1.2B & 59.7 & 59.8 & 66.0 & 68.0 & 64.5 & 61.9 & 60.0 & 63.8 & 61.7 & 65.0 & 59.6 & 61.1 \\
+ & NLLB\textunderscore{}1.3B & \textbf{66.0} & \textbf{63.3} & \textbf{70.0} & \emph{70.7} & \textbf{67.3} & \textbf{66.0} & \textbf{68.6} & \textbf{68.0} & \textbf{65.9} & \textbf{69.0} & \textbf{64.8} & \textbf{68.2} \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -53,13 +201,13 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{2}{*}{\textit{Zero-shot}} & m2m100\textunderscore{}418M & 6.2 & 14.8 & 5.6 & 7.6 & 8.6 & 16.9 & 27.7 & 27.5 & 16.4 & 17.6 & 15.2 & 33.7 \\
- & nllb\textunderscore{}600M & \textbf{37.1} & \textbf{56.2} & \textbf{40.4} & \textbf{50.5} & \textbf{12.3} & \textbf{60.1} & \textbf{55.1} & \textbf{56.2} & \textbf{47.2} & \textbf{56.1} & \textbf{43.6} & \textbf{61.2} \\
+\multirow{2}{*}{\textit{Zero-shot}} & M2M100\textunderscore{}418M & 6.2 & 14.8 & 5.6 & 7.6 & 8.6 & 16.9 & 27.7 & 27.5 & 16.4 & 17.6 & 15.2 & 33.7 \\
+ & NLLB\textunderscore{}600M & \emph{37.1} & \emph{56.2} & \emph{40.4} & \emph{50.5} & \emph{12.3} & \emph{60.1} & \emph{55.1} & \emph{56.2} & \emph{47.2} & \emph{56.1} & \emph{43.6} & \emph{61.2} \\
 \midrule
-\multirow{2}{*}{\textit{Fine-tuned}} & m2m100\textunderscore{}418M & 38.8 & 62.9 & 48.6 & 61.1 & 16.6 & 55.8 & 50.7 & 54.3 & 46.8 & 53.9 & 45.1 & 55.7 \\
- & nllb\textunderscore{}600M & \textbf{44.4} & \textbf{66.9} & \textbf{50.6} & \textbf{64.2} & \textbf{17.6} & \textbf{66.3} & \textbf{60.1} & \textbf{62.1} & \textbf{53.2} & \textbf{63.2} & \textbf{50.7} & \textbf{66.6} \\
+\multirow{2}{*}{\textit{Fine-tuned}} & M2M100\textunderscore{}418M & 38.8 & 62.9 & 48.6 & 61.1 & 16.6 & 55.8 & 50.7 & 54.3 & 46.8 & 53.9 & 45.1 & 55.7 \\
+ & NLLB\textunderscore{}600M & \textbf{44.4} & \textbf{66.9} & \textbf{50.6} & \textbf{64.2} & \textbf{17.6} & \textbf{66.3} & \textbf{60.1} & \textbf{62.1} & \textbf{53.2} & \textbf{63.2} & \textbf{50.7} & \textbf{66.6} \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -75,13 +223,13 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{2}{*}{\textit{Zero-shot}} & m2m100\textunderscore{}418M & 23.5 & 27.9 & 32.2 & 30.6 & 29.1 & 33.0 & 46.8 & 47.0 & 37.9 & 39.6 & 37.7 & 51.3 \\
- & nllb\textunderscore{}600M & \textbf{62.2} & \textbf{60.2} & \textbf{65.7} & \textbf{70.2} & \textbf{59.3} & \textbf{65.5} & \textbf{67.2} & \textbf{66.6} & \textbf{63.8} & \textbf{67.2} & \textbf{62.0} & \textbf{67.2} \\
+\multirow{2}{*}{\textit{Zero-shot}} & M2M100\textunderscore{}418M & 23.5 & 27.9 & 32.2 & 30.6 & 29.1 & 33.0 & 46.8 & 47.0 & 37.9 & 39.6 & 37.7 & 51.3 \\
+ & NLLB\textunderscore{}600M & \emph{62.2} & \emph{60.2} & \emph{65.7} & \emph{70.2} & \emph{59.3} & \emph{65.5} & \emph{67.2} & \emph{66.6} & \emph{63.8} & \emph{67.2} & \emph{62.0} & \emph{67.2} \\
 \midrule
-\multirow{2}{*}{\textit{Fine-tuned}} & m2m100\textunderscore{}418M & 58.6 & 58.8 & 65.2 & 66.8 & 64.4 & 59.7 & 61.9 & 63.0 & 61.2 & 63.4 & 60.0 & 62.5 \\
- & nllb\textunderscore{}600M & \textbf{65.1} & \textbf{62.9} & \textbf{69.5} & \textbf{70.3} & \textbf{66.8} & \textbf{65.7} & \textbf{68.0} & \textbf{67.3} & \textbf{65.1} & \textbf{68.3} & \textbf{63.9} & \textbf{67.8} \\
+\multirow{2}{*}{\textit{Fine-tuned}} & M2M100\textunderscore{}418M & 58.6 & 58.8 & 65.2 & 66.8 & 64.4 & 59.7 & 61.9 & 63.0 & 61.2 & 63.4 & 60.0 & 62.5 \\
+ & NLLB\textunderscore{}600M & \textbf{65.1} & \textbf{62.9} & \textbf{69.5} & \textbf{70.3} & \textbf{66.8} & \textbf{65.7} & \textbf{68.0} & \textbf{67.3} & \textbf{65.1} & \textbf{68.3} & \textbf{63.9} & \textbf{67.8} \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -97,23 +245,23 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama & 23.6 & 31.0 & \textbf{17.7} & 23.2 & 13.0 & 31.5 & 39.4 & 27.5 & 20.0 & 21.8 & 22.3 & 28.9 \\
- & AfriqueQwen & 5.8 & 11.2 & 8.2 & 10.4 & 8.5 & 10.2 & 6.2 & 14.3 & 12.9 & 12.4 & 13.6 & 21.4 \\
- & Gemma2-9B & 8.6 & 30.6 & 12.1 & 18.5 & 10.2 & 20.5 & 39.3 & 45.9 & \textbf{29.7} & 32.0 & 23.6 & 43.8 \\
+\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama-8B & 23.6 & 31.0 & \emph{17.7} & 23.2 & 13.0 & 31.5 & 39.4 & 27.5 & 20.0 & 21.8 & 22.3 & 28.9 \\
+ & AfriqueQwen-8B & 5.8 & 11.2 & 8.2 & 10.4 & 8.5 & 10.2 & 6.2 & 14.3 & 12.9 & 12.4 & 13.6 & 21.4 \\
+ & Gemma2-9B & 8.6 & 30.6 & 12.1 & 18.5 & 10.2 & 20.5 & 39.3 & 45.9 & \emph{29.7} & 32.0 & 23.6 & 43.8 \\
  & Llama3-8B & 7.9 & 29.0 & 13.0 & 12.4 & 8.5 & 15.5 & 25.5 & 43.3 & 22.7 & 19.5 & 21.9 & 31.5 \\
- & Tiny-Aya-E & 27.4 & \textbf{52.5} & 10.7 & 11.5 & \textbf{14.5} & \textbf{44.8} & 47.9 & 45.7 & 20.1 & 17.3 & 28.5 & 49.6 \\
- & Tiny-Aya-G & \textbf{28.1} & 51.6 & 10.2 & 11.7 & 14.5 & 44.5 & 47.8 & 46.2 & 19.9 & 17.2 & 28.0 & \textbf{49.9} \\
- & TransGemma & 18.8 & 38.3 & 17.3 & \textbf{23.7} & 13.5 & 39.4 & \textbf{51.0} & \textbf{53.5} & 27.5 & \textbf{41.4} & \textbf{34.3} & 35.7 \\
+ & Tiny-Aya-E & 27.4 & \emph{52.5} & 10.7 & 11.5 & \emph{14.5} & \emph{44.8} & 47.9 & 45.7 & 20.1 & 17.3 & 28.5 & 49.6 \\
+ & Tiny-Aya-G & \emph{28.1} & 51.6 & 10.2 & 11.7 & 14.5 & 44.5 & 47.8 & 46.2 & 19.9 & 17.2 & 28.0 & \emph{49.9} \\
+ & TransGemma-12B & 18.8 & 38.3 & 17.3 & \emph{23.7} & 13.5 & 39.4 & \emph{51.0} & \emph{53.5} & 27.5 & \textbf{41.4} & \emph{34.3} & 35.7 \\
 \midrule
-\multirow{7}{*}{\textit{5-shot ICL}} & AfriqueLlama & 25.2 & 33.2 & 20.6 & 27.2 & 23.7 & 32.7 & 44.8 & 31.7 & 22.9 & 26.3 & 27.4 & 32.7 \\
- & AfriqueQwen & 12.1 & 30.1 & 14.1 & 14.3 & 11.0 & 23.1 & 20.8 & 21.3 & 14.5 & 10.1 & 18.9 & 24.5 \\
- & Gemma2-9B & 12.1 & 37.2 & 11.9 & 20.7 & 11.0 & 24.0 & 43.9 & 51.7 & \textbf{35.5} & \textbf{37.7} & 30.2 & 51.0 \\
+\multirow{7}{*}{\textit{5-shot ICL}} & AfriqueLlama-8B & 25.2 & 33.2 & 20.6 & 27.2 & 23.7 & 32.7 & 44.8 & 31.7 & 22.9 & 26.3 & 27.4 & 32.7 \\
+ & AfriqueQwen-8B & 12.1 & 30.1 & 14.1 & 14.3 & 11.0 & 23.1 & 20.8 & 21.3 & 14.5 & 10.1 & 18.9 & 24.5 \\
+ & Gemma2-9B & 12.1 & 37.2 & 11.9 & 20.7 & 11.0 & 24.0 & 43.9 & 51.7 & \textbf{35.5} & \emph{37.7} & 30.2 & 51.0 \\
  & Llama3-8B & 9.2 & 30.1 & 15.5 & 17.4 & 14.8 & 16.9 & 29.0 & 43.7 & 29.9 & 28.7 & 25.9 & 33.7 \\
  & Tiny-Aya-E & \textbf{30.2} & 56.0 & 10.0 & 12.7 & 19.0 & \textbf{51.7} & 52.8 & \textbf{55.6} & 24.8 & 21.9 & \textbf{37.1} & \textbf{58.9} \\
  & Tiny-Aya-G & 29.9 & \textbf{56.3} & 10.0 & 12.0 & 19.2 & 51.6 & 52.2 & 55.0 & 24.4 & 21.9 & 36.4 & 58.6 \\
- & TransGemma & 26.2 & 45.4 & \textbf{23.1} & \textbf{32.2} & \textbf{23.9} & 43.8 & \textbf{55.4} & 49.3 & 35.2 & 33.2 & 32.5 & 33.1 \\
+ & TransGemma-12B & 26.2 & 45.4 & \textbf{23.1} & \textbf{32.2} & \textbf{23.9} & 43.8 & \textbf{55.4} & 49.3 & 35.2 & 33.2 & 32.5 & 33.1 \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -129,23 +277,23 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama & 33.9 & 35.5 & \textbf{42.2} & 38.2 & \textbf{40.4} & 36.8 & 36.1 & 35.1 & 40.9 & 39.8 & 39.4 & 35.8 \\
- & AfriqueQwen & 33.6 & 35.8 & 36.5 & 33.9 & 37.8 & 32.7 & 28.7 & 31.2 & 37.1 & 32.7 & 33.9 & 30.8 \\
- & Gemma2-9B & \textbf{35.7} & \textbf{36.2} & 40.3 & \textbf{40.4} & 37.2 & \textbf{36.8} & 41.1 & 39.5 & \textbf{42.3} & \textbf{42.7} & 39.9 & \textbf{40.5} \\
- & Llama3-8B & 21.6 & 24.6 & 35.9 & 34.0 & 29.2 & 27.1 & \textbf{42.3} & 41.3 & 41.6 & 41.0 & 40.6 & 39.5 \\
+\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama-8B & 33.9 & 35.5 & \emph{42.2} & 38.2 & \emph{40.4} & 36.8 & 36.1 & 35.1 & 40.9 & 39.8 & 39.4 & 35.8 \\
+ & AfriqueQwen-8B & 33.6 & 35.8 & 36.5 & 33.9 & 37.8 & 32.7 & 28.7 & 31.2 & 37.1 & 32.7 & 33.9 & 30.8 \\
+ & Gemma2-9B & \emph{35.7} & \emph{36.2} & 40.3 & \emph{40.4} & 37.2 & \emph{36.8} & 41.1 & 39.5 & \emph{42.3} & \emph{42.7} & 39.9 & \emph{40.5} \\
+ & Llama3-8B & 21.6 & 24.6 & 35.9 & 34.0 & 29.2 & 27.1 & \emph{42.3} & 41.3 & 41.6 & 41.0 & 40.6 & 39.5 \\
  & Tiny-Aya-E & 27.1 & 28.1 & 37.9 & 36.6 & 37.9 & 33.3 & 39.1 & 37.4 & 41.0 & 38.0 & 41.8 & 38.6 \\
  & Tiny-Aya-G & 26.8 & 28.4 & 36.7 & 35.9 & 37.8 & 33.2 & 40.8 & 37.4 & 41.6 & 36.9 & 41.6 & 39.0 \\
- & TransGemma & 29.5 & 33.7 & 37.5 & 37.8 & 37.9 & 33.6 & 40.7 & \textbf{42.8} & 40.9 & 41.9 & \textbf{45.6} & 30.8 \\
+ & TransGemma-12B & 29.5 & 33.7 & 37.5 & 37.8 & 37.9 & 33.6 & 40.7 & \emph{42.8} & 40.9 & 41.9 & \emph{45.6} & 30.8 \\
 \midrule
-\multirow{7}{*}{\textit{5-shot ICL}} & AfriqueLlama & 35.8 & 37.7 & \textbf{43.2} & \textbf{41.7} & 41.0 & 38.7 & 36.0 & 36.1 & 42.6 & 39.9 & 39.2 & 36.9 \\
- & AfriqueQwen & 33.7 & 32.1 & 38.0 & 36.8 & 38.0 & 32.2 & 33.8 & 32.5 & 35.4 & 36.4 & 35.6 & 31.6 \\
+\multirow{7}{*}{\textit{5-shot ICL}} & AfriqueLlama-8B & 35.8 & 37.7 & \textbf{43.2} & \textbf{41.7} & 41.0 & 38.7 & 36.0 & 36.1 & 42.6 & 39.9 & 39.2 & 36.9 \\
+ & AfriqueQwen-8B & 33.7 & 32.1 & 38.0 & 36.8 & 38.0 & 32.2 & 33.8 & 32.5 & 35.4 & 36.4 & 35.6 & 31.6 \\
  & Gemma2-9B & 34.9 & 36.8 & 39.6 & 40.4 & 35.2 & 36.7 & 41.6 & 39.5 & 43.1 & 42.9 & 41.5 & 40.3 \\
  & Llama3-8B & 22.4 & 30.5 & 38.4 & 34.8 & 28.4 & 28.1 & 40.2 & 38.1 & 41.6 & 41.3 & 41.0 & 37.0 \\
  & Tiny-Aya-E & 37.2 & 32.6 & 34.3 & 32.7 & 39.4 & 34.5 & 46.6 & 42.8 & 42.6 & 43.6 & 47.2 & \textbf{66.4} \\
  & Tiny-Aya-G & \textbf{37.5} & \textbf{60.3} & 33.6 & 32.4 & \textbf{48.2} & \textbf{49.3} & 46.9 & \textbf{44.0} & \textbf{44.6} & \textbf{45.8} & \textbf{50.2} & 66.3 \\
- & TransGemma & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \textbf{52.3} & 38.4 & 39.4 & 37.7 & 44.4 & 37.0 \\
+ & TransGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \textbf{52.3} & 38.4 & 39.4 & 37.7 & 44.4 & 37.0 \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -161,20 +309,20 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{6}{*}{\textit{LoRA $r{=}4$}} & AfriqueLlama & 36.2 & 60.9 & 41.8 & \textbf{57.4} & 25.5 & \textbf{56.5} & \textbf{60.4} & 61.3 & 42.5 & 60.5 & \textbf{50.4} & 64.0 \\
- & AfriqueQwen & 32.9 & 51.0 & 41.0 & 53.8 & 13.5 & 40.0 & 47.6 & 56.2 & 35.3 & 35.8 & 48.7 & 29.7 \\
- & Gemma2-9B & 36.0 & 57.2 & \textbf{44.9} & 57.3 & \textbf{39.3} & 48.9 & 57.8 & \textbf{62.7} & \textbf{52.7} & \textbf{61.1} & 49.7 & 64.6 \\
+\multirow{6}{*}{\textit{LoRA $r{=}4$}} & AfriqueLlama-8B & 36.2 & 60.9 & 41.8 & \emph{57.4} & 25.5 & \textbf{56.5} & \textbf{60.4} & 61.3 & 42.5 & 60.5 & \emph{50.4} & 64.0 \\
+ & AfriqueQwen-8B & 32.9 & 51.0 & 41.0 & 53.8 & 13.5 & 40.0 & 47.6 & 56.2 & 35.3 & 35.8 & 48.7 & 29.7 \\
+ & Gemma2-9B & 36.0 & 57.2 & \emph{44.9} & 57.3 & \emph{39.3} & 48.9 & 57.8 & \textbf{62.7} & \emph{52.7} & \emph{61.1} & 49.7 & 64.6 \\
  & Llama3-8B & 25.3 & 56.6 & 42.6 & 51.3 & 36.7 & 43.5 & 48.5 & 58.7 & 49.6 & 55.3 & 45.4 & 56.5 \\
- & Tiny-Aya-E & \textbf{37.3} & 62.2 & 39.9 & 51.0 & 37.5 & 56.4 & 58.0 & 61.8 & 45.6 & 51.4 & 44.0 & \textbf{64.9} \\
+ & Tiny-Aya-E & \emph{37.3} & 62.2 & 39.9 & 51.0 & 37.5 & 56.4 & 58.0 & 61.8 & 45.6 & 51.4 & 44.0 & \emph{64.9} \\
  & Tiny-Aya-G & 36.8 & \textbf{62.2} & 40.3 & 51.1 & 37.4 & 56.4 & 57.6 & 61.5 & 45.8 & 51.1 & 44.3 & 64.8 \\
 \midrule
-\multirow{6}{*}{\textit{LoRA $r{=}64$}} & AfriqueLlama & 36.1 & 59.8 & 45.5 & 54.9 & 20.9 & 53.3 & \textbf{59.3} & 56.6 & 47.0 & 58.6 & \textbf{50.7} & 62.4 \\
- & AfriqueQwen & 27.7 & 59.2 & 39.1 & 59.2 & 13.4 & 35.5 & 40.4 & 34.6 & 24.0 & 29.9 & 35.2 & 35.7 \\
- & Gemma2-9B & \textbf{39.7} & 58.8 & \textbf{50.1} & \textbf{61.6} & \textbf{41.6} & 50.2 & 58.6 & \textbf{62.7} & \textbf{54.3} & \textbf{62.5} & 50.7 & \textbf{65.3} \\
+\multirow{6}{*}{\textit{LoRA $r{=}64$}} & AfriqueLlama-8B & 36.1 & 59.8 & 45.5 & 54.9 & 20.9 & 53.3 & \emph{59.3} & 56.6 & 47.0 & 58.6 & \textbf{50.7} & 62.4 \\
+ & AfriqueQwen-8B & 27.7 & 59.2 & 39.1 & 59.2 & 13.4 & 35.5 & 40.4 & 34.6 & 24.0 & 29.9 & 35.2 & 35.7 \\
+ & Gemma2-9B & \textbf{39.7} & 58.8 & \textbf{50.1} & \textbf{61.6} & \textbf{41.6} & 50.2 & 58.6 & \emph{62.7} & \textbf{54.3} & \textbf{62.5} & 50.7 & \textbf{65.3} \\
  & Llama3-8B & 32.9 & 60.3 & 49.3 & 59.0 & 39.9 & 52.4 & 53.0 & 60.3 & 52.6 & 60.2 & 48.8 & 61.2 \\
- & Tiny-Aya-E & 37.8 & \textbf{62.0} & 46.9 & 57.7 & 39.5 & \textbf{56.1} & 58.5 & 61.6 & 50.4 & 57.1 & 46.2 & 64.7 \\
+ & Tiny-Aya-E & 37.8 & \emph{62.0} & 46.9 & 57.7 & 39.5 & \emph{56.1} & 58.5 & 61.6 & 50.4 & 57.1 & 46.2 & 64.7 \\
  & Tiny-Aya-G & 37.9 & 62.0 & 46.7 & 57.8 & 39.4 & 55.3 & 55.0 & 60.1 & 44.9 & 53.1 & 41.3 & 58.8 \\
 \bottomrule
 \end{tabular}
@@ -191,21 +339,21 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{6}{*}{\textit{LoRA $r{=}4$}} & AfriqueLlama & \textbf{58.3} & \textbf{59.9} & 56.3 & \textbf{60.1} & \textbf{57.2} & 54.5 & \textbf{67.6} & \textbf{65.7} & 53.5 & 59.8 & 55.8 & 57.0 \\
- & AfriqueQwen & 43.7 & 40.5 & 53.5 & 57.3 & 49.2 & 34.5 & 51.0 & 53.1 & 32.0 & 36.3 & 39.2 & 12.3 \\
- & Gemma2-9B & 48.9 & 49.8 & \textbf{57.5} & 59.1 & 55.7 & 46.9 & 60.2 & 60.7 & \textbf{58.0} & \textbf{60.8} & \textbf{56.3} & 60.4 \\
+\multirow{6}{*}{\textit{LoRA $r{=}4$}} & AfriqueLlama-8B & \textbf{58.3} & \textbf{59.9} & 56.3 & \emph{60.1} & \emph{57.2} & 54.5 & \textbf{67.6} & \textbf{65.7} & 53.5 & 59.8 & 55.8 & 57.0 \\
+ & AfriqueQwen-8B & 43.7 & 40.5 & 53.5 & 57.3 & 49.2 & 34.5 & 51.0 & 53.1 & 32.0 & 36.3 & 39.2 & 12.3 \\
+ & Gemma2-9B & 48.9 & 49.8 & \emph{57.5} & 59.1 & 55.7 & 46.9 & 60.2 & 60.7 & \emph{58.0} & \emph{60.8} & \textbf{56.3} & 60.4 \\
  & Llama3-8B & 29.1 & 47.4 & 54.6 & 51.0 & 50.6 & 40.3 & 56.2 & 59.7 & 56.9 & 58.7 & 54.7 & 57.4 \\
- & Tiny-Aya-E & 53.8 & 54.8 & 51.6 & 50.5 & 55.1 & \textbf{55.5} & 60.8 & 60.9 & 54.7 & 56.6 & 50.4 & \textbf{60.7} \\
+ & Tiny-Aya-E & 53.8 & 54.8 & 51.6 & 50.5 & 55.1 & \emph{55.5} & 60.8 & 60.9 & 54.7 & 56.6 & 50.4 & \textbf{60.7} \\
  & Tiny-Aya-G & 53.4 & 54.5 & 51.8 & 51.2 & 55.3 & 55.3 & 60.5 & 60.8 & 55.0 & 56.4 & 50.1 & 60.6 \\
 \midrule
-\multirow{6}{*}{\textit{LoRA $r{=}64$}} & AfriqueLlama & 49.6 & 51.5 & 58.7 & 58.7 & 55.5 & 51.6 & \textbf{60.9} & 53.5 & 54.7 & 58.7 & 55.7 & 56.4 \\
- & AfriqueQwen & 23.8 & 37.2 & 45.1 & 52.1 & 21.2 & 28.7 & 36.6 & 28.2 & 22.8 & 25.8 & 41.3 & 26.5 \\
- & Gemma2-9B & 54.0 & 50.5 & \textbf{62.7} & \textbf{62.8} & \textbf{58.9} & 48.4 & 60.4 & 60.6 & \textbf{58.4} & \textbf{61.1} & \textbf{56.3} & 60.4 \\
+\multirow{6}{*}{\textit{LoRA $r{=}64$}} & AfriqueLlama-8B & 49.6 & 51.5 & 58.7 & 58.7 & 55.5 & 51.6 & \emph{60.9} & 53.5 & 54.7 & 58.7 & 55.7 & 56.4 \\
+ & AfriqueQwen-8B & 23.8 & 37.2 & 45.1 & 52.1 & 21.2 & 28.7 & 36.6 & 28.2 & 22.8 & 25.8 & 41.3 & 26.5 \\
+ & Gemma2-9B & 54.0 & 50.5 & \textbf{62.7} & \textbf{62.8} & \textbf{58.9} & 48.4 & 60.4 & 60.6 & \textbf{58.4} & \textbf{61.1} & \emph{56.3} & 60.4 \\
  & Llama3-8B & 42.4 & 51.3 & 61.1 & 60.6 & 56.8 & 50.3 & 58.1 & 60.2 & 57.7 & 60.4 & 55.6 & 59.0 \\
- & Tiny-Aya-E & \textbf{54.3} & 54.3 & 59.8 & 59.2 & 57.1 & \textbf{55.7} & 57.8 & \textbf{61.0} & 56.5 & 58.7 & 50.2 & \textbf{60.5} \\
- & Tiny-Aya-G & 53.4 & \textbf{54.5} & 59.1 & 59.3 & 56.8 & 53.9 & 49.0 & 55.4 & 21.9 & 43.3 & 20.5 & 33.1 \\
+ & Tiny-Aya-E & \emph{54.3} & 54.3 & 59.8 & 59.2 & 57.1 & \textbf{55.7} & 57.8 & \emph{61.0} & 56.5 & 58.7 & 50.2 & \emph{60.5} \\
+ & Tiny-Aya-G & 53.4 & \emph{54.5} & 59.1 & 59.3 & 56.8 & 53.9 & 49.0 & 55.4 & 21.9 & 43.3 & 20.5 & 33.1 \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -221,23 +369,23 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama & 6.5 & 36.8 & 10.6 & \textbf{24.1} & \textbf{9.7} & 37.3 & 21.9 & 56.6 & 29.8 & 40.0 & 29.9 & 60.6 \\
- & AfriqueQwen & 3.8 & 10.3 & 7.7 & 8.3 & 6.9 & 12.7 & 1.0 & 15.2 & 9.4 & 15.8 & 9.1 & 16.7 \\
+\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama-8B & 6.5 & 36.8 & 10.6 & \textbf{24.1} & \textbf{9.7} & 37.3 & 21.9 & 56.6 & 29.8 & 40.0 & 29.9 & 60.6 \\
+ & AfriqueQwen-8B & 3.8 & 10.3 & 7.7 & 8.3 & 6.9 & 12.7 & 1.0 & 15.2 & 9.4 & 15.8 & 9.1 & 16.7 \\
  & Gemma2-9B & 4.4 & 29.9 & 7.6 & 11.0 & 2.7 & 13.2 & 25.7 & 42.4 & 27.6 & 28.1 & 22.8 & 34.6 \\
  & Llama3-8B & 2.6 & 11.0 & 9.0 & 7.9 & 2.2 & 9.6 & 26.7 & 49.9 & 32.3 & 31.0 & 29.0 & 34.8 \\
- & Tiny-Aya-E & \textbf{20.3} & 39.4 & 7.2 & 8.3 & 8.1 & 39.0 & 57.1 & 59.9 & 22.3 & 18.7 & 33.8 & 65.3 \\
+ & Tiny-Aya-E & \emph{20.3} & 39.4 & 7.2 & 8.3 & 8.1 & 39.0 & 57.1 & 59.9 & 22.3 & 18.7 & 33.8 & 65.3 \\
  & Tiny-Aya-G & 19.0 & \textbf{40.8} & 7.7 & 8.0 & 8.0 & \textbf{41.0} & 56.3 & 60.5 & 21.0 & 17.6 & 35.3 & 65.4 \\
- & TransGemma & 20.1 & 34.2 & \textbf{12.8} & 18.5 & 8.3 & 33.9 & \textbf{58.6} & \textbf{61.3} & \textbf{48.9} & \textbf{52.4} & \textbf{44.0} & \textbf{65.6} \\
+ & TransGemma-12B & 20.1 & 34.2 & \emph{12.8} & 18.5 & 8.3 & 33.9 & \emph{58.6} & \emph{61.3} & \emph{48.9} & \textbf{52.4} & \textbf{44.0} & \emph{65.6} \\
 \midrule
-\multirow{7}{*}{\textit{1-shot}} & AfriqueLlama & 6.6 & \textbf{39.2} & 11.3 & 19.6 & 6.8 & 36.8 & 16.6 & 56.5 & 35.6 & 35.5 & 34.4 & 62.3 \\
- & AfriqueQwen & 5.5 & 11.4 & 10.2 & 7.3 & 4.7 & 6.6 & 5.6 & 27.3 & 15.3 & 25.3 & 26.5 & 35.1 \\
+\multirow{7}{*}{\textit{1-shot}} & AfriqueLlama-8B & 6.6 & \emph{39.2} & 11.3 & 19.6 & 6.8 & 36.8 & 16.6 & 56.5 & 35.6 & 35.5 & 34.4 & 62.3 \\
+ & AfriqueQwen-8B & 5.5 & 11.4 & 10.2 & 7.3 & 4.7 & 6.6 & 5.6 & 27.3 & 15.3 & 25.3 & 26.5 & 35.1 \\
  & Gemma2-9B & 3.8 & 30.9 & 8.2 & 10.4 & 2.7 & 12.6 & 14.0 & 45.7 & 27.8 & 24.3 & 18.9 & 40.6 \\
  & Llama3-8B & 2.4 & 13.0 & 8.0 & 7.3 & 3.4 & 10.4 & 22.7 & 44.9 & 32.3 & 31.0 & 28.4 & 35.5 \\
  & Tiny-Aya-E & 12.8 & 34.8 & 6.7 & 7.8 & 5.5 & 35.8 & 24.5 & 37.2 & 16.2 & 15.8 & 12.1 & 36.1 \\
- & Tiny-Aya-G & 14.2 & 33.8 & 7.3 & 7.6 & 6.3 & \textbf{38.4} & 13.6 & 43.1 & 13.8 & 14.4 & 11.8 & 32.3 \\
- & TransGemma & \textbf{20.4} & 33.3 & \textbf{15.6} & \textbf{21.5} & \textbf{7.0} & 32.7 & \textbf{58.7} & \textbf{63.1} & \textbf{50.1} & \textbf{52.2} & \textbf{40.4} & \textbf{66.3} \\
+ & Tiny-Aya-G & 14.2 & 33.8 & 7.3 & 7.6 & 6.3 & \emph{38.4} & 13.6 & 43.1 & 13.8 & 14.4 & 11.8 & 32.3 \\
+ & TransGemma-12B & \textbf{20.4} & 33.3 & \textbf{15.6} & \emph{21.5} & \emph{7.0} & 32.7 & \textbf{58.7} & \textbf{63.1} & \textbf{50.1} & \emph{52.2} & \emph{40.4} & \textbf{66.3} \\
 \bottomrule
 \end{tabular}
 \end{table*}
@@ -253,23 +401,23 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama & \textbf{37.3} & \textbf{39.2} & \textbf{40.2} & \textbf{46.7} & \textbf{44.4} & \textbf{42.3} & 32.2 & 36.9 & 41.6 & 39.5 & 43.6 & 39.5 \\
- & AfriqueQwen & 24.1 & 31.0 & 34.5 & 40.0 & 30.5 & 27.7 & 31.0 & 29.0 & 34.6 & 33.7 & 35.7 & 28.4 \\
+\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama-8B & \emph{37.3} & \textbf{39.2} & \emph{40.2} & \textbf{46.7} & \textbf{44.4} & \emph{42.3} & 32.2 & 36.9 & 41.6 & 39.5 & 43.6 & 39.5 \\
+ & AfriqueQwen-8B & 24.1 & 31.0 & 34.5 & 40.0 & 30.5 & 27.7 & 31.0 & 29.0 & 34.6 & 33.7 & 35.7 & 28.4 \\
  & Gemma2-9B & 28.4 & 29.1 & 37.1 & 35.2 & 32.0 & 29.8 & 34.5 & 34.2 & 39.9 & 37.7 & 38.8 & 35.3 \\
- & Llama3-8B & 24.7 & 28.4 & 35.9 & 36.9 & 31.0 & 32.0 & 36.9 & \textbf{44.4} & 44.2 & \textbf{48.0} & 40.9 & 38.6 \\
- & Tiny-Aya-E & 18.6 & 33.6 & 34.4 & 39.4 & 39.8 & 34.8 & 46.9 & 38.0 & 44.6 & 42.7 & \textbf{49.1} & 43.9 \\
- & Tiny-Aya-G & 27.6 & 32.1 & 38.1 & 35.8 & 41.7 & 35.8 & \textbf{48.2} & 43.0 & 48.0 & 41.2 & 48.1 & \textbf{47.2} \\
- & TransGemma & 31.6 & 31.7 & 35.6 & 40.4 & 39.0 & 39.5 & 44.5 & 41.4 & \textbf{49.8} & 43.9 & 44.7 & 43.6 \\
+ & Llama3-8B & 24.7 & 28.4 & 35.9 & 36.9 & 31.0 & 32.0 & 36.9 & \emph{44.4} & 44.2 & \textbf{48.0} & 40.9 & 38.6 \\
+ & Tiny-Aya-E & 18.6 & 33.6 & 34.4 & 39.4 & 39.8 & 34.8 & 46.9 & 38.0 & 44.6 & 42.7 & \emph{49.1} & 43.9 \\
+ & Tiny-Aya-G & 27.6 & 32.1 & 38.1 & 35.8 & 41.7 & 35.8 & \emph{48.2} & 43.0 & 48.0 & 41.2 & 48.1 & \emph{47.2} \\
+ & TransGemma-12B & 31.6 & 31.7 & 35.6 & 40.4 & 39.0 & 39.5 & 44.5 & 41.4 & \emph{49.8} & 43.9 & 44.7 & 43.6 \\
 \midrule
-\multirow{7}{*}{\textit{1-shot}} & AfriqueLlama & \textbf{41.4} & \textbf{35.4} & 40.4 & \textbf{42.2} & 41.9 & \textbf{42.4} & 32.2 & 40.8 & 48.9 & 45.8 & 50.3 & 42.9 \\
- & AfriqueQwen & 24.7 & 27.1 & 30.5 & 29.2 & 34.4 & 31.1 & 30.0 & 27.3 & 36.7 & 36.8 & 39.7 & 33.3 \\
+\multirow{7}{*}{\textit{1-shot}} & AfriqueLlama-8B & \textbf{41.4} & \emph{35.4} & 40.4 & \emph{42.2} & 41.9 & \textbf{42.4} & 32.2 & 40.8 & 48.9 & 45.8 & 50.3 & 42.9 \\
+ & AfriqueQwen-8B & 24.7 & 27.1 & 30.5 & 29.2 & 34.4 & 31.1 & 30.0 & 27.3 & 36.7 & 36.8 & 39.7 & 33.3 \\
  & Gemma2-9B & 33.9 & 29.9 & 35.9 & 33.8 & 31.3 & 29.3 & 32.0 & 35.8 & 38.4 & 39.1 & 38.6 & 35.5 \\
  & Llama3-8B & 23.2 & 27.7 & 38.3 & 35.3 & 33.1 & 32.8 & 42.3 & 43.3 & 43.2 & 41.9 & 42.0 & 42.7 \\
  & Tiny-Aya-E & 34.7 & 32.3 & 35.8 & 34.4 & 34.7 & 32.1 & 46.5 & 31.9 & 40.1 & 37.9 & 42.8 & 34.9 \\
  & Tiny-Aya-G & 34.5 & 30.3 & 35.7 & 33.5 & 37.0 & 32.5 & 44.5 & 35.2 & 40.7 & 42.5 & 43.9 & 35.1 \\
- & TransGemma & 36.9 & 30.9 & \textbf{40.5} & 41.0 & \textbf{43.7} & 36.4 & \textbf{50.9} & \textbf{49.1} & \textbf{50.0} & \textbf{47.5} & \textbf{51.1} & \textbf{49.8} \\
+ & TransGemma-12B & 36.9 & 30.9 & \textbf{40.5} & 41.0 & \emph{43.7} & 36.4 & \textbf{50.9} & \textbf{49.1} & \textbf{50.0} & \emph{47.5} & \textbf{51.1} & \textbf{49.8} \\
 \bottomrule
 \end{tabular}
 \end{table*}

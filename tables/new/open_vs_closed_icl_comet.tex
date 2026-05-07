@@ -1,0 +1,29 @@
+% ---- open_vs_closed_icl_comet ----
+\begin{table*}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrrrrrrrrrrr}
+\toprule
+\textbf{Model} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$eng}} & \\
+\cmidrule(lr){2-7}\cmidrule(lr){8-13}
+   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
+\midrule
+\multicolumn{14}{l}{\textit{Zero-shot}} \\
+\midrule
+Best open & \emph{35.7} & \emph{36.2} & \emph{42.2} & \emph{40.4} & \emph{40.4} & \emph{36.8} & \emph{42.3} & \emph{41.3} & \emph{42.3} & \emph{42.7} & \emph{41.8} & \emph{40.5} & \emph{40.2} \\
+\midrule
+Gemini-1.5 & \textbf{57.9} & 55.8 & 59.4 & 62.2 & \textbf{57.5} & 53.9 & \textbf{62.6} & 61.4 & 58.1 & 59.8 & 54.8 & 60.8 & \textbf{58.7} \\
+GPT-4o & 39.4 & \textbf{56.8} & \textbf{60.7} & \textbf{62.6} & 54.6 & \textbf{58.3} & 60.5 & \textbf{62.3} & \textbf{59.3} & \textbf{62.0} & \textbf{57.8} & \textbf{62.1} & 58.0 \\
+\midrule\midrule
+\multicolumn{14}{l}{\textit{5-shot ICL}} \\
+\midrule
+Best open & \emph{37.5} & \textbf{60.3} & \emph{43.2} & \emph{41.7} & \emph{48.2} & \emph{49.3} & \emph{46.9} & \emph{44.0} & \emph{44.6} & \emph{45.8} & \emph{50.2} & \textbf{66.4} & \emph{48.2} \\
+\midrule
+Gemini-1.5 & \textbf{58.3} & 56.0 & 60.8 & 63.6 & 56.8 & 54.5 & \textbf{62.8} & 61.7 & 58.4 & 60.7 & 56.0 & 61.2 & 59.2 \\
+GPT-4o & 47.4 & \emph{56.3} & \textbf{64.4} & \textbf{65.0} & \textbf{57.7} & \textbf{58.3} & 60.9 & \textbf{62.7} & \textbf{59.9} & \textbf{62.4} & \textbf{58.1} & \emph{62.3} & \textbf{59.6} \\
+\bottomrule
+\end{tabular}
+\caption{Open vs.\ closed-source LLMs at sentence-level in-context learning (COMET). \textit{Best open} rows are the per-cell maximum across the six open LLMs in Table~\ref{tab:main_zs_ft_comet}. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{5-shot ICL}); \emph{italic}: column maximum within the sub-block (open or closed).}
+\label{tab:open_vs_closed_icl_comet}
+\end{table*}

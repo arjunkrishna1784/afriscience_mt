@@ -122,7 +122,7 @@ def overall_metric_from_results(cond_dir: Path, pair: str, metric: str) -> float
 
 # ---------------- table builders ----------------
 
-LANG_HEAD = " & ".join([LANG_DISP[l] for l in LANGS] * 2)
+LANG_HEAD = " & ".join([r"\texttt{" + l + "}" for l in LANGS] * 2)
 
 def render_balance_table(*, label: str, caption: str, blocks: list):
     """blocks = [(setup, [(τ_label, [12 floats|None]), ...]), ...]"""

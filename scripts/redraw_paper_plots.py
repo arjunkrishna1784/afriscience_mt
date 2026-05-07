@@ -273,55 +273,107 @@ def _checkpoint_from_path(p: str | None) -> str | None:
 
 
 def fig_multilingual_nllb(rows):
-    """NLLB-600M multilingual checkpoints across pairs, both directions."""
+    """NLLB-600M multilingual training-curve, line chart per direction × metric.
+
+    X-axis = training updates (40k, 80k, 200k, 400k); one line per
+    language. Four PDFs total under figures/new/multilingual_nllb/:
+      comet/eng_xxx.pdf,  comet/xxx_eng.pdf
+      chrf/eng_xxx.pdf,   chrf/xxx_eng.pdf
+    """
     chk = ["40k", "80k", "200k", "400k"]
-    # data[checkpoint][lang] = (eng->X chrF, X->eng chrF)
-    data = {c: {l: [None, None] for l in LANGS} for c in chk}
+    chk_x = [40, 80, 200, 400]   # numeric for the x-axis
+
+    # data[metric][direction][lang][checkpoint] = score
+    data = {
+        "chrf":      {0: {l: {c: None for c in chk} for l in LANGS},
+                      1: {l: {c: None for c in chk} for l in LANGS}},
+        "ssa_comet": {0: {l: {c: None for c in chk} for l in LANGS},
+                      1: {l: {c: None for c in chk} for l in LANGS}},
+    }
     for r in rows:
         if r["experiment_type"] != "multilingual_finetune":
             continue
         c = _checkpoint_from_path(r.get("original_path"))
         if c not in chk:
             continue
-        non_eng = r["target_lang"] if r["source_lang"] == "eng" else r["source_lang"]
-        v = metric_val(r, "chrf")
-        if v is None:
+        non_eng = (r["target_lang"] if r["source_lang"] == "eng"
+                   else r["source_lang"])
+        if non_eng not in LANGS:
             continue
-        if r["source_lang"] == "eng":
-            data[c][non_eng][0] = v
-        else:
-            data[c][non_eng][1] = v
+        direction = 0 if r["source_lang"] == "eng" else 1
+        for metric in ("chrf", "ssa_comet"):
+            v = metric_val(r, metric)
+            if v is not None:
+                data[metric][direction][non_eng][c] = v
 
-    fig, axes = plt.subplots(1, 2, figsize=(7.0, 2.6), sharey=True)
+    # Per-checkpoint bar colours: light→dark blues so the within-group
+    # progression reads at a glance.
     cmap = matplotlib.colormaps["Blues"]
-    palette = [cmap(0.35 + 0.18 * i) for i in range(len(chk))]
-    x = np.arange(len(LANGS))
-    w = 0.20
-    for di, (ax, dirn, title) in enumerate(zip(
-        axes, [0, 1], ["Eng$\\to$xxx", "xxx$\\to$Eng"]
-    )):
-        for i, c in enumerate(chk):
-            vals = [data[c][l][dirn] if data[c][l][dirn] is not None else 0
-                    for l in LANGS]
-            ax.bar(x + (i - 1.5) * w, vals, width=w,
-                   color=palette[i], edgecolor="black", linewidth=0.3,
-                   label=f"{c} updates")
-        ax.set_xticks(x); ax.set_xticklabels(LANGS)
-        ax.set_ylim(0, 70)
-        if di == 0:
-            ax.set_ylabel("ChrF")
-            ax.text(0.02, 0.95, "Eng$\\to$xxx", transform=ax.transAxes,
-                    ha="left", va="top", fontsize=8)
-        else:
-            ax.text(0.02, 0.95, "xxx$\\to$Eng", transform=ax.transAxes,
-                    ha="left", va="top", fontsize=8)
-    axes[0].legend(loc="upper center", bbox_to_anchor=(1.0, 1.18),
-                   ncol=4, frameon=False)
-    fig.tight_layout()
-    out = FIG_DIR / "multilingual-nllb.pdf"
-    fig.savefig(out, bbox_inches="tight")
-    plt.close(fig)
-    return out
+    bar_colors = [cmap(0.30 + 0.18 * i) for i in range(len(chk))]
+
+    written = []
+    for metric, metric_disp, sub in [("ssa_comet", "COMET", "comet"),
+                                     ("chrf",      "ChrF",  "chrf")]:
+        for di, dir_disp in [(0, "eng_xxx"), (1, "xxx_eng")]:
+            fig, ax = plt.subplots(figsize=(4.4, 2.6))
+            n_lang = len(LANGS)
+            n_chk  = len(chk)
+            group_width = 0.85
+            bar_width = group_width / n_chk
+            x_centres = np.arange(n_lang)
+
+            for li, lang in enumerate(LANGS):
+                # Within-group x positions for the 4 bars.
+                bar_xs = (x_centres[li] - group_width / 2 + bar_width / 2
+                          + bar_width * np.arange(n_chk))
+                ys = [data[metric][di][lang][c] for c in chk]
+                # Bars
+                for ci, (bx, y, col) in enumerate(zip(bar_xs, ys, bar_colors)):
+                    if y is None:
+                        continue
+                    ax.bar(bx, y, width=bar_width, color=col,
+                           edgecolor="black", linewidth=0.3,
+                           label=f"{chk[ci]} updates" if li == 0 else None,
+                           zorder=2)
+                # Trend line connecting the same group's bar tops.
+                pairs = [(bx, y) for bx, y in zip(bar_xs, ys) if y is not None]
+                if len(pairs) >= 2:
+                    xs_l, ys_l = zip(*pairs)
+                    ax.plot(xs_l, ys_l, color="#444", linewidth=0.8,
+                            marker="o", markersize=2.2,
+                            markerfacecolor="white",
+                            markeredgewidth=0.5, zorder=3)
+
+            ax.set_xticks(x_centres)
+            ax.set_xticklabels(LANGS, fontsize=7)
+            ax.set_ylabel(metric_disp, fontsize=7)
+            # Tight y-range so each direction × metric panel fills its frame.
+            all_y = [data[metric][di][l][c] for l in LANGS for c in chk
+                     if data[metric][di][l][c] is not None]
+            if all_y:
+                lo = min(all_y); hi = max(all_y)
+                pad = max(1.0, (hi - lo) * 0.10)
+                ax.set_ylim(max(0, lo - pad), hi + pad)
+            ax.tick_params(labelsize=6.5)
+            ax.grid(axis="y", linestyle=":", alpha=0.5, linewidth=0.4)
+            for spine in ("top", "right"):
+                ax.spines[spine].set_visible(False)
+            for spine in ("left", "bottom"):
+                ax.spines[spine].set_linewidth(0.5)
+            # Legend in upper-left corner (training-update bins only,
+            # populated from the first language's bars).
+            ax.legend(loc="upper left", fontsize=6, frameon=False, ncol=4,
+                      bbox_to_anchor=(0.0, 1.18))
+            fig.tight_layout()
+
+            out = FIG_DIR / f"multilingual_nllb/{sub}/{dir_disp}.pdf"
+            out.parent.mkdir(parents=True, exist_ok=True)
+            fig.savefig(out, bbox_inches="tight")
+            plt.close(fig)
+            written.append(out)
+    print(f"  ✓ {len(written)} PDFs in "
+          f"{(FIG_DIR / 'multilingual_nllb').relative_to(ROOT)}/")
+    return FIG_DIR / "multilingual_nllb"
 
 
 def _full_lang_grid(rows, *, model_short, exp_type, metric, dataset=None,
@@ -857,19 +909,21 @@ def main():
 
     # Figure 7-style 7×7 zero-shot vs fine-tuned, per backbone × metric.
     # Output mirrored under fig7/{comet,chrf}/<short>.pdf.
+    # Layout: figures/new/n2n/{small,large}/{comet,chrf}/<backbone>.pdf
     fig7_targets = [
-        ("m2m100_1_2b",            "M2M100-1.2B"),
-        ("nllb_200_1_3b",          "NLLB-1.3B"),
-        ("m2m100_418m",            "M2M100-418M"),
-        ("nllb_200_distilled_600m","NLLB-600M"),
+        # (model_short, display, size_bucket)
+        ("m2m100_418m",             "M2M100-418M", "small"),
+        ("nllb_200_distilled_600m", "NLLB-600M",   "small"),
+        ("m2m100_1_2b",             "M2M100-1.2B", "large"),
+        ("nllb_200_1_3b",           "NLLB-1.3B",   "large"),
     ]
-    for model_short, disp in fig7_targets:
+    for model_short, disp, size_bucket in fig7_targets:
         for metric_disp, metric, sub in [("ChrF",      "chrf",      "chrf"),
                                           ("SSA-COMET", "ssa_comet", "comet")]:
             short = (model_short
                      .replace("nllb_200_distilled_600m", "nllb_600m")
                      .replace("nllb_200_1_3b", "nllb_1_3b"))
-            fname = f"fig7/{sub}/{short}.pdf"
+            fname = f"n2n/{size_bucket}/{sub}/{short}.pdf"
             written.append(fig_seq2seq_7x7(rows, model_short, disp,
                                            metric_disp, metric, fname))
     # Figure 8-style 7×7 LoRA — keep both metrics side-by-side in one PDF

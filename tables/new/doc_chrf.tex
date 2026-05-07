@@ -9,23 +9,23 @@
 \toprule
 \textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
-  &   & Amh & Hau & Lug & NSo & Yor & Zul & Amh & Hau & Lug & NSo & Yor & Zul \\
+  &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama & 6.5 & 36.8 & 10.6 & \textbf{24.1} & \textbf{9.7} & 37.3 & 21.9 & 56.6 & 29.8 & 40.0 & 29.9 & 60.6 \\
- & AfriqueQwen & 3.8 & 10.3 & 7.7 & 8.3 & 6.9 & 12.7 & 1.0 & 15.2 & 9.4 & 15.8 & 9.1 & 16.7 \\
+\multirow{7}{*}{\textit{Zero-shot}} & AfriqueLlama-8B & 6.5 & 36.8 & 10.6 & \textbf{24.1} & \textbf{9.7} & 37.3 & 21.9 & 56.6 & 29.8 & 40.0 & 29.9 & 60.6 \\
+ & AfriqueQwen-8B & 3.8 & 10.3 & 7.7 & 8.3 & 6.9 & 12.7 & 1.0 & 15.2 & 9.4 & 15.8 & 9.1 & 16.7 \\
  & Gemma2-9B & 4.4 & 29.9 & 7.6 & 11.0 & 2.7 & 13.2 & 25.7 & 42.4 & 27.6 & 28.1 & 22.8 & 34.6 \\
  & Llama3-8B & 2.6 & 11.0 & 9.0 & 7.9 & 2.2 & 9.6 & 26.7 & 49.9 & 32.3 & 31.0 & 29.0 & 34.8 \\
- & Tiny-Aya-E & \textbf{20.3} & 39.4 & 7.2 & 8.3 & 8.1 & 39.0 & 57.1 & 59.9 & 22.3 & 18.7 & 33.8 & 65.3 \\
+ & Tiny-Aya-E & \emph{20.3} & 39.4 & 7.2 & 8.3 & 8.1 & 39.0 & 57.1 & 59.9 & 22.3 & 18.7 & 33.8 & 65.3 \\
  & Tiny-Aya-G & 19.0 & \textbf{40.8} & 7.7 & 8.0 & 8.0 & \textbf{41.0} & 56.3 & 60.5 & 21.0 & 17.6 & 35.3 & 65.4 \\
- & TransGemma & 20.1 & 34.2 & \textbf{12.8} & 18.5 & 8.3 & 33.9 & \textbf{58.6} & \textbf{61.3} & \textbf{48.9} & \textbf{52.4} & \textbf{44.0} & \textbf{65.6} \\
+ & TransGemma-12B & 20.1 & 34.2 & \emph{12.8} & 18.5 & 8.3 & 33.9 & \emph{58.6} & \emph{61.3} & \emph{48.9} & \textbf{52.4} & \textbf{44.0} & \emph{65.6} \\
 \midrule
-\multirow{7}{*}{\textit{1-shot}} & AfriqueLlama & 6.6 & \textbf{39.2} & 11.3 & 19.6 & 6.8 & 36.8 & 16.6 & 56.5 & 35.6 & 35.5 & 34.4 & 62.3 \\
- & AfriqueQwen & 5.5 & 11.4 & 10.2 & 7.3 & 4.7 & 6.6 & 5.6 & 27.3 & 15.3 & 25.3 & 26.5 & 35.1 \\
+\multirow{7}{*}{\textit{1-shot}} & AfriqueLlama-8B & 6.6 & \emph{39.2} & 11.3 & 19.6 & 6.8 & 36.8 & 16.6 & 56.5 & 35.6 & 35.5 & 34.4 & 62.3 \\
+ & AfriqueQwen-8B & 5.5 & 11.4 & 10.2 & 7.3 & 4.7 & 6.6 & 5.6 & 27.3 & 15.3 & 25.3 & 26.5 & 35.1 \\
  & Gemma2-9B & 3.8 & 30.9 & 8.2 & 10.4 & 2.7 & 12.6 & 14.0 & 45.7 & 27.8 & 24.3 & 18.9 & 40.6 \\
  & Llama3-8B & 2.4 & 13.0 & 8.0 & 7.3 & 3.4 & 10.4 & 22.7 & 44.9 & 32.3 & 31.0 & 28.4 & 35.5 \\
  & Tiny-Aya-E & 12.8 & 34.8 & 6.7 & 7.8 & 5.5 & 35.8 & 24.5 & 37.2 & 16.2 & 15.8 & 12.1 & 36.1 \\
- & Tiny-Aya-G & 14.2 & 33.8 & 7.3 & 7.6 & 6.3 & \textbf{38.4} & 13.6 & 43.1 & 13.8 & 14.4 & 11.8 & 32.3 \\
- & TransGemma & \textbf{20.4} & 33.3 & \textbf{15.6} & \textbf{21.5} & \textbf{7.0} & 32.7 & \textbf{58.7} & \textbf{63.1} & \textbf{50.1} & \textbf{52.2} & \textbf{40.4} & \textbf{66.3} \\
+ & Tiny-Aya-G & 14.2 & 33.8 & 7.3 & 7.6 & 6.3 & \emph{38.4} & 13.6 & 43.1 & 13.8 & 14.4 & 11.8 & 32.3 \\
+ & TransGemma-12B & \textbf{20.4} & 33.3 & \textbf{15.6} & \emph{21.5} & \emph{7.0} & 32.7 & \textbf{58.7} & \textbf{63.1} & \textbf{50.1} & \emph{52.2} & \emph{40.4} & \textbf{66.3} \\
 \bottomrule
 \end{tabular}
 \end{table*}

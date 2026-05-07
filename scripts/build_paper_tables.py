@@ -37,19 +37,21 @@ PAIRS_X2E = [f"{l}-eng" for l in LANGS]
 PAIRS = PAIRS_E2X + PAIRS_X2E
 
 MODEL_DISP = {
-    "m2m100_418m":            "m2m100\\textunderscore{}418M",
-    "m2m100_1_2b":            "m2m100\\textunderscore{}1.2B",
-    "nllb_200_distilled_600m":"nllb\\textunderscore{}600M",
-    "nllb_200_1_3b":          "nllb\\textunderscore{}1.3B",
-    "afriquellama_8b":        "AfriqueLlama",
-    "afriqueqwen_8b":         "AfriqueQwen",
+    "m2m100_418m":            "M2M100\\textunderscore{}418M",
+    "m2m100_1_2b":            "M2M100\\textunderscore{}1.2B",
+    "nllb_200_distilled_600m":"NLLB\\textunderscore{}600M",
+    "nllb_200_1_3b":          "NLLB\\textunderscore{}1.3B",
+    "afriquellama_8b":        "AfriqueLlama-8B",
+    "afriqueqwen_8b":         "AfriqueQwen-8B",
     "gemma2_9b_it":           "Gemma2-9B",
     "llama3_8b":              "Llama3-8B",
     "tiny_aya_earth":         "Tiny-Aya-E",
     "tiny_aya_global":        "Tiny-Aya-G",
-    "translategemma_12b":     "TransGemma",
+    "translategemma_12b":     "TransGemma-12B",
     "gpt4o":                  "GPT-4o",
     "gemini_15_flash":        "Gemini-1.5",
+    # Synthetic row label (no underlying model_short).
+    "best_open":              "Best open",
 }
 
 SEQ2SEQ_MODELS_MAIN = ["m2m100_1_2b", "nllb_200_1_3b"]
@@ -117,9 +119,112 @@ def fmt(v):
     return "--" if v is None else f"{v:.1f}"
 
 
+def render_grouped_table(*, label, caption, major_groups):
+    """Render a table with two-level grouping plus a final Avg column.
+
+    major_groups = [(major_name, sub_blocks), ...]
+    where sub_blocks = [(sub_name | None, [(model_short, [12 floats|None])]), ...]
+
+    The Avg column holds the per-model arithmetic mean of the 12 per-pair
+    cells (None values skipped). It participates in the same bold/italic
+    convention as the per-pair columns:
+      \\textbf{X}  -- maximum within the major group
+      \\emph{X}    -- maximum within the sub-block (when not also major)
+      X plain     -- otherwise.
+
+    Major groups separated by \\midrule\\midrule; sub-blocks by \\midrule.
+    """
+    def _avg(vals):
+        nums = [v for v in vals if v is not None]
+        return (sum(nums) / len(nums)) if nums else None
+
+    # Augment every row with its per-row Avg as a 13th column for max-finding.
+    def _augment(rs):
+        return [(m, list(vals) + [_avg(vals)]) for m, vals in rs]
+
+    aug_groups = [(name, [(sn, _augment(rs)) for sn, rs in subs])
+                  for name, subs in major_groups]
+
+    # Per-major-group and per-sub-block column max over 13 columns.
+    major_col_max = []
+    for _, subs in aug_groups:
+        cm = []
+        for ci in range(13):
+            vals = [r[1][ci] for _sn, rs in subs for r in rs if r[1][ci] is not None]
+            cm.append(max(vals) if vals else None)
+        major_col_max.append(cm)
+
+    sub_col_max = []
+    for _, subs in aug_groups:
+        sub_cm = []
+        for _sn, rs in subs:
+            cm = []
+            for ci in range(13):
+                vals = [r[1][ci] for r in rs if r[1][ci] is not None]
+                cm.append(max(vals) if vals else None)
+            sub_cm.append(cm)
+        sub_col_max.append(sub_cm)
+
+    lang_cols = [r"\texttt{" + l + "}" for l in LANGS] * 2
+    lang_head = " & ".join(["  "] + lang_cols + [r"\textbf{Avg}"]) + r" \\"
+
+    lines = [
+        f"% ---- {label.split(':',1)[1]} ----",
+        r"\begin{table*}[t]",
+        r"\centering",
+        r"\small",
+        r"\renewcommand{\arraystretch}{1.05}",
+        r"\begin{tabular}{lrrrrrrrrrrrrr}",
+        r"\toprule",
+        r"\textbf{Model} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$eng}} & \\",
+        r"\cmidrule(lr){2-7}\cmidrule(lr){8-13}",
+        lang_head,
+    ]
+
+    for mi, (major_name, subs) in enumerate(aug_groups):
+        lines.append(r"\midrule\midrule" if mi > 0 else r"\midrule")
+        lines.append(r"\multicolumn{14}{l}{\textit{" + major_name + r"}} \\")
+        lines.append(r"\midrule")
+
+        for si, (sub_name, rs) in enumerate(subs):
+            if si > 0:
+                lines.append(r"\midrule")
+            for model_short, vals in rs:
+                cells = []
+                for ci, v in enumerate(vals):
+                    s = fmt(v)
+                    if v is None:
+                        cells.append(s); continue
+                    is_major = (major_col_max[mi][ci] is not None
+                                and abs(v - major_col_max[mi][ci]) < 1e-9)
+                    is_sub = (sub_col_max[mi][si][ci] is not None
+                              and abs(v - sub_col_max[mi][si][ci]) < 1e-9)
+                    if is_major:
+                        s = f"\\textbf{{{s}}}"
+                    elif is_sub:
+                        s = f"\\emph{{{s}}}"
+                    cells.append(s)
+                model_disp = MODEL_DISP.get(model_short, model_short)
+                lines.append(f"{model_disp} & " + " & ".join(cells) + r" \\")
+
+    lines += [
+        r"\bottomrule",
+        r"\end{tabular}",
+        f"\\caption{{{caption}}}",
+        f"\\label{{{label}}}",
+        r"\end{table*}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 def render_table(*, label, caption, blocks):
     """blocks = [(setup_label, [(model_short, [12 floats|None]), ...]), ...]
-    Bolds the per-column max **within each block** (matches new_results.tex)."""
+
+    Per-cell formatting:
+      \\textbf{X}  -- the overall column maximum (across all blocks)
+      \\emph{X}    -- the per-block column maximum (when not also the overall)
+      X plain     -- everything else
+    """
     # per-block column maxima
     block_col_max = []
     for _, rs in blocks:
@@ -129,9 +234,16 @@ def render_table(*, label, caption, blocks):
             cm.append(max(vals) if vals else None)
         block_col_max.append(cm)
 
-    head_row = (
-        " & ".join([" "] * 2 + [LANG_DISP[l] for l in LANGS] * 2) + r" \\"
-    )
+    # overall column maxima (across all rows in all blocks)
+    overall_col_max = []
+    for ci in range(12):
+        vals = [r[1][ci] for _, rs in blocks for r in rs if r[1][ci] is not None]
+        overall_col_max.append(max(vals) if vals else None)
+
+    # Lang headers as lowercase monospace, matching the rest of the project's
+    # language-label convention (\texttt{amh}, \texttt{hau}, ...).
+    lang_cols = [r"\texttt{" + l + "}" for l in LANGS] * 2
+    head_row = " & ".join([" "] * 2 + lang_cols) + r" \\"
 
     lines = [
         f"% ---- {label.split(':',1)[1]} ----",
@@ -158,8 +270,16 @@ def render_table(*, label, caption, blocks):
             cells = []
             for ci, v in enumerate(vals):
                 s = fmt(v)
-                if v is not None and col_max[ci] is not None and abs(v - col_max[ci]) < 1e-9:
+                if v is None:
+                    cells.append(s); continue
+                is_overall = (overall_col_max[ci] is not None
+                              and abs(v - overall_col_max[ci]) < 1e-9)
+                is_block = (col_max[ci] is not None
+                            and abs(v - col_max[ci]) < 1e-9)
+                if is_overall:
                     s = f"\\textbf{{{s}}}"
+                elif is_block:
+                    s = f"\\emph{{{s}}}"
                 cells.append(s)
             head_cell = (
                 f"\\multirow{{{n}}}{{*}}{{\\textit{{{setup}}}}}"
@@ -292,16 +412,147 @@ def build_doc(rows, metric):
     )
 
 
+def build_main_zs_ft(rows, metric):
+    """**Main paper Table 1.** Two major groups (Zero-shot, Fine-tuned),
+    each with two sub-blocks (Seq2Seq, LLM). Models sorted alphabetically
+    within each sub-block by display name.
+    """
+    metric_label = "chrF" if metric == "chrf" else "COMET"
+    SEQ2SEQ_ALL = ["m2m100_418m", "nllb_200_distilled_600m",
+                   "m2m100_1_2b", "nllb_200_1_3b"]
+    LLM_HEADLINE = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
+                    "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global"]
+
+    def by_disp(model_list):
+        return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
+
+    SEQ2SEQ_SORTED = by_disp(SEQ2SEQ_ALL)
+    LLM_SORTED = by_disp(LLM_HEADLINE)
+
+    def rows_for(models, **filters):
+        return [(m, vec(lookup(rows, metric=metric, model_short=m, **filters)))
+                for m in models]
+
+    zs_seq = rows_for(SEQ2SEQ_SORTED, experiment_type="zero_shot")
+    ft_seq = rows_for(SEQ2SEQ_SORTED, experiment_type="seq2seq_finetune",
+                      dataset="dcs", is_ablation="False")
+    zs_llm = rows_for(LLM_SORTED, experiment_type="llm_zero_shot",
+                      is_ablation="False")
+    ft_llm = rows_for(LLM_SORTED, experiment_type="lora_finetune",
+                      lora_rank="64", is_ablation="False")
+
+    return render_grouped_table(
+        label=f"tab:main_zs_ft_{'chrf' if metric=='chrf' else 'comet'}",
+        caption=(f"Sentence-level zero-shot vs.\\ fine-tuned performance "
+                 f"({metric_label}). The four seq2seq backbones (M2M100-418M, "
+                 "NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source "
+                 "LLMs appear in both major groups; LLMs in the "
+                 "\\textit{Fine-tuned} group use per-pair LoRA $r{=}64$. "
+                 "Models are alphabetically sorted within each sub-block. "
+                 "\\textbf{Bold}: column maximum within the major group "
+                 "(\\textit{Zero-shot} or \\textit{Fine-tuned}); "
+                 "\\emph{italic}: column maximum within the sub-block "
+                 "(seq2seq or LLM)."),
+        major_groups=[
+            ("Zero-shot",  [(None, zs_seq), (None, zs_llm)]),
+            ("Fine-tuned", [(None, ft_seq), (None, ft_llm)]),
+        ],
+    )
+
+
+def build_open_vs_closed_icl(rows, metric):
+    """**Main paper Table 2.** Open vs.\ closed-source LLMs at sentence-level
+    in-context learning. Per-cell best-open ICL row vs.\ Gemini and GPT-4o.
+    """
+    metric_label = "chrF" if metric == "chrf" else "COMET"
+    open_models = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
+                   "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global"]
+
+    def best_open_zs():
+        out = {p: None for p in PAIRS}
+        for m in open_models:
+            d = lookup(rows, metric=metric, model_short=m,
+                       experiment_type="llm_zero_shot", is_ablation="False")
+            for p, v in d.items():
+                if out.get(p) is None or v > out[p]:
+                    out[p] = v
+        return out
+
+    def best_open_icl():
+        out = {p: None for p in PAIRS}
+        for m in open_models:
+            d = first_with_pred(rows, metric=metric, candidates=[
+                dict(experiment_type="llm_icl", prompt_strategy="icl_5shot",
+                     model_short=m, is_ablation="False"),
+                dict(experiment_type="llm_icl", prompt_strategy="icl_5shot_semantic",
+                     model_short=m, is_ablation="False"),
+            ])
+            for p, v in d.items():
+                if out.get(p) is None or v > out[p]:
+                    out[p] = v
+        return out
+
+    def closed_zs(model):
+        return lookup(rows, metric=metric, model_short=model,
+                      experiment_type="llm_zero_shot", is_ablation="False")
+
+    def closed_icl(model):
+        # GPT-4o eng-X via 5shot_semantic, X-eng via 5shot; Gemini has both.
+        return first_with_pred(rows, metric=metric, candidates=[
+            dict(experiment_type="llm_icl", prompt_strategy="icl_5shot",
+                 model_short=model, is_ablation="False"),
+            dict(experiment_type="llm_icl", prompt_strategy="icl_5shot_semantic",
+                 model_short=model, is_ablation="False"),
+        ])
+
+    # Major groups: Zero-shot, 5-shot ICL.
+    # Sub-blocks: Open (1 row: best-open), Closed (Gemini, GPT-4o).
+    # Closed rows alphabetically sorted by display name.
+    closed_zs_rows = sorted(
+        [("gemini_15_flash", vec(closed_zs("gemini_15_flash"))),
+         ("gpt4o",            vec(closed_zs("gpt4o")))],
+        key=lambda r: MODEL_DISP.get(r[0], r[0]).lower())
+    closed_icl_rows = sorted(
+        [("gemini_15_flash", vec(closed_icl("gemini_15_flash"))),
+         ("gpt4o",            vec(closed_icl("gpt4o")))],
+        key=lambda r: MODEL_DISP.get(r[0], r[0]).lower())
+
+    return render_grouped_table(
+        label=f"tab:open_vs_closed_icl_{'chrf' if metric=='chrf' else 'comet'}",
+        caption=("Open vs.\\ closed-source LLMs at sentence-level in-context "
+                 f"learning ({metric_label}). \\textit{{Best open}} rows are "
+                 "the per-cell maximum across the six open LLMs in "
+                 "Table~\\ref{tab:main_zs_ft_" +
+                 ("chrf" if metric == "chrf" else "comet") + "}. "
+                 "\\textbf{Bold}: column maximum within the major group "
+                 "(\\textit{Zero-shot} or \\textit{5-shot ICL}); "
+                 "\\emph{italic}: column maximum within the sub-block "
+                 "(open or closed)."),
+        major_groups=[
+            ("Zero-shot", [
+                (None, [("best_open", vec(best_open_zs()))]),
+                (None, closed_zs_rows),
+            ]),
+            ("5-shot ICL", [
+                (None, [("best_open", vec(best_open_icl()))]),
+                (None, closed_icl_rows),
+            ]),
+        ],
+    )
+
+
 # ---------------- main ----------------
 
 def main():
     rows = load_rows()
     builders = [
-        ("seq2seq",          build_seq2seq),
-        ("seq2seq_smaller",  build_seq2seq_appendix),
-        ("llm_sentence",     build_llm_sentence),
-        ("lora",             build_lora),
-        ("doc",              build_doc),
+        ("main_zs_ft",         build_main_zs_ft),
+        ("open_vs_closed_icl", build_open_vs_closed_icl),
+        ("seq2seq",            build_seq2seq),
+        ("seq2seq_smaller",    build_seq2seq_appendix),
+        ("llm_sentence",       build_llm_sentence),
+        ("lora",               build_lora),
+        ("doc",                build_doc),
     ]
     written = []
     for name, fn in builders:
