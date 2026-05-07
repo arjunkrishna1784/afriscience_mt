@@ -1,0 +1,41 @@
+\begin{table*}[t!]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\caption{Sentence-level SSA-COMET on AfriScience-MT across all 12 directional pairs. Best value per column in bold.}
+\label{tab:headline_ssa_comet}
+\begin{tabular}{llrrrrrrrrrrrr}
+\toprule
+ & & \multicolumn{6}{c}{\textbf{Eng$\to$xxx}} & \multicolumn{6}{c}{\textbf{xxx$\to$Eng}} \\
+\cmidrule(lr){3-8}\cmidrule(lr){9-14}
+ & \textbf{Model} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
+\midrule
+\multirow{4}{*}{\textit{Zero-shot Seq2Seq}} & M2M100-418M & 23.5 & 27.9 & 32.2 & 30.6 & 29.1 & 33.0 & 46.8 & 47.0 & 37.9 & 39.6 & 37.7 & 51.3 \\
+ & M2M100-1.2B & 31.7 & 36.1 & 31.6 & 32.8 & 42.1 & 43.9 & 53.6 & 55.6 & 42.0 & 40.1 & 42.9 & 58.4 \\
+ & NLLB-600M & 62.2 & 60.2 & 65.7 & 70.2 & 59.3 & 65.5 & 67.2 & 66.6 & 63.8 & 67.2 & 62.0 & 67.2 \\
+ & NLLB-1.3B & 62.8 & 61.9 & 67.7 & \textbf{70.7} & 61.9 & 66.0 & 67.8 & 67.3 & 65.0 & 68.3 & 63.3 & 67.8 \\
+\midrule
+\multirow{5}{*}{\textit{Zero-shot LLM}} & LLaMA-3.1-8B & 21.6 & 24.6 & 35.9 & 34.0 & 29.2 & 27.1 & 42.3 & 41.3 & 41.6 & 41.0 & 40.6 & 39.5 \\
+ & Gemma2-9B & 35.7 & 36.2 & 40.3 & 40.4 & 37.2 & 36.8 & 41.1 & 39.5 & 42.3 & 42.7 & 39.9 & 40.5 \\
+ & AfriqueLlama & 33.9 & 35.5 & 42.2 & 38.2 & 40.4 & 36.8 & 36.1 & 35.1 & 40.9 & 39.8 & 39.4 & 35.8 \\
+ & Tiny-Aya-G & 26.8 & 28.4 & 36.7 & 35.9 & 37.8 & 33.2 & 40.8 & 37.4 & 41.6 & 36.9 & 41.6 & 39.0 \\
+ & TransGemma & 29.5 & 33.7 & 37.5 & 37.8 & 37.9 & 33.6 & 40.7 & 42.8 & 40.9 & 41.9 & 45.6 & 30.8 \\
+\midrule
+\multirow{4}{*}{\textit{Fine-tuned Seq2Seq}} & M2M100-418M & 58.6 & 58.8 & 65.2 & 66.8 & 64.4 & 59.7 & 61.9 & 63.0 & 61.2 & 63.4 & 60.0 & 62.5 \\
+ & M2M100-1.2B & 59.7 & 59.8 & 66.0 & 68.0 & 64.5 & 61.9 & 60.0 & 63.8 & 61.7 & 65.0 & 59.6 & 61.1 \\
+ & NLLB-600M & 65.1 & 62.9 & 69.5 & 70.3 & 66.8 & 65.7 & 68.0 & 67.3 & 65.1 & 68.3 & 63.9 & 67.8 \\
+ & NLLB-1.3B & \textbf{66.0} & \textbf{63.3} & \textbf{70.0} & 70.7 & \textbf{67.3} & \textbf{66.0} & \textbf{68.6} & \textbf{68.0} & \textbf{65.9} & \textbf{69.0} & \textbf{64.8} & \textbf{68.2} \\
+\midrule
+\multirow{6}{*}{\textit{LoRA Fine-tune}} & LLaMA-3.1-8B (r=64) & 42.4 & 51.3 & 61.1 & 60.6 & 56.8 & 50.3 & 58.1 & 60.2 & 57.7 & 60.4 & 55.6 & 59.0 \\
+ & AfriqueLlama (r=64) & 49.6 & 51.5 & 58.7 & 58.7 & 55.5 & 51.6 & 60.9 & 53.5 & 54.7 & 58.7 & 55.7 & 56.4 \\
+ & Tiny-Aya-G (r=64) & 53.4 & 54.5 & 59.1 & 59.3 & 56.8 & 53.9 & 49.0 & 55.4 & 21.9 & 43.3 & 20.5 & 33.1 \\
+ & Tiny-Aya-E (r=64) & 54.3 & 54.3 & 59.8 & 59.2 & 57.1 & 55.7 & 57.8 & 61.0 & 56.5 & 58.7 & 50.2 & 60.5 \\
+ & AfriqueQwen (r=64) & 23.8 & 37.2 & 45.1 & 52.1 & 21.2 & 28.7 & 36.6 & 28.2 & 22.8 & 25.8 & 41.3 & 26.5 \\
+ & Gemma2-9B (r=64) & 54.0 & 50.5 & 62.7 & 62.8 & 58.9 & 48.4 & 60.4 & 60.6 & 58.4 & 61.1 & 56.3 & 60.4 \\
+\midrule
+\multirow{2}{*}{\textit{Closed-source LLM (zero-shot)}} & GPT-4o & 39.4 & 56.8 & 60.7 & 62.6 & 54.6 & 58.3 & 60.5 & 62.3 & 59.3 & 62.0 & 57.8 & 62.1 \\
+ & Gemini-1.5 & 57.9 & 55.8 & 59.4 & 62.2 & 57.5 & 53.9 & 62.6 & 61.4 & 58.1 & 59.8 & 54.8 & 60.8 \\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,23 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\caption{Cross-domain transfer: MAFAND-MT (general news) vs.\ AfriScience-MT (in-domain) vs.\ their union, fine-tuning NLLB-1.3B. Best value per column in bold.}
+\label{tab:mafand_compare}
+\begin{tabular}{llrrrrrrrr}
+\toprule
+ & & \multicolumn{4}{c}{\textbf{Eng$\to$xxx}} & \multicolumn{4}{c}{\textbf{xxx$\to$Eng}} \\
+\cmidrule(lr){3-6}\cmidrule(lr){7-10}
+ & \textbf{Model} & \texttt{hau} & \texttt{lug} & \texttt{yor} & \texttt{zul} & \texttt{hau} & \texttt{lug} & \texttt{yor} & \texttt{zul} \\
+\midrule
+\multirow{3}{*}{\textit{ChrF}} & MAFAND & 54.5 & 40.5 & 15.1 & 62.6 & 57.2 & 48.9 & 46.3 & 65.8 \\
+ & AS-MT & \textbf{67.7} & 51.5 & 17.7 & \textbf{67.2} & 64.3 & 55.4 & 53.3 & 68.6 \\
+ & AS-MT + MAFAND & 67.4 & 50.1 & 17.6 & 66.6 & 63.7 & 55.1 & 52.6 & \textbf{68.6} \\
+\midrule
+\multirow{3}{*}{\textit{SSA-COMET}} & MAFAND & 55.7 & 62.4 & 57.6 & 59.1 & 61.0 & 57.6 & 55.4 & 61.6 \\
+ & AS-MT & 63.3 & \textbf{70.0} & \textbf{67.3} & 66.0 & \textbf{68.0} & \textbf{65.9} & \textbf{64.8} & 68.2 \\
+ & AS-MT + MAFAND & 56.7 & 65.9 & 60.9 & 59.1 & 61.7 & 58.9 & 56.9 & 61.9 \\
+\bottomrule
+\end{tabular}
+\end{table*}

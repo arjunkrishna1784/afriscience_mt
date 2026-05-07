@@ -1,0 +1,30 @@
+\begin{table*}[t!]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\caption{LoRA rank ablation on LLaMA-3.1-8B fine-tuned on AfriScience-MT. Best per column in bold.}
+\label{tab:lora_rank}
+\begin{tabular}{llrrrrrrrrrrrr}
+\toprule
+ & & \multicolumn{6}{c}{\textbf{Eng$\to$xxx}} & \multicolumn{6}{c}{\textbf{xxx$\to$Eng}} \\
+\cmidrule(lr){3-8}\cmidrule(lr){9-14}
+ & \textbf{Model} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
+\midrule
+\multirow{6}{*}{\textit{ChrF}} & $r{=}4$ & 25.3 & 56.6 & 42.6 & 51.3 & 36.7 & 43.5 & 48.5 & 58.7 & 49.6 & 55.3 & 45.4 & 56.5 \\
+ & $r{=}8$ & 22.3 & 60.0 & 46.2 & 56.5 & 35.7 & 50.4 & 50.9 & 58.4 & 49.8 & 56.4 & 45.5 & 58.1 \\
+ & $r{=}16$ & 21.9 & 59.4 & 48.3 & 58.3 & 36.0 & 52.2 & 51.7 & 58.9 & 49.4 & 57.3 & 46.0 & 58.7 \\
+ & $r{=}32$ & 22.2 & 59.9 & 47.7 & 58.1 & 35.8 & 52.6 & 49.6 & 59.2 & 49.7 & 57.0 & 46.5 & 58.3 \\
+ & $r{=}64$ & 32.9 & 60.3 & 49.3 & 59.0 & 39.9 & 52.4 & 53.0 & 60.3 & 52.6 & 60.2 & 48.8 & 61.2 \\
+ & $r{=}128$ & 22.9 & \textbf{60.4} & 47.7 & 57.7 & 35.5 & 52.8 & 49.1 & 57.9 & 49.7 & 57.1 & 47.1 & 58.7 \\
+\midrule
+\multirow{6}{*}{\textit{SSA-COMET}} & $r{=}4$ & 29.1 & 47.4 & 54.6 & 51.0 & 50.6 & 40.3 & 56.2 & 59.7 & 56.9 & 58.7 & 54.7 & 57.4 \\
+ & $r{=}8$ & 38.7 & 58.2 & 64.3 & 64.0 & \textbf{59.5} & 56.4 & 64.2 & 66.2 & 64.0 & 65.9 & 62.7 & 65.2 \\
+ & $r{=}16$ & 38.0 & 57.9 & \textbf{65.9} & 65.2 & 58.7 & 57.9 & \textbf{64.3} & 66.3 & 64.1 & 66.0 & 62.9 & 65.2 \\
+ & $r{=}32$ & 38.0 & 58.5 & 65.1 & \textbf{65.7} & 58.6 & 58.2 & 63.9 & \textbf{66.4} & 64.2 & 66.2 & \textbf{63.0} & 65.2 \\
+ & $r{=}64$ & \textbf{42.4} & 51.3 & 61.1 & 60.6 & 56.8 & 50.3 & 58.1 & 60.2 & 57.7 & 60.4 & 55.6 & 59.0 \\
+ & $r{=}128$ & 38.7 & 58.3 & 65.9 & 65.2 & 59.2 & \textbf{58.7} & 63.3 & 65.8 & \textbf{64.2} & \textbf{66.3} & 62.9 & \textbf{65.4} \\
+\bottomrule
+\end{tabular}
+\\[2pt]\footnotesize{\textbf{Note.} Ranks $r{\in}\{8,16,32,128\}$ were trained with the \texttt{unsloth/Llama-3.1-8B-Instruct (4-bit)} base; $r{\in}\{4,64\}$ used the vanilla \texttt{meta-llama/Llama-3.1-8B-Instruct} base. The shape of the rank curve is comparable; absolute levels across the two bases are not.}
+\end{table*}
