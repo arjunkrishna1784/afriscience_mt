@@ -55,11 +55,14 @@ def load_test(lang: str) -> list[dict]:
         return list(csv.DictReader(f, delimiter="\t"))
 
 
-def has_per_domain_ssa(results_path: Path) -> bool:
-    """True iff every per_domain.<cat> entry has ssa_comet set.
+_REQUIRED_PER_DOMAIN_KEYS = ("ssa_comet", "bleu", "chrf")
 
-    A partial result (some cats with ssa_comet, others without) returns
-    False so the dir is re-queued and the missing cats get filled in.
+
+def has_per_domain_ssa(results_path: Path) -> bool:
+    """True iff every per_domain.<cat> entry has ssa_comet, bleu, AND chrf.
+
+    A partial result (some cats/metrics missing) returns False so the dir
+    is re-queued and the missing values get filled in.
     """
     try:
         d = json.loads(results_path.read_text())
@@ -68,7 +71,10 @@ def has_per_domain_ssa(results_path: Path) -> bool:
     pd = (d.get("metrics") or {}).get("per_domain") or {}
     if not pd:
         return False
-    return all("ssa_comet" in (stats or {}) for stats in pd.values())
+    return all(
+        all((stats or {}).get(k) is not None for k in _REQUIRED_PER_DOMAIN_KEYS)
+        for stats in pd.values()
+    )
 
 
 def collect_targets(srcs: list[str], force: bool) -> tuple[list[Path], int, int]:
@@ -94,7 +100,16 @@ def collect_targets(srcs: list[str], force: bool) -> tuple[list[Path], int, int]
 
 # ---------------- per-task work (runs in a worker process) ----------------
 
-def rescore_one(pred_path: Path, calc) -> dict[str, dict] | None:
+def rescore_one(pred_path: Path, calc, force: bool = False) -> dict[str, dict] | None:
+    """Compute per-domain metrics, only filling in what's missing.
+
+    Reads the existing ``results.json.metrics.per_domain`` block and skips
+    metrics that are already populated per category. Pass ``force=True``
+    to always recompute every metric.
+    """
+    # Lazy import so this module is import-safe before the worker pins a GPU.
+    from afriscience_mt.evaluation.metrics import compute_bleu, compute_chrf
+
     payload = json.loads(pred_path.read_text())
     src_lang = payload["source_lang"]
     tgt_lang = payload["target_lang"]
@@ -104,6 +119,13 @@ def rescore_one(pred_path: Path, calc) -> dict[str, dict] | None:
     tgt_tsv = load_test(tgt_lang)
     if len(samples) != len(src_tsv):
         return None
+
+    # Existing per-domain state, so we know what's already done.
+    res_path = pred_path.parent / "results.json"
+    try:
+        existing = (json.loads(res_path.read_text()).get("metrics") or {}).get("per_domain") or {}
+    except Exception:
+        existing = {}
 
     by_cat = defaultdict(lambda: {"src": [], "ref": [], "hyp": []})
     for i, s in enumerate(samples):
@@ -117,10 +139,27 @@ def rescore_one(pred_path: Path, calc) -> dict[str, dict] | None:
 
     out: dict[str, dict] = {}
     for cat, bag in by_cat.items():
-        v = calc.compute(hypotheses=bag["hyp"],
-                         references=bag["ref"],
-                         sources=bag["src"]).get("ssa_comet")
-        out[cat] = {"n": len(bag["hyp"]), "ssa_comet": v}
+        prev = existing.get(cat) or {}
+        entry: dict = {"n": len(bag["hyp"])}
+
+        bleu_v = prev.get("bleu")
+        if force or bleu_v is None:
+            bleu_v = compute_bleu(bag["hyp"], bag["ref"])["bleu"]
+        entry["bleu"] = bleu_v
+
+        chrf_v = prev.get("chrf")
+        if force or chrf_v is None:
+            chrf_v = compute_chrf(bag["hyp"], bag["ref"])["chrf"]
+        entry["chrf"] = chrf_v
+
+        ssa_v = prev.get("ssa_comet")
+        if force or ssa_v is None:
+            ssa_v = calc.compute(hypotheses=bag["hyp"],
+                                 references=bag["ref"],
+                                 sources=bag["src"]).get("ssa_comet")
+        entry["ssa_comet"] = ssa_v
+
+        out[cat] = entry
     return out
 
 
@@ -131,7 +170,7 @@ def write_per_domain(results_path: Path, per_dom: dict[str, dict]) -> None:
         d["metrics"]["per_domain"].setdefault(cat, {})
         d["metrics"]["per_domain"][cat].update(stats)
     d.setdefault("metadata", {}).setdefault("rescored", []).append({
-        "metric": "ssa_comet_per_domain",
+        "metric": "per_domain_bleu_chrf_ssa_comet",
         "n_domains": len(per_dom),
         "timestamp": datetime.utcnow().isoformat(),
     })
@@ -139,7 +178,8 @@ def write_per_domain(results_path: Path, per_dom: dict[str, dict]) -> None:
 
 
 def worker_loop(gpu_id: int, worker_id: int,
-                task_q: mp.Queue, done_q: mp.Queue) -> None:
+                task_q: mp.Queue, done_q: mp.Queue,
+                force: bool = False) -> None:
     """Pinned-to-one-GPU worker. Loads COMET once and drains the queue."""
     os.environ["CUDA_VISIBLE_DEVICES"] = str(gpu_id)
     # Import LATE so CUDA_VISIBLE_DEVICES is honoured.
@@ -159,7 +199,7 @@ def worker_loop(gpu_id: int, worker_id: int,
             break
         pred_path = Path(item)
         try:
-            per_dom = rescore_one(pred_path, calc)
+            per_dom = rescore_one(pred_path, calc, force=force)
         except Exception as e:
             done_q.put({"type": "error", "worker": worker_id,
                         "path": str(pred_path), "err": str(e)})
@@ -219,7 +259,8 @@ def main() -> int:
 
     procs = []
     for wi, gpu in enumerate(worker_specs):
-        p = ctx.Process(target=worker_loop, args=(gpu, wi, task_q, done_q),
+        p = ctx.Process(target=worker_loop,
+                        args=(gpu, wi, task_q, done_q, args.force),
                         daemon=False)
         p.start()
         procs.append(p)
