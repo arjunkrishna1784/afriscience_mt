@@ -113,6 +113,77 @@ def build_pair_data(split_dir: Path, src: str, tgt: str) -> list[dict]:
     return [{"src": s[k], "ref": t[k]} for k in s if k in t]
 
 
+def build_prompts_for_pair(runner, sources: list[str], src: str, tgt: str,
+                            n_shots: int, retrieval: str) -> list[str]:
+    """Materialise the ICL prompts that ICLRunner would submit one-by-one,
+    so we can hand them to the Batch API instead."""
+    from afriscience_mt.inference.prompt_builder import build_translation_prompt
+    selection = "random" if retrieval == "random" else "semantic"
+    prompts: list[str] = []
+    for i, src_text in enumerate(sources):
+        examples = []
+        if n_shots > 0:
+            examples = runner.example_selector.select(
+                source_text=src_text,
+                source_lang=src, target_lang=tgt,
+                n_examples=n_shots,
+                method=selection,
+            ) if hasattr(runner, "example_selector") and runner.example_selector else []
+            # Fallback: directly call translate_batch's machinery via a helper
+            if not examples and runner.train_dataset is not None:
+                from afriscience_mt.inference.example_selector import (
+                    create_example_selector,
+                )
+                sel = create_example_selector(runner.train_dataset, method=selection)
+                examples = sel.select(source_text=src_text,
+                                      source_lang=src, target_lang=tgt,
+                                      n_examples=n_shots)
+        prompts.append(build_translation_prompt(
+            source_text=src_text, source_lang=src, target_lang=tgt,
+            template="basic", examples=examples,
+        ))
+    return prompts
+
+
+def run_batch_mode(api_client, runner, *, src: str, tgt: str,
+                   n_shots: int, retrieval: str, sources: list[str],
+                   short_name: str, model: str, temp_setting_str: str,
+                   poll_seconds: int, state_file: Path) -> list[str]:
+    """Submit one batch per (pair, shot-count) and poll until done.
+    Returns the list of decoded responses in source order."""
+    job_name_key = f"{short_name}/{temp_setting_str}/{src}-{tgt}/{n_shots}shot/{retrieval}"
+    state = {}
+    if state_file.exists():
+        state = json.loads(state_file.read_text())
+
+    prompts = build_prompts_for_pair(runner, sources, src, tgt, n_shots, retrieval)
+
+    job_name = state.get(job_name_key)
+    if not job_name:
+        print(f"    submitting batch ({len(prompts)} prompts)...")
+        job_name = api_client.submit_batch_job(
+            prompts=prompts,
+            job_name=f"afriscience-{short_name}-{src}{tgt}-{n_shots}shot",
+        )
+        state[job_name_key] = job_name
+        state_file.parent.mkdir(parents=True, exist_ok=True)
+        state_file.write_text(json.dumps(state, indent=2))
+        print(f"    submitted: {job_name}")
+    else:
+        print(f"    resuming batch: {job_name}")
+
+    while True:
+        out = api_client.retrieve_batch_results(job_name)
+        if out is not None:
+            print(f"    batch complete ({len(out)} responses)")
+            # remove from state file once consumed
+            state.pop(job_name_key, None)
+            state_file.write_text(json.dumps(state, indent=2))
+            return out
+        print(f"    pending; sleeping {poll_seconds}s...")
+        time.sleep(poll_seconds)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True,
@@ -132,6 +203,15 @@ def main() -> int:
     ap.add_argument("--skip-scoring", action="store_true",
                     help="Write predictions.json without metrics; rescore later "
                          "with `afriscience-mt evaluate --mode rescore`.")
+    ap.add_argument("--use-batch", action="store_true",
+                    help="Submit prompts to the Gemini Batch API (50% cheaper, "
+                         "no per-minute rate limits, ~24h SLA). Recommended for "
+                         "Pro-tier models with low RPM.")
+    ap.add_argument("--batch-poll-seconds", type=int, default=120,
+                    help="Polling interval for --use-batch (default 120s).")
+    ap.add_argument("--batch-state-file", default="experiments/_gemini_batch_state.json",
+                    help="JSON file used to record submitted batch job names "
+                         "so a crash can resume. (Only used with --use-batch.)")
     args = ap.parse_args()
 
     api_key = args.api_key or os.environ.get("GOOGLE_API_KEY")
@@ -191,17 +271,33 @@ def main() -> int:
 
             print(f"  [{n_shots}-shot] -> {out_dir.relative_to(ROOT)}")
 
-            translations = runner.translate_batch(
-                texts=test_ds.get_sources(),
-                source_lang=src, target_lang=tgt,
-                n_shots=n_shots, template="basic",
-                use_glossary=False,
-                selection_method=("random" if args.retrieval == "random" else "semantic"),
-            )
-            samples = [
-                {"src": s, "ref": r, "hyp": t["translation"]}
-                for s, r, t in zip(test_ds.get_sources(), test_ds.get_targets(), translations)
-            ]
+            if args.use_batch:
+                hyps = run_batch_mode(
+                    api_client, runner,
+                    src=src, tgt=tgt,
+                    n_shots=n_shots, retrieval=args.retrieval,
+                    sources=test_ds.get_sources(),
+                    short_name=short_name, model=args.model,
+                    temp_setting_str=temp_setting(args.temperature),
+                    poll_seconds=args.batch_poll_seconds,
+                    state_file=ROOT / args.batch_state_file,
+                )
+                samples = [
+                    {"src": s, "ref": r, "hyp": h}
+                    for s, r, h in zip(test_ds.get_sources(), test_ds.get_targets(), hyps)
+                ]
+            else:
+                translations = runner.translate_batch(
+                    texts=test_ds.get_sources(),
+                    source_lang=src, target_lang=tgt,
+                    n_shots=n_shots, template="basic",
+                    use_glossary=False,
+                    selection_method=("random" if args.retrieval == "random" else "semantic"),
+                )
+                samples = [
+                    {"src": s, "ref": r, "hyp": t["translation"]}
+                    for s, r, t in zip(test_ds.get_sources(), test_ds.get_targets(), translations)
+                ]
 
             metrics = None
             if not args.skip_scoring:
