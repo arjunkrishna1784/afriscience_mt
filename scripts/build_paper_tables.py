@@ -560,21 +560,31 @@ def build_open_vs_closed_icl(rows, metric):
 
 
 def build_closed_ablations(rows, metric):
-    """**Appendix.** One combined closed-API ablation table with three blocks:
+    """**Appendix.** Closed-API templated-ICL ablation, three blocks:
 
-      1. \\textit{Reported}: the \\texttt{eng}$\\to$\\texttt{xxx} numbers from
-         Tables~\\ref{tab:open_vs_closed_icl_*} at $T{=}0$.
-      2. \\textit{Temperature ablation}: same configurations re-run at
-         $T{=}0.6$ where data is available.
-      3. \\textit{Retrieval ablation}: semantic-similarity 5-shot exemplars
-         at varying shot counts, $T{=}0$.
+      1. \\textit{Reported}: the eng->xxx and xxx->eng numbers used in
+         Table~\\ref{tab:open_vs_closed_icl_*} at $T{=}0$ with each
+         model's headline templated configuration.
+      2. \\textit{Retrieval ablation} (eng->xxx, $T{=}0$):
+         template-based vs semantic-similarity 5-shot exemplars.
+      3. \\textit{Temperature ablation} (eng->xxx, $T{=}0$ vs $T{=}0.6$):
+         each model's headline templated config replayed at the higher
+         temperature.
 
-    Only the eng->xxx half is reported throughout (no closed-API ablation
-    runs were done on xxx->eng).
+    The closed-API templated runs are now bidirectional at $T{=}0$
+    (Gemma2/Llama3 sweeps imported on 2026-05-08), so this table no
+    longer falls back to vanilla `icl_5shot` rows.
     """
     metric_label = "chrF" if metric == "chrf" else "COMET"
 
-    def pull(model, etype, temp, *, strategies=(None,)):
+    # Per-model headline templated config (computed from summary.csv on
+    # 2026-05-08; see PAPER_TODOS bookmark "Template-vs-shot dependence"):
+    HEADLINE_STRATEGY = {
+        "gemini_15_flash": "template5_10shot",   # avg 65.96
+        "gpt4o":            "template3_10shot",  # avg 65.87 (template5_10shot is 65.77)
+    }
+
+    def pull(model, etype, temp, *, strategies, pairs):
         merged = {}
         for ps in strategies:
             filters = dict(model_short=model, experiment_type=etype,
@@ -582,58 +592,59 @@ def build_closed_ablations(rows, metric):
             if ps is not None:
                 filters["prompt_strategy"] = ps
             d = lookup(rows, metric=metric, **filters)
-            for p in PAIRS_E2X:
+            for p in pairs:
                 if p in d:
                     merged.setdefault(p, d[p])
         return merged
 
-    def vec_e2x(d):
-        return [d.get(p) for p in PAIRS_E2X]
+    def vec(d, pairs):
+        return [d.get(p) for p in pairs]
 
-    def avg(vs):
+    def avg_(vs):
         nums = [v for v in vs if v is not None]
         return sum(nums) / len(nums) if nums else None
 
-    def row(model, setting_label, etype, temp, strategies):
-        v = vec_e2x(pull(model, etype, temp, strategies=strategies))
-        return (model, setting_label, v + [avg(v)])
+    def row(model, label, etype, temp, strategies, pairs):
+        v = vec(pull(model, etype, temp, strategies=strategies, pairs=pairs), pairs)
+        return (model, label, v + [avg_(v)])
 
-    # ---- block 1: Reported headline (T=0). Strategy per model matches
-    # the headline used in Table 2.
-    reported = [
-        row("gemini_15_flash", "ZS",                      "llm_zero_shot", "t0", (None,)),
-        row("gemini_15_flash", "5-shot (random)",         "llm_icl",       "t0", ("icl_5shot",)),
-        row("gpt4o",            "ZS",                     "llm_zero_shot", "t0", (None,)),
-        row("gpt4o",            "5-shot (semantic)",      "llm_icl",       "t0", ("icl_5shot_semantic",)),
-    ]
+    # ---- block 1: Reported headline at T=0 (eng->xxx half).
+    # Per-model best templated 10-shot, capped at 10 per the project rule.
+    # Whole table is eng->xxx only because Blocks 2 and 3 only have data
+    # for that direction (no closed-API ablation runs on xxx->eng).
+    reported = []
+    for m in ("gemini_15_flash", "gpt4o"):
+        s = HEADLINE_STRATEGY[m]
+        reported.append(row(m, "ZS",
+                            "llm_zero_shot", "t0", (None,), PAIRS_E2X))
+        reported.append(row(m, f"10-shot ({s.split('_')[0]})",
+                            "llm_icl", "t0", (s,), PAIRS_E2X))
 
-    # ---- block 2: temperature ablation at T=0.6 (eng->xxx coverage only).
-    # GPT-4o ICL at T=0.6 only ran with random retrieval, which differs
-    # from its T=0 headline (semantic) — flagged in caption.
-    temp_abl = [
-        row("gemini_15_flash", "ZS",                      "llm_zero_shot", "t06", (None,)),
-        row("gemini_15_flash", "5-shot (random)",         "llm_icl",       "t06", ("icl_5shot",)),
-        row("gpt4o",            "ZS",                     "llm_zero_shot", "t06", (None,)),
-        row("gpt4o",            "5-shot (random)$^\\dagger$",
-                                                          "llm_icl",       "t06", ("icl_5shot",)),
-    ]
+    # ---- block 2: retrieval ablation (eng->xxx, T=0).
+    # Per-model templated 10-shot vs semantic_10shot.
+    retrieval_abl = []
+    for m in ("gemini_15_flash", "gpt4o"):
+        s = HEADLINE_STRATEGY[m]
+        retrieval_abl.append(row(m, f"10-shot (templated, {s.split('_')[0]})",
+                                 "llm_icl", "t0", (s,), PAIRS_E2X))
+        retrieval_abl.append(row(m, "10-shot (semantic similarity)",
+                                 "llm_icl", "t0", ("semantic_10shot",), PAIRS_E2X))
 
-    # ---- block 3: retrieval ablation. Random vs semantic 5-shot at T=0.
-    # We restrict to 5 shots (the headline shot count for all models in
-    # the body); higher shot counts (10/20/50) are reserved for the
-    # separate template/shot ablation table that covers both open and
-    # closed models once the open-LLM template/shot runs are imported.
-    sem_abl = [
-        # Gemini: random (= reported) vs semantic at 5-shot.
-        row("gemini_15_flash", "5-shot (random)",        "llm_icl", "t0", ("icl_5shot",)),
-        row("gemini_15_flash", "5-shot (semantic)",      "llm_icl", "t0",
-            ("icl_5shot_semantic", "semantic_5shot")),
-        # GPT-4o: semantic (= reported) is the only T=0 eng->xxx ICL we have;
-        # random retrieval was not run for this direction at T=0.
-        row("gpt4o",            "5-shot (semantic)",     "llm_icl", "t0",
-            ("icl_5shot_semantic", "semantic_5shot")),
-        row("gpt4o",            "5-shot (random)",       "llm_icl", "t0", ("icl_5shot",)),
-    ]
+    # ---- block 3: temperature ablation (eng->xxx, T=0 vs T=0.6).
+    # Each model's headline templated config replayed at T=0.6. Now clean
+    # for both models since we have GPT-4o templated coverage at both
+    # temperatures.
+    temp_abl = []
+    for m in ("gemini_15_flash", "gpt4o"):
+        s = HEADLINE_STRATEGY[m]
+        temp_abl.append(row(m, "ZS ($T{=}0$)",
+                            "llm_zero_shot", "t0",  (None,), PAIRS_E2X))
+        temp_abl.append(row(m, "ZS ($T{=}0.6$)",
+                            "llm_zero_shot", "t06", (None,), PAIRS_E2X))
+        temp_abl.append(row(m, f"10-shot ({s.split('_')[0]}) $T{{=}}0$",
+                            "llm_icl", "t0",  (s,), PAIRS_E2X))
+        temp_abl.append(row(m, f"10-shot ({s.split('_')[0]}) $T{{=}}0.6$",
+                            "llm_icl", "t06", (s,), PAIRS_E2X))
 
     # ---- per-block column max for bold highlighting.
     def col_max(brows):
@@ -642,10 +653,6 @@ def build_closed_ablations(rows, metric):
             vs = [r[2][ci] for r in brows if r[2][ci] is not None]
             cols.append(max(vs) if vs else None)
         return cols
-
-    rep_max  = col_max(reported)
-    temp_max = col_max(temp_abl)
-    sem_max  = col_max(sem_abl)
 
     lang_cols = [r"\texttt{" + l + "}" for l in LANGS]
     lang_head = " & ".join(["  ", "  "] + lang_cols + [r"\textbf{Avg}"]) + r" \\"
@@ -680,30 +687,36 @@ def build_closed_ablations(rows, metric):
                 cells.append(s)
             lines.append(f"{disp} & {setting_label} & " + " & ".join(cells) + r" \\")
 
-    emit_block("Reported ($T{=}0$)",          reported, rep_max, first=True)
-    emit_block("Retrieval ablation: random vs.\\ semantic 5-shot, $T{=}0$",
-               sem_abl, sem_max)
-    emit_block("Temperature ablation ($T{=}0.6$)", temp_abl, temp_max)
+    rep_max  = col_max(reported)
+    ret_max  = col_max(retrieval_abl)
+    temp_max = col_max(temp_abl)
+
+    emit_block("Reported ($T{=}0$)",
+               reported, rep_max, first=True)
+    emit_block("Retrieval ablation: templated vs.\\ semantic-similarity, $T{=}0$",
+               retrieval_abl, ret_max)
+    emit_block("Temperature ablation ($T{=}0$ vs $T{=}0.6$)",
+               temp_abl, temp_max)
 
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
         (r"\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} "
-         f"({metric_label}). \\textit{{Reported}} reproduces the "
-         r"\texttt{eng}$\to$\texttt{xxx} numbers used in Table~"
-         r"\ref{tab:open_vs_closed_icl_" +
-         ("chrf" if metric == "chrf" else "comet") + r"}. "
-         r"\textit{Temperature ablation} re-runs the same configurations "
-         r"at $T{=}0.6$. \textit{Retrieval ablation} contrasts random- "
-         r"and semantic-similarity 5-shot exemplars at $T{=}0$ "
-         r"(higher-shot results live in the dedicated template/shot "
-         r"ablation table). We do not run closed-API ablations on "
-         r"\texttt{xxx}$\to$\texttt{eng}, and GPT-4o's random-retrieval "
-         r"row is unavailable at $T{=}0$ for this direction. "
-         r"$^\dagger$GPT-4o's $T{=}0$ ICL headline uses semantic-"
-         r"similarity 5-shot, while its $T{=}0.6$ ICL run used "
-         r"random-retrieval, so this row mixes the temperature and "
-         r"retrieval axes. \textbf{Bold}: column maximum within the block.}"),
+         f"({metric_label}). "
+         r"\textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} "
+         r"numbers from Table~\ref{tab:open_vs_closed_icl_" +
+         ("chrf" if metric == "chrf" else "comet") + r"} for these two "
+         r"models at their headline templated 10-shot configuration "
+         r"(Gemini-1.5: \texttt{template5\_10shot}, "
+         r"GPT-4o: \texttt{template3\_10shot}). "
+         r"\textit{Retrieval ablation} contrasts the same templated "
+         r"10-shot run against semantic-similarity 10-shot exemplars at "
+         r"$T{=}0$. "
+         r"\textit{Temperature ablation} replays each model's headline "
+         r"templated configuration at $T{=}0.6$ to isolate temperature. "
+         r"All ablations are \texttt{eng}$\to$\texttt{xxx} only "
+         r"(no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). "
+         r"\textbf{Bold}: column maximum within the block.}"),
         r"\label{tab:closed_ablations_" + ("chrf" if metric == "chrf" else "comet") + "}",
         r"\end{table*}",
     ]
