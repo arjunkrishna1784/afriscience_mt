@@ -177,10 +177,28 @@ class VLLMClient:
             top_p=top_p,
             max_tokens=n_new,
         )
-        if truncate is not None:
+        # vLLM <=0.7 accepted truncate_prompt_tokens on SamplingParams;
+        # 0.8+ removed it (max_model_len at the engine level handles the
+        # cap, and over-budget prompts now error at generate-time).
+        # Probe the SDK so we work on either era.
+        if truncate is not None and self._supports_truncate_kwarg():
             kwargs["truncate_prompt_tokens"] = truncate
 
         return self._SamplingParams(**kwargs)
+
+    def _supports_truncate_kwarg(self) -> bool:
+        """True if SamplingParams accepts truncate_prompt_tokens (vLLM <=0.7)."""
+        cached = getattr(self, "_trunc_supported", None)
+        if cached is not None:
+            return cached
+        import inspect
+        try:
+            params = inspect.signature(self._SamplingParams).parameters
+            cached = "truncate_prompt_tokens" in params
+        except (TypeError, ValueError):
+            cached = False
+        self._trunc_supported = cached
+        return cached
 
     # ------------------------------------------------------------------
     # Public API — compatible with LocalLLMClient
