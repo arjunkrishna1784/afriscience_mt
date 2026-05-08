@@ -1,59 +1,129 @@
-"""Rerun Gemini on a newer model (e.g. gemini-2.0-flash, gemini-2.5-pro) on
-all 12 language pairs at zero-shot and 5-shot ICL.
+"""Rerun Gemini on a newer model (e.g. gemini-3-flash-preview) using the
+EXACT prompts that were sent to gemini-1.5-flash, read from the legacy TSV
+dump's `prompt` column. No prompt rebuilding — just resend.
 
-This reuses the same prompt template ("basic") and the same retrieval
-strategy that the original Gemini-1.5-Flash runs used, so the new
-predictions slot directly alongside the existing ones for an
-apples-to-apples model-version comparison.
+This guarantees byte-for-byte prompt parity with gemini-1.5-flash, so the
+new predictions support a clean "model version" ablation:
 
-Outputs are written under
-``experiments/llm/closed/<temp>/<phase>/<short_name>/<pair>/``
-in the canonical (predictions.json + results.json) schema, so they
-land in ``summary.csv`` automatically when you run
+    legacy gemini-1.5-flash  ──┐
+                                ├── identical prompts ──── compare outputs
+    rerun  gemini-3-flash    ──┘
 
-    python -m afriscience_mt aggregate --out experiments/summary.csv
+Source of prompts (preferred → fallback):
+    /ext_data/idris/DCS-MT-Updated/old_experiments/LLMS/
+    /home/idris/ext_data/DCS-MT-Old/LLMS/translations/
 
-Usage (from repo root):
+Each TSV (e.g. eng-to-amh-template3-shots5.tsv) has columns:
+    src_text    prompt    translation
+We read `prompt` and send it to the new model. The original prompts are in
+LangChain's role-flattened format ("System: <sys>\\nHuman: <user>"); we
+parse that and send proper system + user messages where the system part
+is constant across the TSV (templates 1/2/3), and fall back to a single
+user message where it varies per row (templates 4/5 — glossary differs
+per source). Either way, the prompt content is byte-identical to what
+gemini-1.5 received.
 
+Sweep: whatever exists in the legacy dump for the chosen temperature.
+50-shot files are skipped per project policy (docs/PAPER_TODOS.md).
+
+Outputs:
+    experiments/llm/closed/<temp>/icl/<short_name>/template{N}_{K}shot/<pair>/
+                                                                     {predictions,results}.json
+
+Usage:
     export GOOGLE_API_KEY=...
-    # default sweep: 0, 5, 10, 20 shots on all 12 pairs
-    python scripts/rerun_gemini_newer.py --model gemini-2.0-flash
-    # subset of pairs
-    python scripts/rerun_gemini_newer.py --model gemini-2.5-pro --pairs eng-amh eng-hau
-    # only 5-shot if you want a quick sanity check
-    python scripts/rerun_gemini_newer.py --model gemini-2.5-flash --shot-counts 5
-
-Notes:
-  - ``--short-name`` controls the output directory name and the
-    ``model_short`` value that lands in summary.csv. Defaults to a
-    sanitised version of ``--model`` (e.g. ``gemini-2.5-pro`` ->
-    ``gemini_2_5_pro``). Pick a stable name -- it is what the table
-    builder will reference.
-  - Random retrieval is the default; pass ``--retrieval semantic`` to
-    use OpenAI-embedding semantic similarity (requires OPENAI_API_KEY).
-  - We score the predictions on BLEU/ChrF/SSA-COMET as we go, so the
-    written results.json is ready for table generation immediately.
+    python scripts/rerun_gemini_newer.py --model gemini-3-flash-preview
+    python scripts/rerun_gemini_newer.py --model gemini-3-flash-preview --temperature 0.6
+    python scripts/rerun_gemini_newer.py --model gemini-3-flash-preview --use-batch
 """
 from __future__ import annotations
 
 import argparse
+import asyncio
 import csv
+import io
 import json
 import os
+import re
 import sys
 import time
+import warnings
 from datetime import datetime
 from pathlib import Path
 
+from tqdm import tqdm
+
+# --- silence noisy library warnings -----------------------------------------
+# 1) FutureWarning about Python 3.9 EOL (from google-genai or its deps).
+warnings.filterwarnings("ignore", category=FutureWarning)
+# 2) The google-genai SDK uses print() (not warnings.warn) for the
+#    "non-text parts" / "thought_signature" notice — Gemini-3 thinking models
+#    return a thought trace alongside the answer; the .text accessor
+#    correctly returns only the answer, so the notice is harmless. Wrap
+#    stderr to drop those lines.
+class _FilteredStderr(io.TextIOBase):
+    _DROP_PATTERNS = (
+        "non-text parts in the response",
+        "thought_signature",
+        "AFC is enabled with max remote calls",
+    )
+    def __init__(self, real): self.real = real; self._buf = ""
+    def write(self, s):
+        self._buf += s
+        while "\n" in self._buf:
+            line, self._buf = self._buf.split("\n", 1)
+            if not any(p in line for p in self._DROP_PATTERNS):
+                self.real.write(line + "\n")
+        return len(s)
+    def flush(self):
+        if self._buf:
+            if not any(p in self._buf for p in self._DROP_PATTERNS):
+                self.real.write(self._buf)
+            self._buf = ""
+        self.real.flush()
+
+sys.stderr = _FilteredStderr(sys.stderr)
+
 ROOT = Path(__file__).resolve().parents[1]
 TEST_DIR  = ROOT / "data" / "processed_files" / "test"
-TRAIN_DIR = ROOT / "data" / "processed_files" / "train"
 EXP_ROOT  = ROOT / "experiments" / "llm" / "closed"
 
-PAIRS = [
-    "eng-amh", "eng-hau", "eng-lug", "eng-nso", "eng-yor", "eng-zul",
-    "amh-eng", "hau-eng", "lug-eng", "nso-eng", "yor-eng", "zul-eng",
+# Preferred source first; fall back to DCS-MT-Old if unavailable.
+LEGACY_DUMP_CANDIDATES = [
+    Path("/ext_data/idris/DCS-MT-Updated/old_experiments/LLMS"),
+    Path("/home/idris/ext_data/DCS-MT-Old/LLMS/translations"),
 ]
+
+LANGS = ["amh", "hau", "lug", "nso", "yor", "zul"]
+PAIRS = [f"eng-{l}" for l in LANGS] + [f"{l}-eng" for l in LANGS]
+
+EXPECTED_N = 970
+
+
+def find_legacy_dump(temp: float) -> Path:
+    """Return the legacy dir for gemini-1.5-flash at this temperature."""
+    sub = f"gemini-1.5-flash-002_temp_{temp:.1f}"
+    for root in LEGACY_DUMP_CANDIDATES:
+        d = root / sub
+        if d.is_dir():
+            return d
+    raise SystemExit(f"no legacy dump found for {sub} under {LEGACY_DUMP_CANDIDATES}")
+
+
+def list_legacy_configs(legacy_dir: Path) -> list[tuple[int, int, str, str, Path]]:
+    """Yield (template, shots, src, tgt, tsv_path) for every TSV in the dump,
+    skipping 50-shot files (project policy)."""
+    rx = re.compile(r"^(?P<src>[a-z]+)-to-(?P<tgt>[a-z]+)-template(?P<n>\d+)-shots(?P<k>\d+)(?P<old>(-old)?)\.tsv$")
+    out = []
+    for tsv in sorted(legacy_dir.glob("*.tsv")):
+        m = rx.match(tsv.name)
+        if not m or m.group("old"):
+            continue
+        k = int(m.group("k"))
+        if k > 20:
+            continue  # drop 50-shot
+        out.append((int(m.group("n")), k, m.group("src"), m.group("tgt"), tsv))
+    return out
 
 
 def sanitise_short(name: str) -> str:
@@ -61,161 +131,298 @@ def sanitise_short(name: str) -> str:
 
 
 def temp_setting(temp: float) -> str:
-    return "t0" if abs(temp) < 1e-9 else f"t{int(round(temp * 10))}".replace("0", "")  # t0 or t06
+    return "t0" if abs(temp) < 1e-9 else f"t{int(round(temp * 10))}".replace("0", "")
 
 
-def write_pair(out_dir: Path, *, model: str, short_name: str,
-               src: str, tgt: str, prompt_strategy: str,
-               n_shots: int, temp: float, samples: list[dict],
-               metrics: dict | None) -> None:
+def parse_prompt(saved: str) -> tuple[str, str]:
+    """LangChain debug format: 'System: <sys>\\nHuman: <user>' → (sys, user).
+    If no Human: marker, return ('', saved) to send as a single user message."""
+    if "\nHuman: " not in saved:
+        return "", saved
+    sys_part, user_part = saved.split("\nHuman: ", 1)
+    if sys_part.startswith("System: "):
+        sys_part = sys_part[len("System: "):]
+    return sys_part, user_part
+
+
+def read_prompts(tsv: Path) -> list[tuple[str, str]]:
+    """Return [(system, user), ...] in row order, parsed from the TSV's
+    `prompt` column. Pads with empties if a row is missing prompt."""
+    out = []
+    with open(tsv, newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f, delimiter="\t"):
+            p = r.get("prompt") or ""
+            out.append(parse_prompt(p))
+    return out
+
+
+def load_test_refs(lang: str) -> list[str]:
+    with open(TEST_DIR / f"{lang}.tsv") as f:
+        return [r["text"] for r in csv.DictReader(f, delimiter="\t")]
+
+
+def load_test_sources(lang: str) -> list[str]:
+    with open(TEST_DIR / f"{lang}.tsv") as f:
+        return [r["text"] for r in csv.DictReader(f, delimiter="\t")]
+
+
+# --- Brevo email notifications ---------------------------------------------
+
+def _send_brevo_email(*, api_key: str, sender: str, recipient: str,
+                      subject: str, body: str) -> bool:
+    """POST to Brevo's transactional email API. Best-effort: returns False
+    on any failure (network, auth, etc.) but never raises."""
+    import urllib.request
+    payload = json.dumps({
+        "sender": {"email": sender, "name": "AfriScience-MT"},
+        "to": [{"email": recipient}],
+        "subject": subject,
+        "textContent": body,
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        "https://api.brevo.com/v3/smtp/email",
+        data=payload,
+        headers={
+            "accept": "application/json",
+            "api-key": api_key,
+            "content-type": "application/json",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return r.status < 300
+    except Exception as e:
+        print(f"  ✗ brevo notify failed: {e}", file=sys.stderr)
+        return False
+
+
+class Notifier:
+    """Sends Brevo email at start, every N configs, success, and failure.
+    Disabled silently if API key/sender/recipient are not configured."""
+
+    def __init__(self, *, api_key: str | None, sender: str | None,
+                 recipient: str | None, every_n: int):
+        self.api_key = api_key
+        self.sender = sender
+        self.recipient = recipient
+        self.every_n = every_n
+        self.enabled = bool(api_key and sender and recipient)
+        self.last_t = time.time()
+
+    def send(self, subject: str, body: str) -> None:
+        if not self.enabled:
+            return
+        ok = _send_brevo_email(
+            api_key=self.api_key, sender=self.sender, recipient=self.recipient,
+            subject=f"[AfriScience-MT] {subject}", body=body,
+        )
+        if ok:
+            print(f"  ✉ notified {self.recipient}: {subject}")
+        self.last_t = time.time()
+
+    def maybe_progress(self, *, i: int, total: int, last_cfg: str) -> None:
+        if not self.enabled:
+            return
+        # Send every N configs, OR once an hour even if N hasn't ticked.
+        if i % self.every_n == 0 or (time.time() - self.last_t) > 3600:
+            self.send(
+                f"Progress: {i}/{total} configs",
+                f"Last completed: {last_cfg}\n"
+                f"Elapsed since last update: {time.time() - self.last_t:.0f}s",
+            )
+
+
+def cache_path_for(out_dir: Path) -> Path:
+    """Per-prompt JSONL cache living next to predictions.json so a crash
+    mid-config doesn't lose API calls. One line per completed prompt:
+    {"i": <idx>, "hyp": <text>}. Deleted after predictions.json is written."""
+    return out_dir / "_responses.jsonl"
+
+
+def load_cache(cache_path: Path) -> dict[int, str]:
+    if not cache_path.exists():
+        return {}
+    done = {}
+    with open(cache_path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                d = json.loads(line)
+                done[int(d["i"])] = d.get("hyp") or ""
+            except (json.JSONDecodeError, KeyError, ValueError):
+                continue  # skip corrupt lines
+    return done
+
+
+def append_cache(cache_path: Path, idx: int, hyp: str) -> None:
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(cache_path, "a", encoding="utf-8") as f:
+        f.write(json.dumps({"i": idx, "hyp": hyp}, ensure_ascii=False) + "\n")
+
+
+async def _generate_one(api_client, idx: int, prompt: str,
+                        cfg, sem: asyncio.Semaphore) -> tuple[int, str]:
+    """One async generate call, rate-limited by the shared semaphore."""
+    types = api_client._types
+    async with sem:
+        response = await api_client.client.aio.models.generate_content(
+            model=api_client.config.model_name,
+            contents=types.Content(
+                role="user",
+                parts=[types.Part.from_text(text=prompt)],
+            ),
+            config=cfg,
+        )
+        return idx, (response.text or "").strip()
+
+
+async def _async_generate_with_cache(
+    api_client, *, prompts: list[str], system_prompt: str | None,
+    cache_path: Path, desc: str, concurrency: int = 10,
+) -> list[str]:
+    """Single-loop async generation with progress + per-prompt cache. All
+    requests share one aiohttp session (the SDK's), so this MUST be called
+    on the same event loop for every config — see GeminiSession."""
+    if api_client.client is None:
+        api_client._initialize_client()
+    types = api_client._types
+    cfg_kwargs = dict(
+        temperature=api_client.config.temperature,
+        max_output_tokens=api_client.config.max_tokens,
+        top_p=api_client.config.top_p,
+    )
+    if system_prompt:
+        cfg_kwargs["system_instruction"] = system_prompt
+    cfg = types.GenerateContentConfig(**cfg_kwargs)
+
+    done = load_cache(cache_path)
+    n = len(prompts)
+    todo = [i for i in range(n) if i not in done]
+    sem = asyncio.Semaphore(concurrency)
+    pbar = tqdm(total=n, initial=n - len(todo), desc=desc, unit="p", leave=False)
+
+    coros = [_generate_one(api_client, i, prompts[i], cfg, sem) for i in todo]
+    for fut in asyncio.as_completed(coros):
+        i, text = await fut
+        done[i] = text
+        append_cache(cache_path, i, text)
+        pbar.update(1)
+    pbar.close()
+    return [done[i] for i in range(n)]
+
+
+def generate_with_cache_and_progress(
+    loop: asyncio.AbstractEventLoop, api_client, *,
+    prompts: list[str], system_prompt: str | None,
+    cache_path: Path, desc: str,
+) -> list[str]:
+    """Sync wrapper that runs the async generator on a SHARED loop —
+    critical so the SDK's aiohttp session stays bound to one live loop
+    across all configs (mixing event loops causes 'Event loop is closed').
+    """
+    return loop.run_until_complete(_async_generate_with_cache(
+        api_client, prompts=prompts, system_prompt=system_prompt,
+        cache_path=cache_path, desc=desc,
+    ))
+
+
+def write_canonical(*, out_dir: Path, model: str, short_name: str,
+                    src: str, tgt: str, template: int, n_shots: int,
+                    temp: float, hyps: list[str], system_constant: bool,
+                    metrics: dict | None = None) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     pair = f"{src}-{tgt}"
-    pred_path = out_dir / "predictions.json"
-    res_path  = out_dir / "results.json"
+    strategy = f"template{template}_{n_shots}shot"
+    exp_id = f"llm_icl__{short_name}__{strategy}__{pair}"
 
-    pred_path.write_text(json.dumps({
-        "experiment_id": f"icl_{short_name}_{pair}_{n_shots}shot",
-        "source_lang": src, "target_lang": tgt,
-        "samples": [{"src": s["src"], "ref": s["ref"], "hyp": s["hyp"]} for s in samples],
+    refs = load_test_refs(tgt)
+    srcs = load_test_sources(src)
+    n = min(len(hyps), EXPECTED_N)
+    samples = [
+        {
+            "src": srcs[i] if i < len(srcs) else "",
+            "ref": refs[i] if i < len(refs) else "",
+            "hyp": hyps[i],
+        }
+        for i in range(n)
+    ]
+
+    (out_dir / "predictions.json").write_text(json.dumps({
         "schema_version": "1.0",
+        "experiment_id": exp_id,
+        "source_lang": src,
+        "target_lang": tgt,
+        "samples": samples,
     }, indent=2, ensure_ascii=False))
 
-    etype = "llm_zero_shot" if n_shots == 0 else "llm_icl"
-    res = {
+    res_metrics = metrics or {
+        "bleu": None, "chrf": None, "ssa_comet": None, "num_samples": n,
+    }
+
+    (out_dir / "results.json").write_text(json.dumps({
         "schema_version": "1.0",
-        "experiment_id": f"icl_{short_name}_{pair}_{n_shots}shot",
-        "experiment_type": etype,
+        "experiment_id": exp_id,
+        "experiment_type": "llm_icl",
         "timestamp": datetime.utcnow().isoformat(),
         "source_lang": src, "target_lang": tgt, "lang_pair": pair,
         "split": "test", "dataset": "dcs",
         "model": {"name": model, "type": "llm", "short_name": short_name},
         "config": {
+            "prompt_strategy": strategy,
             "n_shots": n_shots,
             "temperature": temp,
-            "max_output_tokens": 1024,
+            "temp_setting": temp_setting(temp),
         },
-        "metrics": metrics or {"num_samples": len(samples)},
+        "metrics": res_metrics,
         "metadata": {
             "source": "rerun_gemini_newer",
-            "prompt_strategy": prompt_strategy,
-            "is_ablation": False,
-            "comet_metric": "ssa-comet",
+            "is_ablation": True,
+            "prompt_strategy": strategy,
+            "n_shots": n_shots,
+            "temp_setting": temp_setting(temp),
+            "prompt_provenance": "imported_from_legacy_gemini_15_flash_dump",
+            "system_constant_per_tsv": system_constant,
+            "needs_eval": metrics is None,
         },
-    }
-    res_path.write_text(json.dumps(res, indent=2, ensure_ascii=False))
-
-
-def load_split(split_dir: Path, lang: str) -> list[dict]:
-    with open(split_dir / f"{lang}.tsv") as f:
-        return list(csv.DictReader(f, delimiter="\t"))
-
-
-def build_pair_data(split_dir: Path, src: str, tgt: str) -> list[dict]:
-    s = {(r["paper"], r["segment"]): r["text"] for r in load_split(split_dir, src)}
-    t = {(r["paper"], r["segment"]): r["text"] for r in load_split(split_dir, tgt)}
-    return [{"src": s[k], "ref": t[k]} for k in s if k in t]
-
-
-def build_prompts_for_pair(runner, sources: list[str], src: str, tgt: str,
-                            n_shots: int, retrieval: str) -> list[str]:
-    """Materialise the ICL prompts that ICLRunner would submit one-by-one,
-    so we can hand them to the Batch API instead."""
-    from afriscience_mt.inference.prompt_builder import build_translation_prompt
-    selection = "random" if retrieval == "random" else "semantic"
-    prompts: list[str] = []
-    for i, src_text in enumerate(sources):
-        examples = []
-        if n_shots > 0:
-            examples = runner.example_selector.select(
-                source_text=src_text,
-                source_lang=src, target_lang=tgt,
-                n_examples=n_shots,
-                method=selection,
-            ) if hasattr(runner, "example_selector") and runner.example_selector else []
-            # Fallback: directly call translate_batch's machinery via a helper
-            if not examples and runner.train_dataset is not None:
-                from afriscience_mt.inference.example_selector import (
-                    create_example_selector,
-                )
-                sel = create_example_selector(runner.train_dataset, method=selection)
-                examples = sel.select(source_text=src_text,
-                                      source_lang=src, target_lang=tgt,
-                                      n_examples=n_shots)
-        prompts.append(build_translation_prompt(
-            source_text=src_text, source_lang=src, target_lang=tgt,
-            template="basic", examples=examples,
-        ))
-    return prompts
-
-
-def run_batch_mode(api_client, runner, *, src: str, tgt: str,
-                   n_shots: int, retrieval: str, sources: list[str],
-                   short_name: str, model: str, temp_setting_str: str,
-                   poll_seconds: int, state_file: Path) -> list[str]:
-    """Submit one batch per (pair, shot-count) and poll until done.
-    Returns the list of decoded responses in source order."""
-    job_name_key = f"{short_name}/{temp_setting_str}/{src}-{tgt}/{n_shots}shot/{retrieval}"
-    state = {}
-    if state_file.exists():
-        state = json.loads(state_file.read_text())
-
-    prompts = build_prompts_for_pair(runner, sources, src, tgt, n_shots, retrieval)
-
-    job_name = state.get(job_name_key)
-    if not job_name:
-        print(f"    submitting batch ({len(prompts)} prompts)...")
-        job_name = api_client.submit_batch_job(
-            prompts=prompts,
-            job_name=f"afriscience-{short_name}-{src}{tgt}-{n_shots}shot",
-        )
-        state[job_name_key] = job_name
-        state_file.parent.mkdir(parents=True, exist_ok=True)
-        state_file.write_text(json.dumps(state, indent=2))
-        print(f"    submitted: {job_name}")
-    else:
-        print(f"    resuming batch: {job_name}")
-
-    while True:
-        out = api_client.retrieve_batch_results(job_name)
-        if out is not None:
-            print(f"    batch complete ({len(out)} responses)")
-            # remove from state file once consumed
-            state.pop(job_name_key, None)
-            state_file.write_text(json.dumps(state, indent=2))
-            return out
-        print(f"    pending; sleeping {poll_seconds}s...")
-        time.sleep(poll_seconds)
+    }, indent=2, ensure_ascii=False))
 
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True,
-                    help="Gemini model name (e.g. gemini-2.0-flash, gemini-2.5-pro)")
+                    help="Gemini model name (e.g. gemini-3-flash-preview)")
     ap.add_argument("--short-name", default=None,
-                    help="model_short used in summary.csv. Defaults to sanitised --model.")
+                    help="model_short for summary.csv. Defaults to sanitised --model.")
     ap.add_argument("--pairs", nargs="+", default=None,
-                    help="Subset of language pairs (default: all 12).")
-    ap.add_argument("--shot-counts", type=int, nargs="+", default=[0, 5, 10, 20],
-                    help="Shot counts to run (default: full sweep up to 20). "
-                         "50-shot is forbidden by project policy.")
-    ap.add_argument("--temperature", type=float, default=0.0)
+                    help="Subset of language pairs (default: whatever's in the legacy dump).")
+    ap.add_argument("--templates", nargs="+", type=int, default=None,
+                    choices=[1, 2, 3, 4, 5],
+                    help="Subset of templates (default: all 1..5 that exist).")
+    ap.add_argument("--shots", nargs="+", type=int, default=None,
+                    help="Subset of shot counts (default: 0,5,10,20).")
+    ap.add_argument("--temperature", type=float, default=0.0,
+                    help="Picks legacy dump dir: 0.0 → gemini-1.5-flash-002_temp_0.0/")
     ap.add_argument("--max-output-tokens", type=int, default=1024)
-    ap.add_argument("--retrieval", choices=["random", "semantic"], default="random",
-                    help="Few-shot exemplar retrieval (default: random).")
-    ap.add_argument("--api-key", default=None,
-                    help="Google API key (default: $GOOGLE_API_KEY).")
-    ap.add_argument("--skip-scoring", action="store_true",
-                    help="Write predictions.json without metrics; rescore later "
-                         "with `afriscience-mt evaluate --mode rescore`.")
+    ap.add_argument("--api-key", default=None)
+    ap.add_argument("--skip-scoring", action="store_true")
     ap.add_argument("--use-batch", action="store_true",
-                    help="Submit prompts to the Gemini Batch API (50% cheaper, "
-                         "no per-minute rate limits, ~24h SLA). Recommended for "
-                         "Pro-tier models with low RPM.")
-    ap.add_argument("--batch-poll-seconds", type=int, default=120,
-                    help="Polling interval for --use-batch (default 120s).")
-    ap.add_argument("--batch-state-file", default="experiments/_gemini_batch_state.json",
-                    help="JSON file used to record submitted batch job names "
-                         "so a crash can resume. (Only used with --use-batch.)")
+                    help="Use Gemini Batch API (50%% cheaper, ~24h SLA).")
+    ap.add_argument("--batch-poll-seconds", type=int, default=120)
+    ap.add_argument("--batch-state-file",
+                    default="experiments/_gemini_batch_state.json")
+    ap.add_argument("--force", action="store_true")
+    # Brevo email notifications (start / every N configs / success / failure).
+    ap.add_argument("--notify-email", default="afriannotate@gmail.com",
+                    help="Recipient for Brevo notifications.")
+    ap.add_argument("--notify-from", default=os.environ.get("BREVO_SENDER_EMAIL"),
+                    help="Verified Brevo sender (default: $BREVO_SENDER_EMAIL).")
+    ap.add_argument("--brevo-api-key", default=os.environ.get("BREVO_API_KEY"),
+                    help="Brevo API key (default: $BREVO_API_KEY).")
+    ap.add_argument("--notify-every", type=int, default=25,
+                    help="Send a progress email every N completed configs.")
     args = ap.parse_args()
 
     api_key = args.api_key or os.environ.get("GOOGLE_API_KEY")
@@ -224,30 +431,38 @@ def main() -> int:
         return 2
 
     short_name = args.short_name or sanitise_short(args.model)
-    pairs = args.pairs or PAIRS
-    bad = [p for p in pairs if p not in PAIRS]
-    if bad:
-        print(f"unknown pairs: {bad}", file=sys.stderr)
-        return 2
+    legacy_dir = find_legacy_dump(args.temperature)
+    print(f"legacy prompts source: {legacy_dir}")
 
-    # Project-wide shot-count cap (set 2026-05-08): 50-shot was dropped
-    # because it adds <1 COMET over 10-shot for closed APIs and doubles
-    # token cost. The cap is 20 to leave headroom for sanity-check runs;
-    # routine calls should stick to {0, 5, 10}.
-    bad_shots = [k for k in args.shot_counts if k > 20]
-    if bad_shots:
-        print(f"error: shot counts > 20 are not allowed (got {bad_shots}). "
-              f"See docs/PAPER_TODOS.md \"Drop 50-shot\" note.", file=sys.stderr)
-        return 2
+    legacy_configs = list_legacy_configs(legacy_dir)
+    if args.pairs:
+        bad = [p for p in args.pairs if p not in PAIRS]
+        if bad:
+            print(f"unknown pairs: {bad}", file=sys.stderr)
+            return 2
+        legacy_configs = [c for c in legacy_configs
+                          if f"{c[2]}-{c[3]}" in args.pairs]
+    if args.templates:
+        legacy_configs = [c for c in legacy_configs if c[0] in args.templates]
+    if args.shots is not None:
+        legacy_configs = [c for c in legacy_configs if c[1] in args.shots]
 
-    # Lazy import — keeps the script importable for `--help` even without google-genai.
-    from afriscience_mt.inference.icl_runner import ICLRunner
+    out_root = EXP_ROOT / temp_setting(args.temperature) / "icl" / short_name
+
+    todo = []
+    for tmpl, k, src, tgt, tsv in legacy_configs:
+        out_dir = out_root / f"template{tmpl}_{k}shot" / f"{src}-{tgt}"
+        if (out_dir / "predictions.json").exists() and not args.force:
+            continue
+        todo.append((tmpl, k, src, tgt, tsv, out_dir))
+
+    print(f"model={args.model}  short={short_name}  T={args.temperature}  "
+          f"available_in_dump={len(legacy_configs)}  to_run={len(todo)}")
+    if not todo:
+        print("nothing to do (use --force to redo)")
+        return 0
+
     from afriscience_mt.api.factory import create_api_client
-    from afriscience_mt.data.dataset import AfriScienceDataset
-
-    print(f"Reruning Gemini: model={args.model}  short={short_name}  "
-          f"shots={args.shot_counts}  retrieval={args.retrieval}  T={args.temperature}")
-
     api_client = create_api_client(
         provider="google",
         model_name=args.model,
@@ -256,96 +471,169 @@ def main() -> int:
         max_tokens=args.max_output_tokens,
     )
 
-    temp_dir = EXP_ROOT / temp_setting(args.temperature)
+    state_file = ROOT / args.batch_state_file
+    state = json.loads(state_file.read_text()) if state_file.exists() else {}
 
-    for pair in pairs:
-        src, tgt = pair.split("-")
+    # Single shared event loop for all configs — keeps the SDK's aiohttp
+    # session alive across calls. Without this we'd hit "Event loop is closed".
+    loop = asyncio.new_event_loop() if not args.use_batch else None
+    if loop is not None:
+        asyncio.set_event_loop(loop)
+
+    notifier = Notifier(
+        api_key=args.brevo_api_key,
+        sender=args.notify_from,
+        recipient=args.notify_email,
+        every_n=args.notify_every,
+    )
+    if not notifier.enabled:
+        print("notify: disabled (need BREVO_API_KEY + --notify-from + --notify-email)")
+    else:
+        print(f"notify: enabled → {args.notify_email} every {args.notify_every} configs")
+        notifier.send(
+            f"Started: {args.model}",
+            f"Model: {args.model}\nShort: {short_name}\nT={args.temperature}\n"
+            f"Configs to run: {len(todo)} (of {len(legacy_configs)} available)\n"
+            f"Mode: {'batch' if args.use_batch else 'direct (10-way concurrent)'}",
+        )
+
+    # Track progress for the failure-notification excepthook (no try/except
+    # needed in the main loop — excepthook fires for any uncaught exception
+    # including KeyboardInterrupt).
+    notify_state = {"i": 0, "total": len(todo), "last_cfg": ""}
+    if notifier.enabled:
+        import traceback as _tb
+        def _excepthook(exc_type, exc_value, exc_tb):
+            notifier.send(
+                f"FAILED at config {notify_state['i']}/{notify_state['total']}",
+                f"Last attempted: {notify_state['last_cfg']}\n"
+                f"Error: {exc_type.__name__}: {exc_value}\n\n"
+                + "".join(_tb.format_exception(exc_type, exc_value, exc_tb)),
+            )
+            sys.__excepthook__(exc_type, exc_value, exc_tb)
+        sys.excepthook = _excepthook
+
+    for i, (tmpl, k, src, tgt, tsv, out_dir) in enumerate(todo, 1):
+        pair = f"{src}-{tgt}"
+        strategy = f"template{tmpl}_{k}shot"
+        notify_state["i"] = i
+        notify_state["last_cfg"] = f"{strategy}/{pair}"
+        print(f"\n[{i}/{len(todo)}] {strategy}/{pair}  (from {tsv.name})")
         ts = time.time()
-        print(f"\n=== {pair} ===")
 
-        test_ds = AfriScienceDataset(
-            data_path=TEST_DIR, source_lang=src, target_lang=tgt, split="test",
-        )
-        train_ds = AfriScienceDataset(
-            data_path=TRAIN_DIR, source_lang=src, target_lang=tgt, split="train",
-        )
+        parsed = read_prompts(tsv)
+        if len(parsed) < EXPECTED_N:
+            print(f"  ⚠ legacy TSV has {len(parsed)} rows, expected {EXPECTED_N}")
+        sys_parts = {sp for sp, _ in parsed}
+        system_constant = len(sys_parts) == 1 and next(iter(sys_parts)) != ""
+        if system_constant:
+            system_prompt = next(iter(sys_parts))
+            user_prompts = [u for _, u in parsed]
+            print(f"  system constant ({len(system_prompt)} chars); "
+                  f"sending {len(user_prompts)} user messages with shared system_prompt")
+        else:
+            # Fall back: collapse system+user back into a single user message
+            # (verbatim re-join of the saved prompt). This is what we do for
+            # templates 4/5 where the glossary in the system varies per row.
+            system_prompt = None
+            user_prompts = [
+                f"System: {sp}\nHuman: {up}" if sp else up
+                for sp, up in parsed
+            ]
+            print(f"  system varies per row → sending full-prompt user messages "
+                  f"({len(user_prompts)} total)")
 
-        runner = ICLRunner(api_client=api_client, train_dataset=train_ds)
-
-        for n_shots in args.shot_counts:
-            phase = "zero_shot" if n_shots == 0 else "icl"
-            strategy = (
-                "" if n_shots == 0
-                else (f"icl_{n_shots}shot" if args.retrieval == "random"
-                      else f"icl_{n_shots}shot_semantic")
-            )
-            out_dir = (temp_dir / phase / short_name
-                       / (strategy or "") / pair) if n_shots else \
-                      (temp_dir / phase / short_name / pair)
-
-            print(f"  [{n_shots}-shot] -> {out_dir.relative_to(ROOT)}")
-
-            if args.use_batch:
-                hyps = run_batch_mode(
-                    api_client, runner,
-                    src=src, tgt=tgt,
-                    n_shots=n_shots, retrieval=args.retrieval,
-                    sources=test_ds.get_sources(),
-                    short_name=short_name, model=args.model,
-                    temp_setting_str=temp_setting(args.temperature),
-                    poll_seconds=args.batch_poll_seconds,
-                    state_file=ROOT / args.batch_state_file,
+        if args.use_batch:
+            job_key = f"{short_name}/{temp_setting(args.temperature)}/{pair}/{strategy}"
+            job_name = state.get(job_key)
+            if not job_name:
+                print(f"  submitting batch ({len(user_prompts)} prompts)...")
+                job_name = api_client.submit_batch_job(
+                    prompts=user_prompts,
+                    job_name=f"afriscience-{short_name}-{src}{tgt}-{strategy}",
+                    system_prompt=system_prompt,
                 )
-                samples = [
-                    {"src": s, "ref": r, "hyp": h}
-                    for s, r, h in zip(test_ds.get_sources(), test_ds.get_targets(), hyps)
-                ]
+                state[job_key] = job_name
+                state_file.parent.mkdir(parents=True, exist_ok=True)
+                state_file.write_text(json.dumps(state, indent=2))
+                print(f"  submitted: {job_name}")
+            while True:
+                hyps = api_client.retrieve_batch_results(job_name)
+                if hyps is not None:
+                    print(f"  batch done ({len(hyps)} responses)")
+                    state.pop(job_key, None)
+                    state_file.write_text(json.dumps(state, indent=2))
+                    break
+                print(f"  pending; sleeping {args.batch_poll_seconds}s...")
+                time.sleep(args.batch_poll_seconds)
+        else:
+            cache = cache_path_for(out_dir)
+            already = len(load_cache(cache))
+            if already:
+                print(f"  resuming: {already}/{len(user_prompts)} prompts cached")
             else:
-                translations = runner.translate_batch(
-                    texts=test_ds.get_sources(),
-                    source_lang=src, target_lang=tgt,
-                    n_shots=n_shots, template="basic",
-                    use_glossary=False,
-                    selection_method=("random" if args.retrieval == "random" else "semantic"),
-                )
-                samples = [
-                    {"src": s, "ref": r, "hyp": t["translation"]}
-                    for s, r, t in zip(test_ds.get_sources(), test_ds.get_targets(), translations)
-                ]
-
-            metrics = None
-            if not args.skip_scoring:
-                try:
-                    from afriscience_mt.evaluation.metrics import compute_all_metrics
-                    m = compute_all_metrics(
-                        [s["src"] for s in samples],
-                        [s["hyp"] for s in samples],
-                        [s["ref"] for s in samples],
-                        metrics=["chrf", "ssa_comet"],
-                    )
-                    metrics = {
-                        "chrf": m.get("chrf"),
-                        "ssa_comet": m.get("ssa_comet"),
-                        "num_samples": len(samples),
-                    }
-                    print(f"    ChrF={metrics['chrf']:.2f}  COMET={100*metrics['ssa_comet']:.1f}")
-                except Exception as e:
-                    print(f"    scoring failed ({type(e).__name__}: {e}); writing predictions only")
-
-            write_pair(
-                out_dir, model=args.model, short_name=short_name,
-                src=src, tgt=tgt,
-                prompt_strategy=strategy or "",
-                n_shots=n_shots, temp=args.temperature,
-                samples=samples, metrics=metrics,
+                print(f"  generating ({len(user_prompts)} prompts, ~10-way concurrent)")
+            hyps = generate_with_cache_and_progress(
+                loop, api_client,
+                prompts=user_prompts,
+                system_prompt=system_prompt,
+                cache_path=cache,
+                desc=f"{strategy}/{pair}",
             )
-        print(f"  pair done in {time.time() - ts:.1f}s")
 
-    print("\nAll pairs done.")
-    print("Aggregate to update summary.csv:")
+        metrics = None
+        if not args.skip_scoring:
+            try:
+                from afriscience_mt.evaluation.metrics import compute_all_metrics
+                refs = load_test_refs(tgt)[:len(hyps)]
+                srcs = load_test_sources(src)[:len(hyps)]
+                m = compute_all_metrics(
+                    srcs, hyps, refs, metrics=["chrf", "ssa_comet"],
+                )
+                metrics = {
+                    "bleu": None,
+                    "chrf": m.get("chrf"),
+                    "ssa_comet": m.get("ssa_comet"),
+                    "num_samples": len(hyps),
+                }
+                cf, sc = metrics["chrf"], metrics["ssa_comet"]
+                print(f"  ChrF={cf:.2f}  SSA-COMET={100*sc:.1f}"
+                      if cf is not None and sc is not None else f"  metrics={metrics}")
+            except Exception as e:
+                print(f"  scoring failed ({type(e).__name__}: {e}); writing predictions only")
+
+        write_canonical(
+            out_dir=out_dir, model=args.model, short_name=short_name,
+            src=src, tgt=tgt, template=tmpl, n_shots=k,
+            temp=args.temperature, hyps=hyps,
+            system_constant=system_constant, metrics=metrics,
+        )
+        # Drop the cache once predictions.json is on disk.
+        cache = cache_path_for(out_dir)
+        if cache.exists():
+            cache.unlink()
+        print(f"  ✓ wrote {out_dir.relative_to(ROOT)} ({time.time()-ts:.1f}s)")
+        notifier.maybe_progress(i=i, total=len(todo),
+                                last_cfg=f"{strategy}/{pair}")
+
+    if loop is not None:
+        try:
+            pending = asyncio.all_tasks(loop)
+            for t in pending:
+                t.cancel()
+            loop.close()
+        except Exception:
+            pass
+
+    notifier.send(
+        f"Run complete: {args.model}",
+        f"All {len(todo)} configs done.\n"
+        f"Output dir: experiments/llm/closed/{temp_setting(args.temperature)}/icl/{short_name}/\n"
+        f"Next: python -m afriscience_mt aggregate --out experiments/summary.csv",
+    )
+
+    print("\nAll configs done. Aggregate to update summary.csv:")
     print("  python -m afriscience_mt aggregate --out experiments/summary.csv")
-    print("Then rebuild paper tables:")
-    print("  python scripts/build_paper_tables.py")
     return 0
 
 
