@@ -456,64 +456,84 @@ TranslateGemma-12B & 36.9 & 30.9 & \textbf{40.5} & 41.0 & \textbf{43.7} & 36.4 &
 \label{tab:doc_comet}
 \end{table*}
 
-% ---- temp_ablation_chrf ----
-\begin{table}[t]
+% ---- closed_ablations_chrf ----
+\begin{table*}[t]
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
 \begin{tabular}{llrrrrrrr}
 \toprule
-\textbf{Model} & \textbf{Temp.} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\
+\textbf{Model} & \textbf{Setting} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\
 \cmidrule(lr){3-8}
    &    & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
 \midrule
-\multicolumn{9}{l}{\textit{Zero-shot}} \\
+\multicolumn{9}{l}{\textit{Reported ($T{=}0$)}} \\
 \midrule
-Gemini-1.5 & 0.0 & \textbf{36.4} & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & 39.9 \\
-Gemini-1.5 & 0.6 & 36.0 & 53.7 & 38.5 & 46.8 & 15.2 & 49.4 & 39.9 \\
-GPT-4o & 0.0 & 21.1 & \textbf{58.0} & \textbf{41.9} & \textbf{47.3} & \textbf{16.3} & \textbf{58.5} & \textbf{40.5} \\
-GPT-4o & 0.6 & 21.1 & \textbf{58.0} & \textbf{41.9} & \textbf{47.3} & \textbf{16.3} & \textbf{58.5} & \textbf{40.5} \\
+Gemini-1.5 & ZS & 36.4 & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & 39.9 \\
+Gemini-1.5 & 5-shot (random) & \textbf{38.8} & 56.9 & 40.0 & 47.9 & 17.5 & 51.7 & 42.1 \\
+GPT-4o & ZS & 21.1 & 58.0 & 41.9 & 47.3 & 16.3 & \textbf{58.5} & 40.5 \\
+GPT-4o & 5-shot (semantic) & 26.4 & \textbf{62.0} & \textbf{42.3} & \textbf{53.6} & \textbf{20.7} & 57.9 & \textbf{43.8} \\
+\midrule\midrule
+\multicolumn{9}{l}{\textit{Temperature ablation ($T{=}0.6$)}} \\
 \midrule
+Gemini-1.5 & ZS & 36.0 & 53.7 & 38.5 & 46.8 & 15.2 & 49.4 & 39.9 \\
+Gemini-1.5 & 5-shot (random) & \textbf{38.4} & 56.7 & 40.8 & 49.2 & \textbf{18.4} & 51.4 & 42.5 \\
+GPT-4o & ZS & 21.1 & 58.0 & 41.9 & 47.3 & 16.3 & 58.5 & 40.5 \\
+GPT-4o & 5-shot (random)$^\dagger$ & 26.3 & \textbf{60.0} & \textbf{44.3} & \textbf{51.7} & 15.7 & \textbf{60.1} & \textbf{43.0} \\
+\midrule\midrule
+\multicolumn{9}{l}{\textit{Retrieval ablation: semantic similarity, $T{=}0$}} \\
 \midrule
-\multicolumn{9}{l}{\textit{5-shot ICL}} \\
-\midrule
-Gemini-1.5 & 0.0 & \textbf{38.8} & 56.9 & 40.0 & 47.9 & 17.5 & 51.7 & 42.1 \\
-Gemini-1.5 & 0.6 & 38.4 & 56.7 & 40.8 & 49.2 & 18.4 & 51.4 & 42.5 \\
-GPT-4o & 0.0 & 26.4 & \textbf{62.0} & 42.3 & \textbf{53.6} & \textbf{20.7} & 57.9 & \textbf{43.8} \\
-GPT-4o & 0.6 & 26.3 & 60.0 & \textbf{44.3} & 51.7 & 15.7 & \textbf{60.1} & 43.0 \\
+Gemini-1.5 & 5-shot (semantic) & 40.4 & 58.6 & 46.5 & 52.4 & 23.9 & 52.6 & 45.8 \\
+Gemini-1.5 & 10-shot (semantic) & 40.9 & 58.1 & 46.0 & 54.9 & 24.6 & 52.0 & 46.1 \\
+Gemini-1.5 & 20-shot (semantic) & 41.2 & 59.5 & 47.0 & 55.6 & 24.3 & 54.6 & 47.0 \\
+Gemini-1.5 & 50-shot (semantic) & \textbf{41.6} & 60.2 & 44.9 & 56.8 & \textbf{25.8} & 56.6 & \textbf{47.6} \\
+GPT-4o & 5-shot (semantic) & 26.4 & 62.0 & 42.3 & 53.6 & 20.7 & 57.9 & 43.8 \\
+GPT-4o & 10-shot (semantic) & 28.7 & 62.8 & \textbf{48.2} & 57.5 & 20.4 & 61.9 & 46.6 \\
+GPT-4o & 20-shot (semantic) & 33.3 & 63.3 & 45.9 & 58.8 & 18.3 & 62.6 & 47.0 \\
+GPT-4o & 50-shot (semantic) & 33.0 & \textbf{64.1} & 46.9 & \textbf{60.2} & 17.6 & \textbf{62.9} & 47.5 \\
 \bottomrule
 \end{tabular}
-\caption{Closed-API temperature ablation (chrF): $T{=}0$ vs.\ $T{=}0.6$, on the six \texttt{eng}$\to$\texttt{xxx} pairs (\texttt{xxx}$\to$\texttt{eng} was not run at $T{=}0.6$). For 5-shot ICL, Gemini-1.5 uses random-retrieval exemplars at both temperatures. GPT-4o's $T{=}0$ headline uses semantic-similarity 5-shot retrieval (the only $T{=}0$ \texttt{eng}$\to$\texttt{xxx} ICL configuration we have for it) while $T{=}0.6$ uses random-retrieval, so the GPT-4o ICL row mixes the retrieval-strategy and temperature axes. \textbf{Bold}: column maximum within the block.}
-\label{tab:temp_ablation_chrf}
-\end{table}
+\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (chrF). \textit{Reported} reproduces the \texttt{eng}$\to$\texttt{xxx} numbers used in Table~\ref{tab:open_vs_closed_icl_chrf}. \textit{Temperature ablation} re-runs the same configurations at $T{=}0.6$. \textit{Retrieval ablation} sweeps semantic-similarity ICL exemplar counts at $T{=}0$. We do not run closed-API ablations on \texttt{xxx}$\to$\texttt{eng}. $^\dagger$GPT-4o's $T{=}0$ ICL headline uses semantic-similarity 5-shot, while its $T{=}0.6$ ICL run used random-retrieval, so this row mixes the temperature and retrieval axes. \textbf{Bold}: column maximum within the block.}
+\label{tab:closed_ablations_chrf}
+\end{table*}
 
-% ---- temp_ablation_comet ----
-\begin{table}[t]
+% ---- closed_ablations_comet ----
+\begin{table*}[t]
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
 \begin{tabular}{llrrrrrrr}
 \toprule
-\textbf{Model} & \textbf{Temp.} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\
+\textbf{Model} & \textbf{Setting} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\
 \cmidrule(lr){3-8}
    &    & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
 \midrule
-\multicolumn{9}{l}{\textit{Zero-shot}} \\
+\multicolumn{9}{l}{\textit{Reported ($T{=}0$)}} \\
 \midrule
-Gemini-1.5 & 0.0 & \textbf{57.9} & 55.8 & 59.4 & 62.2 & \textbf{57.5} & 53.9 & \textbf{57.8} \\
-Gemini-1.5 & 0.6 & 57.8 & 55.7 & 58.9 & 61.9 & 57.5 & 53.7 & 57.6 \\
-GPT-4o & 0.0 & 39.4 & \textbf{56.8} & \textbf{60.7} & \textbf{62.6} & 54.6 & \textbf{58.3} & 55.4 \\
-GPT-4o & 0.6 & 39.4 & \textbf{56.8} & \textbf{60.7} & \textbf{62.6} & 54.6 & \textbf{58.3} & 55.4 \\
+Gemini-1.5 & ZS & 57.9 & 55.8 & 59.4 & 62.2 & 57.5 & 53.9 & 57.8 \\
+Gemini-1.5 & 5-shot (random) & \textbf{58.3} & 56.0 & 60.8 & 63.6 & 56.8 & 54.5 & \textbf{58.3} \\
+GPT-4o & ZS & 39.4 & \textbf{56.8} & 60.7 & 62.6 & 54.6 & 58.3 & 55.4 \\
+GPT-4o & 5-shot (semantic) & 47.4 & 56.3 & \textbf{64.4} & \textbf{65.0} & \textbf{57.7} & \textbf{58.3} & 58.2 \\
+\midrule\midrule
+\multicolumn{9}{l}{\textit{Temperature ablation ($T{=}0.6$)}} \\
 \midrule
+Gemini-1.5 & ZS & 57.8 & 55.7 & 58.9 & 61.9 & 57.5 & 53.7 & 57.6 \\
+Gemini-1.5 & 5-shot (random) & \textbf{58.1} & 55.8 & 60.6 & \textbf{63.5} & 56.7 & 54.3 & \textbf{58.2} \\
+GPT-4o & ZS & 39.4 & \textbf{56.8} & 60.7 & 62.6 & 54.6 & \textbf{58.3} & 55.4 \\
+GPT-4o & 5-shot (random)$^\dagger$ & 41.1 & 56.2 & \textbf{62.5} & 63.1 & \textbf{57.9} & 58.2 & 56.5 \\
+\midrule\midrule
+\multicolumn{9}{l}{\textit{Retrieval ablation: semantic similarity, $T{=}0$}} \\
 \midrule
-\multicolumn{9}{l}{\textit{5-shot ICL}} \\
-\midrule
-Gemini-1.5 & 0.0 & \textbf{58.3} & 56.0 & 60.8 & 63.6 & 56.8 & 54.5 & \textbf{58.3} \\
-Gemini-1.5 & 0.6 & 58.1 & 55.8 & 60.6 & 63.5 & 56.7 & 54.3 & 58.2 \\
-GPT-4o & 0.0 & 47.4 & \textbf{56.3} & \textbf{64.4} & \textbf{65.0} & 57.7 & \textbf{58.3} & 58.2 \\
-GPT-4o & 0.6 & 41.1 & 56.2 & 62.5 & 63.1 & \textbf{57.9} & 58.2 & 56.5 \\
+Gemini-1.5 & 5-shot (semantic) & 58.7 & 55.9 & 63.1 & 64.4 & 59.0 & 55.8 & 59.5 \\
+Gemini-1.5 & 10-shot (semantic) & 65.0 & 62.9 & 68.4 & 69.5 & 65.8 & 63.5 & 65.8 \\
+Gemini-1.5 & 20-shot (semantic) & 65.1 & 63.0 & 68.5 & 69.7 & 66.2 & 63.8 & 66.0 \\
+Gemini-1.5 & 50-shot (semantic) & \textbf{65.4} & 63.2 & 68.9 & 70.0 & \textbf{66.5} & 64.1 & \textbf{66.4} \\
+GPT-4o & 5-shot (semantic) & 47.4 & 56.3 & 64.4 & 65.0 & 57.7 & 58.3 & 58.2 \\
+GPT-4o & 10-shot (semantic) & 57.2 & 63.4 & 69.2 & 69.8 & 65.1 & 65.3 & 65.0 \\
+GPT-4o & 20-shot (semantic) & 58.3 & 63.3 & 69.5 & 70.0 & 65.6 & 65.4 & 65.3 \\
+GPT-4o & 50-shot (semantic) & 58.7 & \textbf{63.6} & \textbf{69.8} & \textbf{70.2} & 65.7 & \textbf{65.5} & 65.6 \\
 \bottomrule
 \end{tabular}
-\caption{Closed-API temperature ablation (COMET): $T{=}0$ vs.\ $T{=}0.6$, on the six \texttt{eng}$\to$\texttt{xxx} pairs (\texttt{xxx}$\to$\texttt{eng} was not run at $T{=}0.6$). For 5-shot ICL, Gemini-1.5 uses random-retrieval exemplars at both temperatures. GPT-4o's $T{=}0$ headline uses semantic-similarity 5-shot retrieval (the only $T{=}0$ \texttt{eng}$\to$\texttt{xxx} ICL configuration we have for it) while $T{=}0.6$ uses random-retrieval, so the GPT-4o ICL row mixes the retrieval-strategy and temperature axes. \textbf{Bold}: column maximum within the block.}
-\label{tab:temp_ablation_comet}
-\end{table}
+\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (COMET). \textit{Reported} reproduces the \texttt{eng}$\to$\texttt{xxx} numbers used in Table~\ref{tab:open_vs_closed_icl_comet}. \textit{Temperature ablation} re-runs the same configurations at $T{=}0.6$. \textit{Retrieval ablation} sweeps semantic-similarity ICL exemplar counts at $T{=}0$. We do not run closed-API ablations on \texttt{xxx}$\to$\texttt{eng}. $^\dagger$GPT-4o's $T{=}0$ ICL headline uses semantic-similarity 5-shot, while its $T{=}0.6$ ICL run used random-retrieval, so this row mixes the temperature and retrieval axes. \textbf{Bold}: column maximum within the block.}
+\label{tab:closed_ablations_comet}
+\end{table*}

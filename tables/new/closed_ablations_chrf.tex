@@ -1,0 +1,40 @@
+% ---- closed_ablations_chrf ----
+\begin{table*}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{llrrrrrrr}
+\toprule
+\textbf{Model} & \textbf{Setting} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\
+\cmidrule(lr){3-8}
+   &    & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
+\midrule
+\multicolumn{9}{l}{\textit{Reported ($T{=}0$)}} \\
+\midrule
+Gemini-1.5 & ZS & 36.4 & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & 39.9 \\
+Gemini-1.5 & 5-shot (random) & \textbf{38.8} & 56.9 & 40.0 & 47.9 & 17.5 & 51.7 & 42.1 \\
+GPT-4o & ZS & 21.1 & 58.0 & 41.9 & 47.3 & 16.3 & \textbf{58.5} & 40.5 \\
+GPT-4o & 5-shot (semantic) & 26.4 & \textbf{62.0} & \textbf{42.3} & \textbf{53.6} & \textbf{20.7} & 57.9 & \textbf{43.8} \\
+\midrule\midrule
+\multicolumn{9}{l}{\textit{Temperature ablation ($T{=}0.6$)}} \\
+\midrule
+Gemini-1.5 & ZS & 36.0 & 53.7 & 38.5 & 46.8 & 15.2 & 49.4 & 39.9 \\
+Gemini-1.5 & 5-shot (random) & \textbf{38.4} & 56.7 & 40.8 & 49.2 & \textbf{18.4} & 51.4 & 42.5 \\
+GPT-4o & ZS & 21.1 & 58.0 & 41.9 & 47.3 & 16.3 & 58.5 & 40.5 \\
+GPT-4o & 5-shot (random)$^\dagger$ & 26.3 & \textbf{60.0} & \textbf{44.3} & \textbf{51.7} & 15.7 & \textbf{60.1} & \textbf{43.0} \\
+\midrule\midrule
+\multicolumn{9}{l}{\textit{Retrieval ablation: semantic similarity, $T{=}0$}} \\
+\midrule
+Gemini-1.5 & 5-shot (semantic) & 40.4 & 58.6 & 46.5 & 52.4 & 23.9 & 52.6 & 45.8 \\
+Gemini-1.5 & 10-shot (semantic) & 40.9 & 58.1 & 46.0 & 54.9 & 24.6 & 52.0 & 46.1 \\
+Gemini-1.5 & 20-shot (semantic) & 41.2 & 59.5 & 47.0 & 55.6 & 24.3 & 54.6 & 47.0 \\
+Gemini-1.5 & 50-shot (semantic) & \textbf{41.6} & 60.2 & 44.9 & 56.8 & \textbf{25.8} & 56.6 & \textbf{47.6} \\
+GPT-4o & 5-shot (semantic) & 26.4 & 62.0 & 42.3 & 53.6 & 20.7 & 57.9 & 43.8 \\
+GPT-4o & 10-shot (semantic) & 28.7 & 62.8 & \textbf{48.2} & 57.5 & 20.4 & 61.9 & 46.6 \\
+GPT-4o & 20-shot (semantic) & 33.3 & 63.3 & 45.9 & 58.8 & 18.3 & 62.6 & 47.0 \\
+GPT-4o & 50-shot (semantic) & 33.0 & \textbf{64.1} & 46.9 & \textbf{60.2} & 17.6 & \textbf{62.9} & 47.5 \\
+\bottomrule
+\end{tabular}
+\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (chrF). \textit{Reported} reproduces the \texttt{eng}$\to$\texttt{xxx} numbers used in Table~\ref{tab:open_vs_closed_icl_chrf}. \textit{Temperature ablation} re-runs the same configurations at $T{=}0.6$. \textit{Retrieval ablation} sweeps semantic-similarity ICL exemplar counts at $T{=}0$. We do not run closed-API ablations on \texttt{xxx}$\to$\texttt{eng}. $^\dagger$GPT-4o's $T{=}0$ ICL headline uses semantic-similarity 5-shot, while its $T{=}0.6$ ICL run used random-retrieval, so this row mixes the temperature and retrieval axes. \textbf{Bold}: column maximum within the block.}
+\label{tab:closed_ablations_chrf}
+\end{table*}
