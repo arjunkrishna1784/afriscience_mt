@@ -1,0 +1,30 @@
+% ---- temp_ablation_chrf ----
+\begin{table}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{llrrrrrrr}
+\toprule
+\textbf{Model} & \textbf{Temp.} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\
+\cmidrule(lr){3-8}
+   &    & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
+\midrule
+\multicolumn{9}{l}{\textit{Zero-shot}} \\
+\midrule
+Gemini-1.5 & 0.0 & \textbf{36.4} & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & 39.9 \\
+Gemini-1.5 & 0.6 & 36.0 & 53.7 & 38.5 & 46.8 & 15.2 & 49.4 & 39.9 \\
+GPT-4o & 0.0 & 21.1 & \textbf{58.0} & \textbf{41.9} & \textbf{47.3} & \textbf{16.3} & \textbf{58.5} & \textbf{40.5} \\
+GPT-4o & 0.6 & 21.1 & \textbf{58.0} & \textbf{41.9} & \textbf{47.3} & \textbf{16.3} & \textbf{58.5} & \textbf{40.5} \\
+\midrule
+\midrule
+\multicolumn{9}{l}{\textit{5-shot ICL}} \\
+\midrule
+Gemini-1.5 & 0.0 & \textbf{38.8} & 56.9 & 40.0 & 47.9 & 17.5 & 51.7 & 42.1 \\
+Gemini-1.5 & 0.6 & 38.4 & 56.7 & 40.8 & 49.2 & 18.4 & 51.4 & 42.5 \\
+GPT-4o & 0.0 & 26.4 & \textbf{62.0} & 42.3 & \textbf{53.6} & \textbf{20.7} & 57.9 & \textbf{43.8} \\
+GPT-4o & 0.6 & 26.3 & 60.0 & \textbf{44.3} & 51.7 & 15.7 & \textbf{60.1} & 43.0 \\
+\bottomrule
+\end{tabular}
+\caption{Closed-API temperature ablation (chrF): $T{=}0$ vs.\ $T{=}0.6$, on the six \texttt{eng}$\to$\texttt{xxx} pairs (\texttt{xxx}$\to$\texttt{eng} was not run at $T{=}0.6$). For 5-shot ICL, Gemini-1.5 uses random-retrieval exemplars at both temperatures. GPT-4o's $T{=}0$ headline uses semantic-similarity 5-shot retrieval (the only $T{=}0$ \texttt{eng}$\to$\texttt{xxx} ICL configuration we have for it) while $T{=}0.6$ uses random-retrieval, so the GPT-4o ICL row mixes the retrieval-strategy and temperature axes. \textbf{Bold}: column maximum within the block.}
+\label{tab:temp_ablation_chrf}
+\end{table}

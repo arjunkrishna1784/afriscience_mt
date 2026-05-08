@@ -559,6 +559,120 @@ def build_open_vs_closed_icl(rows, metric):
     )
 
 
+def build_temp_ablation(rows, metric):
+    """**Appendix.** Closed-API temperature ablation: t=0 vs t=0.6, at
+    zero-shot and 5-shot ICL. Only the eng->xxx half is reported because
+    the t=0.6 runs only cover that direction.
+    """
+    metric_label = "chrF" if metric == "chrf" else "COMET"
+
+    def by_disp(model_list):
+        return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
+
+    def pull(model, etype, temp, *, strategies=(None,)):
+        """Return {pair -> value} for the eng-xxx subset only.
+        ``strategies`` is a tuple of prompt_strategy fallbacks tried in order."""
+        merged = {}
+        for ps in strategies:
+            filters = dict(model_short=model, experiment_type=etype,
+                           temp_setting=temp)
+            if ps is not None:
+                filters["prompt_strategy"] = ps
+            d = lookup(rows, metric=metric, **filters)
+            for p in PAIRS_E2X:
+                if p in d:
+                    merged.setdefault(p, d[p])
+        return merged
+
+    closed = by_disp(["gemini_15_flash", "gpt4o"])
+
+    def vec_e2x(d):
+        return [d.get(p) for p in PAIRS_E2X]
+
+    def avg(vs):
+        nums = [v for v in vs if v is not None]
+        return sum(nums) / len(nums) if nums else None
+
+    # Build rows: (model, label, [6 vals], avg).
+    def block(etype, strategies):
+        out = []
+        for m in closed:
+            t0  = vec_e2x(pull(m, etype, "t0",  strategies=strategies))
+            t06 = vec_e2x(pull(m, etype, "t06", strategies=strategies))
+            out.append((m, "0.0", t0  + [avg(t0)]))
+            out.append((m, "0.6", t06 + [avg(t06)]))
+        return out
+
+    # Zero-shot: bare strategy (empty string filter handled via None).
+    zs_rows  = block("llm_zero_shot", strategies=(None,))
+    # 5-shot ICL: prefer icl_5shot, but GPT-4o's t=0 eng->xxx headline only
+    # has icl_5shot_semantic, so fall back to that.
+    icl_rows = block("llm_icl",       strategies=("icl_5shot", "icl_5shot_semantic"))
+
+    # Per-block column max for highlighting.
+    def col_max(block_rows):
+        cols = []
+        for ci in range(7):
+            vs = [r[2][ci] for r in block_rows if r[2][ci] is not None]
+            cols.append(max(vs) if vs else None)
+        return cols
+
+    zs_max  = col_max(zs_rows)
+    icl_max = col_max(icl_rows)
+
+    lang_cols = [r"\texttt{" + l + "}" for l in LANGS]
+    lang_head = " & ".join(["  ", "  "] + lang_cols + [r"\textbf{Avg}"]) + r" \\"
+
+    lines = [
+        f"% ---- temp_ablation_{'chrf' if metric=='chrf' else 'comet'} ----",
+        r"\begin{table}[t]",
+        r"\centering",
+        r"\small",
+        r"\renewcommand{\arraystretch}{1.05}",
+        r"\begin{tabular}{llrrrrrrr}",
+        r"\toprule",
+        r"\textbf{Model} & \textbf{Temp.} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\",
+        r"\cmidrule(lr){3-8}",
+        lang_head,
+    ]
+
+    def emit_block(name, brows, cmax):
+        lines.append(r"\midrule")
+        lines.append(r"\multicolumn{9}{l}{\textit{" + name + r"}} \\")
+        lines.append(r"\midrule")
+        for model_short, temp_label, vals in brows:
+            disp = MODEL_DISP.get(model_short, model_short)
+            cells = []
+            for ci, v in enumerate(vals):
+                s = fmt(v)
+                if v is not None and cmax[ci] is not None and abs(v - cmax[ci]) < 1e-9:
+                    s = f"\\textbf{{{s}}}"
+                cells.append(s)
+            lines.append(f"{disp} & {temp_label} & " + " & ".join(cells) + r" \\")
+
+    emit_block("Zero-shot", zs_rows, zs_max)
+    lines.append(r"\midrule")
+    emit_block("5-shot ICL", icl_rows, icl_max)
+
+    lines += [
+        r"\bottomrule",
+        r"\end{tabular}",
+        (r"\caption{Closed-API temperature ablation (" + metric_label + r"): "
+         r"$T{=}0$ vs.\ $T{=}0.6$, on the six \texttt{eng}$\to$\texttt{xxx} "
+         r"pairs (\texttt{xxx}$\to$\texttt{eng} was not run at $T{=}0.6$). "
+         r"For 5-shot ICL, Gemini-1.5 uses random-retrieval exemplars at "
+         r"both temperatures. GPT-4o's $T{=}0$ headline uses semantic-"
+         r"similarity 5-shot retrieval (the only $T{=}0$ \texttt{eng}$\to$"
+         r"\texttt{xxx} ICL configuration we have for it) while $T{=}0.6$ "
+         r"uses random-retrieval, so the GPT-4o ICL row mixes the "
+         r"retrieval-strategy and temperature axes. "
+         r"\textbf{Bold}: column maximum within the block.}"),
+        r"\label{tab:temp_ablation_" + ("chrf" if metric == "chrf" else "comet") + "}",
+        r"\end{table}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 # ---------------- main ----------------
 
 def main():
@@ -571,6 +685,7 @@ def main():
         ("llm_sentence",       build_llm_sentence),
         ("lora",               build_lora),
         ("doc",                build_doc),
+        ("temp_ablation",      build_temp_ablation),
     ]
     written = []
     for name, fn in builders:
