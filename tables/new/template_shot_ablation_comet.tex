@@ -12,10 +12,12 @@ template2 & 0 & 65.0 & 65.0 & 44.8 & 49.4 & 56.0 \\
 template4 & 0 & 65.6 & 65.1 & 44.9 & 50.4 & 56.5 \\
 template3 & 5 & 65.8 & 65.7 & 44.9 & 49.7 & 56.5 \\
 template5 & 5 & 65.9 & 65.6 & 45.5 & 50.8 & 56.9 \\
-template3 & 10 & 65.9 & \emph{65.9} & 46.3 & 50.5 & 57.2 \\
-\textbf{template5} & \textbf{10} & \emph{66.0} & 65.8 & \emph{46.9} & \emph{51.4} & \emph{57.5} \\
+template3 & 10 & 65.9 & 65.9 & 46.3 & 50.5 & 57.2 \\
+\textbf{template5} & \textbf{10} & 66.0 & 65.8 & 46.9 & 51.4 & 57.5 \\
+template3 & 20 & \emph{66.0} & \emph{66.0} & 46.6 & 50.6 & 57.3 \\
+template5 & 20 & 66.0 & 65.9 & \emph{47.1} & \emph{51.5} & \emph{57.6} \\
 \bottomrule
 \end{tabular}
-\caption{Template/shot ablation for the four reference models with bidirectional templated coverage at $T{=}0$ (COMET; bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs). \texttt{template5\_10shot} (\textbf{bolded row}) is the project-wide locked configuration (see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''): best for 3/4 reference models and within $0.10$ COMET of GPT-4o's peak. The five other open LLMs in our headline tables inherit this configuration via \texttt{scripts/rerun\_open\_llm\_template.py}. \emph{Italic}: column maximum.}
+\caption{Template/shot ablation for the four reference models with bidirectional templated coverage at $T{=}0$ (COMET; bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs). \texttt{template5\_10shot} (\textbf{bolded row}) is the project-wide locked configuration (see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''). 20-shot edges 10-shot by at most $0.2$ COMET in any column, well below the $1$-COMET adoption threshold we set, so we cap shots at 10. The five other open LLMs in our headline tables inherit this configuration via \texttt{scripts/rerun\_open\_llm\_template.py}. \emph{Italic}: column maximum.}
 \label{tab:template_shot_ablation_comet}
 \end{table*}

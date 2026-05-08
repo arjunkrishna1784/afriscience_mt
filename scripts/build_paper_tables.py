@@ -737,11 +737,10 @@ def build_template_shot_ablation(rows, metric):
     metric_label = "chrF" if metric == "chrf" else "COMET"
     AB_MODELS = ["gemini_15_flash", "gpt4o", "llama3_8b", "gemma2_9b_it"]
 
-    # Configs in display order (templates 1, 2, 4 are 0-shot only;
-    # template 3 has 5/10/20-shot variants; template 5 has 0/5/10/20).
-    # We exclude 20-shot rows here to keep the table compact (10-shot
-    # already plateaus, see closed_ablations table). 50-shot is project-
-    # wide banned.
+    # Configs in display order. Templates 1, 2, 4 are 0-shot only;
+    # templates 3 and 5 carry the shot sweep (5/10/20). 50-shot is
+    # banned project-wide; 20-shot stays so readers can see the
+    # plateau past 10-shot directly.
     CONFIGS = [
         ("template1_0shot", 1, 0),
         ("template2_0shot", 2, 0),
@@ -750,6 +749,8 @@ def build_template_shot_ablation(rows, metric):
         ("template5_5shot", 5, 5),
         ("template3_10shot", 3, 10),
         ("template5_10shot", 5, 10),
+        ("template3_20shot", 3, 20),
+        ("template5_20shot", 5, 20),
     ]
 
     def avg_(vs):
@@ -819,10 +820,12 @@ def build_template_shot_ablation(rows, metric):
          f"({metric_label}; bidirectional avg over the 12 \\texttt{{eng}}"
          r"$\leftrightarrow$\texttt{xxx} pairs). \texttt{template5\_10shot} "
          r"(\textbf{bolded row}) is the project-wide locked configuration "
-         r"(see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''): "
-         r"best for 3/4 reference models and within $0.10$ COMET of "
-         r"GPT-4o's peak. The five other open LLMs in our headline tables "
-         r"inherit this configuration via \texttt{scripts/rerun\_open\_llm\_template.py}. "
+         r"(see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''). "
+         r"20-shot edges 10-shot by at most $0.2$ COMET in any column, "
+         r"well below the $1$-COMET adoption threshold we set, so we cap "
+         r"shots at 10. The five other open LLMs in our headline tables "
+         r"inherit this configuration via "
+         r"\texttt{scripts/rerun\_open\_llm\_template.py}. "
          r"\emph{Italic}: column maximum.}"),
         r"\label{tab:template_shot_ablation_" + ("chrf" if metric == "chrf" else "comet") + "}",
         r"\end{table*}",
