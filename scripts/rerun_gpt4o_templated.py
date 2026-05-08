@@ -68,27 +68,39 @@ PAIRS = [f"eng-{l}" for l in LANGS] + [f"{l}-eng" for l in LANGS]
 EXPECTED_N = 970
 
 
-def find_legacy_dump(temp: float) -> Path:
+def find_legacy_dump(temp: float, override: Path | None = None) -> Path:
     sub = f"gpt-4o_temp_{temp:.1f}"
-    for root in LEGACY_DUMP_CANDIDATES:
-        d = root / sub
-        if d.is_dir():
-            return d
-    raise SystemExit(f"no legacy dump found for {sub} under {LEGACY_DUMP_CANDIDATES}")
+    candidates = [override] if override else LEGACY_DUMP_CANDIDATES
+    tried = []
+    for root in candidates:
+        if root is None:
+            continue
+        # Accept either <root>/gpt-4o_temp_<T> or a direct path to the dir.
+        for d in (root / sub, root):
+            if d.is_dir() and any(d.glob("*-template*.tsv")):
+                return d
+            tried.append(str(d))
+    raise SystemExit(f"no legacy dump found. Tried: {tried}")
 
 
 def list_legacy_configs(legacy_dir: Path):
     """Yield (template, shots, src, tgt, tsv_path) from the dump.
-    Skips 50-shot per project policy."""
-    rx = re.compile(
-        r"^(?P<src>[a-z]+)-to-(?P<tgt>[a-z]+)-template(?P<n>\d+)-shots(?P<k>\d+)(?P<old>(-old)?)\.tsv$"
+    Handles three filename conventions seen across legacy GPT-4o dumps:
+      <src>-to-<tgt>-template<N>-shots<K>.tsv   (T=0 xxx->eng layout)
+      <src>-to-<tgt>-template<N>-shot-<K>.tsv   (T=0.6 eng->xxx layout)
+      <src>-to-<tgt>-template<N>.tsv            (T=0.6 0-shot variants)
+    Skips 50-shot and any *-old.tsv files per project policy.
+    """
+    rx_shots = re.compile(
+        r"^(?P<src>[a-z]+)-to-(?P<tgt>[a-z]+)-template(?P<n>\d+)"
+        r"(?:-shots?-?(?P<k>\d+))?(?P<old>(-old)?)\.tsv$"
     )
     out = []
     for tsv in sorted(legacy_dir.glob("*.tsv")):
-        m = rx.match(tsv.name)
+        m = rx_shots.match(tsv.name)
         if not m or m.group("old"):
             continue
-        k = int(m.group("k"))
+        k = int(m.group("k")) if m.group("k") else 0
         if k > 20:
             continue
         out.append((int(m.group("n")), k, m.group("src"), m.group("tgt"), tsv))
@@ -274,6 +286,12 @@ def main() -> int:
                     help="model_short for summary.csv. Defaults to sanitised --model.")
     ap.add_argument("--pairs", nargs="+", default=None,
                     help="Lang pairs to run (default: every pair found in dump).")
+    ap.add_argument("--direction", choices=["e2x", "x2e", "both"], default="both",
+                    help="Restrict to eng->xxx (e2x), xxx->eng (x2e), or both. "
+                         "Use 'e2x' to fill the missing GPT-4o eng->xxx T=0 gap.")
+    ap.add_argument("--skip-existing", action="store_true",
+                    help="Skip configs whose results.json already exists. "
+                         "Useful when only filling gaps.")
     ap.add_argument("--templates", type=int, nargs="+", default=None,
                     help="Restrict to these templates (default: all in dump).")
     ap.add_argument("--shot-counts", type=int, nargs="+", default=None,
@@ -295,6 +313,11 @@ def main() -> int:
                          "(default 0.0). The new model is run at "
                          "--temperature; these can differ if you want to "
                          "ablate temperature with identical prompts.")
+    ap.add_argument("--legacy-dir", default=None,
+                    help="Override the legacy dump root. Expects to contain "
+                         "a sub-directory named gpt-4o_temp_<T>/ with the "
+                         "*-template{N}-shots{K}.tsv files. Defaults to "
+                         "the LEGACY_DUMP_CANDIDATES list.")
     args = ap.parse_args()
 
     api_key = args.api_key or os.environ.get("OPENAI_API_KEY")
@@ -309,7 +332,8 @@ def main() -> int:
 
     short_name = args.short_name or sanitise_short(args.model)
 
-    legacy_dir = find_legacy_dump(args.legacy_temp)
+    override = Path(args.legacy_dir).expanduser() if args.legacy_dir else None
+    legacy_dir = find_legacy_dump(args.legacy_temp, override=override)
     print(f"Reading prompts from: {legacy_dir}")
 
     configs = list_legacy_configs(legacy_dir)
@@ -319,13 +343,31 @@ def main() -> int:
             print(f"unknown pairs: {bad}", file=sys.stderr)
             return 2
         configs = [c for c in configs if f"{c[2]}-{c[3]}" in args.pairs]
+    if args.direction == "e2x":
+        configs = [c for c in configs if c[2] == "eng"]
+    elif args.direction == "x2e":
+        configs = [c for c in configs if c[3] == "eng"]
     if args.templates:
         configs = [c for c in configs if c[0] in args.templates]
     if args.shot_counts:
         configs = [c for c in configs if c[1] in args.shot_counts]
 
+    out_temp_dir_pre = EXP_ROOT / temp_setting(args.temperature) / "icl" / short_name
+    if args.skip_existing:
+        kept = []
+        skipped = 0
+        for tmpl, k, src, tgt, tsv in configs:
+            res = (out_temp_dir_pre / f"template{tmpl}_{k}shot" / f"{src}-{tgt}"
+                   / "results.json")
+            if res.exists():
+                skipped += 1
+                continue
+            kept.append((tmpl, k, src, tgt, tsv))
+        print(f"  --skip-existing: skipping {skipped} already-completed configs.")
+        configs = kept
+
     if not configs:
-        print("no matching configs in dump.", file=sys.stderr)
+        print("no matching configs to run.", file=sys.stderr)
         return 2
 
     print(f"OpenAI rerun: model={args.model}  short={short_name}  "
