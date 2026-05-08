@@ -618,16 +618,22 @@ def build_closed_ablations(rows, metric):
                                                           "llm_icl",       "t06", ("icl_5shot",)),
     ]
 
-    # ---- block 3: retrieval/shot-count ablation, semantic similarity, T=0.
-    # Both models have full coverage at 5/10/20/50 shots.
-    def sem_row(model, k):
-        strats = (f"semantic_{k}shot",) if k != 5 else ("icl_5shot_semantic", "semantic_5shot")
-        return row(model, f"{k}-shot (semantic)", "llm_icl", "t0", strats)
-
-    sem_abl = []
-    for m in ("gemini_15_flash", "gpt4o"):
-        for k in (5, 10, 20, 50):
-            sem_abl.append(sem_row(m, k))
+    # ---- block 3: retrieval ablation. Random vs semantic 5-shot at T=0.
+    # We restrict to 5 shots (the headline shot count for all models in
+    # the body); higher shot counts (10/20/50) are reserved for the
+    # separate template/shot ablation table that covers both open and
+    # closed models once the open-LLM template/shot runs are imported.
+    sem_abl = [
+        # Gemini: random (= reported) vs semantic at 5-shot.
+        row("gemini_15_flash", "5-shot (random)",        "llm_icl", "t0", ("icl_5shot",)),
+        row("gemini_15_flash", "5-shot (semantic)",      "llm_icl", "t0",
+            ("icl_5shot_semantic", "semantic_5shot")),
+        # GPT-4o: semantic (= reported) is the only T=0 eng->xxx ICL we have;
+        # random retrieval was not run for this direction at T=0.
+        row("gpt4o",            "5-shot (semantic)",     "llm_icl", "t0",
+            ("icl_5shot_semantic", "semantic_5shot")),
+        row("gpt4o",            "5-shot (random)",       "llm_icl", "t0", ("icl_5shot",)),
+    ]
 
     # ---- per-block column max for bold highlighting.
     def col_max(brows):
@@ -675,9 +681,9 @@ def build_closed_ablations(rows, metric):
             lines.append(f"{disp} & {setting_label} & " + " & ".join(cells) + r" \\")
 
     emit_block("Reported ($T{=}0$)",          reported, rep_max, first=True)
-    emit_block("Temperature ablation ($T{=}0.6$)", temp_abl, temp_max)
-    emit_block("Retrieval ablation: semantic similarity, $T{=}0$",
+    emit_block("Retrieval ablation: random vs.\\ semantic 5-shot, $T{=}0$",
                sem_abl, sem_max)
+    emit_block("Temperature ablation ($T{=}0.6$)", temp_abl, temp_max)
 
     lines += [
         r"\bottomrule",
@@ -688,9 +694,12 @@ def build_closed_ablations(rows, metric):
          r"\ref{tab:open_vs_closed_icl_" +
          ("chrf" if metric == "chrf" else "comet") + r"}. "
          r"\textit{Temperature ablation} re-runs the same configurations "
-         r"at $T{=}0.6$. \textit{Retrieval ablation} sweeps semantic-"
-         r"similarity ICL exemplar counts at $T{=}0$. We do not run "
-         r"closed-API ablations on \texttt{xxx}$\to$\texttt{eng}. "
+         r"at $T{=}0.6$. \textit{Retrieval ablation} contrasts random- "
+         r"and semantic-similarity 5-shot exemplars at $T{=}0$ "
+         r"(higher-shot results live in the dedicated template/shot "
+         r"ablation table). We do not run closed-API ablations on "
+         r"\texttt{xxx}$\to$\texttt{eng}, and GPT-4o's random-retrieval "
+         r"row is unavailable at $T{=}0$ for this direction. "
          r"$^\dagger$GPT-4o's $T{=}0$ ICL headline uses semantic-"
          r"similarity 5-shot, while its $T{=}0.6$ ICL run used "
          r"random-retrieval, so this row mixes the temperature and "

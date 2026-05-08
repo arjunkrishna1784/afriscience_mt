@@ -399,6 +399,15 @@ semantic shots both closed APIs reach roughly 65--66 COMET on
 \texttt{eng}$\to$\texttt{xxx}, on par with fine-tuned NLLB-1.3B
 (67.3 avg in Table~\ref{tab:main_zs_ft_comet}).
 
+**Scope of the closed_ablations table** (after 2026-05-08 trim):
+the retrieval block is restricted to 5-shot only (random vs semantic
+for each model). The 10/20/50-shot semantic numbers are kept in
+`summary.csv` and will go into a separate **template/shot ablation
+table** once the open-LLM (Llama3, Gemma2) template/shot runs are
+imported, so that one table compares both groups uniformly. Until
+those imports land, the closed-side template/shot story is conveyed
+by the existing `figures/new/gpt-vs-gemini/...pdf` curves.
+
 ### Final prose — Discussion (one sentence)
 
 > Closed-API quality is far more sensitive to the number of semantic-
