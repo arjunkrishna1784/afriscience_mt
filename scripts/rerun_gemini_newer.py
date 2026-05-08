@@ -226,6 +226,16 @@ def main() -> int:
         print(f"unknown pairs: {bad}", file=sys.stderr)
         return 2
 
+    # Project-wide shot-count cap (set 2026-05-08): 50-shot was dropped
+    # because it adds <1 COMET over 10-shot for closed APIs and doubles
+    # token cost. The cap is 20 to leave headroom for sanity-check runs;
+    # routine calls should stick to {0, 5, 10}.
+    bad_shots = [k for k in args.shot_counts if k > 20]
+    if bad_shots:
+        print(f"error: shot counts > 20 are not allowed (got {bad_shots}). "
+              f"See docs/PAPER_TODOS.md \"Drop 50-shot\" note.", file=sys.stderr)
+        return 2
+
     # Lazy import — keeps the script importable for `--help` even without google-genai.
     from afriscience_mt.inference.icl_runner import ICLRunner
     from afriscience_mt.api.factory import create_api_client
