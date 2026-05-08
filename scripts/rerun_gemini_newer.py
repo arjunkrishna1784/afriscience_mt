@@ -390,6 +390,169 @@ def write_canonical(*, out_dir: Path, model: str, short_name: str,
     }, indent=2, ensure_ascii=False))
 
 
+def prepare_config_prompts(tsv: Path) -> tuple[list[tuple[str, str]], str | None,
+                                                 list[str], bool]:
+    """Read a legacy TSV, parse each row into (system, user) parts, and
+    decide whether the system part is constant across rows.
+
+    Returns (parsed, system_prompt, user_prompts, system_constant).
+    - system_constant=True  → batchable with shared system_prompt
+    - system_constant=False → fall back to single-message verbatim re-join
+    """
+    parsed = read_prompts(tsv)
+    sys_parts = {sp for sp, _ in parsed}
+    system_constant = len(sys_parts) == 1 and next(iter(sys_parts)) != ""
+    if system_constant:
+        system_prompt = next(iter(sys_parts))
+        user_prompts = [u for _, u in parsed]
+    else:
+        system_prompt = None
+        user_prompts = [
+            f"System: {sp}\nHuman: {up}" if sp else up
+            for sp, up in parsed
+        ]
+    return parsed, system_prompt, user_prompts, system_constant
+
+
+def score_write_and_notify(
+    *, args, hyps: list[str], src: str, tgt: str, template: int, n_shots: int,
+    out_dir: Path, short_name: str, system_constant: bool,
+    notifier: "Notifier", notify_state: dict, total: int, done_so_far: int,
+    label: str, started_at: float,
+) -> None:
+    """Compute metrics, write predictions+results, drop cache, send progress."""
+    metrics = None
+    if not args.skip_scoring:
+        try:
+            from afriscience_mt.evaluation.metrics import compute_all_metrics
+            refs = load_test_refs(tgt)[:len(hyps)]
+            srcs = load_test_sources(src)[:len(hyps)]
+            m = compute_all_metrics(srcs, hyps, refs, metrics=["chrf", "ssa_comet"])
+            metrics = {
+                "bleu": None,
+                "chrf": m.get("chrf"),
+                "ssa_comet": m.get("ssa_comet"),
+                "num_samples": len(hyps),
+            }
+            cf, sc = metrics["chrf"], metrics["ssa_comet"]
+            print(f"  ChrF={cf:.2f}  SSA-COMET={100*sc:.1f}"
+                  if cf is not None and sc is not None else f"  metrics={metrics}")
+        except Exception as e:
+            print(f"  scoring failed ({type(e).__name__}: {e}); writing predictions only")
+
+    write_canonical(
+        out_dir=out_dir, model=args.model, short_name=short_name,
+        src=src, tgt=tgt, template=template, n_shots=n_shots,
+        temp=args.temperature, hyps=hyps,
+        system_constant=system_constant, metrics=metrics,
+    )
+    cache = cache_path_for(out_dir)
+    if cache.exists():
+        cache.unlink()
+    print(f"  ✓ [{done_so_far}/{total}] wrote {out_dir.relative_to(ROOT)} "
+          f"({time.time()-started_at:.1f}s)")
+    notify_state["i"] = done_so_far
+    notify_state["last_cfg"] = label
+    notifier.maybe_progress(i=done_so_far, total=total, last_cfg=label)
+
+
+def run_batch_parallel(
+    *, api_client, todo: list, args, state: dict, state_file: Path,
+    short_name: str, notifier: "Notifier", notify_state: dict,
+) -> None:
+    """Sliding-window batch orchestrator: keep up to --batch-concurrency jobs
+    in flight, poll all of them every --batch-poll-seconds, and as each one
+    returns, write its predictions and submit the next from the queue.
+
+    Resumable: any job_name still in the state file from a previous run is
+    treated as already-submitted, so we just poll instead of resubmitting.
+    """
+    queue = list(todo)
+    in_flight: dict[str, dict] = {}  # job_key -> dict of fields
+    total = len(todo)
+    done = 0
+
+    print(f"batch mode: concurrency={args.batch_concurrency}, "
+          f"poll every {args.batch_poll_seconds}s")
+
+    def fill_window():
+        """Submit (or resume) up to args.batch_concurrency jobs."""
+        while len(in_flight) < args.batch_concurrency and queue:
+            cfg = queue.pop(0)
+            tmpl, k, src, tgt, tsv, out_dir = cfg
+            pair = f"{src}-{tgt}"
+            strategy = f"template{tmpl}_{k}shot"
+            label = f"{strategy}/{pair}"
+            job_key = f"{short_name}/{temp_setting(args.temperature)}/{pair}/{strategy}"
+
+            print(f"\n[submit] {label}  (from {tsv.name})")
+            _, system_prompt, user_prompts, system_constant = prepare_config_prompts(tsv)
+            print(f"  prompts: {len(user_prompts)}  system_constant={system_constant}")
+
+            existing = state.get(job_key)
+            if existing:
+                job_name = existing
+                print(f"  resuming pre-submitted job: {job_name}")
+            else:
+                job_name = api_client.submit_batch_job(
+                    prompts=user_prompts,
+                    job_name=f"afriscience-{short_name}-{src}{tgt}-{strategy}",
+                    system_prompt=system_prompt,
+                )
+                state[job_key] = job_name
+                state_file.parent.mkdir(parents=True, exist_ok=True)
+                state_file.write_text(json.dumps(state, indent=2))
+                print(f"  submitted: {job_name}")
+
+            in_flight[job_key] = {
+                "cfg": cfg,
+                "label": label,
+                "job_name": job_name,
+                "system_constant": system_constant,
+                "started_at": time.time(),
+            }
+
+    fill_window()
+
+    while in_flight or queue:
+        # Poll every in-flight job once
+        completed_keys = []
+        for job_key, info in list(in_flight.items()):
+            try:
+                hyps = api_client.retrieve_batch_results(info["job_name"])
+            except Exception as e:
+                print(f"  ✗ {info['label']} retrieve failed ({type(e).__name__}: {e}); "
+                      f"will retry on next poll")
+                continue
+            if hyps is None:
+                continue  # still pending
+            # Done
+            tmpl, k, src, tgt, tsv, out_dir = info["cfg"]
+            hyps = [(h or "").strip() for h in hyps]
+            print(f"\n[done] {info['label']}  ({len(hyps)} responses)")
+            state.pop(job_key, None)
+            state_file.write_text(json.dumps(state, indent=2))
+            done += 1
+            score_write_and_notify(
+                args=args, hyps=hyps, src=src, tgt=tgt,
+                template=tmpl, n_shots=k, out_dir=out_dir,
+                short_name=short_name, system_constant=info["system_constant"],
+                notifier=notifier, notify_state=notify_state,
+                total=total, done_so_far=done, label=info["label"],
+                started_at=info["started_at"],
+            )
+            completed_keys.append(job_key)
+        for jk in completed_keys:
+            del in_flight[jk]
+
+        # Top up the window (resubmit nothing — already-submitted are still in flight)
+        fill_window()
+
+        # Sleep before next poll round, unless everything's done
+        if in_flight:
+            time.sleep(args.batch_poll_seconds)
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--model", required=True,
@@ -411,6 +574,8 @@ def main() -> int:
     ap.add_argument("--use-batch", action="store_true",
                     help="Use Gemini Batch API (50%% cheaper, ~24h SLA).")
     ap.add_argument("--batch-poll-seconds", type=int, default=120)
+    ap.add_argument("--batch-concurrency", type=int, default=5,
+                    help="Max in-flight batch jobs at once (--use-batch only).")
     ap.add_argument("--batch-state-file",
                     default="experiments/_gemini_batch_state.json")
     ap.add_argument("--force", action="store_true")
@@ -513,60 +678,34 @@ def main() -> int:
             sys.__excepthook__(exc_type, exc_value, exc_tb)
         sys.excepthook = _excepthook
 
-    for i, (tmpl, k, src, tgt, tsv, out_dir) in enumerate(todo, 1):
-        pair = f"{src}-{tgt}"
-        strategy = f"template{tmpl}_{k}shot"
-        notify_state["i"] = i
-        notify_state["last_cfg"] = f"{strategy}/{pair}"
-        print(f"\n[{i}/{len(todo)}] {strategy}/{pair}  (from {tsv.name})")
-        ts = time.time()
+    if args.use_batch:
+        run_batch_parallel(
+            api_client=api_client, todo=todo, args=args,
+            state=state, state_file=state_file, short_name=short_name,
+            notifier=notifier, notify_state=notify_state,
+        )
+    else:
+        for i, (tmpl, k, src, tgt, tsv, out_dir) in enumerate(todo, 1):
+            pair = f"{src}-{tgt}"
+            strategy = f"template{tmpl}_{k}shot"
+            label = f"{strategy}/{pair}"
+            notify_state["i"] = i
+            notify_state["last_cfg"] = label
+            print(f"\n[{i}/{len(todo)}] {label}  (from {tsv.name})")
+            ts = time.time()
 
-        parsed = read_prompts(tsv)
-        if len(parsed) < EXPECTED_N:
-            print(f"  ⚠ legacy TSV has {len(parsed)} rows, expected {EXPECTED_N}")
-        sys_parts = {sp for sp, _ in parsed}
-        system_constant = len(sys_parts) == 1 and next(iter(sys_parts)) != ""
-        if system_constant:
-            system_prompt = next(iter(sys_parts))
-            user_prompts = [u for _, u in parsed]
-            print(f"  system constant ({len(system_prompt)} chars); "
-                  f"sending {len(user_prompts)} user messages with shared system_prompt")
-        else:
-            # Fall back: collapse system+user back into a single user message
-            # (verbatim re-join of the saved prompt). This is what we do for
-            # templates 4/5 where the glossary in the system varies per row.
-            system_prompt = None
-            user_prompts = [
-                f"System: {sp}\nHuman: {up}" if sp else up
-                for sp, up in parsed
-            ]
-            print(f"  system varies per row → sending full-prompt user messages "
-                  f"({len(user_prompts)} total)")
+            parsed, system_prompt, user_prompts, system_constant = (
+                prepare_config_prompts(tsv)
+            )
+            if len(parsed) < EXPECTED_N:
+                print(f"  ⚠ legacy TSV has {len(parsed)} rows, expected {EXPECTED_N}")
+            if system_constant:
+                print(f"  system constant ({len(system_prompt)} chars); "
+                      f"sending {len(user_prompts)} user messages with shared system_prompt")
+            else:
+                print(f"  system varies per row → sending full-prompt user messages "
+                      f"({len(user_prompts)} total)")
 
-        if args.use_batch:
-            job_key = f"{short_name}/{temp_setting(args.temperature)}/{pair}/{strategy}"
-            job_name = state.get(job_key)
-            if not job_name:
-                print(f"  submitting batch ({len(user_prompts)} prompts)...")
-                job_name = api_client.submit_batch_job(
-                    prompts=user_prompts,
-                    job_name=f"afriscience-{short_name}-{src}{tgt}-{strategy}",
-                    system_prompt=system_prompt,
-                )
-                state[job_key] = job_name
-                state_file.parent.mkdir(parents=True, exist_ok=True)
-                state_file.write_text(json.dumps(state, indent=2))
-                print(f"  submitted: {job_name}")
-            while True:
-                hyps = api_client.retrieve_batch_results(job_name)
-                if hyps is not None:
-                    print(f"  batch done ({len(hyps)} responses)")
-                    state.pop(job_key, None)
-                    state_file.write_text(json.dumps(state, indent=2))
-                    break
-                print(f"  pending; sleeping {args.batch_poll_seconds}s...")
-                time.sleep(args.batch_poll_seconds)
-        else:
             cache = cache_path_for(out_dir)
             already = len(load_cache(cache))
             if already:
@@ -578,43 +717,16 @@ def main() -> int:
                 prompts=user_prompts,
                 system_prompt=system_prompt,
                 cache_path=cache,
-                desc=f"{strategy}/{pair}",
+                desc=label,
             )
-
-        metrics = None
-        if not args.skip_scoring:
-            try:
-                from afriscience_mt.evaluation.metrics import compute_all_metrics
-                refs = load_test_refs(tgt)[:len(hyps)]
-                srcs = load_test_sources(src)[:len(hyps)]
-                m = compute_all_metrics(
-                    srcs, hyps, refs, metrics=["chrf", "ssa_comet"],
-                )
-                metrics = {
-                    "bleu": None,
-                    "chrf": m.get("chrf"),
-                    "ssa_comet": m.get("ssa_comet"),
-                    "num_samples": len(hyps),
-                }
-                cf, sc = metrics["chrf"], metrics["ssa_comet"]
-                print(f"  ChrF={cf:.2f}  SSA-COMET={100*sc:.1f}"
-                      if cf is not None and sc is not None else f"  metrics={metrics}")
-            except Exception as e:
-                print(f"  scoring failed ({type(e).__name__}: {e}); writing predictions only")
-
-        write_canonical(
-            out_dir=out_dir, model=args.model, short_name=short_name,
-            src=src, tgt=tgt, template=tmpl, n_shots=k,
-            temp=args.temperature, hyps=hyps,
-            system_constant=system_constant, metrics=metrics,
-        )
-        # Drop the cache once predictions.json is on disk.
-        cache = cache_path_for(out_dir)
-        if cache.exists():
-            cache.unlink()
-        print(f"  ✓ wrote {out_dir.relative_to(ROOT)} ({time.time()-ts:.1f}s)")
-        notifier.maybe_progress(i=i, total=len(todo),
-                                last_cfg=f"{strategy}/{pair}")
+            score_write_and_notify(
+                args=args, hyps=hyps, src=src, tgt=tgt,
+                template=tmpl, n_shots=k, out_dir=out_dir,
+                short_name=short_name, system_constant=system_constant,
+                notifier=notifier, notify_state=notify_state,
+                total=len(todo), done_so_far=i, label=label,
+                started_at=ts,
+            )
 
     if loop is not None:
         try:
