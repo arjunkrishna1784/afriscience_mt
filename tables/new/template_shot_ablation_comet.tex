@@ -1,0 +1,21 @@
+% ---- template_shot_ablation_comet ----
+\begin{table*}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrrrr}
+\toprule
+\textbf{Config} & \textbf{Shots} & Gemini-1.5 & GPT-4o & Llama3-8B & Gemma2-9B & \textbf{Avg} \\
+\midrule
+template1 & 0 & 65.3 & 65.1 & 44.4 & 49.3 & 56.0 \\
+template2 & 0 & 65.0 & 65.0 & 44.8 & 49.4 & 56.0 \\
+template4 & 0 & 65.6 & 65.1 & 44.9 & 50.4 & 56.5 \\
+template3 & 5 & 65.8 & 65.7 & 44.9 & 49.7 & 56.5 \\
+template5 & 5 & 65.9 & 65.6 & 45.5 & 50.8 & 56.9 \\
+template3 & 10 & 65.9 & \emph{65.9} & 46.3 & 50.5 & 57.2 \\
+\textbf{template5} & \textbf{10} & \emph{66.0} & 65.8 & \emph{46.9} & \emph{51.4} & \emph{57.5} \\
+\bottomrule
+\end{tabular}
+\caption{Template/shot ablation for the four reference models with bidirectional templated coverage at $T{=}0$ (COMET; bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs). \texttt{template5\_10shot} (\textbf{bolded row}) is the project-wide locked configuration (see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''): best for 3/4 reference models and within $0.10$ COMET of GPT-4o's peak. The five other open LLMs in our headline tables inherit this configuration via \texttt{scripts/rerun\_open\_llm\_template.py}. \emph{Italic}: column maximum.}
+\label{tab:template_shot_ablation_comet}
+\end{table*}

@@ -723,6 +723,113 @@ def build_closed_ablations(rows, metric):
     return "\n".join(lines) + "\n"
 
 
+def build_template_shot_ablation(rows, metric):
+    """**Appendix.** Template/shot ablation across the four reference
+    models that have full templated coverage at T=0:
+    Gemini-1.5-Flash, GPT-4o, Llama3-8B, Gemma2-9B-IT.
+
+    Each row is a (template, shot-count) configuration; each column is
+    one model; the value is the bidirectional avg COMET across the 12
+    language pairs at T=0. The locked universal choice
+    (\\texttt{template5\\_10shot}) is bolded, and the per-model best
+    cell is italicised.
+    """
+    metric_label = "chrF" if metric == "chrf" else "COMET"
+    AB_MODELS = ["gemini_15_flash", "gpt4o", "llama3_8b", "gemma2_9b_it"]
+
+    # Configs in display order (templates 1, 2, 4 are 0-shot only;
+    # template 3 has 5/10/20-shot variants; template 5 has 0/5/10/20).
+    # We exclude 20-shot rows here to keep the table compact (10-shot
+    # already plateaus, see closed_ablations table). 50-shot is project-
+    # wide banned.
+    CONFIGS = [
+        ("template1_0shot", 1, 0),
+        ("template2_0shot", 2, 0),
+        ("template4_0shot", 4, 0),
+        ("template3_5shot", 3, 5),
+        ("template5_5shot", 5, 5),
+        ("template3_10shot", 3, 10),
+        ("template5_10shot", 5, 10),
+    ]
+
+    def avg_(vs):
+        nums = [v for v in vs if v is not None]
+        return sum(nums) / len(nums) if nums else None
+
+    def cell(model, strategy):
+        d = lookup(rows, metric=metric, model_short=model,
+                   experiment_type="llm_icl", temp_setting="t0",
+                   prompt_strategy=strategy)
+        return avg_([d.get(p) for p in PAIRS])
+
+    # rows: list of (config_label, template, shots, [v_per_model], cross_avg)
+    table_rows = []
+    for label, tmpl, shots in CONFIGS:
+        vs = [cell(m, label) for m in AB_MODELS]
+        table_rows.append((label, tmpl, shots, vs, avg_(vs)))
+
+    # column maxes for italic highlighting
+    col_max = []
+    for ci in range(len(AB_MODELS) + 1):  # +1 for Avg col
+        col_vals = []
+        for _, _, _, vs, ca in table_rows:
+            v = vs[ci] if ci < len(AB_MODELS) else ca
+            if v is not None:
+                col_vals.append(v)
+        col_max.append(max(col_vals) if col_vals else None)
+
+    LOCKED_CONFIG = "template5_10shot"
+
+    lines = [
+        f"% ---- template_shot_ablation_{'chrf' if metric=='chrf' else 'comet'} ----",
+        r"\begin{table*}[t]",
+        r"\centering",
+        r"\small",
+        r"\renewcommand{\arraystretch}{1.05}",
+        r"\begin{tabular}{lr" + "r" * len(AB_MODELS) + r"r}",
+        r"\toprule",
+        (r"\textbf{Config} & \textbf{Shots} & "
+         + " & ".join(MODEL_DISP.get(m, m) for m in AB_MODELS)
+         + r" & \textbf{Avg} \\"),
+        r"\midrule",
+    ]
+
+    for label, tmpl, shots, vs, ca in table_rows:
+        is_locked = (label == LOCKED_CONFIG)
+        cells_in = vs + [ca]
+        cells_out = []
+        for ci, v in enumerate(cells_in):
+            s = fmt(v)
+            if v is not None and col_max[ci] is not None and abs(v - col_max[ci]) < 1e-9:
+                s = f"\\emph{{{s}}}"
+            cells_out.append(s)
+        first_col = f"template{tmpl}"
+        if is_locked:
+            first_col = r"\textbf{" + first_col + r"}"
+            shots_disp = r"\textbf{" + str(shots) + r"}"
+        else:
+            shots_disp = str(shots)
+        lines.append(f"{first_col} & {shots_disp} & " + " & ".join(cells_out) + r" \\")
+
+    lines += [
+        r"\bottomrule",
+        r"\end{tabular}",
+        (r"\caption{Template/shot ablation for the four reference models "
+         "with bidirectional templated coverage at $T{=}0$ "
+         f"({metric_label}; bidirectional avg over the 12 \\texttt{{eng}}"
+         r"$\leftrightarrow$\texttt{xxx} pairs). \texttt{template5\_10shot} "
+         r"(\textbf{bolded row}) is the project-wide locked configuration "
+         r"(see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''): "
+         r"best for 3/4 reference models and within $0.10$ COMET of "
+         r"GPT-4o's peak. The five other open LLMs in our headline tables "
+         r"inherit this configuration via \texttt{scripts/rerun\_open\_llm\_template.py}. "
+         r"\emph{Italic}: column maximum.}"),
+        r"\label{tab:template_shot_ablation_" + ("chrf" if metric == "chrf" else "comet") + "}",
+        r"\end{table*}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 # ---------------- main ----------------
 
 def main():
@@ -736,6 +843,7 @@ def main():
         ("lora",               build_lora),
         ("doc",                build_doc),
         ("closed_ablations",   build_closed_ablations),
+        ("template_shot_ablation", build_template_shot_ablation),
     ]
     written = []
     for name, fn in builders:

@@ -641,6 +641,42 @@ there.
 
 ---
 
+## 2026-05-08 — DECISION: template5 + 10-shot is the universal ICL config
+
+**Status:** LOCKED. Use `template5_10shot` for every non-fine-tuned LLM
+in the body tables. This decision supersedes earlier "5-shot vs 10-shot"
+deliberations.
+
+**Evidence (bidirectional avg COMET, T=0, eng->xxx + xxx->eng):**
+
+| model              | template5_10shot | per-model best                | penalty |
+|--------------------|-----------------:|-------------------------------|--------:|
+| Gemini-1.5-Flash   | **65.96**        | template5_10shot (65.96)      |   0.00  |
+| GPT-4o             | 65.77            | template3_10shot (65.87)      |   0.10  |
+| Llama3-8B          | **46.94**        | template5_10shot (46.94)      |   0.00  |
+| Gemma2-9B-IT       | **51.44**        | template5_10shot (51.44)      |   0.00  |
+
+template5_10shot is best for 3/4 reference models and only $0.10$ COMET
+below GPT-4o's peak. Picking template3_10shot instead would penalize
+Llama3 by $-0.62$ and Gemma2 by $-0.90$.
+
+**Application:**
+
+- All non-fine-tuned LLM rows in Table 2 / closed_ablations / appendix
+  ICL tables use `template5_10shot` at $T{=}0$.
+- Fine-tuned LLMs stay locked to their training-time prompt
+  (vanilla `few_shot`); they are not re-prompted with template5.
+- 50-shot remains banned project-wide; 20-shot is allowed in appendix
+  ablations only.
+
+**Script defaults:** `scripts/rerun_open_llm_template.py` ships with
+`--template 5 --shots 10` so the 5 remaining open LLMs
+(AfriqueLlama-8B, AfriqueQwen-8B, Tiny-Aya-Earth, Tiny-Aya-Global,
+TranslateGemma-12B) inherit the locked config without further
+decisions.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
