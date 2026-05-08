@@ -370,6 +370,88 @@ wrong-target-language outputs).
 
 ---
 
+## 2026-05-08 — Closed-API ablations: temperature is flat, semantic-shot count is the real lever
+
+**Status:** TABLE READY. Discussion sentence drafted; appendix section
+needs writing.
+
+**What we have.** [tables/new/closed_ablations_comet.tex](../tables/new/closed_ablations_comet.tex)
+(and chrf mirror) is a single appendix table with three blocks for the
+six \texttt{eng}$\to$\texttt{xxx} pairs (closed-API ablations were not
+run on \texttt{xxx}$\to$\texttt{eng}):
+
+  1. **Reported (T=0)** — the headline rows reproduced from Table 2.
+  2. **Temperature ablation (T=0.6)** — same configurations re-run at
+     higher temperature. Gemini moves $\le$0.2 COMET on every cell;
+     GPT-4o zero-shot is identical. The GPT-4o ICL row at T=0.6 used
+     random-retrieval whereas its T=0 headline uses semantic-similarity,
+     so that one row mixes the two axes (footnoted with $^\dagger$).
+  3. **Retrieval ablation (semantic similarity, T=0)** — same model and
+     temperature as Block 1, only the ICL exemplar count varies through
+     {5, 10, 20, 50}.
+
+**Headline finding.** Temperature does almost nothing
+($\le$0.2 COMET delta on Gemini, 0 on GPT-4o ZS). Going from 5- to
+10-shot semantic-similarity retrieval jumps both Gemini and GPT-4o
+by **+7 COMET** (Gemini 58.3 → 65.8, GPT-4o 58.2 → 65.0). Returns
+plateau past 10 shots (50-shot adds <1 COMET over 10-shot). At 10+
+semantic shots both closed APIs reach roughly 65--66 COMET on
+\texttt{eng}$\to$\texttt{xxx}, on par with fine-tuned NLLB-1.3B
+(67.3 avg in Table~\ref{tab:main_zs_ft_comet}).
+
+### Final prose — Discussion (one sentence)
+
+> Closed-API quality is far more sensitive to the number of semantic-
+> similarity exemplars than to sampling temperature: 10 well-retrieved
+> shots close most of the gap to a fine-tuned NLLB-1.3B
+> (Appendix~\ref{tab:closed_ablations_comet}).
+
+### Still needs writing — Appendix paragraph (introducing Table~\ref{tab:closed_ablations_comet})
+
+A short paragraph (3--5 sentences) that:
+
+1. Names the three blocks of the table and what they vary.
+2. Discloses the one direction asymmetry (no closed-API ablation runs
+   on \texttt{xxx}$\to$\texttt{eng}).
+3. States the temperature finding (flat) in one sentence so the reader
+   does not have to derive it from the numbers.
+4. States the shot-count finding ($+7$ COMET from 5$\to$10, then
+   plateaus).
+5. Mentions the GPT-4o ICL row caveat ($T{=}0$ uses
+   semantic-similarity, $T{=}0.6$ uses random retrieval, so its
+   temperature row mixes axes — already in the caption, can be very
+   brief here).
+
+Draft (paste-ready, edit to taste):
+
+> \paragraph{Closed-API ablations.}
+> Table~\ref{tab:closed_ablations_comet} reports three closed-API
+> ablations on the six \texttt{eng}$\to$\texttt{xxx} pairs (we did not
+> run closed-API ablations on \texttt{xxx}$\to$\texttt{eng}). At
+> $T{=}0.6$, Gemini-1.5 moves by at most $0.2$ COMET against its
+> $T{=}0$ headline and GPT-4o is unchanged at zero-shot, so we report
+> the deterministic ($T{=}0$) results in the body. Holding temperature
+> fixed and sweeping the number of semantic-similarity exemplars tells
+> a different story: going from 5 to 10 shots adds about $7$ COMET for
+> both models (Gemini-1.5 $58.3 \to 65.8$, GPT-4o $58.2 \to 65.0$),
+> with returns essentially saturated by 20 shots. At ten or more
+> semantic shots the closed APIs are within a couple of COMET points
+> of fine-tuned NLLB-1.3B on this direction (Table~\ref{tab:main_zs_ft_comet}).
+> The dagger row in the temperature block reflects a configuration
+> mismatch (GPT-4o's $T{=}0$ ICL headline uses semantic-similarity
+> retrieval, while its $T{=}0.6$ run used random retrieval) and should
+> be read as an upper bound on the temperature effect rather than as
+> a clean comparison.
+
+### What's still missing
+
+1. Decide where the appendix paragraph lives (Extended Experimental
+   Setup, or a dedicated "Closed-API analysis" appendix subsection).
+2. Decide whether to also include the chrF mirror inline or just
+   reference it.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
