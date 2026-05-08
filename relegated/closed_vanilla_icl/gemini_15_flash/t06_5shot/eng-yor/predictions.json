@@ -1,0 +1,2918 @@
+{
+  "experiment_id": "icl_5shot_eng_yor",
+  "source_lang": "eng",
+  "target_lang": "yor",
+  "samples": [
+    {
+      "hyp": "Àṣàyẹ̀wò ìwọ̀n ìwádìí SARS-CoV-2 gbogbo ènìyàn tí a nílò fún iṣẹ́ iṣakoso ààrùn náà ní Lusaka, ìpínlẹ̀ tí ó jẹ́ ibi tí ààrùn náà ti bẹ̀rẹ̀ sí ní Zambia, nígbà tí a bá ti gbé àwọn ènìyàn tí kò ní àmì ààrùn yẹ̀wò:"
+    },
+    {
+      "hyp": "Ìwádìí awọn awọn ero iṣiro ti o rọrùn."
+    },
+    {
+      "hyp": "Àrùn kọrọ́nàvírùs tuntun (COVID-19), ti kokorò aruń àkàǹkà̀n tí ó wúnú afẹ́fẹ́ tí ó lewu (SARS-CoV-2) fa, ní Áfíríkà ní a mọ̀ sí ìwùn lọ́pọ̀lọpọ̀ èniyàn tí kò ní árùn (tábí tí árùn wọn kò lewu) tí a gbà pé wọ́n ní ipàkan ninú ìtànkálẹ̀ àrùn náà."
+    },
+    {
+      "hyp": "Iye dídájú àti ìwọ̀n ìtànkálẹ̀ àrùn àwọn ènìyàn tí kò ní àmì àrùn ṣì ṣòro láti mọ̀ dájú."
+    },
+    {
+      "hyp": "Ṣugbọ́n, àwọn ìwádìí fi hàn pé iṣẹ́ iṣakoso wọn ṣe pàtàkì fún iṣakoso ìtànkálẹ̀ SARS-CoV-2."
+    },
+    {
+      "hyp": "A ṣe agbekalẹ́ àwọn ẹ̀kúnrẹ́rẹ́ ìṣirò ìṣe-àìyípadà ti o rọrùn kan, ti a ṣe àkọsílẹ̀ sí bíi SEIR, láti ṣe ayẹ̀wò ipa ìyàrádá àwọn ènìyàn tí wọ́n ní àrùn SARS-CoV-2 ṣùgbọ́n tí kò ní àmì àrùn nípa ìdánwò gbogbo ènìyàn fún ìṣàkóso àrùn náà ní Ìpínlẹ̀ Lusaka ní Zambia."
+    },
+    {
+      "hyp": "Níbi yii, a ṣe àwọn àṣàrò mẹ́rin; (1) nígbà tí a gbà pé àwọn aláìní àmì àrùn jẹ́ 70% gbogbo àwọn àrùn COVID-19, àti (2) nígbà tí a gbà pé àwọn aláìní àmì àrùn jẹ́ 50% nìkan nínú àwọn àrùn náà."
+    },
+    {
+      "hyp": "Fún ìfiwéra, a ṣe ayẹ̀wò awọn awoṣe naà ni akọkọ́ lábẹ́ èrò pe àwọn ènìyàn tí kò ní àmì àrùn náà gbàdàgbà bí àwọn tí wọ́n ní àmì àrùn náà, lẹ́yìn náà, tí ó sì ṣeé ṣe jù, a gbà pé àwọn ènìyàn tí kò ní àmì àrùn náà kò gbàdàgbà ju ìdajì àwọn tí wọ́n ní àmì àrùn náà lọ."
+    },
+    {
+      "hyp": "Fún awọn awoṣe tí ó gbà gbọ́ pé 70% nínú àwọn àrùn náà kò ní àmì àrùn, ìwọ̀n ìdánwò gbogbogbòò tí ó gbẹ́kẹ̀lé ní ojoojúmọ́ tí ó tó bí 7911 ìdánwò/100000 ènìyàn tó péye láti mú ìdàrúdàpọ̀ náà dẹ́kun bí àwọn tí kò ní àmì àrùn bá jẹ́ idàgbàgbà díẹ̀ sí i, ṣùgbọ́n bí a bá gbà pé wọ́n ní agbára ìdàgbàgbà kan náà, a óò nílò ìwọ̀n ìdánwò tí ó tó bí 10028 ìdánwò/100000 ènìyàn."
+    },
+    {
+      "hyp": "Fún 50% ti kò ní àmì àrùn, iye ìwádìí gbogbogbòòmí kéré jùlọ ti ≥ 4540 ìwádìí/ 100000 ènìyàn tó tó láti ṣe ìkóògùn àrùn náà ní ìwọ̀n ìtànkálẹ̀ àrùn ti a gba gbọ́ fún àwọn tí kò ní àmì àrùn ní ìwọ̀n ìdàpọ̀ sí àwọn tí ó ní àmì àrùn."
+    },
+    {
+      "hyp": "Àròyẹ́ṣọ̀rọ̀ àti ìparí"
+    },
+    {
+      "hyp": "Àwọn ìtòlé wa sọ pé àìsàgbàlà àwọn arùn COVID-19 tí ó ní àrùn, pẹ̀lú àwọn tí kò ní àmì àrùn, nípa ṣíṣe àyẹ̀wò gbogbo ènìyàn, lè ṣee lo gẹ́gẹ́ bí ọ̀nà kan láti ṣe àkóso sí ìtànkálẹ̀ SARS-Cov-2 ní Lusaka, Zambia, ṣùgbọ́n yóò náà owó púpọ̀."
+    },
+    {
+      "hyp": "Ìwádìí ẹ̀jẹ̀ lọ́pọ̀lọpọ̀ ní ìlú ńlá bí Lusaka lè dín ìtànkálẹ̀ COVID-19 kú, ṣúgbọ́n ṣé òtọ́?"
+    },
+    {
+      "hyp": "Ní ọdún 2020, àwọn awọn ero kọ̀m̀pútà sọ̀rọ̀ tẹ̀wá pé a lè ṣe ìṣakosó ìtànkálẹ̀ COVID-19 dáadáa ju ní aàwọn ìlú ńlá nípà ìdánwò ìwọ̀n ńlá, a sì yá àwọn ti wọ́n bá rí ìdáàmú."
+    },
+    {
+      "hyp": "Síbẹ̀, àwọn onímọ̀ ìwádìí sọ pé ọ̀nà yìí lè pọǹdù, tí kò sì níṣẹ́."
+    },
+    {
+      "hyp": "Ní ìbẹ̀rẹ̀ àkókò àrùn ibà gbàgbá, ọ̀pọ̀lọpọ̀ ènìyàn tí àrùn COVID-19 bá ti kò fi hàn ìwọ̀n àrùn náà sílẹ̀, síbẹ̀ wọ́n sì tún tàn àrùn náà kálẹ̀ sí àwọn ẹlòmíràn."
+    },
+    {
+      "hyp": "Àwọn ìwádìí kan fi hàn pé ìdá 50% sí 80% àwọn ènìyàn tí wọ́n ní COVID-19 kò ní àmì àrùn (àwọn tí kò ní àmì àrùn), tí wọ́n sì lè jẹ́ olùṣe ìdààmú 40% sí 70% àwọn àrùn tuntun."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí fẹ́ mọ̀ bí́ wíwá àti yíyàwọ̀n àwọn ènìyàn tí kò ní àmì àrùn ṣe lè ràn wá lọ́wọ́ láti dá ìtànkálẹ̀ COVID-19 dúró."
+    },
+    {
+      "hyp": "Wọ́n sì tún fẹ́ mọ̀ bóyá ìdánwò gbogbo ènìyàn, èyí tó túmọ̀ sí ìdánwò àwọn ènìyàn púpọ̀ ní àṣàrò, ṣeé ṣe láti rí àwọn ènìyàn tí kò ní àmì àrùn."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí dá apẹẹrẹ kọ̀m̀pútà kan tí ó sọ̀rọ̀ nípa bí ènìyàn ṣe máa ń lọ láti ìdí tí wọ́n fi ṣeé gba àrùn, sí ìdí tí wọ́n fi fara hàn sí àrùn, sí ìdí tí wọ́n fi ní àrùn, sí ìdí tí wọ́n fi ya ara wọn sọ́tọ̀."
+    },
+    {
+      "hyp": "Wọ́n fi áàkọ́yẹ̀ sí ìtókasí data lati ẹkun ṣẹ Lusaka ni Zambia, eyi ti i jẹ́ ibí ipilẹ̀ aṣẹ aṣọ̀dé onílè wáyí tí o ní papa ọkọ̀ ofúurufù aàrin èyà tí ó sọ́kan pẹ̀lu orílẹ̀-èdè méjì."
+    },
+    {
+      "hyp": "Nítorí pé àwọn ànímọ́ COVID-19 dàbí ẹni pé ó yàtọ̀ láti ibì kan sí ibì kejì, wọ́n wo àwọn ipò mẹ́rin, níbi tí 50% tàbí 70% àwọn àrùn COVID-19 kò ní àmì àrùn, àwọn àrùn yìí sì jẹ́ bíi àwọn tí ó ní àmì àrùn tàbí idamẹta bíi wọn."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé ó ṣeé ṣe láti ṣe àkóso lórí ìtànkálẹ̀ COVID-19 nípa ṣíṣe àwọn ìdánwò gbogbo ènìyàn àti nípa mímú gbogbo àwọn ènìyàn tí wọ́n ní ìdánwò rere kúrò, àní àwọn tí kò ní àmì àrùn."
+    },
+    {
+      "hyp": "Wọ́n sọ pé kí iye àwọn àkòrí tí ó ga jùlọ dinku ní 90% káàkiri gbogbo ipò, ó ní láti ṣe àyẹ̀wo fún 10% àwọn ènìyàn ní Lusaka lójúmọ́."
+    },
+    {
+      "hyp": "Wọ́n tún rí i pé, bí a bá fẹ́ mú kí iye àwọn àrùn COVID-19 tuntun dúró ní ìwọ̀n kan náà, ó yẹ kí a ṣe àyẹ̀wo fún 22% àwọn ènìyàn lójúmọ́."
+    },
+    {
+      "hyp": "Bí o ti wú kí Zambia gbé àwọn ọ̀nà ìdámú COVID-19 pupò sí ìlẹ̀, àwọn àkọ́kọ́́ ààrọ̀ náà ṣe bí ẹni pé wọ́n ń pọ̀ sí."
+    },
+    {
+      "hyp": "Àdánwò gbogbo ènìyàn dín iye àwọn àrùn COVID-19 kù nípasẹ̀ 90% ní ìlú kékeré kan ní Ítálì."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, kò sí ìwádìí iṣaajù kankan tó fi hàn pé ó le ṣe iṣẹ́ ní ilú ńlá mìíràn."
+    },
+    {
+      "hyp": "Jẹ́ kí a ṣàkíyèsí pé àwọn onímọ̀ ìwádìí kò ṣe àdánwò gbogbo ènìyàn ní gidi nínú ìwádìí yìí; kàkà bẹ́ẹ̀, wọ́n dá àwòn kan ṣe ti ó fi hàn pé àdánwò gbogbo ènìyàn yóò ṣiṣẹ́ láti dín ìtànkálẹ̀ COVID-19 kù ní àwọn ìlú ńlá."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, wọ́n kìlọ̀ pé ó ṣeé ṣe kí iye owo rẹ̀ ga ju."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pé o lè jẹ́ ohun ti ò yẹ̀ julọ́ tí a bá dara pò mọ áwọn ọ̀nà mììn, bí í títílọ́, ìtọ́pàn áwọn tí ó bá ní ìpàdà, àti ìgbọ̀nà."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ iṣẹ́ ìwádìí láti Zambia tún tẹnumọ̀ pé àwọn àrùn COVID-19 tí kò ní àmì àrùn dà bíi pé ó gbòòrò sí i ní Àfríkà nígbà náà."
+    },
+    {
+      "hyp": "Ìwọ̀n ìgbòkègbòdó kekeré ti awọn àmì ìṣirò pupọ-jiini ní àwọn èyá Àfrika nítorí ìyàtọ̀ jiini àti ayika."
+    },
+    {
+      "hyp": "Àwọn ènìyàn Áfíríkà kò sí púpọ̀ nínú ìwádìí gẹ́nétíkì, síbẹ̀síbẹ̀, wọ́n ní ìyàtọ̀ gẹ́nétíkì tó pọ̀ jùlọ, wọ́n sì dojú kọ àwọn ìwòyíwòyí ìwàláàyè tó gbòòrò káàkiri ayé."
+    },
+    {
+      "hyp": "Nítorí pé wọn kò tíì ṣe àyẹ̀wò ọ̀nà ìṣiṣẹ́ ti ìṣàṣàpẹẹrẹ gẹ́gẹ́ bí ìtọ́kasí gẹ́gẹ́, ní àwọn ìdílé tí ó gbòòrò kàkà ní Àfríkà, a ṣe ìṣirò àwọn àmì ìpèníjà ìṣòro polygenic (PRS) nínú àwọn àṣàrò ní gbogbo Àfríkà àti nínú àwọn ìṣẹ̀dá ìwádìí láti Gúúsù Àfríkà, Yúgándà, àti UK láti lóye ìṣeéṣe àwọn ìwádìí gẹ́gẹ́ bí ìtọ́kasí dáadáa."
+    },
+    {
+      "hyp": "Ìṣéṣèdáàrúdàpọ̀ PRS ńṣeéṣèdáàrúdàpọ̀ dáadáa sí ì bá a ṣe ṣe àwọn ẹgbẹ́ àwọn tí a ṣe ìwádìí sí lórí ìdílé tí wọ́n jọ, ju àwọn ìwádìí tí kò bá a ṣe lórí ìdílé tí wọ́n jọ lọ."
+    },
+    {
+      "hyp": "Láàrin àwọn ọmọ ilẹ̀ Áfíríkà Gúúsù tí wọ́n ní ìgbàgbọ́ àti orílẹ̀-èdè tó yàtọ̀ síra, a rí i pé ìṣéṣè ìṣàṣàyàn àwọn ẹ̀ya ara (PRS) kéré fún gbogbo àwọn àmìṣeṣe ṣùgbọ́n ó yàtọ̀ láàrin àwọn ẹgbẹ́."
+    },
+    {
+      "hyp": "Ìyàǹg̀bàdá láàrin tí ọ̀láàrin àwọn ara Áfíríkà gbó̀ròpò sí ìyàǹg̀bàdá ní ìṣéṣè PRS jú àwọn ìyàǹg̀bàdá ẹ̀gbẹ́ ńlá mììn tí a ti gbó̀ròpò láàrin àwọn èniyàn ní UK lọ́dọ̀ Uganda."
+    },
+    {
+      "hyp": "A ṣe iṣiro PRS ninu awọn olugbe ti o ni itọsọna Afrika nipa lilo awọn iwadi iṣegun ti o jẹ ti awọn ara Europe nikan ni akawe si awọn iwadi iṣegun ti o yatọ si itọsọna; iyatọ ti o pọ si ṣe agbejade awọn ere iduroṣinṣin ti o tobi julọ fun iwọn hemoglobin ati iye ẹjẹ funfun, eyiti o ṣe afihan awọn iyipada ti o ni ipa nla ti o ni ọrọ itọsọna ninu awọn jiini ti a mọ lati ni ipa lori arun sẹẹli sickle ati idahun alaji, lọtọ."
+    },
+    {
+      "hyp": "Ìyàtọ̀ nínú ìṣéṣé deedé PRS láàrin àwọn ìlọ́siwájú Àfríkà tí ó ti gbé ní àwọn àgbègbè onírúurú tó pọ̀ tó bí àwọn ìlọ́siwájú àgbègbè ilẹ̀ ayé tí kò jẹ́ ti Àfríkà, tí ó sì ń béèrè fún ìmọ̀ràn tí ó bá a mu."
+    },
+    {
+      "hyp": "Ìdí tí a kò fi lè sọ̀rọ̀ òtítọ́ nípa àwọn àrùn ìdí-ẹ̀dá nínú àwọn ènìyàn tí wọ́n jẹ́ ọmọ ilẹ̀ Áfíríkà."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé ọ̀nà tí a ń lò lọ́wọ́lọ́wọ́ láti sọ téèyàn máa ní àrùn ìdígbà ẹ̀dààrọ̀ tàbí kò ní ní ṣiṣẹ́ dáadáa fún àwọn ènìyàn tí wọ́n ti ilẹ̀ Áfíríkà."
+    },
+    {
+      "hyp": "Èyí jẹ́ nítorí pé ìbáṣepọ̀ ìdáàmọ̀ tí ó ṣe àṣàrò tóbẹ́ẹ̀ ṣàpẹẹrẹ àwọn gẹẹni ti àwọn ènìyàn ilẹ̀ Yúróòpù jùlọ."
+    },
+    {
+      "hyp": "Ìbáṣepọ̀ Gbogbo-Jiinomi (GWAS) ni ìtumọ̀ ọ̀rọ̀ “Genome-Wide Association Studies”, ọ̀rọ̀ náà sì jẹ́ ọ̀rọ̀ tí àwọn onímọ̀ sáyẹ́nsì máa ń lò láti wá àwọn ànímọ́ àti àrùn nípa lílo gẹ́ẹ̀nì."
+    },
+    {
+      "hyp": "Lóòótọ́, wọ́n lè ló GWAS láti kà áṣìṣe àrùn tàbí ànímọ́ ẹni nípa ìlọ́rìṣà."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ ìdáta jínì ní GWAS, sibẹ̀, ti wá láti ọ̀dọ̀ àwọn ènìyàn ti ìran ilẹ̀ Yúróòpù."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí fẹ́ mọ bí ìṣirò tí wọ́n ń lò láti mọ ewu àrùn ìdígbà lọ́dọ̀ ìdíyelé ṣe ń ṣiṣẹ́ dáadáa fún àwọn ènìyàn tí ìdíyelé wọn jẹ́ ti Àfríkà."
+    },
+    {
+      "hyp": "Wọ́n tún fẹ́ mọ̀ bí GWAS tó yàtọ̀ sí i, èyí tó túmọ̀ sí ìbáṣepọ̀ ìdáàmọ̀ gẹ́gẹ́ bí àkọ́ọ̀lẹ̀ ìdáàmọ̀ tí ó ní ìsọfúnni gẹ́gẹ́ bí ìdílé àwọn ará Àfíríkà sí i, yóò mú kí ìṣàṣàrò túbọ̀ dára sí i."
+    },
+    {
+      "hyp": "A mọ̀ ìṣiro náà sí ìlànà iṣẹ́ ọgbọ́n ìmọ̀ sí ìgbàgbọ́ ju bí “ìwọn ewu àmúkù pupọ̀,” tàbí PRS."
+    },
+    {
+      "hyp": "Wọ́n lo kọ̀m̀pútà láti kà áwọn ewu ìgbẹ́nígbẹ́ ti a ti sọ̀rọ̀ tẹ́lẹ̀̀ sí nípa àwùjọ ará Áfíríkà nípa lílò GWAS, wọ́n sì lo ìwé ìtọ́jú ẹ̀jẹ̣ àwọn ènìyàn Áfíríkà láti wo àwọn ànímọ́ kan tàbí àrùn kan tí ó lè jẹ́ nítorí àwọn ìyípadà nínú gẹ́ẹ̀nì."
+    },
+    {
+      "hyp": "Nígbà tí wọ́n lo European GWAS, wọ́n rí i pé ìwọ̀n ewu ìgbẹ́nígbẹ̀é jẹ́ deede sí i ju tí àwọn ènìyàn tí wọ́n ní ìlọ́siwájú ilẹ̀ Yúróòpù, ní ìfiwéra pẹ̀lu àwọn tí wọ́n ní ìlọ́siwájú ilẹ̀ Áfíríkà fún ọ̀pọ̀ àwọn ànímọ́."
+    },
+    {
+      "hyp": "Wọ́n wí pé ìwọ̀n ewu náà kéré gan-an láàrin àwọn àgbègbè Áfíríkà nítorí pé ìyàtọ̀ pọ̀ gidigidi láàrin àwọn ènìyàn, èyí tí kò bá ohun tí a rí fún ìtọ́kasí ilẹ̀ Yúróòpù mu."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pé ìṣéṣèdá didí PRS ń pọ̀ sí i bí ipilẹ̀ ọmọ Áfíríkà bá ń dín kù."
+    },
+    {
+      "hyp": "Àwọn ènìyàn Etiopia ní ìṣàṣàrò tó dára jù fún àwọn àrùn ìdí-ìṣe nítorí pé wọ́n jọra sí àwọn ènìyàn ilẹ̀ Yúróòpù ní ti ìdí-ìṣe."
+    },
+    {
+      "hyp": "Nígbà tí a bá ń lò GWAS tó yàtọ̀ síra sí ì, tí ó sì ní àwọn ènìyàn tí wọ́n ti ilẹ̀ Àfríkà, ìṣàṣeyọrí ìṣàṣàrò náà ṣeé ṣe dáradára sí i."
+    },
+    {
+      "hyp": "Ìwódè àrùn ẹ̀jẹ̀ jẹ́ díẹ̀ sii ní tí ìṣédáradára."
+    },
+    {
+      "hyp": "Àwọn ìwádìí ti tẹ́lẹ̀ ti fi hàn pé PRS kéré fún àwọn ènìyàn Àríkà, èyí túmọ̀ sí pé ìbáṣepọ̀ GWAS sọ̀rọ̀ nípa ewu àrùn ìdí-ìbílẹ̀ tí kéré fún àwọn ènìyàn tí wọ́n ti ilẹ̀ Àríkà."
+    },
+    {
+      "hyp": "Ṣùgbọ́n a mọ̀ pé èyí kì í ṣe ohun ti ó jẹ́ bẹ́ẹ̀ gan-an."
+    },
+    {
+      "hyp": "Ìwádìí yìí ṣàlàyé pé àwọn iye ìwọ̀n ewú àrùn génétikì tó kéré yìí jẹ́ nítorí pé a kò tó gbódọ̀ ṣe aṣoju géẹ̀ní Áfiríkà ní ìbáṣepọ̀ génétikì gbogbò (GWAS), tí ó sì mú kí iye ìwọ̀n PRS lọ́ọ́là mà kò lè ranlọ́wọ́ dáadá ní ìṣé àṣàkiyesí àrùn génétikì ní Áfiríkà."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé ó dára jù láti lo ìpìlẹ̀-ìdáta tó yàtọ̀ sí i, èyí tó ní ìsọfúnni gẹ́nétìkì láti ọ̀dọ̀ àwọn ènìyàn tí wọ́n jẹ́ ọmọ ilẹ̀ Áfríkà."
+    },
+    {
+      "hyp": "Nítorí náà, a nílò iṣẹ́ síwájú sí i láti sọ̀rọ̀ ìwádìí GWAS di onírúurú kí ó lè pẹ̀lú ìran ilẹ̀ Áfíríkà, kí a bàa lè sọ̀rọ̀ ìwọ̀nbà àrùn ìdí-ìran ní àwọn ènìyàn Áfíríkà tó tọ́."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé iwadi yìí ti wá láti Àfíríkà, Amẹ́ríkà àti United Kingdom."
+    },
+    {
+      "hyp": "Àṣàyẹ̀wò Ìwòye Ìwòyè àti Ìwádìí Sẹ́ẹ̀lì níbí tí a ti lè dáàbọ̀ Ìbímọ̀ Ìgbẹ́kẹ̀lé inú Ẹ̀pọ̀n Ọ̀rọ̀-ọ̀rọ̀ àti Àrùn Èpòn Ọ̀rọ̀-ọ̀rọ̀ ni Namibia."
+    },
+    {
+      "hyp": "A gbà pé òwùn 851,340 obìnrin ní Námíbía wa ní ewu árùn fàìrọ̀ọ̀sì pápìlọ́mà èniyàn (HPV) ti ó lè fa árùn ègbọ̀n ọmùn."
+    },
+    {
+      "hyp": "Àwọn ìwádìí wíwò ti ó ló ásítiki ásídi (VIA) àti kraiotérápì ti jẹ́́ áṣeyọrí gidigidi."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, kò sí ìdáàmọ̀ tó bá ìwádìí nípa ipa àwọn eto ìwádìí àìsàn kánṣà ọmùn ọ̀rọ̀."
+    },
+    {
+      "hyp": "Ìwádìí yìí ṣe ayẹ̀wó ìwọǹà àti ìwọǹà cytology níbí tí a ti ṣe idíwọ̀n fún àwọn ìṣan tí ó wa ní inú ẹ̀pọ̀n ọmùn (CIN) àti áìsàn ẹ̀pọ̀n ọmùn ní Namibia."
+    },
+    {
+      "hyp": "Ìwádìí fi hàn pé àwọn obìnrin tí wọ́n ní HPV, cervicitis, koilocytosis àti atypia ní ewu tí ó pọ̀ sí i láti dán wọn wò pé wọ́n ní VIA rírànlọ́wọ́."
+    },
+    {
+      "hyp": "Àwọn obìnrin àgbà, páàtàkí jùlọ̀ àwọn tí ó ní HIV, ní òpọ̀lọpọ̀ jẹ́ kí a máa ri í àrùn è̀yà squamous cell carcinoma (SCC)."
+    },
+    {
+      "hyp": "Ìwádìí VIA dàbí ẹni pe ó ṣeé ṣe ní ìwádìí àìsàn, bí ò ti wú kí a ṣe àtúntọ̀ sí ìló colposcopy ninú ìtọ́jú alábọ̀n ninú ipò Namibia, ki ò sí lo ò pẹ̀lú esí HR-HPV ti ó dára."
+    },
+    {
+      "hyp": "A gbà níyànjú pé kí a lò ònà ìwádìí tí ó ní ìwádìí HPV fún àwọn ẹniyan tí ó ní ọjọ́-ori àti ewu tí ò yàtọ̀ (áàpọǹbẹrẹ, awọn tí ó ní HIV, àrùn tí ó bá áfòjú ara jẹ)."
+    },
+    {
+      "hyp": "A lé gbàd́èg̀bá ìwádìí sí ìlerà sí ìlerà jù bẹ́ẹ̀ lọ́wọ́ ìtọ́jú tí ó ló awòn awòn tí ó ló ìṣégun ìwádìí tí táa ti ṣé télé, àìmùǹọ́ tí ó bàa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣée ṣé áti iṣẹ́ tí ó báa mú òṣiṣẹ́ ilerà ní aṣẹ́, ìmọ̀ tí ó ṣ"
+    },
+    {
+      "hyp": "Àwọn obìnrin Naimibià tí ààrùn kànṣẹ̀rì ọ̀rùn-ọmọ de bá gbọ́dọ̀ ṣe àyẹ̀wò kí a sì tọ́jú wọn nígbà tí ó bá yá."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ àwọn àdánwò lè fi ìwọ̀n ewu àrùn kànṣà ọ̀rùn-ọmọ bíbí hàn fún àwọn obìnrin, ṣùgbọ́n àwọn àyẹ̀wo ìgbà gbogbo ni Namibia kì í ṣe àwọn àdánwò wọ̀nyí nígbà gbogbo."
+    },
+    {
+      "hyp": "Àwọn olùwádìí sọ pé àjẹ́ṣiṣẹ́ ìdánwò déédéé, láti rí àwọn àmì ìkìlọ̀ nígbàáà, lè dáàbò bo àwọn obìnrin kúrò nínú àrùn ikú burúkú yìí."
+    },
+    {
+      "hyp": "Àrùn ègbọ̀n ọmùn (ègbọ̀n apàkan isalẹ̀ ikùn) fá ikú pupò láàrin àwọn obìnrin káàkiri aye."
+    },
+    {
+      "hyp": "Ọ̀kan lára àwọn okùnfà àrùn ègbọ̀n ọmùn ọ̀gbọ̀n ti o wọ́pọ̀ jùlọ ni Human Papillomavirus, tàbí HPV."
+    },
+    {
+      "hyp": "HPV jẹ́ fáìrọ̀sì tó máa ń bá sẹ́ẹ̀lì àpọ̀m̀bí jẹ́, tí ó sì máa ń dá àwọn ìgbẹ́mìí tí a ń pè ní ìṣọ́gbẹ́, tí ó lè di àrùn èèkàn nígbà díẹ̀."
+    },
+    {
+      "hyp": "Bí o ti wú kí ògùn àìsàra HPV wa, púpò àwọn obìnrin ní ìlú Áfrika, páàpàà ní Namibia, kò lè lo o."
+    },
+    {
+      "hyp": "Èyí túmọ̀ sí pé, ṣíṣayẹ̀wo fún àrùn naà tàbí àwọn ìṣòro tí ó faa ṣe pàtàkì gan-an fún àwọn obìnrin wọnyi, nítorí ó jẹ́ ọ̀nà tí ó dára jùlọ láti ran wọn lọ́wọ́ láti dènà àrùn èèkàn."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí nínú ìwádìí yìí sọ pé nítorí náà, àwọn ilé ìwòsàn nílò ìtọ́ní tó péye àti ìsọfúnni nípa àwọn ìdánwò tó dára jùlọ láti lo."
+    },
+    {
+      "hyp": "Wọ́n fi kún un pé ògbà iṣẹ́ ìtójú ilera náà náà nílò ìsọfúnni sí i sí i nípa bí àwọn ohun bí́ ọjọ́-orí tàbí ilera ṣe nípa lórí ewu tí obìnrin ní láti gba HPV àti àrùn èèkàn."
+    },
+    {
+      "hyp": "Wọ́n ṣe iwádíí bí ìwọ̀n agbára àwọn ọ̀nà ìwádíí gbogbogbòò (tí a pe ní ọ̀nà ìwádìí ìṣé) ṣe rí fún wíwá HPV àti àwọn ìṣékú."
+    },
+    {
+      "hyp": "Wọ́n tún nífẹ̀ẹ́ láti ṣe àfiwé ọ̀nà àyẹ̀wò, fún àpẹẹrẹ, gbigba sẹ́ẹ̀lì láti inú àpọ̀yọ̀ láti wá àṣìṣè, ní ìfiwéra pẹ̀lu kíkàn fún àwọn ìṣòro nìkan."
+    },
+    {
+      "hyp": "Wọ́n sì tún fẹ́ mọ̀ bóyá ìyàtọ̀ láàrin àwọn obìnrin, bí́i ọjọ́ orí wọn, tàbí bóyá wọ́n ní àwọn àrùn mìíràn bí HIV, yí àǹfààní wọn láti gba HPV àti kànṣẹ̀rì pa dà."
+    },
+    {
+      "hyp": "Kí a mọ̀ ọ̀rọ̀ yìí lè ràn àwọn ilé-iwosan àti àwọn ilé-iṣẹ́ ìtójú ara lọ́wọ́ láti lo àwọn ọ̀nà àyẹ̀wò lọ́na tí ó dára jùlọ."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣàyẹ̀wò ìwé ìtọ́kasí àwọn aláìsàn fún àwọn obìnrin 214 tí wọ́n ti ṣe àyẹ̀wò àti ìtọ́jú fún HPV, àwọn ìṣòro, àti àrùn ẹ̀gún ọmọ bíbí ní ilé-iwòsàn kan ní Windhoek, Namibia."
+    },
+    {
+      "hyp": "Wọ́n fi aàrẹ̀ sí ìṣàn ọ̀gbẹ̀ ọrùn ìbẹ̀rẹ̀, èyí tí ó jẹ́ pé àkókò tí a lè tọ́jú àrùn náà rọrùn síi àti ní ṣiṣe."
+    },
+    {
+      "hyp": "Wọ́n tún kọ́ ìsọfúnni nípa ọjọ́ orí olúkúlùkù obìnrin, àti ìlera gbogbogbòò rẹ̀."
+    },
+    {
+      "hyp": "Nípa ṣíṣayẹ̀wò àwọn ìwé ìròyìn wọ̀nyí, wọ́n rí i pé àwọn ọ̀nà àyẹ̀wò oriṣiriṣi sábà máa ń fún àwọn oṣiṣẹ́ ìtójú ìlera ní ìsọfúnni tí ó yàtọ̀, àti pé wọ́n lè ṣeé ṣe láti lo wọn ṣáájú tàbí lẹ́yìn tí HPV ti di àrùn kansa."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, a sábà máa rí àrùn èèkàn nípa gbígbẹ́kẹ̀lé àti ṣíṣàyẹ̀wò sẹ́ẹ̀lì àpọ̀."
+    },
+    {
+      "hyp": "Síbẹ̀, ó ṣeé ṣe láti rí àwọn ìṣóògbà náà nípa ṣíṣayẹ̀wò wọn ní ojú, nípa lílò ọ̀nà tí a ń pè ní “ṣíṣayẹ̀wò nípa ojú pẹ̀lú àṣídí asétíki” (VIA)."
+    },
+    {
+      "hyp": "Àǹfààní ọ̀nà iṣẹ́ yìí ni pé ó mú kí àwọn dókítà lè rí àwọn ìṣẹ̀lẹ̀ àìsàn yára, tí kò sì sí ìnáwó púpọ̀."
+    },
+    {
+      "hyp": "Èyí jẹ́ nítorí pé ó lo ohun èlò ìtọ́jú ìlera ìpìlẹ̀ tí a ti máa ń lò fún àwọn àyẹ̀wo ọmọbíbí obìnrin, bíi spékulúmu (ohun èlò irin tí a fi ń wo inú àgbàdà)."
+    },
+    {
+      "hyp": "Wọ́n tún rí i pé, bí a bá ṣe àdàpọ̀ ọ̀nà ìwádìí ọ̀tọ̀ọ̀tọ̀, òpọ̀ ìsọfúnni nípa ewu kínṣì́ ti obìnrin kan lè gbá doktọ̀, páàpàà nínú ọ̀pọ̀ ìwádìí."
+    },
+    {
+      "hyp": "Sẹ́yìn ìyẹn, àwọn onímọ̀ ìwádìí rí i pé àwọn obìnrin àgbàlagbà, pàápàá àwọn tí wọ́n ní HIV, ní àṣeyọrí púpọ̀ sí i láti ní ìwádìí àrùn èèkàn, nítorí náà, ṣíṣe àyẹ̀wò wọn déédéé lè ṣe pàtàkì gan-an."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí fi kún un pé díẹ̀ lára àwọn obìnrin ni wọ́n ṣe àyẹ̀wò fún HPV (kí wọ́n tó wá àwọn ìṣòro), bí ó tilẹ̀ jẹ́ pé àyẹ̀wò náà wà."
+    },
+    {
+      "hyp": "Sísẹ̀ bẹ́ẹ̀ lè jẹ́ ọ̀nà pàtàkì láti rí àrùn náà paápáà nígbà tí ó bá ṣì wà ní ìbẹ̀rẹ̀."
+    },
+    {
+      "hyp": "Gbogbo rẹ̀, wọ́n sọ pe àwọn ìwádìí wọn fi hàn pe ó yẹ kí eto iṣẹ́-ìlera ní Namibia ṣe ètò àwọn àṣàyàn ìdènà àrùn HPV àti àrùn ẹ̀gbà kanṣọ́rọ̀ pẹ̀lú ìrònú púpọ̀, nípa lílò àwọn ọ̀nà ìdánwò tí kò níye lórí, tí ó sì ní ipa rere láti rí àwọn àrùn wọ̀nyí nígbà tí wọ́n bá ṣẹ̀ṣẹ̀ bẹ̀rẹ̀."
+    },
+    {
+      "hyp": "Ìwádìí náà jẹ́ iṣẹ́ aṣojúú láàrin àwọn onímọ̀-èrọ̀ láti Namibia àti Gúsàú Sóúti Àfrika."
+    },
+    {
+      "hyp": "Àǹfààní ìtọ́jú nínú àkóràn HBV/HIV ti a fi wé àkóràn HBV nìkan nínú ẹgbẹ́ àwọn ènìyàn South Africa kan."
+    },
+    {
+      "hyp": "Nítorí àwọn àfojúsùn àgbáyé fún pípàdánù àrùn ọ̀gbẹ̀dẹ̀dẹ̀ B (HBV), a gbéṣẹ̀ láti ṣàpẹẹrẹ àwọn ènìyàn tí HBV nìkan ṣe àrùn fún, sí àwọn tí HBV/HIV ṣe àrùn fún papọ̀, láti ṣe ìṣírò ipa ìtọ́jú, àti láti darí àwọn ìṣe àtúnṣe nínú ìtọ́jú àwọn aláìsàn."
+    },
+    {
+      "hyp": "A ṣe ìròyìn àwọn ìwádìí tí a ṣe láti orí ìṣàkóso àwọn ènìyàn tó ní àrùn ẹ̀dùn ẹ̀dọ̀ aláìgbàgbọ́ (CHB) 115, níbi ìwòsàn ilé ẹ̀kọ́ gíga ní Cape Town, South Africa."
+    },
+    {
+      "hyp": "Àrùn HIV ti wà pẹ̀lú àrùn mììn nínú 39 (34%) àwọn olùkọ̀."
+    },
+    {
+      "hyp": "A gba ìwé kíkọ́ àwọn ìṣiro ènìyàn, àwọn àyẹ̀wò àrùn àti àwọn ìwádìí ilé-ìṣẹ́ nígbà kan náà."
+    },
+    {
+      "hyp": "Ní ìwàdíí, àwọn agbalagba tí HBV nìkan ṣe àkóbá fún wọn kò sí láàárín àwọn tí HBeAg wà lọ́dọ̀ wọn (p=0.01), wọn kò sì sí láàárín àwọn tí a ṣe ìwádìí fún pẹ̀lú elastography (p<0.0001), bẹ́ẹ̀ ni wọn kò sí láàárín àwọn tí ó gbàdúrà ìtọ́jú aróògì (p<0.0001); ṣùgbọ́n, ó ṣeé ṣe kí àwọn èròjà HBV wà lọ́dọ̀ wọn (p=0.04), àti pé ó ṣeé ṣe kí àwọn àmì àrùn ẹ̀dọ̀ wà lọ́dọ̀ wọn, pẹ̀lú thrombocytopaenia tí ó pọ̀/tí ó burú jáì (p=0.007), bilirubin tí ó ga (p=0.004), àti APRI tí ó ga (p=0.02), ní ìwééwé sí àwọn tí ó ní àkóbá HIV pẹ̀lú."
+    },
+    {
+      "hyp": "Àwọn àrùn kánṣìí ìṣàn-ọkàn mẹ́ta gbogbo wọn sì ti bẹ̀rẹ̀ ní àkóbá HBV nìkan."
+    },
+    {
+      "hyp": "Àwọn ìdààmọ̀ wa fi hàn pé àwọn ènìyàn tí wọ́n ní àrùn HBV nìkan lè ní àìlera ju àwọn tí wọ́n ní àrùn HIV pẹ̀lú lọ, tí ó ṣe afihan àwọn àìṣe déédéé tó ṣeé ṣe nínú ìtọ́jú, ìtẹ̀lé àti ìtọ́jú."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ iṣẹ́ ìwádìí fún ìtọ́niṣẹ̀ lórí bí a ṣe lè mú ìtọ́jú àrùn Hepatitis B kù sí i dára sí i."
+    },
+    {
+      "hyp": "Nínú ìwádìí kan tí kò jìnnà sí, àwọn onímọ̀ ìwádìí lè ṣàlàyé bí jíjàkadì gbààrùn Hepatitis B (HBV) àti àrùn Human Immunodeficiency Virus (HIV) ṣe lè fúnni ní àǹfààní ìtọ́jú ju jíjàkadì gbààrùn Hepatitis B (HBV) nìkan lọ."
+    },
+    {
+      "hyp": "Ní Gúúsù Áfíríkà, àrùn gbàgbàdègbà tí ó fa ìbàjẹ́ ara pẹ̀lú HBV àti HIV jẹ́ ìṣòro ńlá."
+    },
+    {
+      "hyp": "Àwọn oníṣègùn nílò láti lóye bí àwọn fàírọ̀sì wọ̀nyí àti àwọn oògùn tí a ń lò láti tọ́jú wọn ṣe ń bá ara wọn lò, kí wọ́n lè ṣe àyẹ̀wò àti ìtọ́jú àwọn aláìsàn dáadáa."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí fẹ́ ṣe àfiwé ipa ìtọ́jú lórí àwọn àrùn ọ̀nà HBV nìkan, pẹ̀lu àwọn àrùn ọ̀nà HBV àti HIV."
+    },
+    {
+      "hyp": "Fún iwadí yìí, àwọn onímọ̀ iwadí pẹ lú 115 àwọn alábọ̀n agbá tó ní ààrùn Hepatitis B ti gbooro (CHB)."
+    },
+    {
+      "hyp": "Wọ́n pe wọ́n kọ́wọ́ láti ilé ìwòsàn Tygerberg ní Cape Town, Guusu Afirika."
+    },
+    {
+      "hyp": "Àwọn àrùn kan ni àrùn HIV (39) bá, àwọn yòókù sì ni àrùn HBV nìkan."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ iwadi ṣàyẹ̀wò irúgbìn, ọjọ́ orí àti ìbálòpò, wọ́n sì ṣe ọ̀pọ̀lọpọ̀ ìdánwò iṣẹ́-abẹ̀ àti ilé-ìwádìí."
+    },
+    {
+      "hyp": "Wọ́n rí i pé àwọn aláàrùn ti ó ní HBV nìkan ni ó kere sí ìṣélọ́wọ́ lórí irú ìtọ́jú arun ègbògí-fàìrọ̀sì eyikeyii, ti ń fi hàn ní àwọn aàmì árùn ẹ̀dọ̀ ti ara (nítorí pé HBV jẹ́ fàìrọ̀sì ti ó lè fa àrùn ẹ̀dọ̀ ti ó lèwu)."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí lè fi hàn pé àwọn ènìyàn tí wọ́n ní HBV nìkan ni wọ́n wà ní àìlera nígbà tí a bá fi wọ́n wé àwọn tí wọ́n ní HIV àti HBV pọ̀, nítorí pé àwọn aláìsàn tí àwọn fàírọ̀sì méjèèjì bá, ó ṣeé ṣe kí wọ́n máa lo oògùn tí ó ń bá HIV jagun, èyí tí ó tún ní àǹfààní díẹ̀ nínú ìjà sí àrùn HBV."
+    },
+    {
+      "hyp": "Àwọn ìṣẹ̀dá iwadi yìí ṣe afihan ipa tí ìyàtọ̀ láàrin ìtọ́kàsí, àtẹ̀léwọ̀n, àti àwọn aṣayan ìtọ́jú fún HBV le ní, nígbà tí a bá fi wé pẹ̀lù HIV àti HBV tí wọ́n bá jọ̀, èyí tí ò ń ṣe aṣeyọri fún àwọn tí HIV àti HBV tí bá jọ̀ wọ́n."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí tẹ̀nù mò pé a gbọ́dọ̀ mu iṣẹ́ wa dára sí ì, ki o sì jẹ́ kí òtọ̀ọ̀mọ tí òtọ̀ọ̀mọ̀, ki o sì jẹ́ aabò fún awọn alápọǹbẹ̀ tí HBV nìkan ṣe ní."
+    },
+    {
+      "hyp": "Ọ̀kan lára àwọn àkọ̀ọ́lẹ̀ ìwádìí yìí ní iye ènìyàn tí a lo tí kéré, tí ó sì jẹ́ ti orílẹ̀-èdè kan nìkan àti àwọn eto ìwòsàn wọn."
+    },
+    {
+      "hyp": "Àwọn ibí ìtọ́jú ara tó gàgà jù bẹ́ẹ̀ lọ́pọ̀, bóyá, lè fi ìrírí ti ọ̀tọ̀ hàn nígbà tí a bá ṣe àfiwé pẹ̀lu ohun tí a rí ninu ìwádìí yìí."
+    },
+    {
+      "hyp": "Àwọn ìwádìí mìíràn ní láa fi máa ṣe kí a lè mọ̀ ìyàtò tí a rí ninú ìwádìí yìí dáadáa."
+    },
+    {
+      "hyp": "Iwe iwadi yi fi agbara iṣọpọ han, pẹlu awọn onimọ-iwadi ti n ṣiṣẹ lori iṣẹ-ṣiṣe yii lati South Africa ati United Kingdom."
+    },
+    {
+      "hyp": "Nípa lílo àwọn ènìyàn náà ní South Africa gẹ́gẹ́ bí àwọn aríwá fún ìwádìí yìí, ó bá ara rẹ̀ mu fún apá kan lára àwọn ènìyàn Áfríkà."
+    },
+    {
+      "hyp": "Sísì, ìwádìí yìí lè ranlọ́wọ́ láti mú ìtójú tí ó dára sí ìdá̀gbà fún àwọn tí ń jìya nínú HBV, HIV, tàbí méjẹ̀ẹ́jì."
+    },
+    {
+      "hyp": "Àṣàyẹ̀wò Ipa Àìdáàbòbò lórí Iṣẹ́ Ọ̀wọ́ Àwọn Obìnrin ní Àgbègbè Ìjọba Ìbílẹ̀ SHIRORO, Ìpínlẹ̀ Nàìjíríà."
+    },
+    {
+      "hyp": "Ìwádí yii ṣe àyẹ̀wó ipa aìdáàbòbò lórí iṣẹ́ ọ̀wọ́ àwọn obìnrin ní Àgbègbè Ìjọba Ìbílẹ̀ Shiroro, Ìpínlẹ̀ Nàìjíríà, ní gbígbẹ́kẹ̀lé lórí àwọn ọ̀rọ̀ nípa ìgbẹ́kẹ̀lé owó àwọn obìnrin, irú iṣẹ́ ọ̀wọ́ tí ó gbòòrò láàrin wọn àti ìwọ̀n ipa aìdáàbòbò lórí àwọn ìsapá iṣẹ́ ọ̀wọ́ wọn."
+    },
+    {
+      "hyp": "A ṣe àṣàwákiri fún àwọn obìnrin 377, eyi ti o mú kí a rí i pe àwọn obìnrin ni Shiroro jẹ́ oníṣowó gidigidi pẹ̀lú ìwọ̀n ìfẹ̀sìlẹ̀ owó gíga, tí wọ́n ń ṣe iṣẹ́ kékeré àti àwọn iṣẹ́ ọjà kékeré jùlọ."
+    },
+    {
+      "hyp": "Ìwádìí naà tun rí pé bí o ti wú kí àìlẹ́wú bá ní ipa ti kò dárà lórí iṣẹ́ aṣọ̀wọ̀n obìnrin ní tí ìbínú tabí ìdinkú ọrọ̀ láàrin àwọn nǹkan mììn, iye obìnrin aṣọ̀wọ̀n kò tí rí ìdinkú tí ò tó."
+    },
+    {
+      "hyp": "Ìwádìí náà g̀bàànú pé kí a dàgbà àwọn etò ìṣẹ́ aabò tí ó lè mú kí áwọn obìnrin lè lówọ́ sí ìṣẹ́ iṣẹ́ owó, kí a sí dàgbà àtí mú àwọn ètọ́ aabò áàyẹ̀ káàkiri lágbára láti jà fá ìwọ̀ǹgbà láàrin agbègbè ìwádìí náà."
+    },
+    {
+      "hyp": "Àwọn obìnrin tí wọ́n ń ṣe iṣẹ́ ọ̀jà ní Nàìjíríà nílò àbò sí i púpọ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé àwọn obìnrin tí wọ́n ń ṣe iṣẹ́ òwò ní Nàìjààrìà jẹ́ àwọn onímọ̀ iṣẹ́ ọwọ́ tí ó ga julọ tí wọ́n sì gbẹ́kẹ̀lé ara wọn ní ọrọ̀ owó, ṣùgbọ́n ààbò kúrò lọ́wọ́ àwọn ọdaràn jẹ́ ìṣòro kan."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí fẹ́ mọ̀ bí ààbò àti ààbò ti ojú gbàdúrà sí àwọn obìnrin tó ń ṣe iṣẹ́ ọjà ní Àgbègbè Ìjọba Ìbílẹ̀ Shiroro, Ìpínlẹ̀ Nàìjíríà, àti bí èyí ṣe lè nípa lórí iṣẹ́ ọjà wọn àti òmìnira wọn ní ọrọ̀ owó."
+    },
+    {
+      "hyp": "Wọ́n bá obìnrin 377 sọ̀rọ̀ ní agbègbè yìí nípa àwọn ìṣòro tí wọ́n dojú kọ ní ti iṣẹ́ ọ̀wọ́ wọn, ìgbẹ́kẹ̀lé owó àti àìdáàbò."
+    },
+    {
+      "hyp": "Wọ́n jẹ́ ká mọ̀ pé 43% àwọn obìnrin sọ pé wọn kò gbẹ́kẹ̀lé ọkùnrin fún owó, àti pé 32% sọ pé àwọn ènìyàn mìíràn wà tí wọ́n gbẹ́kẹ̀lé wọn fún owó."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà tún rí i pé 85% àwọn obìnrin náà ń ṣe owó nípa iṣẹ́ ọ̀dàlẹ̀, àti pé díẹ̀ nìkan ló sọ pé wọ́n gbẹ́kẹ̀lé owó ìfẹ́ṣọ̀."
+    },
+    {
+      "hyp": "Bí i 56% ṣe gba owó nípasẹ̀ iṣẹ́ oko, ati 79% nípasẹ̀ iṣẹ́ ọjà."
+    },
+    {
+      "hyp": "Nípa bí i obìnrin kan nínú márùn-ún ló ń jèrè owó nípasẹ̀ dídì irun, aṣọ didán, ṣíṣe àṣọ̀dá tàbí fífọ aṣọ."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ jù lọ obìnrin (91%) sọ fún àwọn onímọ̀ ìwádìí pé àwọn iṣẹ́ ọwọ́ wọn ni ìbẹ̀rù ìkọlù láti ọwọ́ àwọn olè àti àwọn ọdaràn kàn."
+    },
+    {
+      "hyp": "Wọ́n máa ṣe pàdánù owó, àti títí kan ọkọ wọn paápàá nítorí àwọn ikọlu wọnyi, eyi ti máa ń yí wọn lẹ́nu lati máa bójú tó àwọn ọmọ wọn nìkan."
+    },
+    {
+      "hyp": "Àwọn obìnrin náà sì wí pé wọn kò ní ọgbọ́n tó, bẹ́ẹ̀ ni wọn kò ní owó tó láti le fún iṣẹ́ ọwọ́ wọn lójú."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ròyìn pé láìka àwọn ìṣòro wọ̀nyẹn sí, àwọn obìnrin Nàìjíríà ṣi ń ṣe rere gidigidi nínú iṣẹ́ ọ̀wọ́ wọn."
+    },
+    {
+      "hyp": "Wọ́n wí pé àwọn ènìyàn oríṣiríṣi ẹ̀yà àti ẹ̀sìn wà ní Shiroro, èyí sì dára fún iṣẹ́ ọjà."
+    },
+    {
+      "hyp": "Ìwádìí yìí ń takò si àwọn ìwádìí àwọn onímọ̀ ṣiṣe mìíràn tí wọ́n sọ pé àwọn obìnrin kò ṣeéṣe láti ní àṣeyọrí ní iṣẹ́ ọjà nítorí pé wọ́n máa ń ṣe iṣẹ́ ìtọ́jú nílé."
+    },
+    {
+      "hyp": "Kàkà bẹ́ẹ̀, àwọn onímọ̀ ìwádìí wọ̀nyí sọ pé àṣeyọrí àwọn obìnrin ti ń ṣe iṣẹ́ ọ̀jà ní apá ilẹ̀ Nàìjà yìí ni àwọn ewu ìkọlù àti ìjàkùlẹ̀ ọ̀daràn ń kọlù jùlọ."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí gbani nímọ̀ràn pé gbogbo àwọn olùpìǹdà-píǹdà gbọ́dọ̀ kọ́kọ́ bá ara wọn wá, kí wọ́n sì bá a ja sí àwọn ohun tó lè mú kí iṣẹ́ ọ̀wọ́ ṣòro láti ṣe."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, ó yẹ kí àwọn obìnrin ní Nàìjààríàà gba àwọn ohun èlò bí ìtọ́jú owó, oko àti ààbò sípò."
+    },
+    {
+      "hyp": "Wọ́n tún ràn án lọ́wọ́ pé àwọn obìnrin tó wà nínú iṣẹ́ òwò lè dá àwùjọ sílẹ̀ tó máa ràn wọ́n lọ́wọ́ láti bá àwọn olè àti àwọn ọdaran jagun."
+    },
+    {
+      "hyp": "Iye Selenium, Kopa, ati Sinku ninu Ẹ̀jẹ̀ Ìyá Lákòókò Ìlọ́yùǹ ní Íbáṣepọ̀ pẹ̀lu Ewu Ìbí Ọmọ́ Kùtù Kùtù Láìròtẹ̀lẹ̀: Ìwádìí àpẹẹrẹ àti ẹni tí kò ní àrùn láti Malawi."
+    },
+    {
+      "hyp": "Ìbí ọmọ ṣáájú akoko nígbà tí ó ti kọjá ṣẹ̀ṣẹ̀ ọsẹ̀ 37."
+    },
+    {
+      "hyp": "A ṣe ìwádìí kan láti ṣe ayẹ̀wo ìsopọ̀ láàrin iye Selenium, Copper, àti Zinc ti o wà ninu ẹ̀jẹ̀ iyawo, àti ibimọ́ ṣaajú akoko."
+    },
+    {
+      "hyp": "Àwọn obìnrin 181 ló wà nínú ìwádìí àṣàrò-ìṣòro yìí, 90/181 (49.7%) ló bí ọmọ nígbà tí ó yẹ, àti 91/181 (50.3%) ló bí ọmọ ṣáájú àkókò tí ó yẹ."
+    },
+    {
+      "hyp": "Iyé ìwọ̀n gẹ́gẹ́bí áàrin tí òwùn sẹ́lẹ́niọ́mù ní 77.0; SD 19.4µg/L, kopa ní 2.50; SD 0.52 mg/L àti sínki ní 0.77; SD 0.20 mg/L, pẹ̀lú iyé itọ́kásì 47-142µg/L, 0.76-1.59mg/L àti 0.59-1.11 mg/L, lókùnrin."
+    },
+    {
+      "hyp": "Àbájáde fi hàn pé kò sí àìtọ́ ní Selenium àti Zinc; àti gígà iyé kúpá ní ẹ̀jẹ̀ nígbà oyun."
+    },
+    {
+      "hyp": "Ìbí ọmọ ṣáájú àkókò tó yẹ bá a mú pẹ̀lú ìwọ̀n kòpáà ati sinki tí ó ga julọ ninu ẹ̀jẹ̀ ìyá."
+    },
+    {
+      "hyp": "Iye Zinc, Kopa, ati Selenium ti o ni ibasepọ pẹlu ibimọ ṣaaju akoko."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí iye tí ó gà julọ̀ tí àwọn ohun alumọní kékeré, sẹ́lẹ́niọ́mu, kopa, àti síǹki, nínú àwọn obìnrin tí wọ́n bí ọmọ̀ ní ketè jú, ṣúgbọ́n wọ́n kò tíì mọ̀ bí iye tí ó gà julọ̀ yìí tí wá láti inú oúnjẹ tí wọ́n jẹ."
+    },
+    {
+      "hyp": "Ìbí ọmọ ṣáájú àkókò yíyà wáyé nígbà tí obìnrin bá bí ọmọ ṣáájú kí ó tó pé ṣẹ̀gun ọ̀sẹ̀ 37 ti oyún."
+    },
+    {
+      "hyp": "Ìbí ọmọ ṣáájú àkókò tó yẹ̀ jẹ́mọ́ àwọn ìṣẹ̀lẹ̀ ìlera ti kò dára fún ọmọ tuntun láti ibẹ̀rẹ̀ sí iku."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ ohun le fa ìbí ọmọ ṣáájú àkókò, ṣùgbọ́n ipa iye gíga ti micronutrients tí a rí ninu oúnjẹ àti àyíká ayé kò tíì mọ̀ dáadáa."
+    },
+    {
+      "hyp": "Àwọn ounjẹ́ kékeré wọ̀nyí ṣe pàtàkì fún ìdàgbàsókè ọmọ, ṣùgbọ́n àwọn onímọ̀ ṣe ń fẹ́ mọ ohun tí ó ń ṣẹlẹ̀ nígbà tí ó bá pọ̀ jù."
+    },
+    {
+      "hyp": "Ní iwadí yìí, àwọn onímọ̀ ìwádìí dojúkò ìwọ̀n iyé sẹ́lẹ́niọ́mu, kopa, àti sinkì nínú àwọn obìnrin tí wọ́n bí ọmọ̀ ní keté jú, léyìn tí wọ́n ó fi ṣe ìdámọ̀ àwọn àǹfààní tí bí́ ọmọ̀ ní keté jú jẹ́ nípa iyé gíga tì ọ̀kọ̀ọ̀kan ninú àwọn erojá ounjẹ́ kékeré tí a ṣe ìwádìí rẹ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí kó àwọn àpẹẹrẹ ẹ̀jẹ̀ láti ọ̀dọ̀ obìnrin 181 lẹ́yìn tí wọ́n bí ọmọ ní ilé ìwòsàn méjì ní Lilongwe, olú ìlú Malawi, láàrin June ọdún 2016 àti March ọdún 2017."
+    },
+    {
+      "hyp": "Wọ́n gbé àwọn àpẹẹrẹ ẹ̀jẹ̀ lọ sí ilé ìwádìí kan ní Norway níbi tí wọ́n ti ya serum jáde, èyí tí í ṣe apẹrẹ ẹ̀jẹ̀ tó mọ́, wọ́n sì wọn iye selenium, kòpáà, àti sinki."
+    },
+    {
+      "hyp": "Nípa idamẹta awọn obirin 181 ninu iwadi naa ni wọn bí ọmọ ni kutukutu, awọn onimọ-iwadi si rii iye Selenium, kòpá ati sinki ti o ga pupọ."
+    },
+    {
+      "hyp": "Lẹ́yìn náà, wọ́n ṣe atúnṣe sí ìṣirò wọn láti gbé àwọn ohun míràn púpọ̀ yòò wọlé bí: ọjọ́ orí, ìlera gbogbogbòò, àti ìtàn ìlóyún láti yọ àwọn ipa tí a gbà pé ó ṣeé ṣe kí àwọn ounjẹ́ kékeré yìí ní lórí ìbí ọmọ ṣáájú àkókò."
+    },
+    {
+      "hyp": "Wọ́n parí èrò wọn pé iye Selenium àti Copper tí ó pọ̀ kò ní ipa pàtàkì nínú ìbí ọmọ ṣáájú àkókò, ṣùgbọ́n pé iye Zinc tí ó pọ̀ mú ewu ìbí ọmọ ṣáájú àkókò pọ̀ sí i ju ìgbà mẹ́fà lọ."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, iye kúpáà tí ó pọ̀ jẹ́ ìbànújẹ́ fún àwọn onímọ̀ ìwádìí, nítorí àwọn ipa ìṣẹ́lẹ̀ majẹ̀mu rẹ̀ tí a mọ̀."
+    },
+    {
+      "hyp": "Nítorí pé obìnrin 181 nìkan ló kópa nínú ìwádìí náà, ó dín agbára àwọn onímọ̀ ìwádìí kù láti rí àwọn ewu tí ó ní í ṣe pẹ̀lú ìwọ̀n séléniọ́mù gíga, nítorí pé iye àwọn tó yẹ kí ó kópa jẹ́ 600."
+    },
+    {
+      "hyp": "A kò ṣe iwadii lórí oúnjẹ ojoojumọ àwọn alàgbàlá láti rí àwọn orísun tí ó ṣeé ṣe ti eroja-ara-kekere mẹta náà, bẹ́ẹ̀ ni a kò sì kọ́ ìwọ̀n ìwúwo ara wọn (BMI) sílẹ̀."
+    },
+    {
+      "hyp": "Ìwádìí yìí ní ìwádìí ákókó ti irù rè tí ó ń wiwọn ipá Selíníúmù, Kopá àti Sínkí ní áwọn obìnrin ti ó lóyún ní Máláwì."
+    },
+    {
+      "hyp": "Àfirika ní iye ìbí ọmọ tí kò péye tí ó ga julọ — ju 18% lọ, ní ìfiwé pẹ̀lú àwọn orílẹ̀-èdè Ìwọ̀-òrùn Yuroopu tí ó jẹ́ 5%, nítorí náà, àwọn onímọ̀ ṣe àwárí láti mọ̀ bóyá oúnjẹ́ ní ipa."
+    },
+    {
+      "hyp": "Ìwá ìdáàpò sí ilè, ìdúró sí ibi kan, àti ìṣọ́kan agbègbè ti ẹ̀gàǹdù̀n-àlà (Malacochersus tornieri) ní Naìjíríà."
+    },
+    {
+      "hyp": "Àwọn ẹ̀dá ẹ̀mí ń fi àwọn ìhuwasi ibi àti àkókò tí ó yàtọ̀ hàn tí ó ń mú kí wọ́n gbé láàyè dáadáa."
+    },
+    {
+      "hyp": "Kí a lè mọ̀ iru iwa bẹ́ẹ̀̀, ó ṣe pàtàkì gidigidi fún ìtọ́jú àti ìṣàkóso tó dára, pàápàá fún àwọn ẹ̀dá alààyè tí ó wà ní ewu."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, a ṣe àdánwò lórí bóyá ẹ̀yà ìgbàlọ́gbàlọ́gbà (Pancake tortoise) lè padà sí ilé rẹ̀ bí a bá gbé e lọ sí ibòmíràn, a sì tún ṣe ìwádìí lórí ìdúró sí ibi kan àti ìṣàkóso ilẹ̀ ẹ̀yà náà nínú àwọn ibi tí wọ́n ń gbé ní Ìlú Kitui, Orílẹ̀-èdè Kenya."
+    },
+    {
+      "hyp": "A ṣe àkójọpọ̀ ihuwasi àwọn ẹ̀gàn 39 tí wọ́n ń gbé níbi ìkọ́kọ́ òkúta 12 tí ó ya ara wọn sọ́tọ̀ láti July 2020 sí June 2022 nípa lílo ọ̀nà ìtọ́pa-rádíò, ìtọ́pa-kamẹ́rà àti ìdàpọ̀ ìtọ́pa àpẹẹrẹ ẹgbẹ́ àti ìtọ́pa ad libitum."
+    },
+    {
+      "hyp": "Wọ́n fi onírìíbàádiọ̀-gbemi sí àwọn ìgbì̀ ọ̀gùṣọ̀ mẹ́rìndínlọ́gbọ̀n, wọ́n sì gbé wọn kúrò ní àwọn ihò ìgbé ayé wọn sí àwọn ihò mìíràn tí ó jìnnà sí àwọn ihò ìgbé ayé wọn, wọ́n sì ṣe àbójútó ìgbòkègbòdò wọn àti ìwà wọn."
+    },
+    {
+      "hyp": "Yàtọ̀ sí ìyànrin méjì nìkan ti ó ṣe ìgbẹ́yàwọ̀ dáadáa sí àwọn ìhó tuntun ti ìgbékọ̀mọ̀, gbogbo àwọn ìgbì̀là mììn gbìyànjú láti pada sí ilé wọn, pẹ̀lú 46.15% ninu wọn ti ó tọ́ka ọ̀nà pada sí àwọn ìhó ilé wọn pẹ̀lú ìṣéṣẹ tó pẹ, ati 15.38% ti ó dé ọ̀dọ̀ àwọn àgbègbè ti a gbà pé ó wà lárin agbègbè ilé wọn."
+    },
+    {
+      "hyp": "Ìgbà tí wọ́n dé sí ibùgbé wọn lọ́nà rere jẹ́rìí sí ìdúróṣinṣin sí ibi kan náà láàrin irú ẹ̀yà náà."
+    },
+    {
+      "hyp": "Àtúmọ̀ ìgbàgbọ́ àwọn ìhó áwọn bálẹ̀ fi hàn pé kò sí ìyàtò ti ó ní ìtumọ̀ nípà ìṣiro láàrin iye àwọn bálẹ̀ ti ó wà níbí ní àkọ́kọ́ nínú ìhó naà àti iye gigà ti ó wà láàrin ọjọ́ 162 ti a ṣe àwọn ìwádìí (F(1,22) = 0.0699, P >0.05), èyí ti ó tún fi lèkun ìdúró sí ibi kan ṣoṣo ti èyà naà ṣe."
+    },
+    {
+      "hyp": "Lọ́wọ́ kejì, iṣẹ́lẹ̀ rírù fọ́tò pẹ̀lú kamẹ́rà àti ìdánwò ad libitum tún fi hàn pé àwọn ẹ̀yà ìgbàgbọ́ Pancake jẹ́ ti ara wọn, pẹ̀lú àwọn ọkùnrin tí wọ́n gbàgbọ́ jọjọ̀ láti dáàbò bo ilẹ̀ wọn lọ́wọ́ àwọn ọkùnrin mìíràn tí wọ́n ń bọ̀."
+    },
+    {
+      "hyp": "Àwọn ẹ̀gùn ìgbàlódé tí ó sọnù ní agbára ìyanu láti ‘rílé’."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣe ìrírí iyalẹnu kan nígbà tí wọ́n ń kẹ́kọ̀ọ́ ìwà àwọn ẹ̀gùn ìgbòògì ilẹ̀ Ìwọ̀-oòrùn Àfríkà (Malacochersus tornieri): Àwọn ẹranko náà lè rí ọ̀nà sílé wọn pada lẹ́yìn tí a bá gbé wọn lọ sí ibi jíjìn."
+    },
+    {
+      "hyp": "Kí a lè mọ bí wọ́n ṣe ń ṣe é àti ìdí tí wọ́n fi ń ṣe é lè ṣe pàtàkì fún ìdáàbòbò àwọn ẹ̀dá ẹ̀yìn tí wọ́n ṣọ̀wọ̀n yìí."
+    },
+    {
+      "hyp": "Iṣé wiwa ilé ti awọn igbá-alágbààlà yii ń ṣe ni a ń pe ni “homing”, ọ̀pọ̀ ẹ̀dá mìíràn sì lè ṣe e bakan náà."
+    },
+    {
+      "hyp": "Ìgbà tí ẹ̀dá ẹ̀mí lè pada sí àwọn ìbi kan pató ń gba wọn láàye láti pada sí oúnjẹ, ọkọ, àti ibi aabo, èyí ń mú àǹfààní wọn láti gbé ayé àti bí ọmọ pọ̀ sí i."
+    },
+    {
+      "hyp": "Bí o tilẹ̀ jẹ́ pé wọ́n ti ṣe ìwádìí lórí ìhuwasi ìpadà sí ilé ní àwọn ẹja òkun àti ẹja omi adìgùn, àwọn onímọ̀ ìwádìí nínú ìwádìí yìí sọ pé a kò tíì mọ̀ ohun púpọ̀ nípa ìpadà sí ilé nínú àwọn ẹja ilẹ̀ (àwọn ẹ̀dá tí ó jọ ẹja òkun)."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí fẹ́ mọ̀ sí i nípa ìṣe àwọn ẹ̀yẹ́ àgbàlà tí a ń pè ní pancake tortoise ní ibùgbé wọn ní àwọn ilẹ̀ òkè òkè apata ní Kénìyà."
+    },
+    {
+      "hyp": "Wọ́n ṣe àkọ́kọ́ ìwádìí lórí àwọn ẹranko bí wọ́n ṣe ń gbé ara wọn lọ́wọ́, ti wọ́n sì ń jẹun, àti nígbà tí wọ́n bá lọ sùn ní àwọn ihò, tàbí àwọn ààtò nínú òkúta."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣàkíyèsí àwọn ẹgbẹ́ àwọn ìgbàlógbòló kéèkéèkèé fún ìgbà tí ó fẹ́rẹ̀ẹ́ tó ọdún méjì, wọ́n sì gbé àwọn kamẹ́rà kalẹ̀ láti gba fídíò àwọn ẹranko náà nígbà tí wọn kò ṣe àkíyèsí wọn."
+    },
+    {
+      "hyp": "Wọ́n tún so àwọn oníṣẹ̀ ìrádíò sí 14 nínú àwọn ẹ̀gbọ̀nà náà."
+    },
+    {
+      "hyp": "Èyì ní àwọn ohun eló kérékéré tí ó ń jẹ́ kí àwọn onímọ̀ ìwádà ṣe ìtọ́lẹ́sẹ̀ ìgbè igbò, kí wọ́n sí ṣe ìtọ́jú ibí tí wọ́n fí akokó wọn ló ní ọjọ́ àti òrú."
+    },
+    {
+      "hyp": "Lẹ́yìn náà, àwọn onímọ̀ ìwádìí gbé àwọn kan lára àwọn ẹ̀gbá tí wọ́n ń tọ́pa mọ́ sí àgbègbè tuntun, kí wọ́n lè ṣe ìwádìí lórí wọn rọrùn sí i."
+    },
+    {
+      "hyp": "Sí ìyànù àwọn onímọ̀ ìwádìí, sibẹ̀, méjì ninu àwọn bákàǹtáà bẹ̀rẹ̀ sí pada sí ilẹ̀ tiwọn, láàrin ìwọ̀n 1 sí 2.5 km kúrò níbi ti a ti gbé wọn lọ́."
+    },
+    {
+      "hyp": "Ìgbà yìí ní àwọn onímọ̀ ìwádìí pinnù láti gbíyànjú́ sí́ ìgbékẹ̀dé sí̀ ìgbẹ́ àwọn ẹ̀dá ńlá sí ìlẹ̀kùn ilé wọn, láti wo bí wọ́n ṣe máa fi hàn ìhà ilé wọn."
+    },
+    {
+      "hyp": "Ó ṣe kàyéfì pé, jú bí́ ìdàpọ̀ òpòlọpọ̀ awọn ẹ̀gùnlé ló ṣeé ṣe láti rí ọ̀nà pada sí àwọn àfonífojì kan náà tí wọ́n ti ń gbé tẹ́lẹ̀ ṣáájú kí wọ́n tó gbé wọn lọ, tí wọ́n sì sábà máa ń rìn ju bí 1.5 km lọ láti dé ibẹ̀."
+    },
+    {
+      "hyp": "15% mìíràn sì gbàgbẹ́ láti padà sí àyíká náà, ṣùgbọ́n wọn kò rí àfonífojì tí wọ́n ti mú wọn jáde láti ibẹ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà tún rí i pé àwọn àfonífojì ọ̀tọ̀tọ̀tọ́ máa ń ní iye ìbàkẹ́gbẹ́ ẹ̀yẹ̀ àgbàlà kan náà tí ń sinmi nínú wọn, èyí sì fi hàn pé àwọn ẹ̀yẹ̀ àgbàlà náà máa ń lo àwọn ibi kan náà láti sinmi."
+    },
+    {
+      "hyp": "Àwọn fídíò láti inú kamẹ́rà náà sì fi hàn pé àwọn aṣọ́rọ̀ akọ́ jẹ́ onígbàgbọ́ ilẹ̀, èyí túmọ̀ sí pé wọn óo ja àwọn aṣọ́rọ̀ akọ́ mìíràn tí ó ń gbìyànjú láti wọlé sí agbègbè wọn tàbí ihò."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé èyí ni ìgbà àkọ́kọ́ tí a ti rí ìhuwasi ìdàgbàgbé sí ibìkan nínú àwọn ẹ̀kọ́ ìgbàlọ́gbàlọ́, àti pé àwọn ìṣẹ̀dá wọn fi hàn pé àwọn ẹ̀dá wọ̀nyí fẹ́ràn láti gbé àti sinmi ní àwọn ibìkan kan náà nígbàkigbà tí wọ́n bá lè ṣe bẹ́ẹ̀."
+    },
+    {
+      "hyp": "Ìwádìí wọn kò ṣàlàyé bí awọn ẹja-okúkù ṣe ń rí ọ̀nà pada sílé, nítorí náà, ìwádìí ọjọ́ iwájú yẹ kí ó gbé aàrẹ̀ yìí yẹ̀ wò."
+    },
+    {
+      "hyp": "Nítorí pé àwọn ẹranko máa ń nílò kí a gbé wọn lọ sí àwọn agbègbè tuntun fún ìdáàbòbò, ìmọ̀ yìí yóò ràn àwọn olùdáàbòbò ẹranko lọ́wọ́ láti pa àwọn ẹ̀gàn-ìgbà-gbà mọ́ láàárín ibùgbé tuntun wọn."
+    },
+    {
+      "hyp": "Ìwádìí náà jẹ́ ìṣọ̀kan láàrin àwọn onímọ̀-èrọ láti Kenya àti China, o sì fi kún ìmọ̀ wà nípa ìwá ìpadà dé ilè ní inú awòn àti ẹ̀dá mììn."
+    },
+    {
+      "hyp": "Ìwádà Oògùn Plasma ti Ìgbàgbọ́ Ọ̀pọ̀lọpọ̀ Ọ̀gbọ̀n Ojúúù lókòòwó àti Ìgbàgbọ́ inù Ẹ̀jẹ̀ Rifampisin fun Awọn Aláàrùn Ìgbẹ̀rùn Ọpọlọ:"
+    },
+    {
+      "hyp": "Ìwádìí Tí Àdámúdúrò Tí Àṣà-Àkọ́ṣẹ"
+    },
+    {
+      "hyp": "Iyé èwú tí òpọ̀ ti rifampisin ti a fi si inù ẹ̀jẹ̀ lè mu ìlera dára sí ìlera ní ìgbà tí a bá ní ìgbonà ní áàrinù, ṣúgbọ́n kó sée ṣe ní áwọn ibí tí ìṣẹ̀lẹ̀ nàà pò."
+    },
+    {
+      "hyp": "A gbààrọ̀ wa ní pé iye ìtàjà rifampisinú ẹ̀jẹ̀ yiò jọ́ kanná láàrin ìmú ìṣan 35 mg/kg ti iwùn ara àti ìmú inù ẹ̀jẹ̀ 20 mg/kg, èyí ti a ti gbe káàrẹ fún ìwádìí aṣeyọri ní igbágbẹ́ meningitis."
+    },
+    {
+      "hyp": "A ṣe iwadi iṣẹ́-ṣiṣe oogun ti a ṣe deede ni ẹgbẹ́-ẹgbẹ́, ti a fi sinu idanwo iṣoogun ti itọju oogun-arun-inu-ara ti a pọ si fun meningitis tuberculous."
+    },
+    {
+      "hyp": "A kó àwọn àìkọ́ṣẹẹ́rẹ̀ tí wọ́n ní HIV tí wọ́n sì ní ìgbẹ̀rẹ́gbẹ̀rẹ́gẹ̀ẹ́ àkọ́kọ́-ọ̀tọ̀ láti àwọn ilé-iwòsàn Gúsà Áfrika, wọ́n sì pín wọn sí ẹgbẹ́ mẹ́ta ti ìwọ̀n ìgbà tí a ó fi rifampisin fún wọn."
+    },
+    {
+      "hyp": "Iwọn deede (nú ọnú 10 mg/kg), iwọn giga (nú ọnú 35 mg/kg), àti ti inù ìsọnu (20 mg/kg)."
+    },
+    {
+      "hyp": "A gba àwọn ayẹwo pharmacokinetic lọ́pọ̀lọpọ̀ ni ọjọ́ kẹta."
+    },
+    {
+      "hyp": "A lò sí ìwádìí alayè nípà lílò ánálísì ti kò ní apakan, a sí fi ìyapa iyé áwọn ìtàjà wèwè, nípà ìyapa áwọn iyé ádègbá geometric (GMRs)."
+    },
+    {
+      "hyp": "Ọgọ́ta òkùnrin mẹ́fà (46) ló ṣe ìwádìí ìṣiṣẹ́ oògùn (iye oògùn boṣewa, n = 17; iye oògùn gíga, n = 15; ti a fi si inù ẹ̀jẹ̀, n = 14)."
+    },
+    {
+      "hyp": "Ààyè CD4 jẹ́ sẹ́ẹ̀li 130/mm3 (agbégbé ìwọ̀n-ààrin [IQR], sẹ́ẹ̀li 66 si 253/mm3)."
+    },
+    {
+      "hyp": "Àwọn iye agbedemeji jiométríikì agbára rifampisin lábẹ́ ipele-àkókò láti 0 si 24 wakati (AUC0–24) jẹ́ 42.9mg · h/ml (95% ìgbẹ́kẹ̀lé [CI], 24.5 si 75.0mg ·h/ml) fún iwọ̀n ìwọ̀n déédéé, 295.2mg · h/ml (95% CI, 189.9 si 458.8mg · h/ml) fún iwọ̀n gíga ní ẹnu, àti 206.5mg · h/ml (95% CI, 154.6 si 275.8mg · h/ml) fún fifunni nípa ẹ̀jẹ̀."
+    },
+    {
+      "hyp": "Iye ìwọn AUC0–24 GMR rifampisin jé 1.44 (90% CI, 0.84 si 2.21) ati iye gigá oògùn ninu ẹ̀jẹ̀ (Cmax) GMR jé 0.89 (90% CI, 0.63 si 1.23) fún ìgbà fifun nínú ẹnù tó ga jú, ní ìfiwéra pẹ̀lu ìgbà fifun nipa lilo ìso."
+    },
+    {
+      "hyp": "Iye AUC0–24 rifampisinì plasma ga jú lẹ́yìn ìgbà tí a mu 35-mg/kg ní ẹnu jú tí a fi sí inu ẹ̀jẹ̀ 20-mg/kg lójú ìṣe ìtójú àrùn ẹ̀gbà (TB) ọjọ́ diẹ̀ ákọ́kọ́."
+    },
+    {
+      "hyp": "Àwọn ìwádìí náà ṣe ìtìlẹ́yìn fún ọ̀nà ìgbàgbọ́ rifampisin ní àwọn àdánwò ìṣàn àrùn sẹ́ẹ̀rẹ̀ ọpọlọ́ ni ọjọ́ iwájú."
+    },
+    {
+      "hyp": "A lè dán wàràpà tó ga jú lọ́wọ́ àwọn aláìlera HIV ti ó ní ìgbẹ̀yàrà àkọ́kọ́ TB."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ti jẹ́ri sí i pé ó ṣe pàtàkì láti bẹ̀rẹ̀ sí í dán wò bóyá àwọn iwọn òògùn rifampicin gíga lè gba àwọn aláìsàn HIV tí ó ní àrùn sùúrù ọpọlọ tí ó jẹ́ àrùn gbígbẹ́ là."
+    },
+    {
+      "hyp": "Tí o fi ju 3 ninu gbogbo alaisan HIV 5 lọ ti tun ní àrùn ikọ́rùn ọpọlọ ti o ń pa wọn nítorí àrùn yìí, èyí tí ń kọlù ẹ̀yà iṣẹ́ ẹ̀dùn ọpọlọ."
+    },
+    {
+      "hyp": "Àwọn ti o là á lààrin máa ń ní ìbajẹ́ tí kò ní là á ní ara ẹ̀rọ́ iṣẹ́-àyẹ̀wó ọpọlọ́ wọn àti àwọn iṣẹ́-àyẹ̀wó pàtàkì tí ń bọ̀ láti ọpọlọ́."
+    },
+    {
+      "hyp": "Èyí lè ní ipa lorí ìwàlarà wọn àti ìgbòkègbodò wọn."
+    },
+    {
+      "hyp": "Àwọn màlùú kan máa ń ní àrùn ẹ̀gbàágbà tàbí àrùn ọ̀gbẹ̀, tàbí àwọn apá ara wọn, tàbí ojú wọn, máa ń wú."
+    },
+    {
+      "hyp": "Rifampisin, oògùn ajẹ́gbẹ́ẹ́gẹ́ẹ́ tó lágbára tí a máa ń lò láti jà aàrùn àkùkọ́, ni a máa ń fún ní àwọn kàpùsùùlì láti gbìyànjú láti pa àwọn bàkíríà tí ń fa aàrùn ibà àkùkọ́ ní ọpọlọ."
+    },
+    {
+      "hyp": "Àwọn aláàrọ̀ tó ṣékù já jẹ́ kí oògùn túbọ̀ ṣòro fún wọn láti gbé."
+    },
+    {
+      "hyp": "A tún lè fi Rifampisin sí inu ẹ̀jẹ̀ (nínú ìṣan ẹ̀jẹ̀) ní fọ́ọ̀mù omi."
+    },
+    {
+      "hyp": "A lẹ́yìn náà, a ó fi abẹ́rẹ̀ wọ̀ inù ìṣan ẹni náà kí omi náà bàa lè tú sí inu ara rẹ̀."
+    },
+    {
+      "hyp": "Kò sí ìdánwò kankan tí wọ́n ti ṣe títí di ìsinsin yìí láti mọ bí ara àrùnṣó náà ṣe gba oògùn náà sí ara rẹ̀ nígbà tí a bá lo ọ̀nà yìí."
+    },
+    {
+      "hyp": "Ìtọjú tí a ń fi oògùn sí inù ẹ̀jẹ̀ nípa ẹ̀rọ (intravenous) ń béèrè fún ohun èlò púpọ̀, ìsunmí sí ìwòsàn, àti òṣiṣẹ́ ìlera tí a tí gbàǹgbàǹ tí ó mọ̀ bí a ṣe ń fi abẹ́rẹ̀ sí inù ẹ̀jẹ̀ lọ́ọ̀nà tó tọ́."
+    },
+    {
+      "hyp": "Nítorí náà, kì í ṣe àṣàyàn tí ó pọn dandan ní àwọn àgbègbè ayé tí kò ní ọrọ̀."
+    },
+    {
+      "hyp": "Àwọn oníṣègùn ti mọ̀ tẹ́lẹ̀ pé kò rọrùn fún rifampisin láti wọ inú omi ọpọlọ, ẹ̀gbẹ́ ẹ̀yìn, àti ọ̀pá, níbi tí àwọn kokoro arun lè fi pamọ́ sí."
+    },
+    {
+      "hyp": "Ìdí nìyẹn tí a fi nílò iwọn lilo gíga (ọ̀pọ̀lọpọ̀) láti pa gbogbo àwọn bàkítíríà nínú ara àìsàn run níṣeṣe."
+    },
+    {
+      "hyp": "Ṣùgbọ́n àwọn onímọ̀ ìwádìí kò dájú bí iye ẹ̀̀mí tó gà jú bẹ́ẹ̀ ṣe lè jẹ́ aṣeyọrí àti aabò."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí láti Gúúsù Áfríkà àti Ìjọba Àpapọ̀ náà ń fẹ́ mọ̀, nípa lílo iye àwọn aláìsàn díẹ̀, bóyá ó dára láti fún wọn ní oògùn rifampicin ní iye tí ó pọ̀, bí ó ti jẹ́ kápsúlì tàbí nípasẹ̀ ìtànṣán, àti bí ara wọn yóò ṣe gbà á ní ọ̀nà kọ̀ọ̀kan."
+    },
+    {
+      "hyp": "Ó ṣe pàtàkì láti mọ èyí kí àwọn onímọ̀ ìwádìí mìíràn tó bẹ̀rẹ̀ pẹ̀lú àwọn ìdánwò tó tóbi sí i, tàbí àwọn ìdánwò, nínú èyí tí wọ́n gbero láti fún ọ̀pọ̀ àwọn aláìsàn púpọ̀ sí i pẹ̀lú ọ̀pọ̀lọpọ̀ òògùn rifampisin."
+    },
+    {
+      "hyp": "Nígbà kan, a fi ọ̀kan lára irú ìtọ́jú rifampicin mẹ́ta fún àwọn aláìsàn 46 tí wọ́n ní HIV tí wọ́n sì ní àrùn ẹ̀gbà gbígbẹ̀ ní Gúúsù Áfríkà."
+    },
+    {
+      "hyp": "Ẹ̀ká jùlọ̀ ni ìtójú boṣewa ti kápísúlì tí wọ́n má ń fi fún àwọn aláìsàn, tí ó jẹ́ gbogbo 10mg ti rifampisin fún ìwọ̀n kilogramu kọ̀ọ̀kan ti aláìsàn náà wọ̀n."
+    },
+    {
+      "hyp": "Ẹgbẹ́ mììn sì gbá kápùsùli iye èepó gigà ti miligéraamu 35 fun kilógíraamu iwùn ara aláàpádà."
+    },
+    {
+      "hyp": "Ẹgbẹ́ kẹta gba 20 miligiramu lókòọ̀kan kìlọ́gírámu iwuwo ara wọn lọ́na ìṣan."
+    },
+    {
+      "hyp": "A gbà àwọn ẹ̀jẹ̀ lọ́wọ́ àwọn aláàrọ̀ lẹ́yìn ọjọ́ mẹ́ta."
+    },
+    {
+      "hyp": "Lẹ́yìn náà, àwọn onímọ̀ ìwádìí nàà wọn iye rifampisin tí ó wà nínú ọ̀dọ̀ ẹ̀jẹ̀ wọn (apá omi ẹ̀jẹ̀)."
+    },
+    {
+      "hyp": "A rí iye rifampisin tó pọ̀ sí i nínú ara àwọn aláìsàn tí wọ́n gba kápùsúlù ìwọ̀n gíga ju ti àwọn tí wọ́n gba ìtọ́jú nípasẹ̀ ẹ̀jẹ̀ tàbí ìwọ̀n ìṣòro."
+    },
+    {
+      "hyp": "Iye oògùn tí ó wà nínú ẹ̀jẹ̀ plasma jẹ́ kan náà fún iwọ̀n ìṣègùn gíga àti ìtọ́jú tí a fi sí inú ẹ̀jẹ̀."
+    },
+    {
+      "hyp": "Àwọn ìwọ̀n ìṣọ̀kan yìí ga ju ti àwọn àìsàn tí wọ́n gbàdùn ìwọ̀n ìṣọ̀kan ìṣe déédéé nìkan lọ́."
+    },
+    {
+      "hyp": "Gẹ́gẹ́ bí àwọn onímọ̀ ìwádìí ṣe sọ, èyí fi hàn pé ìlera àwọn aláìsàn tí àrùn gbígbẹ̀rẹ́gbẹ̀rẹ́gẹ̀ẹ́ meningitis ti bà jẹ́ lè sunwọ̀n sí i dáadáa bí wọ́n bá gba ìwọ̀n rifampicin tí ó ga ju."
+    },
+    {
+      "hyp": "Kò ṣe pàtàkì bí wọ́n bá gba á nípa píìlì tàbí nípa ṣíṣàn sí ẹ̀jẹ̀ — ohun tó ṣe pàtàkì ni pé kí wọ́n gba rẹ̀ lọ́pọ̀lọpọ̀, nítorí ara wọn lè tọ́jú rẹ̀ sí iye tí ó ga ju."
+    },
+    {
+      "hyp": "Àwọn ìṣẹ̀dá náà ṣàtìlẹ́yìn fún àwọn ìwádìí tí a ṣe ní Uganda àti Indonesia."
+    },
+    {
+      "hyp": "Àwọn ìdánwò kékeré méjì ní Indonesia, fún àpẹẹrẹ, fi hàn pé a lè gbàlà ayé àwọn aláìsàn púpọ̀ sí i bí a bá fún wọn ní iwọn òògùn rifampicin tí ó ga ju, ní ẹnu tàbí nípasẹ̀ ẹ̀jẹ̀."
+    },
+    {
+      "hyp": "Bí o ti wú kí, àwọn onímọ̀ ìwádìí kìlọ̀ pé iye àwọn olukopa tí ó kópa nínú ìwádìí yìí kéré sí bí wọ́n ti rò rí, èyí lè bá àbájáde wọn jẹ́."
+    },
+    {
+      "hyp": "A ṣe ìwádìí náà ní́ Gúúsù Áfíríkà."
+    },
+    {
+      "hyp": "Ó ṣe atilẹyin ètò ìṣe àdánwò láti wádìí bóyá ó yẹ kí a fún àwọn àrùn HIV tí wọ́n ní àrùn sùúrù ọpọlọ àkànkàn pẹ̀lu iye ègbòogi rifampicin tí ó ga."
+    },
+    {
+      "hyp": "A rèé sí i pe irú ìtọ́jú bẹ́ẹ̀ yóò gbààlà ẹ̀mí àwọn ènìyàn púpọ̀ sí i ní Àfríkà àti ní àwọn apá ayé mìíràn níbi tí àrùn ẹ̀gbàgbó meningitis jẹ́ ìṣòro ńlá."
+    },
+    {
+      "hyp": "Ṣé ìló aṣọ̀n kan tí a dápọ̀ mọ́ biócháà lè mú didara ilẹ̀ ágbò tí o tí fẹ́nú gbà ní eti òkun dara sì?"
+    },
+    {
+      "hyp": "Ìdinkú ìṣọ́ọ́gùn ilẹ̀ jẹ́ ìdènà ńlá sí iṣẹ́ ọgbà ní Àríwá-ìwọ̀-oòrùn Àfríkà."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ akọ́wé ló ti sọ̀rọ̀ nípa ipa rere tí fífi biochar àti compost sí ilẹ̀ ń kó sí ilọ́siwajú ìṣọ́gbìn ilẹ̀."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, a ṣe ìdánwò ìgbẹ́kẹ̀lé ilé ẹ̀kọ́ ẹ̀rọ̀ ọjọ́ 30 pẹ̀lú àwọn àpẹẹrẹ 120 g kọ̀ọ̀kan ti Haplic acrisol tí a fi biochar akàrà ọ̀gbọ̀ (cbio), biochar ìkùkù ìrísì (rbio), biochar ìkùkù àgbá (coco300 àti coco700) tàbí compost ìgbẹ́rẹ̀ ẹyẹ (compost) ṣe ìtọ́jú; àti rcocomp (biochar ìkùkù irísì tí a fi compost ṣe ìtọ́jú) tàbí cococomp (biochar akàrà ọ̀gbọ̀ tí a fi compost ṣe ìtọ́jú) ní ìwọ̀n 1% w/w ìtọ́jú: ilẹ̀, lójú méjì."
+    },
+    {
+      "hyp": "Àwọn ìtọ́jú míì ninu ìwádìí náà ni a dapọ̀ pọ̀ mọ́ compost amúkùtù ẹyẹ àti biochar kòbù kọ́ọ̀nì tàbí biochar ìkàkà ọ̀rìṣì (1% compost + 1% biochar: 1% ilẹ̀ w/w), láti ṣàyẹ̀wò ipa wọn lórí ìgbìgbẹ̀ ilẹ̀ ipilẹ̀, pH ilẹ̀; kabọ́ọ̀nì àwọn àkòkò ilẹ̀; agbára pa dààrùn káàtìọ̀nì; kabọ́ọ̀nì àpapọ̀ àdánù, náìtirójẹ̀nì àpapọ̀ àti ìwọ̀n náìtirójẹ̀nì tí ó wà."
+    },
+    {
+      "hyp": "Biochaà àti kompósti ti a lo nikan tabi páàpò, ati biochaà ti a kóm̀póstí mu pH ilẹ̀ pọ̀ sí ìwọn 0.28–2.29 pH jú ìṣakoso ti kò ni ìtọ́ju lọ́."
+    },
+    {
+      "hyp": "Ìgbàdùn ìgbàlà láti inú àdàpọ̀ kanṣoṣò tàbí àdàpọ̀ ẹ̀ka ọ̀ka, tàbí báiyokáàrà ọ̀gbọ̀n ọ̀kà, tàbí báiyokáàrà àdàpọ̀ àti àdàpọ̀ gàjú ju ti ìṣàkóso tí kò ní ìtọ́jú lọ, èyì ti ó jọ ti àwọn ìtọ́jú báiyokáàrà nìkan."
+    },
+    {
+      "hyp": "Iyé TOC ninú compost kan ṣoṣo àti ìtójú aṣọ́ọ̀ǹka ògòǹgòrò aì̀kà àti compost pọ̀, ga jú 37% àti 117% lo, ju ti ẹ̀yà ákọ́ṣe lọ."
+    },
+    {
+      "hyp": "Lilo papó biócháàrí ìkàkìríìsìì àti kómpósú mú MBC pọ̀ sí i 132%, nígbatí a fi kómpósú nikan sí mú MBC pọ̀ sí i 247%, ní ìfiwé pẹ̀lú èyà ákòóbẹ̀rẹ̀."
+    },
+    {
+      "hyp": "Ní ṣiṣe ìkẹ́kọ̀ọ́ yìí parí, iwadi náà fi hàn pé lílo àdánù tabi ìdàpọ̀ àdánù àti baiochá, tàbí baiochá tí a ti ṣe àdánù rẹ̀ mú àwọn ohun tí ó ṣe pàtàkì nínú ilẹ̀ bíi pH ilẹ̀ àti MBC sunwọ̀n sí i, ó sì mú kí ilẹ̀ C jẹ́ kí ó dúró sí ipò rẹ̀ nípasẹ̀ ilọsíwájú TOC àti dín ilọ́kù ilẹ̀ C kù nípasẹ̀ ìgbẹ̀rùn ìpìlẹ̀."
+    },
+    {
+      "hyp": "Bioćàà atí kọ́m̀pọ́sì mú ìwùnlópò ilẹ̀̀ dárà sí i fún oko."
+    },
+    {
+      "hyp": "Ìwádìí yìí ṣe ìwádìí bí ọ̀nú ìṣẹ̀dá, èyì tí jẹ́ ohun eló tí ó ga jú, tí ó sí jẹ́ ọlọ́rọ̀ kábọn, tí a ṣe lati inu ohun eló ágbèdẹ̀ tí a ti dá, lè lo lati mu didara ilẹ̀ ní Áfirika gúsù-Saharà dára sí."
+    },
+    {
+      "hyp": "Ìwádìí náà rí i pé biochar ń mú kí àdàkọ ilẹ̀ sunwọ̀n bí ọ̀nà míìrán tó gbowó julọ tí kò sì rọrùn láti rí."
+    },
+    {
+      "hyp": "Ọ̀kan lára àwọn ìṣòro tó tóbi jùlọ tó ń dojú kọ iṣẹ́ ọgbà ní Àríwá-ìwọ̀-oòrùn Áfríkà ní ìdinku ìṣọ̀dárá ilẹ̀."
+    },
+    {
+      "hyp": "Ìdábọ̀bọ̀ ilẹ̀ tí ó dára yóò mú kí ọ̀pọ̀lọpọ̀ oko ṣe, èyí yóò dín ìwọ̀n òṣìṣẹ́ ìgbèríko kù, tí yóò sì mú kí ìbajẹ́ oríṣìíríṣìí àwọn ohun èlò àdánidá padà sí ipò rẹ̀."
+    },
+    {
+      "hyp": "Ìwádìí ti fi hàn pé bióchá, ohun elo ti ó ga júlọ, ti ó sí jẹ́ ọlọ́rọ̀ kábọnì, lè lo láti mú ìṣédára ilẹ̀ dára sí."
+    },
+    {
+      "hyp": "Biochar jẹ́ ọja ẹ̀gbẹ́ tí a gbá latí ìgbona oògùn ẹ̀dá, tàbí biomass, ní ipò tí òkísì tí kéré tàbí kò sí rárá."
+    },
+    {
+      "hyp": "A ti fi hàn pé biochar ń pọ̀ sí ìwọn agbegbe ilẹ̀, ń pọ̀ sí omi ati afẹ́fẹ́ to wà, ti o sí ń mú kí àwọn kokorò ilẹ̀ ṣiṣẹ́."
+    },
+    {
+      "hyp": "Ìwádìí yìí dáàwò ìwà ìpa ti biochar àti compost lórí didara ilẹ̀, nípa lílo àwọn amì ìfihan bí ìgbàgbọ́ ilẹ̀, pH ilẹ̀, sì wá aayẹ̀ ti awọn kokoro, iye kábọn, àti iyé naị́tirọ́jẹn ti ó wa."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣe àwọn biocháàrì ìgbá ọkà òbẹ̀, ìgbá àgùgù àti ìgbá ìrììsì nípa lílo pyrolysis, eyi ti o ní ìtọ́jú ohun èlò alààyè laìsí oògùn, ní 450 °C ni inú agbàrá tí wọ́n ṣe níbi."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣe àtúnṣe bioćaàrì ẹ̀gbà agbon nípa lílò pyrolysis ní 300 °C àti ní 700 °C."
+    },
+    {
+      "hyp": "Lẹ́yìn náà, àwọn onímọ̀ ìwádìí náà fi àwọn àpẹẹrẹ ilẹ̀ tí wọ́n dá pọ̀ mọ́ biochars sí ibi ìgbóná fún ọjọ́ 30."
+    },
+    {
+      "hyp": "Àpẹẹrẹ kọọ̀kan ní ilẹ̀ tí a ti múra sílẹ̀ pàtàkì, tí a ń pè ní Haplic acrisol, èyí tí a fi darapọ̀ mọ́ àwọn ìṣọpọ̀ biochar tí a ṣe láti inú ikùn ọkà, ìgbẹ́ ọ̀là, tàbí ìgbẹ́ àgbọ̀n, àti compost ìgbẹ̀rùn ẹyẹ."
+    },
+    {
+      "hyp": "Àwọn àpẹẹrẹ mìíràn ní adalú ilẹ̀ àti ikúkù̀rẹ̀ ẹ̀dá ẹ̀yẹ, pẹ̀lú bàìọ́kàà rice husk, àti bàìọ́kàà corn cob, lójú méjì méjì."
+    },
+    {
+      "hyp": "Ìdáàpọ̀ kọ̀ọ̀kan nínú àwọn àpẹẹrẹ ní 1% kompóstu, 1% fún bióchá kọ̀ọ̀kan, kí àwọn ońìwádìí lè ṣe ìwádìí ipa ti adalù kọ̀ọ̀kan lorí didara ilẹ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé fífi biochar àti compost kún ilẹ̀, bí o bá jẹ́ lákàkà tàbí papọ̀, mú iye pH ilẹ̀ pọ̀ sí i láti 0.28–2.29 pH units, ní ìfiwéra pẹ̀lú ilẹ̀ tí a kò fi ohunkóhun kún."
+    },
+    {
+      "hyp": "Ìdàgbàsókè pH túmọ̀ sí pé ilẹ̀ náà di òṣìṣì díẹ̀."
+    },
+    {
+      "hyp": "Ìwádìí náà rí i pé ìfìfì ìgbì̀gbá, tàbí iyé kàrọ́bọ̀nù dàìọ́ksàìdì tí ilẹ̀ ń tú jáde tí ó kéré jùlọ, pọ̀ sí i nígbà tí a fi kóńpósítì kan ṣoṣo kún un, tàbí nígbà tí a dá kóńpósítì pò̀ mọ́ ìkùkù àìsì, tàbí bàìọ́káàrì ọkà ọbẹ, tàbí bàìọ́káàrì tí a dá pò̀."
+    },
+    {
+      "hyp": "Àwọn àpẹẹrẹ ilẹ̀ fi hàn pé ìwọn kàbọ́ọ̀nì èdè àgbàṣe gbogbogbòó pọ̀ sí i ní 37% nígbà tí a lò compost nìkan, àti pọ̀ sí i ní 117% nígbà tí a pò biochar kòbù kọ́ọ̀nì pọ̀ mọ́ compost."
+    },
+    {
+      "hyp": "Iye iṣẹ́ ṣiṣẹ́ àwọn kokoro kékeré pọ̀ sí i ní ìpín 132% níbi tí ilẹ̀ náà ní adalú kọ́mpọ́ọ̀sì àti bàìọ́kàà rice husk, ní ìfiwéra pẹ̀lú ìpọ̀sí iye 247% nínú àwọn àpẹẹrẹ ilẹ̀ tí o ní kọ́mpọ́ọ̀sì nìkan."
+    },
+    {
+      "hyp": "Àbájáde ìwádìí yìí fi hàn pé ó ṣeé ṣe láti dín ẹ̀gún ilẹ̀ kù sí i nípa lílò biochar, èyí tí ó rọrùn tí ó sì poku láti rí."
+    },
+    {
+      "hyp": "Èyì tó yàtò sí ìwádìí mìírà tí ó jẹ́ pé a máa fí ọ̀wùn lí ilẹ̀, èyí tí ó gbowó pupò tí kó sí sí ìtànkàn fún àwọn àgbẹ̀ kekeré ní Gúsù Sahara Áfrika."
+    },
+    {
+      "hyp": "Nẹ́tiwókì Ìṣẹ́ Ẹ̀jẹ̀ Fibrini Atipikà ní Àrùn Rheumatoid Arthritis àti Ìsopọ̀ rẹ̀ pẹ̀lú Ìgbàgbọ́ ara, Igbonà àti Thrombosis."
+    },
+    {
+      "hyp": "Ewu àwọn ìṣẹ̀lẹ̀ kaadíòváskúlà nínú àwọn alápọǹràn RA gòkè ju bí ó ti yẹ lọ nítorí ìgbonà ara gbogbo."
+    },
+    {
+      "hyp": "Ipa tí ó jẹ́ ti ara-ẹnì ti citrullination ti ó sọrọ̀ pọ̀ mọ́ áutòimùnù lorí ìṣẹ̀dá àti agbára ìdènà ẹ̀jẹ̀ fibrin(ogen) kò tì mọ̀."
+    },
+    {
+      "hyp": "Nítorí náà, a fi wé àwọn àkọ́kọ́ iṣẹ́ iṣẹ̀ ìṣan, igbona, ìṣẹ̀dá ẹ̀jẹ̀, àti ìṣọ̀kan fibrin clot láàrin àwọn àlùfáà RA pẹ̀lu àwọn olùṣàkóso ti o ni ilera, a sì ṣe ayẹ̀wò ibasepọ̀ láàrin àwọn àkọ́kọ́."
+    },
+    {
+      "hyp": "A gbà àwọn àpẹ̀rẹ̀ ẹ̀jẹ̀ láti ọ̀dọ̀ àwọn àlùfáà RA 30 àti àwọn olùtọ́pa ara tó légbẹ́, tí ó jọ̀wọ́ ní ọjọ́ọrùn àti ìbálẹ̀ 25."
+    },
+    {
+      "hyp": "A ṣe ìwọ̀n iye SAA, CRP, ICAM-1 àti VCAM-1 nípa lílo ìwádìí immunoassay tí ó ní ìdánwò méjì."
+    },
+    {
+      "hyp": "A ṣe ayẹ̀wò ìdènà ẹ̀jẹ̀ gbogbo ara nípa lílò Thromboelastography."
+    },
+    {
+      "hyp": "A ṣe iwadii lorí iṣẹ́ ṣiṣẹpọ̀ nẹ́tiwọ́kì fíbàrínì atì iṣẹ́ ṣiṣẹpọ̀ okun lilo Scanning Electron Microscopy."
+    },
+    {
+      "hyp": "Àwọn òǹkà àti ìwọ̀n iye citrullination ninù àwọn èrùn fibrin tí a tí ṣé ní a ṣe lilo antibody Citrulline tí a fi fluorescent label si, pẹ̀lu Confocal Microscopy."
+    },
+    {
+      "hyp": "Iyé iwọ̀n SAA, CRP àti ICAM-1 ga ju ti àwọn ẹni tí ko ní àrùn RA lọ́pọ̀lọpọ̀."
+    },
+    {
+      "hyp": "Àwọn iye ìwọn TEG ti ò ní ìsopọ̀ pẹ̀lú ìbẹ̀rẹ̀ ìdènà (R àti K), iye ìṣiṣẹ́ ìdènà ti fíbráìni (α-Angle), àti akoko ti ó gba láti de iye ìṣiṣẹ́ ìdènà tó gàjù (TMRTG) dinkú láàrin àwọn alápọǹràn RA."
+    },
+    {
+      "hyp": "Àwọn àkọ́kọ́ ìṣiṣẹ́ tí ò ń ṣe ìyapa sí agbara ẹ̀jẹ̀ (MA, MRTG, TGG) kò yàtọ̀ nípà ìṣirò ìwádìí láàrin RA àti àwọn tí kó ní ìyapa."
+    },
+    {
+      "hyp": "Ìtọ́kaasọ̀ ìṣiro lójíkì fi hàn pé ìsopọ̀ tó lágbára wà láàrin àwọn ohun tí ń ṣiṣẹ́ nígbà àrùn gbàrà (CRP, SAA) àti àwọn àṣepọ̀ TEG ju àwọn àmì ìṣiṣẹ́ ẹ̀dọ̀fóró."
+    },
+    {
+      "hyp": "Àtúwò ìwọn-omírá fi hàn pé àwọn nẹ́tiwókì tí ó jùmọ̀ tí áwọn okun fáibirìn tí ó tóbì ju sí wà ní áwọn alápọǹbẹ̀ RA jú àwọn tí a kò lò gégé bí ìwádìí [ààrin (agbérà ìyàpàdè) 214 (170-285) vs 120 (100-144) nm lókùnrin, p<0.0001, Ìwọ̀n-àṣeyọri=22.7)."
+    },
+    {
+      "hyp": "Ìwádìí fi hàn pé a rí àwọn agbègbè citrullinated pupọ̀ láàrin àwọn ẹ̀ya fibrin clot nínú àwọn aláìsàn RA, èyí tó kéré sí ìwọ̀n nínú àwọn àpẹẹrẹ ìṣọ́kan (p<0.05, OR=2.2)."
+    },
+    {
+      "hyp": "Àwọn aláìsàn tí RA wọn ńṣiṣẹ́ ńfi ìṣiṣẹ́ ẹ̀jẹ̀ hàn tí ó yàtọ̀ sí àwọn ìwádìí gbogbogbòò tí a mọ̀ nípa àwọn àrùn ìgbòògùn míràn."
+    },
+    {
+      "hyp": "Ìyípádà tì ìṣẹ̀dá àwọn purotéèní nípá citrullination ti ó sọmọ̀ bí ìdààmú arà-ẹ̀jẹ̀ lè kopà ninù ìpinnù ìṣẹ̀dá fibrin atí agbára tí ó lè mú ìwọ̀nbà tí ó gà ju tí ìṣẹ̀lẹ̀ thrombotic ṣe sí gà ju ní áwọn alápọǹbẹ̀ RA."
+    },
+    {
+      "hyp": "Ìdènà ẹ̀jẹ̀ nínú àwọn alárùn àrùn ìgbọ̀n-ọ̀rọ̀ lè ṣàlàyé ewù tí ó pọ̀ ju ti wọ́n lọ́ fún ikọ́lù ọkàn, àti ikọ́lù ọpọlọ."
+    },
+    {
+      "hyp": "Ìwádíí tuntun lorí árùn ìgbẹ̀rẹ́gbẹ́rẹ́gẹ̀ẹ́ (rheumatoid arthritis) ti mù kí a loyè ìsopọ̀ tó ṣeeṣe láàrin árùn yìí àti ìpónù árùn ọkàn tó gà jú."
+    },
+    {
+      "hyp": "Àrùn àìlera egungun (RA) jẹ́ àrùn àìlera ara ti ara ẹni ti ó ní irora pupọ̀ ti o sì ń ba ara jẹ́, ti a ń so pọ̀ mọ́ igbona ní awọn ìsọ̀ri ati káàkiri ara."
+    },
+    {
+      "hyp": "Láti ìgbà kan rí, àwọn onímọ̀ sáyẹ́nsì ti mọ̀ pé àwọn tó ní àrùn náà tún ní ewu àrùn ọkàn-àìsàn (CVD) tí ó ga ju 50% lọ – bíi ìkọ́lù tabi ìkọ́lù ọkàn."
+    },
+    {
+      "hyp": "Òkan ninù àwọn ònà ti òwùn nàà ń ṣe ni ipa ti igbona ara ń kò sí iṣẹ́ ẹ̀jẹ̀ didi."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ṣe ìwádìí lórí ìsopọ̀ yìí, láti rí i dídáhùn bí RA ṣe mú ewu CVD pọ̀ sí i."
+    },
+    {
+      "hyp": "Jù bẹ́ẹ̀ lọ, àwọn onímọ̀ ìwádìí ṣe àyẹ̀wó ipa igbonà ati àwọn ìyípadà inú ara lórí àwọn purotéènì pàtàkì ti ó ní ìsopọ̀ pẹ̀lú ìdènà ẹ̀jẹ̀, ti á pé ní fáibirìn."
+    },
+    {
+      "hyp": "Àwọn purotéèni wọnyi máa ń ṣẹlẹ̀ gẹ́gẹ́ bí àwọn ṣíṣà tí gùn tí ń ṣe “àwọn àdánù” ipilẹ̀ fún ẹ̀jẹ̀ tí ó ti di òṣù, nitorina, ìyípadà eyikeyii sí àwọn fibrini ara wọn lè ní ipa lórí iṣẹ́ ṣíṣe òṣù ẹ̀jẹ̀ gbogbo rẹ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ iwadi fi ẹ̀jẹ̀ àwọn aláìsàn RA wé ẹ̀jẹ̀ àwọn ènìyàn tólera."
+    },
+    {
+      "hyp": "Ní gbogbo ọ̀rọ̀, àwọn onímọ̀ ìwádìí ń wa “àmì ìtọ́ka” nínú ẹ̀jẹ̀ tí ó fi ìgbóná ara hàn, àti fún ìyàtọ̀ tí kò bá ara hàn nínú ọ̀nà ìṣiṣẹ́ ẹ̀jẹ̀ déédéé tí ó lè mú ewu CVD pọ̀ sí i."
+    },
+    {
+      "hyp": "A sì ṣe àyẹ̀wò àwọn ẹ̀jẹ̀ náà fúnra wọn nípa ìwádìí ìkọ́kọ́, láti rí àwọn ìyípadà èyíkéyìí sí ìṣẹ̀dá àwọn purotéènì fibrin wọn."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí kíyèsí i pé àwọn ẹ̀jẹ̀ tí ó ti di ìdènà láti ọ̀dọ̀ àwọn aláìsàn RA gbẹ́ yára ju ti àwọn ènìyàn tólera lọ, àti pé àwọn okùn protein tí wọ́n ṣe ni pẹ̀lú pọ̀ ju àwọn fibrin déédéé lọ."
+    },
+    {
+      "hyp": "Bíi ṣe pé àwọn àyípàdà sí àwọn amino acid ti ó ń kọ́ àwọn purotéènì fibrin pa dà, eyì ti fa kí wọn máa fa ìdáhùǹ ìgbàáláàrẹ̀ ara le, ti o sí mú kí ìgbòòrò igbágbẹ́ pọ̀ sí i."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí mìíràn ti kíyè sí àwọn ìyípadà sí ìṣètò amínó àṣíwájú fibrins nínú àwọn ìṣípò àwọn àrùn RA ṣáájú, ṣùgbọ́n èyí ni ìgbà àkọ́kọ́ tí àwọn onímọ̀ ìwádìí ti rí irú ipa kan náà nínú ẹ̀jẹ̀."
+    },
+    {
+      "hyp": "Tí a bá dápò mọ́ àwọn ìyípadà mììn tí a rí ní inù ẹ̀jẹ̀ tí ó tí gbà, àwọn ìwádìí lè ràn áwọn onímọ̀ sáyẹ́nsì lọ́wọ́ láti gbà ìmọ̀ tí ó jinlẹ̀ sí ìfámọ̀ràn láàrin RA àti CVD, àti bí a ṣe lè ṣe ìdámọ̀ àwọn amì iṣẹ́ àrùn wọ̀nyí ní keté keté."
+    },
+    {
+      "hyp": "Bí o ti wú kí ìwádìí ìbẹ̀rẹ̀ yìí jẹ́ ìgbàgbọ́, ó yẹ́ kí a ṣe akiyesi pé iye àwọn àpẹẹrẹ ti a ló fún ìwádìí náà kéré sí."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà tún sọ pé ọ̀nà tí wọ́n gbà ṣe ìwádìí ìyípadà àwọn amínó àṣíwájú nínú àwọn prótìínù lè tún rí àwọn abajade láti inú àwọn nǹkan tí kò ní í ṣe pẹ̀lú rẹ̀, èyí túmọ̀ sí pé àwọn ìdánwò tí ó yẹ̀ wá fún fibrín ni a óò nílò láti jẹ́ kí abajade náà dájú sí i ní ọjọ́ iwájú."
+    },
+    {
+      "hyp": "Nígbà pípẹ́, mímọ̀ nípa ìsopọ̀ tó ṣégùn-ún láàrin RA àti ìwọ̀nbà ìṣẹ̀lẹ̀ CVD tí ó pọ̀ sí i lè mú kí àwọn abajade fún àwọn aláìsàn RA dara sí bí a ti ń kọ́ láti mọ̀ àti láti tọ́jú àwọn àrùn wọ̀nyí dáadáa."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ iwadi láti South Africa, Denmark àti United Kingdom kópa nínú ìwádìí yìí, tí Ìgbìmọ̀ Ìwádìí Ẹ̀kọ́ Ìṣègùn South Africa ṣe ìdáni rẹ̀."
+    },
+    {
+      "hyp": "Àṣàrò ìtọ̀sọ́nà ìgbàáláàgbà òkun fún àwọn olùlọ́wọ́lọ́wọ́ òkun ìgborò – ìrírí, iṣẹ́-ṣiṣe, àti ìgbà tí a gbà."
+    },
+    {
+      "hyp": "Ìwádìí yìí ní ìdì láti ṣe ìtọ́jú sí ìyàgbàgbà láàrin sáiàǹsì àti áwọn èǹwàyàn ní apẹrẹ́ àìṣé-ìṣọ́kan ti ó ṣeeṣe ní ìwadií àti ìbeere alaye ti a mò sí ìyàgbàgbà lilo."
+    },
+    {
+      "hyp": "Ní àwọn ọ̀rọ̀ yìí, a ń ṣàwárí ìwúlò ìsọfúnní ìgbàálá ayẹ́ omi (metocean) gẹ́gẹ́ bí àwọn olùmọ̀lò ṣe rí i nínú orílẹ̀-èdè méjì ní àgbègbè Gúúsù Àgbáyé:"
+    },
+    {
+      "hyp": "Gúúsù Áfríkà àti Nùsílándì."
+    },
+    {
+      "hyp": "Níbi yìí, ohun ti a fiyesi si kì í ṣe iwoye, lilo ati gbigba awọn asọtẹlẹ iṣẹlẹ ti o ga ju lọ nikan, ṣugbọn o fiyesi si iṣẹ asọtẹlẹ deede gbogbogbo."
+    },
+    {
+      "hyp": "Àwọn ẹ̀kọ́ yìì ṣe nípà ìwádìí, tí a ṣe aṣaajùn rẹ̀̀ láti ibeere iwádìí mẹ́ta."
+    },
+    {
+      "hyp": "Àwọn ìbéèrè ìwádìí náà bo àwọn àkòrí tó yatọ̀ síra, láti ọ̀dọ̀ àwọn ohun èlò títọ́sọ́nà ìtọ̀sọ́nà, ìṣéṣe àti ìdúróṣinṣin, ṣíṣeé lo, orúkọ rere ilé-iṣẹ́, àti àwọn àìdánilójú tó ní í ṣe pẹ̀lú ìyípadà afefe (láti mẹ́nu kan díẹ̀ nínú wọn)."
+    },
+    {
+      "hyp": "Àwọn ibeere lọ́ọ́lọ́ ti a fi káàkiri gidigidi láti gba àwọn olùlọ́wọ́ iṣẹ́ eré ìdárayá àti ti iṣẹ́ ṣiṣe."
+    },
+    {
+      "hyp": "Ìwádìí náà gbé aàrọ̀ lé lórí mímọ̀ àwọn aṣà ìpinnu tí ó nípa lórí àwọn aini ìsọfúnni àwọn olùlò amúṣọ̀n Òkun."
+    },
+    {
+      "hyp": "A lo àlàyé ìṣọ̀kan àṣà (CCA) láti ṣe ìwádìí lórí ìbáìmọ̀ tí wọ́n pínpín àti ìyàtọ̀ nínú ìrírí láàrin gbogbo ẹgbẹ́ àwọn olùdáhùn, àti ní àwọn ẹgbẹ́ kékeré tí wọ́n gbé karí àwọn ẹ̀ka àti orílẹ̀-èdè."
+    },
+    {
+      "hyp": "A rí ìwọ̀n ìfarajọ ti o yatọ si ara wọn ninu ẹgbẹ́ gbogbo (awọn alakopa lati awọn orilẹ-ede mejeeji ati gbogbo awọn apakan ti a po pelu) loju awọn ẹgbẹ́ kekere ti awọn olumulo."
+    },
+    {
+      "hyp": "Gbogbo àwọn àìgbàgbọ́ pa pọ̀ fi hàn ní gbogbogbòò pé ìwọ̀n ìṣọ̀kan aṣà tí ó tóbi wà nípa ọ̀rọ̀ tí a gbé kalẹ̀, ṣùgbọ́n pẹ̀lú ìyàtọ̀ kan ní ìwọn ìrírí ní ìpele orílẹ̀-èdè, tí ó fi hàn pé àwọn aṣà ìyàtọ̀ lè wà."
+    },
+    {
+      "hyp": "Nígbà tí a ṣe àtúmọ̀ fún àwọn ẹgbẹ́ orílẹ̀-èdè àti àwọn ẹgbẹ́ aṣàágbàdánì lọtọ̀, a rí ìbámu ìṣẹ̀dá ara-ẹni tí ó gbọ́dọ̀mọ̀ jùlọ nínú ẹgbẹ́ àwọn olùlọ́wọ́lọ́wọ́ South Africa, pẹ̀lu ìṣọ̀kan tí ó lágbára láìka àjọṣepọ̀ aṣàágbàdánì sí."
+    },
+    {
+      "hyp": "Ẹgbẹ́ àwọn olùlópàá iṣẹ́ ọnà Niù Sílándì ni o ní ìbámu tí ó lágbára jùlọ pẹ̀lu gbogbo ẹgbẹ́ kékeré mìíràn."
+    },
+    {
+      "hyp": "A ṣe àtúmọ̀ ìdì ti ìwádìí wa lórí àwọn ohun pàtàkì nínú ìgbà tí a gba iṣẹ́, àti nítorí náà lórí iṣẹ́ ṣiṣe àwọn àsọtẹ̀lẹ̀ tó ṣe pàtàkì."
+    },
+    {
+      "hyp": "Àwọn iṣẹ́ ṣiṣe pàtàkì pupọ̀ fún àwọn àsọtẹ̀lẹ̀ ti a gbé karí ìmọ̀ sáyẹ́nsì ni ọjọ́ iwájú a tún ṣe àṣàrò lórí wọn, nígbà tí a bá ń gbé àwọn ipa ìyípadà ojú ọ̀run tí a retí yèwò."
+    },
+    {
+      "hyp": "A ṣe ìparì pẹ̀lú ṣíṣe ìdámọ̀ àwòrán àṣàrò kan láti gbé àṣàrò pàtàkì ti ìṣọpọ̀ ìṣe àgbékalẹ̀ ọjà ìtòṣọ́nà àti ìdọ́gbà/ìdúróṣinṣin ìmọ̀ sáyẹ́nsì gà."
+    },
+    {
+      "hyp": "Àwọn ara Guusu Afirika, àwọn ara Niusiliandu gbẹ́kẹ̀lé àsọtẹ́lẹ̀ nípa ojú ọ̀run òkun."
+    },
+    {
+      "hyp": "Àwọn ara Guusu Afirika àti àwọn ara Niusiliándì tí ń ṣiṣẹ́ tí sì ń gbé ní àwọn agbègbè òkun gbẹ́kẹ̀lé iṣẹ́ ìsọfúnni nípa òjò tí ó rọrùn láti lo, tí ó sì ń pese àwọn àsọtẹ́lẹ̀ tí ó tọ́ gidigidi nígbà gbogbo."
+    },
+    {
+      "hyp": "Àwọn iṣẹ́ ìtọ̀sọ́nà orílẹ̀-èdè àti oríṣiríṣi àwọn ojú-ìwé tita ṣe àṣàrò nípa bí ojú ọ̀run yóò ṣe rí."
+    },
+    {
+      "hyp": "Wọ́n gbìyànjú láti jẹ́ deede tó sì wúlò̀ tó bá ti ṣeé ṣe."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ iṣẹ́ ìmọ̀ èdá àti ìrònú ìmọ̀ èdá ni a fi ṣe iru àsọtẹ́lẹ̀ bẹ́ẹ̀."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí yàn láti wo bí àwọn ènìyàn ní Gúúsù Áfríkà àti Níwùsílándì ṣe ń lò àwọn iṣẹ́ ìṣàṣàtúnṣe – àwọn orílẹ̀-èdè méjèèjì ní àwọn eti òkun tó gùn, ṣùgbọ́n wọ́n ní iye àwọn ènìyàn àti ipò eti òkun tó yàtọ̀ síra gidigidi."
+    },
+    {
+      "hyp": "Wọ́n fẹ́ mọ̀ bí igbà tí àwọn ara ilu ìgborò etí okun yìí ṣe máa ń lò iṣẹ́ ìtòṣọ́ná orílẹ̀-èdè tàbí ti ìṣòwò, àwọn ohun tí wọ́n ń lò ó fún, àti bóyá wọ́n rí i wí pé ó ṣeé gbẹ́kẹ̀ lé àti pé ó ṣeé gbàgbọ́."
+    },
+    {
+      "hyp": "Èyì jẹ́ àwọn ò̀tọ̀ọ̀dọ̀ pàtàkì ní ti bí ìyípádá afẹ́fẹ́ ọjọ́ ọ̀là ṣe le máa nípa lórí ìtọ́kasí ilẹ̀ ọ̀run."
+    },
+    {
+      "hyp": "Àwọn ọmọ Nàìjíríà 31 àti àwọn ọmọ Nùsílándì 126 ló dá ibeere ìwádìí lórí ayélujára lóhùn."
+    },
+    {
+      "hyp": "Èyì pẹ̀lú àwọn èniyàn tí ń lò tọ́kàsọ̀ ojú-ọ̀sán fún iṣẹ́ (fún àpẹẹrẹ, awọn apẹjà àti àwọn èká tí ń wà ńlà átí gbà áwọn èniyàn là), àti àwọn mììn tí ń kopa nínú erè ìdárayá àti ìgbadun tí ó ní í ṣe pẹ̀lú okun bíí surfing, paddling, tàbí wíwọ̀n."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí béèrè nípa bí iṣẹ́ ìsọsọ́ nípa òòrùn tí wọ́n fẹ́ràn ṣe rọrùn láti lo, àti bí ìṣọ́ṣọ́ rẹ̀ ṣe tọ́ àti bí ó ti ní ìdúróṣinṣin."
+    },
+    {
+      "hyp": "Àwọn àìkọ̀wẹ́rọ̀ kọ̀wẹ́ sí àwọn ohun tí ó jẹ́ kí ó ṣeé ṣeé lò àti ṣe pàtàkì sí wọn, wọ́n sì sọ̀rọ̀ lórí bí wọ́n ṣe lè yí pa dà nítorí ìyípadà ojú ọ̀run."
+    },
+    {
+      "hyp": "Wọ́n sì tún ní láti sọ̀rọ̀ nípa bí wọ́n ṣe gbẹ́kẹ̀lé ìsọfúnni tí àwọn iṣẹ́ òṣùwọ̀n ojú ọ̀run orílẹ̀-èdè wọn fún wọn, àti bí wọ́n ṣe rí i."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ àwọn ara Gúsàù ti ó kópa nínú ìwádìí náà jẹ́ àwọn oluṣe surfing, tàbí àwọn ènìyàn tí wọ́n ṣe iranlọwọ́ nínú iṣẹ́ ìwádìí àti ìgbàlà tàbí àwọn iṣẹ́ ìwádìí."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ ará Niusílàńdì tí wọ́n dáhùn àwọn ìbéèrè wo àwọn ìtòṣìsọ̀ ìgbàáláà nítorí pé wọ́n fẹ́ lọ́ ṣọ́ọ̀n, gbé ọkọ̀ ojú omi, tàbí gbé òwú lọ sí òkun."
+    },
+    {
+      "hyp": "Àwọn àìkọ̀wé lati orílẹ̀-èdè mejeeji gbàgbọ́ ni ìròyìn tí àwọn iṣẹ́ òṣùwọ̀n ojú ọ̀run orílẹ̀-èdè wọn fún wọn."
+    },
+    {
+      "hyp": "Wọ́n fẹ́ràn iṣẹ́ ìṣàṣàrò tòótọ́, tí ó bá ara rẹ̀ mu, tí ó rọrùn láti lo, tí ó sì ní àwọn ẹ̀ya tí a lè yí pa dà láti bá àìdánilójú wọn mu."
+    },
+    {
+      "hyp": "Àwọn àìkòpà tí lo iṣẹ́ naà fún iṣẹ́, ní gbogbogbo, rí i pé àwọn àsọtẹ̀lẹ̀ fún ipò omi okun ti ó súnmọ́ etí okun kò tó gbájú."
+    },
+    {
+      "hyp": "Àwọn ìsọfúnni fún àwọn agbègbè kan túbọ̀ tọ́ ju àwọn mìíràn lọ."
+    },
+    {
+      "hyp": "Àwọn ara Guusu Afirika sábà máa ń lò iṣẹ́ ìtọ̀jú ojú ọ̀run ju àwọn ara Niusiliándì lọ, wọ́n sì máa ń wo ó lójúmọ́."
+    },
+    {
+      "hyp": "Fún 9 ninu 10 olufèsì, eto asọtẹlẹ ti o dára pupọ ṣe pataki gidigidi."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ fẹ́ iṣẹ́ tí ó ń fi ọjọ́ mẹ́ta sí ọjọ́ mẹ́jẹẹ̀rin fún wọn láti wo ọjọ́ iwájú."
+    },
+    {
+      "hyp": "Àwọn ènìyàn tí wọ́n ṣiṣẹ́ ní oko ẹja tàbí tí wọ́n gbọ́dọ̀ ṣe ètò nítorí àwọn ipò pajawiri tí ó ṣeé ṣe fẹ́ àwọn àsọtẹ̀lẹ̀ ọdún pẹ́pẹ́ àti akoko."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ àwọn olùlò fi gbàgbọ́ pé nítorí ìyípadà ìgbàálá ayé tí ń pọ̀ sí i, àwọn iṣẹ́ ìsọsọ̀ tòṣìṣe yóò nílò láti lo àwọn ìsọfúnni tí ó dá lórí ìmọ̀ sáyẹ́nsì tí ó dára jù lọ ní ọjọ́ iwájú láti rí i dájú pé àwọn àsọtẹ́lẹ̀ jẹ́ òtítọ́."
+    },
+    {
+      "hyp": "Ìwádìí bíbẹ̀ẹ̀ diẹ̀ ṣáá ní a ti ṣe tẹ́lẹ̀ ní orílẹ̀-èdè ní Gúsù Ìgbàlààyé."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà ní ireti pé wọ́n ti kọ́ ohun tó tó lati ọ̀dọ̀ àwọn tó kópa nípa àwọn ìbéèrè tí wọ́n bi wọ́n."
+    },
+    {
+      "hyp": "Àìlera miíràn tún wà pé, àwọn ènìyàn tó pọ̀ sí i ní New Zealand ju àwọn tó wà ní South Africa lọ ló kópa nínú ìwádìí náà."
+    },
+    {
+      "hyp": "Iṣẹ́ wọn yìí máa ràn ẃnyẹǹ tò wá ṣiṣẹ́ fún àwọn iṣẹ́ ìtọ̀sọ́nà ojú ọ̀run lọ́wọ́ láti ṣe àwọn ọjà tí ó dára jù sí i, tí wọ́n sì gbàgbọ́ ohun tí àwọn oníbàárà wọn fẹ́."
+    },
+    {
+      "hyp": "Wọn óo le ṣe àwọn ìṣe àtúnṣe àti àyípadà dá lori bí àwọn oníbàárà wọn ṣe ní ìtẹ́lọ́rùn, àti idi tí wọ́n fi lo o."
+    },
+    {
+      "hyp": "Ọ̀nà Ìkópa-Àpapọ̀ fún Ìṣàyẹ̀wò Ìwà-Sọ́tọ̀-Ọ̀rọ̀-Ìwòyí-Ìgbàágbàá ti Àwọn Iṣẹ́-Ìṣe Àgbẹ̀:"
+    },
+    {
+      "hyp": "Ìṣẹ̀lẹ̀ Lushoto"
+    },
+    {
+      "hyp": "Àṣàrò ẹ̀kà ọgbọ̀n ìgbẹ́ ágbó (CSA) ń gba agbára káàkiri ayé."
+    },
+    {
+      "hyp": "Ṣugbọ́n, kò ṣe kedere lórí ohun tí ó yẹ kí ó bojúto lábẹ́ ọwọ́ àwọn ọwọ́-ìṣọ́ mẹ́ta rẹ̀—àwọn ohun tí ó mú iṣẹ́ ṣiṣẹ́, agbára-ìfarada àti ìdènà."
+    },
+    {
+      "hyp": "Nítorí náà, CSA gba ọ̀pọ̀ iṣẹ́-ọgbà/ìmọ̀-ẹ̀rọ̀ ọgbà-àgbẹ̀dẹ́, tí ó sì mú kí ó ṣòro láti gbé àwọn àfojúsùn CSA ga."
+    },
+    {
+      "hyp": "Ní àkọ́kọ́, kò sí ìwọ̀n àti ọ̀nà tí ó ṣe kedere tí a sì lè lo fún ṣíṣe ayẹ̀wò bí àwọn ìgbìyànjú ṣe ṣeé gbàgbọ́ nípa ọ̀rọ̀ afẹ́fẹ́-òòrùn."
+    },
+    {
+      "hyp": "Ní ọ̀na kejì, ìsọfúnni díẹ̀ ni o wà nípa ipa àwọn iṣẹ́ àtúnṣe ọ̀pọ̀lọpọ̀ tí a ti gbé gẹ́gẹ́ bí CSA, pàápàá jùlọ ní àwọn orílẹ̀-èdè tí ń ṣe ìtẹ̀síwájú."
+    },
+    {
+      "hyp": "Níkẹyìn, iṣaaju-iṣe CSA kò gba ero awọn olukopa ronu lati rii daju pe awọn iṣe-atunṣe jẹ amuṣe, yẹ, ati pe o ni agbara giga lati gba."
+    },
+    {
+      "hyp": "Ní ibi yìí, a ṣàpẹẹrẹ ọ̀nà ìgbọ̀ràn-ìtọ́ka tuntun kan fún ṣíṣe ayẹ̀wò ìṣe-àgbè ti ó ṣe amọ̀nà sí afefè ní iṣẹ́-àgbè awọn awọn agbè kérékéré."
+    },
+    {
+      "hyp": "Èyí tọ́ka sí àwọn àmì ìtọ́ka ìpele oko (àti àwọn ìtọ́ka-apọ̀) fún ọwọ́ àtìlẹ́yìn ààbò oúnjẹ àti ìṣe-àṣàpadà ti CSA."
+    },
+    {
+      "hyp": "Ó tún ṣe atilẹyin fún iṣẹ́ ṣiṣe ìwọn didùn ti àwọn àmì ìtọ́ka, tí ó ń jẹ́ kí a lè ṣe ìṣàyẹ̀wò ìṣe ìṣàkóso afefe àti ti ọjọ́ iwájú."
+    },
+    {
+      "hyp": "A ṣe àdánwò ọ̀nà iṣẹ́ náà láàrin àwọn aṣàgbà ọgbà 72 tí wọ́n ń lo ọ̀nà ìṣiṣẹ́ CSA tó yàtọ̀ síra ní abúlé Lushoto, Tanzania, tí ó gbàdúrà sí àyípadà ìwòyípadà."
+    },
+    {
+      "hyp": "Àwọn agbẹ̀, jùlọ, ní ìfẹ̀ sí àwọn ìṣe àtúnṣe tí ó mú ilẹ̀ ṣe amọ̀dájú, tí ó dín ìṣàn omi lórí ilẹ̀ kù, tí ó sì mú ilẹ̀ tí ó bàjẹ́ padà sí ipò rere nítorí ipa rere rẹ̀ lórí ọ̀pọ̀ èso àti igbẹ́ ṣiṣẹ́ oko nígbà tí kò sí àkókò."
+    },
+    {
+      "hyp": "Jùlọ, ìtọ́jú CSA gbińdọ̀tọ́ ìṣẹ̀da ẹranko, ìṣẹ̀da oúnjẹ, lílo àti owó."
+    },
+    {
+      "hyp": "Àṣàrò iṣẹ́ náà rọrùn láti mú bá àwọn àgbègbè àti ọ̀nà iṣẹ́ okò oríṣiríṣi mu, ó sì ń gbàgbà láti ṣe àtòjọ́ iṣẹ́ àtọ́wọ́dá tó dára jù lọ́."
+    },
+    {
+      "hyp": "Ṣugbọ́n a gbààwá pé kí a gbá CSA gbà bí apakan ìṣé áwọǹlẹ́, ìwádìí àti ìkọ́nì."
+    },
+    {
+      "hyp": "Àwọn ọ̀nà ìwọn tuntun ń ràǹwọ́ fún àwọn onímọ̀ sááyẹ̀nsì àti àwọn aagbe láti múra sílẹ̀ fún iyipada ojú ọ̀run."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ sáyẹ́nsì tí ń ṣiṣẹ́ pẹ̀lu àwọn àgbẹ̀ ní Tanzania lè ṣe ìwọ̀n bá a ṣe dára tó tí àwọn ọ̀nà àgbẹ̀ tuntun ń ṣiṣẹ́ láti dín àwọn àbájáde ìyípadà ojú ọ̀run kù."
+    },
+    {
+      "hyp": "Wọ́n ní ireti pé ọ̀nà wọn yóò mú kí ààbò oúnjẹ̀ àti iye èso okó dàgbà fún àwọn aṣàwáṣà okó ní àwọn apá ayé mììn."
+    },
+    {
+      "hyp": "“Ìgbẹ́̀rùn ìgbàgbọ́ ojú-ọ̀nà” ni ohun ti Àjọ̀ Ìṣọ̀kan Àgbáyé ń g̀bàdúrà láti ran àwọn agbẹ̀ kékeré lọ́wọ́ láti múra sílẹ̀ fún iyípadà ojú-ọ̀nà."
+    },
+    {
+      "hyp": "Àgbẹ̀ ọlọ́gbọ́n tí ó mọ̀ nípá ìwọ̀n otutú ayé ń ṣe ìpìlẹ̀ṣẹ̀ sí ìyípadà àwọn àṣà ìgbàáláàgbà, ó sì ń gbé ìdánilójú oúnjẹ ga nípa ṣíṣe àwọn ọ̀gbìn rẹ̀ lágbára sí i."
+    },
+    {
+      "hyp": "Èyi jẹ́ ọ̀rọ̀ pàtàkì gan-an fún àwọn àgbè Tanzanía, nítorí pe orílẹ̀-èdè náà ti ń kojú ìdinkú iye èko ti àwọn ọ̀gbìn oúnjẹ́ pàtàkì nítorí iyipada ojú ọ̀run."
+    },
+    {
+      "hyp": "Ṣugbọ́n, àwọn onímọ̀ ìwádìí sọ pé ó léwù láti wọ́n íyàrà aṣeyọri ìtọ́jú afẹ́fẹ́-ọ̀rọ̀, bí apẹẹrẹ ìṣé ẹ̀rọ̀, tí àwọn átọ́kọ́tà fúnrà wọn kì í ṣe igbimọ̀ nígbà gbogbo nípa bí ìtọ́jú ṣe ń ṣiṣẹ́ gẹ́gẹ́ bí a ti fẹ́."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí fẹ́ ṣe àtòjọ ọ̀nà láti wọń ìyàrá ìṣe àwọn ohun elò tí ń mú kí afefe rọ̀, pẹ̀lú ìtẹ́lọ́rùn pàtàkì sí mímú ìdánilójú oúnjẹ̀ àti ìṣeéṣe àṣàpadà dára sí i."
+    },
+    {
+      "hyp": "Ní ìbẹ̀rẹ̀, wọ́n kàwẹ́ iwadi iṣẹ́-ọgbà míràn, wọ́n sì ṣe àkọ́ọ̀lẹ̀ méjì tí o ní àwọn ohun pàtàkì 14, tàbí “àwọn àmì ìtọ́ka”, tí ó ṣe pàtàkì fún ìwọ̀n ààbò oúnjẹ àti ìṣe ìdáǹwò."
+    },
+    {
+      "hyp": "Lẹ́yìn náà, nígbà tí wọ́n ń ṣiṣẹ́ ní Ìlú Ọba Lushoto ní Tanzania, àwọn onímọ̀ ìwádìí náà bá àwọn àgbẹ̀ ilẹ̀ adúláwọ̀ àti àwọn ọ̀mọ̀wé gbẹ́rùgbẹ́rù ọ̀pọ̀lọpọ̀ ṣiṣẹ́ papọ̀ láti mọ àwọn àmì pàtàkì jùlọ láti orí àwọn àkọ́lẹ̀ kọ̀ọ̀kan."
+    },
+    {
+      "hyp": "Àwọn aṣàgbè ṣe ìdámọ̀ ìṣelọ́pọ̀ oúnjẹ gẹ́gẹ́ bí àmì ìtọ́kà pàtàkì jùlọ̀ fún didí ìdáabòbò aabo ounje."
+    },
+    {
+      "hyp": "Ní ọ̀rọ̀ mìíràn, igbẹ́kẹ̀lé gbàrà sí ìyípadà eyikeyii ti ó mú iye ọja oko wọn pọ̀ sí i."
+    },
+    {
+      "hyp": "Nígbà yìí, nípà apà ìgbọ́ràn sí iyipada, àwọn aṣáàgbà ló ti fi ìfẹ́ hàn sí àwọn ìṣe àtọ́kà ti ó ṣe iranlọ́wọ́ fún wọn láti dáàbò bo ilẹ̀ oko wọn, àti àwọn ti ó mú ìmọ̀, ọgbọ́n, àti owó wọn pọ̀ sí i."
+    },
+    {
+      "hyp": "Lẹ́yìn tí àwọn onímọ̀ ìwádìí ti mọ̀ ìwọ̀n pàtàkì kọ̀ọ̀kan àwọn àmì ìtọ́ka náà, wọ́n sì lè lo wọ́n láti dán wò bóyá irú iṣẹ́ àfikún mẹ́fà nínú ìlú Lushoto ṣe ṣeéṣe."
+    },
+    {
+      "hyp": "Ní gbogbo ọ̀rọ̀, wọ́n bí àwọn agbẹ̀ ilẹ̀ adúláwọ̀, ní ipele 1-5, bóyá ìtẹ̀síwájú kan ti wà nínú àwọn àmì ìfihàn kọ̀ọ̀kan láti ìgbà tí ìṣe-iṣẹ́ náà ti bẹ̀rẹ̀."
+    },
+    {
+      "hyp": "Èyí gba wọ́n láàye láti rí èyí ninú àwọn ìtọ́jú ti ó ní ipa ti ó lagbara júlò lorí aabo ounje àti ìdàpò."
+    },
+    {
+      "hyp": "Wọ́n rí i pé mẹ́ta nínú àwọn iṣẹ́ ìtọ́jú mẹ́fà tí wọ́n ń lò ni o ní ipa gidi."
+    },
+    {
+      "hyp": "Àwọn náà ní a ń lo fún ìṣé ìdáradára, ìru ìgbẹ́ tó lè gbọ́dọ̀gbọ́dọ̀, àti fífúnní ní nǹkan jẹun ti ó dára ju fún ẹranko."
+    },
+    {
+      "hyp": "Àwọn olùwádìí sọ pé ọ̀nà wọn mú kí ó rọrùn láti rí i dájú pé àwọn ìgbìyànjú tó ń bọ̀ yóò bá aṣàwájú àwọn àgbẹ̀ Lushoto mu, àti àwọn ète ogbọ̀n-ìmọ̀-ìgbàgbọ́ nípa ọ̀rọ̀ afefe."
+    },
+    {
+      "hyp": "Wọ́n fi kún un pé yíyàn àwọn iṣẹ́ àtọ́kà tó yẹ̀, sì tún pọ̀ sí àǹfààní pé àwọn agbé̀gbèrún yóò gbàwíṣẹ̀ àwọn àṣà tó dára fún àwọn aládùúgbò wọn, nípa báyìí, a óò sì túmọ̀ àwọn èrò tó gbóògì sí àyíká."
+    },
+    {
+      "hyp": "Ní ọ̀nà gbogbo, a tún lè lo ọ̀nà náà ní àwọn àgbègbè mìíràn, ó sì lè ràn wá lọ́wọ́ láti rí i dajú pé àwọn ètò ìṣàkóso ojú ọ̀run tó gbọ́dọ̀ ṣiṣẹ́ mú àwọn ipò ilẹ̀-ìbílẹ̀ àti ìmọ̀ àwọn agbé ní kà, nípasẹ̀ àṣàwákiri àti ṣíṣàyẹ̀wò déédéé."
+    },
+    {
+      "hyp": "Nípa ṣíṣe bẹ́ẹ̀, ó ṣeé ṣe kí àwọn ìgbòkègbòdò igbẹ́gbẹ́-òòrùn tó gbónáàrùn ṣe àṣeyọrí, kí wọ́n sì gba ààlà, ní Tànsánìà àti síwájú sí ìlú mìíràn ní Àfríkà."
+    },
+    {
+      "hyp": "Ìwádìí naà jé ìṣé aṣojúùkan láàrin àwọn onímọ̀-èrọ láti Kenya àti Netherlands."
+    },
+    {
+      "hyp": "Àwọn Àjàkálẹ̀-àrùn Ẹ̀dá Ẹ̀gún bí Àwọn Ẹ̀yà Tí Ó Gbòdè Wọlé: Ìmọ̀ Rírí Láti Gúsù Áfíríkà"
+    },
+    {
+      "hyp": "Ìwádìí àwọn èyà árùn gégé bí èyà ajejí ti ó lè wọ̀ inú ko ti gbá akiyesi pupọ̀ ní aayè ìwádìí ìwọ̀n inú."
+    },
+    {
+      "hyp": "Àwọn àrùn arun ti a mú wá lè gba ipà tí ò wúnú lorí ẹ̀da alààyè, ekòsìsẹ́mù ti wọn n gbe, atí ọrọ̀-aje ti ekòsìsẹ́mù náà n ṣe atilẹ̀yin."
+    },
+    {
+      "hyp": "Nínú ìwé èyìí, a lo àwọn àpẹẹrẹ̀ àkọ́ọ́lẹ̀ àrùn tí wọ́n mú wá sí ibi tí kò ti sí tẹ́lẹ̀, tí ó ń pa àwọn ẹranko ilé àti àwọn ẹranko igbó (rabies ọgọ, àrùn tuberculosis màlúù, àti rinderpest) àti ènìyàn (àrùn ọ̀tọ̀, àrùn ẹ̀gbà, àti àrùn HIV) láti fi hàn irú àwọn ipa tí àwọn àrùn arun náà lè ní."
+    },
+    {
+      "hyp": "Ipa ti o buru julo titi di oni ni ti rinderpest, eyi ti o fa ikú milionu awọn malu, ati pe o paapaa run awọn oriṣiriṣi ẹda alaaye lati awọn apakan to tobi ti guusu Afrika."
+    },
+    {
+      "hyp": "Èyì sì ní ipá tí ó wúwò lórí ọ̀rọ̀ ájẹ ti ẹkùnjẹkùn náà, tí o sì jà sí ìyípadà tí ó pò júlọ̀ nípà ìṣẹ̀dára àti iṣẹ́-àṣẹ ti ekosístíẹ́mù."
+    },
+    {
+      "hyp": "A ti pa àrùn Rinderpest run ni gbogbo aye, ṣugbọn àrùn rabies ti aja àti àrùn tuberculosis ti maluu ṣi wa, a si o nilo iṣọra ati iṣakoso tó ṣe deede lati da wọn duro."
+    },
+    {
+      "hyp": "Láàrin àwọn àrùn èèyàn, a ti pa àrùn àkànkàn run káàkiri ayé, ṣùgbọ́n ipa àrùn náà, tí àwọn oníṣẹ́ àkọ́ṣẹ́ Yúróòpù mú wá, jẹ́ ìparun gidigidi."
+    },
+    {
+      "hyp": "Ní ìbẹ̀rẹ̀ ọdún 1700, iye ènìyàn tó pọ̀ (títí di 90% ní àwọn àdúgbò kan) lára àwọn ará ìbílẹ̀ Khoekhoe kú, èyí sì pa àṣà àti ọ̀nà ìgbé ayé wọn run, tí ó sì fi àwọn tí ó là á sílẹ̀ di àwọn tí wọ́n gbé lọ sí iṣẹ́ oko."
+    },
+    {
+      "hyp": "HIV, ti a ríi ní akọ́kọ́ ní Gúsà ní ọdún 1982, ti páà dá lórí ilera àti ọrọ̀ áwọn èniyàn, béẹ̀ ní ìtójú antiretroviral nìkan ti ná 66.4 bíliọ̀nù Naira Súdàn lódọọdún fún ìjọba."
+    },
+    {
+      "hyp": "Àwa náà ni a fi Vírúsù Nile Ìwọ̀-órùn àti Àrùn Ẹ̀lẹ́dẹ̀ Àfirika sílẹ̀ gẹ́gẹ́ bí àpẹẹrẹ àwọn àrùn tí o ti gbinrin láti Àfirika, tí ó sì lè di ìparun gbogbo ayé lọ́jọ́ kan."
+    },
+    {
+      "hyp": "A ṣe àṣàrò pé àwọn àrùn tuntun yóò fara hàn bí ènìyàn bá ń tẹ̀síwájú láti fẹ̀ sí àwọn agbègbè òdidi, àti bí iye ìṣòwò bá ń pọ̀ sí i."
+    },
+    {
+      "hyp": "Ohun ti awọn onímọ̀ sáyẹ́nsì mọ̀ nípa àwọn àjàkálẹ̀-àrùn kékeré tí wọ́n ń fa àrùn ní South Africa."
+    },
+    {
+      "hyp": "Ẹ̀ká iwe yìí ṣe àtúmọ̀ ti ìsọfúnni tuntun lórí àwọn àrùn bíi rinderpest, rabies, measles àti HIV, gbogbo wọn ni àwọn kokoro aruń tí ó wọ̀ inu ara (àwọn fáìrọ̀sì, bàkíríà àti àwọn ẹ̀dá kékeré mìíràn tí a kà sí ẹ̀ya tí kò sí ní ilẹ̀, eyì tó túmọ̀ sí pé wọn kò sí ládùúró ní àyíká kan pato)."
+    },
+    {
+      "hyp": "Àwọn àrùn wọ̀nyí gbogbo ń kọ́lù àwọn ẹranko àti ènìyàn ní Gúúsù Áfíríkà, àti ìkọlù wọn nígbà ìkẹyìn ń bà jẹ́ ọrọ̀-ajé orílẹ̀-èdè náà."
+    },
+    {
+      "hyp": "Nínú pápá ìwádìí tí a ń pè ní ‘ìmọ̀ ẹ̀dá alàìlẹ́gbẹ́,’ àwọn onímọ̀ ẹ̀dá ń kẹ́kọ̀ọ́ nípa àwọn ẹ̀dá alààyè tí ń ṣe tán, tí sì ń fa ìpalára lẹ́yìn tí wọ́n ti wọlé sí àwọn àyíká tuntun níbi tí wọn kì í sí."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ ìwádìí ti fi áàkíyé sí àwọn èyà “tí ó léwu” tó tóbì, bí àwọn ewekò àti ẹranko, ṣúgbọ́n àwọn olúṣé ìdàamú tí ó kéré́ jú tí ó fá árùn náà ṣe pàtàkì."
+    },
+    {
+      "hyp": "Ní orí ìwé yìí, àwọn onkọ̀wé ṣàlàyé nípa àwọn àrùn ẹranko àti ènìyàn kan ní Gúúsù Áfríkà tí àwọn kokoro arun tí a mú wá fa."
+    },
+    {
+      "hyp": "Wọ́n sọ pé àrùn ‘rinderpest’ ní í jẹ́ ewu jùlọ, tí wọ́n rí ní Gúsà Afirika ní ọdún 1896."
+    },
+    {
+      "hyp": "Rinderpest jẹ́ arun ti fá́yìrọ̀sù fa, o sì kàn agbo ati malu."
+    },
+    {
+      "hyp": "Ààrùn kan náà ló fa àrùn ẹ̀gbà láàrin ènìyàn."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ àwọn èǹgbèrèmèjẹ̀ ní okọ̀ nígbá tí árùn náà tukà sí ní ọdún 1896, ṣúgbọ́n a ti pá á kúnrin nípà ìgbàlóyè."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé láàrin ọdún 1772 àti 1861, ọ̀pọ̀ ajá ní Gúsù Áfrika ní arun rabies, bí o tì wú kí eniyan kò mò arun nàà."
+    },
+    {
+      "hyp": "Ní ọdún 1893, a ti mò pé àìsàn rabies jẹ́ nítorí fáìrọ́ọ̀sù, nítórí èyì, ijobá pinnù láti pa awọn aja tí àìsàn náà bá, tí wọn sí bú ọ̀nà aabo fun awọn ti ko bá àìsàn náà."
+    },
+    {
+      "hyp": "Ṣugbọ́n, èyì kò pa àrùn náa run, o sì ṣí ńkọ́ áwọn ẹ̀dá ẹrankó igbó̀ pupò bí duikers, kinínǹkan, ajá igbó̀, àwọn ajá ẹ̀gàn atí awọn ẹlẹ́wọ̀n."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé ní ọdún 1928, àwọn ọmọ méjì ní ẹ̀gàn Mongoose Aláwọ̀dùdù gún, wọ́n sì kú nítorí àrùn rabies."
+    },
+    {
+      "hyp": "Láti ìgbà náà, àrùn rabies di gbogbo ní Gúsù Áfrika."
+    },
+    {
+      "hyp": "Wọ́n sọ pé ní ọdún 1954, ọ̀pọ̀lọpọ̀ ara ilú Gúsù Áfrika páà ní àkùkọ́rò sí máaṣẹ̀lẹ̀."
+    },
+    {
+      "hyp": "Nígbà tí wọ́n ń kọ́ orí èyí, àkùkọ́ ń pa àwọn ọmọdé bí 400 lójúmọ́."
+    },
+    {
+      "hyp": "Wọ́n wí pé àrùn ẹ̀gbà jẹ́ ohun tí ó wọ́pọ̀ níbi tí ènìyàn àti màlúù bá súnmọ́ ara wọn."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé tún mẹ́nu bàà lórí àrùn kan tí a ń pè ní àrùn ẹ̀gbà gbàgbà màlúù (BTB), tí bàkítérià fa."
+    },
+    {
+      "hyp": "BTB pa màlúù, ẹgbò, ẹlẹ́dẹ̀ ogun, ẹkùn, àwọ̀n, kudu, abọ̀ọ̀lù àti kìnnìún."
+    },
+    {
+      "hyp": "Wọ́n sọ pé àrùn BTB ní á kọ́kọ́ rí ní ọ̀kan lára àwọn áàyẹ gẹ́gẹ́ ti orílẹ̀-èdè Gúúsù Áfíkà ní ọdún 1996."
+    },
+    {
+      "hyp": "Ìjọba ṣakoso àrùn náà nípa lípa àwọn màlúù tí àrùn náà ti bà jẹ́."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé àjàkálẹ̀-àrùn mìíràn, tí àwọn arìnrìn-àjò láti ilẹ̀ Yúróòpù mú wá sí Gúúsù Áfríkà, fa àrùn tí a ń pè ní ‘àkùkọ́’ lára àwọn ènìyàn."
+    },
+    {
+      "hyp": "Àrùn náà pa ju 90% àwọn ènìyàn Khoekhoe agbègbè lọ."
+    },
+    {
+      "hyp": "Nígbà tí àrùn náà tán, aṣà àwọn ènìyàn Khoekhoe ti bàjẹ́ pátápátá."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé náà tún sọ̀rọ̀ nípa àrùn ajẹ́rùn afẹ́fẹ́ ẹ̀dá ènìyàn (HIV) tí ó fa ìtànkálẹ̀ àrùn AIDS."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ sáyẹ́nsì ṣì gbà pé àwọn ẹ̀dá ẹ̀mí ló kó ọ̀lọ́jẹ̀ náà fún ènìyàn ní àkọ́kọ́, ní ọ̀nà tí a ń pè ní zoonosis."
+    },
+    {
+      "hyp": "Wọ́n rí àjàkálẹ̀-àrùn náà ní Sọ́úthù Áfìríkà ní ọdún 1982."
+    },
+    {
+      "hyp": "Wọ́n sọ pé, dé ọdún 2019, kò sí oògùn tabi ìtọ́jú fún HIV."
+    },
+    {
+      "hyp": "Wọ́n parí orí ẹ̀kọ́ náà nípa sísọ̀rọ̀ nípa àrùn West Nile Virus àti àrùn ẹ̀gbààgbà ẹlẹ́dẹ̀ Àfríkà, èyí tí wọ́n sọ pé ó ti ilẹ̀ Àfríkà wá, tí ó sì tàn sí Yúróòpu àti Amẹ́ríkà."
+    },
+    {
+      "hyp": "Àjàkálẹ̀-àrùn West Nile ni àwọn màlùù fà ránṣẹ́, ó sì pa ọ̀pọ̀lọpọ̀ ẹyẹ́, ṣùgbọ́n ó tún kan àwọn ẹṣin àti àwọn ènìyàn pẹ̀lú."
+    },
+    {
+      "hyp": "Wọ́n sọ pé àwọn ẹranko bí ẹlẹ́dẹ̀ ogun àti ẹlẹ́dẹ̀ igbó ni wọ́n gbé àrùn ẹlẹ́dẹ̀ Àfríkà ránṣẹ́."
+    },
+    {
+      "hyp": "Àrùn náà kọlu àwọn ẹlẹ́dẹ̀, ó sì kọlu iṣẹ́ ẹlẹ́dẹ̀ gidigidi."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé àwọn kò fi jú àwọn àrùn tí bàkíríà àti fáìrọ̀sì fa sọ̀rọ̀ lọ́, nítorí náà, orí ìwé yìí kì í ṣe ìtàn gbogbo àwọn kòrókòró alàgbàṣe."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé wá látí Gúúsù Áfríkà."
+    },
+    {
+      "hyp": "Àwọn ìlànà ìṣirò abẹ̀ tí ó dá lórí ẹ̀rí fún ìṣàkóso Odontogenic keratocyst."
+    },
+    {
+      "hyp": "Ìṣakoso tó múni lè lórí ti odontogenic keratocyst (OKC) ṣi jẹ́ kokọ̀ tí ó wúní lókàn, tí o sì dáamú láàrin ìwé ìwẹ̀ iṣẹ́ abẹ ti ẹnù àti ìwọnnu."
+    },
+    {
+      "hyp": "Lọ́wọ́lọ́wọ́, kò sí ìbáìmọ̀ kan nípa ìtọ́jú tó yẹ julọ fún àwọn aláìsàn tí wọ́n ní odontogenic keratocyst."
+    },
+    {
+      "hyp": "Láàrin ọ̀pọ̀ ọ̀nà ìtọ́jú tí ó wà, kò sí ọ̀nà kankan tí ó ti fi hàn pé ó ní ìwọ̀n ìpadàbọ̀ sẹ́yìn tí ó jẹ́ ọ̀dọ̀ọ̀dún tabí tó sunmọ́ bẹ́ẹ̀, àfi ìgbẹ́kẹ̀lé gbígbòòrò pẹ̀lu àwọn òkèèrè tí ó mọ́."
+    },
+    {
+      "hyp": "Nítorí àìpẹ̀lẹ̀ ẹ̀rí ìwádìí ti ó dá lórí àwọn ọ̀nà abẹ̀ fún ìtọ́jú àwọn aláìsàn tí wọ́n ní odontogenic keratocyst ninu ìwé ìkọ́wé, ìwádí yií ní ètè láti fi ọ̀nà abẹ̀ kan lè, ti ó dá lórí àbájáde ìtúmọ̀ àwọn ìwádìí lọ́pọ̀lọpọ̀, tí a retí pé óo ṣe anfaní nínú ìmúdárá ìtọ́jú àwọn aláìsàn tí wọ́n ní àìsàn yìí."
+    },
+    {
+      "hyp": "Nípa lílò àwọn àkọ́kọ́rọ̀ ti; ìwọ̀n, irú ìṣòro (àkọ́kọ́ tàbí kejì), ìṣòro tí ó ní àwọn àmì àrùn tàbí tí kò ní, síṣe àwọn ihò nínú ìgbàálá, àti ìpínpín; a ń fi igi ìpinnu hàn, láti ràǹwọ́ nínú ètò ìtọ́jú àti láti rí i pé àìsàn náà kò padà sílẹ̀ nígbà tí a bá ń tọ́jú odontogenic keratocyst."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣe àṣàyàn ọ̀nà tí ó dára jù lọ fún ìtọ́jú àrùn ẹ̀gún."
+    },
+    {
+      "hyp": "Nípá gbígbà ìṣé ìwádìí tí ó ti wà láàrin ara wọn, àwọn onímọ̀ ìwádìí ṣe ìtumọ̀ awọn igbesẹ to ṣe kedere ti awọn dokita le tẹle lati ṣe iwadi ati toju awọn alaisan ti o ni arun egun ti a npè ni ‘odontogenic karatocyst’ (OKC)."
+    },
+    {
+      "hyp": "OKC jẹ́ ìṣòro, tàbí ìdàgbàsókè tí kò ṣeé ṣeé rí, lórí ẹ̀gún ènìyàn."
+    },
+    {
+      "hyp": "Àwọn dókítà rí i pé ó ṣòro láti tọ́jú àrùn náà, tí àwọn aláìsàn sì máa ń ní OKC mìíràn paápáà lẹ́yìn ìtọ́jú tí ó ṣeéṣe."
+    },
+    {
+      "hyp": "Nítorí náà, àwọn dókítà ń wá ọ̀nà láti mú kí àwọn ìṣọ́kun ẹ̀gún ẹ̀yìn yìí sàn ní ṣíṣe kedere tí ó sì sì máa wà fún ìgbà gbogbo."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí wá àwọn ìgbésẹ̀ pàtàkì tí àwọn dókítà gbọ́dọ̀ gbé láti rí àrùn náà, kí wọ́n sì tọ́jú rẹ̀."
+    },
+    {
+      "hyp": "Wọ́n ṣe èyí nípa ṣiṣe àwárí láàrin àwọn iwe ìkẹ́kọ̀ọ́ tí ò ti wà, tàbí àwọn àpilẹ̀kọ̀ ìjìnlẹ̀, nípa OKC."
+    },
+    {
+      "hyp": "Wọ́n ń wá ìsọfúnni ní pàtàkì lórí bí àwọn dókítà ṣe ṣe iṣẹ́ ìtọ́jú OKC fún ọdún kan, gẹ́gẹ́ bí wọ́n ti ṣàkọsílẹ̀ rẹ̀ nínú àwọn àpilẹ̀kọ 46 tí wọ́n rí."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé OKC sábà máa ń jẹ́ àwọn ọkùnrin lọ́pọ̀ ju àwọn obìnrin lọ, ó sì lè kàn àwọn ènìyàn tí ó fi di ọmọ ọdún 90, bí ó tilẹ̀ jẹ́ pé ó sábà máa ń jẹ́ láàrin ọmọ ọdún 20 sí 30."
+    },
+    {
+      "hyp": "Àrùn náà jẹ́ káàkiri jùlọ ní agbàrá isalẹ̀."
+    },
+    {
+      "hyp": "OKC bẹ̀rẹ̀ láti inú egungun, pẹ̀lú ìgbòòrò énù tó jẹ́ pé a ó ṣe rí ì nípá ìwọ̀nbà."
+    },
+    {
+      "hyp": "Àwọn aláìsàn sábà máa ń rẹ̀ẹ́ní kí wọ́n sì ní ìtùjáde kan (oògùn, bíì òró, tí ó ń tu jáde láti inú igbẹ́ tàbí ìṣẹ́lẹ̀), àti pé gbòògì ẹ̀gàn wọn lè yípadà sí ibòmíràn."
+    },
+    {
+      "hyp": "Wọ́n gbàwẹ́ pé àwọn dokitá yẹ́ kò́ ewu naà páàpàà ati ẹnú-ìgbá tó wá ní ìhà ìgbàgbọ́."
+    },
+    {
+      "hyp": "Lẹ́yìn yíyọ wọn, wọ́n gbọ́dọ̀ fi oògùn tí a ń pè ní ìdààmọ̀ Carnoy, pẹ̀lú gaasi náìtirójẹni (oògùn tutu gan-an tí a ń lò láti yọ ara tí ó bàjẹ́ kúrò lọ́tẹ̀lẹ̀) àti fluorouracil (tí a tún mọ̀ sí 5FU, oògùn ìṣàn kan tí ó gbòòrò) sí i."
+    },
+    {
+      "hyp": "Lẹ́yìn ìtọ́jú yìí, àwọn onímọ̀ ìwádìí gbani nímọ̀ràn pé olóríìyà yẹ kí ó ṣe àyẹ̀wò ìlera tẹ̀lé e fún ọdún mẹ́ẹ̀ẹ́dọ́gbọ̀n (25)."
+    },
+    {
+      "hyp": "Wọ́n sọ pé ìtọ́jú yìí dára jù fún àwọn ìṣòro ara tí ó kéré sí igbá ẹ̀fọ̀n (3 cm)."
+    },
+    {
+      "hyp": "Fún àwọn ìṣọ́kun tí ó tóbi ju 3 cm lọ, àwọn onímọ̀ ìwádìí gbani nímọ̀ràn pé kí wọ́n fi àfiyèsí sí i púpọ̀ sí i."
+    },
+    {
+      "hyp": "Wọ́n sọ pé kí àwọn dókítà kọ́kọ́ dín àtìká ní inú ìṣòro náà kù, kí wọ́n sì mú omi náà kúrò, kí wọ́n sì tún mú gbogbo ara tí ó yí ẹ̀gún pa dà kúrò."
+    },
+    {
+      "hyp": "Lẹ́yìn náà, ó yẹ kí a tọ́jú egungun náà pẹ̀lu oògùn Carnoy."
+    },
+    {
+      "hyp": "Wọ́n g̀bọ́́wọ́ pé àwọn dokitá kúrọ̀ àwọn alápọǹjú wọ̀nyí wá ni oṣù méjì lẹ́ẹ̀kan fún ọdún méjì."
+    },
+    {
+      "hyp": "Bí àìsàn bá ní ọ̀pọ̀lọpọ̀ ìṣòro, awọn dokita tun lè yọ wọn kuro pẹlu awọn ohun èlò pataki kan ni ile-iwosan."
+    },
+    {
+      "hyp": "Ṣùgbọ́n ní gbogbogbòò, àwọn ìwádìí tí a ṣàyẹ̀wò fi hàn pé nínú ọ̀pọ̀lọpọ̀ ọ̀ràn, bí́ àwọn dókítà bá yọ ìṣẹ̀lẹ̀ náà kúrò, tí wọ́n sì fi 5FU sí, àwọn aláìsàn kì yóò tún ní OKC mọ́."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, wọ́n kìlọ̀ pé ẹ̀rí fún àwọn ìtọ́jú wọ̀nyí kì í ṣe alágbára nígbà gbogbo, wọ́n sì rí iye ìwé ìtọ́kasí ìmọ̀ sáyẹ́nsì díẹ̀ lórí koko yìí."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà kò sì ṣe àwọn ìdánwò ara wọn láti mú ìṣedédé wọ̀nyí yé; dípò èyí, wọ́n gbìyànjú láti kó àwọn àṣàyàn ìtọ́jú tí ó dára jùlọ jọ láti inú àwọn ìwádìí tí àwọn onímọ̀ ìwádìí mìíràn ṣe."
+    },
+    {
+      "hyp": "Nítorí náà, àwọn onímọ̀ ìwádìí wọ̀nyí, tí wọ́n wà ní Nàìjíríà àti Amẹ́ríkà, ṣe ìṣedáàmọ̀ fún àwọn ìwádìí síwájú sí i ní orílẹ̀-èdè ọ̀tòọ̀tọ̀ láti dán ìṣeéṣe àwọn ìtọ́jú tí a ṣe ìṣedáàmọ̀ rẹ̀ nìbí wò."
+    },
+    {
+      "hyp": "Wọ́n tún gba àwọn dókítà níyànjú láti gbé àwọn àìsàn míì ti àwọn aláìsàn yẹ̀ wò nígbà ìtọ́jú."
+    },
+    {
+      "hyp": "Oògùn àlùbọ̀ọ̀ṣọ̀ SARS-CoV-2 (2019-nCoV), MERS-CoV àti SARSr-CoV: Ìwádìí kọ̀m̀pútà̀ àfiwé lati gbé àwọn epitope ti o yẹ si iwaju."
+    },
+    {
+      "hyp": "Àwọn kọrọ́náfàírọ̀sì máa ń jẹ́ ti ẹ̀ya ẹranko kan pato gẹ́gẹ́ bí olùgbà, ẹ̀dá onírun tàbí ẹyẹ̀ dá lórí ẹ̀ya wọn; sibẹ̀, àwọn fáírọ̀sì wọ̀nyí lè yí olùgbà pa dà nígbà mìíràn nítorí ìyípadà."
+    },
+    {
+      "hyp": "HCoV-229E jẹ́ ọ̀kan laráwọn kọrọ̀nàfáìrọ̀sì èya ara èniyạn mẹ́fà, tí ó gbá HCoV-NL63, HCoV-OC43, HCoV-HKU1, MERS-CoV àti SARSr-CoV (SARSr-CoV-1 àti SARS-CoV2) kú, o sí tan káàkiri ágbáaye."
+    },
+    {
+      "hyp": "MERS-CoV àti SARS-CoV-2 lé dúró lórí àwọn ohun tí kò láyà, bíi (ìrin, gilasì tabí pilasitikì fún díẹ̀ lójọ́ mẹ́san) (Huang, C.-L, 2020)."
+    },
+    {
+      "hyp": "Àwọn ọ̀nà ìdènà àti ìtọ́jú pẹ̀lu oogun hydrochloroquine wúlò̀, ṣùgbọ́n oògùn alàáfià tí ó dára tí ó sì ní ipa lè ṣe pàtàkì láti dènà ìtànkálẹ̀ àjàkálẹ̀ àrùn Covid-19."
+    },
+    {
+      "hyp": "Èté ìwádìí wa ní latí ṣe ìdamọ̀ àwọn epitope ti ó lè jẹ́ oògùn aabo nípa lilo ọ̀nà bioinformatics."
+    },
+    {
+      "hyp": "Ohun elo ati ọ̀nà"
+    },
+    {
+      "hyp": "A gba gbogbo ẹ̀rọ àkọsílẹ̀ jìnnìjìnnì SARS-CoV-2 láti 2019 Novel Coronavirus Resource (2019nCoVR) àti ibi ipamọ̀ data méjì, tí ó tóka sí National Center for Biotechnology Information (NCBI) Global Initiative on Sharing All Influenza Data (GISAID) àti TAURAU/T-bio-infoserver fún bioinformatics lojú ìlè."
+    },
+    {
+      "hyp": "A ó ṣe àtúnyẹ̀wò kukuru lórí ipilẹ̀ṣẹ̀ àjàkálẹ̀-àrùn, a ó fi ìwádìí ìṣiṣẹ́-ìṣiṣẹ́ ṣe ìwééwé fún ìdámọ̀ àwọn agbègbè tí ó dára pọ̀, àgbègbè protein rẹ̀ tí ó wọ́pọ̀ jùlọ (agbègbè ìdè àṣàpẹẹrẹ), àti àṣàrò àgbàyanu fún àṣàpẹẹrẹ mọ́lìkúlù tí ó ṣeeṣe (epitope) fún àwọn àṣàyàn ìtọ́jú fún 2019-nCoV tuntun tí a ṣe ìdámọ̀, SARSr-CoV àti MERS-CoV."
+    },
+    {
+      "hyp": "Ohun iyanu ni pe, ìwérí ìlọ́pòn àwọn ìlọ́pòn-ìṣẹ̀lẹ̀ láàrin SARS-CoV-2 àti ìrù mììn kan fi han pé àwọn èrọ̀n ti ó wà ní inú aṣẹ olùgbà-ìbaraẹnisọ̀rọ̀ gbàgbọ́dé gẹ́gẹ́ pẹ̀lú ìdọ́gbà 70%."
+    },
+    {
+      "hyp": "A fi owó táàwọn amínó àsídì pàtàkì máàrùn-ún (L455, Y473, N479, F486, Q493) lórí agbègbè olùgbà ìdákọ̀ lati inú àwọn purotéènì spike tí wọ́n jẹ́ olùṣe ìdákọ̀ láàrin àjàkálẹ̀-àrùn àti olólúfẹ."
+    },
+    {
+      "hyp": "Nínú RBD SARS-CoV-2, wọ́n rí àwọn ìṣẹ̀dá (D480, àti T487) tí wọ́n jẹ́ kí ààrùn náà lè tàn kàárin ẹ̀ya ẹ̀dá miíràn."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, ní SARS-CoV-2, ìyípadá kékeré kan ninu àwọn èrọ̀ kan lé mu ibaraẹniṣọrọ pẹ̀lú olùgbà sẹ̀ẹ̀lì èniyà dára sí i: L455, F486, Q493, àti N501."
+    },
+    {
+      "hyp": "Nínú SARS-CoV, a ti so àwọn èròjà pàtàkì méjì (479 àti 487) pọ̀ mọ́ ìdánilójú olùgbà ACE2 ènìyàn."
+    },
+    {
+      "hyp": "Nínú SARS-CoV-2, àwọn ìtọ́jú tí ó bá N479 mu ṣe ìbámu pẹ̀lu Q493 àti T487 sí N501."
+    },
+    {
+      "hyp": "A ṣe ìdámọ̀ ìlà ìlà-ẹ̀kúnrẹ́rẹ́ amino ti ó dárà pò káàkiri ọ̀pọ̀lọpọ̀ koronaifáírọ̀sì, páàpàà 2019nCoV àti àwọn ìru mììn, a rí ìdámọ̀ KRSFIEDLLFNKVTLADAGF gẹ́gẹ́ bí èyí ti ó dárà pò páàpàà ní ìwádìí yìí, ti ó sì bá agbègbè kan ti ó wà ní ayika ọ̀kan ninú àwọn ibí ti a má ń ge SARS fáírọ̀sì ti a gbà pé ó ṣe pàtàkì fún iṣẹ́ ṣiṣe fáírọ̀sì fún wíwọlé sẹ́ẹ̀lì."
+    },
+    {
+      "hyp": "Àpẹẹrẹ ìṣiṣẹpọ̀ yìí àti àwọn iyipadá tó yí ì káàkiri jẹ́ ipilẹ̀ fún ṣíṣe àtewọ́gbà epitope oògùn ajẹsarà ti a ṣe, ìwádìí yìí lè mú kí a rí àwọn ohun eló tí ó léwú, tí ó kú, tí ó sì léwú sókè, àti àwọn ibí tí wọ́n lè só."
+    },
+    {
+      "hyp": "Ìwádìí yìí ń fúnni ní alaye àti áàyè láti jẹ́rì báàlẹ̀."
+    },
+    {
+      "hyp": "Síbẹ̀, a lè ṣàpèjúwe iṣẹ́ náà ní ọ̀rọ̀ ìṣe-ẹ̀kọ́-ìwàláàyè, tí ó sì rọrùn fún àwọn ẹlòmíràn láti ṣe àtúnṣe rẹ̀, bí ó tilẹ̀ jẹ́ pé àwọn ìsọfúnni tuntun àti ìwádìí lórí Covid-19 ń yọ síta, tí wọ́n sì ń yípadà pẹ̀lú iyara tí ó gbàfià."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ sáyẹ́nsì ń fi kọ́rọ́ná fún àwọn àrùn arun àkọ́kọ́rọ́ mìíràn láti ran wọn lọ́wọ́ láti rí àwọn oògùn alábàá."
+    },
+    {
+      "hyp": "Ní oṣù Kẹsán 2020, àwọn onímọ̀ sáyẹ́nsì ní Mali ṣe àfiwé ìsọfúnni gẹ́nétìkì láti ọ̀dọ̀ kọ́fìd-19 fáírùsì sí àwọn kọ́rọ́náfáírùsì méjì tó sún mọ́ ọn, láti lè ṣe ìdámọ̀ àwọn àpẹẹrẹ tó lè ràn wọ́n lọ́wọ́ nínú jíjẹ́ ọgbọ́n fún ìṣe ohun-àlọ́gbà."
+    },
+    {
+      "hyp": "Nígbà náà, àwọn onímọ̀ sáyẹ́nsì ṣì ń wá àwọn oògùn alàágbàdọ́gbà Covid-19 tó ṣeé ṣe."
+    },
+    {
+      "hyp": "Wọ́n fẹ́ ṣe ìdámọ̀ àwọn àmúkù ìyípadà ninú àrùn Covid-19 tí ó lè ní ipa ninú ìfónu."
+    },
+    {
+      "hyp": "Nítorí náà, àwọn olùwádìí ará Mali ṣe ìweèwéè coronavirus Covid-19 (SARS-CoV-2) pẹ̀lú àwọn coronavirus miíràn méjì tó ń fa àrùn fún ènìyàn, ìyẹn ni MERS-CoV àti SARS-CoV."
+    },
+    {
+      "hyp": "Ọ̀kan lára àwọn àfojúsùn pàtàkì ìwádìí náà ní latí ṣe ìdámọ̀ àwọn agbègbè pàtó lórí kọ́fì́d̀-19, tí a ń pe ní epitopes, tí ètò aabo ara èniyàn lè mọ̀."
+    },
+    {
+      "hyp": "Tí a bá le ṣe ìdámọ̀ wọn, yóò ràn àwọn onímọ̀ sáyẹ́nsì lọ́wọ́ láti ṣe àwọn oògùn alábùkún tí ó dára síi."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà tún fi àwọn fáìrọ̀ọ̀sì mẹ́ta yìí wéra pọ̀ láti rí i bóyá àwọn ìdàrísí gẹ́ẹ́sì tí ó lè ṣe iranlọ́wọ́ sí iṣẹ́ ìṣe àgbàṣẹ̀gbàá sí i."
+    },
+    {
+      "hyp": "Wọ́n fi áàyẹnú sí ọ̀nà ìṣiṣẹ́ gẹ́ẹ́sì ti àwọn purotéèní spike àwọn fàìrọ́ọ̀sì, èyì tí ṣé àwọn purotéèní tí ń ran àwọn kọ́rọ́nà fàìrọ́ọ̀sì lọ́wọ́ láti so ara mọ́, tí wọ́n sì ń lo láti bàa jẹ́ àwọn sẹ́ẹ̀lì ènìyàn."
+    },
+    {
+      "hyp": "Ohun ti àwọn onímọ̀ ìwádìí rí ni pé àwọn purotéènì spike ti àwọn fà́ìrọ̀ọ̀sì mẹ́ta náà dàra pọ̀ gan-an nípa gẹ́ẹ̀nì, páapá àwọn apá ti ó bá àwọn sẹ́ẹ̀li ara ènìyàn ṣiṣẹ́ papò."
+    },
+    {
+      "hyp": "Ohun ti o yàtọ̀ nípa àjàkálẹ̀-àrùn Covid-19 ni pé àwọn ìyípadà kékeré kan wà nínú purotéènì spike tí ó lè mú kí àjàkálẹ̀-àrùn náà jẹ́ alágbára sí i ní bíbá sẹ́ẹ̀li ènìyàn so."
+    },
+    {
+      "hyp": "Àwọn ìwádìí láti ìwádìí yìí lè jẹ́ kí àwọn onímọ̀ ṣiṣẹ́ mìíràn ṣe agbàṣe àwọn oògùn alàgbà-àrùn Kòfìdì-19 tí ó dára jùlọ nípa ṣíṣe iranlọ́wọ́ fún wọn láti mọ àwọn apá lórí àrùn náà tí ó jẹ́ àwọn ibi tí ó dára fún àwọn oògùn alàgbà-àrùn."
+    },
+    {
+      "hyp": "Ìwádìí naà tun gbóǹgbọ̀ǹ míní míní nípà áwọn ìrù ìyàn atì ìyànpàà láàrin àwọn kokoronàfáirásì atí kokoronàfáirásì Covid-19."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí kíyèsí i pé iwadi tó ń bọ̀ yẹ́ kí ó gbé ojú sórí bí ìyàtọ̀ gẹ́gẹ́ bí ìṣe àwọn gẹ́ẹ̀sì ni àjàkálẹ̀-àrùn Kòfìd-19 ṣe lè mú kí ó máa tàn káàkiri sí i, tí ó sì máa lewu ju àwọn kọ́rọ́náfàírọ̀sì míì lọ."
+    },
+    {
+      "hyp": "Àkóràn Òkaǹ Ní Àwọn Àrùn COVID-19: Àtúwòyẹ́ Etọ̀ Àti Meta-Analysis"
+    },
+    {
+      "hyp": "Kò le ṣe àìkà ìwarànpà ọkàn nínú àwọn alárẹ̀ coronavirus arun ọdún 2019 (COVID-19) nitori pé ó ní ipà gigà lorí ìṣegun rẹ̀."
+    },
+    {
+      "hyp": "Nítorí náà, àjọ̀ iwadì yìí dojúkò láti kọ́ ìdánilójú gidi nípa bí àrùn àìṣeéṣe ọkàn ṣe máa ń wà lára àwọn aláìsàn COVID-19."
+    },
+    {
+      "hyp": "A ṣe àwárí tó gbòòrò fún àwọn ìbáṣepọ̀ àtọ́kàwé/ẹ̀rọ́ àwárí tí a gbẹ́kẹ̀lé, pẹ̀lú PubMed, Scopus, ilé-iṣẹ́ Cochrane àti wẹ́ẹ̀bù ọgbọ́n."
+    },
+    {
+      "hyp": "Lẹ́yìn ṣíṣàwọ̀n, a mú àwọn ìdáàmú ìròyìn tó bá a mu wá, a sì kó àwọn ìṣẹ̀lẹ̀ láti inú àwọn ìwádìí tí a gba wọlé jọ fún ìtọ́kasí meta-analysis."
+    },
+    {
+      "hyp": "Nígbẹ̀yìn, a fi iwadi mẹ́san kun iwadi wa ti o ní àwọn aláìsàn 1445."
+    },
+    {
+      "hyp": "Àbájáde àtúmọ̀ ìwádìí lọ́pọ̀lọpọ̀ fi hàn pé iye ìṣẹ̀lẹ̀ àrùn àìṣe-déédéé ọkàn (arrhythmia) láàrin àwọn alápọǹbẹ̀rẹ̀ COVID-19 jẹ́ 19.7% pẹ̀lú ìdánilójú 95% (CI) ti ó wa láàrin 11.7 si 27.6%."
+    },
+    {
+      "hyp": "Bákan náà, ìyàtọ̀ ńlá (I2□=□94.67%) wà."
+    },
+    {
+      "hyp": "Àrùn àìṣeéṣe ọkàǹ rẹpẹtẹ̀ pupọ̀ láàrin àwọn alápọǹràn tí ó ní COVID-19, a sì rí i ní 19.7% láàrin wọn."
+    },
+    {
+      "hyp": "Ìwọnwọn tó bógbọ́n mú nípa electrocardiogram pẹ̀lú ìdámọ̀ àwọn àrùn ọkàn tí ó ṣe kederé atí téé wá ní kíkí ṣe pàtàkì fún ìṣakoso atí ìṣegun tí ó dára jú."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ àwọn aláìsàn Kòfídí-19 ni wọ́n ní ìṣẹ̀lẹ̀ ọkàn tí kò dára."
+    },
+    {
+      "hyp": "Àwọn olùwádìí sọ pé, nínú àwọn aláìsàn Kòfídí-19, ọ̀kan nínú márùn-ún ni ń ní àrùn ìṣàn ọkàn tí a tún mọ̀ sí ìṣàn ọkàn tí kò dára."
+    },
+    {
+      "hyp": "Nítorí pé ó gbòòrò gan-an, wọ́n gbaní nímọ̀ràn láti máa ṣe àbọ̀wọ̀n ìṣẹ́ ọkàn àwọn aláìsàn nípa lílò ẹ̀rọ tí a ń pè ní electrocardiogram, kí àwọn dókítà lè rí ìdámọ̀ àti ìtọ́jú eyikeyii àrùn àìṣe deede ìṣẹ́ ọkàn nígbà tí ó bá ṣeé ṣe."
+    },
+    {
+      "hyp": "Bí o ti wú kí Covid-19 bá áwọn ẹ̀dọ̀fọ́nú àti etó ìgbàgbọ́ afẹ́fẹ́ jẹ́ jùlọ, àwọn ìwádìí kan fi hàn pé o lè bá ọkàn páà jẹ́ páà."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí fẹ́ ṣàyẹ̀wò ìwé ìròyìn àwọn aláìsàn láti rí bí àwọn ìṣòro ìṣiṣẹ́ ọkàn ṣe máa ń wà lọ́pọ̀lọpọ̀ gan-an láàrin àwọn aláìsàn Covid-19 ní ọdún 2020, nígbà tí àjàkálẹ̀-àrùn gbogbo-èèyàn náà ṣẹ̀ṣẹ̀ bẹ̀rẹ̀."
+    },
+    {
+      "hyp": "Wọ́n ṣe àtúmọ̀ ìwádìí pupọ̀, eyì tí jẹ́ pé àwọn onímọ̀ ìwádìí ń ṣàtúmọ̀ ọ̀pọ̀ ìwádìí oríṣiríṣi lórí àkòrí kan pàtó láti gbíyànjú láti fa ìkẹ̀kọ̀ọ́ gbogbogbòò jáde láti inú gbogbo ìwádìí tí a ti kó jọ."
+    },
+    {
+      "hyp": "Wọ́n wá àwọn ìwádìí tí a ti ṣe àtúwò rẹ̀ láti ọ̀dọ̀ àwọn onímọ̀ ìwádìí mììn lárin àwọn ibi ipamọ̀ ẹ̀kọ́ giga, wọ́n sì yọ̀ alaye ti o bàamù jade nípá àwọn ìlú ọkàn ti kò bàa lẹ́wù nínú àwọn alápọǹbẹ̀ Covid-19."
+    },
+    {
+      "hyp": "Níkẹyìn, wọ́n fi 9 ìwádìí sílẹ̀ pẹ̀lu ìsọfúnni nípa àwọn aláìsàn 1445."
+    },
+    {
+      "hyp": "Wọ́n rí i pé a rí ìyàgbà ọkàn nínú 19.7% àwọn aláàrùn Covid-19."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, wọ́n kìlọ̀ pé iye iwadi díẹ̀ tí wọ́n lò lè dẹ́kun ìparí wọn."
+    },
+    {
+      "hyp": "Àwọn iwadi kan kò sì tún ṣe àpẹrẹ irú ìṣòro ọkàn náà gangan, ati àwọn àkọọlẹ̀ ara iwadi kọ̀ọ̀kan lè dá ìdààmú sí àwọn àkọọlẹ̀ ìtòlẹ́sẹ̀pọ̀ wọn."
+    },
+    {
+      "hyp": "Wọ́n g̀bà pé kí a wá wò ní ọjọ́ iwájú idi tí ọ̀pọ̀lọpọ̀ àwọn aláìsàn tí ó ní Covid-19 fi ní ìṣẹ̀lẹ̀ àìlóòótọ́ ti ọkàn."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé iwe ìwádìí yìí ti ilẹ̀ Ejibiti ni, ṣùgbọ́n àwọn aláìsàn nínú ìwádìí yìí ti orílẹ̀-èdè China àti Amẹ́ríkà ni."
+    },
+    {
+      "hyp": "Àwọn Ìwọǹràn Àwọn Onímọ̀ Ẹ̀kúnrẹ́rẹ́ Mììràǹ lórí Ìṣídẹ̀wọ̀n, Ilera Ẹ̀dá, àti PTSD:"
+    },
+    {
+      "hyp": "Àtúnyẹ̀wò Àwọn Ìwé Ìkẹ́kọ̀ọ́ Tó bá Ṣeé Ṣe"
+    },
+    {
+      "hyp": "Nínú ìwé èyìí, a ṣe àtúnyẹ̀wò ìwádìí tí a ti ṣe lórí PTSD, ilera èrò-inù àti ìlera gbogbo ti àwọn aàlùkò."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ ìwádìí fi hàn pé àwọn ohun tí ó fá aapọn ṣaajú ati lẹ́yìn ìgbèdédé nípá ipò̀lọ́wọ̀ nípá ipa lorí ilera ẹ̀rò ati PTSD àwọn álọ̀dè ati àwọn álọ̀gbà."
+    },
+    {
+      "hyp": "Ní orílẹ̀-èdè ibìtí wọ́n ti wá, ìjàǹbá tí wọ́n ti fara dà áti ìyà tí wọ́n ti jìyà jẹ́ ewu ńlá fún ìlera èrò ọkàn àwọn olùkọ̀."
+    },
+    {
+      "hyp": "Àwọn ìṣòro ilera èdèmí tí ń fa ìdààmú ńlá fún àwọn àlùfáà ní orílẹ̀-èdè tí wọ́n wà pẹ̀lú pẹ̀lú: àníyàn ìṣọ̀kan àṣà, ipo òfin, pípín ìdílé, àìgbọ́ràn èdè, àìní ìwọ̀nba sí ìtọ́jú ilera tó tọ́, ìyàlẹ́nu, ìyọnu, ìmọ̀lẹ̀ àìlera, ìdinku ìgbàgbọ́ ara ẹni, ìdààmú àìnípẹ̀kun àti ìṣọ́ra jùlọ."
+    },
+    {
+      "hyp": "Láàrin gbogbo àwọn ìṣòro ilera èrò, ìrora ọkàn, àníyàn àti PTSD ni a kà sí àwọn tí ó gbòòrò jùlọ, pẹ̀lú iye ìwọ̀n ìṣẹ̀lẹ̀ wọn tí ó jẹ́ 4–40%, 5–44% àti 9–36% lẹ́yìn wọn."
+    },
+    {
+      "hyp": "Lápapọ̀, a rí ìtọ́jú áwùjọ àti ọnà ìdáṣe ti ó bá a mù gẹ́gẹ́ bí aabo."
+    },
+    {
+      "hyp": "Ìlera ẹ̀ró àwọn aṣírí a máa ń jìya nítorí ipò tí wọ́n fi sílẹ̀, àti ìgbẹ́gbẹ́ sí ibi tuntun."
+    },
+    {
+      "hyp": "Àwọn aṣikiri àti àwọn aṣáájú ọ̀nà tí ń sá lọ sí àwọn orílẹ̀-èdè òkèèrè sábà máa ń ní ìṣòro àìlera ọkàn tí ó bá wọn lẹ́yìn ìjàkadì àti àwọn ìṣòro àìlera ọkàn mìíràn."
+    },
+    {
+      "hyp": "Bí o tilẹ̀ jẹ́ pé ọ̀pọ̀ nínú àwọn ìṣòro wọ̀nyí ni àwọn ohun tí ó ṣẹlẹ̀ ní orílẹ̀-èdè ìbílẹ̀ wọn fa, àwọn onímọ̀ sáyẹ́nsì sọ pé ó tún ṣe pàtàkì láti mọ̀ pé ìdààmú ìgbé ayé ní orílẹ̀-èdè tuntun lè fi kún ìṣòro náà."
+    },
+    {
+      "hyp": "Gẹ́gẹ́ bí ọ̀pọ̀lọpọ̀ ìwádìí ṣe fi hàn, ìṣọ̀kanù, àníyàn, àti àrùn àìrọ̀rùn-ọkàn lẹ́yìn ìṣẹ̀lẹ̀ ìṣòro (PTSD) jẹ́ àwọn àrùn ọkàn tí ó wọ́pọ̀ láàrin àwọn olùkọ̀kọ̀ àti àwọn aṣàágbà."
+    },
+    {
+      "hyp": "PTSD maà n jẹ́ abajadé tí a bá láàrà lẹ́yin iṣẹ̀lẹ̀ tí ó lewu tabí tí ó báni jẹ́, àti pé a maà n rí ipa iṣẹ̀lẹ̀ odi nàà lẹ́yin oṣù̀, tabí áà ti de ọdún."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí fẹ́ gbàgbọ́yè àwọn ohun fáktò ti ò ṣiṣẹ́ ṣiṣẹ́ ninu àwọn ìṣòro ilera èrò inú àwọn olùkọ̀kọ̀bẹ̀rẹ̀ bí PTSD."
+    },
+    {
+      "hyp": "Nítorí náà, wọ́n ṣe irú ìwádìí kan tí a ń pè ní àtúnyẹ̀wò, níbi tí wọ́n ti kó ìsọfúnni jọ láti inú ọ̀pọ̀ ìwádìí mìíràn lórí àkòrí náà, láti rí àwọn ìṣísẹ̀lẹ̀ tàbí àwọn àkòrí tí ó wọ́pọ̀."
+    },
+    {
+      "hyp": "Ní ọ̀pọ̀lọpọ̀ ìgbà, àwọn ìṣòro ìlera èrò ìmọ̀ àwọn olùkọ̀kọ̀rọ̀ jẹ́ abajade àwọn ìṣẹ̀lẹ̀ ìyàjẹ́jẹ́ bí ogun, ìbànújẹ́ fún ìbànújẹ́ àwọn ẹni tí a nífẹ̀ẹ́, tàbí ìkọlù ṣàìdáyà tí ó ṣẹlẹ̀ ní orílẹ̀-èdè ìbílẹ̀ wọn."
+    },
+    {
+      "hyp": "Nígbà tí àwọn ènìyàn wọ̀nyí fi sílẹ̀ àwọn ipò wọ̀nyí, wọ́n dojú kọ àwọn irin-àjò tí ó lewu, ṣùgbọ́n wọ́n rí ìtura nígbà tí wọ́n dé orílẹ̀-èdè tuntun kan."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ, sibẹ̀, pé ìdáàrọ̀ yìí sábà máa ń jẹ́ ti ìgbà díẹ̀, nítorí pé àwọn olùṣàkọ́kọ́ rí àwọn ìṣòro tuntun nígbà tí wọ́n ti gbé lọ sí ibòmíràn."
+    },
+    {
+      "hyp": "Wọ́n rí i pé àwọn àgbèdèm̀bèdè máa ń ní ìṣòrò pupọ̀ ní orílẹ̀-èdè tuntun náà, páàpàá bí wọn kò bá loyè èdè náà, tàbí bí wọn kò bá lè rọrùn láti fi ara wọn bá aṣà náà mu."
+    },
+    {
+      "hyp": "Nígbà tí àwọn ènìyàn bá ti dé orílẹ̀-èdè náà nípa àìṣẹ́dájó, tàbí wọ́n ń wá ààbò, wọ́n tún ní láti kojú àwọn ìṣòro òfin, tí ó sì sábà máa nira fún wọn láti wọlé sí àwọn iṣẹ́ bíi ìtọ́jú ìlera."
+    },
+    {
+      "hyp": "Fún àwọn kan, ìkọ̀kọ̀rọ̀ àti ìyàjàde ní orílẹ̀-èdè tuntun wọn fi kún ìrírí wọn pé wọn kò ní ààbò, ọ̀pọ̀lọpọ̀ sì ti fi àwọn ọmọ ẹbí wọn sílẹ̀, wọ́n sì wà nìkan."
+    },
+    {
+      "hyp": "Àwọn ohun wọ̀nyí ló fa àwọn ìṣòro ìlera èrò tí ń bá a lọ, àní nígbà tí àwọn aṣàágbàdègbò wọ̀nyí ti wà ní ipò tí ó dáàbòbò ju ti ilẹ̀ ìbílẹ̀ wọn lọ."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí fi kún un pé àwọn olùṣàkọ́kọ́ ní ọ̀pọ̀lọpọ̀ ọ̀nà oríṣiríṣi láti bójú tó àwọn ìṣòro wọ̀nyí, láti ìṣètò tó dára lórí bí wọ́n ṣe lè bójú tó wọn, sí wíwá ìrànlọ́wọ́ lọ́wọ́ àwọn ẹlòmíràn nínú àwùjọ wọn, tàbí àwọn ọ̀nà tí kò dára bí ìwà ọ̀dàlẹ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ iwadi sọ pé a nílò iwadi sí i sí i ní gbogbo ìpele irin-ajo àwọn olùṣàkó."
+    },
+    {
+      "hyp": "Pàtàkì nípáà kú́nnàà ìwádìí àwọn ohun tí ó ń kan ilera ẹ̀rò ní ìlù tí awọn ẹniyà tí wà, ṣùgbọ́n sí béè nígbà pipẹ́ ní ìlù tuntun wọn."
+    },
+    {
+      "hyp": "Wọ́n fi kún un pé àwọn irin ajó àwọn èniyàn tí ń gbé láti Áfírika lọ sí Yúróòpù ń bèrù sí ìtọ́kàn tó gàjù láti ọ̀dọ̀ àwọn onímọ̀ ìwádìí."
+    },
+    {
+      "hyp": "Ìwádìí yìí jẹ́ ìṣọ̀kan iṣẹ́ láàrin àwọn onímọ̀-iṣẹ́ tí wọ́n gbé ní Gúsù Áfrika àti Jámáni, o sì jẹ́ apakan iwe kan lórí iriri àwọn àgbèdè Áfrika tí wọ́n ń gbé ní àwọn orílẹ̀-èdè Eùróòpù."
+    },
+    {
+      "hyp": "Ìwàsíwàsí àti ìmọ́lẹ̀ Amblyomma hebraeum ṣe pọ̀ sí ìṣòro aàrùn ọkàn Heartwater ní ìlú gúúsù Bọt́swana."
+    },
+    {
+      "hyp": "Heartwater jẹ́ àrùn tí èèpó ń gbé, tí ẹ̀jẹ̀ ń fa, tí ó ní agbára láti dín ìdàgbàsókè iṣẹ́-ogbin àti iṣẹ́-ọ̀ṣọ̀ ní Botswana kù."
+    },
+    {
+      "hyp": "Ewu yi sí aabo ounje orilẹ-ede ni a fi ṣe ìtọ́ka sí ìṣelọ́pọ̀ tó kéré àti ìkú ẹranko ni ìṣẹ́ oko aṣa ti ẹranko kekere jú lọ́wọ́ ní ìgbẹ́ ẹranko ti ònà iṣowo."
+    },
+    {
+      "hyp": "Ìwádìí yìí fi hàn bí àrùn ọkàn-omi ṣe ń gba gbogbo Botswana."
+    },
+    {
+      "hyp": "Wọ́n ṣe ìdámọ̀ àwọn ikọ̀ tí ń jẹ ẹran lórí ẹranko tí wọ́n ń tọ́jú ní mẹ́rin lárin àwọn agbègbè gúúsù ilẹ̀ Botswana nípà ìwádìí apẹrẹ̀ àti ìwádìí molikula."
+    },
+    {
+      "hyp": "A béèrè lọ́wọ́ àwọn àgbẹ̀ nípa ìṣàkóso àrùn ọkàn-omi láàrin àwọn agbègbè wọn."
+    },
+    {
+      "hyp": "A gba ìròyìn àwọn àkọ́ọ̀lẹ̀ àìsàn ẹranko lati ṣe ayẹ̀wo iye àwọn àkọ́ọ̀lẹ̀ káàkiri Ẹkun Ọ̀tún Gúúsù ti Botswana."
+    },
+    {
+      "hyp": "Àwọn ìgbàjáde ìwádìí náà fi hàn pé; ìtànkálẹ̀ Amblyomma hebraeum gbòòrò káàkiri gbogbo àwọn agbègbè mẹ́rin tí a ṣe ìwádìí sí, ìpìlẹ̀ṣẹ̀ ìdàgbàsókè ọdún látọ̀dún nínú àwọn àmùṣàgbààrùn ọkàn ní agbègbè Moshupa, àti àmì ìdàgbàsókè ipa rẹ̀ lórí àwọn ẹ̀dá ẹran ọ̀dọ́ abínibí láìka ìsapá tí 63% àwọn agbẹ̀rẹ́ tí a bá sọ̀rọ̀ rò pẹ̀lú ṣe láti ṣàkóso àwọn ohun tí ń gbé àrùn náà."
+    },
+    {
+      "hyp": "*Amblyomma hebraeum*, èyì tó jẹ́ olúgbà akọ́kọ́ *Ehrlichia ruminantium* ní Gúsù Áfiríka, ti fẹ̀ si gbogbo ìlú Gúsù ti Botswana, tó si jẹ́ kí iṣẹ́ ágbò ṣòrò ní ìlú yìí, tí ó báa ti ṣe, níbi mììn ní orilẹ̀-ede náà tí ìgùn náà bá ágbò jẹ́."
+    },
+    {
+      "hyp": "Nítorí náà, ó di dandan láti ṣàyẹ̀wò àwọn ìgbìyànjú tí ó wà tẹ́lẹ̀ fún ìṣakoso ẹ̀gún pẹ̀lu ète láti dín iwuwo àrùn ọkàn-omi kù, pàápàá jùlọ ní àgùntàn àti ewúrẹ́."
+    },
+    {
+      "hyp": "Iye èèpò pupò ní gúsù Botswana ń fá áàrọ̀ ọkàn-oògùn (heartwater) lárin ẹrankò máa ṣésì."
+    },
+    {
+      "hyp": "Ìwádìí yìí ṣàlàyé nípa ìwọ̀n ìṣòro àrùn èèpo àti àrùn ọkàn-omi gbogbo ní gúúsù Botswana láàrin ọdún 2017 sí 2019."
+    },
+    {
+      "hyp": "Àbájáde ìwádìí náà lè ràn ánìṣẹ̀lẹ̀ ìjọba àti àwọn agbẹ̀gbẹ́ lọ́wọ́ láti ṣe ètò tó dára jù fún àkóso àrùn ọkàn-omi dáadáa."
+    },
+    {
+      "hyp": "Àwọn kan ninu àwọn ẹ̀gún kan máa ń gbé bàkíríà tí a ń pè ní Ehrlichia ruminantium, èyí tó máa ń fa àrùn tí a ń pè ní heartwater ní àwọn màlúù, àgùntàn àti ewúrẹ́."
+    },
+    {
+      "hyp": "Bàkitéríà yìí jẹ́ àlùbọ̀ọ̀, èyí túmọ̀ sí pé ó ń jẹ́ oúnjẹ láti ara ẹ̀dá mìíràn bí àwọn ẹran ọ̀ṣọ́, tí ó sì ń ṣe wọ́n níbi."
+    },
+    {
+      "hyp": "Àwọn ẹranko tí àrùn ọkàn bá lu, máa ń ní ìgbona ara gíga, wọn kì í fẹ́ jẹun mọ́, wọn ní ìṣòro ìmímú, tí ó sì lè yọrí sí ikú wọn nígbà díẹ̀."
+    },
+    {
+      "hyp": "Àrùn ọkàn-omi gbòòrò gan-an ni apa gúúsù Bọt́swanà, àwọn agbẹ̀rúkọ ni àgbègbè yìí sì ń pàdánù ẹran wọn nítorí àrùn náà."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí ṣe àyẹ̀wò ìwọ̀n àrùn ọkàn-omi ní Gúúsù Bọt́swana."
+    },
+    {
+      "hyp": "Wọ́n kọ́kọ́ kó, kà, tí wọ́n sí ṣe ìdámọ̀ àwọn ẹ̀gún láti ọ̀dọ̀ màlúù, àgùntàn àti ewúrẹ́ láti fi ṣe ẹ̀dájọ́ iye àwọn ẹ̀gún tí ó gbé àjàkálẹ̀ àrùn ọkàn-ọ̀rọ̀ rìn sí àwọn ẹ̀gún mìíràn."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà tún bá àwọn agbé̀gbẹ̀rẹ́ kan sọ̀rọ̀ nípa irírì wọn pẹ̀lù àrùn ọkàn-omi, wọ́n sì kó àwọn ìròyìn àrùn ọkàn-omi kan kọ́ láti ọ́fíìsì ẹ̀káwẹ́ (ìlera ẹranko)."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé àwọn èèpo tó ń ṣeé nípa ń tàn káàkiri ní àgbègbè ìwádìí náà, àti pé iye àwọn àrùn ọkàn-oògùn pọ̀ sí i lọ́dọọdún."
+    },
+    {
+      "hyp": "Wọ́n kó ìgbẹ̀ 310 jọ láàrin ọdún 2017 sí 2019."
+    },
+    {
+      "hyp": "Wọ́n rí irú àwọn èèpo mẹ́ta: èèpo South Africa bont, èèpo ẹsẹ̀-fúnfún, àti èèpo ajá brown."
+    },
+    {
+      "hyp": "Èyì ti ò ju gbogbo lọ́ ní èyì tí a má ń pe ní èyìn àwọn ti Sáùtù Àfrika (85%), áà ní èyì ní ó gbé bákitíríà tí ó fa áàrọ̀ ọkàn."
+    },
+    {
+      "hyp": "Àwọn iru àwọn è̀gùn mìírin méjì yòókù tí wọ́n ṣe ìdámọ̀ kò fa àrùn ọkàn-omi, ṣùgbọ́n wọ́n sọmọ̀ pẹ̀lú àwọn àrùn ẹranko mìírin mìírin bí “theileriosis”, “anaplasmosis” àti “babesiosis”."
+    },
+    {
+      "hyp": "Àgbègbè tí àwọn onímọ̀ ìwádìí ṣe ìwádìí rẹ̀ gbà lápapọ̀ Goodhope, Kanye, Moshupa, àti Jwaneng."
+    },
+    {
+      "hyp": "Àwọn ẹ̀gún pọ̀ sí i ní Goodhope, Kanye àti Moshupa."
+    },
+    {
+      "hyp": "Àwọn agbègbè wọ̀nyí jẹ́ gbẹ̀gbẹ̀rún, okuta, tí irugbin sì pọ̀ sí i."
+    },
+    {
+      "hyp": "Jwaneng, tí iye èèpòn rẹ̀ kéré jùlọ, gbẹ́, ó sì jẹ́ iyanrin, pẹ̀lú eweko tó kéré."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé ìwé ìtọ́jú ẹranko fi hàn pé gbogbo àwọn àkójọpọ̀ àrùn ọkàn jẹ́ 42 ni Goodhope, 38 ni Jwaneng, 75 ni Kanye, àti 146 ni Moshupa, láàrin ọdún 2017 sí 2019."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé àrùn ọkàn-omi kan sí àwọn ewúrẹ́ àti màlúù tí wọ́n bí ní ilẹ̀ yìí ju àwọn ẹ̀yà tí wọ́n ti gbé wá láti orílẹ̀-èdè mìíràn lọ́."
+    },
+    {
+      "hyp": "Wọ́n sọ pé àwọn agbẹ̀ ṣe ìsapá kan láti ṣàkóso àwọn èèpo."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, 63% àwọn àgbẹ̀ lo oògùn èrù (kemikàlì ti a ń lo láti pa àwọn èrù bí àwọn ìkọ́kú)."
+    },
+    {
+      "hyp": "Nípa ọ̀kan nínú mẹ́ta (30%) àwọn agbẹ̀ ló òróró sí àwọn ẹran wọn láti ṣe àkóso lórí àwọn èèkàn, nígbà tí àwọn mìíràn (7%) wá gbàdúrà sí kíkọ́ àwọn agbo ẹran tuntun."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà tún rí i pé 44% àwọn agbẹ̀ kò ṣe ohunkóhun láti bójú tó ẹranko tí a fura sí pé ó ń ṣàìsàn, nígbà tí 15% wí pé wọn óò lọ bá àwọn òṣìṣẹ́ ẹ̀tọ́ ẹranko fún ìmọ̀ràn, ṣùgbọ́n wọ́n fún ẹranko náà ní oògùn fúnra wọn."
+    },
+    {
+      "hyp": "Bi o tilẹ̀ jẹ́ pé oògùn gbígbààlà àrùn ọkàn-omi wà, àwọn onímọ̀ ìwádìí sọ pé 93% àwọn aṣàgbè kò lo o."
+    },
+    {
+      "hyp": "Àwọn àgbẹ̀ sọ́ fun àwọn onímọ̀ ìwádìí pé nítorí pé wọn kò kọ́ nípa oògùn abẹ́, àti nítorí pé wọn kò lè sanwo fún oògùn abẹ́ náà."
+    },
+    {
+      "hyp": "Àwọn ìwádìí mìíràn nígbà àtijọ́ ti ṣàyẹ̀wò bí àwọn èèpo ti fẹ̀ yàká ní Àfríkà, pẹ̀lú Bọt́swànà, ṣùgbọ́n gẹ́gẹ́ bí àwọn onímọ̀ ìwádìí náà ṣe sọ, tiwọn ni akọ́kọ́ láti ṣàyẹ̀wò ìsopọ̀ láàrin àwọn èèpo àti àwọn àmì àrùn ọkàn ní Bọt́swànà."
+    },
+    {
+      "hyp": "Wọ́n sọ pé àwọn àkọọ́lẹ̀ àrùn ọkàn tí àwọn oníṣẹ́ ẹ̀tọ́ ẹranko kọ́ silẹ̀ lè kéré jú àwọn àkọọ́lẹ̀ gidi tí àwọn agbẹ̀rẹ́ ẹranko rí, nítorí pé àwọn oníṣẹ́ ẹ̀tọ́ ẹranko sábà máa ń ṣe àyẹ̀wò fún àrùn ọkàn náà nígbà tí ẹranko bá ti kú, èyí túmọ̀ sí pé a kì í ṣe ìkà sí àwọn ẹranko tí ó ní àrùn náà tàbí àwọn ẹranko tí ó gbàdúrà."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí gbanínimọ̀ràn pé kí wọ́n kọ́ àwọn agbẹ̀ nipa bí wọ́n ṣe lè ṣàkóso àti ṣàkóso àrùn ọkàn-omi ninu ẹran wọn, kí wọ́n lè dín ìwọ̀n rẹ̀ kù ní àgbègbè náà."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pé kí wọ́n ṣe ìwádìí sì ìpọ́njú latí mọ̀ àwọn ohun tí ń mú kí àwọn ẹ̀gùn ẹ̀gùn ṣégùn."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà wà ní Botswana."
+    },
+    {
+      "hyp": "Àwọn ìdènà sí Ìwádí Ìlera Níbí Tí Ó Wà Ní Íńdíàà àtí Gúsù Áfíríkà"
+    },
+    {
+      "hyp": "A gbagbọ́ pé ìwádìí níbí ìtọ́jú (POC) nínú àwàdá, ilé, àtí ìdágbàṣẹ ìlera ákọ́kọ́ ní agbára ńlá láti dín àkókò ìdáwọ́lé ìwádìí àti ìbẹ̀rẹ̀ ìtọ́jú àwọn àrùn bí HIV, àrùn gbẹ̀, sífilísì, àti malaria kù."
+    },
+    {
+      "hyp": "Ìwádìí kíkí àti ìpinnu ìtójú síwajú tí a báà sè ní ipade ìtójú kannà tabí lójọ́ kannà, nígbatí aláàrẹ̀ náà ńdùǹú, ṣéẹrí ídá́rà sí áyàfí ìwọ̀n àkókò tí ó báa mú káàkiri pẹ̀lú ìwádìí tí ó dá lorí lábórátọ́rì."
+    },
+    {
+      "hyp": "Síbẹ̀, wíwà àwọn àdánwò tó rọrùn, tó rọ̀, tí ó sì yára tí wọ́n lè ṣe níta ilé ìwádìí kò fi hàn pé àdánwò POC yóò ṣeéṣe."
+    },
+    {
+      "hyp": "Kí a bàa lè mọ̀ iṣẹ́ tuntun àti àwọn iṣoro ti àwọn ohun elo ìtójù ilera bí èyì ń koju, a gbọ́dọ̀ ṣe ìwádìí bí a ṣe ń lo ìwádìí ní ipó ti ó sunmòn (POC) àti bí a ṣe ń fi wé sinu iṣẹ́ aṣiṣe àti ọ̀nà ti aláàbọ̀."
+    },
+    {
+      "hyp": "Ìwé èyìí ṣe àtúnyẹ̀wó àwọn ìwédé ìwádìí àtọ́pẹ̀tọ́pẹ̀ kan lórí àwọn ohun ìdènà sí ìdánwò POC ní Íńdíàà àtí Gúsù Áfíríkà, ti o sí ṣe àfiwé wọn."
+    },
+    {
+      "hyp": "Àpẹẹrẹ náà lo àwọn ìbéèrè tí kò ní ìṣetòsí sí gan-an àti àwọn àròyẹ́ ẹgbẹ́ àfikún láti ṣàyẹ̀wò àwọn àṣà ìwádìí àrùn káàkiri àwọn àrùn pàtàkì àti àwọn olùkọ̀wé nínú ilé, àwọn ilé-iṣẹ́ ìtọ́jú, àwọn àgbègbè, àwọn ilé-èwé, àti àwọn ilé-ìwádìí ní South Africa àti India."
+    },
+    {
+      "hyp": "Nígbà tí a ń fi àwọn ìyọrísí tí a yàn wé, ó ṣe kedere pé àwọn orílẹ̀-èdè méjèèjì ní àwọn ètò ọ̀rọ̀ ìwádìí àrùn tí ó yàtọ̀ síra gan-an, tí ó sì ń pese àwọn ipò tí ó yàtọ̀ síra fún ìwádìí àrùn níbi tí ẹni náà wà."
+    },
+    {
+      "hyp": "Ìpín naà parí nípa ṣiṣe àtúnyẹ̀wò bí a ṣe lè gbódọ̀ gbàwẹ̀ àwọn òyè wọ̀nyẹǹ káàkiri nígbà tí a ń ṣe àdèhùn eto ìwádìí POC."
+    },
+    {
+      "hyp": "Àìṣé ìwádìí tó dára níbí tí a tí ń tọ́jú àísàn ní South Africa àti India ń fa ìdidí ìtọ́jú ilera."
+    },
+    {
+      "hyp": "Àyẹ̀wò iṣẹ́-ìlera POC (Point-of-care) tọ́ka sí àwọn ìdánwò iṣẹ́-ìlera ti a ń ṣe ní ibi kan náà tí àwọn aláìsàn ń rí ìtọ́jú, dípò fífi àwọn àpẹẹrẹ àwọn aláìsàn ránṣẹ́ sí ilé-ìwádìí fún ìdánwò."
+    },
+    {
+      "hyp": "Gúúsù Áfíríkà àti Íńdíà̀ kò ṣe àyẹ̀wó kíákíá àti dáadáa nítorí àìtọ́ àwọn ètò àti ilé ẹ̀kọ́ọ̀ wọn."
+    },
+    {
+      "hyp": "Àdánwò POC ń jẹ́ kí àwọn aláìsàn ní àǹfààní láti gba àdánwò yára pẹ̀lú ìdáhùn kíákíá fún ìtọ́jú àti ìṣàkóso àrùn."
+    },
+    {
+      "hyp": "Èyí lè ṣee ṣe pẹ̀lú awọn ẹrọ ti o rọrun ati ti o din owo, ti o le fun awọn esi idanwo ni kiakia lai si nilati gbe awọn ayẹwo lọ si awọn ile-iwosan."
+    },
+    {
+      "hyp": "Ṣùgbọ́n ọ̀pọ̀lọpọ̀ iṣorò wa ní POC tí ó ṣé kí ìtọ́jú aláàfíya máa lọ́ra ní Gúsà áti India."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé fẹ́ ṣe ìwééwé́ ìdánwò POC ní Gúsù Áfíríkà àti Íńdíàà kí wọ́n lè rí àwọn ìṣòro."
+    },
+    {
+      "hyp": "Wọ́n ṣe àwọn ìwádìí àti ìpàdé ẹgbẹ́ pẹ̀lú àwọn oṣiṣẹ́ iṣẹ́-ìlera, àwọn aláìsàn àti àwọn ile-iṣẹ́ ẹ̀rọ ìṣègùn láti Oṣù Kẹ́sán, ọdún 2012, sí Oṣù Kẹfà, ọdún 2013, ní àwọn orílẹ̀-èdè méjèèjì."
+    },
+    {
+      "hyp": "Wọ́n bínì nípà ilana àti iṣoró POC."
+    },
+    {
+      "hyp": "Nínú iṣẹ́ ìlera àwùjọ, Íńdíà máa ń lo ọ̀pọ̀lọpọ̀ ilé ìwádìí kékeré, wọ́n sì ń ṣe àwọn àdánwò ìpìlẹ̀, ṣùgbọ́n wọn kò fi owó tó sí ilé ìwádìí wọn, nítorí náà, ohun èlò tí wọn yóò fi ṣe àdánwò kò tó wọn."
+    },
+    {
+      "hyp": "Wọ́n sábà máa ń sọ fún àwọn aláìsàn pé kí wọ́n pada ni ọjọ́ mìíràn tàbí kí wọ́n lọ sí ibòmíràn, èyí sì máa ń fa àwọn ìṣòro fún àwọn aláìsàn."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà sì kíyèsí i pé nígbà mìíràn, wọ́n ń ṣe àyẹ̀wò fún àwọn aláìsàn, ṣùgbọ́n ó máa ń gba akókò gígùn kí ẹ̀ṣọ́ náà tó jáde, wọ́n sì máa ń rí i ṣòro láti bá oníṣègùn wọn sọ̀rọ̀ lẹ́yìn náà."
+    },
+    {
+      "hyp": "Àwọn àìkopa sọ pé kí ó sí iléẹ̀kọ́ọ̀gbọ́n púpọ̀ síi ní àwọn ilé-wosan, tí wọ́n sì lè ṣe àdánwò ní ibi kan náà tí àwọn aláìsàn ti wọ̀."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pé kí àtẹ̀lé, ìtójú tàbí ìmọ̀ràn tún ṣẹlẹ̀ ní ibi kan náà."
+    },
+    {
+      "hyp": "Ní Gúsàù Àfrika, wọ́n rí i pé ní ìtójú ilera gbogbo, ilé-iṣẹ́ kan ṣe ìwádìí gbogbo, tó bá jé pé àwọn àpẹẹrẹ lọ sí ilé-iṣẹ́ yìí."
+    },
+    {
+      "hyp": "Àwọn àdánwò ìpìlẹ̀ kan ni a ń ṣe ní ibi ìtọ́jú, àwọn aláìsàn sì ń rí ìyọrísí rẹ̀ yára."
+    },
+    {
+      "hyp": "Àwọn ìdánwò HIV àti TB máa ń gba akoko gígùn, nítorí náà, ìtẹ̀lé-ṣiṣẹ́ tàbí ìtọ́jú náà sì máa ń pẹ́."
+    },
+    {
+      "hyp": "Àwọn ìdidí mìíran sì jẹ́ nítorí ìrìnàjò, kíkọ̀ orúkọ àwọn aláìsàn kù, kíkà sílẹ̀ àwọn àpẹẹrẹ, àti ìdákọ̀ọ̀rọ̀ sísẹ̀tàn kọ̀m̀pútà."
+    },
+    {
+      "hyp": "Ní ìwádìí HIV, àwọn ilé ìwádìí kan lò ọnà ìwádìí tó yàtọ̀, eyí sí mu kí ìyapádè tó kò gbẹ́kẹ̀lè jáde."
+    },
+    {
+      "hyp": "Wọ́n rí i pé àwọn aláàrọ̀ gbìyànjú láti ṣe àyẹ̀wò HIV dá lorí ijinna sí ibi naà tabi irú àyẹ̀wò naà, ati nítorí eyi wọ́n máa ń lo kaadì ìdámọ̀ mìírà nígbà mìírà, eyí tó ń fa àwọn iṣorò nígbà tí wọ́n bá ń gbìyànjú láti pa ipade tẹ̀lè e."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé àwọn òṣìṣẹ́ iṣẹ́-ìlera gbọ́dọ̀ ṣiṣẹ́ papọ̀ láti pín iṣẹ́ ṣiṣe."
+    },
+    {
+      "hyp": "Wọ́n sọ pé nígbà tí àwọn ohun èlò ìdánwò HIV tuntun bá dé, ó yẹ kí wọ́n kọ́ àwọn òṣìṣẹ́ lẹ́kọ̀ọ́ tuntun, tí ó sì yẹ kí wọ́n ṣe àtúnṣe sí àwọn ọ̀nà."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé ṣe àfiwé àwọn ìdààmọ̀ POC láti orílẹ̀-èdè méjèèjì, wọ́n sì gbani nímọ̀ràn pé àwọn aláṣẹ gbọ́dọ̀ wo POC dáadáa kí wọ́n tó fi àwọn ọjà tàbí ohun èlò tuntun kún un."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pé a nilò latí fi agbára sí iṣẹ́ pupọ̀ ninu awọn ilé-iṣẹ́́ ẹ̀kọ́ ìwáda ara atí oye ipa ti alaisan ń kó ninu iṣẹ́́-iṣé ilera tirẹ̀."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé iwe ìwádìí yìí ti ilẹ̀ Guúsù Áfíríkà, Íńdíà, Kánádà àti Nẹ́dàláńdì."
+    },
+    {
+      "hyp": "Sí ìmọ̀tẹ̀síwáyẹ̀ ìtumọ̀ àrùn tó ṣe pàtàkì àti ìtọ́jú àrùn tó ṣe pàtàkì nípa lílo ìtòlẹ́sẹ̀ ọ̀nà ìmọ̀."
+    },
+    {
+      "hyp": "Nítorí pé kò sí ìtẹ̀wọ́gbà lórí ìtumọ̀ “àrùn tó léwu” àti “ìtọ́jú tó léwu,” ìwádìí yìí ní ète láti ṣàwárí bí a ṣe ń lò àwọn ìmọ̀ràn náà, láti ṣàpẹẹrẹ àwọn ànímọ́ tí ń ṣàpẹẹrẹ wọn, tí ó sì tún lè gbé àwọn ìtumọ̀ tí ó ṣeé ṣe níwájú."
+    },
+    {
+      "hyp": "Àwa lo ọ̀nà igbese ti Walker ati Avant fun àtúnwò̀ imọ̀ran."
+    },
+    {
+      "hyp": "A ṣe ìdámọ̀ ìló àìṣẹ̀dára àti itumọ̀ àwọn òyẹ̀ naà láti inu ṣíṣe àtúwóye ti ìwẹ̀ ìkẹ́kọ̀ọ́yẹ̀ kan àti ìwádìí ayelujara ti 114 àwọn ògbógbórò ìtójú àìṣẹ̀dára tó wà lágbàáyé."
+    },
+    {
+      "hyp": "Nípa ṣíṣe àtúnṣe àkọ́kọ́rọ̀ àwọn ìdáàmú, a fa àwọn koodu, ẹ̀ka àti àwọn àkọ́lé jáde láti mọ̀ àwọn ohun tí ó ṣe àwọn èrò náà ní ànímọ̀, a sì gbé àwọn ìmọ̀ràn ìtumọ̀ tí ó ṣeé ṣe jáde."
+    },
+    {
+      "hyp": "Láti ràǹwọ́ lọ́wọ́ ìbáìmọ̀, a ṣe àtẹ̀jáde àwòrán àpẹẹrẹ, àwọn ọ̀ràn tí ó bá a mu, àti àwọn tí ó yàtọ̀ sí i nípa àwọn èrò náà, a ṣe ìdámọ̀ àwọn ohun tí ó ṣéyìn àti àwọn ìyọrísí sí àwọn èrò náà, a sì ṣe ìtumọ̀ àwọn ohun tí a lè fi ṣe ìwádìí."
+    },
+    {
+      "hyp": "Àwọn àpẹẹrẹ tí ó ṣe àkọ́kọ́ fún àrùn tó ṣeé ṣe kí ó pa ni ewu ikú tí ó ga; àìṣiṣẹ́ àwọn ẹ̀ya ara pàtàkì; aini ìtọ́jú láti yẹ̀ ikú kúrò; àti ìṣeéṣe ìyípadà sí ilera."
+    },
+    {
+      "hyp": "Àwọn ànímọ́ tí ó ṣe àpẹẹrẹ ìtọ́jú àìsàn tó ṣeé ṣe kí ó pa ni:  ìdamọ̀, ìtọ́pàn, àti ìtójú àìsàn tó lewu; atilẹyin fún àwọn èya ara pàtàkì; ìtójú ìbẹ̀rẹ̀ àti ìtójú tí ó gbọ́dọ̀ máa tẹ̀siwajú; ìtójú eyikeyii ti àìsàn tó lewu; àti àwọn áwọn èniyàn àti ohun elo tó jẹ́ pátákí."
+    },
+    {
+      "hyp": "Àtọ́kà ìṣé wa ti àrùn tó ṣe pàtàkì ni, “ìpìlẹ̀ṣẹ̀ àìlera pẹ̀lú àìṣiṣẹ́ ti ara ọ̀gbẹ́ pàtàkì, ewú ikú tó súnmọ́ tòsí bí a kò bá fi ìtọ́jú ṣe, àti àǹfààní ìyọ̀nú”."
+    },
+    {
+      "hyp": "Àtúmọ̀ ìtọ́jú àìsàn tó ṣe pàtàkì tá a gbé yọ̀ ni, “ìdámọ̀, ìtọ́jú, àti ìtọ́jú àwọn aláìsàn tí wọ́n ní àìsàn tó ṣe pàtàkì nípasẹ̀ ìtìlẹ́yìn ìṣiṣẹ́ àwọn ẹ̀ya ara pàtàkì ní ìbẹ̀rẹ̀ àti nígbà gbogbo.”"
+    },
+    {
+      "hyp": "Àwọn imọ̀ran àrùn tó lewu pupọ̀ àti ìtọ́jú àrùn tó lewu pupọ̀ kò ní ìtumọ̀ tí gbogbo ènìyàn gbà, wọ́n sì ní ọ̀pọ̀lọpọ̀ ìlò."
+    },
+    {
+      "hyp": "Nípa ṣíṣe àlàyé èrò sí àwọn ohun tí a lò àti àwọn ìtumọ̀ nínú ìwé àti láàrin àwọn ọ̀mọ̀wé, a ti rí àwọn ohun tí ó ṣe àpẹẹrẹ àwọn èrò náà, a sì ń gbé àwọn ìtumọ̀ kalẹ̀ tí ó lè ràn wá lọ́wọ́ nínú iṣẹ́ ìtójú àwọn aláìsàn, ìwádìí, àti ṣíṣe àwọn ìpinnu ìṣèlú."
+    },
+    {
+      "hyp": "Agbára àti Àwọn Àkọ̀ọ́lẹ̀ Ìwádìí náà"
+    },
+    {
+      "hyp": "Àtúmọ̀ ìmọ̀ èto yìí ni ìwádìí àkọ́kọ́ tó ṣàpẹẹrẹ àṣàrò sí bí a ṣe ń lò àwọn ìmọ̀ràn àti ìmọ̀ àlàyé ti àrùn tó ṣe pàtàkì pupọ̀ àti ìtọ́jú tó ṣe pàtàkì pupọ̀."
+    },
+    {
+      "hyp": "Ìwádìí yìí ló ṣiṣé àtúwò ìwé ìtọ́kásí àti ìfíhaǹ láti ọ̀dọ̀ ọ̀pọ̀ jú ogórùń-ọkan (100) amoye ìtójú àílera lati oríṣí oríṣí ibí àílera káàkiri áàyè láti ṣe ìdamọ̀ àwọn aamì tí ó ṣe áàyè àti fi àwọn itumọ tí a gbe káàyè síwajú."
+    },
+    {
+      "hyp": "Àwọn ìló àti ìmọ̀tẹ̀lẹ ti àwọn òrọ̀-ìlọ́rì ìróyin nínú ẹ̀yà èdè mììn, nínú ìwẹ̀ ìwádìí ti ko tii ṣe atẹjade ati lati ọ̀dọ̀ àwọn amoye iṣẹ́-iṣegun ti ko wa ninu iwadi naa le ti pa dà."
+    },
+    {
+      "hyp": "Nítorí ìlò ò̀tọ̀ọ̀tọ̀ tí a ń lò òyẹ̀wọ̀̀yẹ́ yì, áwọn itumọ̀ ti a gbé káàrọ̀ lè máa gba gbogbo èniyà, a sì ń fojú dí ímúdárà ìjà̀kàdìmọ̀ sí ì."
+    },
+    {
+      "hyp": "Àwọn olùwádìí tún ṣàtúntò ìtumọ̀ àwọn aláìsàn tí wọ́n wà ní ewu ikú àti bí a ṣe ń tọ́jú wọn."
+    },
+    {
+      "hyp": "Àwọn ìtumọ̀ ìṣẹ̀dáradá fún ìtọ́jú àwọn aláìsàn tí gbogbó dọ́kítà̀ ní gbogbo ayé ń lò lè ràn wá lọ́wọ́ nínú ìtọ́jú àwọn aláìsàn tí wọ́n ń ṣàìsàn gidigidi."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, ẹgbẹ́ àwọn onímọ̀ ìwádìí láti orílẹ̀-èdè lọ́pọ̀lọpọ̀ sọ pé “àrùn tó lè pa” yẹ́ kí ó túmọ̀ sí pé bí ọ̀pọ̀lọpọ̀ èwu ikú bá wà fún aláìsàn kan, ó tún lè mọ̀."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pé “ìtójú” tí a fí fún àwọn alárẹ̀-àrùn gidigidi gbọ́dọ̀ túmọ̀ sí ìtójú eyikeyii tí a ba fí fún latí ìgbà tí wọ́n dé ọ́sítáàlì, títí wọ́n fí kú tabí lára wọ́n bá dára."
+    },
+    {
+      "hyp": "Kò gbọ́dọ̀ jẹ́ kí ojú rẹ̀ wà lórí ìtọ́jú pẹ̀lù ọ̀ná̀ ìṣiṣẹ́ pàtàkì nìkan."
+    },
+    {
+      "hyp": "Ní àwọn ilé-wosan, àwọn dokita máa ń pé àwọn aláàrùn tí ara wọn ti bà jẹ́ gidigidi ní “aláàrùn tí ara wọn ti bà jẹ́ gidigidi,”, a sì máa ń pé ìtọ́jú àti atilẹ́yin tí àwọn aláàrùn wọ̀nyí ń bèrù ní “ìtọ́jú tí ara wọn ti bà jẹ́ gidigidi”."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, àwọn dokità tó ń ṣiṣẹ́ ní àwọn ẹkùnjẹkùn tabí àwọn ilé-iwosan oríṣiríṣi máa ń lóye àwọn ọ̀rọ̀ wọnyì lọnà ti ò yàtò, nítorí ìtumọ̀ wọn yàtò láti ibìkan sí ibòmíràn."
+    },
+    {
+      "hyp": "Èyì mú kí, fún àpẹẹrẹ, àwọn aláìsàn tí wọ́n ní àrùn kan náà gba ìtọ́jú tàbí ìtọ́jú tí ò yàtọ̀, dá lori ẹni tí ń ràn wọ́n lọ́wọ́."
+    },
+    {
+      "hyp": "Àwọn ìtumọ̀ ti o yatọ̀ sì tún ń mú kí ó ṣòro fún àwọn ìjọba láti mọ̀ iye àrùn tó ṣe pàtàkì gidi ní orílẹ̀-èdè wọn."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí kọ́kọ́ ṣàlàyé bí àwọn dókítà ti o yatọ̀ síra ṣe ṣàlàyé “àrùn ìkọ́kọ́” àti “ìtọ́jú ìkọ́kọ́,” lẹ́yìn náà, wọ́n sì gbé àwọn ìmọ̀ràn ṣíṣe àlàyé tó dára jù síwájú."
+    },
+    {
+      "hyp": "Wọ́n kọ́ ìsọfúnni náà jọ́ nípa ṣíṣàyẹ̀wò àwọn àpilẹ̀kọ tí a ti tẹ̀ jáde."
+    },
+    {
+      "hyp": "Wọ́n tún bá awọn dokita lati orilẹ-ede diẹ ti o yatọ kaakiri aye sọrọ, awọn ti o ni iriri itọju awọn alaisan ti o ṣaisan gidigidi."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣàkọsílẹ̀ ìtumọ̀ oríṣiríṣi àrùn tó ṣeé ṣe kí ó pa, wọ́n sì ṣàkíyèsí pé ó sábà máa ń sojúpọ̀ mọ́ àǹfààní gíga pé àwọn aláìsàn lè kú; àwọn apá ara tó kò ń ṣiṣẹ́; àìdánilójú pé kí wọ́n tó tọ́jú wọn kí wọn má baà kú; àti àǹfààní ìlera."
+    },
+    {
+      "hyp": "Lórí ọ̀rọ̀ ikú àti ìlera pada, àwọn ìmọ̀ràn kan fi hàn pé gbogbo àwọn aláìsàn tí wọn wà ní ipò ewu ṣíṣe pàtàkì yóò kú nígbẹ̀yìn-gbẹ̀yín, nígbà tí àwọn mìíràn sì fi hàn pé àǹfààní wà pé aláìsàn náà lè padà dára, bí ó tilẹ̀ jẹ́ pé ó wà ní ipò ewu ṣíṣe pàtàkì."
+    },
+    {
+      "hyp": "Níkẹyìn, àwọn onímọ̀ ìwádìí sọ pé kí a ṣe àtọ́ka àrùn ìṣòro gidigidi sí àrùn tí àwọn ẹ̀ya ara ti dáwọ́ ṣiṣẹ́, tí àǹfààní rẹ̀ gíga pé màjẹ̀mu yóò kú bí wọn kò bá ṣe àbójútó rẹ̀ dáadáa, ṣùgbọ́n pẹ̀lú àǹfààní ìlera."
+    },
+    {
+      "hyp": "Nípa ìtójú tí ó ṣe pàtàkì gidigidi, ọ̀dọ̀ọ́dọ̀ dókìtà dàbí ẹní pé wọ́n ṣàlàyé rẹ̀ lọ́nà tí ó jọra gan-an, ṣùgbọ́n wọ́n yàgà lára ibí tí a gbọ́dọ̀ fi ìtójú béẹ̀ ṣe, àti aini ohun elò pàtàkì."
+    },
+    {
+      "hyp": "Àwọn oríṣìíríṣìí sọ pé wọ́n lè fúnni ní ìtọ́jú àìsàn tó ṣe pàtàkì ní àwọn ibì kan ṣoṣo nínú ilé ìwòsàn tó ní àwọn ohun èlò pàtàkì."
+    },
+    {
+      "hyp": "Àwọn mìíràn gbà pé ìtọ́jú àìsàn tó ṣe pàtàkì lè ní àfikún ohun èlò amọ̀ràn, ṣùgbọ́n kì í ṣe ohun tí a gbọ́dọ̀ ní."
+    },
+    {
+      "hyp": "Wọ́n sọ pé a tí lè fí ìtójú pajawiri gbàà láàrin áwọn wáàdì ìtójú gbogbo, ní áwọn ilé ìtójú ilera kérékéré, ní áàyẹ̀ tabí ní inú ám̀búlánsì."
+    },
+    {
+      "hyp": "Wọ́n wí pé, àní ní àwọn ibi tí kò ní ipò rere, àwọn aláìsàn tí wọ́n ṣàìsàn gidigidi nílò ìtọ́jú pàtàkì."
+    },
+    {
+      "hyp": "Nítorí náà, àwọn onímọ̀ ìwádìí sọ pé a lè ṣàlàyé ìtọ́jú àìsàn tó ṣe pàtàkì gidigidi gẹ́gẹ́ bí gbogbo ìtọ́jú tí àwọn aláìsàn tó ní àìsàn tó ṣe pàtàkì gidigidi gba, láti ìgbà tí wọ́n bá lọ bá àwọn òṣìṣẹ́ ìlera fún ìgbìmọ̀ sí ìgbà tí wọ́n bá kú tàbí láàárẹ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé èyí ni ìwádìí àkọ́kọ́ tó kó ìsọfúnni jọ̀ lórí ìtumọ̀ oríṣiríṣi àrùn tó léwu àti ìtọ́jú rẹ̀, àti pé àbájáde wọn yóò mú kí ìtọ́jú àwọn ènìyàn tó ń ṣàrùn tó léwu sunwọ̀n sí i."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, wọ́n sọ pé ìwádìí wọn lè ní ìwọ̀n ìkọ̀kọ̀ nítorí pé wọn kò lò àwọn ìmọ̀túnṣe láti inú èdè mìíràn yàtọ̀ sí Gẹ̀ẹ́sì tàbí láti inú oríṣìíríṣìí ìtòlẹ́sẹ̀ tí a kò tíì tẹ̀ jáde."
+    },
+    {
+      "hyp": "Wọ́n tún ṣe ìfọ̀rọ̀wà pẹ̀lú awọn dokita lati orilẹ-ede diẹ̀ nikan, nitorina, itọ́kasi wọn kò tòka si gbogbo orilẹ-ede aye."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí, tí wọ́n ti ilé ẹ̀kọ́ gíga ní Malawi, Tanzania, Sweden àti UK, sọ pé a lè ṣe àtúnṣe sí àwọn ìtumọ̀ tí wọ́n gbé yọ̀ yìí sí i, bí ó bá ṣe pàtàkì."
+    },
+    {
+      "hyp": "Àwọ̀n ìwádìí CRISPR-Cas9 gbogbo-jìnnì-ara ṣe ìdámọ̀ CENPJ gẹ́gẹ́ bí olùṣàkóso àlejò ti ìṣeto maikrotúbúlì tí ó yí pa dà nígbà ìgbàgbọ́ Plasmodium lẹ́pà Liver."
+    },
+    {
+      "hyp": "Kí íbẹ̀rẹ̀ malaria tí ó ní àmì àìsàn, Plasmodium sporozoite kan ṣoṣo máa ń bàa hepatocyte kan jẹ́, tí ó sì máa ń dà sí ẹgbẹẹgbẹ̀run merozoites, ní apá kan nípa gbígbàdàgbà ohun èlò alàgbà."
+    },
+    {
+      "hyp": "A fi hàn pé àwọn maikrotúbúlì olùgbà gbé ara yípadà láìdààmú káàkiri àwọn parasáìtì ìpele ẹ̀dọ̀ (LS) tí ń gbèrú."
+    },
+    {
+      "hyp": "Nípa lílò àyẹ̀wò CRISPR-Cas9 gbogbo-jínímó, a ṣe ìdámọ̀ àwọn olùṣakoso àlejò ti ìṣetó sẹ́ẹ̀lí, ìgbékọ̀ọ́́ àwọn ìṣù, àníyàn ER/Golgi àti ìṣẹ̀dáà lipid tí ó ń ṣàkósó ìdàgbàsókè Plasmodium LS."
+    },
+    {
+      "hyp": "Àwọn olùṣakoso àrùn tuntun wọnyi, tì wọ́n sì ní Centromere Protein J (CENPJ), mú kí a wádìí bí a ṣe ń ṣàkóso àwọn ibi tí a ti ń ṣètò microtubule (MTOCs) nígbà àrùn."
+    },
+    {
+      "hyp": "Àwọn ibi tí γ-tubulin wà gbé̀dẹ̀gbẹ́de sí àgbègbè ògiri parasiti; ìdinku CENPJ mú kí ìgbédẹ̀gbẹ́dẹ́ yìí burú sí i, tí ó sì mú kí àkóbáà sí i."
+    },
+    {
+      "hyp": "Sísẹ̀ yìí, a fi hàn pé Golgi ń ṣiṣẹ́ gẹ́gẹ́ bí MTOC tí kì í ṣe ti centrosome nípa ṣíṣe àtòjọ́ γ-tubulin àti ṣíṣe ìṣísẹ̀ ìpilẹ̀ṣẹ̀ microtubule ní àgbègbè àwọn parasites."
+    },
+    {
+      "hyp": "Gẹ́gẹ́ bí ẹ̀ka, a fi hàn pé Plasmodium LS pe àwọn Golgi ti agbára lọ́wọ́ láti dá àwọn ọ̀nà ìdánwò ti a ṣe pẹ̀lu MT ṣe, tí a gbà wọ́n sí PVM, láti ṣètìlẹ́yìn fún idagbasoke ipele ẹ̀dọ̀."
+    },
+    {
+      "hyp": "Àwọn ìwádìí wa fi hàn pé ọ̀pọ̀ àwọn olùdènà oògùn tí ó ní ípàdé pẹ̀lu àwọn olùgbà làgbà le ṣe ìdènà àrùn LS."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ sáyẹ́nsì ń kẹ́kọ̀ọ́ bí maleria ṣe ń lo àwọn sẹ́ẹ̀lì láti gbìyànjú láti pọ̀ sí i ní nọ́mbà, kí àwọn ọ̀nà ìtọ́jú lè pọ̀ sí i."
+    },
+    {
+      "hyp": "Àwọn parasáìtì púpọ̀ máa ń lo oúnjẹ àti ọrọ̀ àwọn sẹ́ẹ̀li ara ènìyàn tàbí ẹranko tí wọ́n ń gbé láti ṣe àtọ́pín ara wọn."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí ṣe ìdámọ̀ àwọn gẹ́ẹ̀ní pàtó tí wọ́n ní ipa nínú àrùn malaria nínú sẹ́ẹ̀lì ẹ̀dọ̀, èyí tí ó lè mú kí àwọn ohun èlò tuntun tí a óò fi ṣe oogun malaria wá síwájú sí i."
+    },
+    {
+      "hyp": "Malaria jẹ́ aàrùn tí ó tàn káàkiri tí ó sì lè múni kú, tí àwọn parasáìtì Plasmodium fa, tí a gbé lọ́wọ́ lílo ìkọ́ ẹ̀yìn."
+    },
+    {
+      "hyp": "Lẹ́yìn tí Plasmodium bá ti wọ̀ ara, ó tẹ̀ sí ẹ̀dọ̀̀ láti máa ṣe àtọ́lẹ̀wàá – ìpele ìbẹ̀rẹ̀ yìí dára fún ìtọ́jú malaria nítorí kò sí àmì àrùn síbẹ̀, bẹ́ẹ̀ ni kò sì lè tàn ká."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí fẹ́ rí àwọn ìyípadà pàtó sí àwọn gẹ́ẹ̀ní àti àwọn purotéènì nínú sẹ́ẹ̀lì ẹ̀dọ̀fọ́ tí àrùn bá ti kàn tí ó lè yí bí àrùn bá ń dàgbà sí."
+    },
+    {
+      "hyp": "Pẹ̀lù ìlọ́sìwájú ẹ̀dá-ara CRISPR-Cas9, àwọn onímọ̀ ìwádìí lágbára láti pa àwọn jìnì tó yàtọ̀ dárù, tàbí “kọ́kàọ́utu” wọ́n láti rí bí ìyípadà ṣe máa ń ṣẹlẹ̀ nígbà tí àwọn jìnì wọ̀nyẹn kò ṣiṣẹ́."
+    },
+    {
+      "hyp": "Lẹ́yìn náà, wọ́n sì fi àwọn parasáìtì màléríà kọlù àwọn sẹ́ẹ̀li ẹ̀dọ̀-aláàrì tó dáa àti àwọn tí wọ́n ti “pa” lára."
+    },
+    {
+      "hyp": "Àwọn ohun elo tí ó dàbí ìhò ìwọ̀n yìí ní ipa nínú, láàrin àwọn ohun mìíràn, ìgbẹ́kẹ̀lẹ́ oúnjẹ́ àti ohun elo inú sẹ́ẹ̀lì, wọ́n sì máa ń dá nẹ́ẹ̀tìwọ́ọ̀kì kan káàkiri nùkléùsù sẹ́ẹ̀lì náà."
+    },
+    {
+      "hyp": "Ọ̀kan lára àwọn ìwádìí pàtàkì ni pé Plasmodium gbà áwọn maikrotúbúlù ní àwọn sẹ́ẹ̀li ẹ̀dọ̀ – dípò kí àwọn maikrotúbúlù kó ara wọn jọ yí ìhòòhò káàkiri, tí wọ́n sì ń gbé oúnjẹ àti ohun èlò lọ sí ibi tí sẹ́ẹ̀li náà ń béèrè fún, àwọn maikrotúbúlù kó ara wọn jọ yí parasáìtì káàkiri, tí wọ́n sì ń gbé oúnjẹ àti ohun èlò lọ láti ràn án lọ́wọ́ láti máa sọ èso."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé nígbà tí wọ́n mú purotéèni tí a ń pè ní CENPJ kúrò, àrùn ọlọ́gbà náà di ẹni tí ó ṣeéṣe gan-an láti kó àwọn maikrotúbúlù jọ káàkiri ara rẹ̀, àti pé àwọn àrùn ọlọ́gbà náà dàgbà sí i, wọ́n sì ṣe àwọn ẹ̀dá ara wọn sí i púpọ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ sáyẹ́nsì náà tún ṣe ìdámọ̀ àwọn jínì kọ̀ọ̀kan mìíràn tí ó nípa lórí bí àkóbáà ìbàjẹ́ plasmodium ṣe le rí."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ti fi hàn rí pé àwọn àkórò mìíràn ń ṣètò àwọn maikrotúbúlù pa dà láti yí àwọn ọrọ̀ inú sẹ́ẹ̀lì pa dà sí ara wọn."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí jẹ́rìí sí i pé àwọn parasáìtú Plasmodium lè lo ètò ọ̀nà yìí pẹ̀lu láti yí oúnjẹ àti àwọn ohun èlò mìíràn padà sí àtìlẹ̀yìn ìdàgbàsókè ara wọn."
+    },
+    {
+      "hyp": "Ní ọjọ́ iwájú, àwọn onímọ̀ sáyẹ́nsì retí láti lo ìjìnlẹ̀ òye wọn nípa bí àwọn jiínì àti àwọn parasáìtì ṣe ń bá ara wọn lò nínú sẹ́lì láti rí àwọn ìtọ́jú tuntun fún àrùn malaria."
+    },
+    {
+      "hyp": "Bí o ti wú kí àwọn olùwádìí ṣe ìdámọ̀ àwọn àyípàdà tí ó ní ìfẹ̀gbẹ́gà láàrin àwọn purotéènì sẹ́ẹ̀lì ẹ̀dọ̀ nígbà ipelé ìbẹ̀rẹ̀ malaria, sísẹ̀ pupọ̀ ló ṣe patakí latí loyè bí Plasmodium ṣe ń yí ìṣẹ́-ṣiṣẹ̀ àti ìṣẹ́-iṣé kẹ́míkà sẹ́ẹ̀lì pàà, kí a bàa lè ṣe ìdámọ̀ àwọn ibi tí a lè fi oògùn ṣe ìtọ́jú."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ ọ̀kẹ́ àìmọye ẹ̀ni ti ń kú lọ́dọọdún nítorí àrùn màláríà, pẹ̀lú ọ̀pọ̀lọpọ̀ nínú wọ̀n ní Áfíríkà."
+    },
+    {
+      "hyp": "Gẹ́gẹ́ bí̀ àjọ̀ Àgbáyé fún Ilera ṣe sọ, ju 90% ọ̀pọ̀ àwọn àrùn malaria ní agbaye ní ọdún 2019 waye ní Àfríkà, èyí sì mú kí èyí jẹ́ ọ̀ràn pàtàkì tí ó nílò ìsapá̀ lọ́wọ́lọ́wọ́ sí àkóso àti ìtọ́jú."
+    },
+    {
+      "hyp": "Ìwọ̀npà Ìkọlù Ẹ̀dá Alààyè Gégé Bí Apakan Ìsapá̀ Ìwádìí Ìyípadà Agbayé Gúsù Áfíríkà."
+    },
+    {
+      "hyp": "Nínú ìwé èyìí, a ṣe ayẹ̀wo iye ìwádìí tí a ti ṣe ní Gúsàù Śáùtù Àfíríkà sí àwọn ìwọ̀ǹkọ́lọ́gbọ̀ǹ àti àwọn nǹkan mììn ti ìyípadà agbaye."
+    },
+    {
+      "hyp": "Nípa líló Web of Science, a ṣe àtúnyẹ̀wó ìwé ìwádìí ti ó báa ṣe àkọsílẹ̀ pẹ̀lú ekọsísitẹ́ẹ̀mú Guusú Afirika ti a ti tẹ̀jadé láàrin ọdún 2000 àti 2018, ti ó sí ní ìsopọ̀ pẹ̀lú ìwọ̀n ìgbẹ́, yìyà ìwọ̀n oorù, ìgbẹ́jà jú, yìyà ibígbẹ́, ìlépá, àti/tábí CO2 ti òfùnfùn."
+    },
+    {
+      "hyp": "A ṣe ìdámọ̀ iwe ìwádìí 1149 ti ó ṣe pàtàkì, ti a sí fi iye iye wọn ṣe ìwádìí ní ti bí wọ́n ṣe bojúto àwọn olùdarí àti àwọn ìṣe-àjọṣe olùdarí tí ó ní ipa lórí ọ̀pọ̀ ìwọ̀n ìyàtọ̀ àwọn ẹ̀dá alààyè tàbí àwọn iṣẹ́ ọgbà-alààyè."
+    },
+    {
+      "hyp": "A rí ipa agbegbe àti àkókò tó lágbára lórí iṣẹ́ ìmọ̀."
+    },
+    {
+      "hyp": "Ní àkọ́kọ́, ìsapá̀ yàtọ̀ láàrin àwọn agbègbè, pẹ̀lú ìyípadà ibi ìgbé, ìdọ́tì àti ìkórè jùlọ tí ó gba àfiyèsí ìwádìí tó pọ̀ jùlọ nínú àwọn agbègbè ilẹ̀, omi adìgùn àti okun/agbègbè òkun lóríṣiríṣi."
+    },
+    {
+      "hyp": "Ní ọ̀nà kejì, wọn kò ṣe àkọsílẹ̀ àwọn àṣàrò tí a ti ṣe ìwádìí rẹ̀ dáadáa kárí ayé nínú ìwé ìtàn ilẹ̀-èdè (àpẹẹrẹ, iye ìwé lórí ìwà ọ̀gbìn rere òkun kéré sí márùn-ún)."
+    },
+    {
+      "hyp": "A ṣe ìdámọ̀ ìṣe ìbaraẹníṣe 21 tí ò yàtò sí ara wọn láàrin àwọn awakọ̀, pẹ̀lú ìbaraẹníṣe láàrin ẹ̀yà tí ó le kokò lú áàrin áàrin áàrin áárin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin áàrin ìyípadà ibígbẹ́ (fún ápẹẹrẹ, ìyípadà ìgbà tí inà ń jó ní áwọn ilẹ̀ tí a ti gba lọ́wọ́) tí ó ṣe pàtàkì jùlọ."
+    },
+    {
+      "hyp": "Ṣugbọ́n, iye iwe ti o kere si 4% lo ṣe alaye ibaraenisepo laarin awọn awakọ mẹta tabi diẹ sii."
+    },
+    {
+      "hyp": "Èyí fi hàn pé bí o ti wú kí a mò ìwájú̀ ìlọ́rìṣìríṣì ìṣé awakọ̀, kò sí ìwádìí pupọ̀ lorí ipa tí ìlọ́rìṣìríṣì ìṣé awakọ̀ nípápò ní ekosístéẹ̀mù Guusú Afirika."
+    },
+    {
+      "hyp": "Àṣẹ̀dá tí a ti pẹ́ tí a ń pe nípà pé àwọn ẹ̀yà tí ó wọ̀ inú ilẹ̀ jẹ́ ewu kejì tó tobi júlọ sí ìtọ́jú ìyàgbàgbàgbà, lẹ́yìn ìyípadà ibígbẹ́, báa mùù iye iṣẹ́ iwádìí tí ó jẹ́ tí òlúwà iṣẹ́ yìí ní South Africa."
+    },
+    {
+      "hyp": "Ṣiṣe àtòjọ́ ìwọ̀n ìwọ̀n kan ti ó péyè ti ipa tí àwọn okunfa àyípadà agbayé ní, sibẹ̀, ó máa ṣòro, kì í ṣe nìkan ní ìyàtọ̀ ṣíṣe kedere ti àwọn okunfa, ṣùgbọ́n paápàá jùlọ nítorí àìtọ́kàn ti ìwé ìwádìí ní àwọn iwọn aaye àti àkókò ti ó jọra."
+    },
+    {
+      "hyp": "Ipele ìdàgbàsókè iṣẹ́ lórí àwọn ẹ̀dá alàgbàṣe lè pèsè ipilẹ̀ fún ṣíṣàwárí àwọn ìṣe pàtàkì tó ṣeé ṣe bẹ́ẹ̀, tí yóò sì ranlọ́wọ́ láti borí àwọn ìdènà bẹ́ẹ̀."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí gbọ́dọ̀ ya maapù ipa-àpapọ̀ ti ẹ̀dá alàìlera, ìyípadà ojú ọ̀run àti iṣẹ́ ọwọ́ ènìyàn ní Gúúsù Áfríkà."
+    },
+    {
+      "hyp": "Àwọn ẹ̀yà tí ó tágbá jẹ́ ewu kejí tí ó tobì júlọ̀ sí ìtọ́jú ìyàǹgbá ìbìgbẹ́ ní South Africa – otitọ́ yìí báa mú, gégé bí awọn onímọ̀ ìwádìí ṣe wi, pẹ̀lú iye iwe ìwádìí tí a ti kọ̀ lorí ọ̀rọ̀ náà."
+    },
+    {
+      "hyp": "Èyí jẹ́ ti ara rẹ̀ sí àwọn ewu mìíràn bíi ìdọ́tí, iyípadà ojú ọjọ́, ìkọ́kọ́ ju bí ó ti yẹ lọ tàbí àwọn iyípadà nínú ibi ìgbé."
+    },
+    {
+      "hyp": "Àwọn ewu wọ̀nyí sí àwọn ẹ̀kọ́-ìgbé-ayé ni àwọn onímọ̀ sáyẹ́nsì pè ní àwọn ohun tí ń mú ìyípadà ayé gbàgbọ́, èyí tí í ṣe ẹ̀kọ́ bí ilẹ̀ ayé, gẹ́gẹ́ bí ẹ̀kọ́, ṣe ń yípadà pẹ̀lu gbogbo ìṣòro tí ó wà láàrin iṣẹ́ ọwọ́ ènìyàn àti àwọn iṣẹ́-ṣiṣe fízikì, kẹ́míkà àti bíólọ́jí mìíràn."
+    },
+    {
+      "hyp": "Nínú orí ìwé tuntun kan, àwọn onímọ̀ ìwádìí wo bí iye ìwádìí tí a ń ṣe ní Gúúsù Áfíríkà lórí ìkọlu àwọn ẹ̀dá alààyè, èyí tí ó jẹ́ nígbà tí àwọn ẹ̀dá bíi eweko tàbí ẹranko bá wọ inú agbègbè tuntun kan níbi tí wọ́n ń gbádùn rẹ̀, wọ́n sì di ìdílé, tí ó sì lè ba àwọn ẹ̀dá mìíràn tí ó wà ní ayika tàbí àyíká wọn jẹ́ lára."
+    },
+    {
+      "hyp": "Wọ́n tún wo iwadi lórí bí olùfàṣàṣe yìí ṣe bá àwọn olùfàṣàṣe mìíràn lò."
+    },
+    {
+      "hyp": "Nígbà tí wọ́n ń wo àwọn iwe ìwádìí tí a tẹ̀ jáde láàrin ọdún 2000 àti 2018 lórí ìpìlẹ̀ ìdáradára “Web of Science”, wọ́n rí ìwádìí 1149 tó bá a mu."
+    },
+    {
+      "hyp": "Àtúwò wọn lórí àwọn ìwádìí fi hàn pé àwọn ìwádìí ilẹ̀-gẹ̀gẹ́ (terrestrial) fi ojú sí iyipada ní àyíká, nígbà tí àwọn ìwádìí omi adìgùn fi ojú sí ìdọ́tì, àti àwọn ìwádìí òkun àti ẹnu òkun fi ojú sí ìkórè púpọ̀ jù."
+    },
+    {
+      "hyp": "Wọ́n tún rí i pé àwọn ǹkan ti a ti ṣe ìwádìí rẹ̀ dáradára kárí ayé, tí ó sì nípa lórí ọ̀pọ̀ ìyàtọ̀ ẹ̀dá alààyè tàbí iṣẹ́ ẹ̀kọ́-ìgbé ayé, kò tíì ní ìwádìí rẹ̀ dáradára nínú ìwádìí ilẹ̀-èdè Gúúsù Áfíríkà."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, wọ́n rí ìwé ìwádìí mẹ́ta (5) nìkan tí wọ́n ṣe lórí ìdákúùkù omi òkun, èyí tí ó máa ń dá ìgbékalẹ̀ oúnjẹ rú, tí ó sì máa ń ṣe àwọn ẹ̀dá ìmọ́lẹ̀ níbàá."
+    },
+    {
+      "hyp": "Èyí ń ṣẹlẹ̀ nítorí pé gaasí kábọnì diọ̀ksaidì tí ó ju ẹ̀rọ̀ lọ ní afẹ́fẹ́, láti inú iṣẹ́ ọwọ́ èniyà bí́ ígbá irúgbìn àwọn ohun èlò tí ó ti wà láti ìgbà àtijọ́, ń tú sínú omi Òkun."
+    },
+    {
+      "hyp": "Àwọn ìyípadà ní ibi ìgbé, bíi iná tàbí ìyípadà ojú ọ́run, máa ń mú kí irú èyàn tí kò sí níbẹ̀ ṣeé ṣe."
+    },
+    {
+      "hyp": "Wọ́n sọ pé kábọnù daioksaidì ti pọ̀ sí i nípa ìdá 40%, o sì lè ṣe agbekalẹ̀ ipò tí ó dára fún eweko ajeji láti dagba sí i."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, ìwádìí diẹ̀ ní a ti ṣe lorí ọ̀rọ̀ yìí ní Gúsà."
+    },
+    {
+      "hyp": "Wọ́n rí iwé iwadí 21 tí ó ń wo bí́ àwọn òṣiṣẹ́ ọkọ̀ tí ó yàtọ̀ ṣe ń bá ara wọn lò."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ nínú wọ̀nyí dojúkò ìsopọ̀ ìyípadà ibi ìgbé-ayé àti ẹ̀dá alàgbàṣe."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, iwe iwadi díẹ̀ ṣoṣo lo tẹ̀ lé 3 tabi ju bẹẹ lọ lápapọ̀ nígbà kan náà."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé èyí fi hàn pé a nílò iwadi síwájú sí i lórí bí àwọn olùṣe àyípadà agbaye ṣe ń bá ara wọn lò láti nípa lórí àwọn èkó-ìṣèdá ní Gúúsù Áfíríkà."
+    },
+    {
+      "hyp": "Àwọn akọ̀wé̀ ọmọ Nàìjíríà gba pé yoo ṣòro láti ṣe àtòjọ́ kikun ti bí àwọn olùdarí àyípadà agbaye ṣe ń bá ara wọn lò ní Gúúsù Áfríkà, ṣùgbọ́n wọ́n sọ pé ìwádìí agbègbè tí ó wà tẹ́lẹ̀ lórí àwọn ẹ̀dá alààyè tí kò sí ní ìlú lè ti kó ipa nínú àwọn ẹ̀kọ́ nínú pápá tí ó ṣòro yìí."
+    },
+    {
+      "hyp": "Àwọn ohun elo ilẹ̀ tí ń ṣàkóso ohun elo àlùkò ilẹ̀ àti ibi ipamọ́ C nínú igbó igi miombo, Zambia."
+    },
+    {
+      "hyp": "Ohun elórílẹ̀ ilẹ̀ (SOM) jẹ́ apakan pàtàkì ti agbara ìṣẹ̀ igbó àti ipò́ kábọnì òrílẹ̀ ilẹ̀."
+    },
+    {
+      "hyp": "Síbẹ̀, kò sí ìmọ̀ pupọ̀ nípa ìyípadà SOM àti C nínú igbó ìgbàlódé miombo, èyí tí í ṣe ọ̀nà ìgbé ayé pàtàkì nínú igbó Àfríkà tó wà ní gúúsù-Sahara, tí ó sì ṣe pàtàkì fún àwọn ètò REDD+."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, a wọ́n ìwọ̀n àwọn ohun pàtàkì ilẹ̀ mẹ́sàn-án, a sì lo wọ́n láti ṣàlàyé ìyàtọ̀ SOM nínú àwọn ibi igbó miombo tó ní ìṣiṣẹ́ igi tó yàtọ̀ síra ní Luanshya, Zambia."
+    },
+    {
+      "hyp": "Àwọn ìwádìí fi hàn pé ìyàtọ̀ ńlá wà láàrin iye ìṣura SOM ní òkìkí ilẹ̀ tí ó yàtọ̀ síra."
+    },
+    {
+      "hyp": "36.67 si 113.89 Mg ha-1 ní ijinlẹ̀ 0–10 cm, 28.67 si 79.56 Mg ha-1 ní ijinlẹ̀ 10–20 cm, àti 31.89 si 98.56 Mg ha-1 ní ijinlẹ̀ 20–30 cm."
+    },
+    {
+      "hyp": "Àwọn iye SOM yí ní ijinlẹ̀ ti ọ̀tọ̣̀tọ̀ sì yàtọ̀ láàrin ibí igbó miómbó ti òtọ̀ọ̀tọ̀ ipele ìgbẹ́dẹ̀, pàápàá àwọn agbègbè ti a ge igi sí láipẹ̀ ní iye SOM ti o ga ju ààyèé lọ ní gbogbo ìpele (0–10 cm: +5.57%; 10–20 cm: +4.20%; 20–30 cm: +4.30%)."
+    },
+    {
+      "hyp": "Àtúmọ̀ ìbámu àpapọ̀ (CCA) fi hàn pé àwọn ohun pàtàkì ti ayika tí ó nípa lórí SOM jẹ́ ìdinku igbó nípasẹ̀ ìgbàgbé, àti akoonu amọ̀ nínú ilẹ̀."
+    },
+    {
+      "hyp": "Ìwádìí yìí ṣe afihan pé a le lo CCA láti fi hàn ìwọ̀n ipò̀ pàtàkì ti àwọn ìpele igbáwígbàwí igbó ọ̀tòọ̀tọ̀ gẹ́gẹ́ bí iṣẹ́ ti àwọn ọ̀nà iṣẹ́ ṣiṣe, bákan náà àwọn ohun tí ó nípa lórí ilẹ̀, nínú ṣíṣe ìpinnu nípa akoonu SOM ilẹ̀ miombo."
+    },
+    {
+      "hyp": "Àbájáde ìwádìí yìí ṣe pàtàkì gan-an fún ṣíṣe ìtọ́jú àwọn ètò ìtúnṣe igbó àti ìṣàkóso REDD+ lọ́wọ́lọ́wọ́ tí ó ní ìdílé láti pọ̀ sí i ní ipò ìdè epo-òòrùn nínú àwọn igbó ilẹ̀ ooru Àfikà lábẹ́ Sahara."
+    },
+    {
+      "hyp": "Jẹ́ kí a gbẹ́ igi pẹ̀lú ọgbọ́n láti mú ilẹ̀ sunwọ̀n sí i, nígbà tí àwọn onímọ̀ sáyẹ́nsì tí ń ṣe iwadi lórí àwọn igbó ilẹ̀ Zambia sọ."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé àwọn agbègbè igbó tí a ti gbẹ́ kúrò àti ilẹ̀ oke giga ní igbó kan ní Zambia ní ohun elo àṣàdá, èyí túmọ̀ sí pé ilẹ̀ náà dára sí i."
+    },
+    {
+      "hyp": "O ṣe pàtàkì láti lóye àdàkọ ilẹ̀ ní Àríwá-ìwọ̀-oòrùn Áfríkà nítorí pé ó ní ipa ńlá lórí bí igi àti ewéko ṣe ń dàgbà dáadáa."
+    },
+    {
+      "hyp": "Ilẹ̀ ní oúnjẹ oníṣọ́rọ̀, àti ohun èlò àdánù àti káàbọ́ǹ ni wọ́n ṣe pàtàkì jùlọ láti ràn àwọn eweko lọ́wọ́ láti dàgbà dáadáa."
+    },
+    {
+      "hyp": "Ohun èlò àdánù ni àwọn èròjà inú ilẹ̀ tí ó ti gbàgbé láti inú èso àti ẹranko tí ó ti kú."
+    },
+    {
+      "hyp": "Jú ópò ópò (58%) ninu ohun elò alaaye jẹ́ kábọnì, ti éèkéjí sí omì àti awọn ounjẹ́ mììn."
+    },
+    {
+      "hyp": "Ilẹ̀ tí o ní ohun èlò àgbàlagbà, àti káàbọ̀n síbẹ̀, máa ń paàmọ́ omi fún igba pípẹ̀, ó sì ní àwọn ounjẹ mìíràn púpọ̀ sí i."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ sáyẹ́ǹsì kò mọ̀ púpọ̀ nípa àwọn iyipada nínú ohun èlò alààyè àti káábọ̀n nínú ilẹ̀ Àwọn orílẹ̀-èdè tó wà ní gúúsù-ìlà-òòrùn Àfikà, bí ó tilẹ̀ jẹ́ pé wọ́n ṣe pàtàkì gidigidi fún ìdàgbàsókè eweko àti igi."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí fẹ́ mọ̀ bí ohun èlò àgbàṣe ilẹ̀ ní igbó ṣe ń yí pa dà, àti ohun tí ó ń pinnu iye rẹ̀."
+    },
+    {
+      "hyp": "Wọ́n ṣe ìwádìí wọn ní igbó kan ní Zambia."
+    },
+    {
+      "hyp": "Wọ́n kó àwọn àpẹẹrẹ ilẹ̀ ní ipele oke (0-10 cm), àárín (10-20 cm), àti jíjìn (20-30 cm), àti ní àwọn agbègbè igbó tó yàtọ̀ síra."
+    },
+    {
+      "hyp": "Lẹ́yìn náà, àwọn onímọ̀ ìwádìí ṣe àdánwò ilẹ̀ náà nínú iléegbé láti wá mọ bí ọ̀pọ̀ ohun èlò àyègbẹ́ tí ó wà nínú rẹ̀."
+    },
+    {
+      "hyp": "Lábọ̀tọ̀tọ̀̀ jẹ́ ilé tí àwọn onímọ̀ sáyẹ́nsì ń ṣe àwọn àdánwò àti ìdánwò, tí wọ́n sábà máa ń lò àwọn ohun èlò tó gbéṣẹ́ láti wọn àwọn ànímọ́ pàtó."
+    },
+    {
+      "hyp": "Wọ́n tún kọ́wé sí àwọn ànímọ́ míì ti ilẹ̀ náà bí irú rẹ̀, fún àpẹẹrẹ, iyanrin tàbí amọ̀."
+    },
+    {
+      "hyp": "Àbájáde wọn fi hàn pé iye ohun elo alààyè yàtọ̀ gidigidi láàrin àwọn ibi oríṣiríṣi, àti ní òkèréré onípele oríṣiríṣi."
+    },
+    {
+      "hyp": "Ilẹ̀ okè ní iye erojà aláyẹ ju gbogbo rẹ̀ lọ, tí ó fi de 114 miligiramu (mg) ní hekità, tí a ti tẹ̀lẹ̀ pẹ̀lú ilẹ̀ tí ọ̀wùn rẹ̀ jìn (fẹ́rẹ̀ẹ́ 100 mg fun hekità)."
+    },
+    {
+      "hyp": "Ilẹ̀ ààrin ní iye tó kerè jùlọ tí tó de 80 mg lóṣù mẹ́rinlẹ́gbọ̀n."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé àwọn ibi tí wọ́n ti gẹ́ láti sáàrùn ni àwọn igbó ní ọ̀pọ̀ ohun èlò àgbàyanu ju àwọn ibi tí wọn kò tíì gẹ́ lọ."
+    },
+    {
+      "hyp": "Wọ́n sọ pé gbígbẹ́ igi ninu igbó, pẹ̀lú ìṣàkóso tó dára, lè mú kí ohun alumọni ilẹ̀ pọ̀ sí i."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí náà sì ṣàkíyèsí pé àwọ̀ ilẹ̀ yí padà láti brown dudu (ilẹ̀ oke) sí brown onífàfà (ilẹ̀ jíjìn), àti pé ilẹ̀ iyanrin àti ilẹ̀ amọ̀ ní ohun èlò alààyè púpọ̀ sí i."
+    },
+    {
+      "hyp": "Àwọn agbègbè igbó tí oòrùn fi bà jẹ́ sí jù ní igi tó tóbi jù, àti igi àgbàlagbà jù, àti ohun èlò àlòókùn púpọ̀ sí i."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí, tí wọ́n wà ní Zambia àti Áfìríkà Gúsù, wí pé àwọn ènìyàn mìíràn lè lo ọ̀nà wọn láti ṣàyẹ̀wò didara ilẹ̀ ní ibi onírúurú àti ní òkè onírúurú."
+    },
+    {
+      "hyp": "Gbigbèsì Ìṣelọ́pọ̀ Àti Ìṣẹ́ṣe Àwọn Ẹ̀ẹ́rùn Ọ̀gbẹ́dẹ̀ Pẹ̀lù Ọ̀nà Ìdàgbàsì Ìṣẹ́-ọ̀nà Àwọn Alàgbà-ìṣẹ́ Ní Étíòpíà"
+    },
+    {
+      "hyp": "Èpò (Cicer arietinum L.) jẹ́ èwè oúnjẹ́ pàtàkì kẹta, nípa agbègbè ìgbẹ́ ati ìṣelọ́pọ̀, lẹ́yìn ẹ̀fọ̀n àti ẹ̀fọ̀n fẹ̀bà ní Étíòpíà."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, iye èrù ti á gbà kúré júù, tí a bá fi wé̀ agbára rẹ̀, nítorí kò fi iru èrù tí á mú dárà sí atì ìlọ̀ èrò tí eto ìwádìí ṣe."
+    },
+    {
+      "hyp": "Láti mú ìlò àwọn ọ̀nà ìwádìí ti a ti mú sunwọ̀n àti àwọn ti ò ní í ṣe pọ̀ sì, a dá Ìdààmọ̀ Ìṣẹ́-iṣé Àwọn Olùpìǹdà Àgbàlá Àwọn Ẹ̀yà Chickpea Orílẹ̀-èdè sílẹ̀ ní ọdún 2013 pẹ̀lú ètè láti kó àwọn olùpìǹdà oríṣiríṣi tí wọ́n ń ṣiṣẹ́ lórí ṣíṣe iye owó jọ̀, kí wọ́n lè ṣàwárí àwọn ìṣòro pàtàkì, kí wọ́n sì rí àwọn ìdáṣọ́dá tí wọn ó fi agbára iṣẹ́ ṣọ̀kan ṣe."
+    },
+    {
+      "hyp": "Àwọn ìgbìmọ̀ náà rí ìkùkíù ìrúgbìn gẹ́gẹ́ bí ìdènà pàtàkì nínú ọ̀jáàdà náà."
+    },
+    {
+      "hyp": "A ti yanjú ọ̀rọ̀ yìí nípa ṣiṣe agbọ́rọ̀gbọdọ̀ àwọn agbẹ̀ tí wọ́n ń ṣe irúgbìn pẹ̀lu ìrànlọ́wọ́ àwọn alábàáṣepọ̀ R&D, ọ̀pọ̀lọpọ̀ ni wọ́n sì jẹ́ olùpèsè pàtàkì jùlọ ní gbogbo orílẹ̀-èdè."
+    },
+    {
+      "hyp": "Lọ́dọ̀ọ̀kan, ìkọ̀lẹ̀ náà mú agbára ìtẹ̀siwájú ṣiṣẹ́ gidigidi, ó sì mú kí ìtànkálẹ̀ àwọn ọ̀nà iṣẹ́ ti ó dára sí i dé ọ̀dọ̀ ọ̀pọ̀ àwọn aṣàgbà."
+    },
+    {
+      "hyp": "Nítorí náà, agbàṣẹ̀dá gbẹ̀rùn rere ti àwọn aṣàkóso oko ti pọ̀ sí i nígbà mẹ́rin, ti agbàṣẹ̀dá orílẹ̀-èdè sì ti pọ̀ sí i nígbà méjì de 2 tọ́ọ̀nì ha−1 ní ọdún mẹ́wàá tó kọja."
+    },
+    {
+      "hyp": "Ipò ìṣiṣẹ́ náà tún ṣiṣẹ́ lórí ṣíṣe ilé ọjà rọrùn sí i, ọ̀pọ̀lọpọ̀ sì là á ṣe pẹ̀lú ọjà ìyẹ̀fun ẹ̀fọ̀n ní ọjà ẹ̀rọ̀ ìyẹ̀wù Ethiopia."
+    },
+    {
+      "hyp": "Nítorí ìṣélọ̀́pọ̀ ti ó tóbi ti ọ̀gbìn náà, àjọ́ṣepọ̀ náà ń gbìyànjú láti mú ìtọ́jú náà lágbára síi, kí ó sì gba àǹfààní rẹ̀."
+    },
+    {
+      "hyp": "Báwo ni Ethiopia ṣe pọ̀ sí ìṣelọ́pọ̀ ẹ̀fọ̀n."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣàlàyé bí Ítiopía ṣe pọ̀ sí ìṣelọ́pọ̀ ẹ̀fọ́ ẹ̀yẹ́ nípa rírí i dajú pé àwọn agbẹ̀ ní ìwọ́lé sí irugbin ti ó dára sí àti ẹ̀kọ́ lórí àwọn aṣà iṣẹ́ oko ti ó dára sí."
+    },
+    {
+      "hyp": "Ẹ̀gùúsì jẹ́ irugbin oúnjẹ tí ó dà bí ẹ̀fọ́, tí wọ́n sábà máa ń gbìn ní Ítiopía."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ ọjà orílẹ̀-èdè náà ni a tí tìtì sí àwọn orílẹ̀-èdè mìíràn pàápàá."
+    },
+    {
+      "hyp": "Ọdún sẹ́yìn, ọ̀pọ̀ ènìyàn mọ̀ pé àwọn agbẹ̀ẹ̀rẹ̀ lè ṣe àtọ́dá ẹ̀fọ̀n pẹ̀lu púpọ̀ sí i bí wọ́n bá lo irúgbìn tí ó dára tí ó lè gbàdúrà sí àwọn kòkòrò àti àrùn."
+    },
+    {
+      "hyp": "Ìwé tuntun kan ṣàpẹẹrẹ bí iṣelọ́pọ̀ ẹ̀fọ̀n àgbòògì ní ilẹ̀ Etiopia ti pọ̀ sí i láti ìgbà tí wọ́n rí i."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé ní ọdún 2013, Ìhà ilẹ̀ Etiopia dá ‘Ìgbìmọ̀ ìmọ̀-ẹ̀rọ̀ àwọn onípinnú ẹ̀ká ọkà-àgbà’ sílẹ̀, èyí tí ó jíròrò àwọn ìṣòro nínú ìṣelọ́pọ̀ ọkà-àgbà, tí o sì ti gbé àwọn ìdá̀pọ̀ jáde."
+    },
+    {
+      "hyp": "Ipò ìṣiṣẹ́ dàbí àjọ."
+    },
+    {
+      "hyp": "Ipò ìṣiṣẹ́ náà gba àwọn onímọ̀ ìwádìí, Ìjọba Ìpínlẹ̀ Etiopia fún Ọgbà Ọ̀gbìn, àwọn ẹgbẹ́ àgbẹ̀, àti àwọn ẹgbẹ́ àgbẹ̀, àwọn olùṣe oúnjẹ, àwọn olùṣe irugbin, àti àwọn alábàáṣepò ìtòjútò sílẹ̀."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé àwọn rí àìtọ́jú irúgbìn gẹ́gẹ́ bí ìṣòro tó tóbi jùlọ, lẹ́yìn náà, wọ́n dá àwùjọ sílẹ̀ láti pèsè irúgbìn káàkiri orílẹ̀-èdè náà."
+    },
+    {
+      "hyp": "Ìyìpàdà yìí mú ìṣelọ́pọ̀ ẹ̀fọ̀n gbọ̀ngbọ̀n pọ̀ sí ìwọ̀n tó jẹ́ tónì 2 lórùnlẹ̀ kan."
+    },
+    {
+      "hyp": "Ìṣòro mìíràn tí wọ́n ṣàkíyèsí ni didàkẹ́dàké ti àwọn ọjà."
+    },
+    {
+      "hyp": "Wọ́n kọ́ àwọn agbẹ̀gbẹ̀ lórí ọ̀nà iṣẹ́-ọ̀gún tí ó dára jù, bíi fífi amọ̀nà-ilẹ̀ ṣe ìṣàtúnṣe ìwọ̀n didùn ilẹ̀."
+    },
+    {
+      "hyp": "Wọ́n sì ti kíyèsí i pé àwọn agbẹ̀ rọ́gọ̀ láti ṣakoso àwọn koríko."
+    },
+    {
+      "hyp": "Nítorí náà, wọ́n fi irugbin ẹ̀fọ́ gbẹ̀dẹ̀gbẹ̀dẹ̀ sí àwọn àgbẹ̀, èyí tí ó lè dàgbà dáadáa, àní tí wọ́n bá fún un ní oògùn ikọ́lé, èyí tí í ṣe ohun èlò kẹ́míkà tí àwọn àgbẹ̀ máa ń lò láti ṣàkóso àwọn koríko tàbí ewéko tí kò wù wọ́n."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé ipò ìṣiṣẹ́ náà rí i dájú pé a kọ́ àwọn agbẹ̀ láti mú ìmọ̀ wọn pọ̀ sí i lórí ìṣelọ́pọ̀ ẹ̀fọ́ ẹ̀yẹ."
+    },
+    {
+      "hyp": "Àwọn aṣọ àgbò máa lọ sí àwọn ipade ti wọ́n lè fi ìsọ̀rọ̀ àti irírì wọn pa dà."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé ipò ìṣiṣẹ́ náà tún so àwọn àgbẹ̀ pọ̀ mọ́ àwọn oníríra, àti àwọn olùṣe irúgbìn pọ̀ mọ́ àwọn tí ó ṣeé ṣe láti ra àti pípin irúgbìn fún àwọn àgbẹ̀."
+    },
+    {
+      "hyp": "Pẹpẹ naa sì ṣe agbekalẹ ati ṣe ikẹkọọ fun awọn agbooro obinrin ati awọn ọdọ lori iṣelọpọ eweko chickpea."
+    },
+    {
+      "hyp": "Wọ́n tún gòǹgbé fún obìnrin àti awọn ọ̀dọ́ láti kópa nínú iṣẹ́ ìṣelọ́pọ̀ irúgbìn."
+    },
+    {
+      "hyp": "Àwọn onkọ̀wé sọ pé, bí gbogbo àṣeyọrí tí a ṣe ti wà, àìtọ́ ọ̀pọ̀ irúgbìn ẹ̀fọ́ àgbàlà ṣì wà."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pé ìkọ̀lẹ̀ naà lè ṣe sí ìpọ́njú̀ jù bẹ́ẹ̀ lọ́ tí wọ́n bá ní áwọn ohun elo lati pade sí ìgbà diẹ̀ sii."
+    },
+    {
+      "hyp": "Wọ́n gbanínimọ̀ràn pé Ìkáàgbọ̀ Ìgbẹ́̀rùn Ìṣẹ́-ọ̀gbọ̀ọ́rọ̀ Étíópíà àti àwọn ońìwádìí kú dídẹ̀kunú pẹpẹ̀rù nàà lọ́wọ́ owó, ki o má baà wó."
+    },
+    {
+      "hyp": "Wọ́n tún ṣe àbá fún did́àmú didara ẹ̀fọ̀n àti bí a ṣe lè ṣàkóso àwọn ewù iṣẹ̀ ọ̀gún ẹ̀fọ̀n, bí àwọn àrùn."
+    },
+    {
+      "hyp": "Níkẹyìn, àwọn onkọ̀wé pè fún ìtọ́jú ìrugbin tí ó sàn ju ti tẹ́lẹ̀ lọ, èyí tí ó rọrùn láti kórè pẹ̀lu ẹ̀rọ, tí àwọn ohun ìpakúpa kò sì ní ipa lórí."
+    },
+    {
+      "hyp": "Ìrù SARS-CoV-2 kan tí ó jẹ́ A.23.1, tí ó ní ìyípadà spike ti fara hán, ti sì dí olúdarí àjàkálẹ̀-àrùn Uganda lọ́wọ́lọ́wọ́."
+    },
+    {
+      "hyp": "Ìwọǹkà ìpìlẹ̀-ara SARS-CoV-2 ní Uganda ń gbé àǹfààní láti fi ẹ̀rí hàn nípa bí àrùn náà ṣe ń yipadà ní orílẹ̀-èdè kékeré kan ní Ìwọ̀-oòrùn Afirika tí kò ní òkun."
+    },
+    {
+      "hyp": "Àwa ń fi hàn níbí yí ìyípadà tuntun kan ninú ajakayẹ̀gbáàgbáà agbègbè pẹ̀lú ìlẹ̀-ọmọ tuntun kan tí ó ń dàgbà, A.23, tí ó ti ń yipada sí A.23.1 tí ó ti ń ṣe agbádá nínú àwọn ọ̀rọ̀ àílera ní Uganda, tí o sí ti tàn káàkiri sí orílẹ̀-èdè 26 mììn."
+    },
+    {
+      "hyp": "Bí o ti wú kí àwọn àyípadà tó gbájúbájú ní A.23.1 bí o ti ṣe ádápọ̀ yàtò sí àwọn àyípadà ní àwọn ìyàtò tí ó ṣe pàárá (VOC), ìdàgbàsókè náà fi hàn pé wọ́n ti gbá áwọn ìrú purotéènì kan náà."
+    },
+    {
+      "hyp": "Àpòòpọ̀ ìyípadà ti kọ́ lú ọ̀nà koodu purotéènì spike A.23.1, eyi ti ó dà bí ọ̀pọ̀ ìyípadà ti a rí ní VOC, páàpàà ìyípadà ní ipo 613, ìyípadà ní ibí ti furin ge, eyi ti ó fá ìdè aami asidi amino, ati ọ̀pọ̀ ìyípadà ní ilé-iṣẹ́ N-terminal ti ó mù ki ó ṣe agbégbère."
+    },
+    {
+      "hyp": "Sùgbọ́n sí, A.23.1 lineage ṣe ìfihan àwọn àyípàdà ní inú àwọn purotéènì tí kii ṣe spike tí àwọn VOC mììn sì ṣe (nsp6, ORF8 àti ORF9)."
+    },
+    {
+      "hyp": "Ipa ti àyípadà A.23.1 lórí iṣẹ́-ìṣè-iṣẹ́-iṣegun kò tíì hàn gbangba, ṣùgbọ́n ó ṣe pàtàkì láti máa ṣe àbójútó àyípadà yìí dáadáa, àti láti yára ṣe ayẹ̀wo ipa àwọn àyípadà nínú purotéènì spike sí agbára oògùn-àlàáfíà."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ṣe ìròyìn lórí ìṣẹ̀dá àwọn àyípadà SARS-CoV-2 ní Uganda."
+    },
+    {
+      "hyp": "Ní ọdún 2021, àwọn onímọ̀ ìwádìí ròyìn pé àwọn iyatọ̀ tuntun SARS-CoV-2, fà́ìrìsì tí ó fa Covid-19, jáde ní Uganda, tí ó sì tàn sí orílẹ̀-èdè 26 mìíràn."
+    },
+    {
+      "hyp": "Wọ́n pe oríṣiríṣi náà ní “A.23.1”, wọ́n sì sọ pé ọ̀pọ̀lọpọ̀ ìyípadà kan náà wà nínú àwọn protein rẹ̀ tí àwọn onímọ̀ ìwádìí ti rí ní àwọn oríṣiríṣi àyàlò míràn ní gbogbo agbàáyé nígbà yìí."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ sáyẹ́ǹsì ń tọ́pàn bí àwọn irú orísìí kọ́róńàfàírọ̀sù ṣe ń yí pa dà kí wọ́n lè mọ̀ dáadáa bí àwọn oògùn alábọ̀ọ́ṣọ̀ ṣe lè ṣiṣẹ́ sí àwọn orísìí tuntun."
+    },
+    {
+      "hyp": "Kòróńà-váìrọ̀sì ti pa ọ̀pọ̀ èniyà ku káàkiri ayé."
+    },
+    {
+      "hyp": "Nínú iṣẹ́ tí a mọ̀ sí àbójútó gẹ́nẹ́mí, àwọn onímọ̀ sáyẹ́nsì ń ṣàkíyèsí bí ìmọ̀ ẹ̀dà àti àwọn prótì́ìní àjàkálẹ̀-àrùn náà ṣe ń yí pa dà bí ó ti ń tàn ká."
+    },
+    {
+      "hyp": "Wọ́n máa ń lo ìsọfúnni yìí láti ṣàkóso àrùn náà, tí wọ́n sì máa ń darí iṣẹ́ ìṣèdààmì-àrùn."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, nípa mímọ̀ ìṣetó purotéẹ̀nì spike àjàkálẹ̀-àrùn náà, àwọn onímọ̀ iṣẹ́-ìwádìí lè ṣe àgbékalẹ̀ àwọn oògùn-àlùbọ́ọ̀ṣù tí ó lè mú àwọn purotéẹ̀nì náà ṣiṣẹ́ dáadáa kí ó sì ràn wọ́n lọ́wọ́ láti dènà àjàkálẹ̀-àrùn náà kúrò nínú sẹ́ẹ̀lì ènìyàn."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí fi ojú fojú wo bí SARS-CoV-2 ti ń yípadà ní Uganda."
+    },
+    {
+      "hyp": "Àwọn olùwádìí ṣe ìdánmọ̀ àwọn ìṣiṣẹpọ̀ gẹ́gẹ́ sí ìṣèdá ara ti àjàkálẹ̀-àrùn náà nínú àwọn àpẹẹrẹ àrùn COVID-19 tí wọ́n gba káàkiri ilẹ̀ Uganda."
+    },
+    {
+      "hyp": "Wọ́n lo sọ́fùtìwɛ̀ẹ̀ri kọ̀m̀pútà láti tẹ̀lé ìtàn ìdílé (tàbí ìtàn ìdílé) àwọn àyípadà tuntun tí wọ́n ṣe ìdámọ̀ ní ọ̀nà yìí (tí a ń pè ní A.23.1), wọ́n sì rí ibì kan tí àyípadà náà bá gbàgbẹ́ nínú igi ìdílé SARS-CoV-2."
+    },
+    {
+      "hyp": "Àbájáde wọn fi hàn pé ìyípadà A.23.1 ṣẹ̀ṣẹ̀ jáde láti ìyípadà mìíràn tí a ń pè ní A.23, a sì rí i nínú 90% gbogbo àwọn àpẹẹrẹ tí ó dára."
+    },
+    {
+      "hyp": "Ní ọ̀rọ̀ mìíràn, ó ti jẹ́ olórí nínú àwọn àpẹẹrẹ láti Uganda láti October ọdún 2020."
+    },
+    {
+      "hyp": "Wọ́n tún rí i pé àyípadà A.23.1 ní ọ̀pọ̀lọpọ̀ iyipadà ninú purotéèní spike ti ó dàbí àwọn iyipadà ti a rí ninú àwọn àyípadà mììn ti ó ṣe pàtàkì."
+    },
+    {
+      "hyp": "Àwọn iyipada náà ṣeé ṣe kí ó mú kí irú-ọ̀rọ̀ náà rìn kiri yá (ó tàn káàkiri yá), tí ó sì ní agbára dídènà oògùn àti ìtọ́jú sí i."
+    },
+    {
+      "hyp": "Ìwádìí yìí fi kún ìgbìyanjú tí ń lọ lọ́wọ́ láti ṣe ìṣiṣẹ́pọ̀ àwọn àyípadà SARS-CoV-2 káàkiri ayé."
+    },
+    {
+      "hyp": "Àwọn ìṣẹ̀dá náà fi kún ẹ̀rí tí ń pọ̀ sí i pé SARS-CoV-2 ń yípadà kíákíá bí ó ti ń tàn káàkiri láti ba àwọn ènìyàn pọ̀ sí i jẹ́ kí ó sì sá fún àwọn oògùn alárò."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, a ń nilò ìwádìí sí ìpọ̀jú latí loye ohun tí ìṣe tabí iṣẹ́ àwọn ìyípadà purotéènì spike ninu àwọn ìyàn A.23.1 yoo jẹ́ gájùgájù."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí gbani nímọ̀ràn pé kí a ṣe àwárí àwọn ìpìlẹ̀-ara sí i sí ìdájú kí a lè mọ̀ bí àwọn ìyípadà àrùn náà ṣe ń dáhùn sí àwọn oògùn aabo ti o wà ní Uganda àti àwọn orílẹ̀-èdè mìíràn."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pé́ kíkà irin-ajó aaláàrin jẹ́ pátàkì kí àwọn onímọ̀ ìwádìí lè mọ̀ dáradára bíi àjàkálẹ̀-àrùn náà ṣe ń rìn kiri nílẹ̀."
+    },
+    {
+      "hyp": "Kí Ló Mu Obìnrin Jẹ́?"
+    },
+    {
+      "hyp": "Àwọn Ìwádìí Ọ̀ràn Tí Ó Ṣàlàyé Àwọn Ìdí Àti Ìrìbọ̀mi FGM/C Nínú Orílẹ̀-Èdè Indonesia, Ethiopia Àti Kenya."
+    },
+    {
+      "hyp": "Gíga/ìkọ́lùfà àwọn ọ̀gbà ìbímọ̀ obìnrin jẹ́ àṣà ìṣe àtijọ́ tí ó ṣeé ṣe láti pa run tí ó ṣe kòòtẹ̀ sí ẹ̀tọ́ obìnrin, tí ó sì ní àwọn àbájáde àìlera tó burú."
+    },
+    {
+      "hyp": "Iwe yì ṣe alayè idì atí ipò̀ ti ìṣẹ́gbẹ́ igbẹ́ ti àwọn ara ọmọbìnrin/gíga (FGM/C) ní àwọn ibi tó yàtò sí ara wọn ní orílẹ̀-èdè mẹ́ta – Indonesia, Ethiopia atí Kenya."
+    },
+    {
+      "hyp": "A gba àwọn ìdáàmọ̀ gbà láti inú ìwádìí ilé pẹ̀lú àwọn ọ̀dọ́mọdọ́ (ọmọ ọdún 15-24) àti láti inú àwọn ijiroro ẹgbẹ́, àwọn ijomitoro jíjinlẹ̀ àti àwọn ijomitoro orisun pàtàkì pẹ̀lú àwọn ọ̀dọ́mọdọ́ àti àwọn onípinnu nínú àwùjọ ni ọdún 2016 àti 2017."
+    },
+    {
+      "hyp": "A ṣe àtòjọpọ̀ iṣiro àti àtùnfẹ̀sìlẹ̀ àkọ́kọ́rọ̀ àkọlé."
+    },
+    {
+      "hyp": "Àwọn ìwádìí ìwádìí yìí jẹ́rìí sí diẹ̀ ninu àwọn ìdí fún FGM/C tí àwọn ìwádìí ti ṣáájú ti kọ̀wé sí, tí ó ṣàkíyèsí pé àwọn ìdí wọ̀nyí sojú pọ́n pọ̀, àti pé àwọn ìwà ibalopo ni olùṣàkóso rẹ̀."
+    },
+    {
+      "hyp": "Ní gbogbo ipò mẹ́ta yìí, àwọn ìdí wọ̀nyí ló ń mú kí wọ́n yí ara obìnrin pa dà, kí ó lè di ara “ìwàṣẹ̀dá” tí ó gbàgbọ́ fún ipò tí ọkọ ń ṣàkóso."
+    },
+    {
+      "hyp": "Èyì mú un jáde sí ‘ara mímọ́’ ní Índónésíà, ‘ara tútù’ ní Ìtópíà, àti ‘ara agbalagba’ ní Kénià."
+    },
+    {
+      "hyp": "Àwọn òṣìṣẹ́ ilera àti àwọn òbí ní ipa pàtàkì nínú ìpinnu nípa FGM/C ní gbogbo ibi."
+    },
+    {
+      "hyp": "Ní Kẹ́níyà, páapá, àwọn ọmọbìnrin kékeré ń bá ara wọn jọ̀wọ́ lórí ipa tí wọ́n máa kó nínú ìpinnu nípa FGM/C nítorí pé wọ́n ti dàgbà sí i nígbà tí wọ́n ń fi igbẹ́ kọ́ wọn."
+    },
+    {
+      "hyp": "Ìwádìí náà fi hàn bí ìyípadà áṣẹ̀ ofin àti àwọn ipò áwọn eniyan nínú ìgbágbọ́ kọ̀ọ̀kan ṣe ń mu ìyípadà wá bá ìṣẹ̀ aṣa FGM/C, tí ó sí fá ìtójú iṣẹ̀ FGM/C nípà ìtójú ẹniyan ní Indonesia, ìdinkú ọjọ́ orí ìgé fún àwọn ọmọbìnrin ní Kenya àti ìṣẹ̀ FGM/C tí ó tí dí aṣirí sí ì gbágbá ní Ethiopia."
+    },
+    {
+      "hyp": "Àwọn àpẹẹrẹ mẹ́ta náà fi ìyàtọ̀ ńlá hàn nínú ọ̀nà tí a ń gbà ṣe FGM/C àti ìtumọ̀ ọ̀rọ̀ àwùjọ tí àwọn ọmọ obìnrin kékeré àti àwùjọ wọn ń fi lé e."
+    },
+    {
+      "hyp": "Àìdánilọ́wọ́ wa láti ṣe àwárí sí iṣẹ́ àwọn òbí sí ìpinnù sí ìdá́pọ̀."
+    },
+    {
+      "hyp": "Nítorí ìsopọ̀ láàrin àwọn ohun tí ń mú FGM/C ṣẹlẹ̀ nínú ọ̀rọ̀ kọ̀ọ̀kan, ìwádìí náà fi parí pé ọ̀nà tí ó báamu sí ipò̀ kọ̀ọ̀kan ní a gbọ́dọ̀ lò lárin ìtọ́jú lati ṣe áyípadà tí yóò gba."
+    },
+    {
+      "hyp": "Láti le ṣe àìdààmú ìṣegbé nípa àwọn apá ìbímọ̀ obìnrin, a gbọ́dọ̀ mọ̀ kí ákọ́kọ́ idi tí ó fi ń ṣẹlẹ̀."
+    },
+    {
+      "hyp": "Ìgbẹ́kẹ̀lé àwọn apá ara ìbímọ̀ obìnrin, iṣẹ́ tí wọ́n ń ge tàbí yọ́ àwọn apá kan kúrò nínú àwọn ẹ̀yà ìbímọ̀ obìnrin, ṣì ń ṣẹlẹ̀ ní àìṣẹ́dájó tàbí ní àṣírí ní àwọn orílẹ̀-èdè bíi Kenya, Ethiopia àti Indonesia."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé, mímọ̀ idi tí ó fi ń ṣẹlẹ̀ ni ojúṣe pàtàkì láti dá òṣìṣẹ́ àṣà ìbàjẹ́ yìí dúró, àti láti dènà àwọn ìṣòro ìlera àti ọkàn tí àwọn obìnrin ń jìyà nítorí rẹ̀."
+    },
+    {
+      "hyp": "Ní àwọn apá kan ní Àfíríkà àti Éṣíà, a ṣì máa ń ṣe ìṣe ìkọ́lùfà àwọn ìbẹ̀rẹ̀bẹ̀rẹ̀ obìnrin (FGM), èyí tí a mọ̀ sí ‘ìkọ́lùfà obìnrin’ nígbà mìíràn."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ ènìyàn gbàgbọ́ èké pé FGM jẹ́ pataki fún ìwẹ̀ǹú tó tọ́, tàbí láti mú kí obìnrin máa ṣe onírẹ̀lẹ̀ (kì í ṣe onímọ̀lẹ̀ àti onírẹ̀lẹ̀), àti láti rí i dajú pé wọ́n lè bí ọmọ."
+    },
+    {
+      "hyp": "Gẹ́gẹ́ bí ẹ̀rí iṣẹ́ ìmọ̀, kò sí ohun tí ó béèrè fún FGM nínú èyíkéyìí nínú wọ̀nyí."
+    },
+    {
+      "hyp": "Síbẹ̀, nínú ọ̀pọ̀lọpọ̀ ọ̀ràn, àwọn ọmọdé tí wọ́n ti ṣe FGM fún wọn máa ń ní àwọn ìṣòro ilera nígbà tó yá, bí àwọn àkóràn tí ó ṣeé ṣe láti pa, ìṣòro ìgbàgbọ́ (pipọ̀), àti àwọn ìṣòro ilera èrò."
+    },
+    {
+      "hyp": "Nítorí pé àṣà náà ṣeé ṣe láìdáa, tí ó sì ṣe ìwà ìkà sí ẹ̀tọ́ ènìyàn obìnrin, ọ̀pọ̀ orílẹ̀-èdè ti sọ ó di òfin, ṣùgbọ́n àwọn ènìyàn ṣì ń ṣe é ní àṣírí."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ṣe àwárí̀ sí bí FGM ṣe ń ṣẹlẹ̀ ní orílẹ̀-èdè ọ̀tòọ̀tò, àti ohun tí àwọn ènìyàn gbàgbọ́ nípa àṣà náà."
+    },
+    {
+      "hyp": "Nítorí náà, wọ́n kọ́ ìsọfúnni nípa FGM jọ ní Kẹ́nià, Itiopía àti Índóníṣíà."
+    },
+    {
+      "hyp": "Ní orílẹ̀-èdè kọ̀ọ̀kan, àwọn onímọ̀ ìwádìí bá àwọn ènìyàn sọ̀rọ̀ nípa àṣà náà, títí kan àwọn òbí, àwọn ọ̀dọ́mọdọ́, àwọn olórí àṣà, àwọn òṣìṣẹ́ ìlera, àti àwọn “olùkọ́kọ́” (àwọn obìnrin àgbàlagbà tí wọ́n ti máa ń ṣe FGM fún àwọn ọmọbìnrin kékeré)."
+    },
+    {
+      "hyp": "Ní àwọn àkókò kan, wọ́n bá àwọn ènìyàn wọ̀nyí sọ̀rọ̀ lójú kan, ṣùgbọ́n wọ́n tún bá àwọn ẹgbẹ́ ènìyàn sọ̀rọ̀ pẹ̀lú, títí kan àwọn ọ̀dọ́mọdọ́mọ̀ àti àwọn ọ̀dọ́láwọ̀n, tí wọ́n ti jìyà nítorí FGM."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé ìdí fún FGM, ọ̀nà tí a gbà ṣe é, àti gbàgbọ́ nípa àṣà náà, yàtọ̀ sí ara wọn ní orílẹ̀-èdè kọ̀ọ̀kan."
+    },
+    {
+      "hyp": "Wọ́n tún rí i pé ọ̀pọ̀ èniyán ṣi ń ṣe é, aní ní áwọn ìbí tí ó jẹ́ arọ́."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, ní Indonesia, àwọn olùtọ́jú ìbí ọmọ àṣàájú lo ọbẹ̀ tàbí abẹ́rẹ̀ láti gé apá kan ti klítọ́rísì (ẹ̀yà ara tí ó jẹ́ olùṣe igbadun ìbálòpọ̀ fún obìnrin) nígbà tí ọmọbìnrin bá pé ọjọ́ 40."
+    },
+    {
+      "hyp": "Àwọn ènìyàn gbàgbọ́ pé èyí ṣe iranlọwọ́ láti ‘yọ̀ àwọn ohun àìmọ́ kúrò’ àti pé ó ṣe pàtàkì fún àwọn ìdí ẹ̀sìn."
+    },
+    {
+      "hyp": "Ní Ítiopía, FGM ṣẹlẹ̀ paápáá nígbà tí ó kù sí i, nígbà mìíràn nígbà tí àwọn ọmọ ọwọ́ jẹ́ ọjọ́ méje péré."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé àwọn ènìyàn níbẹ̀ gbàgbọ́ pé èyí yóò mú kí ọmọbìnrin náà di ‘aya rere’ ní ọjọ́ kan, àti pé yóò ṣègbọràn, kì yóò sì jẹ́ alágbára sí ọkọ rẹ̀."
+    },
+    {
+      "hyp": "Ọ̀pọ̀ ènìyàn sì gbà pé FGM mú kí ìbí ọmọ rọrùn, ṣùgbọ́n ó lè mú kí ìbí ọmọ di ohun tí ó ṣòro sí i díẹ̀."
+    },
+    {
+      "hyp": "Nígbà yìí ní Kẹ́níyà, FGM jẹ́ àmì ìfihàn pé ọmọbìnrin kan ti dé ìgbà agbalagba, tí ó sì máa ń ṣẹlẹ̀ nígbà tó ti dàgbà, nígbà tó jẹ́ ọ̀dọ́mọbìnrin."
+    },
+    {
+      "hyp": "Síbẹ̀, ní àwọn àkókò kan, wọ́n rí i pé àwọn ọmọbìnrin lè ṣe FGM nígbà tí wọ́n jẹ́ ọmọ ọdún mẹ́jọ, àti pé ọ̀pọ̀lọpọ̀ àwọn ọmọbìnrin di aboyun nígbà tí wọ́n jẹ́ ọdọ́mọdún, nítorí pé a kà wọ́n sí ọjọ́gbọ́n fún ìbálòpọ̀ lẹ́yìn FGM."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé ìwádìí wọn fi hàn pé ọ̀pọ̀lọpọ̀ ìdí ni ìṣẹ̀lẹ̀ FGM ṣì ń ṣẹlẹ̀ sí."
+    },
+    {
+      "hyp": "Bí òfin àti ìrò ìwà eníyàn bá ń yì, bí a ṣe ń ṣe é àti ibí a ti ń ṣe é pààyì."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, àwọn òbí lè gbìyànjú láti ṣe é ní àṣírí, bí ó tilẹ̀ jẹ́ pé ó jẹ́ arufín, nítorí pé wọ́n rò pé ó ṣe pàtàkì fún ọmọbìnrin wọn láti ní ìlera tàbí láti rí ọkọ rere."
+    },
+    {
+      "hyp": "O ṣe pàtàkì láti mọ̀ pé nítorí pé FGM jẹ́ arúfin ní àwọn ibì kan, ṣíṣe àwárí lórí ọ̀rọ̀ náà lè ṣòro, àti pé àwọn ènìyàn lè má ṣe fúnni ní ìdáhùn òtítọ́ nígbà gbogbo nípa ọ̀rọ̀ náà."
+    },
+    {
+      "hyp": "Ní ọjọ́ iwájú, yàtọ̀ sí́ fífi ṣe ohun tí òfin kò gbà, àwọn onímọ̀ ìwádìí sọ pé, ìjọba àti àwọn aláṣẹ ilera gbọ́dọ̀ gbé e yẹ̀ wò láti dá FGM dúró nípa ṣíṣe ìtọ́jú sí ìgbàgbọ́ èké tí àwọn ènìyàn ní nípa àṣà náà àti fífi ẹ̀kọ́ kọ́ wọn nípa ewu rẹ̀."
+    },
+    {
+      "hyp": "Ìwádìí yìí jẹ́ iṣẹ́ alagbeka láàrin àwọn onímọ̀-èrọ láti Itiopia, Indonesia, àti Netherland, o sì jẹ́ apakan iṣẹ́ ńlá kan, tí a pé ní etò ‘Bẹẹni, Mo ṣe’, eyi tí ó dojúko ìdinku ìlóyún ọdọ́, iyawo ọmọde, àti FGM."
+    },
+    {
+      "hyp": "Àìsèdájúù Ìṣelọ́pọ̀ Hɔ́mɔ́nù, Ikú Sẹ̀ẹ̀lì Ìbímọ̀, Àwọn Àṣìṣe Àwòrán Àti Ìṣẹ̀dá Àwọn Sẹ̀ẹ̀lì Ìbímọ̀, Àti Àwọn Ìyípadà Ìṣẹ̀dá Àpapọ̀ Ninu Àwọn Ìṣẹ̀dá Ìṣèǹkan Ẹ̀gàn Ẹ̀gàn Nlá Afíríkà (Cricetomys gambianus, Waterhouse, 1840) Tí Wọ́n Fi Ìṣẹ́lẹ̀ Sodium Metavanadate Sún Mọ́."
+    },
+    {
+      "hyp": "Ìgbágbọ́́ ìtàjáde sí vanadium ti pò sí ìgbá láàyuǹì."
+    },
+    {
+      "hyp": "Irin yi jẹ́ ohun tí ó lewu sí ilera."
+    },
+    {
+      "hyp": "Ìwádìí lọ́ọ́lọ́ yii ṣe láti ṣe ìwádìí ìwà ìpánù ìbímò ti sodium metavanadate (SMV) ní áwọn èèyàn agbó̀nrin afíriká."
+    },
+    {
+      "hyp": "A fi SMV sí inu ikun lójoojúmọ fun ọjọ́ 14 tẹ̀lẹ tẹ̀lẹ, ni iwọn 3mg/kg iwuwo ara."
+    },
+    {
+      "hyp": "Omi onígbòògì ni wọ́n fi fún ẹgbẹ́ ìṣàkóso."
+    },
+    {
+      "hyp": "A ṣe àtúmọ̀ hóọ̀mù ìbímọ tí ò wà ní ẹ̀jẹ̀, ìkọ́wọ́ àti àdàkọ́ irúgbìn, àti àwọn iyipadà ìṣẹ̀dá ara tí ó jẹ́ àkókò ní àwọn ìṣẹ̀dá ara tí ó wà ní ìṣẹ̀dá ara ọmọkunrin lẹ́yìn ìtọ́jú SMV."
+    },
+    {
+      "hyp": "Àwọn ìwádìí wa fi hàn pé ẹgbẹ́ AGR tí a fi SMV hàn ní iye progesterone tí ó pọ̀ sí i nípa ìṣiro ṣùgbọ́n iye testosterone, FSH àti LH dínkù."
+    },
+    {
+      "hyp": "Bakan naa, ẹgbẹ́ ti a tọ́jú pẹ̀lú SMV ní ìdinku tí ó ní ìtumọ̀ ìṣirò ní ìṣiṣẹ́ ìgbòòrò àti ìṣiṣẹ́ ìṣọ̀kan irúgbìn, pẹ̀lú ìpọ̀ ìpínàdùn àwọn ẹ̀ya ara irúgbìn tí kò dára, àti ìpọ̀sí ìṣòro P53 immunopositive sẹ́ẹ̀lì."
+    },
+    {
+      "hyp": "Ìwádìí ìṣèdá ara kékeré fi hàn pé àwọn sẹ́ẹ̀li germ àti Sertoli ní àwọn ààyè omi, lárin cytoplasm àti nucleus; wọ́n sì rí ìgbòògùn àti àwọn ààyè omi mitochondrial páà."
+    },
+    {
+      "hyp": "Ìdígbàgbé́ gidigba ti awọn tubulu seminiferous, ibajẹ́ ati igbẹ́mi awọn sẹẹli myeloid ati apoptosis awọn sẹẹli Leydig, Sertoli ati germ waye."
+    },
+    {
+      "hyp": "Ní ọ̀túnjúwá, ìfihàn SMV sí inú ikun ń fa àwọn àbájáde odi tí ó léwu sí ìwọ̀n gíga lórí àwọn hómònù ìbímọ tí ó wà ní ẹ̀jẹ̀, ìdinkú ipò ògún ìtọ́jú àti didara rẹ̀, àpọ̀pọ̀ àti àwọn iyipadá àìlera tí ó ń bá àwọn sẹ́ẹ̀lí Leydig, Sertoli àti ìtọ́jú jẹ́ èyí tí ó lè já sí aìlera ìbímọ."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé irin tí a rí nínú afẹ́fẹ́ tí a bà jẹ́ kí àwọn ẹ̀gún máa bí ọmọ."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé vanadium, irú irin kan, ń bá sẹ́ẹ̀lí ẹ̀gúnrin jẹ́, tí ó sì ń bá agbára wọn láti bí ọmọ (ìṣọ̀dá) jẹ́."
+    },
+    {
+      "hyp": "Nítorí pé irin yí tun jẹ́ majẹ̀mù sí ara èniyàn, wọ́n gbà pé kí a ṣe iwádìí sí ìwọ̀nbà latí mọ̀ bí irin náà, èyí tí ó tí dí púpọ̀ sí ìgbògbò wà nitorí idọ́tọ́, lè ní ipá tí kó dárà sí ilera èniyàn."
+    },
+    {
+      "hyp": "Bí o ti wú kí vanadium jé irin, o lè wọ́ inu afẹ́fẹ́ ní iye tó kéré nigba ti a bá ń sun epo ìtája, bí epo ati èèkàn."
+    },
+    {
+      "hyp": "Bí ayè ti ń lò àwọn oríṣìíriṣìí epò yìí sí ì, iye ìwọ̀n ìdọ̀tí vanadium sì ń pọ̀ sí i."
+    },
+    {
+      "hyp": "A ti mọ̀ tẹ́lẹ̀ pé àwọn èniyàn tí ó ti bàa jẹ́ri si í lè ní ìyapa ara bí anemíà, gbẹ́ ẹnù àti oju, àti irorà ìgbẹ́."
+    },
+    {
+      "hyp": "Láipẹ́ yìí, àwọn onímọ̀ sáyẹ́nsì ti tún fiyesi sí ipa ti vanadium le ní lórí igbéyàwó."
+    },
+    {
+      "hyp": "Wọ́n ti bẹ̀rẹ̀ sí ṣe iwadi lórí àwọn ipa wọnyi nípa lílo ẹ̀gùúsí, èyí tí wọ́n sábà máa ń lò nínú ilé ẹ̀kọ́ nítorí ìdàrúdàpọ̀ wọn pẹ̀lú ènìyàn."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ sáyẹ́nsì fiyesi sí ipa vanadium lórí irú ẹ̀gún kan tí ó gbòòrò gan-an tí a máa ń rí ní Ìwọ̀-Oòrùn Áfíríkà, tí a ń pè ní Ẹ̀gún Ńlá Àwọn ará Áfíríkà."
+    },
+    {
+      "hyp": "Wọ́n fẹ́ lóye bí vanadium ṣe ń yí àwọn ohun èlò ìṣẹ̀da ọmọ ọkunrin ẹ̀gàn, pàápàá àwọn irúgbìn rẹ̀, homonu, àti sẹ́ẹ̀lì ìṣẹ̀da ọmọ rẹ̀ pa dà."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí fi vanadium bú sinu ara ẹ̀gàn agbọ̀nrin 6 lẹ́ẹ̀kan ni ọjọ́, fún ọjọ́ 14."
+    },
+    {
+      "hyp": "Nígbà kan náà, wọ́n tún fi omi sí àwọn ẹ̀gàn 6 míràn gẹ́gẹ́ bí ìdánwò “ìṣàkóso”."
+    },
+    {
+      "hyp": "Nítorí pé omi kò le ṣeé ṣe kí ó nípa lórí àwọn ẹ̀gùúsí, àwọn onímọ̀ ìwádìí lè dájú pé àwọn iyipada èyíkéyìí tí wọ́n rí nínú àwọn ẹ̀gùúsí mẹ́fà àkọ́kọ́ jẹ́ abajade ti àwọn oògùn vanadium tí wọ́n fi sí wọn."
+    },
+    {
+      "hyp": "Lẹ́yìn ọjọ́ mẹ́rìndínlọ́gbọ̀n, wọ́n ṣayẹ̀wo bóyá iye homonu, bíi tẹ́stọ́stẹ́rọ́ni, ti yí pa dà, wọ́n sì ṣàyẹ̀wo ìgùn wọn, wọ́n sì ka iye irúgbìn wọn."
+    },
+    {
+      "hyp": "Nípa lílò ọ̀nà tí a ń pè ní Transmission Electron Microscopy (TEM), wọ́n rí ìyípadà eyikeyii tí ó ṣẹlẹ̀ nínú àwọn ìṣù ọkùnrin lọ́rọ̀ kíkún, títí dé ìpele kòṣeémàá."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé àwọn ẹ̀gùúsí tí wọ́n fi vanadium bú sí ní iye kékeré gan-an ti testosterone, àti àwọn homonu míràn tí ó ṣe pàtàkì fún ìṣọ̀tẹ̀."
+    },
+    {
+      "hyp": "Àwọn ẹ̀gùúsí tí wọ́n fi vanadium bú sí páà lórí náà ní iyé irúgbìn tó kéré sí i pupọ̀, irúgbìn wọn sì kéré sí i ní ìlera."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i, fún àpẹẹrẹ, pé àwọn kan lára irúgbìn àwọn ẹ̀gùúsí kò ní orí tàbí wọ́n ní ìyẹ̀fun tí ó wọ́, àti pé kò gbé ara rẹ̀ lọ síwájú bí irúgbìn àwọn ẹ̀gùúsí tí wọ́n fi omi ṣán sí."
+    },
+    {
+      "hyp": "Nítorí pé irúgbìn ní àwọn sẹ́ẹ̀lì ìbálẹ̀ ti àwọn ẹ̀dá arúgbó, ti a ma ń lo láti lóyún ẹyin ní àwọn obìnrin, àwọn ìyípadà wọ̀nyí yóò mú kí ó dí kí ó sí lè fún àwọn ẹ̀gẹ́rẹ́ láti ṣe ìṣẹ̀dá pẹ̀lú àṣeyọrí."
+    },
+    {
+      "hyp": "Níkẹyìn, àwọn onímọ̀ ìwádìí rí i pé àwọn sẹ́ẹ̀lì kan láti inú ìyẹ̀fun àwọn ẹ̀gàn máàlúù ni vanadium ti bà jẹ́ gidigidi tàbí ti pa run pàápàá."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé àwọn iyipada tí wọ́n rí lè mú àìníbímọ̀ pátápátá yọ nígbàdíẹ̀."
+    },
+    {
+      "hyp": "Wọ́n ṣàkíyèsí pé nítorí pé àwọn ẹranko tí wọ́n farahàn vanadium àti àwọn ìdọ́gbàn ìwàjú míràn ninu àyíká le máa ṣe àgbàyanu, wọ́n lè ṣeé ṣe kí wọ́n pa run nítorí àwọn ipa wọ̀nyí."
+    },
+    {
+      "hyp": "Nítorí pé ènìyàn jẹ́ ẹ̀dá ẹ̀mí bí ẹ̀gún, àwọn onímọ̀ sáyẹ́ǹsì yẹ́ kí wọ́n tún ṣàyẹ̀wò eyikeyìí ipa búburú tí vanadium lè ní lórí ìlera ènìyàn ní àwọn agbègbè tí ìwọ̀nàgbàà bá fọ́."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí kìlọ̀ pé àwọn iyipada kan tí wọ́n rí nínú ara àwọn ẹranko àti homonu wọn yàtọ̀ sí ohun tí àwọn ìwádìí sáyẹ́nsì ti ṣáájú rí, nítorí náà, ó ṣe pàtàkì láti ṣe iṣẹ́ síwájú láti lóye ìbajẹ́ tí vanadium ń fà."
+    },
+    {
+      "hyp": "Ìwádìí yìí jẹ́ ìṣọ̀kan láàrin àwọn onímọ̀-èrọ láti Nàìjíría àti Ìjíp̣ti, o sì fi kún ohun ti àwọn onímọ̀-èrọ mọ̀ nípa bí ẹ̀ranko, àti bọ́lọ́gọ́ èniyà, ṣe ń jẹ́ ípànù láti inú ìwólẹ̀."
+    },
+    {
+      "hyp": "Lilò Ìtàjà Ìgbágbóòdún Nínú Àwùjọ̀ Àdabà Ní Ìlù Ariwà-Ìwọ̀ǹò Òṣùpáàrí̀."
+    },
+    {
+      "hyp": "Ìwádìí kò ti pọ̀ lórí ìṣèdá igi àti eweko ní àwọn ọgbà ilé ní ìhà ìwọ̀ oòrùn àríwá Etiopia, ní gbogbogbò, àti ápọ́pọ̀ ìlú Gozamin, páàtà."
+    },
+    {
+      "hyp": "Èté ìwádìí yìí ní latí loyẹ̀ ìtọjú eweko àti ipa aṣa ti ọgbà ile."
+    },
+    {
+      "hyp": "A lọ̀nà ìyàn ìṣàkóso àkọ́kọ́rọ̀ ti a fínra sílẹ̀ dá lori ìyàtọ̀ agroecology nínú àwọn kebele ti a yàn."
+    },
+    {
+      "hyp": "A gba àwọn ìdáàmọ̀ ọgbà ilé nípa pípin ọgbà ilé náà sí àwọn àpótí mẹ́rin, àpótí àkọ́kọ́ náà nà láti ilé ọ̀gbọ̀ọ̀rọ̀ lọ sí 10m, àpótí kejì láti 10m sí 20m, àpótí kẹta láti 20m sí 30m, àti àpótí kẹrin láti 30m sí 40m ní ọ̀nà ìlà, nípa lílo ilé ọ̀gbọ̀ọ̀rọ̀ gẹ́gẹ́ bí ìtọ́kasí, dá lori bí ọgbà náà ṣe tóbi."
+    },
+    {
+      "hyp": "A ṣe ibewo tí kò ní ìṣetòsí sí gan-an láti gba ìròyìn nípa ìmọ̀ olùfìfihàn náà lórí oríṣiríṣi irú eweko."
+    },
+    {
+      "hyp": "Wọ́n ṣe ìdámọ̀ gbogbo irúgbìn ọ̀wọ̀n 238 ti ó ṣe pàtàkì ní aṣà láti inú ìdílé 81."
+    },
+    {
+      "hyp": "Nínú èyí, 39% jẹ́ eweko, 29% jẹ́ igi kékeré, 6% sì jẹ́ àwọn ohun ọ̀gbìn tí ń gun."
+    },
+    {
+      "hyp": "Àwọn ewekò tí ó máa ń dàgbà lọ́dọọdún ṣe apá pàtàkì jùlọ láàrin iru ewekò tí a gbin (83%), nígbà tí àwọn ewekò tí ó máa ń dàgbà lọ́dún kan ṣe kù (17%)."
+    },
+    {
+      "hyp": "Ìdílé Poaceae ni o ní iye ẹyà ju gbogbo rẹ̀ lọ, pẹ̀lú 22, ti Fabaceae tẹ̀le, eyi ti o ní 21, ati Asteraceae ti o ní 15."
+    },
+    {
+      "hyp": "Láti inú eweko wọ̀nyí tí a kọ̀wé sílẹ̀, 140 (58.6%) jẹ́ oríṣiríṣi eweko tí wọ́n lò fún àwọn ohun tí ó ní í ṣe pẹ̀lú ayika, 84 (35%) jẹ́ eweko onjẹ, 83 (34.7%) jẹ́ eweko amọ̀, 39 (16.3%) jẹ́ eweko onjẹ ẹranko, 57 (23.8%) jẹ́ eweko tí a lò fún ohun èlò, 60 (25%) jẹ́ igi iná, 50 (21%) jẹ́ eweko tí a lò fún àwọn ohun ìṣòro àwùjọ, àti 1 (0.4%) jẹ́ majẹmu."
+    },
+    {
+      "hyp": "Ìdánwò ìtẹ̀jáde ìṣíṣe adìírẹ̀tì fi hàn pé a rí i pé Cordia Africana jẹ́ ewekò tó ní iye pátàkì láàrin aṣà ádúgbò, èyí ti ó si tun ń di ewu gidigidi, ti a tẹ̀lẹ́ pẹ̀lú Ficus sur."
+    },
+    {
+      "hyp": "Iye iṣẹ́ tí Cordia africana gà jùlọ̀ ní fún ìkọ́kọ́ ilé,  àti iye ìṣé tí ò ṣe pàtàkì jùlọ̀ ní fún oògùn."
+    },
+    {
+      "hyp": "Àpò ìdààmú Sorensen fún ìdápọ̀ 64% ìbí tí a ṣe ìwádìí rẹ̀ kéré sí 0.5."
+    },
+    {
+      "hyp": "Ẹ̀ṣẹ̀ nàa fi hàn pẹ àwọn ọgbà ilẹ jẹ́ eto iṣelọ́pọ̀ ti òpọ̀ iṣẹ́, ti o gun pẹ́."
+    },
+    {
+      "hyp": "Àwọn ẹ̀kọ́ àṣà àwọn ènìyàn ìlú-abìnrin ní ìsopọ̀ pẹ̀lu àwọn ọgbà ilé wọn ńtẹ̀síwájú ṣíṣe àtìlẹ́yin fún ààbò oúnjẹ àti ìdáàbòbò ìṣọ̀kan àwọn ẹ̀dá alààyè."
+    },
+    {
+      "hyp": "Ìwà jọ̀jọ̀ tí kéré/ìyàǹgbá ìyàǹgbá èyà ní agbègbè láàrin àwọn kebele fi hàn pé ìyàǹgbá èyà gàbà, èyì sí jẹ́ nítorí ìyàǹgbá ìpele ti ipo agroecological láàrin àwọn kebele."
+    },
+    {
+      "hyp": "Àwọn ọgbà ilẹ̀ Etiopia ńtìlẹ̀pàáàbọ̀ ààbò oúnjẹ àti ìdáàbòbò."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé ọ̀pọ̀lọpọ̀ ará Itopíà máa ń gbin oúnjẹ, ewe adé, ewe amọ̀, àti ewe fún oúnjẹ ẹranko, òjìji tàbí àgbàlà ní inú ọgbà wọn."
+    },
+    {
+      "hyp": "Wọ́n ṣe àtúmọ̀ àwọn ọgbà wọnyi láti rí bí wọ́n ṣe ṣe pàtàkì fún didí iṣẹ́ àbò oúnjẹ́ àti láti ranlọ́wọ́ sí ìtọ́jú ayika."
+    },
+    {
+      "hyp": "Àwọn àgbègbè káàkiri ayé máa ń ṣe ogba fún oúnjẹ, fún iṣẹ́ ọwọ́, àti fún àwọn ohun ìṣe àṣà ìbílẹ̀ mìíràn."
+    },
+    {
+      "hyp": "Àwọn ọgbà náà tún ń dáàbò bo irúgbìn pàtàkì tí kì í sí, tàbí tí ń ṣòfo ní àwọn agbègbè mìíràn."
+    },
+    {
+      "hyp": "Ní Étíópíà, iwadi pupọ kò tíì ṣe nípa ohun tí àwọn àgbègbè ń gbìn ní àwọn ọgbà wọn gan-an."
+    },
+    {
+      "hyp": "Nínú ìwádìí yìí, àwọn onímọ̀ ìwádìí fẹ́ ṣe àyẹ̀wò àwọn eweko tí àwọn ènìyàn ní agbègbè Gozamin, Ìlà-oòrùn Àríwá Itoopía, gbìn nínú ọgbà wọn àti ohun tí wọ́n fi wọ́n sílò."
+    },
+    {
+      "hyp": "Wọ́n ṣe ìdámọ̀ àti kíkà iye ẹ̀ka ní 357 ọgbà ni agbègbè náà."
+    },
+    {
+      "hyp": "Wọ́n tún bá àwùjọ sọ̀rọ̀ nípa ohun tí wọ́n fi ewéko ṣe."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí rí i pé gbogbo ọgbà igbẹ́rẹ́gẹ́rẹ́gẹ́ ní Gozamin kéré sí hẹ́kítàà kan."
+    },
+    {
+      "hyp": "Wọ́n kọ́, wọ́n sì ṣe ìdámọ̀ ìyẹ̀wù 238 tó yàtọ̀."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ (83%) ẹ̀ká ní wọ́n gbin káàkiri ọdún, tí diẹ̀ (17%) ní wọ́n jẹ́ ti akoko kan ṣoṣo."
+    },
+    {
+      "hyp": "Àbájáde wọn fi hàn pé àwùjọ náà lo eweko fún oúnjẹ, oògùn, kíkọ́ ilé, oúnjẹ ẹranko, àti àwọn ohun èlò àṣà míràn."
+    },
+    {
+      "hyp": "Ọ̀pọ̀lọpọ̀ eweko ni o ní iṣẹ́ ju ọkan lọ."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, a lè lo igi gbígbòògì́ ńlá àríwá fún oògùn, ìṣọ́ọ́, onjẹ ẹranko, òjìji, ìṣọ́, àti àwọn ohun èlò àṣà míì."
+    },
+    {
+      "hyp": "Jú ópò ówùn (59%) ẹ̀ká ní a lo fún ìló ti ayika bí ìgbá, ìgbálagba, ojúmọ́, atí ṣiṣẹ́da ẹ̀da."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé èyí rànlọ́wọ́ láti dáàbò bo àyíká."
+    },
+    {
+      "hyp": "Àwọn igi ààlà tún rànwọ́ láti dáàbò bo ọjà oko."
+    },
+    {
+      "hyp": "Jú óṣù mẹ́ta (35%) lọ́́pọ̀ ògangan igi nàa ní a kó gbà fún ounjẹ, bíi eso, ewe, okuta, àti òṣù."
+    },
+    {
+      "hyp": "Ṣùgbọ́n, wọ́n sọ pé ọgbà tí ó wà ní agbègbè náà jẹ́ káàkiri èso."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé 35% ẹ̀kàwọ̀n ni a lo gẹ́gẹ́ bí ogún ìṣe ìgbàlódé fún ìlera ènìyàn àti ẹranko, nígbà tí 21% ni a lo fún àwọn iṣẹ́ ìsìn àti àwọn ohun ìgbàgbọ́, sisun, ohun dídùn, àti pípọn."
+    },
+    {
+      "hyp": "Àwọn ewe kan (17%) ni a lo gẹ́gẹ́ bí ohun elo ṣíṣe onjẹ fún màlúù, àgùntàn, àti kẹ́tẹ́kẹ́tẹ́."
+    },
+    {
+      "hyp": "Àwọn mìíràn (24%) sì ṣiṣẹ́ gẹ́gẹ́ bí ohun elò ìkọ́lé, ṣiṣẹ́ irinṣẹ́ ọgbà, dídì ọ̀fùn ilé àti ṣiṣẹ́ okùn."
+    },
+    {
+      "hyp": "Nítorí pé ọ̀pọ̀lọpọ̀ àwọn ènìyàn ní àwọn agbègbè igbo ni wọ́n jẹ́́ kí wọn lò igi, 25% èso ni wọ́n lò fún èyí."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé ohun ọ̀gbìn kan ṣoṣo (0.4%) ni wọ́n mẹ́nu ba fún àìlera."
+    },
+    {
+      "hyp": "Wọ́n tún sọ pe bí a ṣe gbin eweko ní àgbègbè náà ni ayika, ohun tí àwọn ènìyàn fẹ́ràn jẹ, àti ipò owó ìdílé àti àìdánilójú iṣẹ́ ṣe nípa."
+    },
+    {
+      "hyp": "Fún àpẹẹrẹ, àgbègbè kan tí a ń pè ní Wenka, tí o ní omi ìgbẹ́, tí ó sì súnmọ́ ìlú ńlá kan, ní ọgbà púpọ̀, a sì kọ̀wé sí orúkọ irúgbìn 130 tí ó yàtọ̀ síra."
+    },
+    {
+      "hyp": "Àwọn ènìyàn Wẹnkà náà sì ń gbin àti ń pèsè èso àti ẹ̀fọ́ sí ọjà ìlú."
+    },
+    {
+      "hyp": "Níkẹyìn, àwọn onímọ̀ ìwádìí sọ pé ọ̀pọ̀ àwọn agbẹ̀ gbà pé kí wọ́n máa gbin eweko tí ó ní ọ̀pọ̀lọpọ̀ lilo."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí sọ pé àwọn ìṣẹ̀dá wọn jẹ́rìí sí i pé, lọ́rọ̀ gidi, àwọn agbẹ̀ gbìn ọ̀pọ̀ oríṣiríṣi irugbin ní ọgbà wọn, fún àwọn ohun èlò oríṣiríṣi."
+    },
+    {
+      "hyp": "Bí o ti wú kí àwọn ońìwádìí yìí rí i pé àpọ́jù àwọn ágbẹ̀ máà gbin ewekò, àwọn ońìwádìí mììn tí sọ̀ pé igi ni ó pò jú ní ẹkùnjẹkùn náà."
+    },
+    {
+      "hyp": "Àwọn onímọ̀ ìwádìí ìwádìí yìí wà ní ilé ẹ̀kọ́ gíga ní Itiopía."
+    }
+  ],
+  "schema_version": "1.0"
+}

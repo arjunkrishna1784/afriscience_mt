@@ -1,0 +1,2918 @@
+{
+  "experiment_id": "icl_5shot_lug_eng",
+  "source_lang": "lug",
+  "target_lang": "eng",
+  "samples": [
+    {
+      "hyp": "Estimating the SARS-CoV-2 testing requirements for preventing outbreaks in Lusaka Province, Zambia, focusing on asymptomatic individuals:"
+    },
+    {
+      "hyp": "A longitudinal cohort study"
+    },
+    {
+      "hyp": "The Coronavirus disease (COVID-19), caused by the severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), in Africa is characterized by a high proportion of asymptomatic or minimally symptomatic infections that contribute to the spread of the disease."
+    },
+    {
+      "hyp": "The prevalence and incidence of asymptomatic infection are not well understood."
+    },
+    {
+      "hyp": "However, research shows that addressing this disease is crucial for preventing the spread of SARS-CoV-2."
+    },
+    {
+      "hyp": "We developed a deterministic susceptible-exposed-infectious-removed (SEIR) epidemiological model to assess the impact of asymptomatic SARS-CoV-2 infections and to inform control strategies for the Lusaka Province in Zambia."
+    },
+    {
+      "hyp": "We modeled two scenarios; (1) assuming that asymptomatic individuals constituted 70% of all COVID-19 cases and (2) assuming that asymptomatic individuals constituted 50% of all COVID-19 cases."
+    },
+    {
+      "hyp": "For the sake of comparison, the model assumes that both symptomatic and asymptomatic individuals are infectious, and secondly, and more importantly, that the infectiousness of asymptomatic individuals is a fraction of that of symptomatic individuals."
+    },
+    {
+      "hyp": "Assuming 70% of infected individuals are asymptomatic, daily universal testing at a rate of ≥7911 tests per 100,000 population would be sufficient to prevent the spread of asymptomatic individuals as a proportion of those infected.  However, if a similar rate of infection were to occur, a testing rate of ≥10028 tests per 100,000 population would be required."
+    },
+    {
+      "hyp": "In 50% of asymptomatic individuals, the subsequent lower incidence rate observed in the combined cohort of ≥ 4540 per 100,000 tested was sufficient to prevent disease progression to the two subsequent stages of disease spread among asymptomatic individuals compared to those who were symptomatic."
+    },
+    {
+      "hyp": "Discussion and consultation"
+    },
+    {
+      "hyp": "Our model predicts that screening the entire population, including asymptomatic individuals, for COVID-19 could be a useful strategy for preventing the spread of SARS-CoV-2 in Lusaka, Zambia, but it would be costly to implement."
+    },
+    {
+      "hyp": "Comprehensive testing in large cities like Lusaka could reduce the spread of COVID-19, but is it feasible?"
+    },
+    {
+      "hyp": "In 2020, computer simulations suggested that an effective way to prevent the spread of COVID-19 in large populations could be achieved through universal testing, followed by isolation of those found to be infected."
+    },
+    {
+      "hyp": "However, the researchers stated that this method may be too expensive and impractical."
+    },
+    {
+      "hyp": "In the early stages of the pandemic, many people infected with COVID-19 were asymptomatic yet still infectious to others."
+    },
+    {
+      "hyp": "One study showed that 50% to 80% of people with COVID-19 were asymptomatic and may be responsible for 40% to 70% of onward transmission."
+    },
+    {
+      "hyp": "Researchers wanted to determine whether identifying and isolating asymptomatic individuals could help prevent the spread of COVID-19."
+    },
+    {
+      "hyp": "Similarly, they wanted to determine whether population screening, meaning testing people regardless of symptoms, helps to identify asymptomatic individuals."
+    },
+    {
+      "hyp": "Researchers developed a computer simulation showing how individuals transition between susceptible, infected, and recovered states."
+    },
+    {
+      "hyp": "The findings are based on data collected in the Lusaka Corridor in Zambia, a region that includes a major international airport located on the border between two countries."
+    },
+    {
+      "hyp": "Because COVID-19 symptoms varied from place to place, they examined four scenarios, in which 50% or 70% of COVID-19 patients were asymptomatic, and these asymptomatic patients were either highly infectious or had an intermediate infectiousness compared to symptomatic patients."
+    },
+    {
+      "hyp": "The research team found that it was possible to prevent the spread of COVID-19 by conducting mass testing and isolating all individuals who tested positive, even if they were asymptomatic."
+    },
+    {
+      "hyp": "It was estimated that to reduce the high infection rate of over 90% across all settings, 10% of the population in Lusaka needed to be vaccinated daily."
+    },
+    {
+      "hyp": "They also found that to maintain a constant number of COVID-19 cases, 22% of the population would need to be tested daily."
+    },
+    {
+      "hyp": "However, Zambia implemented measures to control the COVID-19 pandemic, and cases appeared to increase."
+    },
+    {
+      "hyp": "Mass testing reduced COVID-19 cases by 90% in a small Italian town."
+    },
+    {
+      "hyp": "However, no research has been conducted to show that it can work elsewhere in a large city."
+    },
+    {
+      "hyp": "This study suggests that researchers did not conduct a universal screening; however, they established a model indicating that universal screening could help prevent the spread of COVID-19 in large cities."
+    },
+    {
+      "hyp": "However, they cautioned that the method appears to be very expensive."
+    },
+    {
+      "hyp": "They also stated that this measure should be implemented alongside other measures such as lockdowns, contact tracing, and vaccination."
+    },
+    {
+      "hyp": "Zambian researchers also suggested that asymptomatic COVID-19 cases appeared to be more prevalent in Africa at that time."
+    },
+    {
+      "hyp": "Inferring the low prevalence of specific mutations in African populations due to variations in genomes and regions."
+    },
+    {
+      "hyp": "African populations are vastly underrepresented in genomic research despite harboring the highest genomic diversity and experiencing significant population movements across the globe."
+    },
+    {
+      "hyp": "Because time-series analysis of genomic surveillance data was not available for previous waves, we counted the frequency of different genomic variants to obtain polygenic risk scores (PRS) in a meta-analysis conducted across Africa and in datasets from South Africa, Uganda, and the UK to better understand the overall predictive power of the genomic surveillance studies."
+    },
+    {
+      "hyp": "The accuracy of PRS increases as more diverse groups are included in the study to represent a wider range of ancestries."
+    },
+    {
+      "hyp": "Among South African participants of diverse ethnicities and nationalities, we found that PRS prevalence was low across all ancestries but varied across different groups."
+    },
+    {
+      "hyp": "Differences in human genetic diversity in Africa contribute significantly more to the accuracy of PRS than the variation observed in other populations considered, such as those in the UK and Uganda."
+    },
+    {
+      "hyp": "We assessed the polygenic risk score (PRS) for sickle cell disease in the African population using a European-only reference panel and compared it with a diverse ancestry reference panel; increased diversity yielded higher prediction accuracy for hemoglobin levels and immune traits, indicating that a broader ancestry representation in the reference panel is needed to account for the diverse genetic architecture underlying sickle cell disease and its complications."
+    },
+    {
+      "hyp": "Differences in the accuracy of PRS across African populations from different regions compared to populations outside of Africa necessitate population-specific adjustments."
+    },
+    {
+      "hyp": "The reasons why we cannot accurately predict the prevalence of diseases in people of African descent."
+    },
+    {
+      "hyp": "Researchers say that the algorithm used to predict whether someone will develop a genetic disease is not accurate for people of African descent."
+    },
+    {
+      "hyp": "This is because the reference panel used for such predictions is largely representative of individuals of European ancestry."
+    },
+    {
+      "hyp": "GWAS studies investigate the relationship between genetic variations and diseases, and scientists use them to identify genes associated with diseases."
+    },
+    {
+      "hyp": "It is true that they use GWAS to calculate a person's susceptibility to disease or illness based on their genome."
+    },
+    {
+      "hyp": "However, the majority of genomic data in GWAS comes from people of European descent."
+    },
+    {
+      "hyp": "In this study, the researchers sought to evaluate the performance of a polygenic risk score (PRS) for predicting the risk of complex diseases using GWAS data from individuals of African ancestry."
+    },
+    {
+      "hyp": "Furthermore, they wanted to see if the GWAS, which includes a large number of African genomes, could improve the predictions made."
+    },
+    {
+      "hyp": "The measure is scientifically known as a “polygenic risk score”, or PRS."
+    },
+    {
+      "hyp": "They used a computer to calculate the predicted risk of developing sickle cell disease in Africans using GWAS, and also used African patient records to investigate certain traits or diseases that may result from genomic variations."
+    },
+    {
+      "hyp": "Using a European GWAS, they found that the genetic risk score for developing type 2 diabetes was higher in individuals of European ancestry compared to those of African ancestry."
+    },
+    {
+      "hyp": "They report that the prevalence of the disease is lower in African populations due to strong population immunity, a phenomenon contrasting with that observed in European populations."
+    },
+    {
+      "hyp": "They further stated that PRS accuracy increases as the African ancestry of the sample decreases."
+    },
+    {
+      "hyp": "Ethiopians had higher expectations of the disease outcome given their strong genetic similarity to Europeans."
+    },
+    {
+      "hyp": "When a GWAS incorporating a diverse African population was used, the accuracy of predictions increased."
+    },
+    {
+      "hyp": "The prevalence of blood-borne diseases was significantly higher."
+    },
+    {
+      "hyp": "Previous research has shown that PRS is lower in people of African ancestry, meaning that the GWAS approach produces underestimates of the risk of developing complex diseases for people of African descent."
+    },
+    {
+      "hyp": "But we know that this is not true."
+    },
+    {
+      "hyp": "This study shows that the low heritability of complex diseases is due to the fact that African genomes are poorly represented in GWAS datasets, meaning that current PRS scores are not helpful in predicting complex diseases in Africa."
+    },
+    {
+      "hyp": "Researchers suggest that it would be beneficial to use a reference panel that includes genomic data from individuals of African descent."
+    },
+    {
+      "hyp": "Therefore, further work is needed to expand GWAS to include a representative sample of people of African descent to better understand the genetic risk of complex diseases in Africans."
+    },
+    {
+      "hyp": "The researchers for this study were from Africa, the USA, and the UK."
+    },
+    {
+      "hyp": "A Study of the Use of Eye and Brick Examinations in the Management of Childhood Injuries and Childhood Eye Trauma in Namibia"
+    },
+    {
+      "hyp": "About 851,340 women in Namibia are at risk of human papillomavirus (HPV) infection, which can cause cervical cancer."
+    },
+    {
+      "hyp": "Visual inspection with acetic acid (VIA) combined with cryotherapy was confirmed as highly effective."
+    },
+    {
+      "hyp": "However, there was no message regarding the results of the children's oral swab tests."
+    },
+    {
+      "hyp": "This study investigated the effectiveness of visual and tactile assessments in diagnosing childhood injuries and oral lesions in Namibian children."
+    },
+    {
+      "hyp": "Findings showed that women with HPV, cervicitis, koilocytosis, and atypia are at a significantly increased risk of being detected by VIA."
+    },
+    {
+      "hyp": "Older women, especially those with HIV, are at a significantly increased risk of developing squamous cell carcinoma (SCC)."
+    },
+    {
+      "hyp": "Visual inspection appears to perform well, however, the use of colposcopy in the follow-up of patients in Namibia should be evaluated in those found to have HR-HPV."
+    },
+    {
+      "hyp": "They support screening programs that include HPV testing in different age groups and in high-risk populations (e.g., those with HIV, immunosuppressive conditions)."
+    },
+    {
+      "hyp": "Evaluation engagement can be strengthened by incorporating a framework that utilizes past evaluation findings, women's health goals, new communication strategies, and context-specific adaptations."
+    },
+    {
+      "hyp": "Women in Namibia at risk of cervical cancer should be screened and treated early."
+    },
+    {
+      "hyp": "Many screening methods can detect cervical cancer in women, but these methods are not routinely used in Namibia."
+    },
+    {
+      "hyp": "Researchers say that early screening and detection of early warning signs can save women from this deadly disease."
+    },
+    {
+      "hyp": "Cervical cancer affects many women worldwide."
+    },
+    {
+      "hyp": "One of the leading causes of childhood mouth cancer is the Human Papillomavirus, or HPV."
+    },
+    {
+      "hyp": "HPV is a virus that infects the cells of the cervix, causing lesions that can later develop into cancer."
+    },
+    {
+      "hyp": "Although HPV vaccines are available, many women in African countries, including Namibia, cannot access them."
+    },
+    {
+      "hyp": "This means that screening for the virus or its lesions is very beneficial for these women, as it is the best way to help prevent cervical cancer."
+    },
+    {
+      "hyp": "Researchers in this study suggest that hospitals therefore require appropriate guidelines and messaging regarding best practices for testing."
+    },
+    {
+      "hyp": "Furthermore, healthcare providers also need to know more about how factors such as age and lifestyle may increase a woman's risk of developing HPV and cervical cancer."
+    },
+    {
+      "hyp": "Consider the methods of some of the tests used to detect HPV and lesions."
+    },
+    {
+      "hyp": "They also wanted to compare examinations, for example, taking biopsies from children to examine whether there was any comparable damage and to look for lesions."
+    },
+    {
+      "hyp": "They also wanted to determine whether differences in women's age or the presence of other diseases such as HIV affected their risk of HPV and cervical cancer."
+    },
+    {
+      "hyp": "Understanding this message can help hospitals and clinics to better utilize diagnostic procedures."
+    },
+    {
+      "hyp": "Researchers reviewed the medical records of 214 women diagnosed and treated for HPV, genital warts, and cervical cancer at a hospital in Windhoek, Namibia."
+    },
+    {
+      "hyp": "Emphasis was placed on early childhood intervention, where this disease is most treatable."
+    },
+    {
+      "hyp": "They also collected data on women's ages and their overall health status."
+    },
+    {
+      "hyp": "In analyzing these records, they found that different tests provided clinicians with different messages, and that they could be very useful whether or not HPV had progressed to cancer."
+    },
+    {
+      "hyp": "For example, collaboration was highly valued in the collection and analysis of children's drawings."
+    },
+    {
+      "hyp": "However, lesions were predominantly detected by visual inspection using a method called “visual inspection with acetic acid” (VIA)."
+    },
+    {
+      "hyp": "The advantage of this method is that it allows doctors to detect injuries quickly and non-invasively."
+    },
+    {
+      "hyp": "This is because it uses readily available, common gynecological examination instruments, such as a speculum (an instrument used to examine the vagina)."
+    },
+    {
+      "hyp": "They also found that combining different methods provided doctors with more frequent messages about the risk of maternal mortality, especially after multiple examinations."
+    },
+    {
+      "hyp": "Furthermore, researchers found that older women, especially those with HIV, were more likely to be diagnosed with cervical cancer, therefore, screening them more frequently is crucial."
+    },
+    {
+      "hyp": "Researchers added that very few women were screened for HPV (without prior lesion detection) despite the availability of screening."
+    },
+    {
+      "hyp": "This could be a good way to quickly detect this disease."
+    },
+    {
+      "hyp": "In summary, they stated that their findings highlighted the need for a Namibian healthcare strategy to better coordinate HPV and childhood oral cancer prevention programs, using non-invasive and highly sensitive diagnostic methods."
+    },
+    {
+      "hyp": "This research was conducted by scientists from Namibia in collaboration with those from South Africa."
+    },
+    {
+      "hyp": "Treatment outcomes for people with both HBV and HIV compared to those with HBV alone in a South African population."
+    },
+    {
+      "hyp": "As part of the global effort to eliminate Hepatitis B virus (HBV), we aimed to characterize the differences between individuals with HBV monoinfection and those with HBV/HIV coinfection, to assess treatment response and to explore strategies for treatment optimization."
+    },
+    {
+      "hyp": "We present findings from a cohort of 115 adult patients with chronic hepatitis B (CHB) at a university hospital in Cape Town, South Africa."
+    },
+    {
+      "hyp": "Thirty-nine (34%) of the participants were HIV and HBV co-infected."
+    },
+    {
+      "hyp": "We documented the clinical, epidemiological, and laboratory findings."
+    },
+    {
+      "hyp": "Compared to people with both HIV and HBV, those with HBV alone were less likely to have HBeAg (p=0.01), less likely to have cirrhosis (p<0.0001), and less likely to be on antiviral medication (p<0.0001); they were more likely to have detectable HBV DNA (p=0.04), and more likely to have clinical features of liver disease including mild/moderate thrombocytopenia (p=0.007), elevated bilirubin (p=0.004), and elevated APRI (p=0.02)."
+    },
+    {
+      "hyp": "Three individuals developed hepatocellular carcinoma, all solely attributable to HBV infection."
+    },
+    {
+      "hyp": "Our findings confirm that individuals with HBV alone may experience greater challenges than those with both HIV and HBV, suggesting potential disparities in access to specialized healthcare facilities, monitoring, and treatment."
+    },
+    {
+      "hyp": "Researchers show what needs to be done to improve hepatitis B treatment."
+    },
+    {
+      "hyp": "In this recent study, researchers were able to demonstrate how co-infection with HBV and HIV may facilitate treatment compared to HBV mono-infection."
+    },
+    {
+      "hyp": "In sub-Saharan Africa, co-infection with HBV and HIV is a significant challenge."
+    },
+    {
+      "hyp": "Doctors need to understand the interaction between this virus and the drugs used to treat it in order to properly diagnose and treat patients."
+    },
+    {
+      "hyp": "Researchers wanted to compare treatment outcomes in patients with HBV alone and in patients with both HBV and HIV."
+    },
+    {
+      "hyp": "This study included 115 adult patients with chronic hepatitis B (CHB)."
+    },
+    {
+      "hyp": "They were recruited at Tygerberg Hospital in Cape Town, South Africa."
+    },
+    {
+      "hyp": "Some patients had HIV (39), while others had only HBV."
+    },
+    {
+      "hyp": "Researchers examined color, age, and size, and conducted different in vitro and in vivo assays."
+    },
+    {
+      "hyp": "They found that patients with HBV alone had a lower expectation of receiving antiretroviral therapy, showing signs of liver disease (because HBV is a factor that can lead to severe liver disease)."
+    },
+    {
+      "hyp": "Researchers were able to show that individuals with HBV alone had worse outcomes compared to those with both HIV and HBV, because individuals with both viruses were expected to be on antiretroviral therapy for HIV, which can also treat HBV."
+    },
+    {
+      "hyp": "This research shows the potential impact of differences in the provision of enhanced healthcare services, monitoring, and treatment for those with HBV when compared to those with HIV and HBV, with those having HIV and HBV benefiting more."
+    },
+    {
+      "hyp": "Researchers showed that we need to carefully monitor and manage patients with HBV monoinfection."
+    },
+    {
+      "hyp": "One of the limitations of this study was the small sample size, as the research was conducted in only one country and its healthcare system."
+    },
+    {
+      "hyp": "Some high-quality hospital practices may show results contrary to those found in this study."
+    },
+    {
+      "hyp": "Further research is needed to fully explore the differences observed in this study."
+    },
+    {
+      "hyp": "This paper highlights the strength of collaboration, with researchers from South Africa and the United Kingdom contributing to this project."
+    },
+    {
+      "hyp": "Using participants from South Africa in this research is beneficial to the African population."
+    },
+    {
+      "hyp": "Furthermore, this research could help in developing better treatments for people with HBV, HIV, or both."
+    },
+    {
+      "hyp": "Assessing the Impact of Gender Inequality on Women's Business Activities in the Local Government Area of Shiroro, Niger State"
+    },
+    {
+      "hyp": "This research investigates the challenges and strategies employed by women entrepreneurs in the Local Government Area of Shiroro, Niger State, focusing specifically on women's access to finance, business establishment processes, and the challenges they face in establishing businesses."
+    },
+    {
+      "hyp": "A sample of 377 women was studied, and the results showed that women in Shiroro are predominantly entrepreneurs and are largely self-reliant financially, mostly engaging in small and medium-sized enterprises (SMEs)."
+    },
+    {
+      "hyp": "The research also found that although vulnerability affects women entrepreneurs in terms of loss or reduction of start-up capital and similar challenges, the number of women starting businesses has not significantly decreased."
+    },
+    {
+      "hyp": "The research recommends that sustainable strategies to improve women's access to and utilization of financial services should be implemented, and that community-based monitoring mechanisms should be established and strengthened to prevent regional disparities."
+    },
+    {
+      "hyp": "Female entrepreneurs in Niger need more protection."
+    },
+    {
+      "hyp": "Researchers found that female entrepreneurs in Niger are highly resilient and resourceful, but access to justice remains a significant challenge."
+    },
+    {
+      "hyp": "Researchers sought to determine the extent to which female entrepreneurs in the Local Government Area of Shiroro, Niger State experience insecurity, and how this insecurity affects their businesses and financial well-being."
+    },
+    {
+      "hyp": "377 women in that area were asked about the challenges they faced in starting their businesses, financial planning, and instability."
+    },
+    {
+      "hyp": "They reported that 43% of women said they did not rely on men for financial support, while 32% said they had other people they relied on for financial support."
+    },
+    {
+      "hyp": "Researchers also found that 85% of the women earned income from various businesses, while a small minority reported relying on salaries."
+    },
+    {
+      "hyp": "About 56% earned income from agriculture, while another 79% obtained income from agriculture."
+    },
+    {
+      "hyp": "About one in five women earned income from weaving mats, brewing beer, making crafts, or washing clothes."
+    },
+    {
+      "hyp": "The majority of women (91%) reported to researchers that their businesses were affected by fear of robbery and crime."
+    },
+    {
+      "hyp": "They lost money along with their husbands in that robbery, and sometimes this forces them to care for their children without any support."
+    },
+    {
+      "hyp": "Those women also reported a lack of sufficient capital to expand their businesses."
+    },
+    {
+      "hyp": "Researchers reported that despite these challenges, women in Niger continue to perform well in their businesses."
+    },
+    {
+      "hyp": "They stated that the Shiroro area comprised people of diverse ethnicities and religions, and that this was beneficial for business."
+    },
+    {
+      "hyp": "This research challenges findings from other researchers who suggested that women have fewer business successes because they are primarily responsible for household duties."
+    },
+    {
+      "hyp": "However, these researchers say that the success of women entrepreneurs in this region of Niger is often hampered by theft and robbery."
+    },
+    {
+      "hyp": "Researchers emphasized that all stakeholders must collaborate to overcome all challenges that could hinder business success."
+    },
+    {
+      "hyp": "For example, women in Niger need access to more income, larger farms, and greater security."
+    },
+    {
+      "hyp": "They also agreed that women in business could form groups that could help them fight against thieves and criminals."
+    },
+    {
+      "hyp": "The effects of micronutrients including Selenium, Copper and Zinc during pregnancy on preterm birth: A study conducted in Malawi."
+    },
+    {
+      "hyp": "Giving birth to a preterm baby, that is, before 37 weeks of gestation."
+    },
+    {
+      "hyp": "Research was conducted to investigate the relationship between selenium, copper, and zinc, and preterm birth."
+    },
+    {
+      "hyp": "This study included 181 women, of whom 90/181 (49.7%) had given birth to term infants and 91/181 (50.3%) had given birth to preterm infants."
+    },
+    {
+      "hyp": "The selenium level in the blood was 77.0; SD 19.4µg/L, the chromium level was 2.50; SD 0.52 mg/L, and the zinc level was 0.77; SD 0.20 mg/L.  The reference ranges were 47-142µg/L, 0.76-1.59mg/L, and 0.59-1.11 mg/L, respectively."
+    },
+    {
+      "hyp": "The results show that there was no selenium or zinc deficiency, and high levels of iron in the blood of pregnant women."
+    },
+    {
+      "hyp": "Preterm birth is associated with low maternal zinc levels."
+    },
+    {
+      "hyp": "Zinc, copper and selenium deficiencies are associated with preterm birth."
+    },
+    {
+      "hyp": "Researchers found high levels of selenium, iron, and zinc in pregnant women who had not yet given birth, but it is not yet known whether these high levels are due to their diet."
+    },
+    {
+      "hyp": "Preterm birth occurs when a woman gives birth before 37 weeks of pregnancy."
+    },
+    {
+      "hyp": "Preterm birth leads to adverse health outcomes for the child, including birth defects and death."
+    },
+    {
+      "hyp": "Preterm birth can be caused by various factors, but the role of environmental and dietary exposures is not well understood."
+    },
+    {
+      "hyp": "These nutrients are beneficial for child development, but researchers want to know what happens if they are excessive."
+    },
+    {
+      "hyp": "In this study, researchers aimed to measure the levels of selenium, copper, and zinc in women who had given birth to preterm infants, to determine whether excess levels of any of these nutrients contributed to preterm birth."
+    },
+    {
+      "hyp": "Researchers collected blood samples from 181 women who delivered at two hospitals in Lilongwe, the capital city of Malawi, between June 2016 and March 2017."
+    },
+    {
+      "hyp": "Blood samples were analyzed in Norway for selenium, copper, and zinc concentrations."
+    },
+    {
+      "hyp": "About half of the 181 women in the study were mothers of young children, and researchers found significantly higher levels of selenium, iron, and zinc."
+    },
+    {
+      "hyp": "Then they adjusted their calculations to consider other factors such as age, socioeconomic status, and pregnancy history to confirm that these exposures lead to preterm births."
+    },
+    {
+      "hyp": "They concluded that high selenium and iron levels were not significantly associated with preterm birth, but that high zinc levels increased the odds of preterm birth more than sixfold."
+    },
+    {
+      "hyp": "However, the high threshold value was considered by researchers due to the toxicity of known inhibitors."
+    },
+    {
+      "hyp": "Having only 181 women participate in the study limited the researchers' ability to fully explore the challenges associated with high selenium levels, as a sample size of at least 600 would have been preferable."
+    },
+    {
+      "hyp": "The daily diet of the participants was not analyzed to determine the three sources of these nutrients, and neither height nor weight was recorded."
+    },
+    {
+      "hyp": "This is the first study to measure selenium, copper and zinc levels in pregnant women in Malawi."
+    },
+    {
+      "hyp": "Africa has the highest proportion of adolescent pregnancies – 18% and above compared to 5% in East Asia, therefore researchers wanted to find out whether diet plays a role."
+    },
+    {
+      "hyp": "Home range, site fidelity, and habitat use of the pancake tortoise (Malacochersus tornieri) in Kenya"
+    },
+    {
+      "hyp": "Animals have instincts to return to places and follow schedules that aid their survival."
+    },
+    {
+      "hyp": "Understanding such cultural practices is crucial for the conservation and management, especially of endangered species."
+    },
+    {
+      "hyp": "In this study, we tested the homing ability of the Pancake termite when displaced and investigated the influence of distance and habitat on homing success in Kitui County, Kenya."
+    },
+    {
+      "hyp": "Thirty-nine different bat species from twelve different caves were monitored from July 2020 to June 2022 using radio tracking, camera trapping, and observational data collection and analysis."
+    },
+    {
+      "hyp": "Fourteen families were relocated and their original homes and surrounding areas were surveyed."
+    },
+    {
+      "hyp": "Except for only two nests that successfully relocated to new locations, all other nests attempted to return to their original sites, with 46.15% following the exact same route back to their original nests and 15.38% reaching locations considered close to their original nests."
+    },
+    {
+      "hyp": "The high rate of re-infection clearly indicates that this is a highly re-infective strain."
+    },
+    {
+      "hyp": "Analysis of parasite prevalence in the reservoir showed no significant difference between the mean parasite prevalence in the reservoir and the overall mean prevalence over the 162 days monitored (F(1,22) = 0.0699, P >0.05), further confirming the resilience of this species."
+    },
+    {
+      "hyp": "Furthermore, observations during camera trapping revealed that pancake tortoises defend their territories, with males particularly aggressive towards other males attempting to intrude."
+    },
+    {
+      "hyp": "Defective pancake cells have enhanced ‘homing’ capabilities."
+    },
+    {
+      "hyp": "Researchers conducted a fascinating study on the East African pancake tortoise (Malacochersus tornieri): the animals can find their way back home after being displaced a considerable distance from their original location."
+    },
+    {
+      "hyp": "Understanding the methods and reasons behind this practice may be crucial in conserving these endangered species."
+    },
+    {
+      "hyp": "The habit of discovering nests in these habitats appears to be very important for these cryptic species."
+    },
+    {
+      "hyp": "The ability to return to the same locations allows these animals to readily access food, find mates, and maintain territories; all of which increase their chances of survival and reproduction."
+    },
+    {
+      "hyp": "Although homing behaviour has been studied in marine and freshwater fish, researchers in this study say that little is known about the homing behaviour of anadromous fish."
+    },
+    {
+      "hyp": "In this study, researchers sought to understand the ecology of pancake tortoises in their natural habitats within the arid and semi-arid regions of Kenya."
+    },
+    {
+      "hyp": "Observe the animals as they moved and fed, and how they went to rest in the bushes or in the hollows of the trees."
+    },
+    {
+      "hyp": "Researchers have been observing groups of pancake tortoises for almost two years, and have set up cameras to record videos of them, although these were not visible."
+    },
+    {
+      "hyp": "Similarly, they placed the radio transmitter on frequency 14."
+    },
+    {
+      "hyp": "This small device allows researchers to track animal movements, including monitoring their daytime and nighttime locations."
+    },
+    {
+      "hyp": "The researchers then took some of the observed nests and relocated them to optimize their arrangement."
+    },
+    {
+      "hyp": "However, what surprised the researchers was this: two of the outbreaks started spreading from their origins, a distance of between 1 and 2.5 kilometers."
+    },
+    {
+      "hyp": "This led researchers to attempt removing the parasites from their location to see if they would exhibit the same ‘homing’ behavior."
+    },
+    {
+      "hyp": "Surprisingly, nearly half of the released ants were able to find their way back to their nests in unfamiliar terrain, traveling over 1.5 kilometers."
+    },
+    {
+      "hyp": "The remaining 15% of the fragments could be mapped back to a single region, but their precise origin could not be determined."
+    },
+    {
+      "hyp": "Researchers also found that different species had almost the same home range size, indicating that the species tend to use the same areas for resting."
+    },
+    {
+      "hyp": "Camera trap images showed that male primates were defending territories, meaning they were able to fight off other males that attempted to encroach on their territories or females."
+    },
+    {
+      "hyp": "Researchers stated that this was the first time observing the homing behavior of pancake tortoises, and that the results showed these tortoises prefer to rest and remain in specific locations whenever possible."
+    },
+    {
+      "hyp": "Their research does not explain how the bats found their way back home, therefore, future research should focus on understanding this crucial aspect."
+    },
+    {
+      "hyp": "Because animals sometimes need to be moved to a new location for conservation purposes, this message can help wildlife managers maintain healthy populations in their existing habitats."
+    },
+    {
+      "hyp": "This research was conducted in collaboration between scientists from Kenya and China, and adds to our understanding of homing behavior in bats and other animals."
+    },
+    {
+      "hyp": "The pharmacokinetics of high-dose rifampicin administered intravenously were compared with those administered intrathecally in patients with tuberculous meningitis:"
+    },
+    {
+      "hyp": "Exploratory Data Analysis"
+    },
+    {
+      "hyp": "High doses of rifampicin administered intravenously can improve outcomes in tuberculous meningitis but cannot be administered in high-density settings."
+    },
+    {
+      "hyp": "We hypothesized that the rifampicin concentration in the cerebrospinal fluid would be similar between an oral dose of 35 mg/kg body weight and an intravenous dose of mg/kg, as these were used in the pharmacokinetic study of the drug in tuberculous meningitis."
+    },
+    {
+      "hyp": "We conducted a randomized controlled trial to assess the efficacy of high-dose anti-tuberculosis medication in the treatment of tuberculous meningitis."
+    },
+    {
+      "hyp": "HIV-positive patients with tuberculous meningitis were recruited from South African hospitals and randomly assigned to three different rifampicin dosage groups."
+    },
+    {
+      "hyp": "Standard (oral 10 mg/kg), high (oral 35 mg/kg), and intravenous (20 mg/kg)."
+    },
+    {
+      "hyp": "High-quality samples were obtained on day 3."
+    },
+    {
+      "hyp": "The results were analyzed using noncompartmental analysis, and drug exposure was compared using geometric mean ratios (GMRs)."
+    },
+    {
+      "hyp": "Sixty-four participants were sampled for drug administration (standard dose, n = 17; high oral dose, n = 15; intramuscular dose, n = 14)."
+    },
+    {
+      "hyp": "The median CD4 count was 130 cells/mm3 (interquartile range [IQR], 66 to 253 cells/mm3)."
+    },
+    {
+      "hyp": "The geometric mean area under the rifampicin concentration-time curve from 0 to 24 h (AUC0–24) was 42.9 mg·h/ml (95% confidence interval [CI], 24.5 to 75.0 mg·h/ml) for the standard dose, 295.2 mg·h/ml (95% CI, 189.9 to 458.8 mg·h/ml) for the high oral dose, and 206.5 mg·h/ml (95% CI, 154.6 to 275.8 mg·h/ml) for the intravenous dose."
+    },
+    {
+      "hyp": "The AUC0–24 GMR for rifampicin was 1.44 (90% CI, 0.84 to 2.21), while the maximum observed plasma concentration (Cmax) GMR was 0.89 (90% CI, 0.63 to 1.23) for the higher oral dose compared to the intravenous dose."
+    },
+    {
+      "hyp": "The AUC0–24 of rifampicin in plasma was higher after a 35-mg/kg oral dose than after a 20-mg/kg intravenous dose during the initial days of tuberculosis (TB) treatment."
+    },
+    {
+      "hyp": "Findings support the use of oral rifampicin in the treatment of tuberculous meningitis in a prospective study."
+    },
+    {
+      "hyp": "Higher doses of the drug can be tested on HIV patients with TB meningitis."
+    },
+    {
+      "hyp": "Researchers confirmed that it is worthwhile to investigate whether higher doses of rifampicin can save HIV patients with tuberculous meningitis."
+    },
+    {
+      "hyp": "Three out of five HIV-positive patients who develop tuberculous meningitis die from this life-threatening disease."
+    },
+    {
+      "hyp": "Survivors often experience long-term damage to the nervous system and cognitive impairment."
+    },
+    {
+      "hyp": "This can affect their thoughts and behavior."
+    },
+    {
+      "hyp": "Some patients experience numbness or tingling, or numbness in parts of the face or body."
+    },
+    {
+      "hyp": "Rifampicin, a potent antibacterial drug used to treat tuberculosis, is often administered intravenously in an attempt to kill the bacteria causing tuberculous meningitis."
+    },
+    {
+      "hyp": "Severely ill patients often have difficulty swallowing these pills."
+    },
+    {
+      "hyp": "Rifampicin can also be administered intravenously."
+    },
+    {
+      "hyp": "The virus shed in the patient's saliva can be transmitted."
+    },
+    {
+      "hyp": "No pharmacokinetic studies were conducted to determine how the body absorbs this drug using this method."
+    },
+    {
+      "hyp": "Administering medication via intravenous infusion requires additional equipment, a bed, and a trained medical professional skilled in properly inserting the intravenous line."
+    },
+    {
+      "hyp": "Therefore, this is not something that can be done in underdeveloped regions."
+    },
+    {
+      "hyp": "Doctors know that rifampicin does not penetrate well into the cerebrospinal fluid, the brain, and the eye, where bacteria can hide."
+    },
+    {
+      "hyp": "This is why higher doses are needed to kill all the bacteria in the patient's body."
+    },
+    {
+      "hyp": "However, the researchers did not confirm how a higher dose might be effective and safe."
+    },
+    {
+      "hyp": "Therefore, South African and British researchers sought to determine, using a small number of patients, whether it is safe to administer high doses of rifampicin as a capsule or in syrup, and how their bodies would metabolize each dose."
+    },
+    {
+      "hyp": "This is important to note, as other researchers have not yet begun to conduct such trials, where they plan to administer higher doses of rifampicin to more patients."
+    },
+    {
+      "hyp": "One of three rifampicin regimens was given to 46 HIV-positive patients in South Africa with tuberculous meningitis."
+    },
+    {
+      "hyp": "The initial treatment was the standard capso drug regimen, providing 10mg of rifampicin per kilogram of patient weight."
+    },
+    {
+      "hyp": "Another group received a higher dose of 35 milligrams of capsaicin per kilogram of patient weight."
+    },
+    {
+      "hyp": "The third group received 20 milligrams per kilogram of patient weight."
+    },
+    {
+      "hyp": "Blood samples were collected from patients after three days."
+    },
+    {
+      "hyp": "Researchers measured the concentration of rifampicin in their blood plasma."
+    },
+    {
+      "hyp": "Higher rifampicin concentrations were found in the bodies of patients who received higher doses compared to those who received standard or lower doses."
+    },
+    {
+      "hyp": "The drug concentration in the serum was consistent with the oral dose."
+    },
+    {
+      "hyp": "That drug was more effective in patients who received a higher dose than those who received only the standard dose."
+    },
+    {
+      "hyp": "According to the researchers, this indicates that the survival of patients with tuberculous meningitis can improve if they receive adequate doses of rifampicin."
+    },
+    {
+      "hyp": "It doesn't matter whether they received the vaccine as a single dose or in multiple doses – the important thing is that they received the free doses, because now their bodies can produce antibodies."
+    },
+    {
+      "hyp": "The results support those from studies conducted in Uganda and Indonesia."
+    },
+    {
+      "hyp": "For example, two small trials conducted in Indonesia showed that the lives of many patients with multi-drug resistant tuberculosis could be saved if they were given high doses of rifampicin orally or intravenously."
+    },
+    {
+      "hyp": "However, the researchers caution that the participants in this study were not representative of the target population, which may affect the findings."
+    },
+    {
+      "hyp": "The research was conducted in South Africa."
+    },
+    {
+      "hyp": "Supporting a plan to conduct a trial to assess whether administering higher doses of rifampicin is beneficial for HIV patients with tuberculous meningitis."
+    },
+    {
+      "hyp": "It is hoped that this type of treatment will save the lives of other people in Africa and other parts of the world where tuberculous meningitis is a significant problem."
+    },
+    {
+      "hyp": "Can the use of seaweed and other organic matter improve the quality of coastal wetland soil?"
+    },
+    {
+      "hyp": "Soil erosion is a major constraint to agriculture in sub-Saharan Africa."
+    },
+    {
+      "hyp": "Many authors have highlighted the benefits of using compost and manure in soil improvement."
+    },
+    {
+      "hyp": "In this study, a 30-day feeding trial was conducted using 120 g feed rations.  The rations consisted of  a mixture of  insect frass,  rice husk ash,  coconut shell ash (coco300 and coco700), or a composite feed made from insect frass; and a composite feed of rice husk ash or insect frass, each supplemented with 1% cococomp and soil."
+    },
+    {
+      "hyp": "Further analyses included incubation studies using different combinations of earthworms and litter (1% earthworm + 1% litter: 1% soil) to investigate their effects on soil aggregation, soil pH, soil organic carbon derived from microorganisms, total nitrogen, and available nitrogen."
+    },
+    {
+      "hyp": "Both compost and vermicompost, whether used alone or in combination with vermicompost, increased soil pH by 0.28-2.29 units compared to the untreated control."
+    },
+    {
+      "hyp": "The initial release from single-source/clustered aerosol/droplet emissions or a combination of aerosol and droplet sources was higher than non-clustered sources, similar to that from droplet sources alone."
+    },
+    {
+      "hyp": "Carbon sequestration in the fertilized and unfertilized plots increased by 37% and 117%, respectively, compared to the control."
+    },
+    {
+      "hyp": "The addition of both compost and manure increased soil microbial biomass by 132%, while the addition of manure alone increased it by 247% compared to the control (no amendment)."
+    },
+    {
+      "hyp": "In summary, the research showed that the application of compost and biochar, either individually or in combination, improved soil quality indicators such as soil pH and soil microbial biomass, and enhanced soil carbon sequestration by increasing carbon storage and reducing soil carbon loss, depending on the amount of carbon dioxide released from the soil."
+    },
+    {
+      "hyp": "Soil texture and structure influence crop yield."
+    },
+    {
+      "hyp": "This research investigates how biochar, a carbon-rich material produced from plant biomass, can be used to improve soil quality in sub-Saharan Africa."
+    },
+    {
+      "hyp": "Research found that compost improves soil quality similarly to other methods that can be used (which are expensive and not readily available)."
+    },
+    {
+      "hyp": "One of the biggest challenges in agriculture in sub-Saharan Africa is land scarcity."
+    },
+    {
+      "hyp": "Very good soil quality can lead to high crop yields, which can reduce rural poverty and prevent environmental degradation."
+    },
+    {
+      "hyp": "Research shows that biochar, which contains carbon, can be used to improve soil fertility."
+    },
+    {
+      "hyp": "Incomplete combustion of carbon-containing materials or plants in the presence of limited or no oxygen produces smoke."
+    },
+    {
+      "hyp": "Studies have shown that cover crops increase soil organic matter, improve water and air infiltration, and enhance soil microbial activity."
+    },
+    {
+      "hyp": "This research investigated how the use of mulch and compost affects soil quality.  Indicators such as soil texture, soil pH, microbial activity, carbon content, and nitrogen gas emissions were used."
+    },
+    {
+      "hyp": "Researchers performed pyrolysis of wood chips, sawdust, and rice husk at 450 °C in an oxygen-free environment."
+    },
+    {
+      "hyp": "Researchers conducted experiments using clay samples, firing them at temperatures ranging from 300 °C to 700 °C."
+    },
+    {
+      "hyp": "Researchers then incubated the selected soil samples amended with the amendments for 30 days."
+    },
+    {
+      "hyp": "Each soil sample contained a different soil type composed of various organic matter components derived from compost, poultry litter or pig manure, and insect frass."
+    },
+    {
+      "hyp": "Other samples included soil mixed with animal dung, plant remains from a termite mound, and those from latrines."
+    },
+    {
+      "hyp": "Each sample contains 1% of the soil amendment and 1% of each fertilizer, allowing researchers to investigate how each variable affects soil fertility."
+    },
+    {
+      "hyp": "Researchers found that adding both compost and biochar to the soil, either individually or together, increased soil pH by 0.28-2.29 pH units compared to untreated soil."
+    },
+    {
+      "hyp": "An increase in soil pH indicates that the soil has less acidity."
+    },
+    {
+      "hyp": "Research found that the initial carbon dioxide efflux from soil increases when single or mixed compost is added, or when compost is incorporated into a mixture of both compost and manure."
+    },
+    {
+      "hyp": "Soil samples showed a 37% increase in carbon when a single compost was used, and a 117% increase in carbon when various composts were combined in the compost."
+    },
+    {
+      "hyp": "Soil microbial abundance increased by 132% in soil amended with biochar and vermicompost compared to a 247% increase in soil amended with vermicompost alone."
+    },
+    {
+      "hyp": "The results of this research show that it is possible to reduce soil acidity using fast-decomposing rice straw mulch."
+    },
+    {
+      "hyp": "This contrasts with other methods of fertilizer application, which are expensive and not readily accessible to smallholder farmers in sub-Saharan Africa."
+    },
+    {
+      "hyp": "The role of fibrinogen proteins in the pathogenesis of thrombosis and how it relates to the development of immune responses, resolution, and protective mechanisms."
+    },
+    {
+      "hyp": "The risk of cardiovascular events in patients with RA has significantly increased due to treatment."
+    },
+    {
+      "hyp": "The mechanism by which acid affects protein folding and the ability of chaperones to bind to fibrillar proteins is unknown."
+    },
+    {
+      "hyp": "We then compared blood flow, perfusion, and the binding and uptake of fibrinogen-binding proteins in RA patients with and without comorbidities and analyzed the correlations between them."
+    },
+    {
+      "hyp": "Blood samples were collected from 30 patients with RA and 25 healthy controls."
+    },
+    {
+      "hyp": "SAA, CRP, ICAM-1, and VCAM-1 levels were measured using a sandwich immunoassay."
+    },
+    {
+      "hyp": "Whole blood clotting was assessed using Thromboelastography."
+    },
+    {
+      "hyp": "The interaction of the fibrinogen protein and the fibrin clot was investigated using a scanning electron microscope."
+    },
+    {
+      "hyp": "The detection and measurement of acid changes in fiber binding were performed using an antibody and a detection instrument."
+    },
+    {
+      "hyp": "SAA, CRP, and ICAM-1 were significantly elevated in patients with rheumatoid arthritis compared to controls."
+    },
+    {
+      "hyp": "Parameters of the TEG assay related to blood coagulation (R and K), and the fibrinolysis interaction times (α-Angle), were reduced (TMRTG) in patients with RA."
+    },
+    {
+      "hyp": "Hematological parameters (MA, MRTG, TGG) did not differ significantly between patients with RA and controls."
+    },
+    {
+      "hyp": "Statistical analysis showed a stronger correlation between markers of inflammation (CRP, SAA) and TEG parameters than with markers of myocardial injury."
+    },
+    {
+      "hyp": "Analysis of micro-CT scans showed significantly larger bone marrow spaces in patients with RA compared to controls [median (interquartile range) 214 (170-285) and 120 (100-144) nm respectively, p<0.0001, ratio=22.7]."
+    },
+    {
+      "hyp": "The detection of fibrotic lesions in patients with RA was significantly lower in individuals without rheumatic diseases (p<0.05, OR=2.2)."
+    },
+    {
+      "hyp": "Individuals with RA exhibit a distinct profile compared to the overall findings regarding metabolic parameters."
+    },
+    {
+      "hyp": "Changes in protein structure may influence the selection of fibrin structure and the ability to predict increased susceptibility to thrombosis in patients with cardiovascular disease."
+    },
+    {
+      "hyp": "Blood clotting in people with sickle cell disease is one of the factors that increases the risk of heart attack and stroke."
+    },
+    {
+      "hyp": "Recent research on osteoarthritis has further elucidated the potential link between this disease and an increased risk of cardiovascular disease."
+    },
+    {
+      "hyp": "Rheumatoid arthritis (RA) is a painful, inflammatory disease affecting the joints and the entire body."
+    },
+    {
+      "hyp": "For some time now, scientists have known that those with cardiovascular disease (CVD) have a 50% increased risk of experiencing CVD events – such as heart attack and stroke."
+    },
+    {
+      "hyp": "A key aspect of this study is how the method of resuscitation affects blood volume in trauma patients."
+    },
+    {
+      "hyp": "In this study, researchers investigated this association to determine precisely why RA increases the risk of developing CVD."
+    },
+    {
+      "hyp": "In summary, the researchers observed the effects of mutations and structural changes on fibrillin proteins."
+    },
+    {
+      "hyp": "These proteins appeared as stable structures that maintain blood clotting function, suggesting that mutations in fibrinogen proteins themselves do not directly affect overall blood clotting."
+    },
+    {
+      "hyp": "Researchers compared blood samples from people with RA to blood samples from healthy individuals."
+    },
+    {
+      "hyp": "In each case, researchers looked for biomarkers in the blood that indicated inflammation and any differences in blood clotting that might increase the risk of developing CVD."
+    },
+    {
+      "hyp": "The purified virus sample is analyzed using mass spectrometry to identify any changes in its protein structure."
+    },
+    {
+      "hyp": "Researchers observed that blood from RA patients clotted faster than that of healthy controls, and that the resulting clot was denser than typical fibrin clots."
+    },
+    {
+      "hyp": "There were also changes in the fibulin protein-coding gene, which led to altered protein function and further contributed to additional downstream effects."
+    },
+    {
+      "hyp": "Other researchers had previously reported changes in the glycosylation of fibrillin proteins in the tissues of individuals with fibrillinopathies, but this is the first time researchers have found a similar result in the blood."
+    },
+    {
+      "hyp": "Combined with other observed changes in the blood profile, these findings may help scientists better understand the relationship between RA and CVD and how to detect these diseases early."
+    },
+    {
+      "hyp": "Although these initial findings are encouraging, it is important to acknowledge that the sample size used in this study was small."
+    },
+    {
+      "hyp": "Researchers also stated that the method used to detect changes in the amino acid sequence may have yielded results from unrelated factors, meaning that further investigation focusing on fibrillin proteins will be needed to confirm the findings in the future."
+    },
+    {
+      "hyp": "Over time, understanding the relationship between RA and the increased risk of CVD has improved outcomes for people with RA as we learn to detect and treat these diseases more effectively."
+    },
+    {
+      "hyp": "Researchers from South Africa, Denmark, and the United Kingdom participated in this research, which was funded by the South African Medical Research Council."
+    },
+    {
+      "hyp": "Predicting weather conditions on Lake Victoria for users of Lake Victoria fishing lamps – a review and application."
+    },
+    {
+      "hyp": "This research aims to investigate the disconnect between science and the general public, manifested in the discrepancies that may exist between the message delivered and the message received, known as the knowledge gap in communication."
+    },
+    {
+      "hyp": "In this way, we examine the importance of weather information on Lake Victoria as perceived by its users in two East African countries:"
+    },
+    {
+      "hyp": "South Africa and New Zealand."
+    },
+    {
+      "hyp": "Here, the emphasis is not on advanced and sophisticated forecasting methods, but rather on everyday, simple forecasting."
+    },
+    {
+      "hyp": "This study employed a questionnaire-based approach, designed according to three research questions."
+    },
+    {
+      "hyp": "The research questions focused on topics such as predictive validity, reliability and consistency, usability, organizational name, and unforeseen factors related to climate change (among others)."
+    },
+    {
+      "hyp": "Online surveys were disseminated to a sample of entertainment and media consumers."
+    },
+    {
+      "hyp": "The research focused on identifying decision-making patterns that influence the diverse communication needs of social media users."
+    },
+    {
+      "hyp": "Cultural consensus analysis (CCA) was used to examine the shared and unique understandings and beliefs within the entire participant group and within subgroups from different countries."
+    },
+    {
+      "hyp": "We found significant differences across the entire cohort (participants from both countries and all age groups combined) when comparing different user groups."
+    },
+    {
+      "hyp": "All participants collectively demonstrated a cultural consensus on the issues presented, but there were differences of opinion regarding the national strategy, suggesting the existence of subtle cultural variations."
+    },
+    {
+      "hyp": "When we examined the ethnic groups and occupational categories of the deceased, we found a consistent, unchanging pattern in the South African user group, with a strong correlation despite variations in the specific occupations."
+    },
+    {
+      "hyp": "The New Zealand group of commercial users showed the least disagreement with all other groups."
+    },
+    {
+      "hyp": "We explain what our findings mean for key issues in service utilization and therefore for the generation of useful predictions."
+    },
+    {
+      "hyp": "Many potential applications of scientific forecasting were considered, focusing on the potential impacts of projected climate change."
+    },
+    {
+      "hyp": "We present a figure illustrating the main relationship between predictive performance and scientific validity/accuracy."
+    },
+    {
+      "hyp": "South Africans and New Zealanders rely on weather forecasting for maritime conditions."
+    },
+    {
+      "hyp": "South African and New Zealand farmers and ranchers rely on readily available weather forecasts to make informed decisions and provide reliable information."
+    },
+    {
+      "hyp": "The national meteorological agency and relevant stakeholders are conducting weather forecasting."
+    },
+    {
+      "hyp": "They try to be as honest and helpful as possible."
+    },
+    {
+      "hyp": "Science and scientific thinking are crucial to this type of inference."
+    },
+    {
+      "hyp": "In this study, the researchers chose to examine how people in South Africa and New Zealand use forecasting – both countries have similar climates, but have different populations and weather conditions across the climate."
+    },
+    {
+      "hyp": "They wanted to find out when and how residents of these islands use forecasts produced by the government and commercial organizations, why they use them, and whether they find these forecasts useful and reliable."
+    },
+    {
+      "hyp": "These are key challenges in assessing how future climate change impacts weather forecasting."
+    },
+    {
+      "hyp": "Online surveys were completed by 31 South Africans and 126 New Zealanders."
+    },
+    {
+      "hyp": "These included people who use weather forecasting in their work (e.g., fishermen and search and rescue organizations), and others involved in recreational activities on the water such as sailing, boating, or swimming."
+    },
+    {
+      "hyp": "Researchers inquired about the ease of use of the single-source weather forecasting service and the accuracy of its predictions."
+    },
+    {
+      "hyp": "Participants indicated the reasons why the location was important to them and discussed whether these reasons might change due to changes in weather conditions."
+    },
+    {
+      "hyp": "They were also asked to comment on their trust in weather forecasts and their perceptions of them."
+    },
+    {
+      "hyp": "Most South African participants in this study were employed as fishermen, boat owners, or support staff in search and rescue or research projects."
+    },
+    {
+      "hyp": "The New Zealanders who answered these questions were considering weather conditions because they intended to go fishing, boating, or sailing on the sea."
+    },
+    {
+      "hyp": "Participants from both countries relied on weather forecasts provided by meteorological services."
+    },
+    {
+      "hyp": "They preferred accurate, consistent, easy-to-use, and customizable predictions that met their needs."
+    },
+    {
+      "hyp": "Participants using the spatial reasoning task found that the spatial reasoning of locations adjacent to the light source, but not directly adjacent to the light source, was not accurate."
+    },
+    {
+      "hyp": "The messages from some locations were more accurate than others."
+    },
+    {
+      "hyp": "South Africans relied more on weather forecasts than New Zealanders, and checked them at least once a day."
+    },
+    {
+      "hyp": "In 9 out of 10 cases, the predictive model was highly accurate."
+    },
+    {
+      "hyp": "Most preferred a method that allowed them to look ahead three to seven days."
+    },
+    {
+      "hyp": "People involved in aquaculture or those responsible for disaster preparedness wanted a system for predicting the timing of floods."
+    },
+    {
+      "hyp": "Most users believed that due to increasing climate variability, forecasting methods will need to utilize more scientifically robust information to provide accurate predictions."
+    },
+    {
+      "hyp": "Very little research of this kind has been conducted in Sub-Saharan Africa."
+    },
+    {
+      "hyp": "Researchers hope they were able to learn something useful from the participants’ responses to the questions they asked."
+    },
+    {
+      "hyp": "One possible limitation is that there were more participants from New Zealand than from South Africa in this study."
+    },
+    {
+      "hyp": "Their work will help those in the forecasting industry to create more relevant products that meet the needs of their clients."
+    },
+    {
+      "hyp": "They will be able to conduct optimization and adjustments based on customer feedback and reasons for use."
+    },
+    {
+      "hyp": "The use of simulation in evaluating the effectiveness of different farming practices in accurately predicting weather conditions:"
+    },
+    {
+      "hyp": "Observing the Lushoto District"
+    },
+    {
+      "hyp": "Climate-smart agriculture (CSA) is increasingly adopted worldwide."
+    },
+    {
+      "hyp": "However, they do not perform well under their three constraints – temperature, humidity and pressure."
+    },
+    {
+      "hyp": "In this way, CSA incorporates numerous farming practices/technologies, making it difficult to standardize CSA objectives."
+    },
+    {
+      "hyp": "First, there is no single, comprehensive method combined with a weather forecasting model that accurately assesses the impact of different agricultural practices."
+    },
+    {
+      "hyp": "Secondly, there is limited information regarding the various approaches adopted as falling under the CSA umbrella, especially in developing countries."
+    },
+    {
+      "hyp": "Finally, the effectiveness of CSA does not depend on the different people responsible for ensuring that these different methods are feasible, appropriate and have high potential for use."
+    },
+    {
+      "hyp": "Here, we describe new approaches for evaluating the effectiveness of different agricultural practices in accurately predicting weather conditions for smallholder farmers."
+    },
+    {
+      "hyp": "These reveal farm indicators (and measurements) showing feed abundance and CSA contributions."
+    },
+    {
+      "hyp": "Alternatively, it employs a hybrid forecasting approach, enabling both short-term and long-term assessments of the accuracy of weather condition predictions."
+    },
+    {
+      "hyp": "Seven different stages were tested in 72 farmers using different CSA practices in Lushoto village, Tanzania, which has a well-defined climate."
+    },
+    {
+      "hyp": "Most farmers highly valued practices that improved soil fertility and structure, reduced soil erosion, and rehabilitated degraded land, due to the increased yields and benefits they received from off-season farming."
+    },
+    {
+      "hyp": "Most importantly, CSA approaches have improved livestock, crop production, food security and income generation."
+    },
+    {
+      "hyp": "The stages are easily adaptable to different regions and soil types, and also allow for the efficient use of various farming practices."
+    },
+    {
+      "hyp": "However, we suggest that CSA be considered as part of monitoring, evaluation, and learning."
+    },
+    {
+      "hyp": "Early warning systems help scientists and farmers prepare for climate change."
+    },
+    {
+      "hyp": "Scientists working with farmers in Tanzania are now able to assess the performance of farming practices to mitigate the impacts of climate change."
+    },
+    {
+      "hyp": "They hope that their method will improve food production in the country and farmers' yields in other parts of the country."
+    },
+    {
+      "hyp": "Climate-smart agriculture is what the United Nations is promoting to help smallholder farmers adapt to climate change."
+    },
+    {
+      "hyp": "A farmer who carefully monitors weather conditions and changes in weather patterns can increase crop yields through improved irrigation practices."
+    },
+    {
+      "hyp": "This is a major issue for farmers in Tanzania, because crop yields are very low due to climate change."
+    },
+    {
+      "hyp": "However, researchers say that it is difficult to assess the effectiveness of climate-smart agriculture practices, such as the use of drought-resistant crops, and that farmers themselves are not consulted to determine whether the practices are performing as expected."
+    },
+    {
+      "hyp": "In this study, the researchers sought to evaluate a framework for assessing the effectiveness of climate-smart agricultural practices, focusing on improving crop yields and resilience to climate change."
+    },
+    {
+      "hyp": "Initially, they reviewed existing agricultural research and identified two frameworks containing 14 factors, or “indicators,” useful for assessing food security and tracking change."
+    },
+    {
+      "hyp": "Following this, researchers working in Lushoto District collaborated with local farmers and various agricultural experts to identify key indicators from each category."
+    },
+    {
+      "hyp": "Farmers identified crop diversification as a key strategy to ensure food security."
+    },
+    {
+      "hyp": "In summary, all practices that improved crop yields were given a higher value."
+    },
+    {
+      "hyp": "On the other hand, regarding adaptation, farmers sought practices that helped them conserve their farmland, and those that increased their knowledge, skills, and income."
+    },
+    {
+      "hyp": "After assessing the usefulness of each indicator, researchers were able to use them to evaluate the effectiveness of the community-based program in the Lushoto district."
+    },
+    {
+      "hyp": "In each case, farmers in the area were asked, using a 1-5 scale, whether there had been any increase in each symptom since the interventions began."
+    },
+    {
+      "hyp": "This helped them to observe the method that had the greatest impact on crop yield and its variability."
+    },
+    {
+      "hyp": "Only 3 out of 6 interventions tested showed any effect."
+    },
+    {
+      "hyp": "The methods included the use of manure, drought-resistant crops, and providing livestock with good quality fodder."
+    },
+    {
+      "hyp": "Researchers say that their method makes it easier to ensure that future interventions meet the needs of farmers in Lushoto District and the goals of climate-smart agriculture."
+    },
+    {
+      "hyp": "Furthermore, they suggest that selecting appropriate technologies increases the likelihood that farmers will encourage their neighbours to adopt good practices, thereby facilitating the diffusion of best weather information."
+    },
+    {
+      "hyp": "Similarly, this method can be applied to other regions and can help ensure that improved weather forecasting methods are context-specific and incorporate farmers’ knowledge through monitoring and evaluation of seasonal data."
+    },
+    {
+      "hyp": "In doing so, climate-smart agriculture practices appear to be effective and are being adopted by people in Tanzania and other parts of Africa."
+    },
+    {
+      "hyp": "The research was conducted by scientists from Kenya and Uganda."
+    },
+    {
+      "hyp": "Vertebrate-borne diseases in South Africa: A review"
+    },
+    {
+      "hyp": "Research on the aetiology of diseases such as malnutrition or famine has not been thoroughly investigated in the field of nutritional science."
+    },
+    {
+      "hyp": "Pathogens can affect organisms, their habitats, and the resources those habitats provide."
+    },
+    {
+      "hyp": "In this chapter, we use research on diseases affecting domestic and wild animals (canine rabies, avian influenza, and Rift Valley fever) and humans (malaria, tuberculosis, and sleeping sickness, HIV) as examples to illustrate the impact of infectious agents."
+    },
+    {
+      "hyp": "The most significant and enduring impact to date is the rinderpest pandemic, which caused millions of deaths and decimated certain wildlife populations in parts of sub-Saharan Africa."
+    },
+    {
+      "hyp": "This resulted in severe damage to the region's resources and significant changes in the landscape and biodiversity."
+    },
+    {
+      "hyp": "Rabies has been eradicated worldwide, but canine rabies and bovine tuberculosis persist, and a concerted effort will be required to eliminate them."
+    },
+    {
+      "hyp": "Among the diseases that ravaged humanity, cholera was widespread globally, but the impact of the disease, introduced by European colonialists, was particularly severe."
+    },
+    {
+      "hyp": "During the 1700s, a significant portion (in some areas, nearly 90%) of the Khoekhoe population perished, their culture and traditions largely disappearing, and the few survivors began working as laborers on farms."
+    },
+    {
+      "hyp": "HIV, first identified in South Africa in 1982, has severely impacted the region, yet the government only allocates ZAR 66.4 billion annually to combat it."
+    },
+    {
+      "hyp": "We also consider West Nile Virus and Zika Virus as examples of diseases that have emerged in Africa and have the potential to become global threats."
+    },
+    {
+      "hyp": "We hypothesize that new diseases will emerge as human encroachment on wildlife habitats increases and globalization intensifies."
+    },
+    {
+      "hyp": "What scientists know about the prevalent and disease-causing viruses in South Africa."
+    },
+    {
+      "hyp": "This chapter summarizes the latest information on diseases such as malaria, rabies, tuberculosis, and HIV, all caused by infectious agents (viruses, bacteria, and other microscopic organisms considered non-indigenous, meaning they are not naturally found in a particular region)."
+    },
+    {
+      "hyp": "All these diseases affect both animals and humans in South Africa, and when they occur, they severely impact the country's economy."
+    },
+    {
+      "hyp": "In the research field of invasion biology, scientists study organisms that are introduced to new environments where they are not naturally found and cause disease."
+    },
+    {
+      "hyp": "Most research focuses heavily on large “macro” organisms such as plants and animals, but the importance of microscopic pathogens should not be overlooked."
+    },
+    {
+      "hyp": "In this chapter, the authors discuss some zoonotic diseases in South Africa caused by these viruses."
+    },
+    {
+      "hyp": "They say that the worst epidemic was the “influenza” that struck South Africa in 1896."
+    },
+    {
+      "hyp": "The disease was transmitted by a vector and affected both cattle and goats."
+    },
+    {
+      "hyp": "The same virus caused the pandemic in humans."
+    },
+    {
+      "hyp": "Many people in the villages suffered famine after the 1896 epidemic, but the disease is now eradicated and gone."
+    },
+    {
+      "hyp": "The authors stated that between 1772 and 1861, many dogs in South Africa suffered from canine distemper, although this disease was not understood by humans at the time."
+    },
+    {
+      "hyp": "By 1893, it was understood that rabies was caused by a virus, so the government decided to kill dogs that had it and vaccinate those that did not."
+    },
+    {
+      "hyp": "However, this did not eradicate the disease, and it continued to affect other wildlife species such as monkeys, leopards, wild dogs, hyenas, and jackals."
+    },
+    {
+      "hyp": "The authors stated that in 1928, two children died from rabies after being bitten by a dog."
+    },
+    {
+      "hyp": "Since then, canine distemper has spread in South Africa."
+    },
+    {
+      "hyp": "They say that in 1954, many people in South Africa were affected by polio."
+    },
+    {
+      "hyp": "During the writing of this chapter, the epidemic was killing approximately 400 children per day."
+    },
+    {
+      "hyp": "They reported that the incidence of the disease was very high in areas where people lived in close proximity to animals."
+    },
+    {
+      "hyp": "The authors also discussed bovine tuberculosis (BTB), a bacterial disease."
+    },
+    {
+      "hyp": "BTB includes cattle, buffalo, warthog, cheetah, antelope, rodents, monkeys and lions."
+    },
+    {
+      "hyp": "It is reported that BTB was first observed in a wildlife reserve in South Africa in 1996."
+    },
+    {
+      "hyp": "The government controlled the disease by culling affected deer."
+    },
+    {
+      "hyp": "The authors stated that a new variant, introduced into South Africa by travelers from Europe, caused a disease called \"kawaali\" in humans."
+    },
+    {
+      "hyp": "That disease killed more than 90% of the Khoekhoe people."
+    },
+    {
+      "hyp": "As the disease spread, the Khoekhoe culture nearly disappeared."
+    },
+    {
+      "hyp": "Researchers also discussed the Human Immunodeficiency Virus (HIV), which causes Acquired Immunodeficiency Syndrome (AIDS)."
+    },
+    {
+      "hyp": "Scientists still believe that the virus initially jumped to humans from an animal, a zoonotic spillover event."
+    },
+    {
+      "hyp": "The virus was first identified in South Africa in 1982."
+    },
+    {
+      "hyp": "They said that by 2019, HIV had no cure or treatment that could eliminate it."
+    },
+    {
+      "hyp": "That chapter discussed the West Nile Virus and Zika virus, stating that they originated in Africa and spread to Europe and America."
+    },
+    {
+      "hyp": "West Nile Virus is spread by mosquitoes and primarily affects birds, but it can also infect horses and humans."
+    },
+    {
+      "hyp": "They say that animals such as warthogs and bushpigs spread African swine fever."
+    },
+    {
+      "hyp": "The disease affected goats, and severely impacted the goat farming business."
+    },
+    {
+      "hyp": "The authors stated that they only discussed bacterial and viral diseases; therefore, this section does not cover all aspects of emerging infectious diseases."
+    },
+    {
+      "hyp": "The writers were from South Africa."
+    },
+    {
+      "hyp": "The principles of enucleation are based on evidence in the management of Odontogenic keratocysts."
+    },
+    {
+      "hyp": "The management of odontogenic keratocysts (OKCs) remains a controversial and challenging issue in the oral and maxillofacial surgery literature."
+    },
+    {
+      "hyp": "Currently, there is no consensus on the optimal treatment for odontogenic keratocysts."
+    },
+    {
+      "hyp": "Among the numerous available treatments, no treatment to date has been shown to be completely or even nearly completely effective in preventing disease recurrence except for the removal of grossly visible lesions lacking capsular invasion."
+    },
+    {
+      "hyp": "Due to the lack of evidence-based guidelines for the management of odontogenic keratocysts in the literature, this research aims to establish treatment protocols based on scientific research findings, which are expected to improve the management of this disease."
+    },
+    {
+      "hyp": "Using criteria including size, cyst type (primary or secondary), presence of different or multiple clinical presentations, presence of daughter cysts, and location; we present a decision tree to aid in treatment planning and help ensure a minimal recurrence rate for odontogenic keratocysts."
+    },
+    {
+      "hyp": "Researchers are exploring better ways to treat malaria."
+    },
+    {
+      "hyp": "Comparing the results with previous research, the researchers presented a comprehensive stepwise approach for dentists to diagnose and manage patients with odontogenic keratocysts (OKC)."
+    },
+    {
+      "hyp": "OKC is a rare or unusual growth on a person's skin."
+    },
+    {
+      "hyp": "Doctors struggle to treat this condition, and patients often experience OKC even after receiving appropriate treatment."
+    },
+    {
+      "hyp": "Therefore, clinicians are seeking effective ways to treat and ultimately cure this type of injury."
+    },
+    {
+      "hyp": "In this study, researchers investigated the key steps healthcare providers must take to diagnose and treat this disease."
+    },
+    {
+      "hyp": "This was done by reviewing existing literature, or scientific articles, related to OKC."
+    },
+    {
+      "hyp": "They primarily sought information on how healthcare providers managed OKC over a one-year period, as reflected in the 46 articles they reviewed."
+    },
+    {
+      "hyp": "Researchers found that OKC was more prevalent in men than in women, and could affect people up to 90 years old, although it was most common in those aged 20-30."
+    },
+    {
+      "hyp": "This disease is usually mild."
+    },
+    {
+      "hyp": "OKC begins in the inner ear, as the developing cochlea appears later."
+    },
+    {
+      "hyp": "Patients often experience pain and drainage (similar to pus, draining from a wound), and their teeth may become loose."
+    },
+    {
+      "hyp": "They reported that the doctors removed all the wounds and the surrounding teeth."
+    },
+    {
+      "hyp": "Upon removal, they should apply Carnoy’s solution, along with liquid nitrogen (a cryogenic liquid used to remove diseased tissue) and fluorouracil (also known as 5FU, a commonly used chemotherapy drug)."
+    },
+    {
+      "hyp": "Following this treatment, researchers agreed that the patient should undergo follow-up examinations for 25 years."
+    },
+    {
+      "hyp": "They say that this treatment is most effective on wounds that are less than 3 cm in diameter."
+    },
+    {
+      "hyp": "For wounds less than 3 cm, researchers recommended conservative treatment."
+    },
+    {
+      "hyp": "They say that doctors should first reduce the swelling inside the wound by draining fluid and removing any surrounding necrotic tissue."
+    },
+    {
+      "hyp": "Afterwards, the specimen must be treated with Carnoy’s solution."
+    },
+    {
+      "hyp": "It was recommended that these patients should be examined by doctors every two months for two years."
+    },
+    {
+      "hyp": "If the patient had multiple wounds, surgeons could also cauterize them using a different instrument."
+    },
+    {
+      "hyp": "However, overall, the reviewed research showed that in most cases, if surgeons removed the tumor and administered 5FU, patients did not experience recurrence of OKC."
+    },
+    {
+      "hyp": "However, they cautioned that the evidence for these associations was weak, and they received little scientific support on this issue."
+    },
+    {
+      "hyp": "Researchers did not conduct their own experiments to support these hypotheses; instead, they attempted to synthesize the best available evidence from research conducted by other researchers."
+    },
+    {
+      "hyp": "Therefore, these researchers, from Nigeria and the USA, recommend further research in different countries to test the efficacy of the proposed interventions."
+    },
+    {
+      "hyp": "And they urged clinicians to consider the patients' other conditions when treating them."
+    },
+    {
+      "hyp": "SARS-CoV-2 (2019-nCoV), MERS-CoV, and SARSr-CoV drug discovery: Comparative analysis and computational approaches to identify potential drug targets."
+    },
+    {
+      "hyp": "Coronaviruses typically reside in a specific animal host, such as mammals or birds, depending on their lineage; however, these viruses can sometimes switch hosts due to mutations in their genomes."
+    },
+    {
+      "hyp": "HCoV-229E is one of the six known human coronaviruses, including HCoV-NL63, HCoV-OC43, HCoV-HKU1, MERS-CoV, and SARSr-CoV (SARSr-CoV-1 and SARS-CoV-2), and is globally distributed."
+    },
+    {
+      "hyp": "MERS-CoV and SARS-CoV-2 can survive on inanimate surfaces such as (metal, glass, or plastic) for up to nine days (Huang, C.-L, 2020)."
+    },
+    {
+      "hyp": "Prophylactic and therapeutic interventions with hydroxychloroquine are beneficial, but a more effective drug may be needed to prevent severe COVID-19."
+    },
+    {
+      "hyp": "The aim of our research was to identify drug targets using bioinformatics methods."
+    },
+    {
+      "hyp": "Materials and Methods"
+    },
+    {
+      "hyp": "Complete SARS-CoV-2 genome sequences were obtained from a repository containing data related to the first coronavirus outbreak in 2019 (2019nCoVR) and two databases: the National Center for Biotechnology Information (NCBI), the Global Initiative on Sharing All Influenza Data (GISAID), and the TAURAU/T-bio-infoserver for online bioinformatics."
+    },
+    {
+      "hyp": "We provide a brief introduction to the origin of the virus, comparing the identified mutations in the receptor-binding domain (the target site) and the expected molecular structure (domain) in the development of 2019-nCoV therapeutics, compared to the known SARSr-CoV and MERS-CoV viruses."
+    },
+    {
+      "hyp": "Interestingly, sequence comparison between SARS-CoV-2 and other lineages revealed that the receptor-binding domain is highly conserved with 70% similarity."
+    },
+    {
+      "hyp": "We observed five amino acid substitutions (L455, Y473, N479, F486, Q493) in the receptor-binding domain (RBD) of the spike protein, which is responsible for virus-host cell interaction."
+    },
+    {
+      "hyp": "In the SARS-CoV-2 RBD, residues (D480 and T487) caused variations in different lineages."
+    },
+    {
+      "hyp": "However, in SARS-CoV-2, minor changes in some residues may enhance the interaction with the human protein molecule: L455, F486, Q493, and N501."
+    },
+    {
+      "hyp": "In SARS-CoV, two major residues (479 and 487) are involved in the binding of the human ACE2 receptor."
+    },
+    {
+      "hyp": "In SARS-CoV-2, residue N479 interacts with Q493, and T487 interacts with N501."
+    },
+    {
+      "hyp": "We identified a highly conserved protein sequence motif in several coronaviruses including 2019nCoV and other related species; the sequence KRSFIEDLLFNKVTLADAGF was found to be highly conserved in this study and is associated with a region surrounding one of the known SARS virus epitopes believed to be required for efficient viral entry into the host cell."
+    },
+    {
+      "hyp": "This arrangement and the surrounding environment created a barrier to drug delivery, which may result in minor inconsistencies and unpredictable absorption sites."
+    },
+    {
+      "hyp": "This research provides information and opportunities to improve health outcomes."
+    },
+    {
+      "hyp": "This research can be explained in more detail with additional data, and further research is needed, even as new information emerges and COVID-19 research continues at a high pace."
+    },
+    {
+      "hyp": "Scientists are comparing Covid-19 to other viruses to find a cure."
+    },
+    {
+      "hyp": "In September 2020, scientists in Mali compared the genomic sequences of the Covid-19 virus with those of other coronaviruses to identify potential drug targets."
+    },
+    {
+      "hyp": "At that time, scientists were still searching for a cure for Covid-19."
+    },
+    {
+      "hyp": "They sought to identify mutations in the Covid-19 virus genome that may play a role in disease susceptibility."
+    },
+    {
+      "hyp": "Researchers from Mali therefore compared the Covid-19 (SARS-CoV-2) virus to two other coronaviruses that cause human disease, namely MERS-CoV and SARS-CoV."
+    },
+    {
+      "hyp": "One of the main objectives of the research was to identify regions on the Covid-19 virus, known as epitopes, that can be recognized by the human immune system."
+    },
+    {
+      "hyp": "This discovery could help scientists develop a more effective and targeted drug."
+    },
+    {
+      "hyp": "Researchers also compared all three viruses to see if there were any common genomic features that could aid in the development of a broadly protective vaccine."
+    },
+    {
+      "hyp": "The study focused on the spike protein sequence of the virus, which are the proteins responsible for helping the corona virus attach to and infect human cells."
+    },
+    {
+      "hyp": "Researchers found that the spike proteins in all three viruses were highly similar in their genome sequences, especially in the regions that interact with human cells."
+    },
+    {
+      "hyp": "A major concern regarding the Covid-19 virus is that minor mutations in the spike protein could increase the virus's ability to bind to human cells."
+    },
+    {
+      "hyp": "The findings from this research could enable other researchers to develop more effective Covid-19 drugs by helping them identify optimal drug target sites on the virus."
+    },
+    {
+      "hyp": "This research also provided new insights into the similarities and differences in the genomes between the Covid-19 virus and other coronaviruses."
+    },
+    {
+      "hyp": "Researchers stated that future research should investigate whether the mutations in the SARS-CoV-2 genome make it more transmissible and virulent than other coronaviruses."
+    },
+    {
+      "hyp": "Challenges in cardiovascular disease in patients with COVID-19: A review of findings from various studies."
+    },
+    {
+      "hyp": "The severity of cardiac injury cannot be ignored in patients with coronavirus disease 2019 (COVID-19) because it significantly impacts outcomes."
+    },
+    {
+      "hyp": "Therefore, this study aimed to establish a robust understanding of the challenges in cardiac care for patients with COVID-19."
+    },
+    {
+      "hyp": "We searched reputable databases including PubMed, Scopus, the Cochrane Library, and Web of Science."
+    },
+    {
+      "hyp": "Following the review, relevant information was extracted and the susceptibility to disease from different studies was combined to synthesize findings from various studies."
+    },
+    {
+      "hyp": "Nine rounds of research involving 1445 patients were completed and used in our study."
+    },
+    {
+      "hyp": "Findings from various studies showed that the incidence of cardiac events in COVID-19 patients was 19.7%, with a 95% confidence interval (CI) ranging from 11.7% to 27.6%."
+    },
+    {
+      "hyp": "There was also high linkage disequilibrium (I2□=□94.67%)."
+    },
+    {
+      "hyp": "Cardiac complications are highly prevalent in COVID-19 patients and were observed in 19.7% of the study participants."
+    },
+    {
+      "hyp": "Appropriate monitoring and timely detection of cardiac events are crucial for effective management and improved outcomes."
+    },
+    {
+      "hyp": "Many Covid-19 patients experienced abnormal heart rhythms."
+    },
+    {
+      "hyp": "Researchers say that 1 in 5 Covid-19 patients experience cardiac complications, known as atypical myocarditis."
+    },
+    {
+      "hyp": "The prevailing view is that the patient's cardiac rhythm should be monitored using an electrocardiogram (ECG) to allow physicians to quickly detect and treat cardiac rhythm disturbances as efficiently as possible."
+    },
+    {
+      "hyp": "Although COVID-19 primarily affects the lungs and respiratory system, some research indicates that it can also affect the heart."
+    },
+    {
+      "hyp": "Researchers sought to investigate the prevalence of cardiac events in COVID-19 patients in 2020, near the beginning of the global pandemic."
+    },
+    {
+      "hyp": "This study reviews findings from various studies conducted on the same topic, in an attempt to synthesize the overall findings from all the research."
+    },
+    {
+      "hyp": "This research involved a review and analysis of data from major literature sources, extracting relevant information on atypical myocardial infarction in COVID-19 patients."
+    },
+    {
+      "hyp": "In conclusion, they used a nine-round survey involving data from 1445 patients."
+    },
+    {
+      "hyp": "They found that cardiac complications manifested in 19.7% of Covid-19 patients."
+    },
+    {
+      "hyp": "However, they caution that the small sample size of their study may limit its generalizability."
+    },
+    {
+      "hyp": "This study also does not fully address the type of heart problem, and the limitations in each study may mask the limitations of their meta-analysis of the findings from different studies."
+    },
+    {
+      "hyp": "They suggest that future research should investigate why many Covid-19 patients experienced abnormal heart rhythms."
+    },
+    {
+      "hyp": "The authors of this paper were from Egypt, but the patients used in this study were from China and the USA."
+    },
+    {
+      "hyp": "Other Scientists' Views on Concussion, Mental Health, and PTSD:"
+    },
+    {
+      "hyp": "Document Review"
+    },
+    {
+      "hyp": "In this chapter, we examine research conducted on PTSD, mental health, and well-being among refugees."
+    },
+    {
+      "hyp": "Research suggests that stressors before and after deployment negatively affect the mental health and PTSD of both deployed and non-deployed soldiers."
+    },
+    {
+      "hyp": "In their home countries, exposure to psychological trauma has led to significant mental health challenges among refugees."
+    },
+    {
+      "hyp": "The mental health challenges faced by refugees in their host countries include high stress levels, difficult living conditions, separation from family, language barriers, lack of adequate healthcare, discrimination, inability to support themselves, feelings of hopelessness, feeling overwhelmed, and intense fear of potential harm."
+    },
+    {
+      "hyp": "Among all the mental health challenges, anxiety, depression, and PTSD are considered the most prevalent, with rates of 4–40%, 5–44%, and 9–36% respectively in that population."
+    },
+    {
+      "hyp": "In summary, social support and behavioral changes were found to be potentially helpful in addressing this problem."
+    },
+    {
+      "hyp": "The mental health of refugees is affected by the conditions they left behind and the challenges of settling in a new place."
+    },
+    {
+      "hyp": "Refugees and asylum seekers who relocate to foreign countries often experience psychological distress following trauma and other mental health challenges."
+    },
+    {
+      "hyp": "Although many of these factors are attributable to pre-existing conditions in their countries of origin, scientists say it is important to acknowledge that the stress of adapting to a new country can exacerbate these problems."
+    },
+    {
+      "hyp": "According to various studies, anxiety, depression, and PTSD are all common mental health challenges among refugees and displaced persons."
+    },
+    {
+      "hyp": "PTSD can result from exposure to traumatic events, and individuals often experience difficulties stemming from these adverse experiences for months or even years."
+    },
+    {
+      "hyp": "In this study, the researchers sought to understand the various factors contributing to the mental health conditions of survivors, such as PTSD."
+    },
+    {
+      "hyp": "Therefore, they conducted a literature review, synthesizing findings from other studies on this topic to determine what is known."
+    },
+    {
+      "hyp": "Often, the mental health challenges faced by refugees stemmed from traumatic experiences such as war, loss of loved ones, or injuries sustained in their home countries."
+    },
+    {
+      "hyp": "When these people abandoned those conditions, they went through difficult journeys, but they prospered upon reaching the new land."
+    },
+    {
+      "hyp": "However, researchers stated that this improvement was temporary, because the participants experienced renewed challenges after the intervention."
+    },
+    {
+      "hyp": "They found that immigrants often face challenges in their new country, especially if they do not understand the language or if they struggle to adapt to a new culture."
+    },
+    {
+      "hyp": "If people entered that country illegally, or were attempting to seek asylum, they also faced legal challenges and often experienced difficulties accessing services such as healthcare."
+    },
+    {
+      "hyp": "For some, resettlement in their new country further increased their sense of vulnerability, as many had left their families behind and were now alone."
+    },
+    {
+      "hyp": "These factors contribute significantly to mental health challenges, even when these refugees are in better conditions than they were in their home country."
+    },
+    {
+      "hyp": "Researchers added that coping mechanisms employed by the respondents included proactive planning, seeking social support from their community, and maladaptive strategies such as substance use."
+    },
+    {
+      "hyp": "Researchers say that further research is needed across all stages of the pathogen's life cycle."
+    },
+    {
+      "hyp": "Importantly, it is crucial to investigate mental health issues in both the countries of origin and, over time, in their new countries of residence."
+    },
+    {
+      "hyp": "They added that the journeys of people migrating from Africa to Europe need to be further investigated thoroughly by researchers."
+    },
+    {
+      "hyp": "This research involved a collaboration between South African and German scientists, and forms part of a book on the experiences of African migrants living in European countries."
+    },
+    {
+      "hyp": "The Presence and Abundance of Amblyomma hebraeum Increases the Risk of Heartwater in Southeastern Botswana District"
+    },
+    {
+      "hyp": "Heartwater is a tick-borne disease caused by bacteria residing in the blood of ticks, and it has the potential to reduce livestock productivity in Botswana."
+    },
+    {
+      "hyp": "This food insecurity is exacerbated by low livestock productivity and livestock mortality rates that are higher in smallholder farming systems than in large-scale farms."
+    },
+    {
+      "hyp": "This research shows the impact of heartwater disease in Botswana."
+    },
+    {
+      "hyp": "Four tick species were identified in the southeastern districts of Botswana through morphological and molecular analysis."
+    },
+    {
+      "hyp": "Farmers were asked questions concerning the prevalence of heartwater disease in their areas."
+    },
+    {
+      "hyp": "Veterinary reports were collected to investigate disease prevalence in livestock around the Central District of Botswana."
+    },
+    {
+      "hyp": "The study findings showed that *Amblyomma hebraeum* was widely distributed across all four districts surveyed, with an increasing number of heartwater-infected animals each year in Moshupa sub-district, and that small ruminants were the most affected species, despite the fact that 63% of surveyed farmers had implemented tick control measures."
+    },
+    {
+      "hyp": "*Amblyomma hebraeum*, a major vector of *Ehrlichia ruminantium* in Southern Africa, is highly prevalent in the Southern District of Botswana, thus contributing to livestock losses in this district and potentially elsewhere in the country where it feeds on livestock."
+    },
+    {
+      "hyp": "Therefore, there is a need for further investigation into existing heartwater control methods with the aim of reducing the disease, especially in cattle and goats."
+    },
+    {
+      "hyp": "The high tick burden in Botswana's livestock increases the prevalence of heartwater disease."
+    },
+    {
+      "hyp": "This study addresses the significant problem of tick-borne heartwater disease in the Botswana cattle industry between 2017 and 2019."
+    },
+    {
+      "hyp": "The research findings can help the government and farmers in planning effective heartwater disease control strategies."
+    },
+    {
+      "hyp": "There is a tick-borne bacterium called *Ehrlichia ruminantium*, which causes the disease heartwater in cattle, sheep, and goats."
+    },
+    {
+      "hyp": "This bacteria feeds on other living things such as animals, causing harm."
+    },
+    {
+      "hyp": "Animals with heartwater typically experience high fever, anorexia, respiratory distress, and may eventually die."
+    },
+    {
+      "hyp": "Heartwater disease is prevalent in the northeastern region of Botswana, and farmers in that area experience significant livestock losses due to this disease."
+    },
+    {
+      "hyp": "In this study, researchers investigated the prevalence of heartwater in Botswana cattle."
+    },
+    {
+      "hyp": "First, they collected, counted and identified ticks from cattle, sheep and goats to compare ticks carrying the heartwater bacteria with other ticks."
+    },
+    {
+      "hyp": "Researchers also interviewed some farmers about their experiences with heartwater, and collected heartwater reports from the veterinary office."
+    },
+    {
+      "hyp": "Researchers reported that the prevalence of the harmful ticks was high in the study area, and that the number of animals with heartwater was increasing annually."
+    },
+    {
+      "hyp": "They collected 310 samples between 2017 and 2019."
+    },
+    {
+      "hyp": "Three tick species were identified:  South African bont tick, bont-legged tick, and brown dog tick."
+    },
+    {
+      "hyp": "The most prevalent tick was the South African bont tick (85%), which transmits the bacteria that cause heartwater disease."
+    },
+    {
+      "hyp": "Two other species of ticks discovered were not associated with heartwater disease, but are linked to other animal diseases such as theileriosis, anaplasmosis, and babesiosis."
+    },
+    {
+      "hyp": "The study area included Goodhope, Kanye, Moshupa, and Jwaneng."
+    },
+    {
+      "hyp": "The highest prevalence of the disease was in Goodhope, Kanye and Moshupa."
+    },
+    {
+      "hyp": "These areas experienced heavy rainfall, hailstorms, and strong winds."
+    },
+    {
+      "hyp": "Jwaneng, a village with a low population density, was sparsely populated, dusty, and with little vegetation."
+    },
+    {
+      "hyp": "Researchers reported that epidemiological records indicated 42 heartwater-positive animals in Goodhope, 38 in Jwaneng, 75 in Kanye, and 146 in Moshupa, from 2017 to 2019."
+    },
+    {
+      "hyp": "Researchers reported that heartwater disease affected indigenous goats and cattle more than other breeds from foreign countries."
+    },
+    {
+      "hyp": "They report that farmers made an effort to control the weeds."
+    },
+    {
+      "hyp": "For example, 63% of farmers treat their animals with pesticides and insecticides."
+    },
+    {
+      "hyp": "About one-third (30%) of the farmers applied grease to their livestock to control ticks, while others (7%) built new kraals."
+    },
+    {
+      "hyp": "Researchers also found that 44% of farmers did not take any action to treat suspected sick animals, while 15% reported seeking veterinary advice but self-treating their animals."
+    },
+    {
+      "hyp": "Although a heartwater treatment was available, researchers reported that 93% of farmers did not use it."
+    },
+    {
+      "hyp": "Farmers reported to researchers that this was because they lacked education on veterinary medicine and were unable to afford veterinary drugs."
+    },
+    {
+      "hyp": "Previous research has investigated the distribution of ticks in Africa, including Botswana; however, according to these researchers, their study was the first to investigate the association between ticks and heartwater disease in Botswana."
+    },
+    {
+      "hyp": "They suggest that the number of heartwater-affected animals recorded by veterinarians may underestimate the true prevalence in livestock, because veterinarians tend to diagnose heartwater only after animal death, meaning that surviving or recovered animals are not usually counted."
+    },
+    {
+      "hyp": "Researchers recommend that farmers should be educated on how to control and manage heartwater disease in their livestock to minimize its impact on the region."
+    },
+    {
+      "hyp": "They also stated that further research should be conducted to investigate the factors contributing to the prevalence of the disease."
+    },
+    {
+      "hyp": "The researchers were from Botswana."
+    },
+    {
+      "hyp": "Challenges exist in accessing treatment in India and South Africa."
+    },
+    {
+      "hyp": "It is acknowledged that point-of-care (POC) testing in community settings, homes, and primary care facilities has the potential to significantly improve access to testing and treatment for diseases such as HIV, tuberculosis, malaria, and syphilis."
+    },
+    {
+      "hyp": "Rapid testing and subsequent decision-making at the point of care, while the patient waits, offers the potential to eliminate delays associated with laboratory-based testing."
+    },
+    {
+      "hyp": "However, the availability of rapid, point-of-care (POC) tests that can be performed outside of laboratories does not guarantee accurate test results."
+    },
+    {
+      "hyp": "To understand the tasks and challenges involved in such diverse settings, we need to examine how the POC testing is implemented and integrated into the workflow and patient care pathways."
+    },
+    {
+      "hyp": "This chapter summarizes the findings from a cross-sectional observational research project on the prevalence of antimicrobial resistance in patients with bloodstream infections in India and South Africa and presents the results comparatively."
+    },
+    {
+      "hyp": "The project used focus group discussions and interviews to assess diagnostic practices surrounding major diseases and older adults in households, clinics, communities, hospitals, and various laboratories in South Africa and India."
+    },
+    {
+      "hyp": "Comparing the findings across studies, it is evident that both countries have different diagnostic capacities, resulting in significantly different point-of-care (POC) testing scenarios."
+    },
+    {
+      "hyp": "The chapter discusses and reflects on how to approach such issues in the design of POC evaluation plans."
+    },
+    {
+      "hyp": "Studies in locations with high rates of bovine tuberculosis in South Africa and India are investigating treatment for patients."
+    },
+    {
+      "hyp": "Point-of-care (POC) testing refers to diagnostic testing performed at the same location where the patient receives care, without sending patient samples to an external laboratory for analysis."
+    },
+    {
+      "hyp": "South Africa and India are experiencing challenges with rapid and accessible testing due to a shortage of point-of-care (POC) diagnostics and poor laboratory infrastructure."
+    },
+    {
+      "hyp": "Point-of-care testing enables patients to receive rapid testing and results for timely disease management and prevention."
+    },
+    {
+      "hyp": "This can be done with simple, easy-to-use diagnostic tools that provide rapid test results without the need to transport samples to laboratories."
+    },
+    {
+      "hyp": "However, there were significant challenges in the point-of-care (POC) diagnostic testing of patients in South Africa and India."
+    },
+    {
+      "hyp": "Researchers sought to compare POC testing in South Africa and India to identify existing challenges."
+    },
+    {
+      "hyp": "They organized a series of interviews and meetings with healthcare providers, patients, and relevant regulatory bodies from September 2012 to June 2013 in both countries."
+    },
+    {
+      "hyp": "They asked questions about the POC processes and challenges."
+    },
+    {
+      "hyp": "In government hospitals, India uses limited resources and conducts preliminary testing, but their laboratories lack sufficient funding, resulting in inadequate equipment for disease testing."
+    },
+    {
+      "hyp": "Patients are often told to return another day or go to other facilities, which causes patients difficulties."
+    },
+    {
+      "hyp": "Researchers also found that sometimes patients are tested but it takes a long time for the test results to come back, and they also struggle to follow up with their doctor afterwards."
+    },
+    {
+      "hyp": "Participants suggested that there should be more testing facilities in hospitals, and that testing could also be conducted at a single point of entry for patients."
+    },
+    {
+      "hyp": "They added that patient monitoring, treatment, and counseling should also be conducted in a single location."
+    },
+    {
+      "hyp": "In South Africa, it was discovered that in government hospitals, one company monopolizes all testing, and all samples are sent to this company."
+    },
+    {
+      "hyp": "The initial screening is conducted at the point of care, and patients receive results quickly."
+    },
+    {
+      "hyp": "HIV and TB testing takes a long time, and follow-up or treatment is also delayed."
+    },
+    {
+      "hyp": "Other challenges included logistical difficulties, inconsistencies in patient data entry, errors in sample collection, and computer system malfunctions."
+    },
+    {
+      "hyp": "In HIV testing, some laboratories use different testing methodologies, which can lead to unreliable test results."
+    },
+    {
+      "hyp": "They found that patients’ HIV testing behaviour varied depending on the distance to the testing site or the type of test offered, and because of this, they sometimes used different testing facilities, which created challenges in tracking them."
+    },
+    {
+      "hyp": "Researchers agreed that healthcare workers should collaborate to share workloads."
+    },
+    {
+      "hyp": "They say that when new HIV testing technologies are introduced, healthcare workers should be retrained and the equipment should be recalibrated."
+    },
+    {
+      "hyp": "The authors compared POC messaging from both countries and agreed that stakeholders should carefully consider POC before introducing any new policy or intervention."
+    },
+    {
+      "hyp": "They added that there was still significant work to be done in coordinating the roles of healthcare providers and understanding the patient's role in their treatment."
+    },
+    {
+      "hyp": "The authors of this paper were from South Africa, India, Canada, and Uganda."
+    },
+    {
+      "hyp": "Developing effective disease diagnostics and therapeutics through data analysis."
+    },
+    {
+      "hyp": "Because the terms “severe illness” and “severe treatment” lack standardized definitions, this study aims to explore how these concepts are used, to elucidate the underlying dimensions in their definitions, and to propose possible definitions."
+    },
+    {
+      "hyp": "We used the Walker and Avant framework for concept analysis."
+    },
+    {
+      "hyp": "The application and interpretation of these concepts were determined through a review of the literature and a global survey of 114 expert clinicians."
+    },
+    {
+      "hyp": "In analyzing the texts, we extracted codes, categories, and themes to identify patterns in interpreting these meanings and then developed possible explanations."
+    },
+    {
+      "hyp": "To aid understanding, we present the assumptions, related and conflicting concepts, the underlying basis and implications of these concepts, and also explain the metrics used to measure these concepts."
+    },
+    {
+      "hyp": "The criteria for defining critical illness included a high risk of imminent death; failure of vital organ systems; the need for intensive care to prevent death; and the potential for recovery."
+    },
+    {
+      "hyp": "The challenges in explaining effective treatment included the detection, monitoring, and treatment of severe illness; support for essential services; primary and specialized care; all aspects of severe illness management; and expert clinicians and specialized equipment."
+    },
+    {
+      "hyp": "Our agreed definition of critical illness is, “a medical condition characterized by organ dysfunction, a high risk of imminent death if treatment is not provided, and the potential for recovery”."
+    },
+    {
+      "hyp": "Our agreed-upon definition of intensive care is, “to identify, monitor, and treat critically ill patients through the initiation and escalation of support for vital organ systems.”"
+    },
+    {
+      "hyp": "The concepts of severe illness and intensive care are not clearly defined and are used in various ways."
+    },
+    {
+      "hyp": "Through a review of usage and interpretation in literature and with experts, we have identified challenges in interpreting these concepts and propose interpretations that can aid in application, research, and policy development."
+    },
+    {
+      "hyp": "Strengths and Weaknesses of this Study"
+    },
+    {
+      "hyp": "This study is the first to explore and describe the use and interpretation of symptoms in severe illness and intensive care."
+    },
+    {
+      "hyp": "This research uses a literature review and surveys of over a thousand experts in various fields from around the world to identify challenges in interpreting these concepts and to discuss their interpretations."
+    },
+    {
+      "hyp": "The use and interpretation of these indicators in non-English languages, in unpublished literature and by experts not formally involved in this research, may have been excluded."
+    },
+    {
+      "hyp": "Given the current diverse usage of these terms, the interpretations provided may not be universally accepted and are intended to facilitate further discussion."
+    },
+    {
+      "hyp": "Researchers continue to investigate the significance of \"critically ill\" patients and their treatment."
+    },
+    {
+      "hyp": "Analogous treatment explanations used by physicians worldwide can help in treating critically ill patients."
+    },
+    {
+      "hyp": "In this study, the international research team agreed that \"severe illness\" should be defined as such, meaning that while the patient is in severe danger of death, recovery is still possible."
+    },
+    {
+      "hyp": "They also stated that the \"treatment\" given to critically ill patients should include treatment from the time of admission to the hospital until death or recovery."
+    },
+    {
+      "hyp": "It also does not specify the only treatment involving surgical instruments."
+    },
+    {
+      "hyp": "In hospitals, doctors often refer to critically ill patients as having “critical illness”, and the treatment and support these patients require as “critical care”."
+    },
+    {
+      "hyp": "However, medical practitioners in different regions or hospitals understand these terms differently, because their interpretations vary in different locations."
+    },
+    {
+      "hyp": "This results in patients with the same disease receiving different treatments depending on who is treating them."
+    },
+    {
+      "hyp": "Different and complex explanations make it difficult for the government to know the number of people with chronic diseases in their country."
+    },
+    {
+      "hyp": "In this study, researchers investigated how different physicians explained “severe illness” and “intensive care”, and subsequently agreed on the most representative definitions."
+    },
+    {
+      "hyp": "They collected data by reviewing published documents."
+    },
+    {
+      "hyp": "And they also consulted physicians from various countries around the world who had treated severely ill patients."
+    },
+    {
+      "hyp": "Researchers documented various clinical manifestations of severe illness and found that overall severity was associated with the risk of death; organ failure; need for intensive care to avoid death; and the likelihood of recovery."
+    },
+    {
+      "hyp": "Regarding mortality and survival, some explanations stated that all individuals with severe disease would eventually die, while others suggested that there was a chance of survival even with severe illness."
+    },
+    {
+      "hyp": "In conclusion, the researchers agreed to define severe disease as a disease involving organ failure, with a high mortality rate if not properly managed, but with the potential for recovery."
+    },
+    {
+      "hyp": "In intensive care, physicians appeared to treat patients in very similar ways, but differed on where the care should be delivered and the need for specialized equipment."
+    },
+    {
+      "hyp": "Some documents stated that intensive care should be provided in different areas of a hospital with specialized equipment."
+    },
+    {
+      "hyp": "Others suggested that intensive treatment might involve the use of sophisticated equipment, but this was not always the case."
+    },
+    {
+      "hyp": "They say that intensive care can be provided in general wards, in small hospitals, in the community, or in ambulances."
+    },
+    {
+      "hyp": "They say that even in resource-poor settings, severely ill patients require intensive care."
+    },
+    {
+      "hyp": "Researchers therefore defined intensive care as all care received by critically ill patients from the time they sought medical attention until death or recovery."
+    },
+    {
+      "hyp": "Researchers stated that this was the first study to collect data on various disease explanations and effective treatments, and that their findings would help to improve treatment for critically ill patients."
+    },
+    {
+      "hyp": "However, they acknowledged that their research may be limited by the exclusion of data from non-English languages or unpublished literature."
+    },
+    {
+      "hyp": "And they surveyed doctors from only a few countries; therefore, their study does not represent all countries in the world."
+    },
+    {
+      "hyp": "Researchers from universities in Malawi, Tanzania, Sweden and the UK stated that the interpretations they presented could be further refined if necessary."
+    },
+    {
+      "hyp": "CRISPR-Cas9 screening identifies CENPJ as a protein regulating mitotic spindle organization upon Plasmodium infection."
+    },
+    {
+      "hyp": "Before the plasmodium parasite can cause the onset of malaria, it first invades a liver cell and then multiplies into thousands of merozoites by consuming the nutrients within the human body."
+    },
+    {
+      "hyp": "We show that the bricks aggregate around the still-small nucleus."
+    },
+    {
+      "hyp": "Using CRISPR-Cas9 technology, we discovered a regulatory mechanism that maintains the correct morphology of the parasite, the trafficking of components within the parasite, and the ER/Golgi apparatus that governs the morphology of the Plasmodium LS parasite."
+    },
+    {
+      "hyp": "These novel diseases involving Centromere Protein J (CENPJ) led us to investigate how microtubule organizing centers (MTOCs) are regulated during disease."
+    },
+    {
+      "hyp": "Reduced CENPJ protein levels exacerbated the condition and increased disease severity."
+    },
+    {
+      "hyp": "We further demonstrate that the scaffold acts as a brick-like building block by organizing y-tubulin and facilitating the recruitment of brick-like structures to microtubule plus ends."
+    },
+    {
+      "hyp": "In summary, we show that Plasmodium utilizes the Golgi apparatus to construct a network of stable microtubules (MTs) to counteract PMV in a vesicular manner."
+    },
+    {
+      "hyp": "Our findings indicate many potential interventions to prevent malaria caused by the Plasmodium parasite."
+    },
+    {
+      "hyp": "Scientists are researching how the malaria parasite interacts with the host cell in order to develop new treatment strategies."
+    },
+    {
+      "hyp": "Many parasites utilize nutrients and building blocks found within the body of their host to reproduce."
+    },
+    {
+      "hyp": "In this study, researchers identified mutations conferring resistance to artemisinin-based combination therapies (ACTs), potentially leading to new drug-resistant strains."
+    },
+    {
+      "hyp": "Malaria, a widespread and potentially life-threatening disease, is caused by the Plasmodium parasite and transmitted through the bites of infected mosquitoes."
+    },
+    {
+      "hyp": "Upon entering the body, the Plasmodium parasite travels to the liver to multiply – this early stage is ideal for treating malaria because at this point there are no symptoms and the disease is not yet detectable."
+    },
+    {
+      "hyp": "In this study, the researchers aimed to identify mutations in the genome and proteins of the diseased tissue that could alter the disease progression."
+    },
+    {
+      "hyp": "Using CRISPR-Cas9 technology, researchers were able to knock out or modify specific genes to observe the effect of their absence."
+    },
+    {
+      "hyp": "Afterwards, they took both untreated and treated clay bricks in their natural state and added nanoparticles of iron oxide."
+    },
+    {
+      "hyp": "This type of weathering is involved in many processes such as the movement of bricks and other materials in the masonry, and it often causes the deterioration of the brickwork."
+    },
+    {
+      "hyp": "One of the key findings was that the Plasmodium parasite targets the building blocks of the host cell instead of the building blocks around the mitochondria and other organelles where the building blocks are needed; the host cell building blocks are then diverted to the parasite, providing it with the resources it needs to replicate."
+    },
+    {
+      "hyp": "Researchers observed that when the protein CENPJ was depleted, the centrosome was able to overduplicate and cluster, resulting in larger and multipolar spindles."
+    },
+    {
+      "hyp": "Scientists also discovered other genomes that affect the way the plasmodium disease is transmitted."
+    },
+    {
+      "hyp": "Researchers recently showed that other ants sort and remove brick fragments to eliminate the food sources within the bricks and return them to their nests."
+    },
+    {
+      "hyp": "In this study, researchers confirmed that Plasmodium parasites can use this mechanism to acquire nutrients and other resources to aid their growth."
+    },
+    {
+      "hyp": "In the future, scientists hope to use their understanding of how genomes and viruses interact at the cellular level to discover other treatments for sickle cell disease."
+    },
+    {
+      "hyp": "Although researchers have identified subtle changes in the structural proteins during the early stages of malaria infection, further research is needed to fully understand how the Plasmodium parasite alters host cell structure to inform the development of alternative drug targets."
+    },
+    {
+      "hyp": "Many people still die from malaria each year, with the majority of these deaths occurring in Africa."
+    },
+    {
+      "hyp": "According to the World Health Organization, over 90% of global tuberculosis cases in 2019 were in Africa, making it a significant public health concern requiring proactive prevention and control strategies."
+    },
+    {
+      "hyp": "Biodiversity conservation as one of South Africa's efforts to transform the nation through research."
+    },
+    {
+      "hyp": "In this chapter, we examine the extent of research conducted in South Africa on language shift compared to other global trends."
+    },
+    {
+      "hyp": "Using the Web of Science, we reviewed publications on South African terrestrial ecosystems published between 2000 and 2018, focusing on land degradation, climate change, carbon sequestration, changes in species distribution, ecosystem degradation, and/or atmospheric CO2."
+    },
+    {
+      "hyp": "We identified 1149 relevant papers annotated based on their discussion of processes driving biodiversity and ecosystem change."
+    },
+    {
+      "hyp": "The effects of time and location on the research effort were found to be significant."
+    },
+    {
+      "hyp": "Initially, the effort focused on the interface between terrestrial and aquatic ecosystems, with changes in habitat structure, habitat degradation, and overexploitation being the primary research focus in terrestrial, marine, and freshwater ecosystems."
+    },
+    {
+      "hyp": "Secondly, some internationally studied items were not documented in local records (e.g.,  papers on gastric acid were scarce)."
+    },
+    {
+      "hyp": "We identified 21 correlations between different factors, with the correlations between the abundance of invasive species and changes in habitat characteristics (e.g., changes in temperature in invaded areas) being the most prominent."
+    },
+    {
+      "hyp": "However, only 4% of the papers addressed the interplay between the three other factors."
+    },
+    {
+      "hyp": "This means that although the importance of understanding the relationship between matter is known, little research has been done on the implications of the relationship between matter in the South African environment."
+    },
+    {
+      "hyp": "It has been argued for some time that invasive alien species are the second greatest threat to biodiversity, following habitat change, a claim supported by research conducted on this issue in South Africa."
+    },
+    {
+      "hyp": "However, developing a comprehensive picture of the global impact of these drivers will be challenging, not only in disentangling these factors, but also due to the existence of heterogeneous findings across studies that may be confounded by time and location."
+    },
+    {
+      "hyp": "Complex tasks related to biological systems can be leveraged to discover these difficult interactions and thus aid in the unraveling of such complexities."
+    },
+    {
+      "hyp": "Researchers should coordinate a collaborative effort addressing biodiversity, climate change, and human activities in South Africa."
+    },
+    {
+      "hyp": "Invasive species are the second biggest threat to biodiversity conservation in South Africa – a conclusion supported by the reviewed literature on this topic."
+    },
+    {
+      "hyp": "This is comparable to other factors such as habitat fragmentation, climate change, overharvesting, or changes in habitat structure."
+    },
+    {
+      "hyp": "These factors that threaten the environment, which scientists call global change drivers, are the subject of research into the Earth's system and the interactions between human activities and other factors, including climate and reproduction."
+    },
+    {
+      "hyp": "In a recently published book chapter, researchers examined the extent of research conducted in South Africa on invasive species, defined as organisms such as plants or animals that are introduced to a new area, establish themselves, and potentially harm native species or ecosystems."
+    },
+    {
+      "hyp": "They also reviewed research on how this issue interacts with other issues."
+    },
+    {
+      "hyp": "By reviewing research papers published between 2000 and 2018 in the “Web of Science” database, they identified 1149 relevant studies."
+    },
+    {
+      "hyp": "Their research showed that terrestrial research focused more on changes in land cover, while marine research focused on water pollution, and freshwater research focused more on excessive fishing."
+    },
+    {
+      "hyp": "Furthermore, they found that global issues well-documented as impacting the environment were not well-documented in the South African research."
+    },
+    {
+      "hyp": "For example, only five papers were found that examined acidification in the ocean, which disrupts the food web and affects the health of marine organisms."
+    },
+    {
+      "hyp": "This is happening because excess atmospheric carbon dioxide, from human activities such as burning fossil fuels, is absorbed by ocean waters."
+    },
+    {
+      "hyp": "Changes in habitat, such as fire or climate change, lead to an increase in invasive species."
+    },
+    {
+      "hyp": "They say that carbon dioxide has increased by about 40%, and this could be beneficial for crop growth."
+    },
+    {
+      "hyp": "However, very little research has been done on this issue in South Africa."
+    },
+    {
+      "hyp": "They found 21 documents related to how different issues interact."
+    },
+    {
+      "hyp": "Most of these involved changes in household composition and household members."
+    },
+    {
+      "hyp": "However, very few papers addressed three or more other issues simultaneously."
+    },
+    {
+      "hyp": "The authors state that this suggests that further research is needed in South Africa to investigate how the factors driving global change interact to affect biodiversity."
+    },
+    {
+      "hyp": "Researchers in South Africa acknowledge that developing a comprehensive picture of how global change drivers interact in South Africa will be challenging, but suggest that local research on invasive species could contribute to research in this complex field."
+    },
+    {
+      "hyp": "Land tenure issues affecting soil organisms and carbon sequestration in Miombo woodlands, Zambia"
+    },
+    {
+      "hyp": "Soil organic matter (SOM) is a major component of soil and a significant soil carbon pool."
+    },
+    {
+      "hyp": "However, little is known about SOM and the C-variation in miombo woodlands, a significant component of sub-Saharan African forests and crucial to REDD+ strategies."
+    },
+    {
+      "hyp": "In this study, nine land-use issues were considered and used to assess the suitability of SOM in miombo woodlands with different tree species in Luanshya, Zambia."
+    },
+    {
+      "hyp": "Findings show significant differences in SOM across different soil depths."
+    },
+    {
+      "hyp": "36.67 to 113.89 Mg ha⁻¹ at a depth of 0–10 cm, 28.67 to 79.56 Mg ha⁻¹ at a depth of 10–20 cm, and 31.89 to 98.56 Mg ha⁻¹ at a depth of 20–30 cm."
+    },
+    {
+      "hyp": "SOM values at different depths varied across different miombo woodland sites with varying disturbance levels, meaning that sites affected by recent deforestation had lower SOM levels at each soil depth (0–10 cm: +5.57%; 10–20 cm: +4.20%; 20–30 cm: +4.30%)."
+    },
+    {
+      "hyp": "Canonical correspondence analysis (CCA) showed that the strongest environmental factors affecting SOM were tree cover loss and soil erosion."
+    },
+    {
+      "hyp": "This research demonstrates that CCA can be used to show the value of heterogeneous forest strata as a function of the processes occurring in the landscape, including land-use change, in assessing soil organic matter (SOM) stocks in forests."
+    },
+    {
+      "hyp": "The findings of this research are highly relevant to REDD+ forest restoration efforts and carbon sequestration strategies in sub-Saharan African forests."
+    },
+    {
+      "hyp": "Trees are being selectively felled to improve soil quality, according to Zambian forestry researchers."
+    },
+    {
+      "hyp": "Researchers say that the areas that had been deforested and topsoil removed in the Zambian forest contained high levels of biodiversity, indicating that the soil was of high quality."
+    },
+    {
+      "hyp": "It is crucial to understand the soil quality in sub-Saharan Africa because it has a significant impact on plant and tree growth."
+    },
+    {
+      "hyp": "The soil contains various nutrients, and the organic matter, including carbon, is most important for plant growth."
+    },
+    {
+      "hyp": "One of the components of soil organic matter comes from decaying plants and animals."
+    },
+    {
+      "hyp": "More than half (58%) of the organism's mass is carbon, with the remainder being water and other elements."
+    },
+    {
+      "hyp": "Soil with higher organic matter content, including carbon, retains water for longer periods and also contains a greater diversity of nutrients."
+    },
+    {
+      "hyp": "Scientists have limited knowledge of the changes in soil organic carbon in the African Sahel region, despite its crucial role in plant and tree growth."
+    },
+    {
+      "hyp": "In this study, the researchers sought to determine how soil organisms in the forest change, and what factors determine their abundance."
+    },
+    {
+      "hyp": "Their research was conducted in the Zambian rainforest."
+    },
+    {
+      "hyp": "Soil samples were collected from three depths: topsoil (0-10 cm), subsoil (10-20 cm), and deeper soil (20-30 cm), and from different parts of the forest."
+    },
+    {
+      "hyp": "Researchers then conducted soil analysis to test for the presence of microorganisms."
+    },
+    {
+      "hyp": "The laboratory is the setting where scientists conduct experiments, often using sophisticated instruments to measure various parameters."
+    },
+    {
+      "hyp": "They also recorded other soil-related characteristics such as soil type, for example, sandy or clay."
+    },
+    {
+      "hyp": "The results showed that the abundance of organisms varied significantly depending on location and depth."
+    },
+    {
+      "hyp": "The topsoil contained a higher number of organisms, approximately 114 milligrams per hectare, compared to the subsoil (approximately 100 milligrams per hectare)."
+    },
+    {
+      "hyp": "The average soil contained less than 80 milligrams of mercury per hectare."
+    },
+    {
+      "hyp": "Researchers reported that areas of forest that had been logged had a higher density of organisms than those that had not been logged."
+    },
+    {
+      "hyp": "They argue that selective logging, if done properly, can increase the biodiversity of the forest floor."
+    },
+    {
+      "hyp": "Similarly, researchers observed that soil color changed from dark brown (topsoil) to light brown subsoil, and that the sandy clay loam soil had a higher abundance of organisms."
+    },
+    {
+      "hyp": "The most sun-exposed part of the forest had the largest and oldest trees, and the greatest biodiversity."
+    },
+    {
+      "hyp": "Researchers based in Zambia and South Africa stated that their methods could be used by others to assess soil quality in different locations and at varying depths."
+    },
+    {
+      "hyp": "Improving chickpea production through a participatory approach involving stakeholders in Ethiopia."
+    },
+    {
+      "hyp": "The chickpea (Cicer arietinum L.) is the third most important grain legume in Ethiopia, after common beans and peas."
+    },
+    {
+      "hyp": "However, crop yield was significantly lower compared to its potential due to the lack of improved varieties and technology adoption in the research setting."
+    },
+    {
+      "hyp": "To promote the use of technology in the sector, a national chickpea improvement team was established in 2013 with the aim of bringing together different stakeholders to identify key challenges and develop solutions through collaboration."
+    },
+    {
+      "hyp": "The team discovered a significant seed shortage within the organization."
+    },
+    {
+      "hyp": "This issue has been addressed through the establishment of seed multiplication organizations supported by R&D personnel, who are currently the main seed distributors nationwide."
+    },
+    {
+      "hyp": "Collectively, the group enhanced agricultural productivity and brought about a technological revolution among many farmers."
+    },
+    {
+      "hyp": "Therefore, maize yield per farmer increased fourfold, and national maize yield increased by 2 tons ha−1 over the past ten years."
+    },
+    {
+      "hyp": "The group also worked on improving market access, and as a result, the chickpea variety reached the Ethiopian export market."
+    },
+    {
+      "hyp": "Understanding the plant's growth potential, the team strives to enhance engagement and explore diverse opportunities."
+    },
+    {
+      "hyp": "How Ethiopia improved chickpea production."
+    },
+    {
+      "hyp": "Researchers explain how Ethiopia improved chickpea production through ensuring farmers had access to improved seeds and training in climate-smart agriculture."
+    },
+    {
+      "hyp": "The chickpea is a legume similar to a pea, widely cultivated in Ethiopia."
+    },
+    {
+      "hyp": "Most of the harvest from that crop in the country is exported to other countries."
+    },
+    {
+      "hyp": "In the past, many people observed that farmers could grow more chickpeas if they used improved seeds resistant to pests and diseases."
+    },
+    {
+      "hyp": "A recently published book shows how chickpea production in Ethiopia has increased following the observation of that phenomenon."
+    },
+    {
+      "hyp": "In 2013, authors reported that Ethiopia established a ‘National Chickpea Improvement Program’ which addressed challenges in chickpea production and developed solutions to overcome them."
+    },
+    {
+      "hyp": "The group resembles an organization."
+    },
+    {
+      "hyp": "The team included researchers, the Ethiopian Ministry of Agriculture, farmers’ groups, food processors, seed producers, and export stakeholders."
+    },
+    {
+      "hyp": "The authors stated that the group considered seed shortage to be the biggest challenge, and therefore formed groups to distribute seeds across the entire country."
+    },
+    {
+      "hyp": "This change resulted in a yield reduction of 2 tons of chickpea per hectare."
+    },
+    {
+      "hyp": "Another challenge they identified was low yields."
+    },
+    {
+      "hyp": "Farmers were trained in sustainable agriculture practices, such as the use of organic fertilizers to improve soil fertility."
+    },
+    {
+      "hyp": "They also found that farmers were reluctant to adopt the new technology."
+    },
+    {
+      "hyp": "Therefore, they provided farmers with chickpea seeds that could grow well even when treated with herbicides, which farmers use to control weeds or unwanted plants in their fields."
+    },
+    {
+      "hyp": "The authors stated that the group confirmed that farmers had been trained to improve their knowledge of chickpea cultivation."
+    },
+    {
+      "hyp": "Farmers also attended meetings where they could share their experiences and messages with others."
+    },
+    {
+      "hyp": "The authors stated that the group also included farmers and buyers, as well as seed producers, and those responsible for procuring and distributing seeds to farmers."
+    },
+    {
+      "hyp": "The group also formed and trained women's and youth groups on chickpea farming."
+    },
+    {
+      "hyp": "They further encouraged women and youth to participate in seed production."
+    },
+    {
+      "hyp": "The authors stated that despite the achievements made, there was still a shortage of chickpea seeds."
+    },
+    {
+      "hyp": "They added that the group could achieve many more successes if it had the resources to meet every demand."
+    },
+    {
+      "hyp": "They argue that the Ethiopian Ministry of Agriculture and researchers should intervene with funding to prevent the collapse of the organization."
+    },
+    {
+      "hyp": "They further recommended that the chickpea value chain should be strengthened, including addressing challenges in chickpea production such as diseases."
+    },
+    {
+      "hyp": "Finally, the authors recommended the development of improved, easily harvestable and machine-compatible seed varieties that are also resistant to herbicides."
+    },
+    {
+      "hyp": "The SARS-CoV-2 variant A (A.23.1) has spread differently in Uganda and has reached a high prevalence."
+    },
+    {
+      "hyp": "The SARS-CoV-2 lineage in Uganda provides an opportunity to better understand the virus in East Africa and Africa as a whole."
+    },
+    {
+      "hyp": "Here, we show the evolution of the Omicron subvariant A.23, which has evolved into A.23.1 and is now prevalent in Uganda and has spread to 26 other countries."
+    },
+    {
+      "hyp": "Although the mutations in A.23.1 are different from those in other VOCs, the overall structure indicates that the proteins are similar."
+    },
+    {
+      "hyp": "The A.23.1 protein variant accumulated mutations analogous to those in VIC, including a mutation at position 613, a furin cleavage site mutation adding a basic amino acid motif, and numerous other mutations in the immunogenic N-terminal domain."
+    },
+    {
+      "hyp": "Furthermore, the A.23.1 lineage shows mutations in non-spike proteins also reported in other VOCs (nsp6, ORF8 and ORF9)."
+    },
+    {
+      "hyp": "The function of A.23.1 is not yet fully understood; however, it is crucial to continue monitoring this virus and to conduct rapid testing of its protein products to facilitate the development of effective therapeutics."
+    },
+    {
+      "hyp": "Researchers have findings on the SARS-CoV-2 variant in Uganda."
+    },
+    {
+      "hyp": "In 2021, researchers reported that the SARS-CoV-2 variant, the virus that causes Covid-19, had emerged in Uganda and spread to 26 countries."
+    },
+    {
+      "hyp": "The virus, designated “A.23.1”, was reported to have several synonymous mutations in the protein that researchers had observed in other variants around the world at that time."
+    },
+    {
+      "hyp": "Researchers are monitoring the evolution of coronavirus variants to better understand the efficacy of the drug against other viral strains."
+    },
+    {
+      "hyp": "COVID-19 has killed many people worldwide."
+    },
+    {
+      "hyp": "Using a method known as genomic surveillance, scientists monitor how the virus's genome and proteins change as the virus spreads."
+    },
+    {
+      "hyp": "They use that information to treat the disease and improve drug development."
+    },
+    {
+      "hyp": "For example, by understanding the structure of the virus protein, researchers can develop a drug that targets those proteins to help prevent the virus from entering human cells."
+    },
+    {
+      "hyp": "In this study, researchers specifically investigated the SARS-CoV-2 virus evolution in Uganda."
+    },
+    {
+      "hyp": "Researchers observed the viral genetic sequence in COVID-19 samples across Uganda."
+    },
+    {
+      "hyp": "They used computer software to track the lineage (phylogeny) of the newly discovered variant (named A.23.1), and were able to observe where this variant clustered within the SARS-CoV-2 lineage and phylogeny."
+    },
+    {
+      "hyp": "Further findings indicate that A.23.1 emerged from lineage A.23, and it was detected in approximately 90% of the positive samples."
+    },
+    {
+      "hyp": "In other words, it was prevalent in Ugandan samples from October 2020."
+    },
+    {
+      "hyp": "They also found that the A.23.1 variant contained numerous mutations in the spike protein, similar to those observed in other variants of concern."
+    },
+    {
+      "hyp": "These mutations indicate that the variant is more transmissible (spreads faster) and is resistant to medication and other treatments."
+    },
+    {
+      "hyp": "This research enhances efforts to globally track SARS-CoV-2 variants."
+    },
+    {
+      "hyp": "The findings add to the growing body of evidence showing that SARS-CoV-2 is rapidly evolving as it spreads, infecting more people and potentially evading vaccine-induced immunity."
+    },
+    {
+      "hyp": "However, further research is needed to fully understand the impact and function of the spike protein mutation in A.23.1."
+    },
+    {
+      "hyp": "Researchers continue to monitor the genomic sequences to help understand how different virus strains respond to the antiviral drug in Uganda and other countries."
+    },
+    {
+      "hyp": "They also say that tracking human movement globally is important to allow researchers to better understand how the virus spreads within a region."
+    },
+    {
+      "hyp": "What makes a woman?"
+    },
+    {
+      "hyp": "Research showing the reasons and circumstances leading to female genital mutilation in Indonesia, Ethiopia and Kenya."
+    },
+    {
+      "hyp": "Female genital mutilation is a harmful practice that violates women's rights and has negative health consequences."
+    },
+    {
+      "hyp": "This paper examines the factors and circumstances contributing to female genital mutilation/cutting (FGM/C) in selected regions across three countries – Indonesia, Ethiopia and Kenya."
+    },
+    {
+      "hyp": "The data was collected through questionnaires administered to young people (aged 15-24) in their homes, and through focus group discussions, individual interviews with young people, and key informant interviews conducted in 2016 and 2017."
+    },
+    {
+      "hyp": "Statistical analysis and validation of the message based on key themes were performed."
+    },
+    {
+      "hyp": "Findings from this research confirm some of the reasons behind FGM/C that were identified in previous studies, indicating that these reasons are strongly interconnected, and are primarily driven by cultural norms."
+    },
+    {
+      "hyp": "In many countries, these issues lead to the alteration of women's bodies to achieve an ideal body shape that conforms to patriarchal norms and practices."
+    },
+    {
+      "hyp": "This results in the concept of a “sacred body” in Indonesia, a “strong body” in Ethiopia, and a “principal body” in Kenya."
+    },
+    {
+      "hyp": "Healthcare workers and parents play a valuable role in making decisions regarding FGM/C in all communities."
+    },
+    {
+      "hyp": "In Kenya, young girls are involved in decision-making processes surrounding FGM/C because they are adults by the time the procedure is performed."
+    },
+    {
+      "hyp": "Research shows how legal and social changes in each region lead to changes in the prevalence of FGM/C, resulting in FGM/C being performed in hospitals in Indonesia, a decrease in the age of female circumcision in Kenya, and an increase in the practice of FGM/C in Ethiopia."
+    },
+    {
+      "hyp": "The three scenarios show a significant difference in the practice of FGM/C and its implications for young girls and their communities."
+    },
+    {
+      "hyp": "There is a need for further exploration of the role of parents in decision-making."
+    },
+    {
+      "hyp": "Due to the interconnectedness of the various factors contributing to FGM/C in each region, research suggests that context-specific approaches are needed in all interventions to achieve sustainable change."
+    },
+    {
+      "hyp": "To stop female genital mutilation, we first need to understand the reasons why it is practiced."
+    },
+    {
+      "hyp": "Female genital mutilation (FGM), a practice where some or all of the external female genitalia are cut or removed, is still carried out illegally or clandestinely in countries such as Kenya, Ethiopia and Indonesia."
+    },
+    {
+      "hyp": "Researchers say that understanding the reasons behind the practice is crucial to curbing this painful and harmful procedure and preventing the long-term health and neurological consequences women experience as a result."
+    },
+    {
+      "hyp": "In parts of Africa and Asia, female genital mutilation (FGM), often referred to as female circumcision, is widely practiced."
+    },
+    {
+      "hyp": "Many people wrongly believe that FGM is necessary for cleanliness or to maintain female chastity (absence of sexual arousal and maintaining firmness), and to ensure fertility."
+    },
+    {
+      "hyp": "FGM is not necessary to achieve any of these, according to scientific evidence."
+    },
+    {
+      "hyp": "However, in many cases, children subjected to FGM experience subsequent health problems, such as contracting sexually transmitted infections, difficulties in childbirth (delivery), and other neurological complications."
+    },
+    {
+      "hyp": "Because it is a very harmful practice and violates women's rights, many countries have outlawed it, but people still practice it secretly."
+    },
+    {
+      "hyp": "In this study, the researchers sought to increase understanding of the reasons behind the practice of FGM in different countries, and the beliefs people hold about the practice."
+    },
+    {
+      "hyp": "Therefore, they collected messages related to FGM in Kenya, Ethiopia, and Indonesia."
+    },
+    {
+      "hyp": "In each country, researchers spoke with people involved in the practice, including parents, young girls, community leaders, healthcare workers, and cutters (older women who performed FGM on young girls)."
+    },
+    {
+      "hyp": "In some instances, they interviewed individuals individually, but also held group discussions, including with young women and adolescent girls who had undergone FGM."
+    },
+    {
+      "hyp": "Researchers found that the reasons behind FGM, the methods used, and people's beliefs about the practice varied from country to country."
+    },
+    {
+      "hyp": "Furthermore, they found that many people still use it, including in places where it is prohibited."
+    },
+    {
+      "hyp": "For example, in Indonesia, traditional birth attendants used a knife or scissors to remove part of the hymen after a child reached 40 days of age."
+    },
+    {
+      "hyp": "People believed this helped to ‘cleanse’ and was also beneficial for religious reasons."
+    },
+    {
+      "hyp": "In Ethiopia, FGM was often performed very quickly, sometimes when children were only 7 days old."
+    },
+    {
+      "hyp": "Researchers found that people in that area believed this would ensure that one day the girl would be a ‘good wife’ and also obedient, not a burden to her husband."
+    },
+    {
+      "hyp": "Many people believed that FGM facilitated childbirth, but in fact it can complicate delivery."
+    },
+    {
+      "hyp": "In Kenya, FGM was a marker of a girl’s transition to womanhood, and it tended to be performed at a young age, often during initiation ceremonies."
+    },
+    {
+      "hyp": "However, in some cases, girls as young as eight years old have been found to undergo FGM, and many girls have completed their pregnancies while still teenagers, because they were considered adults and capable of sexual intercourse after FGM."
+    },
+    {
+      "hyp": "Researchers say their findings indicate that there are many different reasons why FGM is practiced."
+    },
+    {
+      "hyp": "As laws and people's attitudes change, so do the methods and locations where the practice takes place."
+    },
+    {
+      "hyp": "For example, parents may attempt and even perform female genital mutilation, despite it being illegal, because they believe it is necessary for their daughter's well-being or to attract a good husband."
+    },
+    {
+      "hyp": "It should be noted that because FGM is illegal in some areas, researching it can be challenging, and people may not provide truthful answers on the subject."
+    },
+    {
+      "hyp": "Researchers suggest that, in addition to enforcement, governments and health organizations should prioritize addressing the harmful beliefs surrounding FGM and educating the public about its negative consequences in the future."
+    },
+    {
+      "hyp": "This research was conducted by a consortium of scientists from Ethiopia, Indonesia, and Burkina Faso, and is part of a larger project called the ‘Yes I Do programme’, which aims to reduce teenage pregnancy rates, child marriage, and FGM."
+    },
+    {
+      "hyp": "The effects of hormonal imbalance, germ cell apoptosis, chromosomal abnormalities, and changes in the morphology of the testes of the African multimammate rat (Cricetomys gambianus, Waterhouse, 1840) following exposure to Sodium Metavanadate."
+    },
+    {
+      "hyp": "Global vanadium consumption has increased recently."
+    },
+    {
+      "hyp": "This parasite is known as a harmful organism."
+    },
+    {
+      "hyp": "This study aimed to investigate the toxicity of sodium metavanadate (SMV) on the reproduction of Drosophila melanogaster."
+    },
+    {
+      "hyp": "The SMV compound was administered orally once daily for 14 consecutive days at a dose of 3 mg/kg body weight."
+    },
+    {
+      "hyp": "The treated water used for irrigation was applied by a drip irrigation system."
+    },
+    {
+      "hyp": "We observed the seed germination rate, the emergence rate and its uniformity, and changes in seedling growth after applying the SMV herbicide."
+    },
+    {
+      "hyp": "Our findings showed that the AGR group treated with SMV exhibited increased progesterone levels, but decreased testosterone, FSH, and LH levels."
+    },
+    {
+      "hyp": "Furthermore, the SMV-treated group showed a delay in tumor progression due to a decrease in the number of malignant clones and an increase in P53 immunopositive cells."
+    },
+    {
+      "hyp": "Analysis of the testicular structure revealed a disruption in the germ and Sertoli cell organization; additionally, the seminiferous tubule lumen was also disrupted and disorganized."
+    },
+    {
+      "hyp": "There was testicular atrophy, damage and degeneration of the seminiferous tubules, and Leydig, Sertoli and germ cell death."
+    },
+    {
+      "hyp": "In the testes, exposure to the SMV compound severely affects the reproductive hormones, significantly reducing sperm count and quality, and causing degenerative or necrotic changes in Leydig, Sertoli, and germ cells, which can lead to infertility."
+    },
+    {
+      "hyp": "Researchers say that pollutants in the air damage the lungs."
+    },
+    {
+      "hyp": "Researchers found that a type of vanadium compound impaired the pollen viability and fertility."
+    },
+    {
+      "hyp": "Because this pathogen is a potential threat to humans, further research is needed to determine whether its prevalence in the human population, due to its virulence, poses a significant risk to human health."
+    },
+    {
+      "hyp": "Although vanadium is relatively stable, it can enter the atmosphere in small amounts as volatile compounds, such as vanadium oxides and chlorides."
+    },
+    {
+      "hyp": "As the world increasingly uses these fossil fuels, vanadium emissions are increasingly polluting the air."
+    },
+    {
+      "hyp": "We know that people in these areas are susceptible to diseases such as anemia, skin and eye diseases, and chest pains."
+    },
+    {
+      "hyp": "Recently, scientists have also begun to investigate the effect of vanadium on reproduction."
+    },
+    {
+      "hyp": "They have begun researching these byproducts using mice, which are often used in laboratory settings due to their similarity to humans."
+    },
+    {
+      "hyp": "In this study, scientists sought to determine the effect of vanadium on a common East African crop, the sorghum plant."
+    },
+    {
+      "hyp": "They wanted to understand how vanadium supplementation affects male reproductive function, specifically sperm parameters, hormones, and testicular histology."
+    },
+    {
+      "hyp": "Researchers administered 6 mg of vanadium to men once daily for 14 days."
+    },
+    {
+      "hyp": "Simultaneously, six other mice were given water as a \"control\" group in the experiment."
+    },
+    {
+      "hyp": "Since the water was not expected to affect the catalyst, the researchers sought to confirm that any changes observed in the first six catalysts were due to the vanadium additive."
+    },
+    {
+      "hyp": "After 14 days, they checked to see if hormone levels, such as testosterone, had changed, and they also observed and counted the seeds and their pods."
+    },
+    {
+      "hyp": "Using transmission electron microscopy (TEM), they were able to visualize all the structural changes that had occurred in the seed, down to the individual crystalline structures."
+    },
+    {
+      "hyp": "Researchers found that the eggs treated with vanadium had significantly lower levels of testosterone and other hormones important for reproduction."
+    },
+    {
+      "hyp": "The vanilla-flavored ice cream had very little, and unevenly distributed,  flavoring."
+    },
+    {
+      "hyp": "For example, researchers observed that some insect larvae lacked heads or had malformed heads, and that they did not move as much as larvae from watered plants."
+    },
+    {
+      "hyp": "Because the CRISPR-Cas9 system, used to edit the genes in female organisms, introduces these mutations, these modifications made it difficult for these organisms to reproduce."
+    },
+    {
+      "hyp": "Finally, researchers found that some bricks in the clay samples were severely damaged or sometimes completely dissolved by the vanadium compound."
+    },
+    {
+      "hyp": "Researchers stated that the mutations they discovered could lead to complete infertility."
+    },
+    {
+      "hyp": "They say that animals exposed to vanadium and other environmental toxins may experience reproductive failure and reduced fertility as a result."
+    },
+    {
+      "hyp": "Because humans are also susceptible to the same environmental hazards as other animals, scientists should also investigate the toxicity of vanadium in areas where it is prevalent to human health."
+    },
+    {
+      "hyp": "Researchers warn that some of the changes they observed in the animal's morphology and genetics differed from those found in previous scientific studies, highlighting the need for further research to understand the toxicity of vanadium."
+    },
+    {
+      "hyp": "This research was conducted collaboratively by scientists from Nigeria and Egypt, and adds to the existing scientific knowledge on how wildlife, and sometimes humans, are affected by habitat degradation."
+    },
+    {
+      "hyp": "Ethnobotanical Uses of Plants in Northwest Ethiopia"
+    },
+    {
+      "hyp": "Plant diversity in Northwest Ethiopia, particularly in the Gozamin district, has been poorly studied."
+    },
+    {
+      "hyp": "The aim of this research is to increase understanding of medicinal plants and their ethnobotanical uses."
+    },
+    {
+      "hyp": "A cluster-based sampling method was used based on the identified variations in neighborhood characteristics."
+    },
+    {
+      "hyp": "Data collection was stratified into four zones; the first zone extended from the farmer's house to 10 meters, the second from 10 to 20 meters, the third from 20 to 30 meters, and the fourth from 30 to 40 meters, with the starting point depending on the size of the farm."
+    },
+    {
+      "hyp": "The questions involving filling in the blanks were asked to record the respondent's knowledge of plant species."
+    },
+    {
+      "hyp": "A total of 238 different useful plant species were identified from 81 households."
+    },
+    {
+      "hyp": "Of these, 39% were shrubs, 29% trees, and 6% were grasses."
+    },
+    {
+      "hyp": "Wild plants contributed the largest proportion of harvested plants (83%), while cultivated plants contributed the remaining 17%."
+    },
+    {
+      "hyp": "Poaceae was the most abundant family with 22 species, followed by Fabaceae with 21 and Asteraceae with 15."
+    },
+    {
+      "hyp": "Of the plants documented, 140 (58.6%) were of wild origin, 84 (35%) were food crops, 83 (34.7%) had medicinal uses, 39 (16.3%) were fodder crops, 57 (23.8%) had industrial uses, 60 (25%) were timber trees, 50 (21%) had ethnobotanical uses, and 1 (0.4%) was poisonous."
+    },
+    {
+      "hyp": "In the study, Cordia Africana was found to be a useful medicinal plant in the area and was observed to be overshadowed by Ficus sur."
+    },
+    {
+      "hyp": "The most significant use of Cordia africana was in construction, while its least significant use was medicinal."
+    },
+    {
+      "hyp": "The Sorensen similarity index for the 64% of the overlapping sites was less than 0.5."
+    },
+    {
+      "hyp": "The results showed that homegrown plants have many benefits and are abundant."
+    },
+    {
+      "hyp": "Food security and environmental sustainability are highly dependent on understanding the cultural practices related to household plants."
+    },
+    {
+      "hyp": "The low diversity/high number of different plant species in the community indicated significant variations in plant species composition. This was attributed to the varying environmental conditions within the community."
+    },
+    {
+      "hyp": "Ethiopian farms contribute to food security and environmental conservation."
+    },
+    {
+      "hyp": "Researchers report that many Ethiopians cultivate a variety of crops, including food crops, cash crops, medicinal plants, fodder, and fiber crops on their farms."
+    },
+    {
+      "hyp": "Assess these farms to determine their contribution to food security and environmental sustainability."
+    },
+    {
+      "hyp": "People around the world cultivate plants for food, income, and other cultural benefits."
+    },
+    {
+      "hyp": "Furthermore, farms conserve useful plant species that are rare or becoming extinct in other areas."
+    },
+    {
+      "hyp": "In Ethiopia, little research has been conducted on the specific crops grown in farmers' fields."
+    },
+    {
+      "hyp": "In this study, the researchers sought to investigate the crops grown by people in the Gozamin district of North West Ethiopia and their uses."
+    },
+    {
+      "hyp": "They identified and counted plants in 357 farms in that area."
+    },
+    {
+      "hyp": "And they asked people in the area about the uses of those plants."
+    },
+    {
+      "hyp": "Researchers found that all farms in Gozamin were less than a hectare in size."
+    },
+    {
+      "hyp": "They collected and identified 238 different plant species."
+    },
+    {
+      "hyp": "Most plants (83%) were perennials, while a minority (17%) were annuals."
+    },
+    {
+      "hyp": "Findings showed that they used plants for food, medicine, construction, animal feed, and other cultural purposes."
+    },
+    {
+      "hyp": "Most plants had more than one use."
+    },
+    {
+      "hyp": "For example, the North American black walnut tree can be used as medicine, timber, animal feed, dye, fencing, and for other cultural purposes."
+    },
+    {
+      "hyp": "More than half (59%) of the plants were used in traditional applications such as fencing, roofing, thatching and fuel."
+    },
+    {
+      "hyp": "Researchers said this helped to preserve biodiversity."
+    },
+    {
+      "hyp": "The plants acted as a windbreak and helped to conserve the crops."
+    },
+    {
+      "hyp": "Slightly more than one-third (35%) of the plants were harvested for consumption, including fruits, vegetables, seeds, and spices."
+    },
+    {
+      "hyp": "However, they reported that the farms in this region had generally yielded a good harvest."
+    },
+    {
+      "hyp": "Researchers reported that 35% of plant species were used as traditional medicine for humans and animals, while 21% were used for religious and spiritual practices, rituals, charms, and in brewing."
+    },
+    {
+      "hyp": "Some plants (17%) were used as fodder for cattle, sheep, and goats."
+    },
+    {
+      "hyp": "The remaining 24% were used in construction, agricultural implements, transportation, and craftwork."
+    },
+    {
+      "hyp": "Because most people in the villages used firewood, 25% of the vegetation was used as fuel."
+    },
+    {
+      "hyp": "Researchers reported that one plant species (0.4%) was allegedly used to administer poison."
+    },
+    {
+      "hyp": "They also stated that the spatial distribution of plants influenced soil conditions, the types of food people consumed, household economic conditions, and business needs."
+    },
+    {
+      "hyp": "For example, the Wenka wetland area, located near a major city and possessing a rich water resource, contained numerous farms and 130 different plant species."
+    },
+    {
+      "hyp": "The people of Wenka grew and sold crops and livestock in the town market."
+    },
+    {
+      "hyp": "Finally, the researchers stated that most farmers preferred to cultivate multi-purpose crops."
+    },
+    {
+      "hyp": "Researchers stated that their findings confirmed that farmers indeed cultivated diverse crop varieties in their fields, and for various reasons."
+    },
+    {
+      "hyp": "Although these researchers found that most farmers cultivated medicinal plants, other researchers have reported that trees were the most common vegetation in this area."
+    },
+    {
+      "hyp": "The researchers for this study were affiliated with Ethiopian universities."
+    }
+  ],
+  "schema_version": "1.0"
+}

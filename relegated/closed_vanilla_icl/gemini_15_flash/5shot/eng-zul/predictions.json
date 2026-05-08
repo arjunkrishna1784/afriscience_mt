@@ -1,0 +1,2918 @@
+{
+  "experiment_id": "icl_5shot_eng_zul",
+  "source_lang": "eng",
+  "target_lang": "zul",
+  "samples": [
+    {
+      "hyp": "Ukulinganisa amazinga okulingwa okuyimfuneko kwe-SARS-CoV-2 kuwo wonke umuntu ukuze kwenziwe ukulawulwa okungenzeka kokubhebhetheka kwesifo eLusaka, indawo ephambili yokuqhuma kwe-Zambia, kucatshangelwe abantu abangenayo imimonyo:"
+    },
+    {
+      "hyp": "Ucwaningo oluqondile lokulinganisa ngemodeli yezibalo."
+    },
+    {
+      "hyp": "Isifo esisha seCoronavirus (i-COVID-19), esibangelwa yi-severe acute respiratory syndrome coronavirus—2 (i-SARS-CoV-2), e-Afrika siphawulwa yingxenye enkulu yabantu abangenayo imimonyo (noma abanemimonyo emincane) okucatshangwa ukuthi badlala indima ekusakazeni lokhu kuka."
+    },
+    {
+      "hyp": "Isilinganiso esinembile kanye nezinga lokutheleleka kwabantu abangenayo imimonyo kusazacaca."
+    },
+    {
+      "hyp": "Nokho, izifundo zibonisa ukuthi ukuphathwa kwabo kubalulekile ekulawuleni ukudluliselwa kwe-SARS-CoV-2."
+    },
+    {
+      "hyp": "Senze imodeli yezibalo elula ye-deterministic susceptible-exposed-infectious-removed (SEIR) ukuhlola umphumela wokwahlukaniswa okusebenzayo kwabantu abane-SARS-CoV-2 abangenayo imiphumela ngokuhlolwa okubanzi ukulawula ukubhebhetheka eSifundazweni saseLusaka eZambia."
+    },
+    {
+      "hyp": "Lapha siye saqamba izimo ezimbili; (1) sicabanga ukuthi abantu abangenayo imimonyo bahlanganisa u-70% wazo zonke izimo ze-COVID-19 kanye (2) abantu abangenayo imimonyo bahlanganisa u-50% kuphela wezimo."
+    },
+    {
+      "hyp": "Ukuze kuqhathaniswe, imodeli yalinganiswa kuqala ngaphansi kokubheka ukuthi abantu abangenayo imimonyo bangatheleka ngendlela efanayo njengabantu abanesimonyo, bese kuthi kwesibili, futhi okungenzeka kakhulu, kubhekwe ukuthi abantu abangenayo imimonyo bangatheleka ngesigamu kuphela njengabantu abanesimonyo."
+    },
+    {
+      "hyp": "Kumodel ecabanga ngamacala angabonakali angu-70%, izinga lokulinga elihlala liqhubeka nsuku zonke elingaphezulu noma elingalingana nezivivinyo ezingu-7911/ abantu abangu-100 000 bekuyanele ukulawula ukubhebhetheka uma abantu abangabonakali beyingxenye kuphela yabangenayo, kuyilapho uma kufakwa ukutheleleka okulinganayo, kwakudingeka izinga lokulinga elingaphezulu noma elingalingana nezivivinyo ezingu-10028/ abantu abangu-100 000."
+    },
+    {
+      "hyp": "Ku-50% abangenayo imimonyo, amazinga okulinga ngokugcwele okungenani angu-≥ 4540 ukuhlolwa/ abantu abayi-100000 bekwanele ukulawula ukubhebhetheka kokusabalala kokubili amazinga acatshangelwayo okutheleleka kwabantu abangenayo imimonyo uma kuqathaniswa nabantu abanesimonyo."
+    },
+    {
+      "hyp": "Ingxoxo neziphetho"
+    },
+    {
+      "hyp": "Imodeli yethu ibikezela ukuthi ukuhlukaniswa okusebenzayo kwezimo ze-COVID-19, kuhlanganise nabantu abangenayo imimonyo, ngokuhlolwa okubanzi kungenziwa njengendlela yokulawula ukudluliselwa kwe-SARS-Cov-2 eLusaka, eZambia, kodwa kuzoba yindleko ephakeme."
+    },
+    {
+      "hyp": "Ukuhlolwa kwabantu abaningi emadolobheni amakhulu njengase-Lusaka kungase kuvimbele ukwanda kwe-COVID-19, kodwa ingabe kuyasebenza?"
+    },
+    {
+      "hyp": "Ngo-2020, amamodeli ekhompyutha abikezela ukuthi ukwanda kwe-COVID-19 emadolobheni amakhulu bekungalawulwa kangcono ngokuhlolwa kwabantu abaningi, bese kwahlukaniswa bonke labo abavivinywe ukuthi banayo."
+    },
+    {
+      "hyp": "Kodwa-ke, abacwaningi bathi le ndlela ingabiza futhi ingasebenzi kahle."
+    },
+    {
+      "hyp": "Ekuqaleni kwenhlekelele, abantu abaningi ababenesifo se-COVID-19 babengabonisi zimpawu zesifo, kodwa basabalalisa lesi sifo kwabanye."
+    },
+    {
+      "hyp": "Ezinye izifundo zikhombe ukuthi abantu abangu-50% kuya ku-80% abane-COVID-19 babengenazo izimpawu (abangenazimpawu) futhi kungenzeka ukuthi babengabangela u-40% kuya ku-70% wokutheleleka okusha."
+    },
+    {
+      "hyp": "Abacwaningi babefuna ukwazi ukuthi ukuthola nokuhlukanisa abantu abangenayo imimonyo kungabasiza yini ukulawula ukwanda kwe-COVID-19."
+    },
+    {
+      "hyp": "Babefisa futhi ukwazi ukuthi ukuhlola okubanzi, okusho ukuhlola abantu abaningi ngokungahleliwe, kuthola ngempumelelo yini abantu abangenayo imimonyo."
+    },
+    {
+      "hyp": "Abacwaningi bakhe imodeli yekhompyutha ebikezela ukuthi abantu bayeka ukuba sengozini, baqaphele, batheleleke, bahlukaniswe."
+    },
+    {
+      "hyp": "Bagxile kwedatha evela esifundazweni saseLusaka eZambia, okuyisikhungo sebhizinisi elina-airport yamazwe ngamazwe ehlala emingceleni yezwe ezimbili."
+    },
+    {
+      "hyp": "Ngenxa yokuthi izimpawu ze-COVID-19 zazibonakala zihlukahlukana ngendawo, bahlola izimo ezine, lapho amacala angu-50% noma angu-70% e-COVID-19 ayengenazo izimpawu, futhi la macala ayenokutheleleka okulinganayo noma oluphansi kakhulu kunalabo ababenazo izimpawu."
+    },
+    {
+      "hyp": "Imodeli yabacwaningi ithole ukuthi bekungenzeka ukulawula ukwanda kwe-COVID-19 ngokwenza ukuhlolwa okubanzi nangokukhipha bonke abantu abavivinywe ngokutholakala, ngisho nalabo abangenayo imimonyo."
+    },
+    {
+      "hyp": "Bathe bathi ukuze kunciphise inani elikhulu lezimangalo nge-90% kuzo zonke izimo, kwakudingeka ukuhlolwa kwabantu abangu-10% eLusaka nsuku zonke."
+    },
+    {
+      "hyp": "Baphethe futhi ukuthi uma sifuna ukugcina inani lezingozi ezintsha ze-COVID-19 lingashintshi, kwakudingeka kuhlolwe u-22% wabantu nsuku zonke."
+    },
+    {
+      "hyp": "Naphezu kokuba iZambia ibeke izindlela eziningi zokulinganisela i-COVID-19, amacala abonakala esekhuphuka."
+    },
+    {
+      "hyp": "Ukuhlolwa okubanzi kunciphisa ngempumelelo inani lamacala e-COVID-19 ngamaphesenti angu-90 edolobheni elincane e-Italy."
+    },
+    {
+      "hyp": "Kepha, ayikho izifundo zangaphambili ezibonisa ukuthi kungaba nomphumela emzini omkhulu kwenye indawo."
+    },
+    {
+      "hyp": "Qaphela ukuthi abacwaningi abazange benze ukuhlolwa okubanzi kulesifundo; kunalokho bakha imodeli ephakamisa ukuthi ukuhlolwa okubanzi kungasebenza ekuvimbeleni ukwanda kwe-COVID-19 emadolobheni amakhulu."
+    },
+    {
+      "hyp": "Kodwa-ke, baxwayisa ukuthi cishe kuyoba yiyona ibiza kakhulu."
+    },
+    {
+      "hyp": "Baphinda bathi kungase kube lula kakhulu uma kuhlanganiswa nezinye izindlela, njengokuvalwa kwezwe, ukulandelela abantu abaxhumene nomuntu onayo, kanye nokujova."
+    },
+    {
+      "hyp": "Abacwaningi baseZambia baphinda bagcizelela ukuthi amacala e-COVID-19 angenayo imiphumela abonakala ephindaphindiwe e-Afrika ngaleso sikhathi."
+    },
+    {
+      "hyp": "Ukungenzeki okuphansi kwama-polygenic score kubantu base-Afrika ngenxa yobuhlukahlukweni bezofuzo nemvelo."
+    },
+    {
+      "hyp": "Abantu base-Afrika abameleki kahle kakhulu ekuhlolweni kwe-genetic kodwa banobuningi obukhulu bokwahluka kwe-genetic futhi babhekene nokuvezwa okubanzi komkhathi emhlabeni jikelele."
+    },
+    {
+      "hyp": "Ngenxa yokuthi ukulinganiswa okuseqondweni kokubikezelwa kwe-genetic akukaqalwa ezinhlanganweni ezihlanganisa ukuhlukahluka kwe-Afrika, sibale ama-polygenic risk scores (PRS) ekuqaguleleni kulo lonke elase-Afrika nasemininingwaneni yedatha evela eNingizimu Afrika, e-Uganda, nase-UK ukuqonda kangcono ukusebenza kwemiphumela yocwaningo lwe-genetic."
+    },
+    {
+      "hyp": "Ukunemba kwe-PRS kuyaqhubeka kuthuthuka ngamaqembu ocwaningo afanayo ngokwemvelaphi kunasemifundweni engafanani ngokwemvelaphi."
+    },
+    {
+      "hyp": "Phakathi kwabantu baseNingizimu Afrika abavela ezinhlanganweni ezahlukene ngokwemvelaphi nangezinhlanga, sifumanisa ukuthi ukunemba kwe-PRS kuphansi kuzo zonke izici kepha kuyahlukahluka emaqenjini."
+    },
+    {
+      "hyp": "Ukwahluka kobuzwe base-Afrika kunegalelo elikhulu ekungafani kokunemba kwe-PRS kunokwahluka kwezinye izigaba ezinkulu ezicatshangelwe phakathi kwabantu base-UK nebase-Uganda."
+    },
+    {
+      "hyp": "Sikhompyuthile i-PRS ezizweni zase-Afrika esebenzisa izifundo ze-genetic ezingama-European kuphela versus ezihlukahlukene ngokwemvelaphi; ukwanda kokwahlukahluka kuvelise izinzuzo ezinkulu zokuqonda ngokunembile kokugxila kwe-hemoglobin kanye nokuqala kwamaseli egazi amhlophe, okuveza ukuguqulwa okukhulu okucebile ngokwemvelaphi ezinhlelweni ezaziwa ngokuthi zithinta isifo se-sickle cell kanye nempendulo ehambisana nokulimala, ngokulandelana."
+    },
+    {
+      "hyp": "Ukwahluka kokunemba kwe-PRS phakathi kwezizukulwane zase-Afrika ezivela ezindaweni ezihlukahlukene kukhulu njengoba kunjalo phakathi kwezizukulwane zase-continental ezingaphandle kwe-Afrika, okudinga ukuqonda okuhambisanayo."
+    },
+    {
+      "hyp": "Kungani singakwazi ukubikezela ngokuqondile izifo ezivela ekuziphatheni kwezinto eziphilayo kubantu abavela e-Afrika"
+    },
+    {
+      "hyp": "Abacwaningi bathi izindlela ezikhona manje ezisetshenziswa ukuqikelela ukuthi umuntu uzophuka yini isifo esitholakala nge-genetic ayisebenzi kahle kubantu abavela e-Afrika."
+    },
+    {
+      "hyp": "Lokhu kungenxa yokuthi idatha bese ibhukwana eliyisisekelo sezibikezelo ezinjalo ikakhulukazi lichaza i-jini labantu abavela eYurophu."
+    },
+    {
+      "hyp": "I-GWAS database imele \"Genome-Wide Association Studies\", futhi ososayensi bayisebenzisa ukuthi bafune izimpawu nezifo eziqondene ne-gene."
+    },
+    {
+      "hyp": "Eqinisweni, bangasebenzisa i-GWAS ukubala ingozi yezofuzo yomuntu yesifo noma uphawu."
+    },
+    {
+      "hyp": "Kodwa-ke, iningi lemininingwane ye-gene ku-GWAS livela kubantu abavela eYurophu."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bafuna ukubona ukuthi ukubala abakusebenzisayo ukuthola ingozi yesifo se-genetic usebenzayo kangakanani kubantu abavela e-Afrika."
+    },
+    {
+      "hyp": "Babefisa futhi ukubona ukuthi i-GWAS ehlukahlukene kakhulu, ngamanye amazwi idatha yasebhukwini ehlanganisa ulwazi olukhulu lwezakhiwo ze-jeni zase-Afrika, ingaluthuthukisa yini uqikelelo."
+    },
+    {
+      "hyp": "Lokhu kubalwa kuwaziwa ngamagama esayensi njenge-“polygenic risk score”, noma i-PRS."
+    },
+    {
+      "hyp": "Basebenzise ama-computer ukubala ingozi elikhulukazi elikhombiswayo le-genetic kubantu base-Afrika basebenzisa i-GWAS, futhi basebenzise amarekhodi ezempilo abantu base-Afrika ukubuka izici ezithile noma izifo ezingase zibe zibangelwe ukuguqulwa kwe-jini."
+    },
+    {
+      "hyp": "Lapho basebenzisa i-European GWAS, bathole ukuthi izinga lobungozi oluvela ku-genetic lalingenamphutha kakhulu uma abantu bebenesizwe saseYurophu uma kuqhathaniswa nesizwe sase-Afrika ezintweni eziningi."
+    },
+    {
+      "hyp": "Bathe bathi amaphuzuengozi aphansi kakhulu phakathi kwezindawo zase-Afrika ngoba kunobuningi obukhulu bokwahluka phakathi kwabantu, okungafani nalokho esikubonayo ngokuzalwa kwaseYurophu."
+    },
+    {
+      "hyp": "Baphinda bathi ukunemba kwe-PRS kukhula njengoba imvelaphi yase-Afrika iyancipha."
+    },
+    {
+      "hyp": "Abantu base-Ethiopia babe neziprofetho ezinhle zezifo ezivela ekuziphatheni, ngoba bafana kakhulu ngokuziphatha nabantu baseYurophu."
+    },
+    {
+      "hyp": "Uma kusetshenziswa i-GWAS ehlukahlukene kakhulu ehlanganisa abantu abavela e-Afrika, ukunemba kokubikezela kuye kwathuthuka."
+    },
+    {
+      "hyp": "Ukubikezela izifo zegazi kwakuqondile ngokukhethekile."
+    },
+    {
+      "hyp": "Ucwaningo oluthile selubonise ukuthi i-PRS iphansi kubantu base-Afrika, okusho ukuthi idatha yase-GWAS ibikezela ingozi ephansi yezifo ezivela ekuziphatheni kwe-genetic kubantu abavela e-Afrika."
+    },
+    {
+      "hyp": "Kepha siyazi ukuthi lokhu akuyona inhliziyo."
+    },
+    {
+      "hyp": "Ucwaningo luchaza ukuthi lezi zigaba eziphansi zengozi yesifo ezivela ku-gene zingenxa yokuthi ama-gene ase-Afrika awameleki kahle kwedatha yase-GWAS, ngakho-ke amanani wamanje e-PRS awasizi ngempela ekubikezeleni izifo ezivela ku-gene e-Afrika."
+    },
+    {
+      "hyp": "Abacwaningi bathi kungcono ukusebenzisa idatha bese ihlukahlukene ebandakanya ulwazi oluvela kubantu abavela e-Afrika."
+    },
+    {
+      "hyp": "Ngakho-ke, kuyadingeka umsebenzi owengeziwe ukuze kuhlukahlukaniswe i-GWAS ukuze kuhlanganiswe izizukulwane zase-Afrika ukuze sikwazi ukubikezela ngokuqondile ingozi yezifo ezivela ekuzalaneni kubantu base-Afrika."
+    },
+    {
+      "hyp": "Ababhali balolu cwaningo bevela e-Afrika, e-USA nase-UK."
+    },
+    {
+      "hyp": "Ukulinganisa Ukuhlolwa Kwezithombe Nezokuhlukaniswa Kwezeseli Ekuphepheni I-Cervical Intraepithelial Neoplasia Ne-Cancer Ye-Cervix eNamibia"
+    },
+    {
+      "hyp": "Kubalelwa ukuthi abesifazane abangama-851 340 eNamibia baphazanyiswe yi-human papilloma viral (HPV) infection engase ibe yimbangela yomdlavuza wesibeletho."
+    },
+    {
+      "hyp": "Ukuhlola ngeso lengqondo nge-acetic acid (VIA) kanye ne-cryotherapy kuye kwabonakala kusebenza kakhulu."
+    },
+    {
+      "hyp": "Kodwa-ke, amanani axhunyaniswe nethonya lemihlahlandlela yokuhlola umdlavuza wesibeletho awanele."
+    },
+    {
+      "hyp": "Lolu cwaningo luhlolwe ukuhlola ngeso lengqondo nokuhlola nge-cytology ekunqobeni izifo ze-cervical intraepithelial lesions (CIN) nomdlavuza we-cervix eNamibia."
+    },
+    {
+      "hyp": "Okutholakele kukhombisile ukuthi abesifazane abane-HPV, i-cervicitis, i-koilocytosis ne-atypia baphazanyiswe kakhulu yi-VIA."
+    },
+    {
+      "hyp": "Abesifazane abadala, ikakhulukazi abanayo i-HIV, banesilinganiso esiphezulu sokuxilongwa nge-squamous cell carcinoma (SCC)."
+    },
+    {
+      "hyp": "I-VIA ibonakala iyindlela efanele ekusheleleni, nakuba ukusetshenziswa kwe-colposcopy ekulandeleleni iziguli endaweni yaseNamibia kufanele kuqwalaselwe futhi kusetshenziswe ngemiphumela emihle ye-HR-HPV."
+    },
+    {
+      "hyp": "Kunconywa izindlela zokuhlola ezihlanganisa ukuhlolwa kwe-HPV kubantu bezingqondo ezahlukene kanye nabantu abasezingozini (um., abane-HIV, abanesifo sokuziphatha komzimba)."
+    },
+    {
+      "hyp": "Ukuthuthukiswa kokutholakala kokuhlola kungathuthukiswa nakakhulu ngezinhlelo zokusebenzisana ezisebenzisa imodeli esebenzisa imiphumela yokuxilongwa yangaphambili, imigomo yempilo yabesifazane, ulwazi olusha kanye nokuqeqeshwa okuhambisana nesimo sezinto sikazwelonke."
+    },
+    {
+      "hyp": "Abesifazane baseNamibia abasezingozini yomdlavuza wesibeletho kufanele bahlolwe futhi baphathwe ngokushesha."
+    },
+    {
+      "hyp": "Ivivinyo eziningi zingabonisa ingozi yomdlavuza wesibeletho kwabesifazane, kodwa ukuhlolwa okuvamile eNamibia akuwasebenzisi njalo le mivivinyo."
+    },
+    {
+      "hyp": "Abacwaningi bacebisa ukuhlolwa njalo, ukuthola izimpawu zokuqala, kungavimbela abesifazane ekukhuleni kuleli gciwane elibulawayo."
+    },
+    {
+      "hyp": "Umgogodla womlomo wesbele (umdlavuza wezingxenye eziphansi zesbele) ubanga ukufa okuningi kwabesifazane emhlabeni jikelele."
+    },
+    {
+      "hyp": "Esinye sezizathu ezivame kakhulu zomdlavuza wesibeletho yi-Human Papillomavirus, noma i-HPV."
+    },
+    {
+      "hyp": "I-HPV iwuvayirasi olulimaza amangqamuzana esibeletho, lukhahlela izilonda ebizwa ngokuthi yi-lesions, ezingagcina ziba yomdlavuza."
+    },
+    {
+      "hyp": "Nakuba kukhona isifo sokuvikela i-HPV, abesifazane abaningi emazweni ase-Afrika, kuhlanganise neNamibia, abanaso."
+    },
+    {
+      "hyp": "Lokhu kusho ukuthi ukuhlola i-virus noma izilonda eziyibangelayo kubaluleke kakhulu kulaba besifazane, ngoba yindlela engcono kakhulu yokusiza ukuvimbela umdlavuza."
+    },
+    {
+      "hyp": "Abacwaningi kulolu cwaningo bathi ngakho izibhedlela zidinga imiyalelo efanele nolwazi mayelana nezivivinyo ezinhle kakhulu okumele zisetshenziswe."
+    },
+    {
+      "hyp": "Bengeza ukuthi abasebenzi bezempilo nabo badinga ulwazi oluthe xaxa mayelana nendlela izinto ezinjengobudala noma impilo eziphazamisa ingozi yomfazi yokuthola i-HPV nomdlavuza."
+    },
+    {
+      "hyp": "Bahlolisise ukuthi zisebenza kangakanani izinhlobo ezithile zezivivinyo (ezibizwa ngokuthi izindlela zokuhlola) ekutholeni i-HPV neziphango."
+    },
+    {
+      "hyp": "Babebuye bafune ukuqhathanisa izindlela zokuhlola, ngokwesibonelo ukuqoqa amangqamuzana esibelethweni ukuhlola ukulimala uma kuqathaniswa nokuqala nje ukubuka izilonda."
+    },
+    {
+      "hyp": "Babefisa futhi ukwazi ukuthi umehluko phakathi kwabesifazane, njengobudala babo, noma ngabe babe nezinye izifo ezinjenge-HIV, bashintshe yini amathuba abo okuthola i-HPV nomdlavuza."
+    },
+    {
+      "hyp": "Ukuba nalolu lwazi kungasiza izibhedlela nama-clinic ukusebenzisa izindlela zokuhlola ngokuphumelelayo."
+    },
+    {
+      "hyp": "Abacwaningi bahlole amarekhodi eziguli abesifazane abangu-214 ababehlolwe futhi baphathwe nge-HPV, izilonda, nomdlavuza wesibeletho esibhedlela eWindhoek, eNamibia."
+    },
+    {
+      "hyp": "Bagxile ngokukhethekile ekansini yomphimbo yesigaba sokuqala, lapho isifo singaphathwa kalula futhi ngokuphumelelayo."
+    },
+    {
+      "hyp": "Baphathe futhi ulwazi mayelana nobudala bomfazi ngamunye, nempilo yakhe jikelele."
+    },
+    {
+      "hyp": "Ngokuhlola lezi zikhalazo, bathole ukuthi izindlela ezahlukene zokuhlola zivame ukunika abasebenzi bezempilo ulwazi oluhlukile, nokuthi zingase zibe usizo kakhulu ngaphambi noma ngemuva kokuthi i-HPV ibe yomdlavuza."
+    },
+    {
+      "hyp": "Isibonelo, umdlavuza wawuvame ukutholakala ngokuqoqa nokucubungula amangqamuzana esibeletho."
+    },
+    {
+      "hyp": "Kodwa-ke, izilonda zazivame ukubonakala ngokuhlola nje ngamehlo, kusetshenziswa indlela ebizwa ngokuthi “ukuhlola ngamehlo nge-acetic acid” (VIA)."
+    },
+    {
+      "hyp": "Inzuzo yale ndlela iwukuthi ivumela odokotela ukuthi bathole izilonda ngokushesha nangokubiza okuncane."
+    },
+    {
+      "hyp": "Lokhu kungenxa yokuthi usebenzisa imishini yemithi eyisisekelo eseseyisetshenziswa ekuhlolweni kwabesifazane kwezitho zangasese, njengesipikili (ithuluzi elenziwe ngensimbi elisetshenziswa ukubuka ngaphakathi kwesikhumba)."
+    },
+    {
+      "hyp": "Baphethe futhi ukuthi ukuhlanganisa izindlela ezahlukene kuvame ukunika odokotela ulwazi oluningi mayelana nengozi yomfazi yokuthola umdlavuza, ikakhulukazi ngokuhlolwa okuningi."
+    },
+    {
+      "hyp": "Ngaphezu kwalokho, abacwaningi bathole ukuthi abesifazane abadala, ikakhulukazi labo abanayo i-HIV, banokutholakala beba ne-kansa, ngakho ukuhlola njalo kungaba kubaluleke kakhulu."
+    },
+    {
+      "hyp": "Abacwaningi benezela ukuthi abesifazane abambalwa kakhulu abahlolwe yi-HPV (ngaphambi kokubheka izilonda) ngisho noma kukhona ivivi."
+    },
+    {
+      "hyp": "Ukwenza kanjalo kungaba yindlela ebalulekile yokuthola isifo ngisho nangaphambi kwesikhathi."
+    },
+    {
+      "hyp": "Ukuqeda, bathi imiphumela yabo ikhombisile isidingo sohlelo lwezempilo eNamibia lokucwangcisa amasu okuvimbela i-HPV nomdlavuza wesibeletho ngokucophelela, usebenzisa izindlela zokuhlola eziphucukile nezishibhile ukuthola lezi zifo ngokushesha okukhulu."
+    },
+    {
+      "hyp": "Ucwaningo lwaluyisivumelwano sokusebenzisana phakathi kwesayensi zaseNamibia naseNingizimu Afrika."
+    },
+    {
+      "hyp": "Inzuzo yokwelashwa ekubeni ne-HBV/HIV ndawonye uma kuqathaniswa nokuthi ube ne-HBV kuphela kubantu baseNingizimu Afrika."
+    },
+    {
+      "hyp": "Sinqunywe imigomo yamazwe ngamazwe yokususwa kwe-hepatitis B virus (HBV), saqala ukuqondisa abantu abane-HBV monoinfection vs. labo abane-HBV/HIV, ukuhlola umthelela wokwelashwa nokuqondisa ukuthuthukiswa kokunakekelwa kwezokwelapha."
+    },
+    {
+      "hyp": "Simemezela idatha yokubuka evela eqoqweni le-cohort eliqondile lomhlaba wangempela labantu abadala abangu-115 abane-hepatitis B ehlala njalo (CHB), esibhedlela seyunivesithi eKapa Town, eNingizimu Afrika."
+    },
+    {
+      "hyp": "Ukutheleleka okuhlangene kwe-HIV kwakukhona kubantu abangu-39 (34%)."
+    },
+    {
+      "hyp": "Sibhale idatha yesigaba esiphambene yabantu, yezokwelapha neyelabhoratri."
+    },
+    {
+      "hyp": "Uma kuqathaniswa nalabo abane-HIV coinfection, abantu abadala abane-HBV monoinfection babengavamile ukuba yi-HBeAg-positive (p=0.01), babengavamile ukwenziwa ukuhlolwa nge-elastography (p<0.0001), futhi babengavamile ukuba esikhwameni sokwelapha nge-antiviral (p<0.0001); babengavamile ukuba ne-HBV viraemia ebonakalayo (p=0.04), futhi babengavamile ukuba nezici zesifo se-liver okuhlanganisa i-thrombocytopaenia ephakathi/eqatha (p=0.007), i-bilirubin ephezulu (p=0.004), kanye ne-APRI score ephezulu (p=0.02)."
+    },
+    {
+      "hyp": "Izimo ezintathu ze-hepatocellular carcinoma zonke zivele ku-HBV monoinfection."
+    },
+    {
+      "hyp": "Idatha yethu ibonisa ukuthi abantu abane-HBV monoinfection bangase babe sengozini uma beqhathaniswa nalabo abane-HIV coinfection, okugcizelela ukungalingani okungenzeka kohlelo oluhleliwe ekubhekiseni, ukulandelela nokwelashwa."
+    },
+    {
+      "hyp": "Abacwaningi banikeza imiyalelo yokuthuthukisa ukwelashwa kwe-hepatitis B."
+    },
+    {
+      "hyp": "Kucwaningo lwakamuva, abacwaningi bakwazile ukugqamisa ukuthi ukutheleleka yi-hepatitis B (HBV) ne-human immunodeficiency virus (HIV) kungase kunikeze inzuzo yokwelashwa uma kuqhathaniswa nokutholakala yi-HBV kuphela."
+    },
+    {
+      "hyp": "ENingizimu Afrika, ukutheleleka okuqhubekayo kokubili yi-HBV ne-HIV kuyinkinga enkulu."
+    },
+    {
+      "hyp": "Odokotela kudingeka baqonde ukuthi lezi zinzalo kanye nezinambuzane ezisetshenziswayo ukuze ziphathwe zisebenzelana kanjani, ukuze bakwazi ukuxilonga nokukhathalela iziguli kangcono."
+    },
+    {
+      "hyp": "Abacwaningi babefuna ukuqhathanisa imiphumela yokuwelapha kwabagula ababe ne-HBV kuphela, nabagula ababe ne-HBV ne-HIV."
+    },
+    {
+      "hyp": "Kulesifundo, abacwaningi baqashwe iziguli ezindala ezingama-115 ezine-hepatitis B ehlala njalo (CHB)."
+    },
+    {
+      "hyp": "Baqashwe esibhedlela iTygerberg eKapa, eNingizimu Afrika."
+    },
+    {
+      "hyp": "Abanye abagulayo babephethwe yi-HIV (39) kanti abanye babephethwe yi-HBV kuphela."
+    },
+    {
+      "hyp": "Abacwaningi babheke uhlanga, ubudala nobulili, futhi benze izivivinyo ezahlukene zezokwelapha nezelabhoratri."
+    },
+    {
+      "hyp": "Bathole ukuthi iziguli ezazine-HBV kuphela zazingavamile ukuba ngaphansi kwanoma iyiphi uhlobo lokwelashwa ngokumelene ne-viral, zibonisa izimpawu zemvelo zesifo sesibindi (njengoba i-HBV iwumkhuhlane ongase ubangela isifo esinzima sesibindi)."
+    },
+    {
+      "hyp": "Abacwaningi bakwazile ukukhombisa ukuthi abantu abane-HBV kuphela babe sesimweni esibi uma beqhathaniswa nalabo abane-HIV ne-HBV, njengoba iziguli ezithintekile zombili izifo zazivame ukuba ngaphansi kokwelashwa kwe-antiviral ye-HIV, okunikeza futhi inzuzo ethile ekulweni nokuthinteka kwe-HBV."
+    },
+    {
+      "hyp": "Imiphumela yalesi sifundo ikhomba umthelela onokwenzeka wokungafani phakathi kokudlulisela, ukulandelela kanye nezinketho zokwelapha i-HBV uma kuqathaniswa ne-HIV ne-HBV coinfection, okuyisiza labo abane-HIV ne-HBV."
+    },
+    {
+      "hyp": "Abacwaningi bagcizelele ukuthi kumele sithuthukise futhi sinikeze isevisi ephephile futhi elungile kulabo abane-HBV kuphela."
+    },
+    {
+      "hyp": "Esinye isiphephelo sale ncwadi yisilinganiso esincane sabantu esasiqondene kuphela nelizwe elilodwa nezinhlelo zazo zezibhedlela."
+    },
+    {
+      "hyp": "Ezinye, mhlawumbe izindawo zezibhedlela eziphambili zingase zibonise umbono ohlukile uma kuqathaniswa nalokho okutholakele kuleli cwaningo."
+    },
+    {
+      "hyp": "Kumelwe kwenziwe izifundo eziningi ukuze kuqondwe ngempela umehluko olutholiwe kuleli sifundo."
+    },
+    {
+      "hyp": "Le ncwadi ibonise amandla okubambisana, ngabacwaningi abasebenza kuleliphrojekthi evela eNingizimu Afrika nase-United Kingdom."
+    },
+    {
+      "hyp": "Ngokuyisebenzisa inani labantu abagulayo baseNingizimu Afrika kule ncwadi, kubalulekile engxenyeni yabantu base-Afrika."
+    },
+    {
+      "hyp": "Ngaphezu kwalokho, ucwaningo lungasiza ekuthuthukiseni izinhlelo zokwelapha ezingcono kulabo abagulayo yi-HBV, i-HIV noma zombili."
+    },
+    {
+      "hyp": "Ukuhlolwa Komthelela Wokungaphephileki Emisebenzini Yebhizinisi Labesifazane E-SHIRORO Local Government Area Yase-Niger State"
+    },
+    {
+      "hyp": "Ucwaningo lolu luhlolwe umthelela wokungaphephileki emisebenzini yabantu abenza ibhizinisi ababesifazane eSifundeni sase-Shiroro eSifundazweni sase-Niger, kugxilwe ngokukhethekile ezindabeni eziphathelene nokuqinisana kwabesifazane ngokwezimali, uhlobo lwemisebenzi yabantu abenza ibhizinisi evamile phakathi kwabo kanye nobukhulu bomthelela wokungaphephileki emizameni yabo yabantu abenza ibhizinisi."
+    },
+    {
+      "hyp": "Isibonelo sabesifazane abangu-377 sihlolwe, okubangele ukutholakala kokuthi abesifazane baseShiroro banesifiso esikhulu sokwenza ibhizinisi, banobuningi bokuphila ngokuzimela kwezezimali, futhi bahlanganyela kakhulu e-SMEs."
+    },
+    {
+      "hyp": "Ucwaningo luye lwatholalokho futhi ukuthi ngenkathi ukungaphepheli kunomphumela omubi emisebenzini yabantu basebesifazane abangabaphathi bezimboni ngendlela yokulahleka noma ukwehla likaphethiloli phakathi kwezinye izinto, inani labesifazane abangabaphathi bezimboni alizange lihlupheke ngokwehla okukhulu."
+    },
+    {
+      "hyp": "Ucwaningo luncoma ukuthi kufanele kudalwe izinhlelo ezinokukhuthazela zokuthuthukisa ukufinyelela kwabesifazane kanye nokusebenzisa izinsizakalo zezezimali, futhi kufanele futhi kudalwe futhi kuqinisiwe izinhlangano zokuqapha umphakathi ukuze zilwe nokungaphephileki endaweni yocwaningo."
+    },
+    {
+      "hyp": "Abesifazane basebenza eNiger badinga ukuphepha okwengeziwe."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi abesifazane abenza ibhizinisi eNiger banesifiso esikhulu sokwenza ibhizinisi futhi bazimele ngokwezimali, kodwa ukuphepha ezigebengwini kuyinkinga."
+    },
+    {
+      "hyp": "Abacwaningi babefuna ukwazi ukuthi abesifazane abaphatha amabhizinisi e-Shiroro Local Government Area yase-Niger State baphephile kangakanani futhi baqinisekile kangakanani, nokuthi lokhu kungathinta kanjani amabhizinisi abo nokuzimela kwezezimali."
+    },
+    {
+      "hyp": "Bahlangana nabesifazane abangu-377 kule ndawo bexoxa ngezinselele ababhekana nazo ekuqaleni kwemisebenzi yabo, ukuxhomeka kwezezimali nokungakhululeki."
+    },
+    {
+      "hyp": "Baphóthule ukuthi u-43% wabesifazane bathi abazichibiseli emadodeni ngemali, futhi u-32% bathi kunabanye abantu abazichibiselisa kubo ngemali."
+    },
+    {
+      "hyp": "Abacwaningi bakwathola ukuthi u-85% wabesifazane babezuza imali emakhishini ahlukene, futhi bambalwa kuphela abathi babededelwe yimishahara."
+    },
+    {
+      "hyp": "Cishe u-56% bathole imali ngokulima, kanti u-79% ngokuhweba."
+    },
+    {
+      "hyp": "Cishe owesifazane oyedwa kwabayisihlanu uthole imali ngokuphehla izinwele, ukubuka, ukunxiba noma ukwenza izinto zokugeza."
+    },
+    {
+      "hyp": "Iningi labesifazane (91%) litshele abacwaningi ukuthi amabhizinisi abo athinteke ukwesaba kwabo ukohlaselwa amasela nezigebengu."
+    },
+    {
+      "hyp": "Balahlekelwa imali, ngisho namadoda abo ngenxa yalezi zihlaselo, ngezinye izikhathi kubaphoqa ukuba baphile bodwa nezingane zabo."
+    },
+    {
+      "hyp": "Abesifazane baphinda bathi babengenazo izakhono nemali eyanele yokwandisa amabhizinisi abo."
+    },
+    {
+      "hyp": "Abacwaningi babike ukuthi naphezu kwalelo zinga, abesifazane baseNiger baqhubeke bephumelela kakhulu emakhaya abo."
+    },
+    {
+      "hyp": "Bathe bathi eShiroro kwakukhona abantu bezizwe nezenkolo ezihlukahlukene, futhi lokhu kwakuhle nakwebhizinisi."
+    },
+    {
+      "hyp": "Ucwaningo olukhona luqhathanisa imiphumela yabacwaningi abanye ababike ukuthi abesifazane abanalo impumelelo emisebenzini ngenxa yokunakekela ekhaya."
+    },
+    {
+      "hyp": "Kunalokho, labo bacwaningi bathi impumelelo yabesifazane abenza ibhizinisi kule ndawo yaseNiger ithonya kakhulu yingozi yokuhlaselwa yizigebengu nezihlangu."
+    },
+    {
+      "hyp": "Abacwaningi baye bancoma ukuthi bonke ababambiqhaza kufanele bahlangane balwe nezinto ezingenza kube nzima ukuphumelela ekuhwebeni."
+    },
+    {
+      "hyp": "Ngokwesibonelo, abesifazane baseNiger kufanele bathole ukufinyelela okukhulu emalini, emapulazini nasekuphepheni."
+    },
+    {
+      "hyp": "Baphinda basikisela ukuthi abesifazane abasebenza emabhizinisini bangakha amaqembu azobasiza ekuqaleni nezigebengu nezihlubuki."
+    },
+    {
+      "hyp": "Amandla eSelenium, iCopper neZinc egazini likamama ngesikhathi sokukhulelwa ahlobene nezingozi zokubeletha kwangaphambi kwesikhathi okungalindelekile: Ucwaningo lwe-case-control oluvela eMalawi."
+    },
+    {
+      "hyp": "Ukukhulelwa kwangaphambi kwesikhathi ukukhulelwa okwenzeka ngaphambi kwamasonto angu-37 aphelele."
+    },
+    {
+      "hyp": "Ucwaningo lwenziwe ukuhlola ubudlelwano phakathi kwamazinga e-selenium, ithusi, ne-zinc egazini likamama, nokuzalwa kwengane ngaphambi kwesikhathi."
+    },
+    {
+      "hyp": "Kwakukhona abesifazane abangu-181 kulolu cwaningo oluhlanganisiwe lwe-case-control, abangu-90/181 (49.7%) abakhulelwe isikhathi esigcwele kanye naba ngu-91/181 (50.3%) abakhulelwe isikhathi esingaphelelanga."
+    },
+    {
+      "hyp": "Izinga eliphelele elikathi eliphakathi le-selenium egazini lalingu-77.0; SD 19.4µg/L, ithusi lalingu-2.50; SD 0.52 mg/L kanye ne-zinc lalingu-0.77; SD 0.20 mg/L ngamanani okubhekisela angu-47-142µg/L, 0.76-1.59mg/L kanye no-0.59-1.11 mg/L, ngokulandelana."
+    },
+    {
+      "hyp": "Imiphumela ikhombisa ukuthi kwakungekho ukushoda kwe-selenium, ne-zinc; kanye nokugxila okuphezulu kwe-copper yeserum ekukhulelweni."
+    },
+    {
+      "hyp": "Ukuzalwa kwengane ngaphambi kwesikhathi kuhlangene namanani aphezulu e-copper ne-zinc egazini likamama."
+    },
+    {
+      "hyp": "Amanani e-zinc, ithusi, ne-selenium ahlobene nokuzalwa kwangaphambi kwesikhathi"
+    },
+    {
+      "hyp": "Abacwaningi bathole ukwanda okuphezulu kwe-micronutrients i-selenium, i-copper, ne-zinc, kubesifazane abazalile ngaphambi kwesikhathi, kodwa basaphikisana uma lokhu kuwanda okuphezulu kuvela ekudleni abakudlayo."
+    },
+    {
+      "hyp": "Ukukhulelwa kwangaphambi kwesikhathi kwenzeka lapho owesifazane ebeletha ngaphambi kokuphelelwa amasonto angu-37 okukhulelwa."
+    },
+    {
+      "hyp": "Ukuzalwa kwengane ngaphambi kwesikhathi kuhlotshaniswa nemiphumela yempilo embi yengane kusukela ebuthweni bomzimba kuze kube yokufa."
+    },
+    {
+      "hyp": "Zingaba izimbangela eziningi zokubeletha kwangaphambi kwesikhathi, kodwa indima yokugxila okuphezulu kwezakhamzimba ezincane ezitholakala ekudleni nasendaweni ezungezile ayaziwa kakhulu."
+    },
+    {
+      "hyp": "Lezi zondlo ezincane zibalulekile ekukhuleni komntwana, kodwa abacwaningi bafuna ukwazi ukuthi kwenzekani uma kuningi kakhulu kwazo."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi babeqonde ukulinganisa amazinga e-selenium, ithusi, ne-zinc kubesifazane ababenamabele okubeletha ngaphambi kwesikhathi, bese beqonde ukuthola amathuba okuba ukubeletha ngaphambi kwesikhathi kubangelwa amazinga aphezulu alezo zondlo ezincane ezifundwe."
+    },
+    {
+      "hyp": "Abacwaningi baqoqe amasampula egazi kwabesifazane abangu-181 ngokushesha nje ngemva kokubeletha ezigulini ezimbili eLilongwe, inhloko-dolobha yaseMalawi, phakathi kukaJuni 2016 noMashi 2017."
+    },
+    {
+      "hyp": "Bathumela amasampula egazi elabhoratri eNorway lapho bakhipha khona i-serum, uhlobo oluhlanzekile lwegazi, balinganise amazinga e-selenium, ithusi ne-zinc."
+    },
+    {
+      "hyp": "Cishe ingxenye yabesifazane abangu-181 ababenesifundo babe nezinsana ezingazalwanga isikhathi, futhi abacwaningi bathole amazinga aphezulu kakhulu e-selenium, ithusi ne-zinc."
+    },
+    {
+      "hyp": "Bese balungisa izibalo zabo ukuze kubhekwe ezinye izinto eziningi ezifana nobudala, impilo jikelele, kanye nomlando wokukhulelwa ukuze kuvezwe imiphumela ecingelwayo yezakhamzimba ezincane ekubeni khona kokubeletha kwangaphambi kwesikhathi."
+    },
+    {
+      "hyp": "Baphetha ngokuthi amazinga amakhulu e-selenium ne-copper awazange adlale indima ebalulekile ekubeni imbuyiselo yengane ibe yisikhathi esingakapheli, kodwa ukuthi amazinga aphezulu e-zinc kwandisa ingozi yokubeletha kwangaphambi kwesikhathi ngaphezu kwesikhathi esi-6."
+    },
+    {
+      "hyp": "Kodwa-ke, inani elikhulu lethusi laliyinkathazo kubacwaningi, ngenxa yemiphumela eyingozi eyaaziwayo."
+    },
+    {
+      "hyp": "Ukuba nabesifazane abangu-181 kuphela ababehileleke ocwaningweni kuye kwakhawulela ikhono labo cwaningi lokufumana ngokufanele izingozi ezihambisana namanani aphezulu e-selenium, njengoba inani elifanele lababamba iqhaza lingama-600."
+    },
+    {
+      "hyp": "Ukudla kwansuku zonke kwabahlanganyeli akuphenyiwanga ukuze kutholakale imithombo engenzeka yezakhamzimba ezintathu, futhi i-Body Mass Index (BMI) yabo ayirekhodiwanga."
+    },
+    {
+      "hyp": "Lona ngumsebenzi wokuqala woluhlobo olulinganisa imiphumela ye-selenium, ithusi ne-zinc kubesifazane abakhulelwe eMalawi."
+    },
+    {
+      "hyp": "IAfrika inezinani eziphezulu kakhulu zokubeletha ngaphambi kwesikhathi - ngaphezu kuka-18% uma kuqhathaniswa namazwe aseNtshonalanga angu-5%, ngakho-ke abacwaningi bafuna ukwazi ukuthi ukudla kudlala indima."
+    },
+    {
+      "hyp": "Ukuphatha Kwekhaya, Ukuzinikela Kwendawonye Nokubusa Kwezwe Le-Pancake tortoise (Malacochersus tornieri) eKenya"
+    },
+    {
+      "hyp": "Izilwane zibonisa ukuziphatha okuhlukile ngokwesikhala nesikhathi okwandisa ukuphila kwazo."
+    },
+    {
+      "hyp": "Ukuqonda le miqondo kubalulekile ekuqalisweni kokulondolozwa nokulawulwa okuphumelelayo ikakhulukazi kwezinhlobo ezisengozini."
+    },
+    {
+      "hyp": "Kulesifundo, sihlaziye ukuthi ingabe i-Pancake tortoise inekhono lokubuyela ekhaya uma ithuthelwe kwenye indawo, futhi saqalaza nokwethembeka kwendawo kanye nokuhlala kwesizinda salesi sihlobo ezindaweni zaso zemvelo eKitui County, eKenya."
+    },
+    {
+      "hyp": "Ukuziphatha kwezilwane ezingama-39 zezilwane ezineqanda ezihlala ezikhefini zamatshe ezihlukene ngendawo eziyi-12 kwafundwa kusukela ngoJulayi 2020 kuya kuJuni 2022 ngokulandelela ngomsakazo, ukubopha ikhamera kanye nokuhlanganiswa kokuhlola amasampula ezingqikithi kanye ne-ad libitum sampling."
+    },
+    {
+      "hyp": "Ezine (14) zezilwane ezinqolobane zafakwa ama-radio-transmitters, zathuthelwa emaphethelweni ahlukile kude namaphethelwe azo asekhaya, futhi ukuhamba kwazo nokuziphatha kwazo kwakulandelelwa."
+    },
+    {
+      "hyp": "Ngaphandle kwabesifazane ababili kuphela abazizolise kahle ezikhaleni ezintsha zokuthuthela, wonke amanye ama-tortoise azame ukubuyela ekhaya, nge-46.15% kuwo elandela indlela yabo ebuyela ezikhaleni zawo zasekhaya ngenkambo eqondile ne-15.38% efika nasezindaweni ezikholelwa ukuthi zisezingeni lasekhaya lawo."
+    },
+    {
+      "hyp": "Ukubuyela ekhaya okuphumelelayo ngokuqinisekile kubonisa ubuqotho obukhulu bendawo kulolu hlobo."
+    },
+    {
+      "hyp": "Ukuhlaziywa kokutholakala kwezikhewu zezilwane zasehlathini kukhombisile ukuthi bekungekho umehluko obalulekile ngokwezibalo phakathi kwenani lezilwane zasehlathini ezazikhona ekuqaleni ezikhewu kanye nenani eliphakathi elikhona ezinsukwini ezingama-162 zokuhlola (F(1,22) = 0.0699, P > 0.05), okuqhubeka nokusekela ukuthembeka okukhulu kwendawo kule nhlobo."
+    },
+    {
+      "hyp": "Ngakolunye uhlangothi, izehlakalo zokubamba ngekhamera kanye nokukhetha okukhulu kwabonisa nokuthi izilwane zasePancake ziyindawo yazo, ngamadoda alwa ngokubulala ukuvikela izindawo zawo kwabanye amadoda afika."
+    },
+    {
+      "hyp": "Izilwane zasehlathini ezihlala zilahleka zinobukhulu obukhulu ‘bokubuyela ekhaya’."
+    },
+    {
+      "hyp": "Abacwaningi benze ukutholakala okumangalisayo ngesikhathi becwaninga ukuziphatha kwezilwane zase-Afrika eseMpumalanga ezingama-pancake tortoise (Malacochersus tornieri): lezi zilwane zingakwazi ukuthola indlela yazo ebuya ekhaya ngemva kokuthuthelwa ibanga elide."
+    },
+    {
+      "hyp": "Ukuqonda ukuthi benza kanjani lokhu nokuthi kungani benza kanjalo kungaba kubalulekile ekulondolozeni lezi zinyoka ezingavamile."
+    },
+    {
+      "hyp": "Ukuziphatha kokufuna ikhaya lezi zinkombazana ezikubonisa kubizwa ngokuthi “ukubuyela ekhaya”, futhi ezinye izilwane eziningi zingakwenza lokho."
+    },
+    {
+      "hyp": "Ukukwazi ukubuyela ezindaweni ezithile kuvumela izilwane ukuba zibuyele ekudleni, kubalingani, nasezikhumbulweni, okwenza kube lula ukuthi zisinde futhi zizale."
+    },
+    {
+      "hyp": "Nakuba ukuphindela endlini kwafundwa ezikhwameni zolwandle nezamanzi amnandi, abacwaningi kulolu cwaningo bathi sazi kancane kakhulu ngokuphindela endlini kwezinkamba (ezifanayo nezikhwame emhlabathini)."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bafuna ukuqonda okwengeziwe ngokuziphatha kwezilwane zase-pancake tortoise emakhaya azo eKenya, ezindaweni ezinamatshe."
+    },
+    {
+      "hyp": "Babafunda izilwane njengoba zikuhamba zidla, futhi nakuba ziya ekuphumuleni emaphethelweni, noma emaphethiniwe emibhedeni."
+    },
+    {
+      "hyp": "Abacwaningi baqaphele amaqembu ezikhukhula ze-pancake cishe iminyaka emibili, futhi babekela amakhamera ukuqopha amavidiyo ezilwane lapho bengabakqapheli."
+    },
+    {
+      "hyp": "Baphinkelela futhi abathumeli berediyo kuma-tortoise angu-14."
+    },
+    {
+      "hyp": "Lezi yizinto ezincane ezinika abacwaningi amandla okulandelela ukuhamba kwezilwane, nokubheka ukuthi zichitha isikhathi kuphi emini nasebusuku."
+    },
+    {
+      "hyp": "Abacwaningi base behlisa amanye alawa akhonjwa ezindaweni ezintsha, ukuze bakwazi ukuwafunda kalula."
+    },
+    {
+      "hyp": "Kepha, kwakuyisimangaliso kubaphenyi, izinqola ezimbili zaqala ukubuyela ezindaweni zazo zokuqala, phakathi kwa-1 no-2.5 km ukusuka lapho bezihambiswe khona."
+    },
+    {
+      "hyp": "Yilapho abacwaningi banquma khona ukuzama ukuhambisa izilwane eziningi ezikude namakhaya azo, ukuze babone ukuthi zizobonisa yini ukuziphatha okufanayo “kokuphendukela ekhaya”."
+    },
+    {
+      "hyp": "Kuyathakazelisa ukuthi, cishe ingxenye yeningi lezikhukhula zaphumelela ukubuyela ezikhefini ezifanayo ezazihlala kuzo ngaphambi kokuba zihanjiswe, zivame ukuhamba ibanga elingaphezu kwe-1.5 km ukuze zifike lapho."
+    },
+    {
+      "hyp": "Abanye abangu-15% babo bakwazile ukubuyela endaweni ephakathi, kodwa abazange bakwazi ukuthola i-crevice ababethathiwe kuyo ekuqaleni."
+    },
+    {
+      "hyp": "Abacwaningi bakuthola futhi ukuthi ama-crevice ahlukene ngokuvamile ayenani elifanayo lezikhukhula eziphumule kuwo, okuphakamisa ukuthi izikhukhula zihlala zisebenzisa izindawo ezifanayo ukuze ziphumule."
+    },
+    {
+      "hyp": "Izithombe ezivela kumakhamera nazo zibonise ukuthi izigqokokazi ezizinduna zazinendawo yazo, okusho ukuthi zazilwa nezinye izinduna ezazifuna ukungena endaweni yazo noma eceleni."
+    },
+    {
+      "hyp": "Abacwaningi bathi lokhu kuyisikhathi sokuqala ukubonwa kokuziphatha kokubuyela ekhaya ezikhonkwane ze-pancake, nokuthi imiphumela yabo ikhombisa ukuthi lezi zilwane zikhetha ukuhlala nokupumula ezindaweni ezifanayo noma nini lapho zingakwazi."
+    },
+    {
+      "hyp": "Ucwaningo lwabo aluzange luchaze ukuthi izigqikithi zazithola kanjani indlela yazo emakhaya, ngakho-ke ucwaningo lwesikhathi esizayo kufanele lugxile ekuqondeni leli qophelo elibalulekile."
+    },
+    {
+      "hyp": "Ngenxa yokuthi izilwane ngezinye izikhathi kudingeka zisuswe ziye ezindaweni ezintsha zokulondolozwa, lolu lwazi lungabasiza abalondolozi ukuba bagcine izigqoko ziphephile endlini yazo entsha."
+    },
+    {
+      "hyp": "Ucwaningo lwaluyisivumelwano phakathi kwesayensi evela eKenya naseChina, futhi lwanezela olwazini lwethu ngokuziphatha kokubuyela ekhaya kwezilwane ezinyoka nezinye izilwane."
+    },
+    {
+      "hyp": "I-Pharmacokinetics ye-Plasma ye-Rifampicin enkulu ngomlomo ne-Intravenous kubantu abane-Tuberculous Meningitis:"
+    },
+    {
+      "hyp": "Ivivinyo Elingahlelekile Ngokungahlelekile"
+    },
+    {
+      "hyp": "Amanani aphezulu e-rifampicin eyenziwa nge-intravenous angathuthukisa imiphumela ekwelapheni i-tuberculous meningitis kodwa awasebenzi kahle ezindaweni lapho kukhona khona izifo eziningi."
+    },
+    {
+      "hyp": "Siqagase ukuthi ukukhishwa kwe-rifampicin yeplasma kuzofanana phakathi kokunikezwa komlomo kwama-35 mg/kg wesisindo somzimba kanye nokufakwa kwe-intravenous kwama-20 mg/kg, okuye kwaphakanyiswa ezilingweni zokusebenza kahle kwesifo se-tuberculous meningitis."
+    },
+    {
+      "hyp": "Senze ucwaningo lwe-pharmacokinetic oluhleliwe ngokuhlanganyela kweqembu, olufakwe ngaphakathi kocwaningo lwezokwelapha lokwelashwa okuqiniswe kokulwa nezifo eziyimikrofoni ye-tuberculous meningitis."
+    },
+    {
+      "hyp": "Abahlanganyeli abane-HIV abanesifo sokuvuvukala kwengqondo ngenxa ye-tuberculosis baqokwa ezigulini zaseNingizimu Afrika, bahlukaniswe ngokungahleliwe emaqunwini amathathu okunikezwa kwe-rifampicin:"
+    },
+    {
+      "hyp": "esinye (sokumathwa, 10 mg/kg), esiphezulu (sokumathwa, 35 mg/kg), kanye ne-intravenous (20 mg/kg)."
+    },
+    {
+      "hyp": "Ukuqoqwa okuningi kwe-pharmacokinetic kwenziwe ngosuku lwesithathu."
+    },
+    {
+      "hyp": "Imininingwane ichazwe ngokusebenzisa ukuhlaziywa okungekho ngama-compartment, futhi ukukhishwa kuqhathaniswe ngama-geometric mean ratios (GMRs)."
+    },
+    {
+      "hyp": "Ababambiqhaza abangamashumi amane nesithupha bafake isibonelo se-pharmacokinetic (umthamo ojwayelekile, n = 17; umthamo ophezulu ngomlomo, n = 15; nge-intravenous, n = 14)."
+    },
+    {
+      "hyp": "Inani eliphakathi le-CD4 lalingamaseli angu-130/mm3 (ububanzi phakathi kwekota [IQR], amaseli angu-66 kuya kwangu-253/mm3)."
+    },
+    {
+      "hyp": "Amanani e-rifampicin geometric mean area under the concentration-time curve kusukela ku-0 kuya ku-24 h (AUC0–24) ayengama-42.9mg · h/ml (isiphambeko sokuthembela kwe-95% [CI], 24.5 kuya ku-75.0mg ·h/ml) ngenani elijwayelekile, 295.2mg · h/ml (isiphambeko sokuthembela kwe-95% [CI], 189.9 kuya ku-458.8mg · h/ml) ngenani eliphezulu lomlomo, kanye nama-206.5mg · h/ml (isiphambeko sokuthembela kwe-95% [CI], 154.6 kuya ku-275.8mg · h/ml) ngokuphathwa nge-intravenous."
+    },
+    {
+      "hyp": "I-GMR ye-rifampicin AUC0–24 yayingu-1.44 (90% CI, 0.84 kuya ku-2.21) kanti i-GMR yekhonsathresheni enkulu yemithi e-serum (Cmax) yayingu-0.89 (90% CI, 0.63 kuya ku-1.23) ngokuphathelene nokuphathwa nge-intravenous ngokusebenzisa umlomo onamandla."
+    },
+    {
+      "hyp": "I-AUC0–24 yeplasma ye-rifampicin yayiphezulu ngemva kokuthatha umthamo wemlomo ongu-35 mg/kg kunokunikezwa nge-intravenous ngomthamo ongu-20 mg/kg ezinsukwini ezimbalwa zokuqala zokwelashwa isifo sohlanga (TB)."
+    },
+    {
+      "hyp": "Imiphumela isekela ukunikezwa komlomo kwe-rifampicin ezivivinyweni ze-tuberculous meningitis zesikhathi esizayo."
+    },
+    {
+      "hyp": "Amaphilisi omthamo ophezulu angalingwa kubantu abane-HIV abanephthisi yengqondo."
+    },
+    {
+      "hyp": "Abacwaningi baye baqinisekisa ukuthi kubalulekile ukuqala ukuhlola ukuthi izilinganiso eziphezulu zomuthi i-rifampicin zingabasindisa yini iziguli ze-HIV ezine-tuberculosis meningitis."
+    },
+    {
+      "hyp": "Abantu abangafika kwaba-3 kwaba-5 abane-HIV abaphathwa yi-tuberculosis meningitis bafa ngenxa yalesi sifo, esihlasela uhlelo lwezinzwa."
+    },
+    {
+      "hyp": "Abasindile bavame ukushiywa benenkinga ehlala njalo ohlelweni lwabo oluphakathi lwemisipha kanye nezinzwa ezibalulekile ezivela ebuchosheni."
+    },
+    {
+      "hyp": "Lokhu kungathinta imizwelo yabo nokuhamba kwabo."
+    },
+    {
+      "hyp": "Abanye abagulayo baba nokuhluleka komzimba noma isihlabathi, noma izingxenye zobuso babo noma umzimba wabo ziyaba buthakathaka."
+    },
+    {
+      "hyp": "I-Rifampicin, iyeza elikhulu lokulwa nezifo elibulala amagciwane, liqhelekile linikezwa ngama-capsules ukuzama ukubulala amagciwane abangela isifo sokuvuvukala kwengqondo."
+    },
+    {
+      "hyp": "Abagulayo kakhulu bavame ukubona kunzima ukugwinya amaphilisi."
+    },
+    {
+      "hyp": "I-Rifampicin ingaphinda inikezwe nge-intravenously (emithanjeni) ngesimo esilukhuni."
+    },
+    {
+      "hyp": "Khona-ke, isibopho sifakwa emithanjeni yomuntu ogula ukuze leyo ncibiliko ikwazi ukukhishwa emzimbeni."
+    },
+    {
+      "hyp": "Akukaqalwa lutho ukuhlola ukuthi umzimba womuntu uthatha kanjani le mithi uma le ndlela isebenza."
+    },
+    {
+      "hyp": "Ukwelashwa nge-intravenous kudinga imishini eminingi, ukungena esibhedlela nomsebenzi wezempilo oqeqeshwe owazi ukuthi angayifaka kanjani i-needle ye-intravenous ngendlela efanele."
+    },
+    {
+      "hyp": "Ngakho-ke akuyona indlela eqondile ezindaweni ezinqanyuliwe zezwe."
+    },
+    {
+      "hyp": "Odokotela sebevele bayazi ukuthi i-rifampicin ayithathwa kahle yi-fluid ebuchosheni, e-spine nasekhanda, lapho ama-bacteria angafihla khona."
+    },
+    {
+      "hyp": "Kungakho kudingeka amazinga aphezulu (amanani) ukuze kubulawe ngempumelelo bonke amabhaktheriya emzimbeni womuntu."
+    },
+    {
+      "hyp": "Kodwa abacwaningi babengabaza ukuthi umthamo ophakeme kangakanani ungaba nomphumela futhi ukhulu."
+    },
+    {
+      "hyp": "Abacwaningi baseNingizimu Afrika ne-United Kingdom ngaleyondlela bafuna ukuthola, besebenzisa inani elincane labaguli, ukuthi kuphephile yini ukunika imithamo ephakeme ye-rifampicin noma njenge-capsules noma nge-intravenously, nokuthi imizimba yabo izoyithatha kanjani inguqulo ngayinye."
+    },
+    {
+      "hyp": "Kubalulekile ukwazi lokhu ngaphambi kokuba abacwaningi abanye baqale ngezivavanyo ezinkulu, noma ukuhlolwa, lapho bahlela ukunika iziguli eziningi kakhulu izilinganiso eziphezulu ze-rifampicin."
+    },
+    {
+      "hyp": "Omunye wemikhakha emithathu yokwelashwa nge-rifampicin unikezwe iziguli zaseNingizimu Afrika ezingama-46 ezine-HIV ezine-tuberculous meningitis."
+    },
+    {
+      "hyp": "Okokuqala kwakuwukwelashwa okujwayelekile kwamakhaphsuli anikezwa abagulayo njengamanje, okubalwa ku-10mg ye-rifampicin ngekhilogremu ngayinye isisindo somguli."
+    },
+    {
+      "hyp": "Enye iqembu yathola ama-capsule aphezulu angu-35 milligrams ngekhilogremu yesisindo somuntu."
+    },
+    {
+      "hyp": "Iqembu lesithathu lamukela ama-milligram angu-20 ngekhilogremu yesisindo somuntu nge-intravenously."
+    },
+    {
+      "hyp": "Izi sampuli zegazi zithathwe kubantu abagulayo ngemva kwezinsuku ezintathu."
+    },
+    {
+      "hyp": "Abacwaningi base bekeqela ukuthi kungakanani i-rifampicin elikhona e-plasma yegazi labo (ingxenye eyi-liquid yegazi)."
+    },
+    {
+      "hyp": "Kutholakale i-rifampicin eningi emizimbeni yabantu abaphathwe ngama-capsules omthamo ophezulu kunalabo abaphathwe ngokwelashwa nge-intravenous noma umthamo ojwayelekile."
+    },
+    {
+      "hyp": "Ubuningi bomuthi e-plasma yegazi babuhlangana kokubili ekwelapheni okuphezulu nokwesinyathelo."
+    },
+    {
+      "hyp": "Lezi zingxube zaziyinkulu kunezikhathi lapho iziguli zithola kuphela umthamo ojwayelekile."
+    },
+    {
+      "hyp": "Ngokusho lwabacwaningi, lokhu kubonisa ukuthi impilo yabagula nge-tuberculosis meningitis ingathuthukiswa uma bethatha imithamo ephakeme ye-rifampicin."
+    },
+    {
+      "hyp": "Akuyona into ebalulekile ukuthi bayithola njengezithoqo noma nge-intravenously - okubalulekile ukuthi bathole izilinganiso eziphezulu, ngoba imizimba yabo iyokwazi ukugcina ukugxila okuphezulu kwakho."
+    },
+    {
+      "hyp": "Imiphumela isekela okutholakele ezivivinyweni ezenziwe e-Uganda nase-Indonesia."
+    },
+    {
+      "hyp": "Izivivinyo ezincane ezimbili e-Indonesia, isibonelo, zikhombe ukuthi ukuphila kwabaguli abaningi kakhulu kungasindiswa uma benikezwa imithamo ephakeme ye-rifampicin ngomlomo noma nge-intravenously."
+    },
+    {
+      "hyp": "Kodwa-ke, abacwaningi bayaxwayisa ukuthi ababambiqhaza abambalwa abaye baba khona kulolu cwaningo kunalokho ababekuqale bekuthanda, okungase kulimale imiphumela yabo."
+    },
+    {
+      "hyp": "Ucwaningo lwenziwe eNingizimu Afrika."
+    },
+    {
+      "hyp": "Lusekela uhlelo lokwenza amavivinyo ukuhlola ukuthi kuyabafanele yini ukunika iziguli ze-HIV ezine-tuberculosis meningitis imithamo emikhulu ye-rifampicin."
+    },
+    {
+      "hyp": "Kulindeleke ukuthi ukwelashwa okunjalo kuzosindisa izimpilo eziningi zabantu e-Afrika nakwezinye izindawo zezwe lapho isifo sohlwempu lwe-tuberculosis siyimbangela enkulu yengxaki."
+    },
+    {
+      "hyp": "Ukusetshenziswa kanye komanyolo kanye ne-biochar kungayithuthukisa yini ikhwalithi yomhlabathi wasehlathini laselwandle oqhekekile kakhulu?"
+    },
+    {
+      "hyp": "Ukuncipha kokunisela komhlabathi kuyinkinga enkulu ekukhiqizweni kwezitshalo e-Afrika eseningizimu yeSahara."
+    },
+    {
+      "hyp": "Imiphumela emihle yokusebenzisa i-biochar kanye ne-compost ekuhlonyeni komhlabathi ibikwe ababhali abaningi."
+    },
+    {
+      "hyp": "Kulesifundo, kwakwenziwa i-incubation yesikhathi esingama-30 e-laboratory usebenzisa amasampula angu-120 g ngalinye le-Haplic acrisol ehlanganiswe ne-corn cob biochar (cbio), i-rice husk biochar (rbio), i-coconut husk biochar (coco300 ne-coco700) noma i-compost yomquba wezinkukhu (compost); kanye ne-rice husk biochar ehlanganisiwe (rcocomp) noma i-corn cob biochar ehlanganisiwe (cococomp) ngezilinganiso ze-1% w/w amendment: umhlabathi, ngokulandelana."
+    },
+    {
+      "hyp": "Ezinye izindlela zokwelapha ekutadishweni kwakuhlanganiswe ukombandlela oluhlanganisiwe lwenkukhu kanye ne-biochar yekhobho yekhomu noma i-biochar yeqanda lerayisi (1% ukombandlela + 1% biochar: 1% umhlabathi w/w), ngokulandelana, ukuhlola imiphumela yazo ekuphefumuleni komhlabathi oyisisekelo, i-pH yomhlabathi; ikhabhoni yomhlabathi; ikhono lokushintshana kwamakhethini; ikhabhoni ephelele ephilayo, nayithrogeni ephelele kanye nokugxila kwenayithrogeni etholakalayo."
+    },
+    {
+      "hyp": "U-Biochar kanye nokhumulo olusetshenziswe ngokwedwa noma ndawonye, kanye nokhumulo oluhlanganisiwe lo-biochar, lukhulise i-pH yomhlabathi ngamayunithi e-pH angu-0.28–2.29 uma kuqathaniswa nokulawula okungagciniwe."
+    },
+    {
+      "hyp": "Ukuphefumula okuyisisekelo okuvela ekompostini yodwa noma ekompostini yehusk yorayisi, noma e-biochar yekhobho yekhobhoni noma e-biochar ehlanganisiwe nekompostu kwakuphezulu kunokulawula okungagciniwe, okwakufana nokwaphuma ekuqondeni kwe-biochar kuphela."
+    },
+    {
+      "hyp": "I-TOC ekwelashini yomquba wedwa nasekuphatheni okuhlanganisiwe komquba we-corn cob ne-biochar, yayiphezulu nge-37% ne-117%, ngokulandelana, kunokulawula."
+    },
+    {
+      "hyp": "Ukusetshenziswa ndawonye kwe-biochar yehusk yorayisi ne-compost kwandisa i-MBC nge-132%, kuyilapho ukwengezwa kwe-compost kuphela kwandisa i-MBC nge-247%, uma kuqhathaniswa nokulawula."
+    },
+    {
+      "hyp": "Ngamafuphi, ucwaningo lubonise ukuthi ukusetshenziswa kwedwa noma ukusetshenziswa ndawonye komquba kanye ne-biochar, noma i-biochar ehlanganisiwe, kuye kwathuthukisa izici zekhwalithi yomhlabathi ezifana ne-pH yomhlabathi ne-MBC, futhi kwakhuthaza ukuzinza kwe-C yomhlabathi ngokuthuthukiswa kwe-TOC nokunciphisa ukulahleka kwe-C yomhlabathi ngokuphefumula okuyisisekelo."
+    },
+    {
+      "hyp": "U-Biochar kanye nokhumulo kuwathuthukisa umhlabathi wokulima izilimo."
+    },
+    {
+      "hyp": "Ucwaningo lolu luphenye indlela i-biochar, into ezinzile kakhulu, ecebile ngekhabhoni, eyenziwe ngezinto eziwile ezingasetshenziswanga, ingasetshenziswa ngayo ukuthuthukisa ikhwalithi yomhlabathi e-Afrika eseningizimu yeSahara."
+    },
+    {
+      "hyp": "Ucwaningo luthole ukuthi i-biochar iyayithuthukisa ikhwalithi yomhlabathi ngendlela efanayo nezinye izindlela eziyizindleko eziphezulu futhi ezingatholakali kalula."
+    },
+    {
+      "hyp": "Esinye sezinkinga ezinkulu eziqansa ukukhiqizwa kwezitshalo e-Afrika eseningizimu yeSahara yindlela umhlabathi ulahlekelwa ngayo ukukhula."
+    },
+    {
+      "hyp": "Ukuthuthuka kokulingana komhlabathi kuzoholela ekukhuleni komkhiqizo wezitshalo, okuzoqeda ubumpofu basemakhaya futhi kuphendule ukubola kwemithombo yemvelo."
+    },
+    {
+      "hyp": "Ucwaningo lubonise ukuthi i-biochar, into ezinzile kakhulu, ecebile ngekhabhoni, ingasetshenziswa ukuthuthukisa ukutheleleka komhlabathi."
+    },
+    {
+      "hyp": "I-Biochar iyimikhiqizo evela ekushiseni izinto eziphilayo, noma i-biomass, ngaphansi komoya omncane noma ongenayo."
+    },
+    {
+      "hyp": "Kuye kwabonakala ukuthi i-biochar iyandisa indawo ebushelelezi yomhlabathi, iyandisa ukufinyeleleka kwamanzi nomoya, futhi isebenze izilwanyana ezincani zomhlabathi."
+    },
+    {
+      "hyp": "Lolu cwaningo luhlolwe umphumela we-biochar ne-compost ekulinganisweni lomhlabathi usebenzisa izibonakaliso ezinjengokuphefumula komhlabathi, i-pH yomhlabathi, ukuba khona kwamagciwane, inani lekhaboni, kanye nenani lenayithrojeni elikhona."
+    },
+    {
+      "hyp": "Abacwaningi benze i-biochar yamasosha ommbila, i-coconut nehusk yorayisi besebenzisa i-pyrolysis, okuhilela ukushisa izinto eziphilayo ngaphandle komoya, ku-450 °C esiqandisini esenziwe endaweni."
+    },
+    {
+      "hyp": "Abacwaningi benze i-biochar yokuhlwanyela i-coconut usebenzisa i-pyrolysis ku-300 °C naku-700 °C."
+    },
+    {
+      "hyp": "Abacwaningi base behlanganisa amasampula omhlabathi ahlanganiswe ne-biochar izinsuku ezingu-30."
+    },
+    {
+      "hyp": "Isampuli ngayinye yayinawo umhlabathi okhethekile olungiselelwe okuthiwa yi-Haplic acrisol, owakuhlanganiswa nezinhlanganisela ezahlukene ze-biochar ezenziwe nge-corn cob, i-rice husk noma i-coconut husk, kanye ne-compost yomquba wezinkukhu."
+    },
+    {
+      "hyp": "Ezinye izibonelo zazinezimpahla ezihlanganisiwe zomhlabathi kanye nomanyolo wezinkukhu, kanye ne-biochar yehusk yorayisi, ne-biochar ye-corn cob, ngokulandelana."
+    },
+    {
+      "hyp": "Isampuli ngayinye yayina-1% ye-compost, i-1% ngayinye ye-biochar, ukuze abacwaningi bakwazi ukuhlola umphumela wokuhlanganiswa kwazo ngayinye ekulinganisweni lomhlabathi."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi ukwengeza i-biochar ne-compost ephusheni, ngokwahlukana noma ndawonye, kwandisa izinga le-pH lomhlabathi kusuka ku-0.28–2.29 ama-yunithi e-pH, uma kuqathaniswa nomhlabathi ongaxubiwanga."
+    },
+    {
+      "hyp": "Ukukhula kwe-pH kusho ukuthi umhlabathi ube mncane ukuba buhlungu."
+    },
+    {
+      "hyp": "Ucwaningo olutholile ukuthi ukuphefumula okuyisisekelo, noma inani elincane le-carbon dioxide elikhishwa yithaka, likhuphuke lapho i-compost kuphela efakwe, noma lapho i-compost ixutshwe ne-rice husk, noma i-corn cob biochar noma i-biochars ehlangene."
+    },
+    {
+      "hyp": "Izingcezu zomhlabathi zikhombise ukwanda okuyi-37% kokubola komthombo wemvelo lapho kusetshenziswa umquba wedwala kuphela, kanye nokwanda okuyi-117% lapho i-biochar yommbila ixutshwe nomquba wedwala."
+    },
+    {
+      "hyp": "Inani lomsebenzi wama-microorganism likhuphuke ngamaphesenti angu-132 lapho umhlabathi wawunezinto ezihlanganisiwe ze-compost ne-rice husk biochar, uma kuqhathaniswa nokukhula kwamaphesenti angu-247 emasampuleni omhlabathi ayene-compost kuphela."
+    },
+    {
+      "hyp": "Imiphumela yocwaningo lolu ikhombisa ukuthi kungenzeka ukunciphisa ukubamba komhlabathi usebenzisa i-biochar, elula futhi iyathengwa kalula."
+    },
+    {
+      "hyp": "Lokhu kuphambene nokuqeqeshwa okunye kokufaka ilayimu emhlabathini, okubiza futhi akunakutholakala kalula kubalimi abancinyane e-Afrika eseningizimu yeSahara."
+    },
+    {
+      "hyp": "Inethiwekhi ye-Fibrin Fibre Engaqondakaliyo ye-Arthritis ye-Rheumatoid kanye nobuhlobo bayo nokuziphatha komzimba, ukuvuvukala kanye ne-Thrombosis."
+    },
+    {
+      "hyp": "Ingozi yezehlakalo ze-cardiovascular kubantu abane-RA ikhuphuka ngokungalingani ngenxa yokuvuvukala komzimba wonke."
+    },
+    {
+      "hyp": "Imiphumela ehambisanayo yokuguqulwa kwe-autoimmune-associated citrullination esakhiweni nasemandleni okubangela i-thrombotic ye-fibrin(ogen) isalokhu ingaziwa."
+    },
+    {
+      "hyp": "Ngakho-ke saqhathanisa izikhombisi zomsebenzi wezinsimbi zegazi, ukuvuvukala, ukuhlanganiswa kwegazi kanye nokuhlanganiswa kwe-fibrin clot kubantu abane-RA nabantu abaphilile, saqhathanisa nobuhlobo phakathi kwemiphumela."
+    },
+    {
+      "hyp": "Izihlanzi zegazi zibuye zithathwe kubantu abagulayo be-RA abangu-30 kanye nabantu abaphilile abangu-25 abalinganiselwe ngeminyaka nobulili."
+    },
+    {
+      "hyp": "Amazinga e-SAA, i-CRP, i-ICAM-1 ne-VCAM-1 alinganisiwe kusetshenziswa i-sandwich immunoassay."
+    },
+    {
+      "hyp": "Ukuhlanganiswa kwegazi lonke kuhlolwe kusetshenziswa i-Thromboelastography."
+    },
+    {
+      "hyp": "Ukuxhumana kwe-fibrin clot kanye nesakhiwo sefayibha kuphenyiwe kusetshenziswa i-Scanning Electron Microscopy."
+    },
+    {
+      "hyp": "Ukubona nokulinganisa ukuguqulwa kwe-citrulline ezigangeni ze-fibrin ezakhiwe kwenziwe ngokusebenzisa i-antibody ye-Citrulline ephakathi ne-fluorescently ephakathi ne-Confocal Microscopy."
+    },
+    {
+      "hyp": "Amazinga e-SAA, i-CRP ne-ICAM-1 aphakanyisiwe kakhulu kubantu abane-RA uma kuqathaniswa nokulawula."
+    },
+    {
+      "hyp": "Izilinganiso ze-TEG ezihlobene nokuqala kokugandeka kwegazi (R ne-K), izinga lokuxhumana kwe-fibrin (i-α-Angle), nesikhathi sokufeza ukukhiqizwa okukhulu kwe-thrombus (TMRTG) kunciphisiwe kubantu abane-RA."
+    },
+    {
+      "hyp": "Izilinganiso eziphathelene namandla e-clot (MA, MRTG, TGG) azange zihluke ngokomibalo phakathi kwe-RA namaqembu okuqhathanisa."
+    },
+    {
+      "hyp": "Ukuboniswa kwemodeli yokubuyisela i-logistic kwabonisa ubudlelwano obuqinile phakathi kwezinto ezisabela ezingxenyeni ezibuhlungu (CRP, SAA) nezinombolo ze-TEG kunamamaki okusebenza kwe-endothelial."
+    },
+    {
+      "hyp": "Ukuhlaziywa nge-microscope kwembule izinhlanganisela ezinzima zefayibha ze-fibrin ezinzima kubantu abane-RA uma kuqathaniswa nokulawula [i-median (i-interquartile range) 214 (170-285) vs 120 (100-144) nm ngokulandelana, p<0.0001, i-Odds ratio=22.7)."
+    },
+    {
+      "hyp": "Ukutholwa kwezindawo eziningi ezicitrrullinated ngaphakathi kwemizimba ye-fibrin clot kubantu abane-RA, okwakuncane kakhulu emasampuleni okulawula (p<0.05, OR=2.2)."
+    },
+    {
+      "hyp": "Abaguli abane-RA esebenzayo babonisa iphrofayili yokugqwala igazi engalingani nemiphumela jikelele ehlotshaniswa nezinye izimo zokuvuvukala."
+    },
+    {
+      "hyp": "Ukuguqulwa kokwakheka kwamapurotheni yi-citrullination ehlobene nokuziphatha komzimba kungadlala indima ekuqondeni ubukhulu be-fibrin kanye nethuba lokuletha ingozi enkulu ye-thrombotic kubantu abane-RA."
+    },
+    {
+      "hyp": "Ukugandeka kwegazi kubantu abane-arthritis kungachaza ingozi yabo ephakeme yokuhlaselwa yisifo senhliziyo, isifo sobuchopho."
+    },
+    {
+      "hyp": "Ucwaningo olusha olumayelana nohlobo lwe-rheumatoid arthritis luhlinzeke ngokuqonda okungcono ngokuxhumana okungenzeka phakathi kwalesi simo kanye nengozi ephakeme yesifo senhliziyo."
+    },
+    {
+      "hyp": "Ukuvuvukala kwamajozi (RA) kuyisimo esibuhlungu nesiphazamisayo sokuziphatha komzimba, esihambisana nokuvuvukala kwamajozi nakubumzimba bonke."
+    },
+    {
+      "hyp": "Sekuyisikhathi eside manje, ososayensi bayazi ukuthi labo abagulayo banengozi engu-50% ephakeme yokuthola izifo zesistimu yomchamo (CVD) – njengokuqhaqhazela noma ukuhlushwa yinhliziyo."
+    },
+    {
+      "hyp": "Iphuzu eliyisihluthulelo kulowo mngcipheko iwukuthi ukuvuvukala kuthinta kanjani inqubo yokugqwala kwegazi."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bahlolisise lobu budlelwano, ukuze bathole ukuthi kungani ngempela i-RA ikhuphula ingozi ye-CVD."
+    },
+    {
+      "hyp": "Ngokuqondile, abacwaningi bahlole imiphumela yokuvuvukala nokuguqulwa kwesakhiwo kumaprotheni athile ahlobene nokuqina kwegazi, okuthiwa yi-fibrins."
+    },
+    {
+      "hyp": "Lezi zidakamizwa zikhona njengezintambo ezinde ezakha “umsebenzi” oyisisekelo weziqephu zegazi, ngakho noma yikuphi ukuguqulwa kwe-fibrins ngokwazo kungaba nemiphumela emibi ekuqinisweni kwegazi ngokujwayelekile."
+    },
+    {
+      "hyp": "Abacwaningi baqathanise amasampula egazi abantu abane-RA namasampula abantu abaphilile."
+    },
+    {
+      "hyp": "Kulawo wonke amacala, abacwaningi babefuna “izimpawu” egazini ezibonisa ukuvuvukala, kanye nanoma yimaphi umehluko ongaqondakali ekuqinisweni okuvamile kwegazi okungandisa ingozi ye-CVD."
+    },
+    {
+      "hyp": "Ama-clots ngokwawo nawo ahlolwe ngemicroscope, ukuze kubonwe noma yikuphi ukuguquka kwesakhiwo se-fibrin protein yawo."
+    },
+    {
+      "hyp": "Abacwaningi baphawula ukuthi izicubu ezivela kubantu abane-RA zakha ngokushesha kunalezo ezivela kubantu abaphilile, nokuthi izinhlanganisela zeprotheni ezazenziwe nazo zazikhulu kakhulu kunama-fibrins avamile."
+    },
+    {
+      "hyp": "Kwakukhona futhi ukuguqulwa kwama-amino acid akha amaprotheni e-fibrin, okwabangela ukuba aqalise impendulo yomzimba yokuvikela, okubangele ukuvuvukala okwengeziwe."
+    },
+    {
+      "hyp": "Abaphandi abanye baye baphawula izinguquko esakhiweni se-amino acid yama-fibrin ezinhlangothini zabantu abane-RA ngaphambili, kodwa lokhu kuyisikhathi sokuqala abaphandi bebona umphumela ofanayo egazini."
+    },
+    {
+      "hyp": "Uma kuhlanganiswa nezinye izinguquko ezibonwe ezigcawini zegazi, okutholakele kungasiza ososayensi ukuthi bathuthukise ukuqonda okujulile kokuthi ubuhlobo phakathi kwe-RA ne-CVD bunjani, nokuthi ungazibona kanjani izimpawu zalezi zifo ekuqaleni."
+    },
+    {
+      "hyp": "Nakuba lezi ziphumo zokuqala zithembisa, kufanele kuqashelwe ukuthi inani lesampula yocwaningo lalingancane ngokulinganiswa."
+    },
+    {
+      "hyp": "Abacwaningi baphinda bakhuluma ukuthi indlela abayisebenzisile yokuthola ukuguqulwa kwama-amino acid eprotheni nayo ingase ithole imiphumela evela ezintweni ezingahambi kahle, okusho ukuthi kuzodingeka ukuhlolwa okuqondile okuqondene nama-fibrins ukuqinisekisa umphumela esikhathini esizayo."
+    },
+    {
+      "hyp": "Ekugcineni, ukuqonda ubudlelwano obuyingozi phakathi kwe-RA nokungena engozini enkulu ye-CVD kungathuthukisa imiphumela yabagula be-RA njengoba sifunda ukubona nokuphatha lezi zifo ngokuphumelelayo."
+    },
+    {
+      "hyp": "Abacwaningi baseNingizimu Afrika, eDenmark nase-United Kingdom babehilelekile kuleli cwaningo, elalixhaswe yi-South African Medical Research Council."
+    },
+    {
+      "hyp": "Izibikezelo zezimo zezulu zasemanzini zabasebenzisi bolwandle lwasemgwaqeni – imibono, ukusetshenziswa nokusetshenziswa kwazo."
+    },
+    {
+      "hyp": "Ucwaningo olukhona luhlosile ukubhekana nokungafani phakathi kwesayensi nabantu ngendlela yokungafani okungenzeka phakathi kokunikezwa nokuthandwa kolwazi okwaziwa ngokuthi yi-usability gap."
+    },
+    {
+      "hyp": "Kulesi simo, sihlola ukubaluleka kolwazi lwemozulu yolwandle (metocean) njengoba kubonakala kubasebenzisi emazweni amabili eNingizimu Hemispha:"
+    },
+    {
+      "hyp": "iNingizimu Afrika neNyuzilani."
+    },
+    {
+      "hyp": "Lapha, ukugxila akuyona kuphela emibonweni, ukusetshenziswa nokusetshenziswa kokubikezelwa kwemicimbi ehlasimulisayo, kodwa kunokugxila ekubeni nokubandakanyeka kokubikezelwa okuvamile, okujwayelekile."
+    },
+    {
+      "hyp": "Ucwaningo lwenziwe ngokusebenzisa uphendulo, oluhlelwe ngemibuzo yokucwaninga emithathu."
+    },
+    {
+      "hyp": "Imibuzo yocwaningo ihlanganisa izindikimba ezihlukahlukene kusukela ekusebenzeni kalula kwemishini yokubikezela, ukunemba nokuhambisana, ukusetshenziswa kalula, idumela lezikhungo, nokungabaza okuhlobene noshintsho lwesimo sezulu (okumbalwa nje)."
+    },
+    {
+      "hyp": "Imibuzo eku-inthanethi yasatshalaliswa kabanzi ukuze ihlanganise abasebenzisi bokuzijabulisa nabokurhweba."
+    },
+    {
+      "hyp": "Ucwaningo luye lwasebenza ekubeniqonde amasiko okwenza izinqumo angase abe nomthelela oluhlukile ezidingweni zolwazi lwabasebenzisi bolwandle lwasemgwaqeni."
+    },
+    {
+      "hyp": "Uhlalutyo lokuvumelana komdabu (CCA) lusetshenziswe ukuphenya ukuqondana okuhlanganyelwe nokuhlukahlukana kokubona phakathi kweqembu elikhulu labaphenduli kanye neqembu elihlukile ngezigaba nezwe."
+    },
+    {
+      "hyp": "Sithole amazinga ahlukahlukene okuvumelana eqenjini lonke (abahlanganyeli basemazweni womabili kanye nawo wonke amasekhta aqoqwe) uma kuqhathaniswa namaqembu ahlukene abasebenzisi."
+    },
+    {
+      "hyp": "Bonke abahlanganyeli behlangene babonisa ukuvumelana okuvamile komphakathi ngokuqondene nezindaba ezazibekwe, kodwa ngezinye izinguquko zemibono ezingeni lezizwe, okubonisa ukuthi kungenzeka kube khona amasiko aphansi."
+    },
+    {
+      "hyp": "Uma sihlaziya amaqembu ahlukene ezizwe nakwezindawo ngokwahlukana, sathola ukuvumelana okuhambisanayo kakhulu komoya wamasiko eqenjini labasebenzisi baseNingizimu Afrika, ngokuvumelana okukhulu kungakhathaliseki ukuhlanganyela kwezindawo."
+    },
+    {
+      "hyp": "Iqembu labasebenzisi bezentengiselwano lase-New Zealand lalihambisana kakhulu nabanye abantu abancane."
+    },
+    {
+      "hyp": "Sixoxoxa ngemiphumela evela kwimithombo yethu mayelana nezici ezibalulekile ekusetshenzisweni kwezinsizakalo, futhi ngakho-ke ekukhiqizweni kokubikezela okubalulekile."
+    },
+    {
+      "hyp": "Kukhona nezinto eziningi ezibalulekile zeziprognostications ezisekelwe esayensi esikhathini esizayo ezicatshangelwa, kucabangwa imiphumela elikhulelwe yoshintsho lwemozulu."
+    },
+    {
+      "hyp": "Siphetha ngokuncoma umdwebo weconsceptual ukuze sigqamise ukusebenzisana okubalulekile phakathi kokubambisana ekukhiqizeni iziprofetho nokulunga/ukuhambisana kwesayensi."
+    },
+    {
+      "hyp": "AbaseNingizimu Afrika, abaseNew Zealand bathemba izibikezelo zesimo sezulu olwandle."
+    },
+    {
+      "hyp": "AbaseNingizimu Afrika nabaseNew Zealand abasebenza futhi bahlala emagqumeni basuselwa ezinsizakalweni zokubikezela isimo sezulu ezilula ukuzisebenzisa, futhi ezihlale zinikeza ukubikezela okuqondile."
+    },
+    {
+      "hyp": "Amasevisi kazwelonke okubikezela isimo sezulu namawebhusayithi amaningi ezohwebo anikeza izibikezelo zokuthi isimo sezulu sizoba njani."
+    },
+    {
+      "hyp": "Bazimisela ukuba nembala nangokusebenziseka ngangokunokwenzeka."
+    },
+    {
+      "hyp": "Isayensi enkulu kanye nokucabanga okwesayensi kungenela kulobu buqikithi."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bakhetha ukubheka indlela abantu baseNingizimu Afrika naseNew Zealand abasebenzisa ngayo izinsizakalo zokubikezela – womabili amazwe anamahlathi amade, kodwa anabemi abahlukene kakhulu nezimimo zasemahlathini."
+    },
+    {
+      "hyp": "Babefisa ukwazi ukuthi ngazikhathi zingakanani laba bantu basemgwaqeni belwandle basebenzisa izinsizakalo zokubikezela zezwe noma zezohwebo, ngamabomu ani, nokuthi ngabe bazithole ziwusizo futhi zinethemba."
+    },
+    {
+      "hyp": "Lezi yizici ezibalulekile uma kubhekwa ukuthi ukushintsha kwesimo sezulu esikhathini esizayo kungathinta kanjani ukuqagela kwesimo sezulu."
+    },
+    {
+      "hyp": "Imibuzo eku-inthanethi iphendulwe abantu baseNingizimu Afrika abangu-31 nabantu baseNew Zealand abangu-126."
+    },
+    {
+      "hyp": "Lokhu kwakuhlanganisa abantu abasebenzisa izibikezelo zesimo sezulu ngenxa yemisebenzi yabo (umzekelo abalobi kanye nezinhlangano zokusesha nokusindisa), nabanye ababamba iqhaza emisebenzini yezemidlalo neyenjabulo ehlobene nolwandle njengokugibela amaza, ukuhamba nge-paddle, noma ukubhukuda."
+    },
+    {
+      "hyp": "Abacwaningi babuze ngokuthi kulula kangakanani ukusebenzisa isevisi yokubikezela isimo sezulu esikhethiwe, nokuthi ukubikezela kwayo kwakunembile futhi kuqondile kangakanani."
+    },
+    {
+      "hyp": "Ababambiqhaza baluhlu lutho oluwenzile ukuba lube luncedo futhi lubaluleke kubo, futhi bathi uma lokhu kungashintsha ngenxa yoshintsho lwesimo sezulu."
+    },
+    {
+      "hyp": "Kwakudingeka futhi bathi noma bayethemba yini ulwazi olunikezwe izinsizakalo zezulu zasezweni labo, nokuthi bazizwa kanjani ngalo."
+    },
+    {
+      "hyp": "Iningi lama-South Afrika athathe ingxenye kulokhu kuphenyo kwakuwaba-surfers, noma abantu abasiza emisebenzini yokusesha nokophula noma eziprojekthini zocwaningo."
+    },
+    {
+      "hyp": "Abantu abaningi baseNew Zealand abaphendule imibuzo babebuka izibikezelo zesimo sezulu ngoba babefuna ukuya ukudoba, ukuqhuba isikebhe noma ukuhamba ngomkhumbi olwandle."
+    },
+    {
+      "hyp": "Ababambiqhaza belizwe zombili babemethemba ulwazi abaluphiwe yi-National Weather Services yabo."
+    },
+    {
+      "hyp": "Babethanda izinsizakalo zokubikezela ezinembile, ezihlala zifanayo, ezilula ukuzisebenzisa futhi ezinemikhakha engaguqulwa ukuze zifanele izidingo zabo."
+    },
+    {
+      "hyp": "Ababambiqhaza abasebenzise le nsizakalo ngenhloso yemisebenzi ngokujwayelekile bathole ukuthi izibikezelo zezimo zasemanzini olwandle eduze komkhumbi zazingezona ezinembile ngokwanele."
+    },
+    {
+      "hyp": "Ulwazi lweminye imikhakha lwalunembile kunolunye."
+    },
+    {
+      "hyp": "AbaseNingizimu Afrika babethanda ukusebenzisa izinsizakalo zezulu kakhulu kunabaseNew Zealand, futhi babebukele okungenani kanye ngosuku."
+    },
+    {
+      "hyp": "Kubaphenduli abayi-9 kwabayi-10, uhlelo oluhle kakhulu lokubikezela lwalubaluleke kakhulu."
+    },
+    {
+      "hyp": "Abaningi bakhetha isevisi enikeza ukubuka kusukela ezinsukwini ezintathu kuya kwezingu-7 kusasa."
+    },
+    {
+      "hyp": "Abantu abasebenza ekulimbeni kwezilwane zasolwandle noma ababefanele bahlele ngezimo ezingenzeka eziphuthumayo bafuna ukuqagela kwesikhathi eside nokwezinkathi."
+    },
+    {
+      "hyp": "Abasebenzisi abaningi bakholelwa ukuthi ngenxa yokwanda kokushintsha kwesimo sezulu, izinsizakalo zokubikezela kuzofanele zisebenzise ulwazi olusekelwe esayensi oluhle nakakhulu esikhathini esizayo ukuze kuqinisekiswe ukunemba kokubikezela."
+    },
+    {
+      "hyp": "Ucwaningo olunje olungakanani alukawuthathwa emazweni aseNingizimu Hemisphare."
+    },
+    {
+      "hyp": "Abacwaningi bathemba ukuthi bakwazile ukufunda okwanele kubantu ababambene ngokuya ngemibuzo abababuze yona."
+    },
+    {
+      "hyp": "Omunye ubuthakathaka obunokwenzeka yikuthi abantu abaningi abahlala eNew Zealand kunaseNingizimu Afrika babeqoqezelele kulokhu kuphenyo."
+    },
+    {
+      "hyp": "Umsebenzi wabo uzosiza abantu abasebenza ezinsizakalweni zokubikezela isimo sezulu ukuklama imikhiqizo engcono ethatha izidingo zamaklayenti abo."
+    },
+    {
+      "hyp": "Bayokwazi ukwenza uthuthuko kanye nezinguquko ngokuya ngokwaneliseka kwamakhasimende abo nokuthi kungani bawasebenzisa."
+    },
+    {
+      "hyp": "Indlela Yokubamba Iqhaza Ekulinganiseni Ubuhle Bezinhlelo Zokusebenza Ezolimo Ezifanelekela Isimo Sezulu:"
+    },
+    {
+      "hyp": "Icala laseLushoto"
+    },
+    {
+      "hyp": "Umqondo wezolimo oluhlakaniphile ngesimo sezulu (CSA) uyaqina emhlabeni jikelele."
+    },
+    {
+      "hyp": "Kodwa-ke, aliqondile ngalokho okufanele kufakwe phansi kwezinsika zalo ezintathu—ukukhiqiza, ukuqina nokunciphisa."
+    },
+    {
+      "hyp": "Ngenxa yalokho, i-CSA ihlanganisa izindlela/izinkambiso zezolimo eziningi ezahlukene, okwenza kube nzima ukukhetha imigomo ye-CSA."
+    },
+    {
+      "hyp": "Okokuqala, kunokuntuleka kokulinganisela okuqondile nokusebenza kanye nezindlela zokuhlola ubuhle bezingxenye ezikhuthaza ukumelana nokushintsha kwesimo sezulu."
+    },
+    {
+      "hyp": "Okwesibili, ulwazi oluncane lukhona mayelana nethonya lezinqubo ezihlukahlukene eziveliwe njenge-CSA, ikakhulukazi ezweni elithuthukayo."
+    },
+    {
+      "hyp": "Ekugcineni, ukwenza phambili kwe-CSA akubheki imibono yabanakekeli ukuqinisekisa ukuthi izixazululo zisebenza, zifanele futhi zinekhono elikhulu lokwamukelwa."
+    },
+    {
+      "hyp": "Lapha, sichaza uhlelo olusha lokuhlanganyela lokulinganisa ubuhlakani bezezimboni zezolimo ekuqondeni ukumelana nokushintsha kwesimo sezulu emisebenzini yabathengisi abancinyane."
+    },
+    {
+      "hyp": "Lokhu kuqopha izibonakaliso (nezikhombo) zezinga lefama zezinsika zezokuphepha kokudla nokuziqondanisa kwe-CSA."
+    },
+    {
+      "hyp": "Kuyasekela futhi ukubala okuhlanganyelwe kwezinkomba, okuvumela ukwenziwa kokulinganisa okuqala nokwekusasa kokuhlakanipha kwezimo sezulu."
+    },
+    {
+      "hyp": "Le phrotokoli yalingwa phakathi kwabalimi abangu-72 abasebenzisa izinhlobo ezihlukahlukene zezinhlelo zokusebenza ze-CSA eLushoto, eTanzania, eyi-village ehlakaniphile ngesimo sezulu."
+    },
+    {
+      "hyp": "Abalimi ngokukhethekile babeqakathekisa izinhlelo ezaziphucula ukukhula komhlabathi nesakhiwo sawo, ezinciphise ukugeleza kwamanzi ezingqimba, futhi ezibuyisela izwe eliwohlokile ngenxa yemiphumela emihle ekukhuleni kwemikhiqizo kanye nezolimo zemikhiqizo yasezinyangeni ezishisayo."
+    },
+    {
+      "hyp": "Ikakhulu, izinhlelo zokusebenta ze-CSA zandise ukukhiqizwa kwezilwane, ukukhiqizwa kokudla, ukusetshenziswa nokungenisa imali."
+    },
+    {
+      "hyp": "Leli phrotokoli kulula ukulilungisa ngokwezindawo ezahlukene nezinhlelo zokulima futhi liyavumela ukuqondiswa kangcono kokungenelela."
+    },
+    {
+      "hyp": "Kodwa sincoma ukuthi i-CSA yamukelwe njengengxenye yenqubo yokubeka iliso, ukuhlola nokufunda."
+    },
+    {
+      "hyp": "Izindlela ezintsha zokubeka iliso zisiza ososayensi kanye nabalimi ukuba balungiselele ushintsho lwemozulu."
+    },
+    {
+      "hyp": "Oososayensi abasebenza nabalimi eThanzaniya manje bangalinganisa ukuthi izindlela ezintsha zokulima zisebenza kangcono kangakanani ekuqedeni imiphumela yoshintsho lwesimo sezulu."
+    },
+    {
+      "hyp": "Bathemba ukuthi indlela yabo izokuthuthukisa ukuphepha kokudla kanye nemikhiqizo yemifino yabalimi nakwezinye izingxenye zezwe."
+    },
+    {
+      "hyp": "“Ukukulima okuhlakaniphile ngesimo sezulu” kuyinto i-United Nations eyikhuthaza ukusiza abalimi abancinyane ukuba balungiselele ushintsho lwesimo sezulu."
+    },
+    {
+      "hyp": "Umgcini wezitshalo oqondayo isimo sezulu uzilungisa ngokushintsha kwezimo zezulu futhi uyakwazi ukwandisa ukuphepha kokudla ngokwandisa ukukhiqizwa kwezitshalo zakhe."
+    },
+    {
+      "hyp": "Lena yinkinga ebaluleke kakhulu kubalimi baseTanzania, njengoba izwe selihlushwa ukwehla kokuvuna kwezitshalo ezibalulekile zezinhlamvu ngenxa yokushintsha kwesimo sezulu."
+    },
+    {
+      "hyp": "Kodwa-ke, abacwaningi bathi kunzima ukulinganisa impumelelo yezinhlelo zokusebenza eziqaphela isimo sezulu, njengokwenza umanyolo, futhi abalimi ngokwabo ababuzwa njalo ukuthi izinhlelo zokusebenza zisebenza yini ngendlela ebhaliwe."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bafuna ukuklama indlela yokulinganisa impumelelo yezinhlelo zokusebenza ezihlakaniphile ngesimo sezulu, ngokugxila ngokukhethekile ekulungiseni ukuphepha kokudla nokuguquguquka."
+    },
+    {
+      "hyp": "Ukuqala, bafunda ezinye izifundo zezolimo, baphumelela ohlwini olu-2 oluhlanganisa izici eziyi-14, noma “izibonakaliso”, ezibalulekile ekuqondeni ukuphepha kokudla nokuguqulwa."
+    },
+    {
+      "hyp": "Bese, bebenza eLushoto District eTanzania, abacwaningi basebenzisana nabalimi bendawo kanye nochwepheshe abaningi bezemilimi ukuze baqonde izibonakaliso ezibaluleke kakhulu kuwo wonke uhlu."
+    },
+    {
+      "hyp": "Abalimi baqaphele ukukhiqizwa kokudla njengophawu oluqakathekile kakhulu lokuqinisekisa ukuphepha kokudla."
+    },
+    {
+      "hyp": "Ngamanye amazwi, noma iyiphi imisebenzi eyenze ukukhula kwezitshalo zabo kwaba ngcono yayibaluleke kakhulu."
+    },
+    {
+      "hyp": "Okwamanje, ngokuqondene nokuqondana, abalimi babekhuthele kakhulu ezinqubweni ezazibasiza ukuthi bavikele umhlabathi wezimafa zabo, kanye nalezo ezithuthukisile ulwazi, amakhono, kanye nomholo wabo."
+    },
+    {
+      "hyp": "Ngemva kokuba abacwaningi sebeqinisekisile ukubaluleka kwesibonisi ngasinye, bakwazi ukuzisebenzisa ukuhlola ukuphumelela kwezinhlobo eziyisithupha zezinhlelo zokusebenzelana eLushoto."
+    },
+    {
+      "hyp": "Kuzo zonke izimo, babuze abalimi bendawo, ngesikali esingu-1-5, ukuthi ngabe bekukhona ukwanda kwesibonakaliso ngasinye kusukela lapho kuqalwa khona ukungenelela."
+    },
+    {
+      "hyp": "Lokhu kwabavumela ukubona ukuthi yiziphi izixazululo ezazinomphumela omkhulu ekukhuleni kokudla nokuguqulwa."
+    },
+    {
+      "hyp": "Bathole ukuthi kuphela ukungenelela okungu-3 kwezingu-6 ebezisetshenziswa kwakunethonya langempela."
+    },
+    {
+      "hyp": "Lezo zazikuyi-crop varieties ezibola, ezingakhuli kahle ngesikhathi sompompo, futhi zinikeza ukudla okungcono kwezilwane."
+    },
+    {
+      "hyp": "Abacwaningi bathi indlela yabo yenza kube lula ukuqinisekisa ukuthi izinhlelo zokungenelela zesikhathi esizayo zihlangabezana nezidingo zabalimi baseLushoto kanye nemigomo yokuhlinza kwezolimo oluhlakaniphile."
+    },
+    {
+      "hyp": "Bengeza ukuthi ukukhetha izindlela zokungenelela ezifanele kuphinde kukhulise amathuba okuba abalimi bancoma amasiko amahle kubamelene babo, ngaleyo ndlela basakaza imibono ehlakaniphile ngesimo sezulu."
+    },
+    {
+      "hyp": "Ngokuyisisekelo, le ndlela ingasetshenziswa nakwezinye izindawo, futhi ingasiza ekuqinisekiseni ukuthi amasu ahlakaniphile ngesimo sezulu abheka izimo zendawo nolwazi lolwimi ngokubeka iliso okuqhubekayo nokulinganisa."
+    },
+    {
+      "hyp": "Ngokuyenza kanjalo, izinhlelo zokulima eziqaphela isimo sezulu zinezindlela eziningi zokuphumelela futhi zithole ukwamukelwa, kokubili eTanzania nakwamanye amazwe ase-Afrika."
+    },
+    {
+      "hyp": "Ucwaningo lwaluyisivumelwano phakathi kwesayensi evela eKenya naseNetherlands."
+    },
+    {
+      "hyp": "Izifo zezilwane ezinamagxolo njengezinhlobo ezihlaselayo: Ukuqonda okuvela eNingizimu Afrika"
+    },
+    {
+      "hyp": "Ucwaningo lwezinto eziphilayo ezibangela izifo njengezinhlobo zasemzini ezihlaselayo aluzange lutholakale ukunakekelwa okukhulu ensimini yesayensi yokuhlasela."
+    },
+    {
+      "hyp": "Izifo ezifakwe zingaba nemiphumela emikhulu ezidalweni eziphilayo, ezinhlelweni zezinto eziphilayo ezihlala kuzo, nasezimweni zezomnotho ezisekelwa yilezo zinhlelo zezinto eziphilayo."
+    },
+    {
+      "hyp": "Kulesi sahluko, sisebenzisa izifundo zezimo zezifo ezithunyelwe ezilwaneni zasekhaya nezasendle (ukuthukuthela kwezinja, isifo sofuba sezilwane, ne-rinderpest) nabantu (isihlangu, isifo sofuba, ne-human immunodeficiency virus, i-HIV) ukuchaza izinhlobo zemiphumela lezi zifo ezingayibangela."
+    },
+    {
+      "hyp": "Uthonyo olukhulu kunazo zonke oluye lwabonakala kuze kube manje luye lwaba lukarinderpest, oluholele ekufeni kwezinkomo eziningi, futhi lwabhubhisa cishe izinhlobo ezithile zezilwane zasendle ezingxenyeni ezinkulu zaseNingizimu Afrika."
+    },
+    {
+      "hyp": "Lokhu kube nomthelela omkhulu emnothweni wesifunda, futhi kwabangela ukuguquka okukhulu kwesakhiwo kanye nedinamiki yezinhlelo zezinto eziphilayo."
+    },
+    {
+      "hyp": "Isifo se-Rinderpest sisusiwe emhlabeni wonke, kodwa bobabili isifo se-rabies sezinja kanye ne-tuberculosis yezilwane ezifuywayo basaphila, futhi kuzodingeka ukulinda nokuqapha okuqhubekayo ukuze kuvinjelwe."
+    },
+    {
+      "hyp": "Ezifweni zabantu, isifo se-smallpox naso siqothulwe emhlabeni wonke, kodwa umphumela wesifo, esafakwa abakoloni baseYurophu, wawubhubhisayo."
+    },
+    {
+      "hyp": "Ekuqaleni kweminyaka yo-1700, ingxenye enkulu (fingqa ku-90% kwamanye amabandla) yabantu bakwaKhoekhoe abangabantu bomdabu yafa, yabhubhisa amasiko abo kanye nendlela yabo yokuphila, yashiya abasindile abambalwa ukuthi baqashwe njengabasebenzi befama."
+    },
+    {
+      "hyp": "I-HIV, eyatholakala okokuqala eNingizimu Afrika ngo-1982, iye yaba nemiphumela emikhulu futhi ukwelashwa nge-antiretroviral kudla uhulumeni u-ZAR 66.4 billion ngonyaka."
+    },
+    {
+      "hyp": "Siphinde sifake i-West Nile Virus ne-African Swine Fever njengezibonelo zezifo eziqale e-Afrika, futhi ezingase zibe yingozi emhlabeni jikelele."
+    },
+    {
+      "hyp": "Sibikezela ukuthi izifo ezintsha ziyophumela njengoba abantu beqhubeka bandise indawo yabo ezindaweni zasendle, futhi njengoba amazinga okuhweba ekhuphuka."
+    },
+    {
+      "hyp": "Okwaziwa ngabacwaningi ngabahluphi abancinyane ababangela izifo eNingizimu Afrika"
+    },
+    {
+      "hyp": "Isahluko sale ncwadi sihlanganisa ulwazi lwakamuva ngezifo ezinjengesi-rinderpest, isifo sokuhlanya, isifo se-measles ne-HIV, zonke ezihambisana nemikrofoni ehlala khona (ama-virus, ama-bacteria nezinye izidalwa ezincane ezibhekwa njengesihlobo esingaphandle, okusho ukuthi azitholakali ngokwemvelo endaweni ethile)."
+    },
+    {
+      "hyp": "Lezi zifo zonke zithinta izilwane nabantu eNingizimu Afrika, futhi ukuqhuma kwazo ekugcineni kulimaza umnotho wezwe."
+    },
+    {
+      "hyp": "Enkundleni yocwaningo ebizwa ngokuthi ‘isayensi yokuhlasela’, ososayensi bafunda izidalwa ezikhula futhi zibangele ukulimala ngemuva kokungeniswa ezindaweni ezintsha lapho zingatholakali khona ngokujwayelekile."
+    },
+    {
+      "hyp": "Ucwaningo oluningi luye lwogxila ezinhlotsheni ezinkulu “zokuhlasela” njengezitshalo nezilwane, kodwa abahlaseli abancinyane ababangela izifo balingana ngokubaluleka."
+    },
+    {
+      "hyp": "Kulesi sahluko, ababhali baxoxe ngezinye izifo zezilwane nezabantu eNingizimu Afrika ezingabangelwa yilezo zinto eziphilayo ezifakwe."
+    },
+    {
+      "hyp": "Bathe bathi oluyingozi kunazo zonke kwakuwukugula kwe ‘rinderpest’, okwatholakala eNingizimu Afrika ngo-1896."
+    },
+    {
+      "hyp": "Isifo se-Rinderpest sasiyisifo esibangelwa yi-virus futhi sasiqeda izinkomo neenqama."
+    },
+    {
+      "hyp": "Umsundu ofanayo owabangela i-measles kubantu."
+    },
+    {
+      "hyp": "Abantu abaningi basemakhaya bahlushwa yindlala ngemva kokubhebhetheka kuka-1896, kodwa manje isifo sisusiwe ngokugonywa."
+    },
+    {
+      "hyp": "Ababhali bathi phakathi kuka-1772 no-1861, izinja eziningi eNingizimu Afrika zazinobhubhane, yize abantu babengalwazi ukuthi iyiphi leyo gciwane."
+    },
+    {
+      "hyp": "Ngo-1893, kwakwaziwa ukuthi i-rabies yayibangelwa yi-virus, ngakho-ke uhulumeni wanquma ukubulala izinja ezihlazweke futhi abayekezele abangazange bahlazweke."
+    },
+    {
+      "hyp": "Nokho, lokhu akuzange kuqede lesifo, futhi lasala lilimaza izilwane eziningi zasendle njenge-duikers, izimpisi, izinja zasendle, ama-jackal nama-foxes."
+    },
+    {
+      "hyp": "Ababhali bathi ngo-1928, abantwana ababili bakhonjwa yi-Yellow Mongoose bafa ngenxa yebhubhane."
+    },
+    {
+      "hyp": "Kusukela ngaleso sikhathi, irabhi yaba yinto evamile eNingizimu Afrika."
+    },
+    {
+      "hyp": "Bathe bathi ngo-1954, abantu abaningi baseNingizimu Afrika nabo bathinteka yi-measles."
+    },
+    {
+      "hyp": "Lapho le sahluko sibhalwa, isifo sikamasela sasibulawa abantwana abangaba ngu-400 nsuku zonke."
+    },
+    {
+      "hyp": "Bathe bakhuluma ukuthi isifo sikamabulelo besivame lapho abantu nemfuyo bekudedelana khona."
+    },
+    {
+      "hyp": "Ababhali bakhulume futhi ngesifo esibizwa ngokuthi i-bovine tuberculosis (BTB), esibangelwa yibhaktheriya."
+    },
+    {
+      "hyp": "IBTB yabulala izinkomo, izinyathi, izinqindi, izinyezi, iingwe, ama-kudu, amabhabhu kanye nezingonyama."
+    },
+    {
+      "hyp": "Bathe bakhuluma ukuthi isifo se-BTB sabikwa okokuqala ephaki likazwelonke laseNingizimu Afrika ngo-1996."
+    },
+    {
+      "hyp": "Uhulumeni walawula leyo gciwane ngokubulala izinkabi ezigulayo."
+    },
+    {
+      "hyp": "Ababhali bathi omunye umkhuhlane, owayeziswe eNingizimu Afrika ngabahambi baseYurophu, wabangela isifo esibizwa ngokuthi ‘isihlangu’ kubantu."
+    },
+    {
+      "hyp": "Lesi sifo sibulale abantu abangaphezu kuka-90% beKhoekhoe bendawo."
+    },
+    {
+      "hyp": "Ekupheleni kokuphahlazeka kwesifo, isiko lamaKhoekhoe lalibhujiswe cishe ngokuphelele."
+    },
+    {
+      "hyp": "Ababhali babike futhi nge-human immunodeficiency virus (HIV) eyabangela ukuphahlazeka kwesifo se-AIDS."
+    },
+    {
+      "hyp": "Oososayensi basacabanga ukuthi i-virus iqale yadluliselwa kubantu evela ezilwaneni, ngenqubo ebizwa ngokuthi yi-zoonosis."
+    },
+    {
+      "hyp": "Ukuqhuma kwaleli virusi kwatholakala okokuqala eNingizimu Afrika ngo-1982."
+    },
+    {
+      "hyp": "Bathe bathi, kusukela ngo-2019, i-HIV yayingenayo imithi yokwelapha noma isifo."
+    },
+    {
+      "hyp": "Baqede isahluko ngokukhuluma nge-West Nile Virus ne-African Swine Fever, abathi zaqala e-Afrika zasaqhubekela eYurophu naseMelika."
+    },
+    {
+      "hyp": "I-West Nile virus idluliselwe yizinyosi futhi yabulala ikakhulukazi izinyoni, kodwa futhi yathinta amahhashi nabantu."
+    },
+    {
+      "hyp": "Bathe bathi izilwane ezifana nezingulube zasehlathini nezinkomo zasehlathini zithwalela isifo se-African swine fever."
+    },
+    {
+      "hyp": "Ulukhuni lwathinta ingulube, futhi lwathinta kakhulu ibhizinisi lezingulube."
+    },
+    {
+      "hyp": "Ababhali bathi bakhulume ngezifo ezingcoliswa yibhaktheriya nezinambuzane kuphela, ngakho-ke le sahluko asiyona ingxelo ephelele yazo zonke izinto eziphilayo ezincane ezingena emzimbeni."
+    },
+    {
+      "hyp": "Ababhali babevela eNingizimu Afrika."
+    },
+    {
+      "hyp": "Uhlelo lokusebenza lokuhlinzwa olusekwe ebufakazini lokuqondisa i-Odontogenic keratocyst"
+    },
+    {
+      "hyp": "Ukuphathwa okuphumelelayo kwe-odontogenic keratocyst (OKC) kuhlala kuyisihloko esithakazelisayo nesidida ezingxoxweni zobuhlengikazi bomlomo nemaxillofacial."
+    },
+    {
+      "hyp": "Okwamanje, ayikho imvumelwano mayelana nokwelashwa okuhle kakhulu kwabagula abane-odontogenic keratocyst."
+    },
+    {
+      "hyp": "Kwezinketho ezahlukene zokwelapha ezitholakalayo, akukho luhlobo oluye lwabonisa amazinga okubuyela kabusha angama-zero noma aseduze ne-zero ngaphandle kokusika okubanzi ngemikhawulo ecacile."
+    },
+    {
+      "hyp": "Ngenxa yokushoda kwemibhalo ebonisa izindlela zokwelapha eziqondene nokwelashwa kwabagula abane-odontogenic keratocyst, ucwaningo olukhona luhlosile ukwethula uhlelo lokusebenza lokuhlinzwa, olusekelwe emiphumeleni ye-meta-analysis, elithemba ukuthi luzoba usizo ekwenzeni kube ngcono ukwelashwa kwabagula abanesimo."
+    },
+    {
+      "hyp": "Sisebenzisa izilinganiso ze; usayizi, uhlobo lokulimala (oluyinhloko noma olusekondari), ubuntu be-syndromic noma olulodwa lokulimala, ukuba khona kokubhoboza kwe-cortical, kanye nokuhlukaniswa; sinikeza umuthi wokunquma, ukusiza ukuhlela ukwelashwa futhi usize ukufeza amathuba amancane okuphinda kuvela ekuphathweni kwe-odontogenic keratocyst."
+    },
+    {
+      "hyp": "Abacwaningi baphinde baphakamise izindlela zokwelapha kangcono isifo semaxa."
+    },
+    {
+      "hyp": "Ngokuhlanganisa imiphumela yocwaningo olukhona, abacwaningi baqamba izinyathelo ezicacile abagqirha abangazilandela ukuze bahlonze futhi baphathe iziguli ezine-sickness yomhlathi ebizwa ngokuthi ‘odontogenic karatocyst’ (OKC)."
+    },
+    {
+      "hyp": "I-OKC iwumkhuhlane, noma ukukhula okungavamile, emaxatheni omuntu."
+    },
+    {
+      "hyp": "Odokotela bathola ukuthi lesi simo kunzima ukusiphazamisa, futhi iziguli zivame ukuthola enye i-OKC ngisho nangemva kokwelashwa okuphumelelayo."
+    },
+    {
+      "hyp": "Ngakho-ke, odokotela bafuna izindlela zokwelapha ngempumelelo nangokuphelele lezi zilonda ze-jaw."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bafuna izinyathelo ezibalulekile abaguli kufanele bazithathe ukuze bahlonze futhi baphathe lesi sifo."
+    },
+    {
+      "hyp": "Bakenze lokhu ngokucinga ezincwadini ezikhona, noma ezihloko zesayensi, mayelana ne-OKC."
+    },
+    {
+      "hyp": "Babecinga ngokuqondile ulwazi mayelana nendlela odokotela abaphatha ngayo i-OKC phakathi nonyaka, njengoba kubikwe ezihlokweni ezingu-46 abazitholile."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi i-OKC yayivame kakhulu kumadoda kunabesifazane, futhi ingathinta abantu abaneminyaka efinyelela ku-90, ngisho noma yayivame phakathi kweminyaka engu-20 no-30."
+    },
+    {
+      "hyp": "Ubuhlungu buye babathinta kakhulu amaxhafu angaphansi."
+    },
+    {
+      "hyp": "I-OKC iqala ngaphakathi kwempumputhe, nokukhula komlomo kubonakala kamuva kuphela."
+    },
+    {
+      "hyp": "Abantu abagulayo bavame ukuzwa ubuhlungu futhi babe nokuqothuka okuthile (isigaxa, njengophuphu, oluphuma ehlengeni noma ebuhlungwini), futhi imizuzu yamazinyo abo ingase iphume endaweni."
+    },
+    {
+      "hyp": "Baphinde basekele ukuthi odokotela basuse yonke inxeba namazinyo aseduze."
+    },
+    {
+      "hyp": "Uma sekuqediwe ukususa, kufanele basebenzise imithi ebizwa ngokuthi yi-Carnoy’s solution, kanye ne-liquid nitrogen (ilwesi elipholile kakhulu elisetshenziswa ekuqedeni ngokushesha isikhumba esonakele) ne-fluorouracil (eyaziwa nangokuthi yi-5FU, imithi evamile yomdlavuza)."
+    },
+    {
+      "hyp": "Ngemva kwalolu phiko, abacwaningi bancoma ukuthi umuntu ophethwe kufanele abe nokuhlolwa kwezempilo okulandelayo iminyaka engaphansi kuka-25."
+    },
+    {
+      "hyp": "Bathe bathi leli phiko lolukuqondene kakhulu nezilonda ezincane kunesithelo se-strawberry (3 cm)."
+    },
+    {
+      "hyp": "Kubalulekile ukunaka kakhulu izilonda ezingaphezu kuka-3 cm."
+    },
+    {
+      "hyp": "Bathe bathi odokotela kufanele baqale banciphise ukucindezela ngaphakathi kwesilonda bese basusa ulwelo, futhi basuse zonke izicubu ezizungezile umgubhu."
+    },
+    {
+      "hyp": "Kumelwe kube sekuphathwa ngesixazululo seCarnoy."
+    },
+    {
+      "hyp": "Baphinde basekele ukuthi odokotela kufanele bahlole laba ziguli njalo ngenyanga ezimbili iminyaka emibili."
+    },
+    {
+      "hyp": "Uma isiguli sinamalengalenga amaningi, odokotela bangase bawakhuphe ngezinsimbi ezikhethekile zasezibhedlela."
+    },
+    {
+      "hyp": "Kodwa ngokujwayelekile, izifundo ezabuyekezwa zikhombise ukuthi ezimweni eziningi, uma odokotela besusa isifo bese befake i-5FU, iziguli azizukubuye zithole i-OKC."
+    },
+    {
+      "hyp": "Kodwa-ke, baxwayisa ukuthi ubufakazi balezi zindlela zokwelapha babungelona oluqinile njalo, futhi bathola izincwadi zesayensi ezimbalwa ngale ndaba."
+    },
+    {
+      "hyp": "Abacwaningi abazange benze namaciko abo ukuze banikeze lezi zincomo; kunalokho, bazama ukuqoqa izinketho zokwelapha ezihamba phambili ezaziwa ezivela ocwaningweni oluyenziwe abacwaningi abanye."
+    },
+    {
+      "hyp": "Ngakho-ke, labo bacwaningi, abahlala eNigeria nase-USA, bancoma ukuthi kwenziwe izifundo eziningi emazweni ahlukene ukuze kuvivinywe impumelelo yemithi ephakanyiswe lapha."
+    },
+    {
+      "hyp": "Baphethe futhi odokotela ukuba bacabangele ezinye izimo zabaguli ngesikhathi sokwelapha."
+    },
+    {
+      "hyp": "Isifo se-SARS-CoV-2 (2019-nCoV), i-MERS-CoV ne-SARSr-CoV esenziwe ngokwenziwa: Ukuhlaziywa komshini okuqhathaniswayo ukusikisela ama-epitope avumelekile."
+    },
+    {
+      "hyp": "Ama-coronavirus avame ukuba ngawomkhakha othize wezilwane njengomxhasi, izilwane ezincelisayo noma izinyoni kuye ngohlobo lwazo; kodwa-ke, le mi-virus ingashintsha umxhasi ngezinye izikhathi ngenxa yokuguqulwa."
+    },
+    {
+      "hyp": "I-HCoV-229E ingenye yama-coronaviruses ayisithupha abantu, ehlanganisa i-HCoV-NL63, i-HCoV-OC43, i-HCoV-HKU1, i-MERS-CoV ne-SARSr-CoV (i-SARSr-CoV-1 ne-SARS-CoV2) futhi isabalale emhlabeni jikelele."
+    },
+    {
+      "hyp": "I-MERS-CoV ne-SARS-CoV-2 zingaphila ezintweni ezingaphili njenge (ensimbi, igalasi noma ipulasitiki kuze kube izinsuku ezingu-9) (Huang, C.-L, 2020)."
+    },
+    {
+      "hyp": "Izinyathelo zokuvikela kanye nokuphathwa kwemithi nge-hydroxychloroquine kuyasiza, kodwa kungenzeka ukuthi kudingeka umuthi oluhlaza oluphumelelayo ukuze kuvinjelwe ukwanda kwesifo sikamahlalakhona i-covid-19."
+    },
+    {
+      "hyp": "Inhloso yocwaningo lwethu kwakuwukubona ama-epitope okugomela ngezindlela ze-bioinformatics."
+    },
+    {
+      "hyp": "Izinto Nezindlela"
+    },
+    {
+      "hyp": "Uchungechunge oluphelele lwe-genome luka-SARS-CoV-2 luthathwe ku-2019 Novel Coronavirus Resource (2019nCoVR) nasezinkundleni zedatha ezimbili, okuhlanganisa i-National Center for Biotechnology Information (NCBI) Global Initiative on Sharing All Influenza Data (GISAID) ne-TAURAU/T-bio-infoserver yokusebenza kwe-bioinformatics online."
+    },
+    {
+      "hyp": "Sizokunikeza isifinyeto esifushane sokuvela kwe-viral, siqhathanise idatha yokulandelana ukuhlonza indawo ezivikelwe, i-domain yayo yeprotheni evame kakhulu (indawo yokubopha umgomo) kanye nokuklama i-motif evumelanayo yomkhiqizo we-molecule onamandla (epitope) oqaphelwe ngenhloso yemizamo yokwelapha ye-2019-nCoV, i-SARSr-CoV strain ne-MERS-CoV ezintsha."
+    },
+    {
+      "hyp": "Kuyathakazelisa ukuthi, ukufaniswa kwe-sequence phakathi kwe-SARS-CoV-2 nezinye izinhlobo kuveze ukuthi izinto ezikhona ku-receptor-interacting motive zigcinwe kakhulu ngokufana okungu-70%."
+    },
+    {
+      "hyp": "Sisekele ama-amino acid abalulekile amahlanu (L455, Y473, N479, F486, Q493) esizindeni sokubopha i-receptor evela kumaphrotheni e-spike abhekene nokuthintana phakathi kwe-virus ne-horst."
+    },
+    {
+      "hyp": "Ku-SARS-CoV-2 RBD kukhona izinsalela (D480, ne-T487) ezavumela ukutheleleka phakathi kwezinhlobo."
+    },
+    {
+      "hyp": "Kodwa-ke, ku-SARS-CoV-2, ukuguqulwa okuncane kweminye imfucuza kungathuthukisa ukusebenzisana nomukhahleli we-cellular wabantu: L455, F486, Q493, ne-N501."
+    },
+    {
+      "hyp": "Ku-SARS-CoV, izinsalela ezimbili eziyinhloko (479 no-487) ziye zahlanganiswa nokuqashelwa komukeli we-ACE2 wabantu."
+    },
+    {
+      "hyp": "Ku-SARS-CoV-2, izinsalela ezifanele ku-N479 zihambelana ne-Q493 ne-T487 kuya ku-N501."
+    },
+    {
+      "hyp": "Sikhombe uchungechunge lwamanye ama-amino acid agcinwe kahle kuwo wonke ama-coronavirus, kuhlanganise ne-2019nCoV nezinye izinhlobo, i-motif i-KRSFIEDLLFNKVTLADAGF itholakale ikhulu igcinwe kahle kuleli cwaningo futhi ihambisana nendawo ezungezile kwenye yezindawo ezaziwayo zokusika ze-SARS virus okukholelwa ukuthi kuyadingeka ukuvuselela i-virus ukuze ingene eselini."
+    },
+    {
+      "hyp": "Le motif yeqhaza kanye nezinguquko ezizungezile zakha isisekelo sokusikisela i-epitope yeqhaza le-vaccine elenziwe ngokukhethekile; lo mtholampilo ungenza abavikeli abancinyane abanamandla futhi ababopheka."
+    },
+    {
+      "hyp": "Lolu cwaningo lunikeza ulwazi nethuba lokukuqinisekisa ngokwesayensi."
+    },
+    {
+      "hyp": "Lokhu kusebenza kungachazwa ngamagama e-bioinformatics, futhi kuphindwe kalula abanye, yize idatha entsha nocwaningo lwe-Covid-19 luvela futhi luqhubeka ngesivinini esikhulu."
+    },
+    {
+      "hyp": "Oososayensi baqhathanisa i-Covid-19 nezinye izifo ezifana nayo ukuze basize ekufuneni ama-vaccine."
+    },
+    {
+      "hyp": "NgoSepthemba 2020, ososayensi baseMali baqhathanisa ulwazi oluvela e-genetic virus yeCovid-19 nama-coronaviruses amabili ahlobene eduze ukuze baqonde izici ezingasiza ekuthuthukiseni i-vaccine."
+    },
+    {
+      "hyp": "Ngaleso sikhathi, ososayensi babeyasafuna izigqoko zokuqeda i-Covid-19 eziphumelelayo."
+    },
+    {
+      "hyp": "Babefisa ukubona ukuguqulwa kwe-Covid-19 virus okungase kudlale indima ekuthelelekeni."
+    },
+    {
+      "hyp": "Ngakho-ke, abacwaningi baseMali baqhathanise i-Covid-19 virus (SARS-CoV-2) nezinye izinhlobo ezimbili ze-coronavirus ezibangela izifo kubantu, okuyi-MERS-CoV ne-SARS-CoV."
+    },
+    {
+      "hyp": "Enye yezinjongo eziyinhloko zocwaningo kwakuwukuthola izindawo ezithile e-Covid-19 virus, ebizwa ngokuthi yi-epitopes, ezingabonwa yi-immune system yabantu."
+    },
+    {
+      "hyp": "Ukubabonisa kungabasiza ososayensi ukuba benze izigqoko eziphumelelayo kakhulu."
+    },
+    {
+      "hyp": "Abacwaningi baphinda bafanisa ama-virus amathathu ukuze babone ukuthi kukhona yini ukufana kwe-genetic okungasiza ekuthuthukiseni imithi yokugcoba."
+    },
+    {
+      "hyp": "Bagxile kwinhlanganisela ye-genetic yephrotheni ye-spike yezifo, eziyizinto eziphethwe ukuncedisa ama-coronavirus ukubopha, nokutheleleka, amaseli abantu."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi amaprotheni e-spike ezingozi zonke ezintathu ayefana kakhulu ngokwemfundo, ikakhulukazi izingxenye ezihlangana namasondo abantu."
+    },
+    {
+      "hyp": "Okwakhamba phambili nge-Covid-19 iwukuthi kwakukhona ukuguqulwa okuncane kwe-spike protein okwakwenza i-virus ikwazi ukubopha kahle ezintweni zabantu."
+    },
+    {
+      "hyp": "Imiphumela yalesi sifundo ingavumela abanye abacwaningi ukuthi bathuthukise izigqoko ze-Covid-19 eziphumelelayo ngokubasiza ukuthi baqonde izindawo ezinobhubhane ezingamathuluzi amahle ezigqoko."
+    },
+    {
+      "hyp": "Ucwaningo luphinde lunikeze ulwazi olusha mayelana nokuthandana nokungafani kwezakhiwo ze-genetic phakathi kwe-Covid-19 nezinye izinhlobo ze-coronavirus."
+    },
+    {
+      "hyp": "Abacwaningi baphawule ukuthi ucwaningo lwesikhathi esizayo kufanele lugxile ekutheni ukwahluka kwe-genetic ku-Covid-19 virus kuyenza yaba nomthelela omkhulu futhi iyingozi kunezinye izifo ze-coronavirus."
+    },
+    {
+      "hyp": "Ukuphazamiseka Kokushaya Kwenhliziyo Kubantu AbabeNe-COVID-19: Ukuhlaziywa Okuseqophelweni Nokuhlaziywa KweMeta-analysis"
+    },
+    {
+      "hyp": "Ukuphazanyiswa kwenhliziyo akumele kuphazanyiswe kubantu abane-coronavirus disease 2019 (COVID-19) njengoba kunomthelela omkhulu emiphumeleni."
+    },
+    {
+      "hyp": "Ngakho-ke, le ncwadi ihlose ukwakha ubufakazi obuqinile mayelana nokwanda kwe-cardiac arrhythmia kubantu abane-COVID-19."
+    },
+    {
+      "hyp": "Senze ukucinga okuhleliwe kwama-database/izinjini zokucinga ezithembekile okuhlanganisa i-PubMed, i-Scopus, i-Cochrane library ne-web of science."
+    },
+    {
+      "hyp": "Ngemva kokuhlola, idatha efanele ikhishiwe futhi izingozi ezivela eziphengulweni ezihlanganisiwe zihlanganiswe ukuze kwenziwe i-meta-analysis."
+    },
+    {
+      "hyp": "Ekugcineni, ucwaningo oluyisishiyagalolunye lufake ekuhlolweni kwethu oluqukethe iziguli ezingama-1445."
+    },
+    {
+      "hyp": "Imiphumela yokuhlaziya okuhlanganisiwe ikhombisile ukuthi ukwanda kwe-arrhythmia kubantu abane-COVID-19 kwakungu-19.7% nge-95% confidence interval (CI) ephakathi kuka-11.7 no-27.6%."
+    },
+    {
+      "hyp": "Kwakukhona futhi ukungafani okukhulu (I2□=□94.67%)."
+    },
+    {
+      "hyp": "Ukuhlupheka kwenhliziyo kwakukhulu kakhulu kubantu abane-COVID-19 futhi kubonwe ku-19.7% kubo."
+    },
+    {
+      "hyp": "Ukubhekwa okuqondile nge-electrocardiogram, kanye nokuhlonza okuchane kanye nokusheshayo kwe-arrhythmias kubalulekile ekuphatheni nasemiphumeleni emihle."
+    },
+    {
+      "hyp": "Abantu abaningi abane-Covid-19 babe nezingcindezi ezingajwayelekile zenhliziyo."
+    },
+    {
+      "hyp": "Abacwaningi bathi cishe omunye kubantu abangu-5 abane-Covid-19 uhlangabezana ne-cardiac arrhythmia, eyaziwa nangokuthi ukushaya kwenhliziyo okungajwayelekile."
+    },
+    {
+      "hyp": "Ngenxa yokuthi kuyinto evamile kangaka, bayekethisa ukulandelela izindlela zokuphefumula kwenhliziyo yomguli usebenzisa umshini obizwa ngokuthi yi-electrocardiogram, ukuze odokotela bakwazi ukubona futhi baphathe noma yimaphi ama-arrhythmias ngokushesha okukhulu."
+    },
+    {
+      "hyp": "Nakuba i-Covid-19 ilimaza amaphaphu nesistimu yokuphefumula kakhulu, ucwaningo oluthile lubonise ukuthi ingalimaza nenhliziyo."
+    },
+    {
+      "hyp": "Abacwaningi bafuna ukuhlola idatha yabagula ukuze babone ukuthi izinkinga zokushona kwenhliziyo zazivame kangakanani ngempela kubantu abane-Covid-19 ngo-2020, ekuqaleni kwenhlekelele yomhlaba wonke."
+    },
+    {
+      "hyp": "Benze ukuhlaziya okuhlanganisiwe, okuyilapho abacwaningi behlaziya izifundo eziningi ezahlukene ngesihloko esithile ukuze bazame ukuthola iziphetho eziyinhloko ezivela kuzo zonke izifundo ezihlanganisiwe."
+    },
+    {
+      "hyp": "Bafuna izifundo ezibuyekezwe ngontanga eyenziwe abacwaningi abanye kuma-database avamile, futhi bakhipha noma yiluphi ulwazi olufanele mayelana nokushaya kwenhliziyo okungajwayelekile kubantu abane-Covid-19."
+    },
+    {
+      "hyp": "Ekugcineni, bafake izifundo eziyi-9 ezinolwazi mayelana nabantu abagulayo abayi-1445."
+    },
+    {
+      "hyp": "Bathole ukuthi ukungazinzi kwenhliziyo kubonwe ku-19.7% yabagula be-Covid-19."
+    },
+    {
+      "hyp": "Kepha bayaxwayisa ukuthi inani elincane lezincwadi abazisebenzisile lingase liqede isiphetho sabo."
+    },
+    {
+      "hyp": "Ezinye zezifundo azizange zichaze uhlobo oluqondile lwenkinga yentliziyo, futhi ukulinganiselwa kwesifundo ngasinye kungadida ukulinganiselwa kokuhlaziywa kwazo okuhlanganisiwe."
+    },
+    {
+      "hyp": "Baphinde baphakamise ukubheka kusasa ukuthi kungani iziguli eziningi ezine-Covid-19 zazinamazinga ezingqondo ezingavamile."
+    },
+    {
+      "hyp": "Ababhali bale ncwadi bevela eGibhithe, kodwa iziguli kulokhu kuphenyo bevela eChina nase-USA."
+    },
+    {
+      "hyp": "Imiqondo Yezinye Izazi Zesayensi Ngokuthuthela Kwezwe, Impilo Yengqondo Ne-PTSD:"
+    },
+    {
+      "hyp": "Ukuhlola kwezincwadi ezifanele"
+    },
+    {
+      "hyp": "Kulesi sahluko, sinikezela ngokubuyekezwa kwezifundo zokulinga eziqhutshwe ku-PTSD, impilo yengqondo nokuzwela kwabafuduki."
+    },
+    {
+      "hyp": "Ucwaningo oluningi lubonisa ukuthi kokubili abacindezelayo bangaphambi nobangemuva kokufuduka baphazamisa impilo yengqondo kanye ne-PTSD yabafuduki nababaleki."
+    },
+    {
+      "hyp": "Emazweni okuqala, ukubhekana nokulimala nokuhlushwa kwakuyingozi enkulu empilweni yengqondo yabafuduki."
+    },
+    {
+      "hyp": "Izinkinga zempilo yengqondo ezibangela ukucindezeleka okukhulu kubafuduki emazweni ababamukele zifaka phakathi ukucindezeleka kokuzifaka endaweni entsha, isimo somthetho, ukuhlukaniswa komndeni, isikhombandlela solimi, ukufinyelela okubi kunakekelwa kwempilo efanele, ukucwaswa, ubuhlanga, imizwa yokungabi namandla, ukwehla kokuzithemba, ukucindezeleka okuqhubekayo nokuqapha okukhulu."
+    },
+    {
+      "hyp": "Phakathi kwazo zonke izinkinga zempilo yengqondo, ukucindezeleka, ukukhathazeka ne-PTSD kubhekwa njengezivamile kakhulu ngeminani yokuvela engu-4–40%, 5–44% no-9–36% ngokulandelana."
+    },
+    {
+      "hyp": "Ngokuvamile, ukwesekwa komphakathi nezindlela zokubhekana nezinkinga ezihlukahlukene kubonwe njengokuvikela."
+    },
+    {
+      "hyp": "Impilo yengqondo yabaphambukeli ithonya yisimo esishiywe ngemuva nokuxazulula endaweni entsha."
+    },
+    {
+      "hyp": "Abantu abathuthela kwamanye amazwe nababaleka bavame ukuhlupheka ngokucindezeleka okungapheli emva kokulimelela nezinye izinkinga zempilo yengqondo."
+    },
+    {
+      "hyp": "Nakuba izinkinga eziningi zibangelwa izinto ezenzeka emazweni abo, ososayensi bathi kubalulekile ukuqaphela ukuthi ukucindezeleka kokuphila ezweni elisha kungakwandisa inkinga."
+    },
+    {
+      "hyp": "Ngokwocwaningo oluningi, ukucindezeleka, ukukhathazeka, kanye ne-post-traumatic stress disorder (PTSD) konke kuyizinkinga zempilo yengqondo ezivamile phakathi kwabafuduki nababaleki."
+    },
+    {
+      "hyp": "I-PTSD ngokuvamile iyimbangela yokusinda kwezehlakalo eziyingozi noma ezilimazayo, futhi abantu bavame ukuhlangabezana nemiphumela yalezo zenzakalo ezimbi izinyanga, noma ngisho neminyaka."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bafuna ukuqonda izici ezahlukene ezidlalayo indima ezinkingeni zempilo yengqondo yabantu abathuthela kwamanye amazwe njenge-PTSD."
+    },
+    {
+      "hyp": "Ngakho-ke, benze uhlobo locwaningo oluthiwa yi-review, lapho bebuqula khona ulwazi oluvela kwezinye izifundo eziningi ngale ndaba, ukuze bathole izindlela ezivamile noma izingqikithi."
+    },
+    {
+      "hyp": "Ezimweni eziningi, izinkinga zempilo yengqondo zabafuduki zazibangelwa yizenzakalo ezibuhlungu ezinjengempi, ukulahlekelwa abathandekayo, noma ukuhlaselwa ngokomzimba okwenzeka emazweni abo."
+    },
+    {
+      "hyp": "Lapho laba bantu bephuma kulezo zimo, bahlangabezana nezihambi ezinzima kodwa-ke bazizwa bekhululekile lapho befika ezweni elisha."
+    },
+    {
+      "hyp": "Abacwaningi, noma kunjalo, bathi lokuphumula kwakuyisikhashana, ngoba abantu abathuthela kwamanye amazwe babhekene nezinselele ezintsha ngemva kokuthuthela."
+    },
+    {
+      "hyp": "Bathole ukuthi izifiki zivame ukuba nezikhathi ezinzima ezweni elisha, ikakhulu uma zingalwazi ulimi, noma zinezinkinga zokujwayela isiko."
+    },
+    {
+      "hyp": "Uma abantu befike ezweni ngokungekho emthethweni, noma babezama ukuthola ukukhosela, kwakudingeka babhekane nezingqinamba zomthetho, futhi bavame ukuba nobunzima bokuthola izinsizakalo ezinjengalezo zezempilo."
+    },
+    {
+      "hyp": "Kwabanye, ubandlululo nobuhlanga ezweni labo elisha kwenezela emizwelweni yabo yokungaphephile, futhi abaningi bashiye amalungu omndeni ngemuva futhi babe bodwa."
+    },
+    {
+      "hyp": "Lezi zinto zifake isandla ezinkingeni zempilo yengqondo eziqhubekayo, ngisho nalapho lezi zifiki zisesezimweni eziphephile kunalezo zasezizweni zazo."
+    },
+    {
+      "hyp": "Abacwaningi benezela ukuthi izifiki zazinezindlela eziningi ezahlukene zokubhekana nalezi zinkinga, kusukela ekucwaningeni ngokucophelela ukuthi zingazixazulula kanjani, kuya ekufuneni usizo kwabanye emphakathini wazo, noma izindlela ezimbi njengokusebenzisa izidakamizwa."
+    },
+    {
+      "hyp": "Abacwaningi bathi ucwaningo olwengeziwe luyadingeka ezinyathelweni zonke zohambo lwabantu abathuthela kwamanye amazwe."
+    },
+    {
+      "hyp": "Ngokuqondile, kubalulekile ukucwaninga izinto ezihilelekile empilweni yengqondo emazweni abantu abahlala kuwo, kodwa futhi isikhathi eside emazweni abo amasha."
+    },
+    {
+      "hyp": "Bengeza ukuthi uhambo lwabantu oluvela e-Afrika luyisuka eYurophu ludinga ukunakekelwa okuningiliziwe yibo abacwaninga."
+    },
+    {
+      "hyp": "Ucwaningo lolu lwaluyisivumelwano phakathi kwesayensi ehlala eNingizimu Afrika naseJalimani, futhi luyinxenye yencwadi ephathelene namava abafuduki base-Afrika abahlala emazweni aseYurophu."
+    },
+    {
+      "hyp": "Ukuba khona nokuhlala isikhathi eside kwe-Amblyomma hebraeum kuwukhuluza umthwalo we-Heartwater esifundeni esingaseningizimu yeBotswana."
+    },
+    {
+      "hyp": "I-Heartwater yisifo esithwalwa yizikhonkwane, esibangelwa yi-haemoparasite, esinokukhawula ukukhula kwamabhizinisi ezimakhi eBotswana."
+    },
+    {
+      "hyp": "Lesiyingozi ekuvikelweni kokudla kwesizwe kubangelwa ukukhiqizwa okuncane nokufa kwemfuyo ekulimeni okungelona ibhizinisi lezimfuyo ezincane kunasemapulazini ezinkulu."
+    },
+    {
+      "hyp": "Ucwaningo lolu lunikeza umbono wemfanelo ye-epidemiological yesifo se-heartwater eBotswana."
+    },
+    {
+      "hyp": "Izikhuhlu ezikhulayo ezilwaneni ezikhona ezigabeni ezine zaseNingizimu eBotswana zaziqondwe ngokusebenzisa ukuhlaziywa komzimba kanye nokusebenzisa i-molecular."
+    },
+    {
+      "hyp": "Abalimi bebuzwa ngokuphathwa komthwalo we-heartwater ezigabeni zabo."
+    },
+    {
+      "hyp": "Imibiko yezimo zeklinikhi zezilwane yabuthwa ukuhlola ukwanda kwezimo kulo lonke isifunda saseNingizimu eBotswana."
+    },
+    {
+      "hyp": "Imiphumela yocwaningo iveze; ukwanda okukhulu kwe-Amblyomma hebraeum kuzo zonke izindawo ezine ezifundwe, ukwanda kancane kweminyaka yecala le-heartwater esifundeni saseMoshupa nokubonisa ukwanda komthelela ezinhlotsheni zezimbuzi zasekhaya naphezu kokuzimisela kokulawula izimbangi ngo-63% lwabafuyi abaqashwe."
+    },
+    {
+      "hyp": "I-Amblyomma hebraeum, umthwali oyinhloko we-Ehrlichia ruminantium eNingizimu Afrika, isabalalele kakhulu eSigabeni Eseningizimu saseBotswana futhi ngaleyondlela ibeka inselele ekukhiqizeni ezilwane ezifuywayo kulesi sigaba, mhlawumbe, nakwezinye izindawo zezwe lapho i-tick lihlasela khona izilwane ezifuywayo."
+    },
+    {
+      "hyp": "Ngakho-ke, kunesidingo sokubuyekeza kabusha izindlela zokulawula izikhuthuli ezikhona ngenhloso yokunciphisa umthwalo wosulelelo lwe-heartwater, ikakhulukazi ezinganeni nasezimbuzini."
+    },
+    {
+      "hyp": "Inani elikhulu lezinyamazane eNingizimu Botswana liyenza isifo se-heartwater ezilwaneni ezikhulelwayo sibe sibi nakakhulu."
+    },
+    {
+      "hyp": "Lolu cwaningo lubika ngomthwalo obanzi wezinambuzane ne-heartwater kule ndawo eNingizimu Botswana phakathi kuka-2017 no-2019."
+    },
+    {
+      "hyp": "Imiphumela yocwaningo ingasiza uhulumeni nabalimi ukuba benze amacebo okulawula kangcono isifo se-heartwater."
+    },
+    {
+      "hyp": "Ama-tick athile athatha ibhaktheriya ebizwa nge-Ehrlichia ruminantium, ebangela isifo esaziwa ngokuthi yi-heartwater ezinkomeni, eemvini nasezimbuzini."
+    },
+    {
+      "hyp": "Leli bakteri liyisihluku, okusho ukuthi liyadla ezinye izidalwa eziphilayo njengezilwane, lilibangele ukulimala."
+    },
+    {
+      "hyp": "Izilwane ezikhulayo ezina-heartwater, ngokuvamile zihlale zineminikelo yomzimba ephezulu, zilahlekelwe yisifiso sokudla, zinezinkinga zokuphefumula, futhi zingase zife ekugcineni."
+    },
+    {
+      "hyp": "I-Heartwater ivame kakhulu ingxenyeni eningizimu yeBotswana, futhi abalimi kule ndawo bayalahlekelwa yizilwane zabo ngenxa yesifo."
+    },
+    {
+      "hyp": "Kulesifundo, abacwaningi bahlole umthwalo we-heartwater eNingizimu Botswana."
+    },
+    {
+      "hyp": "Baqala ngokuqoqa, ukubala nokubona izikhuthuli ezinceleni, ezinganeni zezimvu nezimbuzi ukuze baqhathanise inani lezikhuthuli eziphethe i-parasite ye-heartwater nezinye izikhuthuli."
+    },
+    {
+      "hyp": "Abacwaningi baphinda bexoxisana nabanye abalimi ngamava abo nge-heartwater, futhi baqoqe eminye imibiko ye-heartwater ehhovisi lezilwane (lempilo yezilwane)."
+    },
+    {
+      "hyp": "Abacwaningi bathi izikhuthazi eziyingozi zazibanzi endaweni yocwaningo, nokuthi inani lezimangalo zesifo se-heartwater likhuphuke unyaka nonyaka."
+    },
+    {
+      "hyp": "Baqoqe ama-tick angu-310 phakathi kuka-2017 no-2019."
+    },
+    {
+      "hyp": "Bathole izinhlobo ezintathu zezinambuzane: inambuzane yaseNingizimu Afrika, inambuzane enezinyawo ezimhlophe, kanye nenambuzane yebhubesi ebomvu."
+    },
+    {
+      "hyp": "Eyona ivamile kwakuyi-tick yaseNingizimu Afrika (85%), futhi yile eyihambisayo ibhaktheriya ebangela isifo senhliziyo."
+    },
+    {
+      "hyp": "Ezinye izinhlobo ezimbili zezinambuzane abazitholile azinayo indima ekusabalaleni kwesifo se-heartwater, kodwa zihlanganiswe nezinye izifo zezinkomo ezifana ne-'theileriosis', 'anaplasmosis' ne-'babesiosis'."
+    },
+    {
+      "hyp": "Indawo eyacwaningwa yizifundiswa ihlanganisa iGoodhope, iKanye, iMoshupa, neJwaneng."
+    },
+    {
+      "hyp": "Izikhuhlu zaziningi eGoodhope, eKanye naseMoshupa."
+    },
+    {
+      "hyp": "Lezi zindawo zaziningi zinothile, zinamatshe futhi zinezitshalo eziningi."
+    },
+    {
+      "hyp": "IJwaneng, elalinenani elincane kakhulu lezinambuzane, lalomile, liyisilika futhi lalinoluhlaza oluncane."
+    },
+    {
+      "hyp": "Abacwaningi bathi amarekhodi ezilwane aziveze ukuthi kwaba nezimbangela ze-heartwater ezingama-42 eGoodhope, ezingama-38 eJwaneng, ezingama-75 eKanye, nezingama-146 eMoshupa, kusukela ngo-2017 kuya ku-2019."
+    },
+    {
+      "hyp": "Abacwaningi bathi isifo se-heartwater sithinta izimbuzi nezinkomo zasekhaya kakhulu kunazo ezivela kwamanye amazwe."
+    },
+    {
+      "hyp": "Bathe bathi abalimi benze imizamo ethile yokulawula izikhuhlu."
+    },
+    {
+      "hyp": "Isibonelo, u-63% wabalimi bahlanza izilwane ngezidakamizwa (amakhemikhali asetshenziswa ukubulala izinambuzane ezinjengezinyamazane)."
+    },
+    {
+      "hyp": "Cishe ingxenye yesithathu (30%) yabalimi yasebenzisa amafutha ezilwaneni zabo ukulawula izikhuhlane, kanti abanye (7%) basebenzisa ukwakha izingadi ezintsha."
+    },
+    {
+      "hyp": "Abacwaningi bakuthola futhi ukuthi u-44% wabalimi abazange benze lutho ukuze baphathe isilwane esinecala, kuyilapho u-15% bathi babeyovakashela abaphathi bezokwelapha izilwane ukuze bathole iseluleko, kodwa banikeza izilwane imithi ngokwabo."
+    },
+    {
+      "hyp": "Ngaphandle kokuba kwakukhona isifo sokuvikela isifo se-heartwater, abacwaningi bathi u-93% wabalimi abazange basisebenzise."
+    },
+    {
+      "hyp": "Abalimi batshela abacwaningi ukuthi kwakungenxa yokuthi babengafundiswanga nge-vaccine, futhi ngoba babengenakukwazi ukuyikhokhela i-vaccine."
+    },
+    {
+      "hyp": "Ezinye izifundo esikhathini esidlule zihlole indlela izikhuthuli ezisasakazwa ngayo e-Afrika, kuhlanganise ne-Botswana, kodwa ngokusho kwabacwaningi, eyabo kwaba yiyona yokuqala ukubheka ubudlelwano phakathi kwezikhuthuli nezimpawu ze-heartwater e-Botswana."
+    },
+    {
+      "hyp": "Bathe bathi amacala e-heartwater abhalwe odokotela bezilwane angase abe mancane kunamacala eqiniso abhekene nawo abalimi, ngoba odokotela bezilwane bavame ukuhlola kuphela isifo se-heartwater lapho isilwane sifile, okusho ukuthi izilwane eziphila ngalesi sifo noma izilwane eziphulukile azibalwa njalo."
+    },
+    {
+      "hyp": "Abacwaningi baye bancoma ukuthi abalimi kufanele bafundiswe indlela yokulawula nokuphatha isifo se-heartwater ezinkomeni zabo, ukuze kuncishiswe umthwalo waso kule ndawo."
+    },
+    {
+      "hyp": "Baphinda bathi kufanele kwenziwe ucwaningo olwengeziwe ukuze kuqondwe izinto eziholela ekukhuleni kwama-tick."
+    },
+    {
+      "hyp": "Abacwaningi babehlala eBotswana."
+    },
+    {
+      "hyp": "Izithiyo Zokuhlola Okwenziwa Endaweni Yokunakekelwa E-India NaseNingizimu Afrika"
+    },
+    {
+      "hyp": "Ukuhlolwa kwesikhathi (POC) emiphakathini, emakhaya, nasezikhungweni zezempilo zokuqala kukholelwa ukuthi kunamandla amakhulu ekunciphiseni ukulibaziseka ekuxilongeni nasekuqaleni kokwelashwa kwezifo ezinjengobhubhane lwe-HIV, isifo sohlwempu, isifo sesifilisisi, ne-malaria."
+    },
+    {
+      "hyp": "Ukuxilongwa okusheshayo nezinqumo zokuphatha okuqhubekayo okwenziwa ngesikhathi esifanayo sokuhlangana kwelapho noma okungenani ngosuku olufanayo, ngesikhathi isiguli silinde, kuthembisa ukunqoba ukulibaziseka okuhlotshaniswa nokuhlolwa okuvamile okusekelwe elabhorathorini."
+    },
+    {
+      "hyp": "Kodwa-ke, ukuba khona kokuhlolwa okuthengayo, okulula, nokusheshayo okungenziwa ngaphandle kwelabhorethri akukwazi ukuqinisekisa ukuphumelela kokuhlolwa kwe-POC ngokuzenzakalelayo."
+    },
+    {
+      "hyp": "Ukuze siqonde izindima ezintsha nezinselele ezihlangabezana nazo izinto zokwelapha ezinjengalezi, kudingeka sihlole ukuthi ukuxilongwa kusetshenziswa kanjani e-POC futhi kuhlanganiswe kanjani emsebenzini nasezindleleni zabaguli."
+    },
+    {
+      "hyp": "Isahluko esilandelayo sihlola imiphumela ekhethiwe evela ephrosektini yocwaningo olufanele mayelana nezingqinamba zokuhlola i-POC eNdiya naseNingizimu Afrika futhi luxoxa ngazo ngokulinganayo."
+    },
+    {
+      "hyp": "Le projekthi isebenzise izingxoxo ezingaqukatha isimo esithile nezingxoxo zamaqembu ukuhlola amasiko okuxilonga ezifweni ezinkulu nabalingisi ekhaya, emaklinikhi, emphakathini, ezibhedlela, nasezilabhorethri eNingizimu Afrika naseNdiya."
+    },
+    {
+      "hyp": "Uma siqhathanisa imiphumela ekhethiwe, kucace ukuthi womabili amazwe anamasistimu ahlukene kakhulu okuxilonga anikeza izimo ezihlukene kakhulu zokuhlola i-POC."
+    },
+    {
+      "hyp": "Isahluko siphetha ngokubheka indlela yokuthatha lezi zibonakaliso ezingqondweni lapho kuqanjwa izinhlelo zokuhlola i-POC."
+    },
+    {
+      "hyp": "Ukuhlolwa okubi kwezempilo endaweni eNingizimu Afrika naseNdiya kulimaza ukunakekelwa kwezempilo."
+    },
+    {
+      "hyp": "Ukukhathalela endaweni (POC) kubhekisela ekuhlolweni kwezempilo okwenziwa endaweni efanayo lapho isigulane samukela khona ukunakekelwa, kunokuthi kuthunyelwe amasampula esigulane kwenye ilebhu ukuze kuhlolwe."
+    },
+    {
+      "hyp": "INingizimu Afrika neNdiya azinikisi ukuhlolwa okusheshayo nokusebenza kahle ngenxa yemisila yazo emibi ye-POC nama-labhorethri."
+    },
+    {
+      "hyp": "Ukuhlolwa kwe-POC kuvumela iziguli ukuba zithole ukuhlolwa okusheshayo ngemiphumela esheshayo yokwelashwa nokuphathwa kwezifo."
+    },
+    {
+      "hyp": "Lokhu kungenziwa ngemishini ephansi futhi elula engabuyisela imiphumela yokuhlola ngokushesha ngaphandle kokuthatha amasampula e-labhorethri."
+    },
+    {
+      "hyp": "Kodwa kuningi inselele e-POC elicimeza ukunakekelwa kwabagula eNingizimu Afrika naseNdiya."
+    },
+    {
+      "hyp": "Ababhali babefuna ukuqhathanisa ukuhlolwa kwe-POC eNingizimu Afrika naseNdiya ukuze bakwazi ukubona izinkinga."
+    },
+    {
+      "hyp": "Baqhuba izingxoxo nemihlangano yamaqembu nabasebenzi bezempilo, iziguli kanye nezinkampani zezinto zokwelapha kusukela ngoSepthemba, 2012, kuya kuJuni, 2013, kuwo womabili amazwe."
+    },
+    {
+      "hyp": "Babuze ngezinqubo nezingqinamba ze-POC."
+    },
+    {
+      "hyp": "Esemphakathini wezempilo, eNdiya kusetshenziswa izilab ezincane eziningi futhi kwenziwa ukuhlolwa okuyisisekelo, kodwa lezi zilab azinikwa imali eyanele, ngakho-ke azinamakhambi anele okuhlola."
+    },
+    {
+      "hyp": "Abalwelwe bavame ukutshelwa ukuba babuyele ngolunye usuku noma baye kwenye indawo, okubangela izinkinga kubalwelwe."
+    },
+    {
+      "hyp": "Abacwaningi baphawule futhi ukuthi ngezinye izikhathi abaguli bayahlolwa kodwa kuthatha isikhathi eside ukuze imiphumela ibuye, futhi bathola kunzima ukuxhumana nodokotela wabo ngemva kwalokho."
+    },
+    {
+      "hyp": "Ababambiqhaza bathi kufanele kube nezikhungo zokuhlola eziningi emagulini, nokuthi ukuhlolwa kungenziwa endaweni efanayo lapho iziguli zingena khona."
+    },
+    {
+      "hyp": "Baphinda bathi ukulandelela, ukwelashwa noma ukwelulekwa kufanele kwenzeke endaweni efanayo."
+    },
+    {
+      "hyp": "ENingizimu Afrika, bathole ukuthi ezinsizakalweni zempilo zomphakathi, inkampani eyodwa ilawula yonke ivivi, ngakho amasampula aya kule nkampani."
+    },
+    {
+      "hyp": "Ezinye izivivinyo eziyisisekelo zenziwa lapho kunakekelwa khona, futhi iziguli zithola imiphumela ngokushesha."
+    },
+    {
+      "hyp": "Uvivinyo lwe-HIV ne-TB luthatha isikhathi eside ngakho-ke ukulandelela noma ukwelashwa kuphinde kulibale."
+    },
+    {
+      "hyp": "Ukubambezeleka okunye kubangelwa ukuphathwa, ukubhala amagama abantu abagulayo ngokungalungile, ukumarkisha amasampula ngokungalungile, nokuwohloka kwezinhlelo zekhompyutha."
+    },
+    {
+      "hyp": "Ekwenzeni ukuhlolwa kwe-HIV, amanye ama-lab asebenzisa izindlela ezihlukene zokuhlola, futhi lokhu kunikeza imiphumela engenathembeko."
+    },
+    {
+      "hyp": "Bathole ukuthi iziguli zizama ukuhlolwa lwe-HIV ngokuya ngobubanzi bendawo noma uhlobo lokuhlolwa, futhi ngenxa yalokho ngezinye izikhathi zisebenzisa ikhadi lokuhlonza elihlukile, okubangela izinkinga uma kuzama ukuthola imihlangano yokulandelela."
+    },
+    {
+      "hyp": "Abacwaningi baphakamise ukuthi abasebenzi bezempilo kumele basebenzisane ukuze bahlanganyele umsebenzi."
+    },
+    {
+      "hyp": "Bathe bathi uma kuza amakiti amasha okuhlola u-HIV, abasebenzi kufanele baqeqeshwe kabusha futhi izinhlelo kufanele zithuthukiswe."
+    },
+    {
+      "hyp": "Ababhali baqathanise idatha ye-POC evela kuwo womabili amazwe futhi baphakamisa ukuthi iziphathimandla kufanele zihlole i-POC ngokufanele ngaphambi kokwengeza imikhiqizo emisha noma amadivayisi."
+    },
+    {
+      "hyp": "Baphinda bathi kufanele kube khona umzamo omkhulu wokubhekana nemisebenzi eminingi emakilabhu nasekufundeni indima umguli ayidlala ekunakekelweni kwempilo yakhe."
+    },
+    {
+      "hyp": "Ababhali bale ncwadi bevela eNingizimu Afrika, eNdiya, eCanada naseNetherlands."
+    },
+    {
+      "hyp": "Ukuya ekuchazeni ukugula okunzima kanye nokunakekelwa okunzima ngokusebenzisa ukuhlaziywa komqondo"
+    },
+    {
+      "hyp": "Njengoba “ukugula okunzima” no “kunakekelwa okunzima” kungabi nazichazelo ezihambisanayo, ucwaningo lolu luhlomele ukuhlola indlela imiqondo esetshenziswa ngayo, lichaze izimfanelo zayo eziyinhloko, futhi liphakamise izincazelo ezingasebenza."
+    },
+    {
+      "hyp": "Sisebenzise indlela kaWalker no-Avant yesinyathelo ngesinyathelo sokuhlaziya umqondo."
+    },
+    {
+      "hyp": "Ukusetshenziswa nokucaciswa kwalezi zindlela kutholwe ngokubuyekezwa okubanzi kolwemi (scoping review) kanye nokuhlalutya oku-inthanethi kwabachwepheshe bezokwelapha emhlabeni jikelele abangu-114."
+    },
+    {
+      "hyp": "Ngokuhlaziya okuqukethwe kwedatha, sikhiphe amakhodi, izigaba nezihloko ukuze simise izimfanelo eziqondisa imiqondo bese sichaza okungenzeka ukuthi kuyizichazamazwi."
+    },
+    {
+      "hyp": "Ukuze kusize ekuqondeni, sibonisa imodeli, izimo ezihlobene neziphingayo eziphathelene nemibono, sibonile izimbangela nemiphumela yemibono, futhi saqondisa izinkomba zokulinganisa."
+    },
+    {
+      "hyp": "Izimpawu ezihlukanisayo zesifo esibuhlungu kwakuyingozi enkulu yokufa okusheshayo; ukungasebenzi kahle kwamalungu abalulekile; isidingo sokukhathalelwa ukuze kuvinjelwe ukufa; kanye nokubuyiselwa okungenzeka."
+    },
+    {
+      "hyp": "Izici ezihlukanisayo zokunakekelwa okubalulekile kwakuwukubona, ukuqapha nokuphatha ukugula okubalulekile; ukusekelwa kwamalungu omzimba abalulekile; ukunakekelwa kokuqala nokuqhubekayo; noma yikuphi ukunakekelwa kokugula okubalulekile; kanye nemithombo yabantu nezinto ezikhethekile."
+    },
+    {
+      "hyp": "Uchazo lwethu oluphakanyisiwe lobuhlungu obukhulu yilokhu: “simo sempilo embi esinekhuba ekuhlanganyeleni komzimba, ingozi enkulu yokufa okusheshayo uma ukunakekelwa kungabi khona, kanye nethuba lokubuyiselwa esimweni esijwayelekile.”"
+    },
+    {
+      "hyp": "Uchazo lwethu oluphakanyisiwe lokunakekelwa okubalulekile yilokhu: “ukubona, ukuqapha nokuphatha iziguli ezinezinhlungu ezingathi sína ngokusekelwa kokuqala nokuqhubekayo kwemisebenzi yamalungu abalulekile.”"
+    },
+    {
+      "hyp": "Imibono yokugula okuyingozi kanye nokunakekelwa okuyingozi ayinawo amachaza-mvelaphi avumelanayo futhi isebenzisa izindlela ezihlukahlukene."
+    },
+    {
+      "hyp": "Ngokuhlaziywa kwemicabango yokusetshenziswa nokucaciswa kwemibhalo nakubachwepheshe, siye saqonda izici ezichaza imicabango futhi sichaza incazelo engasiza umsebenzi wokwelapha, ucwaningo, nokwenza izinqubomgomo."
+    },
+    {
+      "hyp": "Amandla Nokulinganiselwa Kwesifundo"
+    },
+    {
+      "hyp": "Lolu cwaningo lokuhlaziya imiqondo yilolu lwokuqala ukuchaza ngendlela ehlelekileyo ukusetshenziswa nokucaciswa kwemiqondo yokugula okukhulu nokunakekelwa okukhulu."
+    },
+    {
+      "hyp": "Ucwaningo lusebenzisa ukuhlola okubanzi kolwazi nemininingwane evela kubachwepheshe bezokwelapha abangaphezu kwekhulu abavela ezindaweni ezihlukahlukene emhlabeni wonke ukuze kuhlonishwe izici eziqondisa futhi kunikezwe incazelo ephakanyisiwe yemibono."
+    },
+    {
+      "hyp": "Kungenzeka ukuthi ezinye izindlela zokusetshenziswa nezincazelo zemiqondo ngezilimi ezingaphandle kwesiNgisi, ezincwadini ezingashicilelwe nezingacatshangwa, nakubachwepheshe bezokwelapha abangafakwanga kulokhu kuphenyo, azikwazanga ukubalwa."
+    },
+    {
+      "hyp": "Njengoba ukusetshenziswa kwamanje kwalezi zindlela kuhlukahlukene, izincazelo eziphakanyisiwe zingase zingamukeleki yonke indawo futhi zihloselwe ukukhuthaza ingxoxo eyengeziwe."
+    },
+    {
+      "hyp": "Abacwaningi bahlolisisa kabusha incazelo yabagula kakhulu kanye nokunakekelwa kwabo."
+    },
+    {
+      "hyp": "Imibhalo eqondile yokunakekelwa kwabagula esetshenziswa emhlabeni wonke ngabo bonke odokotela ingasiza ekunakekelweni kwabagula kakhulu."
+    },
+    {
+      "hyp": "Kulesi sifundo, iqembu lamazwe ngamazwe lwezifundiswa liphakamisa ukuthi “ukugula okukhulu” kufanele kusho ukuthi ngenkathi isiguli esigula sinenkambo enkulu yokufa, singaphila futhi."
+    },
+    {
+      "hyp": "Baphinda bathi “ukunakekelwa” okunikezwa iziguli ezigula kakhulu kufanele kusho noma yiluphi unakekelwa olunikezwa kusukela ezikhathini lapho zifika khona esibhedlela, kwaze kwaba yilapho zifa noma ziphulukile."
+    },
+    {
+      "hyp": "Akufanele nje kuphawule ukunakekelwa okusebenzisa imishini ekhethekile."
+    },
+    {
+      "hyp": "Esibhedlela, odokotela bavame ukubhekisela kubantu abagulayo kakhulu ngokuthi “abagulayo kabi”, kanti ukunakekelwa nokwesekwa okudingekayo kulaba bantu kubhekwa njengokuthi “ukunakekelwa okubalulekile”."
+    },
+    {
+      "hyp": "Kodwa-ke, odokotela abasebenza ezingxenyeni ezahlukene noma ezibhedlela baqonda la magama ngokuhlukile, ngoba incazelo yawo iyahlukahlukana endaweni ngayinye."
+    },
+    {
+      "hyp": "Lokhu kuholela, isibonelo, kubantu abagulayo abanemethi yefana bathola ukwelashwa noma ukunakekelwa okuhlukile, kuye ngokuthi ubani obasiza."
+    },
+    {
+      "hyp": "Amakhambi ahlukene enza kube nzima ohulumeni ukwazi inani langempela lezigulo ezingathi sína ezweni labo."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi baqale bacwaninga ukuthi odokotela abahlukene bahlukanisa kanjani “ukugula okunzima” no “kunakekelwa okunzima”, bese bephakamisa incazelo ehambisanayo."
+    },
+    {
+      "hyp": "Baqoqe ulwazi ngokubuyekeza ezinye izincwadi ezinyathelisiwe."
+    },
+    {
+      "hyp": "Baphethisise futhi odokotela abavela emazweni ambalwa ahlukene emhlabeni wonke ababenolwazi lokwelapha iziguli ezigula kakhulu."
+    },
+    {
+      "hyp": "Abacwaningi babhale ngezincazelo ezahlukene zezifo ezingathi sína, futhi baphawula ukuthi kwakuxhunyaniswe ngokujwayelekile nethuba elikhulu lokuba iziguli zife; ezinye izingxenye zomzimba zingasebenzi; isidingo sokukhathalelwa ukuze kugwenywe ukufa; kanye nethuba lokuphulukana."
+    },
+    {
+      "hyp": "Ngokuphathelene nendaba yokufa nokuphulukana, amanye amachaza athi bonke abagulayo abakhulu bayogcina befile, kanti amanye athi kunesihlahla sokuba umguli angaphulile naphezu kokuba gule kakhulu."
+    },
+    {
+      "hyp": "Ekugcineni, abacwaningi baphakamisa ukuchaza isifo esibuhlungu njengesifo lapho amalungu omzimba ayeka khona ukusebenza, lapho kunokwenzeka kakhulu ukuthi umuntu angafa uma engakhathalelwanga kahle, kodwa kunethuba lokuphulukana."
+    },
+    {
+      "hyp": "Ekunakekelweni okubalulekile, odokotela babonakala bekuchaza ngendlela efanayo kakhulu, kodwa bahluke ngokuthi ukunakekelwa okunjalo kufanele kunikezwe kuphi, kanye nesidingo sezinto zokusebenza ezikhethekile."
+    },
+    {
+      "hyp": "Ezinye imithombo yathi ukunakekelwa okubalulekile kungenzeka kuphela ezindaweni ezithile ezikhethekile esibhedlela ezinamakhamera akhethekile."
+    },
+    {
+      "hyp": "Abanye babecabanga ukuthi ukunakekelwa okubalulekile kungafaka ukusebenzisa izinsiza ezikhethekile, kodwa kwakungeyona imfuneko."
+    },
+    {
+      "hyp": "Bathe bathi ukunakekelwa okubalulekile kungaphanwa ngisho nasemagumbini avamile esibhedlela, ezindaweni ezincane zezempilo, emphakathini noma ezigulini zezimoto zokulinda."
+    },
+    {
+      "hyp": "Bathe bathi ngisho nasezindaweni ezihlwempuzekile, iziguli ezigula kakhulu zidinga ukunakekelwa okubalulekile."
+    },
+    {
+      "hyp": "Ngakho-ke, abacwaningi baphakamise ukuthi ukunakekelwa okubalulekile kungachazwa njengonke ukunakekelwa okwenziwa kubantu abagulayo abanesifo esibuhlungu kusukela ekuqaleni kokubona ochwepheshe bezempilo ukuze bathole iseluleko kuze kube yilapho befa noma belulama."
+    },
+    {
+      "hyp": "Abacwaningi bathi lolu kwakuwuchungechunge lokuqala oluqoqe ulwazi ngezichazelo ezahlukene zokugula okukhulu nokunakekelwa, nokuthi imiphumela yabo izosisiza ukuthuthukisa ukunakekelwa kwabantu abagulayo kakhulu."
+    },
+    {
+      "hyp": "Kodwa-ke bathi ucwaningo lwabo lungase lubekwe emkhawulweni yiqiniso lokuthi abazange basebenzise amachazamazwi avela kwezinye izilimi ngaphandle kwesiNgisi noma evela emithonjeni engashicilelwanga."
+    },
+    {
+      "hyp": "Baphinda futhi bahlangana nodokotela abavela kwamanye amazwe ambalwa kuphela, ngakho-ke ukuhlaziywa kwabo akubameli wonke amazwe emhlabeni."
+    },
+    {
+      "hyp": "Abacwaningi, ababevela emanyuvesi aseMalawi, eTanzania, eSweden nase-UK, bathi imibhalo yabo ephakanyisiwe ingashintshwa uma kudingeka."
+    },
+    {
+      "hyp": "Ukuhlola okubanzi kwe-genome nge-CRISPR-Cas9 kubonisa i-CENPJ njengomlawuli we-host wokuhlehliswa kokuhlelwa kwe-microtubule ngesikhathi sokutheleleka kwe-Plasmodium eluphethweni."
+    },
+    {
+      "hyp": "Ngaphambi kokuthi kuqale ukubonakala kwezimpawu ze-malaria, i-Plasmodium sporozoite eyodwa iyaphekula i-hepatocyte bese ithuthukela kuma-merozoites ayizinkulungwane, ngokwengxenye ngokusebenzisa imithombo yomzimba."
+    },
+    {
+      "hyp": "Sikhomba ukuthi ama-microtubules omphakathi ahlela kabusha ngendlela eguqukayo eduze kombhangqwana olukhula lwesigaba se-liver (LS)."
+    },
+    {
+      "hyp": "Sisebenzisa isikrini se-genome-wide CRISPR-Cas9, sibonile abalawuli be-host bokuhleleka kwe-cytoskeleton, ukuthutha kwe-vesicle, ukucindezeleka kwe-ER/Golgi kanye nokwenziwa kwe-lipid okulawula ukuthuthukiswa kwe-Plasmodium LS."
+    },
+    {
+      "hyp": "Lezi zilawuli ezintsha zokutheleleka, kuhlanganise ne-Centromere Protein J (CENPJ), zisibonakalise indlela izikhungo zokuhlela ama-microtubule (MTOCs) zilawulwa ngayo ngesikhathi sokutheleleka."
+    },
+    {
+      "hyp": "Amaphuzu e-γ-tubulin abekwe emaphethelweni e-parasite; ukunciphisa i-CENPJ kwakhulise leli-re-localization futhi kwandisa ukutheleleka."
+    },
+    {
+      "hyp": "Ngaphezu kwalokho, sibonisa ukuthi i-Golgi isebenza njenge-MTOC engasisona i-centrosomal ngokuhlela i-γ-tubulin nokukhuthaza ukwakheka kwe-microtubule emaphethelweni e-parasite."
+    },
+    {
+      "hyp": "Ngokuphelele, sikhomba ukuthi i-Plasmodium LS iqasha i-Golgi yombungu ukwakha izikhonkwane ezithwalwa yi-MT lapho ama-organelles omzimba eqashwa khona ku-PVM, ukuze kusekelwe ukuthuthukiswa kwesigaba se-liver."
+    },
+    {
+      "hyp": "Umphumela wethu ubonisa ukuthi abavimbi abaningi be-pharmacological abathintekayo nabanikazi bangavimba ukutheleleka kwe-LS."
+    },
+    {
+      "hyp": "Oososayensi bafunda ukuthi i-malaria iyayenza kanjani imisebenzi yeseli ukuze bazame ukwandisa izinketho zokwelapha."
+    },
+    {
+      "hyp": "Izilwanyana ezininzi eziphazamisayo zisebenzisa izondlo namandla asemakhaleni ezimangalo zazo zabantu noma zezilwane ukuze ziphinde zivelane."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bathole i-jini ezithile eziqoka indima ekuthelelekeni yi-malaria ezicellini zesibindi, okungase kuholele ezinhlosweni ezintsha zezidakamizwa zokulwa ne-malaria esikhathini esizayo."
+    },
+    {
+      "hyp": "I-Malaria yisifo esiyintukutuku futhi esingabulala, esibangelwa yi-parasite ye-Plasmodium, esidluliselwa ngokuluma komashi."
+    },
+    {
+      "hyp": "Lapho kungena emzimbeni, iPlasmodium iyaluphalaza ngqo isibindi ukuze izale - le nqophamlando yokuqala ilungele ukwelashwa kwe-malaria ngoba ayikho izimpawu zesifo okwamanje futhi lesi sifo asinawo amandla okudluliselwa."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi bafuna ukuthola izinguquko ezithile ku-jini namaprotheni eeseli ze-liver ezine-infection ezingashintsha indlela i-infection eyenzeka ngayo."
+    },
+    {
+      "hyp": "Besebenzisa ubuchwepheshe bokuguqula i-gene i-CRISPR-Cas9, abacwaningi bakwazile ukucima noma “ukukhipha” ama-gene athile ukuze babone ukuthi yiziphi izinguquko lapho lawo ma-gene engasebenzi."
+    },
+    {
+      "hyp": "Bese bayeka amasosha omkhuhlane e-malaria kuwo omabili amaseli e-liver ajwayelekile nawo “asusiwe”."
+    },
+    {
+      "hyp": "Lezi zikhamelo ezifana nezipayipi zihilelekile, phakathi kwezinye izinto, ekuhambeni kwezondlo nezinto ngaphakathi kwamaselula, futhi ngokuvamile zenza inethiwekhi eduze nesisindo selula."
+    },
+    {
+      "hyp": "Esinye sezinto ezibalulekile ezitholakele yikuthi iPlasmodium ithatha ama-microtubules asemaseleni e-liver – esikhundleni sokuba ama-microtubules aqoqane eduze nenuclues ehambisa izondlo nezinto lapho iseli ikudingayo khona, ama-microtubules aqoqana eduze ne-parasite ehambisa izondlo nezinto ukuze kusize i-parasite ukuzala."
+    },
+    {
+      "hyp": "Abacwaningi babone ukuthi lapho beqeda iphrotheni ebizwa nge-CENPJ, i-parasite yaba yimpumelelo kakhulu ekuqoqeni ama-microtubules eduze kwayo, futhi ama-parasite akhula futhi enza amakhophi amaningi awo."
+    },
+    {
+      "hyp": "Izazi ze sayensi zithole futhi amanye ama-gene amaningana athinta ukuthi ukutheleleka kwe-plasmodium kuba sibi kangakanani."
+    },
+    {
+      "hyp": "Abacwaningi bakhombise ngaphambili ukuthi ezinye izinambuzane zihlanganisa kabusha ama-microtubules ukuze ziguqule izinto eziphilayo ngaphakathi kwebanga ukuze zizisebenzisele zona."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi baqinisekisile ukuthi izinambuzane ze-Plasmodium zingase futhi zisebenzise leli qhinga ukuqondisa ukudla namanye amathuluzi ekukhuleni kwazo."
+    },
+    {
+      "hyp": "Kusasa, ososayensi bathemba ukusebenzisa ukuqonda kwabo kokuthi ama-gene nama-parasite ahlangana kanjani ngaphakathi kwamaselula ukuze bathole ukwelashwa okusha kwe-malaria."
+    },
+    {
+      "hyp": "Nakuba abacwaningi bathole izinguquko ezithakazelisayo kumaprotheni ase-liver cell ezingxenyeni zokuqala ze-malaria, kudingeka umsebenzi omningi ukuqonda ukuthi i-Plasmodium iyasiguqula kanjani isayensi yeseli kanye nomsebenzi ukuze kutholakale imigomo ethile yemithi."
+    },
+    {
+      "hyp": "Amakhulu ezinkulungwane zokufa aqhubeka nokwenzeka unyaka ngamunye ngenxa yemalariya, inani elikhulu lawo lise-Afrika."
+    },
+    {
+      "hyp": "Ngokusho kweQembu Lezempilo Lomhlaba, ngaphezu kuka-90% lamacala e-malaria emhlabeni ngo-2019 kwenzeka e-Afrika, okwenza lokhu kube yindaba ebalulekile edinga imizamo eqhubekayo yokulawula nokungenelela."
+    },
+    {
+      "hyp": "Ukufika Kwezitshalo Nezidalwa Ezingaphandle Njengengxenye Yomzamo Wokucwaninga Ngokushintsha Komhlaba eNingizimu Afrika"
+    },
+    {
+      "hyp": "Kulesi sahluko, siqhathanisa ukuthi ucwaningo olungakanani eNingizimu Afrika luqondiswe ekungeneni kwezinto eziphilayo ezingaphandle uma kuqathaniswa namanye amalungu ashintsho lomhlaba."
+    },
+    {
+      "hyp": "Sisebenzisa i-Web of Science, sibuyekeze ngendlela ehlelekile izincwadi ezihambelana nezimila ze-ecosystem zaseNingizimu Afrika ezinyatheliswe phakathi kuka-2000 no-2018 futhi ezihlobene nokungena kwezinto eziphilayo, ukushintsha kwesimo sezulu, ukuqothulwa ngokweqile, ukuguquka kwendawo yokuhlala, ukungcoliswa, kanye/noma i-CO2 yomoya."
+    },
+    {
+      "hyp": "Sithole amaphepha afanele angu-1149 ahlolwe ngokwemigomo yabo yokumboza abashayeli kanye nokuhlangana kwabashayeli okunethemba ekuhlukahlukenini kwemvelo noma ezinsizini zekhaya."
+    },
+    {
+      "hyp": "Kutholakale umphumela onamandla wendawo nesikhathi emzamweni wokucwaninga."
+    },
+    {
+      "hyp": "Okokuqala, umzamo wahlukana phakathi kwezindawo, ngokushintsha kwendawo yokuhlala, ukungcoliswa nokudla ngokweqile okuthola ukugxila okukhulu kocwaningo emazingeni omphakathi, amanzi amnandi nolwandle/izindawo eziseceleni kolwandle ngokulandelana."
+    },
+    {
+      "hyp": "Okwesibili, izimpawu ezithile ezifundwe kahle emhlabeni jikelele azibhalwanga ezincwadini zendawo (isib. kwakunemiqulu engaphansi kwehlanu emayelana nokubanda kolwandle)."
+    },
+    {
+      "hyp": "Sikhonjwe ukusebenzelana okuhlukile okungu-21 phakathi kwabaqhubi, kokusebenzelana phakathi kwezinhlobo ezihlaselayo kanye nokuhluka kwendawo yokuhlala (isibonelo izimo eziguqukile zomlilo ezindaweni ezihlaselekile) okuvelele kakhulu."
+    },
+    {
+      "hyp": "Kodwa-ke, okungenani u-4% wemiqondo yayixoxa ngokusebenzisana phakathi kwabaqhubi abathathu noma ngaphezulu."
+    },
+    {
+      "hyp": "Lokhu kusikisela ukuthi nakuba kubalulekile ukuqonda ukusebenzisana kwabadali, kuncane kakhulu okwenziwe ngokucwaninga imiphumela ehlanganisiwe yokusebenzisana kwabadali ezinhlelweni ze-ecosystem zaseNingizimu Afrika."
+    },
+    {
+      "hyp": "Ukusikisela okuye kwaphawulwa isikhathi eside ukuthi izinhlobo ezihlaselwayo ziyingozi yesibili enkulu kunazo zonke ekulondolozeni ukwahlukahluka kwemvelo, ngemuva kokushintsha kwendawo yokuhlala, kuhambisana nokukhiqizwa kocwaningo oluhambisanayo lolu phawu eNingizimu Afrika."
+    },
+    {
+      "hyp": "Ukukhula isithombe esibanzi sokubala ukubaluleka okulinganiselwe kokushayela kokuguquka komhlaba kuzoba inselele, hhayi kuphela ekuchazeni okucacile kokushayela, kodwa futhi ngenxa yokungalingani kokutholakala kwemiphumela yocwaningo ezilinganisweni zesikhathi nezindawo ezifanayo."
+    },
+    {
+      "hyp": "Ukuvuthwa okuhambelanayo komsebenzi mayelana nezinhlobo ezihlaselayo kungaba yisisekelo sokuphenya ukusebenzelana okunjalo okunzima futhi ngaleyo ndlela kusize ekuqedeni izithiyo ezinjalo."
+    },
+    {
+      "hyp": "Abacwaningi kumele balandelele imiphumela ehlangene yezinhlobo ezihlaselayo, ukushintsha kwesimo sezulu nemisebenzi yabantu eNingizimu Afrika."
+    },
+    {
+      "hyp": "Izinhlobo ezihlaselayo yisongo lesibili elikhulu ekulondolozeni ukwahlukahluka kwemvelo eNingizimu Afrika - iqiniso elihambisana, kubika abacwaningi, nenani lezincwadi zocwaningo ezenziwe ngale ndaba."
+    },
+    {
+      "hyp": "Lokhu kuhambisana nezinye izingozi ezifana nokungcoliswa, ukushintsha kwesimo sezulu, ukubulala ngokweqile noma ukushintsha kwendawo yokuhlala."
+    },
+    {
+      "hyp": "Lezi zingozi ezisongela izindawo eziphilayo yilokho ososayensi abakubiza ngokuthi izimbangi zokuguquka komhlaba, okuyisifundo sendlela iplanethi yomhlaba, njengesimiso, esiguquka ngayo ngokusebenzisana kwazo zonke izinto phakathi kwemisebenzi yabantu nezinye izinqubo zokwenyama, zekhemikhali nezobiological."
+    },
+    {
+      "hyp": "Kwesigaba sencwadi yakamuva, abacwaningi bahlole ukuthi kungakanani ucwaningo oluyenziwa eNingizimu Afrika ngokuqeda izilwane nezimila ezingaphandle, lapho izinhlobo zezitshalo noma izilwane zifakwa endaweni entsha lapho zikhula khona, zizimisele futhi zingazeonakalise ezinye izinhlobo ezizungezile noma imvelo."
+    },
+    {
+      "hyp": "Baphethe futhi ngocwaningo lokuthi lo mshayeli uqondana kanjani nabanye abashayeli."
+    },
+    {
+      "hyp": "Bekubheka izincwadi zocwaningo ezinyatheliswe phakathi kuka-2000 no-2018 kwedatha bese ye-“Web of Science”, bathole izifundo ezifanele ezingama-1149."
+    },
+    {
+      "hyp": "Ukubuyekezwa kwabo kwemisebenzi yocwaningo kwakhombisa ukuthi ucwaningo olusekelwe ezweni (olwasemhlabeni) lugxile kakhulu ekuthuthukeni kwendawo yokuhlala, kuyilapho ucwaningo lwamanzi amnandi lugxile ekungcoliseni, kanti ucwaningo lolwandle ne-estuary lubukele kakhulu ukukhahlela ngokweqile."
+    },
+    {
+      "hyp": "Baphethe futhi ukuthi izimpawu ezibhalwe kahle emhlabeni wonke ukuthi zithinta ukwahlukahluka kwemvelo noma izinsizakalo ze-ecosystem, azibhalwanga kahle ekuhloleni kwendawo yaseNingizimu Afrika."
+    },
+    {
+      "hyp": "Isibonelo, bathole kuphela izincwadi eziyi-5 ezibuka ukwanda kokubila kolwandle, okuyaphula izinhlangano zokudla futhi olimaza impilo yolwandle."
+    },
+    {
+      "hyp": "Lokhu kwenzeka ngoba ikhabhoni dayoksayidi elikhulu emoyeni, evela emisebenzini yabantu njengokushisa amalahle, lixazululeka emanzini olwandle."
+    },
+    {
+      "hyp": "Ukushintsha kwendawo yokuhlala, njengomlilo noma ukushintsha kwesimo sezulu, kuholela ekukhuleni kwezinhlobo ezingena ngokungemthetho."
+    },
+    {
+      "hyp": "Bathe bathi ikhabhoni dayoksayidi ikhuphuke cishe ngamaphesenti angu-40, futhi kungenzeka ukuthi idala izimo ezinhle zokukhula kwemifino yasezweni langaphandle."
+    },
+    {
+      "hyp": "Kepha, kunocwaningo oluncane kakhulu oluenziwe kule ndaba eNingizimu Afrika."
+    },
+    {
+      "hyp": "Bathole amaphepha angu-21 abheka indlela abashayeli abahlukene abaxhumana ngayo."
+    },
+    {
+      "hyp": "Iningi lalezi zazigxile ekuxhumaniseni izinguquko zezindawo zokuhlala nezinhlobo ezihlaselayo."
+    },
+    {
+      "hyp": "Kodwa-ke, amaphepha ambalwa kakhulu abhekile kubashayeli abangu-3 noma ngaphezulu ngesikhathi esifanayo."
+    },
+    {
+      "hyp": "Ababhali bathi lokhu kusikisela ukuthi ucwaningo olwengeziwe mayelana nendlela abashayeli bokuhluka kwemvelo abaxhumana ngayo ukuze bathinte izinhlelo zekhaya kudingeka eNingizimu Afrika."
+    },
+    {
+      "hyp": "Ababhali baseNingizimu Afrika bayavuma ukuthi kuyoba nzima ukuthuthukisa umbono ophelele wokuthi abashayeli bezinguquko zomhlaba banxibelelana kanjani eNingizimu Afrika, kodwa bathi ucwaningo lwendawo olukhona ngezinhlobo ezihlaselayo selungase luqondise izifundo kule ndawo eyingozi."
+    },
+    {
+      "hyp": "Izici ze-edaphic ezilawula izinto eziphilayo zomhlabathi kanye nokugcinwa kwe-C ehlathini laseMiombo, eZambia."
+    },
+    {
+      "hyp": "Izinto eziphilayo zomhlabathi (SOM) iyisithako esiyinhloko sokukhiqiza kwamahlathi kanye nesitoko se-carbon ephilayo yomhlabathi."
+    },
+    {
+      "hyp": "Kodwa-ke, kuluncane olukwaziwayo mayelana nokuhlukahluka kwe-SOM ne-C ehlathini laseMiombo, eliyisiko-mfumo elikhulu ehlathini lase-Afrika esingaphansi kweSahara futhi libalulekile ezindleleni ze-REDD+."
+    },
+    {
+      "hyp": "Kulesifundo, izici ezingu-9 zomhlabathi zilinganiselwe futhi zasetshenziswa ukuhlaziya ukungafani kwe-SOM ezindaweni zasehlathini laseMiombo ezinezakhiwo ezahlukene zezihlahla eLuanshya, eZambia."
+    },
+    {
+      "hyp": "Okutholakele kukhombise ukuguquguquka okukhulu kwesitoko se-SOM emazingeni ahlukene omhlabathi:"
+    },
+    {
+      "hyp": "Ama-36.67 kuya ku-113.89 Mg ha-1 kubunzima obu-0–10 cm, ama-28.67 kuya ku-79.56 Mg ha-1 kubunzima obu-10–20 cm, nama-31.89 kuya ku-98.56 Mg ha-1 kubunzima obu-20–30 cm."
+    },
+    {
+      "hyp": "Lezi zindinganiso ze-SOM ekujuleni okuhlukene nazo zashintshashintsha phakathi kwama-miombo woodland amasayithi ezigaba ezahlukene zokulandelana, ikakhulukazi ukuthi izindawo ezazibuthwe yokuhlanzwa kwemithi yakamuva zazinokuqukethwe kwe-SOM okuphezulu kunokulinganiselwe ngaphezulu kwesendlalelo (0–10 cm: +5.57%; 10–20 cm: +4.20%; 20–30 cm: +4.30%)."
+    },
+    {
+      "hyp": "Uhlalutyo oluhambisanayo oluqondile (CCA) lubonakalisile ukuthi izici ezibaluleke kakhulu zemvelo eziphazamisa i-SOM kwakuwukuncishiswa kwehlathi ngokuhlanzwa, kanye nokuqukethwe kobumba emhlabathini."
+    },
+    {
+      "hyp": "Ucwaningo lolu lubonisa ukuthi i-CCA ingasetshenziswa ukubonisa ukubaluleka okulinganiselwe kwezinyathelo ezahlukene zokukhula kwehlathi njengomsebenzi wezindlela zokuphatha, kanye nezici ze-edaphic, ekuqondeni okuqukethwe kwe-SOM yomhlabathi we-miombo."
+    },
+    {
+      "hyp": "Imiphumela yalesi sifundo ibaluleke kakhulu ekunqobeni amasu wamanje we-REDD+ wokutshala izimithi nokulawula amagquma ezimithi, aqondiswe ekwandiseni amasitoke ekhabhoni ehlathini lase-Afrika eseningizimu yeSahara."
+    },
+    {
+      "hyp": "Sithi ososayensi abafunda amahlathi aseZambia, ukugunda izimithi ngokucophelela kuyaqeda ukulungisa umhlabathi."
+    },
+    {
+      "hyp": "Abacwaningi bathi izindawo ezicwiliwe zasehlathini kanye nezinhlabathi eziphezulu ehlathini laseZambia zazinento eningi ephilayo, okusho ukuthi umhlabathi ukhulu."
+    },
+    {
+      "hyp": "Kubalulekile ukuqonda ikhwalithi yomhlabathi e-Afrika eseningizimu yeSahara ngoba ithonya kakhulu indlela izitshalo nezihlahla ezikhula ngayo."
+    },
+    {
+      "hyp": "Uluhlaza lunenutriyenti ezahlukene, futhi izinto eziphilayo nezilimo yizona ezibaluleke kakhulu ekusizeni izitshalo ukuba zikhule kahle."
+    },
+    {
+      "hyp": "Izinto eziphilayo yizinto ezisemhlabathini ezivela esaleni sezitshalo nezilwane ezifile."
+    },
+    {
+      "hyp": "Ngaphezulu kwengxenye (58%) yento ephilayo iyikhabhoni nje, bese okusele yimanzi namanye amaminerali."
+    },
+    {
+      "hyp": "Uluhlaza olunezinhlanzi ezinengi, futhi ngakho-ke unekhaboni, lugcina amanzi isikhathi eside futhi lunezinye izondlo eziningi."
+    },
+    {
+      "hyp": "Ososayensi abanawo ulwazi oluningi ngezinguquko zezinto eziphilayo nekhaboni ezingosini zase-Afrika eseningizimu yeSahara, ngisho noma ziyibalulekile ekukhuleni kwemifino nemithi."
+    },
+    {
+      "hyp": "Kulesifundo, abacwaningi bafuna ukuthola ukuthi indaba yempahla ephilayo yomhlabathi ehlathini ishintshile kanjani, nokuthi yini ebeka inani."
+    },
+    {
+      "hyp": "Benze ucwaningo lwabo ehlathini eZambia."
+    },
+    {
+      "hyp": "Baqoqe amasampula omhlabathi phezulu (0-10 cm), phakathi (10-20 cm), nasezindaweni ezijulile (20-30 cm), nakwezinye izindawo ezahlukene zasehlathini."
+    },
+    {
+      "hyp": "Abacwaningi base bebahlola ithaka elabhorethri ukuhlola ukuthi linalo malini udaba oluphilayo."
+    },
+    {
+      "hyp": "Ilaboratri yi-indawo lapho ososayensi benza khona ukuhlola nokuhlola, ngokuvamile basebenzisa imishini enembile yokulinganisa izinto ezithile."
+    },
+    {
+      "hyp": "Baphinda babhala phansi ezinye izimfanelo zomhlabathi njengohlobo lwawo, ngokwesibonelo oluhlaza noma olufana nodongwe."
+    },
+    {
+      "hyp": "Imiphumela yabo yakhombisa ukuthi inani le-organic matter lahluka kakhulu phakathi kwezindawo ezihlukene, naphakathi kokujula okuhlukene."
+    },
+    {
+      "hyp": "Uluhla lwezwe oluphezulu lwalunamazinga aphezulu kakhulu ezinto eziphilayo ezafinyelela kuma-milligrams angu-114 (mg) ngehektha, kulandela ubukhulu bomhlabathi (cishe ama-100 mg ngehektha)."
+    },
+    {
+      "hyp": "Uluhla lwezwe oluphakathi lwalunobuningi obuncane obufinyelela ku-80 mg ngehektha."
+    },
+    {
+      "hyp": "Abacwaningi bathi izindawo ehlathini ezazisanda kuhlanzwa zazinento eningi ephilayo kunendawo ezingakahlanzwa."
+    },
+    {
+      "hyp": "Baphinde baphakamise ukuthi ukuthungatha izimithi ehlathini, ngokuphathwa okucophelelayo, kungase khulisa izinto eziphilayo zomhlabathi."
+    },
+    {
+      "hyp": "Abacwaningi baphawula futhi ukuthi umbala womhlabathi washintsha ukusuka obumnyama obusundu (umhlabathi ophezulu) uya kobusundu obukhanyayo (umhlabathi ojulile), nokuthi imihlabathi yethanga nelesihlalo yayinento eningi yezinto eziphilayo."
+    },
+    {
+      "hyp": "Izindawo ehlathini ezazivulekele ukukhanya kwelanga zazinamahlathi amakhulu amadala, kanye nezinto eziphilayo eziningi."
+    },
+    {
+      "hyp": "Abacwaningi, ababehlala eZambia naseNingizimu Afrika, bathi izindlela zabo zingaguqulwa abanye ukuhlola ikhwalithi yomhlabathi ezindaweni ezihlukene nasemazingeni ahlukene."
+    },
+    {
+      "hyp": "Ukuthuthukisa Ukukhiqizwa Kwekheshi Nokukhiqiza Ngokusebenzisa Indlela Yezinkundla Zokwakha Izinto Ezintsha Zabantu Abathintekayo e-Ethiopia"
+    },
+    {
+      "hyp": "I-Chickpea (Cicer arietinum L.) yiyona ingxenyekazi yokudla ebalulekile yesithathu kokubili ngendawo kanye nokukhiqizwa ngemuva kwamabhinca avamile namabhinca e-faba e-Ethiopia."
+    },
+    {
+      "hyp": "Kodwa-ke, ukukhiqiza komkhiqizo kwakuncane kakhulu uma kuqhathaniswa namandla awo ngenxa yokungasetshenziswa kwezinhlobo ezithuthukisiwe nezindlela ezidalwe yisikhungo socwaningo."
+    },
+    {
+      "hyp": "Ukuthuthukisa ukusetshenziswa kwezobuchwepheshe obuthuthukisiwe nobuhlobene nocwaningo, i-National Chickpea Stakeholders Innovation Platform yasungulwa ngo-2013 enenjongo yokubuthana ngezinhlangano ezahlukene ezisebenza ochungechungeni lokukhiqiza ukuze kuhlonishwe inselele ezinkulu futhi kutholakale izixazululo ezizosetshenziswa ngemizamo ehlangene."
+    },
+    {
+      "hyp": "I-platform ibonile ukushoda kwembewu njengesiqondisi esikhulu kule nsimu."
+    },
+    {
+      "hyp": "Le nkinga iye yakhonjiswa ngokwakha amaqembu abalimi abakhiqiza imbewu ngosizo lwabalingani be-R&D futhi njengamanje yibona abahlinzeki abakhulu ezweni lonke."
+    },
+    {
+      "hyp": "Behlangana, leli qonga liqinisile umzamo wokwandisa futhi laqalisa ukusakazwa kwezobuchwepheshe obuthuthukisiwe kubalimi abaningi."
+    },
+    {
+      "hyp": "Ngenxa yalokho, ukukhiqiza komkhiqizo wabalimi abayizibonelo kwanda kakhulu kane, futhi ukukhiqiza kwesizwe kuphindwe kabili kuya ku-2 ton ha−1 kuleli khulu leminyaka eledlule."
+    },
+    {
+      "hyp": "Leli qonga liphinde lasebenza ekulungiseni ukufinyelela emakethe futhi muva nje i-chickpea ijoyine imakethe ye-Ethiopian Commodity Exchange."
+    },
+    {
+      "hyp": "Ngokubaqaphela amathuba amakhulu okukhula kwesitshalo, leli qembu lizama ukuqinisa ngokwengeziwe ukungenelela futhi liqoqe amathuba."
+    },
+    {
+      "hyp": "Indlela i-Ethiopia eyandisa ngayo ukukhiqizwa kwamaqanda."
+    },
+    {
+      "hyp": "Abacwaningi bachaze ukuthi i-Ethiopia yakhuphula ukukhiqizwa kwamaqanda ngokuqinisekisa ukuthi abalimi banokufinyelela ezimbini ezithuthukisiwe kanye nokuqeqeshwa ngezindlela zokulima ezithuthukisiwe."
+    },
+    {
+      "hyp": "Isikhuphu luhlobo lokudla olufana nebhinca oluhlwanyelwa kakhulu e-Ethiopia."
+    },
+    {
+      "hyp": "Iningi lemikhiqizo yezwe liyakhishwa nakwamanye amazwe."
+    },
+    {
+      "hyp": "Eminyakeni eminingi edlule, abantu abaningi baqaphela ukuthi abalimi bangakhiqiza amantongomane amaningi uma besebenzisa imbewu eyenziwe ngcono ezohlala iphila izinambuzane nezifo."
+    },
+    {
+      "hyp": "Incwadi yakamuva ichaza ukuthi ukukhiqizwa kwamaqanda ase-Ethiopia kuye kwanda kusukela kulokho kuqondwa."
+    },
+    {
+      "hyp": "Ababhali bathi ngo-2013, i-Ethiopia yakha i-“National Chickpea Stakeholders Innovation Platform” eyaxoxa ngezinkinga ekukhiqizweni kwe-chickpea futhi yaveza izixazululo."
+    },
+    {
+      "hyp": "I-platform ifana nenhlangano."
+    },
+    {
+      "hyp": "Ipulatifomu yayifaka abacwaningi, uMnyango wezoLimo wase-Ethiopia, amaqembu abalimi kanye nezinhlangano, abenzi bokudla, abakhiqizi bembewu, nabalingani bokuthumela kwamanye amazwe."
+    },
+    {
+      "hyp": "Ababhali bathi isiteji sabona ukushoda kwembewu njengesinye sezinselelo ezinkulu, bese bakha izinhlangano zokunikeza imbewu kulo lonke izwe."
+    },
+    {
+      "hyp": "Lokhu kushintsha kwandisa ukukhiqizwa kwamaqanda kabili kwaze kwaba yiyithoni ezimbili ngehektha."
+    },
+    {
+      "hyp": "Omunye umsebenzi ababewubone kwakuwukuntuleka kokukhulu kwemikhiqizo."
+    },
+    {
+      "hyp": "Bafundise abalimi ngezindlela zokukhiqiza ezingcono, njengokusebenzisa umanyolo ukuthuthukisa ikhwalithi yomhlabathi."
+    },
+    {
+      "hyp": "Baphawule futhi ukuthi abalimi bahlupheka ukulawula ukhula."
+    },
+    {
+      "hyp": "Ngakho-ke banike abafama imbewu yeqhwa elihluma kahle ngisho noma lihlatshelwe ngezidakamizwa zezinhlanga, ezingamakhemikhali abafama abawasebenzisayo ukulawula ukhula noma izitshalo ezingafuneki."
+    },
+    {
+      "hyp": "Ababhali bathi i-platform yenza isiqiniseko sokuthi abalimi bafundiswe ukuze bakhulise ulwazi lwabo ngokukhiqizwa kwamaqhawe."
+    },
+    {
+      "hyp": "Abalimi nabo babekhona emicimbini lapho bebelingana khona ulwazi namava abo."
+    },
+    {
+      "hyp": "Ababhali bathi i-platform ihlanganisa abalimi nabathengi, kanye nabakhiqizi bembewu nalabo ababophekile ekuthengeni nasekusabalaliseni imbewu kubalimi."
+    },
+    {
+      "hyp": "I-platform ibuye yakha futhi yaqeqesha amaqembu abesifazane nabasha ekukhiqizeni i-chickpea."
+    },
+    {
+      "hyp": "Baphinde bakhuthaza abesifazane nabasha ukuba bahlanganyele ekukhiqizweni kwembewu."
+    },
+    {
+      "hyp": "Ababhali bathi naphezu kokuthi kufezwe okuningi, kusasekhona ukushoda kwembewu yebhinya."
+    },
+    {
+      "hyp": "Baphinda bathi i-platforming ingathola okwengeziwe uma ngabe inezinsiza zokuthi ihlangane njalo."
+    },
+    {
+      "hyp": "Bacebisa ukuthi uMnyango wezoLimo wase-Ethiopia nabacwaningi kufanele basekele isiteji ngemali ukuze singaweli."
+    },
+    {
+      "hyp": "Baphakamise futhi ukuthuthukiswa kokulingana kwamaqanda kanye nendlela okuqondwa ngayo ingozi yokukhiqiza amaqanda, njengezifo."
+    },
+    {
+      "hyp": "Ekugcineni, ababhali bacela imbewu ethuthukisiwe kakhulu ezizoba lula ukuvunwa ngemishini, futhi ezingathinteki yizidakamizwa zezinhlanga."
+    },
+    {
+      "hyp": "Uhlobo oluhlukile lwe-SARS-CoV-2 lineage A (A.23.1) olunezinguquko ze-spike luvele futhi lubusa ubhubhane lwamanje lwase-Uganda."
+    },
+    {
+      "hyp": "Ukubhekwa kwe-genome ye-SARS-CoV-2 e-Uganda kunikeza ithuba lokwenza incazelo egxile ekuthuthukeni kwe-virus ezweni elincane lase-Afrika eseMpumalanga elingenayo ulwandle."
+    },
+    {
+      "hyp": "Lapha sibonisa ushintsho lwamuva olukhona ekuhambeni kwesifo kule ndawo, ngohlobo olusha oluvela i-A.23 oluguqukela ku-A.23.1 oluqondisa manje amacala ase-Uganda futhi selusakazeke kwamanye amazwe angu-26."
+    },
+    {
+      "hyp": "Nakuba izinguquko eziqondile ku-A.23.1 njengoba iziqondanise zihlukile kunalokho okuseziguqukeni ezikhathazayo (VOC), ukuziphendukela kwemvelo kubonisa ukuhlangana kusethi efanayo yamaprotheni."
+    },
+    {
+      "hyp": "Isifunda sokukodwa kwe-spike protein ye-A.23.1 siqoqele ukuguquka okufana nokuningi kokuguquka okubonwayo kwi-VOC okuhlanganisa ukuguquka endaweni engu-613, ukuguquka endaweni yokuhlukanisa i-furin okwandisa i-motif ye-amino acid esiqinile, kanye nokuguquka okuningi esizindeni se-N-terminal esenza imisebenzi yokulwa nezifo."
+    },
+    {
+      "hyp": "Ngaphezu kwalokho, i-A.23.1 lineage iqukethe izinguquko eziprotheni ezingaphandle kwe-spike ezibuye zibonwe kwezinye i-VOC (i-nsp6, i-ORF8 ne-ORF9)."
+    },
+    {
+      "hyp": "Uthonyo lwezokwelapha lwe-A.23.1 variant alucaci kalula, kodwa kubalulekile ukuqhubeka nokulandelela ngokucophelela le variant, kanye nokulinganisa ngokushesha imiphumela yokuguqulwa kwe-spike protein ekusebenzeni kwe-vaccine."
+    },
+    {
+      "hyp": "Abacwaningi babika ngokuthuthuka kwe-SARS-CoV-2 e-Uganda."
+    },
+    {
+      "hyp": "Ngo-2021, abacwaningi babike ukuthi uhlobo olusha lwe-SARS-CoV-2, i-virus ebangela i-Covid-19, luvelele e-Uganda futhi lwase lwesabekela kwamanye amazwe angu-26."
+    },
+    {
+      "hyp": "Bayibize leli-variant ngokuthi “A.23.1”, bathi inezinguquko eziningi ezifanayo kumaphrotheni abacwaningi abaye babona kwezinye izinhlobo ezibalulekile emhlabeni jikelele ngalesi sikhathi."
+    },
+    {
+      "hyp": "Oososayensi balandelela indlela izinhlobo ze-coronavirus eziyishintshayo ukuze bakwazi ukuqonda kangcono ukuthi izigqoko zisebenza kangcono kanjani ezinhlotsheni ezintsha."
+    },
+    {
+      "hyp": "I-Covid-19 ibulele abantu abaningi emhlabeni jikelele."
+    },
+    {
+      "hyp": "Enqubweni eyaziwa ngokuthi ukubhekwa kwe-genome, ososayensi balandela indlela i-genetics namaprotheni e-virus ashintsha ngayo njengoba isakazeka."
+    },
+    {
+      "hyp": "Bayasebenzisa lolu lwazi ukulawula isifo nokuqondisa ukuthuthukiswa kwe-vaccine."
+    },
+    {
+      "hyp": "Isibonelo, ngokuqonda ubukhulu bephrotheni ze-spike ze-virus, abacwaningi bangaklama ama-vaccine ahlanganisa kangcono leziphrotheni ukuze kuvimbelwe i-virus ukungena ezicellini zabantu."
+    },
+    {
+      "hyp": "Kulesi sifundo, abacwaningi babheke ngokukhethekile indlela i-SARS-CoV-2 eyayithuthuka ngayo e-Uganda."
+    },
+    {
+      "hyp": "Abacwaningi baqonde uhlu lwe-genetic lwesivivirus emasampuleni okutholakele ku-COVID-19 athathwe kulo lonke elase-Uganda."
+    },
+    {
+      "hyp": "Basebenzise isofthiwe yekhompyutha ukuze balandele umlando (noma umlando womndeni) wohlobo olusha abalubona ngale ndlela (oluthiwa yi-A.23.1), futhi bakwazi ukubona ukuthi uhlobo luhambisana kanjani nomuthi womndeni we-SARS-CoV-2."
+    },
+    {
+      "hyp": "Imiphumela yabo yakhombisa ukuthi uhlobo lwe-A.23.1 luye lwathuthuka muva nje kwenye uhlobo oluthiwa yi-A.23, futhi lwafunyanwa ku-90% yazo zonke izibonelo ezithathelwe."
+    },
+    {
+      "hyp": "Ngamanye amazwi, bekuyibusayo emasampuleni ase-Uganda kusukela ngo-Okthoba 2020."
+    },
+    {
+      "hyp": "Baphethe futhi ukuthi uhlobo lwe-A.23.1 lwaluna ukuguqulwa okuningi eprotheni ye-spike okufana nokuguqulwa okubonwe kwezinye izinhlobo ezibalulekile."
+    },
+    {
+      "hyp": "Lezi zinguquko cishe zenza uhlobo oluhlukile ludluliseke kalula (luyasakazeka ngokushesha), futhi lube nokumelana okuqine kakhulu neziqephu zokugcoba kanye nokwelashwa."
+    },
+    {
+      "hyp": "Lolu cwaningo lwenza igalelo emizamweni eqhubekayo yokulandelana kwe-SARS-CoV-2 ehlukahlukene emhlabeni jikelele."
+    },
+    {
+      "hyp": "Imiphumela iyakwengeza ebufakazini obukhula bokuthi i-SARS-CoV-2 ithuthuka ngokushesha njengoba isakazeka iphethe abantu abaningi futhi iphikisane neziqephu."
+    },
+    {
+      "hyp": "Kodwa-ke, ucwaningo olwengeziwe luyadingeka ukuqonda ukuthi yini ngempela imiphumela noma imisebenzi yokuguqulwa kwe-spike protein e-A.23.1 variant."
+    },
+    {
+      "hyp": "Abacwaningi bayekazelela ukuqapha okwengeziwe kwe-genomic ukuze kusisize siqonde ukuthi izinhlobo ze-virus ziphendula kanjani ezibulaleni zezifo ezitholakala e-Uganda nakwamanye amazwe."
+    },
+    {
+      "hyp": "Bathi futhi ukuqapha uhambo lwamazwe ngamazwe kubalulekile ukuze abacwaningi baqonde kangcono indlela i-virus esakazeka ngayo endaweni."
+    },
+    {
+      "hyp": "Yini Eyenza Umuntu Ube Ngowesifazane?"
+    },
+    {
+      "hyp": "Izifundo Zezimo Zokuchaza Izizathu Nezimpawu Zokuhlukunyezwa/Ukusika Kwamalungu Okwasebenzeni Kwabesifazane e-Indonesia, e-Ethiopia nase-Kenya"
+    },
+    {
+      "hyp": "Ukugqoka/ukulimaza izitho zangasese zabesifazane kuyindlela yokudabula yendabuko elimaza amalungelo abesifazane futhi inezingozi empilweni."
+    },
+    {
+      "hyp": "Le ncwadi ibonisa izizathu nezimo zokusikwa kwezilwane zangasese zabesifazane (FGM/C) ezindaweni ezithile zamazwe amathathu – i-Indonesia, i-Ethiopia ne-Kenya."
+    },
+    {
+      "hyp": "Imininingwane iqoqwe ngesifundo semindeni nentsha (eneminyaka ephakathi kuka-15 no-24) kanye nezingxoxo zamaqembu okuqondisisa, izingxoxo eziqondile kanye nezingxoxo zabantu abanolwazi olukhulu phakathi kwentsha nabantu abathintekayo emphakathini ngo-2016 no-2017."
+    },
+    {
+      "hyp": "Kwenziwe izihloko zezibalo ne-thematic content analysis."
+    },
+    {
+      "hyp": "Imiphumela yocwaningo iqinisekisa ezinye zezizathu ze-FGM/C ezibhalwe yiwo amanye ucwaningo, iphawula ukuthi lezi zizathu zixhunyanisene kakhulu, futhi izindinganiso zobulili yiyona yona eholela kuzo."
+    },
+    {
+      "hyp": "Kuzo zonke izimo ezintathu, lezizizathu ziqhuba ukuguqulwa kwamizimba yabesifazane ukuze kuvele umzimba “oqhubekile” owamukelwa yi-status quo yobudlelwano bobuqaba."
+    },
+    {
+      "hyp": "Lokhu kuholela ekutheni kube ‘umzimba ohlanzekile’ e-Indonesia, ‘umzimba othobekile’ e-Ethiopia kanye ‘nomzimba omdala’ e-Kenya."
+    },
+    {
+      "hyp": "Abasebenzi bezempilo nabazali badlala indima ebalulekile ekwenzeni izinqumo mayelana ne-FGM/C kuzo zonke izindawo."
+    },
+    {
+      "hyp": "EKhenya, ikakhulukazi, abesifazane abasebasha baxoxa ngendima yabo ekwenzeni izinqumo eziphathelene ne-FGM/C njengoba sebemdala ngesikhathi sokusoka."
+    },
+    {
+      "hyp": "Ucwaningo lubonisa ukuthi izimo zomthetho nomphakathi ezihlukahlukene kuyo yonke indawo ziletha izinguquko ensimini yomkhuba we-FGM/C, okuholela ekwelashweni kwe-FGM/C e-Indonesia, ekuthotshisweni kweminyaka yokusika amantombazane eKenya, nasekwenzeni komkhuba we-FGM/C ngasese e-Ethiopia."
+    },
+    {
+      "hyp": "Lezi zimo ezintathu zibonisa ukwahluka okukhulu endleleni yokwenza i-FGM/C kanye nencazelo yomphakathi eyihlanganisayo kubantu abasebasha nabantu basemakhaya abo."
+    },
+    {
+      "hyp": "Kunendingeko yokuhlola ngokujulile indima yabazali ekwenzeni izinqumo."
+    },
+    {
+      "hyp": "Ngenxa yezixhumani phakathi kwabashayeli abahlukene be-FGM/C kuwo wonke umongo, ucwaningo luphetha ngokuthi izindlela ezifanele umongo kufanele zithathwe yizinhlelo zokusebenzelana ukuze kudalwe ushintsho oluhlala njalo."
+    },
+    {
+      "hyp": "Ukuyeka ukusoka kwabesifazane, okokuqala kudingeka siqonde ukuthi kungani kwenzeka."
+    },
+    {
+      "hyp": "Ukusithwa kwesitho sobulili sesifazane, umkhuba lapho izingxenye zezitho zokuzala zesifazane zisiqoshwa noma zisuswa khona, kusawenziwa ngokungekho emthethwini noma ngasese emazweni afana neKenya, i-Ethiopia ne-Indonesia."
+    },
+    {
+      "hyp": "Abacwaningi bathi ukuqonda ukuthi kungani kwenzeka kuyisihluthulelo sokuyeka lesi siko elilimaza, nokuvimbela izinkinga zempilo nezingqondo abesifazane abazibhekana nazo ngenxa yalokho."
+    },
+    {
+      "hyp": "Ezingxenyeni zase-Afrika nase-Asia, ukunqunyulwa kwesitho sobulili sesifazane (FGM), okuthi ngezinye izikhathi kubizwe ngokuthi ‘ukusoka kwabesifazane’, kusawenziwa kakhulu."
+    },
+    {
+      "hyp": "Abantu abaningi bakholelwa ngamanga ukuthi i-FGM iyadingeka ukuze kube nokuhlanzeka okuhle noma ukuze bagcine abesifazane behloniphekile (bengabi nazinto zokuzidla futhi bathobekile), futhi ukuqinisekisa ukuthi bazokwazi ukuba nezingane."
+    },
+    {
+      "hyp": "Ngokwesibonakaliso sesayensi, ukusoka kwabesifazane akudingeki kunoma yikuphi kula."
+    },
+    {
+      "hyp": "Kodwa-ke, ezimweni eziningi, abantwana abaye baphathwa yi-FGM baphela bebenobungezi bezempilo kamuva ekuphileni, njengezifo ezilimazayo, ubunzima bokuthamba (ukuphuma kwamanzi), nezingqinamba zempilo yengqondo."
+    },
+    {
+      "hyp": "Ngenxa yokuthi leyo ndlela yokwenza izinto inonya kakhulu futhi iphula amalungelo abantu besifazane, amazwe amaningi ayenze ingasekho emthethweni, kodwa abantu basaphikelela ngasese."
+    },
+    {
+      "hyp": "Kulesifundo, abacwaningi bafuna ukuqonda okwengeziwe ngokuthi kungani i-FGM yenzeka emazweni ahlukene, nokuthi abantu bakholelwa ini ngale nqubo."
+    },
+    {
+      "hyp": "Ngakho-ke, baqoqe ulwazi mayelana nokuhlatshwa kwesikhumba kwabesifazane eKenya, e-Ethiopia nase-Indonesia."
+    },
+    {
+      "hyp": "Kulo lonke izwe, abacwaningi bakhulume nabantu ngaleli qhekeza, kuhlanganise abazali, intsha, abaholi besiko, abasebenzi bezempilo, nabenza ukusoka (abesifazane abadala ababekade benza ukusoka kwabesifazane kubantwana abesifazane)."
+    },
+    {
+      "hyp": "Kwezinye izimo, babexoxa nabantu laba ngabanye, kodwa bakhulume neqembu labantu, kuhlanganise nabantu abadala abasebancane nabasakhulayo, ababehlupheke yi-FGM."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi izizathu zokugoqa i-FGM, indlela okwenziwa ngayo, nezimfundiso ngale nqubo, zazingefani kuwo wonke amazwe."
+    },
+    {
+      "hyp": "Baphinda bathola ukuthi abantu abaningi basaphikelela kukho, ngisho nasezindaweni lapho bekungekho emthethweni khona."
+    },
+    {
+      "hyp": "Isibonelo, e-Indonesia, abantu abadala abasebenza ngokuzalwa kwabantwana basebenzisa ummese noma unaliti ukunquma ingxenye yeklitorisi (umzimba obhekene kakhulu nenjabulo yobulili kwabesifazane) uma intombazanyana ineminyaka engama-40 ubudala."
+    },
+    {
+      "hyp": "Abantu bakholelwa ukuthi lokhu kusiza ‘ukususa ubungcolile’ nokuthi kubalulekile ngezizathu zenkolo."
+    },
+    {
+      "hyp": "ENase-Etiopia, ukuqothulwa kwesikhumba kwaba khona ngisho nangaphambili, ngezinye izikhathi lapho izingane zineminyaka engu-7 kuphela."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi abantu lapho bakholelwa ukuthi lokhu kuzoqinisekisa ukuthi intombazane izobe ‘yinkosikazi enhle’ ngolunye usuku, nokuthi izobe ilalela, futhi ingabi nentukuthelo kumyeni wayo."
+    },
+    {
+      "hyp": "Abantu abaningi bakholelwa nokuthi ukusoka kwabesifazane kwenza ukubeletha kube lula, kodwa empeleni kungenza kube nzima ukubeletha."
+    },
+    {
+      "hyp": "Okwamanje eKenya, ukusoka kwakubonisa ukuthi intombazane ifinyelele ubufazi, futhi kwakwenzeka kamuva ekuphileni, lapho isiyintshabalala."
+    },
+    {
+      "hyp": "Kodwa-ke, kwezinye izimo, bathole ukuthi amantombazane angagqashulwa eneminyaka engu-8 ubudala, futhi amantombazane amaningi agcine ekhulelwe esemncane, ngoba ayebhekwa njengokwanele ukuba nobulili ngemuva kokugqashulwa."
+    },
+    {
+      "hyp": "Abacwaningi bathi okutholakele kwabo kubonisa ukuthi kunezizathu eziningi ezihlukene ezenza ukuba ukusoka kwabesifazane kusekhona."
+    },
+    {
+      "hyp": "Njengoba imithetho nemibono yomphakathi ishintsha, indlela nendawo lapho kwenziwa khona nayo iyashintsha."
+    },
+    {
+      "hyp": "Ngokwesibonelo, abazali bangazama ukuyenza ngasese ngisho noma kungekho emthethweni, ngoba bacabanga ukuthi kuyadingeka ukuthi indodakazi yabo ibe nempilo enhle noma ithole umyeni omuhle."
+    },
+    {
+      "hyp": "Kubalulekile ukuqaphela ukuthi ngenxa yokuthi ukusoka kwabesifazane akuvumelekile kwezinye izindawo, ucwaningo lalo mbandela lungaba nzima, futhi abantu bangase bangabi namanga ngaso sonke isikhathi ngale ndaba."
+    },
+    {
+      "hyp": "Kusasa, ngaphezu kokwenza kube ngokungekho emthethweni, abacwaningi bathi ohulumeni neziphathimandla zezempilo kufanele baqonde ukuyeka ukwenziwa kwe-FGM ngokubhekana nemingcele engamanga abantu abayinayo ngale nqubo nokubafundisa ngezingozi zayo."
+    },
+    {
+      "hyp": "Ucwaningo lolu lwaluyisivumelwano phakathi kwesayensi evela e-Ethiopia, e-Indonesia nase-Netherlands, futhi luyinxenye yephrojekthi enkulu, ebizwa nge-'Yes I Do programme', ehlose ukunciphisa ukukhulelwa kwentsha, umshado wabantwana kanye ne-FGM."
+    },
+    {
+      "hyp": "Ukungahambelani kwamaHormoni Okukhiqiza Izingane, Ukubhubha Kwamaseli Ezinhlamvu, Ukungahambelani Kokwakheka Kwama-sperm kanye Nezinguquko Zesakhiwo Esingabonakali Emehlweni Ezinqanqeni Zama-African Giant Rats (Cricetomys gambianus, Waterhouse, 1840) Abekwe Ekutholakaleni Kwe-Sodium Metavanadate."
+    },
+    {
+      "hyp": "Ukudla okungcoliswe yi-vanadium kuye kwanda ngesikhathi samuva."
+    },
+    {
+      "hyp": "Lelithusi liyinto elimele."
+    },
+    {
+      "hyp": "Ucwaningo oluqhubekayo lwenziwe ukuhlola ubuthi bokukhiqiza inzalo be-sodium metavanadate (SMV) ezingulwini zamadoda zase-Afrika."
+    },
+    {
+      "hyp": "Ukuphathwa kwe-SMV kwenziwe ngaphakathi kwesisu nsuku zonke izinsuku ezingu-14 ezilandelayo ngezinga le-3mg/kg ubunzima bomzimba."
+    },
+    {
+      "hyp": "Amanzi angenamkhawulo anikezwa iqembu lokulawula."
+    },
+    {
+      "hyp": "Sihlalose ama-hormone okuzala e-serum, isikhumulo sambewu kanye nokhwalithi kanye nezinguquko ze-ultrastructural zesikhumba emva kokwelashwa kwe-SMV."
+    },
+    {
+      "hyp": "Imiphumela yethu ikhombisile ukuthi iqembu le-AGR eliye lavezwa yi-SMV liye landa ngokulinganiswa i-progesterone kodwa laphansi i-testosterone, i-FSH ne-LH."
+    },
+    {
+      "hyp": "Futhi, iqembu elapheka nge-SMV labonisa ukwehla okubalulekile kokunyakaza kwesikhumba kanye nomsebenzi wayo, kanye nokukhula kwesilinganiso sezakhiwo ezingavamile zesikhumba nokukhula kwezinhlayiya ze-P53 ezibonakalayo."
+    },
+    {
+      "hyp": "Ucwaningo lwe-ultrastructural lubonise ukuqhuma kwamaseli e-germ namaseli e-Sertoli, i-cytoplasm ne-nucleus; futhi kwabonwa nokuqhuma kwama-mitochondria nokuqhuma."
+    },
+    {
+      "hyp": "Kwakukhona ukubola okukhulu kwe-seminiferous tubules, ukuwohloka nokuwohloka kwamaselula e-myeloid kanye nokufa kwamaselula e-Leydig, i-Sertoli namaseli ezinhlamvu."
+    },
+    {
+      "hyp": "Ngamafuphi, ukukhombisa i-SMV ngaphakathi kwesisu kubangela imiphumela emibi kakhulu kweminye imikhiqizo ye-hormone yokuzala e-serum, ukunciphisa isikhala nama-sperm, i-apoptosis kanye nezinguquko ezonakalayo zamaseli e-Leydig, amaseli e-Sertoli namaseli e-germ okuholela ekungakhulelwa."
+    },
+    {
+      "hyp": "Abacwaningi bathi insimbi etholakala emoyeni ogcwele ukungcola yenza izigwili zingakhulelwa."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi i-vanadium, uhlobo lwentsimbi, yonakalisa amangqamuzana ezinkawu kanye nekhono lazo lokukhiqiza inzalo (ukuzala)."
+    },
+    {
+      "hyp": "Ngenxa yokuthi lelithusi liyinobuthi kubantu, bayaphakamisa ucwaningo olwengeziwe ukuze kutholakale ukuthi ingabe lelithusi, elikhula ngokwanda endaweni yethu yokuhlala ngenxa yobudlwangudlwangu, lingaba nemiphumela emibi efanayo empilweni yabantu."
+    },
+    {
+      "hyp": "Ngaphandle kokuthi i-vanadium iyigesi, ingangena emoyeni ngezinani ezincane lapho amalahle esikhathi esidlule, njengeoli ne-coal, eshiswa."
+    },
+    {
+      "hyp": "Njengoba izwe lisebenzisa amandla alo mthombo ngokwanda, inani lokungcoliswa yi-vanadium likhula."
+    },
+    {
+      "hyp": "Sesivele sikwazi ukuthi abantu abaye bachazwe kuyo bangaphathwa yizinkinga zempilo ezinjengokuhlupheka kwegazi, ukoma komlomo namehlo, nobuhlungu esifubeni."
+    },
+    {
+      "hyp": "Muva nje, ososayensi baye baphinde baziqikaze ngemiphumela evanadiyu ingaba nayo ekuzalaneni."
+    },
+    {
+      "hyp": "Baqale ukutadisha le miphumela ezingulwini, ezivame ukusetshenziswa elabhorathorini ngenxa yokufana kwazo nabantu."
+    },
+    {
+      "hyp": "Kulesifundo, ososayensi babethakazelwa imiphumela yevanadium ehlangeni oluvamile lomfene olutholakala eNtshonalanga Afrika, oluthiwa yiMfene Enkulu yase-Afrika."
+    },
+    {
+      "hyp": "Babefisa ukuqonda ukuthi i-vanadium iyashintsha kanjani izici zokuzala zamadoda ezimpungusheni, ikakhulukazi isperm, ama-hormone, namasosha omzimba eziphucwini zawo."
+    },
+    {
+      "hyp": "Abacwaningi baye babhoboza izinkomo ezinduna eziyisithupha ngevanadium kanye ngosuku, izinsuku ezingu-14."
+    },
+    {
+      "hyp": "Ngesikhathi esifanayo, baqhamuka ezinye izigwili eziyi-6 ngamanzi njengovavanyo “lokulawula”."
+    },
+    {
+      "hyp": "Ngenxa yokuthi amanzi bekungeke abe nomthelela ezingconganeni, abacwaningi babeqiniseka ukuthi noma yiziphi izinguquko abazibonile ezingconganeni eziyisithupha zokuqala zazibangelwa ukugonywa kwe-vanadium."
+    },
+    {
+      "hyp": "Ngemva kwezinsuku eziyi-14, bahlola ukuthi inani lama-hormone, njenge-testosterone, lishintshile yini, futhi bahlola ama-testicles abo balibale i-sperm yabo."
+    },
+    {
+      "hyp": "Besebenzisa ubuchwepheshe obubizwa ngokuthi yi-Transmission Electron Microscopy (TEM), bakwazile ukubona noma yiziphi izinguquko ezenzeka emathangeni ngokuningiliziwe, kuze kube sengqondweni yaseli ngayinye."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi izigwili ezagonywa i-vanadium zazinamazinga aphansi kakhulu e-testosterone, nezinye izinhlobo ze-hormone ezibalulekile ekuzalaneni."
+    },
+    {
+      "hyp": "Izinkawu ezagonywa i-vanadium zazinobunzima obuncane kakhulu besikhumba, futhi isikhumba sazo sasingempilweni."
+    },
+    {
+      "hyp": "Abacwaningi babone, ngokwesibonelo, ukuthi ezinye zezinhlamvu zama-rats zazingenakhanda noma zinekhala egubekile, futhi azizange zihambe kakhulu njengezinhlamvu zama-rats ahlatshelwe amanzi."
+    },
+    {
+      "hyp": "Ngenxa yokuthi isperm iyiseli zesini zezilwane ezinamfana, ezisetshenziswa ekukhuleliseni amaqanda kwabesifazane, lezi zinguquko zizokwenza kube nzima ngama-rats ukukhulelwa ngempumelelo."
+    },
+    {
+      "hyp": "Ekugcineni, abacwaningi bathole ukuthi ezinye zezisele ezivela ezihlabathini zezilwane ezingama-rats zilimele kakhulu noma zibhujiswe yi-vanadium."
+    },
+    {
+      "hyp": "Abacwaningi bathi izinguquko abazitholile zingase zibangele ukungakhulelwa ngokuphelele ekugcineni."
+    },
+    {
+      "hyp": "Baphawula ukuthi njengoba izilwane ezidluliselwe i-vanadium nezinye izinto ezingcolisayo emvelweni zingase zingakwazi ukuzala, zingase zicime ngenxa yale miphumela."
+    },
+    {
+      "hyp": "Ngenxa yokuthi abantu bayizilwane ezincelisayo njengempaphe, ososayensi kufanele bahlole futhi noma imiphi imiphumela emibi engenzeka ye-vanadium ezindaweni ezingcolile empilweni yabantu."
+    },
+    {
+      "hyp": "Abacwaningi baxwayisa ukuthi ezinye zezinguquko abazitholile emizimbeni nase-hormones yezilwane zazingafani nalokho okwakutholakele ocwaningweni lwesisayensi lwangempela, ngakho-ke kudingeka umsebenzi omningi ukuqonda ukulimala okubangelwa yi-vanadium."
+    },
+    {
+      "hyp": "Ucwaningo lolu lwaluyisivumelwano phakathi kwesayensi evela eNigeria naseGibhithe, futhi lwanezela kulokho osayensi abakwaziyo ngendlela izilwane, kanye nabantu mhlawumbe, eziyaphazanyiswa yingcoliso."
+    },
+    {
+      "hyp": "Ukusetshenziswa Kwezitshalo Zasemakhaya Emphakathini Wendabuko ENyakatho-Ntshonalanga ye-Ethiopia"
+    },
+    {
+      "hyp": "Ukuhlanganiswa kwezitshalo zasemakhaya eNyakatho-Ntshonalanga ye-Ethiopia ngokujwayelekile, kanye nesifunda saseGozamin ngokukhethekile, akukafikiselwa ukunakekelwa okuningi kocwaningo."
+    },
+    {
+      "hyp": "Inhloso yocwaningo lolu ukuqonda kangcono ukwakheka kwezitshalo nokubaluleka kwemikhakha yasemakhaya ngokwamasiko."
+    },
+    {
+      "hyp": "Kusetshenziswe inqubo yokukhetha okungahlelekile okuhlukanisiwe ngokususelwa ekuhlukahlukenini kwe-agroecological emakhebeleni akhethiwe."
+    },
+    {
+      "hyp": "Amadokumenti e-homegarden aqoqwe ngokwahlukanisa i-homegarden ibe yizigaba ezine, isigaba sokuqala sasilulama ekhaya lomlimi kuya ku-10m, isigaba sesibili kusuka ku-10m kuya ku-20m, isigaba sesithathu kusuka ku-20m kuya ku-30m kanye nesigaba sesine kusuka ku-30m kuya ku-40m ngokulinganayo, kusetshenziswa indlu yomlimi njengobhekiselele kuye ngobubanzi begadini."
+    },
+    {
+      "hyp": "Ukuhlolwa okungaxhunyiwe ngokuphelele kwenziwe ukuze kuqoshwe ulwazi lomxhumanisi ngezinhlobo zezitshalo."
+    },
+    {
+      "hyp": "Sekuphele izinhlobo zezitshalo ezibalulekile ngokwamasiko ezingama-238 ezivela emindenini engama-81 ezitholakele."
+    },
+    {
+      "hyp": "Ku-39% kwakuyingxube, i-29% yizitshalo, i-6% kwakuyizitshalo ezinqamula."
+    },
+    {
+      "hyp": "Izitshalo ezikhula unyaka nonyaka zazenza ingxenye enkulu yezinhlobo ezilimiwe (83%), kuyilapho izitshalo ezikhula unyaka ngamunye zazenza ingxenye eseleyo (17%)."
+    },
+    {
+      "hyp": "Umndeni we-Poaceae wawunezinhlobo eziphambili, ezingama-22, ulandelelwa yi-Fabaceae, enama-21, ne-Asteraceae enama-15."
+    },
+    {
+      "hyp": "Kusuka kulezi zitshalo ezirekhodiwe, ezingu-140 (58.6%) zazizinhlobo ezisetshenziswa ezisetshenzisweni zemvelo, ezingu-84 (35%) izitshalo zokudla, ezingu-83 (34.7%) izinhlobo zezitshalo zokwelapha, ezingu-39 (16.3%) izinhlobo zokudla kwezilwane, ezingu-57 (23.8%) izitshalo ezisetshenziswa ezinto, ezingu-60 (25%) izinhlobo zezinkuni zokushisa, ezingu-50 (21%) izitshalo ezisetshenziswa ngokwentlalo kanye ne-1 (0.4%) enenkani."
+    },
+    {
+      "hyp": "Ukuhlaziywa okuqondile kwamathethri kukhombisile ukuthi i-Cordia Africana itholakala njengomkhiqizo obalulekile ngokwamasiko endaweni, futhi usongelwe kakhulu, kulandela i-Ficus sur."
+    },
+    {
+      "hyp": "Inkambo yase-Afrika ebaluleke kakhulu yayisetshenziswa ekwakheni, kanti inani elikhulu lalisetshenziswa kwelapha."
+    },
+    {
+      "hyp": "I-Sorensen index yokufana kwaba ngu-64% yezindawo ezahlolwa yayingaphansi kuka-0.5."
+    },
+    {
+      "hyp": "Umphumela ubonise ukuthi amagadini asemakhaya yizinhlelo zokukhiqiza eziningi, zesikhathi eside."
+    },
+    {
+      "hyp": "Ukuphepha kokudla nokugcinwa kobuningi bezinhlobo zemvelo kuqhubeka noxhaswe yilwazi lesiko labantu bezizwe elixhunyaniswe nemihlambi yabo yasekhaya."
+    },
+    {
+      "hyp": "Ukufana okuncane/ukwahlukahluka okukhulu kwezinhlobo endaweni phakathi kwama-kebele kubonise ukuthi kwakukhona ukuhlukahluka okukhulu kwezinhlobo lokhu kwakubangelwa yizimo ezahlukene ze-agroecological phakathi kwama-kebele."
+    },
+    {
+      "hyp": "Imihlambi yase-Ethiopia isekela ukuphepha kokudla nokugcinwa kwemvelo."
+    },
+    {
+      "hyp": "Abacwaningi bathi abantu abaningi base-Ethiopia bayalima ukudla, izitshalo zokuhlobisa, izitshalo zokwelapha nezitshalo zokudla izilwane, isithunzi noma ukuvikela emagadini abo."
+    },
+    {
+      "hyp": "Bahlolisise lezi zihlahla ukuze babone ukuthi zibaluleke kangakanani ekuqinisekiseni ukuphepha kokudla nasekusizeni ukulondoloza imvelo."
+    },
+    {
+      "hyp": "Izindawo ezahlukene emhlabeni lonke zigcina izitshalo zokudla, ukuze zenze imali nakwezinye izinjongo zezenhlalo."
+    },
+    {
+      "hyp": "Ama-gardens nawo avikele izitshalo ezibalulekile ezivame ukungabikho noma ezinyamalala kwezinye izindawo."
+    },
+    {
+      "hyp": "ENase-Etiyopiya, akukho ucwaningo oluningi oluye lwenziwa ngalokho umphakathi ulikhihla ngempela emisebeni yawo."
+    },
+    {
+      "hyp": "Kulesifundo, abacwaningi bafuna ukuhlola izitshalo abantu baseGozamin, eNyakatho-Ntshonalanga ye-Ethiopia, ababezihlwanyela emagadini abo nalokho ababelizisebenzisela khona."
+    },
+    {
+      "hyp": "Bahlonze futhi babala izitshalo emagadini angu-357 kule ndawo."
+    },
+    {
+      "hyp": "Baphethisise futhi umphakathi ngalokho abakusebenzisela khona izitshalo."
+    },
+    {
+      "hyp": "Abacwaningi bathole ukuthi wonke amagadini eGozamin ayenqaba ukuba ngaphezu kwehektha ngobukhulu."
+    },
+    {
+      "hyp": "Baqoqe futhi bahlonza izitshalo ezahlukene ezingu-238."
+    },
+    {
+      "hyp": "Iningi (83%) lezitshalo libiwe unyaka wonke, futhi ziningi ezimbalwa (17%) ezaziyizikhathi zesizini."
+    },
+    {
+      "hyp": "Imiphumela yabo yakhombisa ukuthi umphakathi wawusebenzisa izitshalo ekudleni, kwelapha, ekwakheni, ekudleni kwezilwane (ukudla kwezilwane), nakwezinye izindlela zokusebenzisa ngamasiko."
+    },
+    {
+      "hyp": "Izitshalo eziningi zazisebenza ngezinjongo ezingaphezu kwesisodwa."
+    },
+    {
+      "hyp": "Isibonelo, isibonelo, umuthi omkhulu onamagqabi amakhulu aseNyakatho ungase usetshenziswe kwelokwelapha, ukulungisa, ukondla izilwane, ukumthunzi, ukupakisha nokuqeda, kanye nezinye izisetshenziswa zesiko."
+    },
+    {
+      "hyp": "Ngaphezulu kwengxenye (59%) yemifino yayisetshenziswa ngezinjongo zemvelo njengokufakwa kwezilingo, izihlahla, isithunzi nokuhlobisa."
+    },
+    {
+      "hyp": "Abacwaningi bathi lokhu kusize ekuvikeleni imvelo."
+    },
+    {
+      "hyp": "Izitshalo zokufaka isivikelo nazo zisize ekulondeni imikhiqizo yasemapulazini."
+    },
+    {
+      "hyp": "Ngaphezu kwesithathu (35%) zezitshalo zakhuliselwa ukudla, njengokudla okunjengokuthi izithelo, imifino, izitshalo zokudla kanye nezinongo."
+    },
+    {
+      "hyp": "Kodwa-ke bathi amagadini aseleleliyo ayingxenye enkulu ahlinzeka ngezithelo."
+    },
+    {
+      "hyp": "Abacwaningi bathi u-35% wemifino yayisetshenziswa njengalokho kwelapho lesintu lokuthuthukisa impilo yabantu nezilwane, kanti u-21% yayisetshenziswa emikhosini nasezintweni zenkolo, ukubhema, amafutha, nokubhaka."
+    },
+    {
+      "hyp": "Ezinye izitshalo (17%) zasetshenziswa njengokudla kwezilwane ezifuywayo, izinkomo, izimvu, neembongolo."
+    },
+    {
+      "hyp": "Abanye (24%) basebenzisa njengezinto zokwakha, ukwenza amathuluzi okusebenza ensimini, ukumboza imindeni kanye nokwenza izintambo."
+    },
+    {
+      "hyp": "Njengoba iningi labantu basemakhaya kubikwe ukuthi basebenzisa imithi yokukhaphela, u-25% wezitshalo zasetshenziswa ngalokho."
+    },
+    {
+      "hyp": "Abacwaningi bathi yilokhu kuphela (0.4%) okukhulunywe ngakho ngenhloso yokubulala ngenhlalakanu."
+    },
+    {
+      "hyp": "Baphinda bathi indlela izitshalo ezazisabalala ngayo kule ndawo yayithonywe yizimo zemvelo, lokho abantu ababekufuna ukukudla, kanye nesimo sezimali somndeni nezidingo zebhizinisi."
+    },
+    {
+      "hyp": "Isibonelo, indawo ebizwa ngokuthi iWenka eyayinamanzi okunisela futhi isondele edolobheni elikhulu, yayinezitshalo eziningi futhi irekhode izitshalo ezahlukene ezingama-130."
+    },
+    {
+      "hyp": "Abantu baseWenka nabo babelima futhi banikeza izithelo nemifino emakethe yedolobha."
+    },
+    {
+      "hyp": "Ekugcineni, abacwaningi bathi abalimi abaningi babekhetha ukukhulisa izitshalo ezinokusetshenziswa okuningi."
+    },
+    {
+      "hyp": "Abacwaningi bathi imiphumela yabo iqinisekisile ukuthi impela abalimi bakhulise inani elikhulu lezinhlanga ezahlukene zezitshalo emagadini abo, futhi ngezinjongo ezahlukene."
+    },
+    {
+      "hyp": "Ngaphandle kokuthi laba bacwaningi bathole ukuthi abalimi abaningi bakhulise ama-herb, abanye abacwaningi bathi izihlahla zazivame kakhulu kule ndawo."
+    },
+    {
+      "hyp": "Abacwaningi balolu cwaningo babeqhelele emanyuvesi ase-Ethiopia."
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,2918 @@
+{
+  "experiment_id": "icl_5shot_semantic_eng_hau",
+  "source_lang": "eng",
+  "target_lang": "hau",
+  "samples": [
+    {
+      "hyp": "Kimanta yawan test na SARS-CoV-2 da ake buƙata don yiwuwar sarrafa ɓarkewar cutar a cibiyar Lusaka na lardin Zambia tare da la'akari da mutanen da ba su nuna alamun cuta ba:"
+    },
+    {
+      "hyp": "Binciken ƙirar lissafi mai sauƙi"
+    },
+    {
+      "hyp": "Sabuwar cutar Coronavirus (COVID-19), wacce mummunar cutar numfashi ta coronavirus—2 (SARS-CoV-2) ta haifar, a Afirka tana da alamar yawan mutane da ba sa nuna alamun cuta (ko kuma suna da alamun cuta kaɗan) waɗanda ake tunanin suna taka rawa wajen yaɗuwar cutar."
+    },
+    {
+      "hyp": "Ainihin kaso da kuma matakin kamuwa da cuta na mutanen da ba su da alamun cuta har yanzu ba a bayyana ba."
+    },
+    {
+      "hyp": "Duk da haka, bincike ya nuna cewa sarrafawa nasu yana da matuƙar muhimmanci wajen sarrafa yaɗuwar SARS-CoV-2."
+    },
+    {
+      "hyp": "Mun ƙirƙiri samfurin lissafi mai sauƙi na mai rauni-mai iya kamuwa-mai cuta-an cire (SEIR) don tantance tasirin keɓewa mai aiki na mutanen da suka kamu da SARS-CoV-2 amma ba su da alamun cuta ta hanyar yin test gaba ɗaya don sarrafa barkewar cutar a Lardin Lusaka na Zambiya."
+    },
+    {
+      "hyp": "Anan mun yi samfurin yanayi guda biyu; (1) muna ɗauka cewa mutanen da ba su da alamun cuta sun kai kashi 70% na dukkanin lokutan COVID-19 kuma (2) mutanen da ba su da alamun cuta sun kai kashi 50% kawai na lokutan."
+    },
+    {
+      "hyp": "Don bambanci, an fara kimanta samfurin a karkashin hasashen lissafi cewa mutanen da ba su da alama suna da kamuwa da cuta kamar yadda mutanen da ke da alama suke, sannan kuma, kuma mafi yiwuwa, ana hasashen mutanen da ba su da alama suna da rabin kamuwa da cuta kamar yadda mutanen da ke da alama suke."
+    },
+    {
+      "hyp": "Don samfurin da ke ɗaukar kashi 70% na masu cutar ba tare da alamu ba, mafi ƙarancin adadin gwaje-gwajen yau da kullum na ≥ 7911 gwaje-gwaje/100000 na yawan jama'a ya isa don shawo kan barkewar cutar idan masu cutar ba tare da alamu ba suna da rabin yawan kamuwa da cutar yayin da idan an ɗauka daidai yawan kamuwa da cutar to za a buƙaci adadin gwaje-gwaje na ≥ 10028 gwaje-gwaje/100000 na yawan jama'a."
+    },
+    {
+      "hyp": "Ga kashi 50% na marasa alamar cuta, mafi ƙarancin yawan yin test na ≥ 4540 test/ 100000 na yawan jama'a ya isa don shawo kan barkewar cutar a duk matakan da aka ɗauka na yawan kamuwa da cuta ga marasa alamar cuta idan aka kwatanta da masu alamar cuta."
+    },
+    {
+      "hyp": "Tattaunawa da ƙarshe"
+    },
+    {
+      "hyp": "Samfurinmu yana hasashen cewa keɓe masu cutar COVID-19, ciki har da mutanen da ba su da alamun cuta, ta hanyar yin test gaba ɗaya na iya zama wata hanya don sarrafa yaɗuwar SARS-Cov-2 a Lusaka, Zambia, amma zai zo da tsada mai yawa."
+    },
+    {
+      "hyp": "Gwajin jama'a da yawa a manyan birane kamar Lusaka na iya iyakance yaɗuwar COVID-19, amma shin yana da amfani?"
+    },
+    {
+      "hyp": "A cikin shekarar 2020, samfurin kwamfuta sun yi hasashen cewa yaɗuwar COVID-19 a manyan birane za a iya sarrafa shi da kyau ta hanyar yin test a kan jama'a da kuma ware duk waɗanda suka yi test sun kamu."
+    },
+    {
+      "hyp": "Duk da haka, masu bincike sun ce wannan hanya na iya zama mai tsada kuma ba mai amfani ba."
+    },
+    {
+      "hyp": "A farkon annobar, mutane da yawa da suka kamu da COVID-19 ba su nuna alamun cutar ba kuma har yanzu suna yada cutar ga wasu."
+    },
+    {
+      "hyp": "Wasu nazarin sun nuna cewa kashi 50% zuwa 80% na mutanen da ke da COVID-19 ba su da alamun bayyanar cutar (rashin alama) kuma suna iya zama masu alhakin kashi 40% zuwa 70% na sabbin cututtuka."
+    },
+    {
+      "hyp": "Masu bincike sun so su san ko gano da keɓe mutanen da ba su da alamun cuta zai taimaka wajen sarrafa yaɗuwar COVID-19."
+    },
+    {
+      "hyp": "Har ila yau, sun so sanin ko gwajin banket, wanda ke nufin gwada mutane da yawa ba tare da tsari ba, yana samun mutanen da ba su da alamun cuta yadda ya kamata."
+    },
+    {
+      "hyp": "Masu binciken sun ƙirƙiri samfurin kwamfuta wanda ke hasashen yadda mutane ke fita daga sauƙin kamuwa zuwa haɗuwa, kamuwa da cuta, da kuma killacewa."
+    },
+    {
+      "hyp": "Sun mayar da hankali kan bayanai daga lardin Lusaka a Zambiya, wanda ke zama cibiyar kasuwanci tare da filin jirgin sama na ƙasa da ke iyaka da ƙasashe biyu."
+    },
+    {
+      "hyp": "Saboda halayen COVID-19 sun bayyana suna bambanta daga wuri zuwa wuri, sun duba yanayi guda 4, inda ko dai kashi 50% ko 70% na cututtukan COVID-19 ba su da alama, kuma waɗannan cututtukan ko dai suna daidai ko kuma rabin yadda suke yaɗuwa kamar masu alamun."
+    },
+    {
+      "hyp": "Samfurin masu binciken ya gano cewa yana yiwuwa a sarrafa yaɗuwar COVID-19 ta hanyar yin test ga kowa da kowa da kuma killace duk mutanen da suka yi test suka samu sakamako mai kyau, har ma da waɗanda ba su da alamun cuta."
+    },
+    {
+      "hyp": "Sun ce don rage yawan matsalolin da suka kai kololuwa da kashi 90% a dukkan yanayi, kashi 10% na mutanen Lusaka suna bukatar a yi musu test a kowace rana."
+    },
+    {
+      "hyp": "Sun kuma gano cewa idan muna son kiyaye adadin sabbin masu kamuwa da cutar COVID-19 a tsaye, kashi 22% na mutane suna buƙatar a yi musu test a kowace rana."
+    },
+    {
+      "hyp": "Duk da cewa Zambiya ta sanya matakai da dama na takaita COVID-19, alamu sun nuna cewa kamuwa da cutar har yanzu suna ƙaruwa."
+    },
+    {
+      "hyp": "Yin test gaba ɗaya ya rage adadin COVID-19 da kashi 90% a wani ƙaramin gari a Italiya."
+    },
+    {
+      "hyp": "Amma, babu wasu bincike na baya da za su nuna cewa zai yi tasiri a babban birni a wani wuri."
+    },
+    {
+      "hyp": "Lura cewa masu binciken ba su yi gwajin blanket a cikin wannan binciken ba; maimakon haka sun ƙirƙiri samfurin da ke nuna cewa gwajin blanket zai yi aiki don iyakance yaɗuwar COVID-19 a manyan birane."
+    },
+    {
+      "hyp": "Duk da haka, sun yi gargaɗi cewa zai yiwu ya yi tsada sosai."
+    },
+    {
+      "hyp": "Sun kuma ce zai iya zama mafi amfani idan an haɗa shi da wasu matakai, kamar kulle, bin diddigin masu mu'amala, da rigakafi."
+    },
+    {
+      "hyp": "Masu bincike na Zambiya sun kuma jaddada cewa alamu na COVID-19 da ba su bayyana ba sun fi yawa a Afirka a lokacin."
+    },
+    {
+      "hyp": "Ƙarancin gabaɗayan amfani na maki na polygenic a cikin al'ummomin Afirka saboda bambancin ƙwayoyin gado da na muhalli."
+    },
+    {
+      "hyp": "Al’ummar Afirka ba su da yawa a cikin nazarin ƙwayoyin gado amma suna da mafi yawan bambancin ƙwayoyin gado kuma suna fuskantar yanayin muhalli iri-iri a duniya."
+    },
+    {
+      "hyp": "Saboda ba a gudanar da kimantawa na tsarin hasashen ƙwayoyin gado a cikin asalin da ya shafi bambance-bambancen Afirka ba tukuna, mun ƙididdige maki na haɗarin polygenic (PRS) a cikin kwaikwaiyo a fadin Afirka da kuma a cikin bayanai na zahiri daga Afirka ta Kudu, Uganda, da UK domin ƙarin fahimtar yadda nazarin ƙwayoyin gado zai iya zama gabaɗaya."
+    },
+    {
+      "hyp": "Ingancin PRS yana inganta tare da rukunan bincike da suka dace da asali fiye da daga nazarin da ba su dace da asali ba."
+    },
+    {
+      "hyp": "A cikin mutanen Afirka ta Kudu masu bambance-bambancen kakanin da kabilanci, mun gano cewa ingancin PRS yana da ƙasa ga dukkan nau’o’i amma yana bambanta a tsakanin rukunoni."
+    },
+    {
+      "hyp": "Bambance-bambancen asalin Afirka suna ba da gudummawa fiye da sauran manyan bambance-bambancen rukuni da aka yi la’akari da su tsakanin mutane a UK da Uganda wajen bambancin daidaiton PRS."
+    },
+    {
+      "hyp": "Mun ƙirƙiri PRS a cikin al’ummomin asalin Afirka ta amfani da binciken ƙwayoyin gado na Turai kawai da kuma waɗanda suka bambanta da asali; ƙarin bambance-bambancen ya samar da mafi girman haɓaka daidaito ga yawan hemoglobin da ƙidayar ƙwayoyin jini fari, yana nuna bambance-bambancen asali mai tasiri a cikin kwayoyin halitta da aka sani suna tasiri kan cutar sikila da kuma amsar rashin lafiyan, bi da bi."
+    },
+    {
+      "hyp": "Bambance-bambancen da ke cikin daidaiton PRS a tsakanin asalin Afirka da suka samo asali daga yankuna daban-daban suna da girma kamar yadda yake a tsakanin asalin nahiyar da suka fito daga wajen Afirka, wanda ke buƙatar daidaitaccen fahimta."
+    },
+    {
+      "hyp": "Dalilin da yasa ba za mu iya hango cututtukan ƙwayoyin gado a cikin mutanen da suka fito daga Afirka daidai ba"
+    },
+    {
+      "hyp": "Masu bincike sun ce hanyoyin da ake amfani da su a yanzu don hasashen ko mutum zai kamu da cutar ƙwayoyin gado ba sa aiki da kyau ga mutanen asalin Afirka."
+    },
+    {
+      "hyp": "Wannan saboda tushen bayanan da ke bayan irin waɗannan hasashen yawanci yana bayyana kwayoyin halitta na mutanen asalin Turai."
+    },
+    {
+      "hyp": "Kundin bayanan GWAS yana nufin \"Nazarin Haɗin Kai na Kwayar Halitta Mai Faɗi\", kuma masana kimiyya suna amfani da shi don neman halaye da cututtuka bisa ga kwayoyin halitta."
+    },
+    {
+      "hyp": "A zahiri, suna iya amfani da GWAS don ƙididdige haɗarin ƙwayoyin gado na mutum ga wata cuta ko halayya."
+    },
+    {
+      "hyp": "Duk da haka, yawancin bayanan ƙwayoyin gado a cikin GWAS sun fito ne daga mutanen da suka fito daga zuriyar Turai."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu bincike sun so su ga yadda lissafin da suke amfani da shi don tantance haɗarin cututtukan gado ta amfani da GWAS yake aiki ga mutanen da suka fito daga asalin Afirka."
+    },
+    {
+      "hyp": "Suna kuma son ganin ko GWAS mai bambancin al'umma, a wasu kalmomi, wani ma'ajin bayanai da ya haɗa da ƙarin bayanan ƙwayoyin gado na Afirka, zai inganta hasashen."
+    },
+    {
+      "hyp": "Lissafin ana saninsa a cikin harshe na kimiyya da ake kira \"polygenic risk score\", ko PRS."
+    },
+    {
+      "hyp": "Sun yi amfani da kwamfutoci don ƙididdige hasashen haɗarin ƙwayoyin gado na al’ummar Afirka ta amfani da GWAS, kuma sun yi amfani da bayanan kiwon lafiya na mutanen Afirka don duba wasu halaye ko cututtuka da za su iya haifar da canje-canje a cikin kwayoyin halitta."
+    },
+    {
+      "hyp": "Lokacin da suka yi amfani da GWAS na Turai, sun gano cewa ƙididdigar haɗarin ƙwayoyin gado ta fi dacewa idan mutane suna da asalin Turai idan aka kwatanta da asalin Afirka ga yawancin halaye."
+    },
+    {
+      "hyp": "Sun ce maki haɗari suna da ƙasa sosai tsakanin yankunan Afirka saboda akwai bambance-bambance da yawa a tsakanin al’umma, wanda ba ya dace da abin da muke gani ga zuriyar Turai."
+    },
+    {
+      "hyp": "Haka nan sun ce daidaiton PRS yana ƙaruwa yayin da asalin Afirka ke raguwa."
+    },
+    {
+      "hyp": "Al’ummomin Habasha sun fi samun hasashen cututtukan ƙwayoyin gado saboda suna da kusanci na ƙwayoyin gado da al’ummomin Turai."
+    },
+    {
+      "hyp": "Lokacin da aka yi amfani da GWAS mai bambance-bambance wanda ya haɗa da mutanen da suka fito daga Afirka, ingancin hasashen ya inganta."
+    },
+    {
+      "hyp": "Hasashen cututtukan jini ya fi daidaito sosai."
+    },
+    {
+      "hyp": "Binciken da aka yi a baya ya nuna cewa PRS yana da ƙasa ga al’ummar Afirka, wanda ke nufin cewa bayanan GWAS suna hasashen ƙarancin haɗarin cututtukan ƙwayoyin halitta ga mutanen asalin Afirka."
+    },
+    {
+      "hyp": "Amma mun san cewa ba lallai ba ne wannan ya zama gaskiya."
+    },
+    {
+      "hyp": "Wannan binciken ya bayyana cewa waɗannan ƙananan maki na haɗarin cututtukan ƙwayoyin gado yana faruwa ne saboda ba a wakilci kwayoyin halittar Afirka sosai a cikin bayanan GWAS ba, don haka ƙimar PRS na yanzu ba sa taimakawa sosai wajen hasashen cututtukan ƙwayoyin gado a Afirka."
+    },
+    {
+      "hyp": "Masu bincike sun ce zai fi kyau a yi amfani da tushen bayanai mai bambancin gaske wanda ya haɗa da bayanan ƙwayoyin gado daga mutanen da suka fito daga Afirka."
+    },
+    {
+      "hyp": "Saboda haka, ana buƙatar ƙarin aiki don bambanta GWAS don haɗa asalin Afirka domin mu iya hasashen haɗarin cututtukan ƙwayoyin gado a cikin al’ummar Afirka daidai."
+    },
+    {
+      "hyp": "Marubutan wannan binciken sun fito ne daga Afirka, USA da kuma UK."
+    },
+    {
+      "hyp": "Kimanta Tantancewar Gani da Cytology wajen Rigakafin Cervical Intraepithelial Neoplasia da Ciwon Daji na Mahaifa a Namibia"
+    },
+    {
+      "hyp": "An kiyasta mata 851,340 a Namibia suna cikin haɗarin kamuwa da cutar ƙwayar cuta ta human papilloma (HPV) wadda za ta iya haifar da ciwon dajin mahaifa."
+    },
+    {
+      "hyp": "Gwajin gani tare da acetic acid (VIA) da kuma cryotherapy sun tabbatar da cewa suna da matuqar tasiri."
+    },
+    {
+      "hyp": "Duk da haka, bayanai da ke da alaƙa da tasirin shirye-shiryen tantance cutar sankarar mahaifa sun yi ƙasa."
+    },
+    {
+      "hyp": "Wannan binciken ya tantance tantancewa ta gani da ta cytology wajen hana cututtukan cikin fata na mahaifa (CIN) da ciwon daji mahaifa a Namibia."
+    },
+    {
+      "hyp": "Abubuwan da aka gano sun nuna cewa mata masu HPV, cervicitis, koilocytosis da atypia suna da qarin hadarin samun sakamako mai kyau a test na VIA."
+    },
+    {
+      "hyp": "Mata masu shekaru, musamman masu cuta mai karya garkuwar jiki, suna da yuwuwar a gano su da cutar squamous cell carcinoma (SCC)."
+    },
+    {
+      "hyp": "Tsarin VIA yana da alama yana da amfani wajen tantancewa, ko da yake ya kamata a sake duba colposcopy a bin diddigin marasa lafiya a cikin yanayin Namibiya kuma a yi amfani da shi tare da sakamakon HR-HPV mai kyau."
+    },
+    {
+      "hyp": "Ana ba da shawarar hanyoyin auna da suka haɗa da gwajin HPV don shekaru daban-daban da kuma al'ummomin da ke cikin haɗari (misali, masu cuta mai karya garkuwar jiki, cututtukan autoimmune)."
+    },
+    {
+      "hyp": "Ana iya ƙara haɓaka ɗaukar tantancewa ta hanyar tsoma baki da ke amfani da samfur wanda ke amfani da sakamakon bincike na baya, manufofin lafiyar mata, sabuwar ilimi da kuma aikace-aikace masu dacewa da yanayin ƙasa."
+    },
+    {
+      "hyp": "Matan Namibiya da ke cikin haɗarin cutar kansar mahaifa ya kamata a gwada su kuma a yi musu magani da wuri."
+    },
+    {
+      "hyp": "Akwai gwaje-gwaje da yawa da za su iya nuna haɗarin mata ga cutar kansar mahaifa, amma duba lafiyar yau da kullum a Namibia ba koyaushe ake amfani da waɗannan gwaje-gwajen ba."
+    },
+    {
+      "hyp": "Masu bincike sun ba da shawarar yin gwaji akai-akai, don gano alamun gargadi da wuri, zai iya hana mata kamuwa da wannan cuta mai kisa."
+    },
+    {
+      "hyp": "Ciwon dajin mahaifa (ciwon daji na ƙasan mahaifa) yana haifar da mutuwar mata da yawa a faɗin duniya."
+    },
+    {
+      "hyp": "Ɗaya daga cikin sanadin ciwon dajin mahaifa mafi yawa shi ne Human Papillomavirus, ko HPV."
+    },
+    {
+      "hyp": "HPV wata qwayar cuta ce da ke lalata ƙwayoyin halittar mahaifa, tana haifar da raunuka da ake kira lesions, waxanda a ƙarshe za su iya zama ciwon daji."
+    },
+    {
+      "hyp": "Ko da yake akwai magani don hana HPV, mata da yawa a ƙasashen Afirka, ciki har da Namibia, ba su da damar samun sa."
+    },
+    {
+      "hyp": "Wannan yana nufin cewa duba cutar ko raunukan da take haifarwa yana da matuqar muhimmanci ga waɗannan mata, domin wannan shi ne mafi kyawun hanya don taimakawa wajen rigakafin ciwon daji."
+    },
+    {
+      "hyp": "Masu binciken a wannan nazarin sun ce don haka asibitoci suna buƙatar ingantattun jagororin da bayanai game da mafi kyawun gwaje-gwaje da za a yi amfani da su."
+    },
+    {
+      "hyp": "Sun ƙara da cewa ma'aikatan kiwon lafiya suna buƙatar ƙarin bayani kan yadda abubuwa kamar shekaru ko lafiya ke shafar haɗarin mace na kamuwa da HPV da ciwon daji."
+    },
+    {
+      "hyp": "Sun binciki yadda wasu nau'ikan gwaje-gwaje na yau da kullum (wanda ake kira hanyoyin tantancewa) suke da tasiri wajen gano HPV da raunuka."
+    },
+    {
+      "hyp": "Sun kuma sha'awar kwatanta hanyoyin tantancewa, misali tattara ƙwayoyin halitta daga mahaifa don duba lalacewa idan aka kwatanta da kawai neman raunuka."
+    },
+    {
+      "hyp": "Har ila yau, sun so sanin ko bambance-bambance tsakanin mata, kamar shekarunsu, ko kuma ko suna da wasu cututtuka kamar cuta mai karya garkuwar jiki, sun canza damar samun HPV da ciwon daji."
+    },
+    {
+      "hyp": "Sanin wannan bayanin zai iya taimakawa asibitoci da asibitocin ƙananan yara su yi amfani da hanyoyin tantancewa yadda ya kamata."
+    },
+    {
+      "hyp": "Masu binciken sun duba bayanan marasa lafiya na mata 214 da aka yi wa gwaji da jinya don HPV, raunuka, da ciwon dajin mahaifa a wani asibiti a Windhoek, Namibia."
+    },
+    {
+      "hyp": "Sun mayar da hankali musamman kan ciwon dajin mahaifa a matakin farko, wanda a lokacin ne za a iya magance cutar cikin sauki da inganci."
+    },
+    {
+      "hyp": "Sun kuma tattara bayanai game da shekarun kowace mace, da lafiyarta gabaɗaya."
+    },
+    {
+      "hyp": "Ta hanyar duba waxannan bayanai, sun gano cewa hanyoyin gwaji daban-daban sau da yawa suna ba ma’aikatan kiwon lafiya bayanai daban-daban, kuma cewa suna iya zama mafi amfani kafin ko bayan HPV ya zama ciwon daji."
+    },
+    {
+      "hyp": "Ciwon daji, alal misali, ana yawan gano shi ta hanyar tattara da binciken ƙwayoyin halitta na mahaifa."
+    },
+    {
+      "hyp": "Duk da haka, ana iya samun raunuka sau da yawa ta hanyar dubawa da ido kawai, ta amfani da wata dabara mai suna \"duba da ido tare da acetic acid\" (VIA)."
+    },
+    {
+      "hyp": "Amfanin wannan dabarar shi ne yana ba likitoci damar gano raunuka cikin sauri da kuma arha."
+    },
+    {
+      "hyp": "Wannan saboda yana amfani da kayan aikin likitanci na asali da ake amfani da su a gwaje-gwajen mata na ilimin mata, kamar speculum (wani kayan ƙarfe da ake amfani da shi don duba cikin farji)."
+    },
+    {
+      "hyp": "Sun kuma gano cewa haɗa hanyoyi daban-daban sau da yawa yana ba likitoci karin bayani game da haɗarin mace na kamuwa da ciwon daji, musamman a kan lokuta da dama na duba lafiya."
+    },
+    {
+      "hyp": "Bugu da ƙari, masu bincike sun gano cewa mata masu shekaru, musamman waɗanda ke da cutar HIV, sun fi yuwuwar a gano suna da ciwon daji, don haka yin gwaji akai-akai na iya zama da muhimmanci musamman."
+    },
+    {
+      "hyp": "Masu binciken sun ƙara da cewa, mata kaɗan ne aka yi musu gwajin HPV (kafin a duba raunuka) duk da cewa akwai test."
+    },
+    {
+      "hyp": "Yin hakan na iya zama hanya mai mahimmanci na gano cutar da wuri."
+    },
+    {
+      "hyp": "Gaba ɗaya, sun ce sakamakonsu ya nuna akwai buƙatar tsarin kiwon lafiya a Namibia ya tsara dabarun rigakafin HPV da ciwon dajin mahaifa da kyau, ta amfani da hanyoyin gwaji masu arha da tasiri don gano waɗannan cututtuka da wuri-wuri."
+    },
+    {
+      "hyp": "Binciken ya kasance na haɗin gwiwa tsakanin masana kimiyya daga Namibiya da Afirka ta Kudu."
+    },
+    {
+      "hyp": "Amfanin magani a haɗin cutar HBV/HIV idan aka kwatanta da cutar HBV kawai a cikin ƙungiyar Afirka ta Kudu"
+    },
+    {
+      "hyp": "Sakamakon manufofin duniya na kawar da kwayar cutar hanta b (HBV), mun fara tantance mutanen da ke da cutar HBV kawai da kuma waɗanda ke ɗauke da cutar HBV/cuta mai karya garkuwar jiki, don kimanta tasirin magani da kuma jagorantar inganta kulawar asibiti."
+    },
+    {
+      "hyp": "Mun bayar da rahoton bayanai na lura daga wata ƙungiya ta duniya ta ainihi mai zurfi na manya 115 da ke da cutar kwayar cutar hanta b (CHB) mai tsanani, a wani asibitin jami'a a Cape Town, Afirka ta Kudu."
+    },
+    {
+      "hyp": "Haɗuwar cutar HIV ta kasance a cikin mutane 39 (34%)."
+    },
+    {
+      "hyp": "Mun rubuta bayanai na demografi, na asibiti da na dakin gwaje-gwaje mai zurfi."
+    },
+    {
+      "hyp": "Idan aka kwatanta da waɗanda ke da haɗin cuta mai karya garkuwar jiki, manya da ke da cutar HBV kawai sun fi ƙarancin kasancewa HBeAg-positive (p=0.01), sun fi ƙarancin samun kimantawa da elastography (p<0.0001), kuma sun fi ƙarancin kasancewa a kan maganin rigakafin ƙwayar cuta (p<0.0001); sun fi yuwuwar samun HBV viraemia mai ganewa (p=0.04), kuma sun fi yuwuwar samun alamun cutar hanta ciki har da thrombocytopaenia mai matsakaici/mai tsanani (p=0.007), bilirubin mai tashi (p=0.004), da kuma tashiwar APRI score (p=0.02)."
+    },
+    {
+      "hyp": "Akwai lokuta uku na ciwon hanta da suka taso daga cutar HBV kawai."
+    },
+    {
+      "hyp": "Bayananmu sun nuna cewa mutanen da ke da cutar HBV kadai na iya samun rashin fa'ida idan aka kwatanta da waɗanda ke da haɗin cutar HIV, yana nuna yiwuwar rashin daidaito a tsarin tura, sa ido da magani."
+    },
+    {
+      "hyp": "Masu bincike sun bayar da jagororin inganta jiyya na kwayar cutar hanta b"
+    },
+    {
+      "hyp": "A cikin wani bincike na baya-bayan nan, masu bincike sun sami damar haskaka yadda kamuwa da kwayar cutar hanta b (HBV) da cuta mai karya garkuwar jiki (HIV) na iya bayar da fa'ida wajen jiyya fiye da kamuwa da HBV kawai."
+    },
+    {
+      "hyp": "A kudancin Afirka, cuta mai tsanani tare da HBV da cuta mai karya garkuwar jiki HIV babbar matsala ce."
+    },
+    {
+      "hyp": "Likitoci suna buƙatar fahimtar yadda waɗannan ƙwayoyin cuta da magungunan da ake amfani da su don jinyarsu ke mu'amala da juna, ta yadda za su iya gano cututtuka da kuma kula da marasa lafiya da kyau."
+    },
+    {
+      "hyp": "Masu bincike sun so su kwatanta tasirin magani a kan majinyata da ke da HBV kawai, da majinyata da ke da HBV da kuma cuta mai karya garkuwar jiki."
+    },
+    {
+      "hyp": "Don wannan binciken, masu bincike sun ɗauki marasa lafiya manya guda 115 masu ɗauke da cutar kwayar cutar hanta b mai tsanani (CHB)."
+    },
+    {
+      "hyp": "An ɗauke su daga asibitin Tygerberg a Cape Town, Afirka ta Kudu."
+    },
+    {
+      "hyp": "Wasu marasa lafiya sun kamu da cutar HIV (39) kuma sauran sun kamu da HBV kawai."
+    },
+    {
+      "hyp": "Masu bincike sun kalli jinsi, shekaru da jima'i, kuma sun gudanar da gwaje-gwajen asibiti da na dakin gwaje-gwaje daban-daban."
+    },
+    {
+      "hyp": "Sun gano cewa marasa lafiya da ke da HBV kawai sun fi rashin samun kowace irin maganin rigakafin ƙwayar cuta, suna nuna alamun cutar hanta ta dabi'a (tun da HBV ƙwayar cuta ce da za ta iya haifar da mummunar cutar hanta)."
+    },
+    {
+      "hyp": "Masu binciken sun sami damar nuna cewa mutanen da ke da HBV kawai suna cikin rashin fa'ida idan aka kwatanta da waɗanda ke da duka HIV da HBV, domin marasa lafiya da suka kamu da duka ƙwayoyin cutar biyu suna iya kasancewa a kan maganin rigakafin ƙwayar cuta na HIV, wanda kuma yana bayar da wasu fa'idodi wajen yaƙi da kamuwa da cutar HBV."
+    },
+    {
+      "hyp": "Sakamakon wannan binciken ya nuna tasirin bambance-bambance tsakanin tura, sa ido da zaɓuɓɓukan jiyya na HBV idan aka kwatanta da haɗin cuta mai karya garkuwar jiki da HBV, wanda ke fifita waɗanda suka kamu da duka cuta mai karya garkuwar jiki da HBV."
+    },
+    {
+      "hyp": "Masu binciken sun jaddada cewa dole ne mu inganta da samar da sabis mai aminci da adalci ga marasa lafiya da suka kamu da HBV kawai."
+    },
+    {
+      "hyp": "Ɗaya daga cikin iyakokin wannan binciken shi ne ƙarancin yawan jama'a da aka yi amfani da su wanda ya takaita ga ƙasa ɗaya kawai da tsarin asibitocinsu."
+    },
+    {
+      "hyp": "Wasu, watakila wuraren asibiti masu ci gaba na iya nuna ra'ayi akasin abin da aka samu a wannan binciken."
+    },
+    {
+      "hyp": "Ana buƙatar yin ƙarin bincike don ainihin gano bambance-bambancen da aka samu a wannan binciken."
+    },
+    {
+      "hyp": "Wannan takarda ta nuna ƙarfin haɗin gwiwa, tare da masu bincike suna aiki akan wannan aikin daga Afirka ta Kudu da kuma Birtaniya."
+    },
+    {
+      "hyp": "Ta hanyar amfani da majiyyata daga Afirka ta Kudu a wannan bincike, yana da mahimmanci ga wani ɓangare na al'ummar Afirka."
+    },
+    {
+      "hyp": "Bugu da ƙari, binciken na iya taimakawa wajen haɓaka tsare-tsaren jiyya mafi kyau ga waɗanda ke fama da HBV, cuta mai karya garkuwar jiki ko duka biyun."
+    },
+    {
+      "hyp": "Kimanta Tasirin Rashin Tsaro kan Ayyukan Kasuwancin Mata a Ƙaramar Hukumar SHIRORO ta Jihar Neja"
+    },
+    {
+      "hyp": "Wannan binciken ya duba tasirin rashin tsaro kan ayyukan kasuwanci na mata a yankin karamar hukumar Shiroro ta jihar Neja, inda aka mai da hankali musamman kan batutuwan da suka shafi dogaro da mata kan kudi, irin ayyukan kasuwanci da suka fi yawa a cikinsu da kuma yanayin tasirin rashin tsaro kan kokarin kasuwancinsu."
+    },
+    {
+      "hyp": "An gudanar da bincike kan samfurin mata 377, wanda ya kai ga gano cewa mata a Shiroro suna da ƙwarewar kasuwanci sosai tare da babban matakin 'yancin kuɗi, suna shiga cikin kananan da matsakaitan masana'antu (SMEs) mafi yawa."
+    },
+    {
+      "hyp": "Binciken ya kuma gano cewa yayin da rashin tsaro ke da mummunan tasiri kan ayyukan kasuwancin mata ta hanyar asarar ko raguwa na jari da sauran abubuwa, adadin mata 'yan kasuwa bai fuskanci raguwa mai yawa ba."
+    },
+    {
+      "hyp": "Binciken ya ba da shawarar cewa a ƙirƙiri shirye-shirye masu dorewa don inganta samun damar mata da amfani da ayyukan kuɗi kuma a ƙirƙiri ƙungiyoyin 'yan sanda na al'umma da kuma ƙarfafa su don yaƙar rashin tsaro a yankin binciken."
+    },
+    {
+      "hyp": "Mata 'yan kasuwa a Nijar suna bukatar karin tsaro"
+    },
+    {
+      "hyp": "Masu bincike sun gano cewa mata 'yan kasuwa a Nijar suna da ƙwarewar kasuwanci sosai kuma suna da 'yancin kuɗi, amma tsaro daga masu aikata laifuka matsala ce."
+    },
+    {
+      "hyp": "Masu bincike sun so su san yadda mata da ke gudanar da kasuwanci a yankin ƙaramar hukumar Shiroro ta jihar Neja suke cikin aminci da tsaro, da kuma yadda wannan zai iya shafar kasuwancinsu da 'yancin kuɗi."
+    },
+    {
+      "hyp": "Sun yi hira da mata 377 a wannan yanki game da kalubalen da suke fuskanta dangane da ayyukan kasuwancinsu, dogaro da kudi da rashin tabbas."
+    },
+    {
+      "hyp": "Sun bayar da rahoton cewa kashi 43% na matan sun ce ba sa dogara ga maza don samun kuɗi, kuma kashi 32% sun ce suna da wasu mutane da ke dogara da su don samun kuɗi."
+    },
+    {
+      "hyp": "Masu binciken sun kuma gano cewa kashi 85% na matan suna samun kudi daga kasuwanci daban-daban, kuma 'yan kaɗan ne suka ce suna dogara da albashi."
+    },
+    {
+      "hyp": "Kusan kashi 56% sun samu kuɗi ta hanyar noma, kuma kashi 79% ta hanyar kasuwanci."
+    },
+    {
+      "hyp": "Kusan 1 cikin 5 na mata suna samun kuɗi ta hanyar kitso, dinki, saka ko yin wasu ayyukan wanki."
+    },
+    {
+      "hyp": "Yawancin mata (91%) sun shaida wa masu bincike cewa kasuwancinsu ya sami tasiri saboda tsoron su na kai musu hari daga barayi da masu laifi."
+    },
+    {
+      "hyp": "Suna rasa kuɗi har ma da mazajensu ga waɗannan hare-hare, wani lokaci suna tilasta musu su kula da yaransu su kaɗai."
+    },
+    {
+      "hyp": "Matan sun kuma ce ba su da isassun ƙwarewa da kuɗi don faɗaɗa kasuwancinsu."
+    },
+    {
+      "hyp": "Masu binciken sun bayyana cewa duk da waɗannan ƙalubalen, mata a Nijar sun ci gaba da yin nasara sosai a cikin kasuwancinsu."
+    },
+    {
+      "hyp": "Sun ce Shiroro tana da mutane daga kabilu da addinai daban-daban, kuma wannan yana da kyau ga kasuwanci."
+    },
+    {
+      "hyp": "Wannan binciken ya kalubalanci sakamakon wasu masu bincike da suka bayar da rahoton cewa mata suna da ƙarancin nasara a kasuwanci saboda kasancewarsu masu kula a gida."
+    },
+    {
+      "hyp": "Maimakon haka, waɗannan masu bincike sun ce nasarar mata 'yan kasuwa a wannan yanki na Nijar yana fuskantar barazana mafi yawa daga hare-haren 'yan ta'adda da barayi."
+    },
+    {
+      "hyp": "Masu binciken sun ba da shawarar cewa duk masu ruwa da tsaki su haɗu tare su yi yaƙi da abubuwan da za su iya sa ya zama da wahala a yi nasara a kasuwanci."
+    },
+    {
+      "hyp": "Misali, mata a Nijar ya kamata su sami karin damar samun kudade, gonaki da tsaro."
+    },
+    {
+      "hyp": "Har ila yau, sun ba da shawarar cewa mata a cikin kasuwanci za su iya kafa ƙungiyoyi da za su taimaka musu wajen yaƙi da ɓarayi da masu laifi."
+    },
+    {
+      "hyp": "Matsayin Jini na Sinadarin Saleniyam, Jan ƙarfe da Sinadarin Zin a lokacin ɗaukar ciki suna da alaƙa da haɗarin Bakwaini na bazata: Binciken gwaji da sarrafawa daga Malawi"
+    },
+    {
+      "hyp": "Bakwaini shine haihuwa kafin makonni 37 da aka kammala."
+    },
+    {
+      "hyp": "An gudanar da wani bincike don tantance dangantakar da ke tsakanin yawan sinadarin saleniyam, jan ƙarfe, da sinadarin zin a cikin jinin uwa, da bakwaini."
+    },
+    {
+      "hyp": "Akwai mata 181 a cikin wannan binciken shari'ar da aka haɗa, 90/181 (49.7%) masu juna-biyu na cikakken lokaci da 91/181 (50.3%) masu juna-biyu na gabanin lokaci."
+    },
+    {
+      "hyp": "Jimillar matsakaicin jini na sinadarin saleniyam ya kasance 77.0; SD 19.4µg/L, jan ƙarfe ya kasance 2.50; SD 0.52 mg/L kuma sinadarin zin ya kasance 0.77; SD 0.20 mg/L tare da zangunan kima na 47-142µg/L, 0.76-1.59mg/L da 0.59-1.11 mg/L, bi-da-bi."
+    },
+    {
+      "hyp": "Sakamakon ya nuna cewa babu ƙarancin sinadarin saleniyam, da sinadarin zin; kuma akwai yawan jini na jan ƙarfe a cikin juna biyu."
+    },
+    {
+      "hyp": "Bakwaini yana da alaƙa da mafi girman yawan jinin jan ƙarfe da sinadarin zin na uwa."
+    },
+    {
+      "hyp": "Sinadarin zin, jan ƙarfe, da sinadarin saleniyam suna da alaƙa da haihuwar bakwaini"
+    },
+    {
+      "hyp": "Masu bincike sun gano babban tarin abubuwan gina jiki na sinadarin saleniyam, jan ƙarfe, da sinadarin zin, a cikin mata da suka yi bakwaini, amma har yanzu ba su san ko wadannan manyan tarin sun fito daga abincin da suke ci ba."
+    },
+    {
+      "hyp": "Haihuwar bakwaini tana faruwa ne lokacin da mace ta haifi jariri kafin ta cika makonni 37 na ciki."
+    },
+    {
+      "hyp": "Haihuwar bakwaini tana da alaƙa da sakamako mara kyau na lafiya ga jariri daga nakasa na haihuwa zuwa mutuwa."
+    },
+    {
+      "hyp": "Akwai iya kasancewa da yawa dalilai na haihuwar bakwaini, amma rawar da yawan abun gina jiki da ake samu a cikin abinci da muhalli ba a san shi sosai ba."
+    },
+    {
+      "hyp": "Wadannan abubuwan gina jiki suna da muhimmanci ga ci gaban jariri, amma masu bincike suna son sanin abin da ke faruwa idan sun yi yawa."
+    },
+    {
+      "hyp": "Don wannan binciken, masu bincike sun yi niyyar auna adadin sinadarin saleniyam, jan ƙarfe, da sinadarin zin a cikin mata da suka yi bakwaini, sannan su tantance yiwuwar cewa bakwaini yana haifar da yawan kowanne daga cikin abubuwan gina jiki da aka bincika."
+    },
+    {
+      "hyp": "Masu binciken sun tattara samfurin jini daga mata guda 181 da zarar sun haihu a asibitoci biyu a Lilongwe, babban birnin Malawi, tsakanin Yuni 2016 da Maris 2017."
+    },
+    {
+      "hyp": "Sun aika samfurin jinin zuwa dakin gwaje-gwaje a Norway inda suka fitar da jini, mafi tsarkakakken nau'in jini, sannan suka auna adadin sinadarin saleniyam, jan ƙarfe da sinadarin zin."
+    },
+    {
+      "hyp": "Kusan rabin mata 181 da ke cikin binciken sun yi bakwaini, kuma masu bincike sun gano adadi mai yawa na sinadarin saleniyam, jan ƙarfe da sinadarin zin."
+    },
+    {
+      "hyp": "Daga nan sai suka daidaita lissafinsu don la'akari da wasu abubuwa da dama kamar shekaru, lafiyar jiki gaba ɗaya, da tarihin ciki don gano tasirin da ake zargin abun gina jiki wajen haifar da bakwaini."
+    },
+    {
+      "hyp": "Sun kammala cewa yawan sinadarin saleniyam da jan ƙarfe ba su taka muhimmiyar rawa wajen haifar da bakwaini ba, amma yawan sinadarin zin ya ƙara haɗarin bakwaini fiye da sau 6."
+    },
+    {
+      "hyp": "Duk da haka, yawan jan ƙarfe ya zama damuwa ga masu binciken, saboda sanannun tasirin guba."
+    },
+    {
+      "hyp": "Kasancewar mata 181 kawai suka halarci binciken ya takaita ikon masu binciken wajen gano haɗarin da ke tattare da matakan sinadarin saleniyam mai yawa, domin adadin mahalarta da ya fi dacewa shine 600."
+    },
+    {
+      "hyp": "Ba a bincika abincin yau da kullum na mahalarta don gano yiwuwar tushen abubuwa uku na abun gina jiki ba, kuma ba a rubuta Kimar Nauyi da Tsawo (BMI) nasu ba."
+    },
+    {
+      "hyp": "Wannan shi ne binciken farko na irin sa da ya auna tasirin sinadarin saleniyam, jan ƙarfe da sinadarin zin a cikin mata masu juna biyu a Malawi."
+    },
+    {
+      "hyp": "Afirka tana da wasu daga cikin mafi girman matakan haihuwar bakwaini - sama da kashi 18% idan aka kwatanta da ƙasashen Yamma a kashi 5%, don haka masu bincike suna son sanin ko abinci mai gina jiki yana taka rawa."
+    },
+    {
+      "hyp": "Halayen Komawa Gida, Amincewa da Wuri da Yanki na Kunkuru Pancake (Malacochersus tornieri) a Kenya"
+    },
+    {
+      "hyp": "Dabbobi suna nuna halayen sarari da lokaci na musamman waɗanda ke ƙara musu damar rayuwa."
+    },
+    {
+      "hyp": "Fahimtar irin waɗannan halaye mataki ne mai mahimmanci wajen ingantaccen kiyayewa da sarrafawa musamman na nau’o’in da ke fuskantar barazana."
+    },
+    {
+      "hyp": "A wannan binciken, mun yi gwaji kan ko Pancake tortoise yana da ikon komawa gida idan an mayar da shi kuma mun bincika kan amincin wurin zama da yankin mallakar nau'in a cikin muhallin halitta a Kitui County, Kenya."
+    },
+    {
+      "hyp": "An yi nazarin halayen ɓauna 39 da ke zaune a cikin ɓoyayyun duwatsu 12 da ke rarrabuwa daga Yuli 2020 zuwa Yuni 2022 ta hanyar bin diddigin rediyo, kamawa da kyamara da haɗin sikan na matakin rukuni da kuma samfurin ad libitum."
+    },
+    {
+      "hyp": "An sanya na'urorin watsa rediyo a kan giwaye goma sha huɗu kuma an mayar da su daga wuraren da suke zama zuwa wasu wurare daban daga wuraren da suke zama kuma an sa ido kan motsi da halayensu."
+    },
+    {
+      "hyp": "Banda mata biyu kawai da suka saba da sabbin wuraren da aka mayar da su, duk sauran kunkuru sun yi ƙoƙarin komawa gida, inda kashi 46.15% daga cikinsu suka gano hanyar komawa wuraren su na gida da cikakken daidaito kuma kashi 15.38% sun kai wuraren da ake tsammanin suna cikin yankin gidansu."
+    },
+    {
+      "hyp": "Nasarar komawa gida ba tare da wata shakka ba tana bayar da shaida na ƙaƙƙarfan aminci ga wurin a cikin jinsin."
+    },
+    {
+      "hyp": "Binciken kan cunkoson rami na kunkuru ya nuna cewa babu bambanci mai mahimmanci a ƙididdigance tsakanin adadin kunkurun da aka fara samu a cikin ramukan da matsakaicin adadin da ke akwai a tsawon kwanaki 162 na samfurin (F(1,22) = 0.0699, P >0.05), wanda ke kara goyon bayan amincin wurin mai karfi a cikin nau'in."
+    },
+    {
+      "hyp": "A gefe guda kuma, abubuwan da suka faru na tarkon kyamara da kuma samfurin ad libitum sun kuma tabbatar da cewa Pancake tortoises suna da yankuna inda maza ke kare yankunansu da ƙarfi daga wasu maza masu shigowa."
+    },
+    {
+      "hyp": "Garkuwan pancake da suka ɓace suna da ƙwarewa ta musamman wajen 'nemo gida'"
+    },
+    {
+      "hyp": "Masu bincike sun yi wani abin mamaki yayin nazarin halayen kunkuru na gabashin Afirka (Malacochersus tornieri): dabbobin na iya samun hanyarsu ta komawa gida bayan an motsa su a kan dogon nesa."
+    },
+    {
+      "hyp": "Fahimtar yadda da kuma dalilin da yasa suke yin haka na iya zama muhimmi ga kiyayewar waɗannan dabbobi masu jan-jiki masu wuya."
+    },
+    {
+      "hyp": "Halin neman gida da waɗannan kunkuru suke nunawa ana kiransa \"komawa gida\", kuma wasu dabbobi da yawa suna iya yin hakan ma."
+    },
+    {
+      "hyp": "Samun damar komawa wurare na musamman yana ba dabbobi damar komawa abinci, abokan zama, da mafaka, wanda ke inganta damar tsirarsu da haihuwa."
+    },
+    {
+      "hyp": "Ko da yake an yi nazarin halayen komawa gida a cikin kunkuru na teku da na ruwa mai ɗanɗano, masu binciken a wannan binciken sun ce har yanzu kaɗan muka sani game da komawa gida a cikin kunkuru (na ƙasa daidai da kunkuru)."
+    },
+    {
+      "hyp": "A wannan binciken, masu binciken sun so su fahimci karin bayani game da halayen kunkuru na pancake a cikin yanayin su na halitta a cikin duwatsu na Kenya."
+    },
+    {
+      "hyp": "Sun yi nazarin dabbobin yayin da suke motsawa da ciyarwa, kuma har ma lokacin da suka je hutawa a cikin ɓoyayyun wurare, ko kuma gibin cikin dutsen."
+    },
+    {
+      "hyp": "Masu binciken sun lura da ƙungiyoyin kunkuru na pancake kusan tsawon shekaru biyu, kuma sun kafa kyamarori don yin rikodin bidiyo na dabbobin lokacin da ba sa kallonsu."
+    },
+    {
+      "hyp": "Sun kuma haɗa na'urorin watsa rediyo da giwayen ƙasa guda 14."
+    },
+    {
+      "hyp": "Waɗannan ƙananan na'urori ne da ke ba da damar masu bincike su bi diddigin motsin dabbobi, da kuma sa-ido a inda suke ciyar da lokacinsu a cikin yini da dare."
+    },
+    {
+      "hyp": "Masu binciken sai suka motsa wasu daga cikin waɗannan kunkuru da aka sa ido a kansu zuwa wani sabon yanki, don su iya nazarinsu cikin sauƙi."
+    },
+    {
+      "hyp": "Amma abin mamaki ga masu binciken, duk da haka, wasu daga cikin kunkuru biyu sun fara komawa zuwa yankunansu na asali, tsakanin 1 da 2.5 km daga inda aka motsa su."
+    },
+    {
+      "hyp": "Wannan ne lokacin da masu binciken suka yanke shawarar gwada motsa ƙarin dabbobi daga gidajensu, don ganin ko za su nuna irin wannan halayyar 'komawa gida'."
+    },
+    {
+      "hyp": "Abin sha'awa, kusan rabin kunkuru sun sami damar komawa ga daidai wuraren da suka saba zama kafin a motsa su, sau da yawa suna tafiya fiye da kilomita 1.5 don isa wurin."
+    },
+    {
+      "hyp": "Wani kashi 15% na su sun sami damar komawa yankin gaba ɗaya, amma ba su iya samun ramin da aka ɗauke su daga farko ba."
+    },
+    {
+      "hyp": "Masu binciken sun kuma gano cewa wuraren ɓoyayyen daban-daban yawanci suna da adadin ƙunkuru iri ɗaya da ke hutawa a cikinsu, wanda ke nuna cewa ƙunkuru koyaushe suna amfani da wurare iri ɗaya don hutawa."
+    },
+    {
+      "hyp": "Bidiyon daga kyamarorin ya kuma nuna cewa mazajen kunkuru suna da yankin nasu, ma'ana za su yi fada da wasu mazaje da ke kokarin shiga yankinsu ko rami."
+    },
+    {
+      "hyp": "Masu binciken sun ce wannan shi ne karo na farko da aka ga halayyar komawa gida a cikin kunkuru na pancake, kuma sakamakonsu ya nuna cewa waɗannan dabbobin sun fi son zama da hutawa a wurare guda idan sun samu dama."
+    },
+    {
+      "hyp": "Bincikensu bai bayyana yadda ƙwaryar ƙasa ke samun hanyar komawa gida ba, don haka binciken nan gaba ya kamata ya mayar da hankali kan fahimtar wannan muhimmin batu."
+    },
+    {
+      "hyp": "Saboda dabbobi wani lokaci suna buƙatar a motsa su zuwa sabbin wurare don kiyayewa, wannan bayani zai taimaka wa masu kiyayewa wajen tabbatar da amincin ƙunkuru a sabon muhalli."
+    },
+    {
+      "hyp": "Binciken ya kasance na haɗin gwiwa ne a tsakanin masana kimiyya daga Kenya da kuma ƙasar Sin, kuma ƙari ne ga iliminmu na halayen komawa gida a cikin kunkuru da sauran dabbobi."
+    },
+    {
+      "hyp": "Pharmacokinetics na Plasma na Babban Kashi na Maganin Rifampicin ta Baki da na Ciki a cikin Marasa Lafiya da Meningitis na Tarin Fuka:"
+    },
+    {
+      "hyp": "Gwajin Tsaida na Zaɓaɓɓe mai Sarrafawa"
+    },
+    {
+      "hyp": "Babban adadin rifampicin na cikin jijiya na iya inganta sakamako a cikin cutar meningitis ta tarin fuka amma ba su dace ba a wuraren da ke da nauyi sosai."
+    },
+    {
+      "hyp": "Mun yi zato cewa yawan rifampicin a cikin jini zai zama iri ɗaya tsakanin shan baki na 35 mg/kg na nauyin jiki da kuma shan intravenously na 20 mg/kg, wanda aka ba da shawarar don gwaje-gwajen tasiri a cikin cutar meningitis na tarin fuka."
+    },
+    {
+      "hyp": "Mun gudanar da binciken ilimin kwayoyin magani na rukuni-rukuni na bazuwar da aka haɗa a cikin gwajin asibiti na ƙarfafa maganin qwayar bakteriya don cutar meningitis na tarin fuka."
+    },
+    {
+      "hyp": "An dauki mahalarta masu ɗauke da cuta mai karya garkuwar jiki tare da meningitis na tarin fuka daga asibitocin Afirka ta Kudu kuma an rarraba su zuwa ɗaya daga cikin rukuni uku na bayar da rifampicin:"
+    },
+    {
+      "hyp": "misali (na baki 10 mg/kg), babban kashi (na baki 35 mg/kg), da na cikin jijiya (20 mg/kg)."
+    },
+    {
+      "hyp": "An yi tattara samfuran ilimin kwayoyin halitta mai zurfi a rana ta 3."
+    },
+    {
+      "hyp": "An bayyana bayanai ta amfani da nazarin da ba na rarrabuwa ba, kuma an kwatanta bayyanar da ma'aunin matsakaicin lissafi (GMRs)."
+    },
+    {
+      "hyp": "Mutane arba'in da shida sun shiga cikin samfurin pharmacokinetic (matsakaicin kashi, n = 17; babban kashi na baki, n = 15; na cikin jijiya, n = 14)."
+    },
+    {
+      "hyp": "Matsakaicin ƙidayar CD4 ya kasance 130 sel/mm3 (tsakanin kashi huɗu [IQR], 66 zuwa 253 sel/mm3)."
+    },
+    {
+      "hyp": "Matsakaicin ma'auni na rifampicin a ƙarƙashin ƙirar lokaci daga 0 zuwa 24 h (AUC0–24) ya kasance 42.9mg · h/ml (95% amincewa da tazara [CI], 24.5 zuwa 75.0mg · h/ml) don daidaitaccen kashi, 295.2mg · h/ml (95% CI, 189.9 zuwa 458.8mg · h/ml) don babban kashi na baki, da 206.5mg · h/ml (95% CI, 154.6 zuwa 275.8mg · h/ml) don gudanarwa ta hanyar jijiya."
+    },
+    {
+      "hyp": "Rifampicin AUC0–24 GMR ya kasance 1.44 (90% CI, 0.84 zuwa 2.21) kuma mafi girman tattarawar magani a cikin jini (Cmax) GMR ya kasance 0.89 (90% CI, 0.63 zuwa 1.23) don shan magani mai yawa ta baki dangane da bayar da magani ta hanyar allura."
+    },
+    {
+      "hyp": "Plasma rifampicin AUC0–24 ya fi yawa bayan an sha magani ta baki a 35-mg/kg fiye da lokacin da aka yi amfani da shi ta hanyar allura a 20-mg/kg a cikin kwanaki na farko na maganin cutar tarin fuka (TB)."
+    },
+    {
+      "hyp": "Sakamakon binciken ya goyi bayan bayar da rifampicin ta baki a gwaje-gwajen nan gaba na cutar meningitis ta tarin fuka."
+    },
+    {
+      "hyp": "Ana iya gwada kwayoyin magani masu yawa akan marasa lafiya masu cutar HIV da tarin fuka na meningitis."
+    },
+    {
+      "hyp": "Masu bincike sun tabbatar da cewa yana da amfani a fara gwada ko manyan kwayoyin maganin rifampicin na iya ceton marasa lafiya masu cutar HIV da tarin fuka na meningitis."
+    },
+    {
+      "hyp": "Har zuwa 3 cikin kowane 5 na majiyyatan cutar HIV waɗanda kuma suka kamu da cutar tarin fuka meningitis suna mutuwa saboda wannan cuta, wadda ke kai hari ga tsarin juyayi."
+    },
+    {
+      "hyp": "Masu tsira sukan kasance da lahani na dindindin ga tsarin jijiyoyin tsakiyarsu da kuma muhimman jijiyoyi da suke fitowa daga ƙwaƙwalwa."
+    },
+    {
+      "hyp": "Wannan na iya shafar motsin zuciyarsu da motsi."
+    },
+    {
+      "hyp": "Wasu marasa lafiya suna da farfaɗiya ko bugun jini, ko kuma wasu sassan fuskarsu ko jikinsu suna daskarewa."
+    },
+    {
+      "hyp": "Rifampicin, wani ƙwayar maganin rigakafi mai ƙarfi da ake amfani da shi akan cutar tarin fuka, ana ba da shi a matsayin kwayoyi don ƙoƙarin kashe ƙwayoyin cuta masu haifar da cutar tarin fuka meningitis."
+    },
+    {
+      "hyp": "Majiyyata masu rashin lafiya sosai sau da yawa suna samun wahalar hadiyar kwayoyi."
+    },
+    {
+      "hyp": "Ana iya ba da Rifampicin ta hanyar shigar da shi cikin jijiya a cikin nau'in ruwa."
+    },
+    {
+      "hyp": "Sai a saka allura a cikin jijiyar majiyyaci domin a saki ruwan ya shiga jiki."
+    },
+    {
+      "hyp": "Ba a yi wani gwaji ba tukuna don gano yadda jikin majinyaci ke ɗaukar magani lokacin da aka yi amfani da wannan hanya."
+    },
+    {
+      "hyp": "Jiyya ta hanyar bututun ƙarin ruwa na buƙatar ƙarin kayan aiki, kwantar da majinyaci a asibiti da kuma ma'aikacin lafiya da aka horar wanda ya san yadda za a saka allurar bututun ƙarin ruwa daidai."
+    },
+    {
+      "hyp": "Saboda haka, ba lallai ba ne ya zama zaɓi a yankunan da ba su da wadatattun albarkatu a duniya."
+    },
+    {
+      "hyp": "Likotoci sun riga sun san cewa rifampicin ba ya shiga cikin ruwan kwakwalwa, kashin baya da kwanyar kai da kyau, inda ƙwayoyin cuta za su iya ɓoyewa."
+    },
+    {
+      "hyp": "Shi ya sa ake buƙatar manyan kwayoyi (adadi) don kashe dukkan ƙwayoyin cuta a jikin majiyyaci yadda ya kamata."
+    },
+    {
+      "hyp": "Amma masu bincike ba su da tabbacin yadda adadin kwayar zai iya kasancewa mai tasiri da lafiya."
+    },
+    {
+      "hyp": "Don haka, masu bincike daga Afirka ta Kudu da Biritaniya sun so gano, ta amfani da ƙaramin adadin marasa lafiya, ko yana da lafiya a ba da manyan kwayoyin rifampicin ko dai a matsayin kwayoyi ko ta hanyar shigar da shi cikin jini, da kuma yadda jikinsu zai ɗauki kowanne nau'i."
+    },
+    {
+      "hyp": "Yana da mahimmanci a san wannan kafin wasu masu bincike su fara da manyan gwaje-gwaje, ko test, inda suke shirin ba wa marasa lafiya da yawa karin kwayoyin rifampicin."
+    },
+    {
+      "hyp": "An ba da ɗaya daga cikin nau'ikan maganin rifampicin guda uku ga marasa lafiya 46 masu ɗauke da cutar HIV a Afirka ta Kudu masu ciwon meningitis na tarin fuka."
+    },
+    {
+      "hyp": "Na farko shi ne maganin al'ada na kwayoyi da ake bai wa majiyyata a halin yanzu, wanda ya kai jimillar 10mg na rifampicin ga kowanne kilogram da majiyyaci ke da shi."
+    },
+    {
+      "hyp": "Wani rukuni ya karɓi manyan kwayoyin magani na 35 milligram a kowanne kilogram na nauyin majiyyaci."
+    },
+    {
+      "hyp": "Rukuni na uku sun karɓi miligram 20 a kowace kilogram na nauyin mutum ta hanyar allurar jijiya."
+    },
+    {
+      "hyp": "An ɗauki samfuran jini daga marasa lafiya bayan kwana uku."
+    },
+    {
+      "hyp": "Daga nan ne masu binciken suka auna yawan rifampicin da ke cikin ruwan jinin su (sashin ruwa na jini)."
+    },
+    {
+      "hyp": "An sami karin rifampicin a jikin marasa lafiya da suka karɓi manyan kwayoyin magani fiye da waɗanda suka karɓi magani ta hanyar shigar jini ko kuma daidaitaccen adadin magani."
+    },
+    {
+      "hyp": "Yawan maganin a cikin jinin plasma ya kasance iri ɗaya ga babban kashi da maganin intravenously."
+    },
+    {
+      "hyp": "Wadannan mayar da hankali sun fi yawa fiye da lokacin da marasa lafiya suka karɓi ƙwayar magani ta al'ada kawai."
+    },
+    {
+      "hyp": "A cewar masu bincike, wannan yana nuna cewa lafiyar marasa lafiya da ke fama da cutar tarin fuka na meningitis za ta iya inganta idan sun karɓi manyan kwayoyin rifampicin."
+    },
+    {
+      "hyp": "Ba ya da muhimmanci ko sun karɓe shi a matsayin kwayoyi ko ta hanyar allura - abin da ya fi muhimmanci shi ne su karɓi manyan kwayoyi, domin jikinsu zai iya adana mafi girman ƙwayoyin sa."
+    },
+    {
+      "hyp": "Sakamakon ya goyi bayan sakamakon gwaje-gwajen da aka yi a Uganda da Indonesia."
+    },
+    {
+      "hyp": "Wasu ƙananan gwaje-gwaje guda biyu a Indonesia misali sun nuna cewa za a iya ceton rayukan marasa lafiya da yawa idan an ba su manyan kwayoyin rifampicin ko dai ta baki ko ta hanyar allura."
+    },
+    {
+      "hyp": "Abin takaici, duk da haka, masu binciken sun yi gargaɗin cewa mahalarta kaɗan ne suka shiga wannan binciken fiye da yadda suka yi fatan farko, wanda zai iya yin tasiri ga sakamakonsu."
+    },
+    {
+      "hyp": "An gudanar da binciken ne a Afirka ta Kudu."
+    },
+    {
+      "hyp": "Yana goyon bayan shirin gudanar da gwaje-gwaje don tantance ko yana da amfani a ba wa marasa lafiya masu cuta mai karya garkuwar jiki da tarin fuka na meningitis manyan kwayoyin rifampicin."
+    },
+    {
+      "hyp": "Ana fatan irin wannan magani zai ceci rayukan mutane da yawa a Afirka da sauran yankuna na duniya inda cutar tarin fuka na kwakwalwa ke zama babbar matsala."
+    },
+    {
+      "hyp": "Za a iya inganta ingancin ƙasa mai tsananin yanayi a bakin teku ta hanyar amfani da haɗin gawayi da takin zamani?"
+    },
+    {
+      "hyp": "Rashin alherin ƙasa yana zama babban cikas ga samar da amfanin gona a yankin Afirka kudu da Sahara."
+    },
+    {
+      "hyp": "Tasirin gawayi da aikace-aikacen takin gargajiya akan ingancin ƙasa an ruwaito shi ta masu rubutu da dama."
+    },
+    {
+      "hyp": "A cikin wannan binciken, an yi gwajin dakin gwaje-gwaje na kwanaki 30 ta amfani da samfuran 120 g kowanne na Haplic acrisol da aka gyara da gawayin ƙwan masara (cbio), gawayin bawon shinkafa (rbio), gawayin bawon kwakwa (coco300 da coco700) ko takin kaji (compost); da gawayin bawon shinkafa da aka haɗa da takin (rcocomp) ko gawayin ƙwan masara da aka haɗa da takin (cococomp) a kashi 1% w/w gyara: ƙasa, bi da bi."
+    },
+    {
+      "hyp": "Sauran magunguna a cikin binciken sun haɗa da takin kaji da aka haɗa da gawayi na ƙwan masara ko gawayi na bawon shinkafa (1% taki + 1% gawayi: 1% ƙasa w/w), bi da bi, don bincika tasirinsu akan numfashin ƙasa na asali, pH na ƙasa; carbon na ƙwayoyin ƙasa; damar musayar cation; jimlar carbon na halitta, jimlar nitrogen da kuma yawan nitrogen da ake da shi."
+    },
+    {
+      "hyp": "Gawayi da takin zamani da aka yi amfani da su kadai ko tare, da gawayi da aka yi takin zamani sun kara pH na ƙasa da 0.28–2.29 pH naúrar idan aka kwatanta da wanda ba a gyara ba."
+    },
+    {
+      "hyp": "Numfashin asali daga takin zamani ko takin shinkafa da aka yi amfani da shi, ko gawayin masara ko haɗin gawayi da takin zamani sun fi girma fiye da abin sarrafawa mara gyara, wanda ya yi kama da wanda aka yi amfani da gawayi kawai."
+    },
+    {
+      "hyp": "TOC a cikin takin gargajiya kawai da haɗin gawayi na ƙwan masara da maganin takin gargajiya sun fi na sarrafawa da kashi 37% da 117%, bi da bi."
+    },
+    {
+      "hyp": "Hadin gawayin bawon shinkafa da takin zamani ya karu da MBC da kashi 132% yayin da kara takin zamani kadai ya karu da MBC da kashi 247%, idan aka kwatanta da sarrafawa."
+    },
+    {
+      "hyp": "A ƙarshe, binciken ya nuna cewa amfani da takin zamani ko haɗin gwiwa na takin zamani da gawayi, ko gawayi da aka yi takin zamani ya inganta ma'aunin ingancin ƙasa kamar pH na ƙasa da MBC, kuma ya inganta daidaituwar C na ƙasa ta hanyar haɓaka TOC da rage asarar C na ƙasa ta hanyar numfashi na asali."
+    },
+    {
+      "hyp": "Gawayi da takin zamani suna inganta ingancin ƙasa don amfanin gona"
+    },
+    {
+      "hyp": "Wannan binciken ya binciki yadda gawayi, wani abu mai ɗorewa sosai, mai arzikin carbon da aka yi daga ragowar biomass, za a iya amfani da shi don inganta ingancin ƙasa a Afirka ta kudu da Sahara."
+    },
+    {
+      "hyp": "Binciken ya gano cewa gawayi yana inganta ingancin ƙasa iri ɗaya da hanyoyin madadin da suka fi tsada kuma ba su da sauƙin samu."
+    },
+    {
+      "hyp": "Ɗaya daga cikin manyan matsalolin da ke fuskantar samar da amfanin gona a yankin Afirka kudu da Sahara shi ne raguwar alherin ƙasa."
+    },
+    {
+      "hyp": "Ingantacciyar ƙasa za ta haifar da yawan amfanin gona, wanda zai rage talauci a karkara kuma ya mayar da lalacewar albarkatun ƙasa."
+    },
+    {
+      "hyp": "Bincike ya nuna cewa gawayi, wani abu mai ɗorewa sosai kuma mai arzikin carbon, ana iya amfani da shi don inganta ƙasar gona."
+    },
+    {
+      "hyp": "Gawayi shine samfurin da ake samu daga dumama sinadarin halitta, ko biomass, a cikin yanayin ƙarancin iskar oxygen ko babu."
+    },
+    {
+      "hyp": "An nuna cewa gawayi yana ƙara yawan fadin ƙasa, yana ƙara samuwar ruwa da iska, kuma yana kunna ƙwayoyin halitta a cikin ƙasa."
+    },
+    {
+      "hyp": "Wannan binciken ya yi test kan tasirin gawayi da takin zamani akan ingancin ƙasa ta amfani da alamomi kamar numfashin ƙasa, pH na ƙasa, kasancewar ƙwayoyin cuta, adadin carbon, da adadin nitrogen da ake da shi."
+    },
+    {
+      "hyp": "Masu binciken sun samar da gawayi daga kwasfa masara, kwakwa da bawon shinkafa ta hanyar konewa, wanda ya ƙunshi dumama sinadarin halitta ba tare da iskar oxygen ba, a 450 °C a cikin tanderun da aka samar a gida."
+    },
+    {
+      "hyp": "Masu binciken sun samar da gawayin bawon kwakwa ta amfani da konewa a 300 °C da kuma a 700 °C."
+    },
+    {
+      "hyp": "Masu binciken sun sanya samfuran ƙasa da aka gauraya da gawayi a cikin incubator na tsawon kwanaki 30."
+    },
+    {
+      "hyp": "Kowane samfur ya ƙunshi ƙasa da aka shirya musamman da ake kira Haplic acrisol, wanda aka haɗa da haɗuwa daban-daban na gawayi da aka yi daga kwasfa masara, bawon shinkafa ko bawon kwakwa, da kuma takin kaji da aka yi kompost."
+    },
+    {
+      "hyp": "Sauran samfuran sun ƙunshi haɗin ƙasa da takin kaji da aka yi da gawayin bawon shinkafa, da kuma gawayin kwasfa masara, bi da bi."
+    },
+    {
+      "hyp": "Kowane samfur ya ƙunshi 1% takin zamani, 1% ga kowane gawayi, don haka masu bincike za su iya bincika tasirin kowane haɗin gwiwa akan ingancin ƙasa."
+    },
+    {
+      "hyp": "Masu binciken sun gano cewa ƙara gawayi da takin zamani zuwa ƙasa, ko dai a rarrabe ko tare, ya ƙara darajar pH na ƙasa daga 0.28–2.29 pH raka'a, idan aka kwatanta da ƙasa da ba a haɗa ba."
+    },
+    {
+      "hyp": "Kara pH yana nufin ƙasa ta zama ƙasa da acidic."
+    },
+    {
+      "hyp": "Binciken ya gano cewa numfashi na asali, ko kuma mafi ƙarancin adadin iskar gas da ƙasa ke fitarwa, ya ƙaru lokacin da aka ƙara takin gargajiya kawai, ko lokacin da aka haɗa takin gargajiya da bawon shinkafa, ko gawayin kwallon masara ko haɗin gawayi."
+    },
+    {
+      "hyp": "Samfuran ƙasa sun nuna ƙaruwa a cikin jimillar abun gawayi na kashi 37% lokacin da aka yi amfani da takin gargajiya kawai, da kuma ƙaruwa na kashi 117% lokacin da aka haɗa gawayin kwallon masara da takin gargajiya."
+    },
+    {
+      "hyp": "Adadin ayyukan ƙwayoyin cuta ya karu da kashi 132% inda ƙasar ke da cakuda takin zamani da gawayin bawon shinkafa, idan aka kwatanta da karin kashi 247% a cikin samfuran ƙasa da ke da takin zamani kawai."
+    },
+    {
+      "hyp": "Sakamakon wannan binciken ya nuna cewa yana yiwuwa a rage tsananin acid a cikin ƙasa ta amfani da gawayi, wanda yake samuwa cikin sauƙi kuma a arha."
+    },
+    {
+      "hyp": "Wannan ya saba da madadin aikin sanya lime a cikin ƙasa, wanda yake da tsada kuma ba ya samuwa ga ƙananan manoma a ƙasar kudu da hamadar sahara."
+    },
+    {
+      "hyp": "Cibiyar Zaren Fibrin da Ba Ta Dace ba a Ciwon Gaba da Alakar ta da Autoimmunity, Kumburi da Thrombosis"
+    },
+    {
+      "hyp": "Haɗarin faruwar abubuwan zuciya a marasa lafiya masu RA yana ƙaruwa sosai sakamakon kumburi na tsarin jiki."
+    },
+    {
+      "hyp": "Tasirin da citrullination mai alaƙa da autoimmune ke yi akan tsarin da kuma yiwuwar thrombosis na fibrin(ogen) har yanzu ba a sani ba."
+    },
+    {
+      "hyp": "Saboda haka mun kwatanta alamomin aikin jijiyoyin jini, kumburi, coagulation da haɗin gwiwar fibrin a cikin marasa lafiya na RA da lafiyayyun mutane kuma mun tantance dangantakar tsakanin sigogi."
+    },
+    {
+      "hyp": "An tattara samfuran jini daga marasa lafiya 30 masu RA da kuma masu sa kai masu lafiya guda 25 da suka dace da shekaru da jinsi."
+    },
+    {
+      "hyp": "An auna matakan SAA, CRP, ICAM-1 da VCAM-1 ta amfani da gwajin rigakafi na sandwich."
+    },
+    {
+      "hyp": "An kimanta daskarewar jini gaba ɗaya ta amfani da Thromboelastography."
+    },
+    {
+      "hyp": "An binciki hanyoyin haɗin gwiwar fibrin da tsarin siloli ta amfani da Scanning Electron Microscopy."
+    },
+    {
+      "hyp": "An yi gano da ƙididdigar citrullination a cikin daskararrun fibrin ta amfani da rigakafin monoclonal Citrulline mai alamar haske tare da Confocal Microscopy."
+    },
+    {
+      "hyp": "Tarin SAA, CRP da ICAM-1 sun karu sosai a cikin marasa lafiya na RA idan aka kwatanta da masu sarrafawa."
+    },
+    {
+      "hyp": "Sigogin TEG da suka shafi fara daskarewa (R da K), yawan haɗin gwiwar fibrin (α-Angle), da lokacin da za a kai ga samar da thrombus mafi girma (TMRTG) sun ragu a cikin marasa lafiya na RA."
+    },
+    {
+      "hyp": "Ma’auni da suka shafi ƙarfi na daskarewa (MA, MRTG, TGG) ba su bambanta ta fuskar ƙididdiga tsakanin RA da masu sarrafawa ba."
+    },
+    {
+      "hyp": "Samfurin koma bayar dabaru ya bayyana ƙarin alaƙa mai ƙarfi tsakanin abubuwan amsawa na matakin gaggawa (CRP, SAA) da sigogin TEG fiye da alamomin aikin endothelial."
+    },
+    {
+      "hyp": "Binciken ta hanyar na'urar hangen nesa ya bayyana ƙarin ƙaƙƙarfan hanyoyin sadarwa na manyan zaruruwan fibrin a cikin marasa lafiya na RA idan aka kwatanta da masu sarrafawa [matsakaici (tsakanin kashi huɗu) 214 (170-285) vs 120 (100-144) nm bi da bi, p<0.0001, Odds ratio=22.7)."
+    },
+    {
+      "hyp": "Gano wurare masu yawa na citrullinated a cikin tsarin daskararren fibrin a cikin marasa lafiya na RA, wanda ya kasance ƙasa da yawa a cikin samfuran kulawa (p<0.05, OR=2.2)."
+    },
+    {
+      "hyp": "Marasa lafiya da ke da RA mai aiki suna nuna bayanin martabar taruwar jini wanda ya bambanta da sakamakon gama gari da ke da alaƙa da sauran yanayin kumburi."
+    },
+    {
+      "hyp": "Canjin tsarin furotin ta hanyar citrullination da ke da alaƙa da autoimmune na iya taka rawa wajen tantance tsarin fibrin da yiwuwar bayar da haɗarin thrombosis mai tsanani a cikin majiyyatan RA."
+    },
+    {
+      "hyp": "Toshewar jini a cikin marasa lafiya masu cutar amosanin gabbai na iya bayyana ƙarin haɗarinsu na kamuwa da bugun zuciya, shanyewar jiki"
+    },
+    {
+      "hyp": "Sabon bincike kan ciwon gaba ya ba da kyakkyawar fahimta game da yuwuwar alaƙa tsakanin wannan yanayi da ƙara haɗarin ciwon zuciya."
+    },
+    {
+      "hyp": "Ciwon gaba (RA) cuta ce mai raɗaɗi da naƙasa wacce ke saba tsarin garkuwar jiki, mai alaƙa da kumburi a cikin gaɓoɓi da dukkan jiki."
+    },
+    {
+      "hyp": "Na ɗan wani lokaci yanzu, masana kimiyya sun san cewa masu fama da cutar suna da haɗarin kashi 50% na samun sakamakon cututtukan zuciya (CVD) – kamar bugun jini ko ciwon zuciya."
+    },
+    {
+      "hyp": "Muhimmin abin da ke haifar da wannan haɗari shi ne tasirin da kumburi ke yi akan tsarin toshewar jini."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu bincike sun binciki wannan dangantaka, don gano ainihin dalilin da yasa RA ke ƙara haɗarin CVD."
+    },
+    {
+      "hyp": "Musamman ma, masu binciken sun bincika tasirin kumburi da canje-canjen tsari akan wasu furotoci na musamman da ke da alaƙa da daskarewar jini, wanda ake kira fibrins."
+    },
+    {
+      "hyp": "Wadannan furotin suna bayyana a matsayin dogayen sarƙoƙi waɗanda ke samar da asalin \"aikin raga\" don daskarewar jini, don haka duk wani canji ga silolin kansu na iya haifar da tasirin tasiri ga tsarin daskarewar gaba ɗaya."
+    },
+    {
+      "hyp": "Masu bincike sun kwatanta samfuran jini na marasa lafiya masu RA da samfuran daga lafiyayyun mutane."
+    },
+    {
+      "hyp": "A kowane yanayi, masu binciken suna neman \"alamomi\" a cikin jini waɗanda ke nuna kumburi, da kuma duk wani bambanci na musamman a cikin tsarin daskarewa na al'ada wanda zai iya ƙara haɗarin CVD."
+    },
+    {
+      "hyp": "An kuma yi nazarin ƙwayoyin jini da kansu ta hanyar amfani da na'urar hangen nesa, don gano kowane irin canje-canje ga tsarin furotin na fibrin dinsu."
+    },
+    {
+      "hyp": "Masu binciken sun lura cewa jinin da ya daskare daga marasa lafiya masu RA ya yi sauri fiye da na mutanen da ke da lafiya, kuma igiyoyin furotin da aka yi su da su sun fi kauri sosai fiye da na fibrin na al'ada."
+    },
+    {
+      "hyp": "Akwai kuma canje-canje ga amino asit da ke samar da furotin na fibrin, wanda ya sa su tayar da martanin kariya na jiki, wanda ya haifar da ƙarin kumburi."
+    },
+    {
+      "hyp": "Wasu masu bincike sun lura da canje-canje ga tsarin amino acid na fibrins a cikin gidajen gwiwar marasa lafiya na RA a da, amma wannan shi ne karo na farko da masu bincike suka ga irin wannan tasiri a cikin jini."
+    },
+    {
+      "hyp": "Haɗe da sauran sauye-sauyen da aka gani a cikin toshewar jini, binciken na iya taimaka wa masana kimiyya su haɓaka fahimta mai zurfi game da dangantaka tsakanin RA da CVD, da yadda za a gano alamun farko na waɗannan cututtuka."
+    },
+    {
+      "hyp": "Ko da yake waɗannan sakamakon farko suna da alƙawari, yana da kyau a lura cewa girman samfurin don binciken ya kasance ƙarami idan aka kwatanta."
+    },
+    {
+      "hyp": "Masu binciken sun kuma ambaci cewa hanyar da suka yi amfani da ita don gano canje-canje na amino acid a cikin furotoci na iya kuma samun sakamako daga wasu abubuwa da ba su da alaƙa, wanda ke nufin cewa za a buƙaci ƙarin gwaje-gwaje na musamman da ke nufin ƙwayoyin halitta a jiki don tabbatar da sakamakon a nan gaba."
+    },
+    {
+      "hyp": "Nan gaba, fahimtar haɗin gwiwa mai rikitarwa tsakanin RA da ƙarin haɗarin CVD na iya inganta sakamako ga marasa lafiya na RA yayin da muke koyo don gano da kuma kula da waɗannan cututtuka cikin inganci."
+    },
+    {
+      "hyp": "Masu bincike daga Afirka ta Kudu, Denmark da Birtaniya sun shiga cikin wannan bincike, wanda Hukumar Binciken Lafiya ta Afirka ta Kudu ta dauki nauyi."
+    },
+    {
+      "hyp": "Hasashen yanayin teku ga masu amfani da tekun bakin teku - fahimta, amfani da karɓuwa"
+    },
+    {
+      "hyp": "Binciken da ake yi a yanzu yana nufin magance rashin haɗin kai tsakanin kimiyya da jama'a a cikin nau'i na yiwuwar rashin daidaituwa a cikin samarwa da buƙatar bayanai da aka sani da giɓin amfani."
+    },
+    {
+      "hyp": "A wannan yanayin, mun bincika mahimmancin bayanan yanayin teku (metocean) kamar yadda masu amfani a ƙasashe biyu na Kudancin Duniya suka fahimta:"
+    },
+    {
+      "hyp": "Afirka ta Kudu da New Zealand."
+    },
+    {
+      "hyp": "A nan, ba wai kawai kan fahimta, amfani da kuma karɓar hasashen abubuwan da suka wuce kima ba ne, amma an fi mayar da hankali kan hulɗa da hasashen yau da kullum."
+    },
+    {
+      "hyp": "Binciken an gudanar da shi ta hanyar wani bincike, wanda aka tsara bisa tambayoyi uku na bincike."
+    },
+    {
+      "hyp": "Tambayoyin bincike sun haɗa da batutuwa masu alaƙa da kayan aikin hasashe, daidaito da jituwa, amfani, suna na cibiyoyi, da rashin tabbas da ke da alaƙa da sauyin yanayi (don ambata kaɗan)."
+    },
+    {
+      "hyp": "An rarraba takardar tambayoyin kan layi sosai don haɗa masu amfani na nishaɗi da na kasuwanci."
+    },
+    {
+      "hyp": "Binciken ya mai da hankali kan gano al'adun yanke shawara masu yiwuwa waɗanda ke tasiri musamman kan bukatun bayanai na masu amfani da teku na bakin teku."
+    },
+    {
+      "hyp": "An yi amfani da nazarin fahimtar al'adu (CCA) don bincika fahimtar da aka raba da kuma bambance-bambance a cikin fahimta a cikin duka rukunin masu amsa da kuma a cikin ƙananan rukuni na sassa da ƙasashe."
+    },
+    {
+      "hyp": "Mun sami matakai daban-daban na jituwa a cikin dukan rukunin (masu halarta daga duka ƙasashe da dukkan sassa haɗe) da kuma rukunoni daban-daban na masu amfani."
+    },
+    {
+      "hyp": "Dukkan mahalarta da aka haɗa sun nuna matsakaicin ra'ayi na al'adu gaba ɗaya game da batutuwan da aka gabatar amma tare da wasu bambance-bambance a ra'ayoyi a matakin ƙasa, wanda ke nuna yiwuwar ƙananan al'adu."
+    },
+    {
+      "hyp": "Binciken ƙananan rukuni na ƙasa da na sassa daban-daban a rarrabe, mun sami mafi dacewar fahimtar al'adu a cikin rukuni na masu amfani da Afirka ta Kudu, tare da cikakken yarda ba tare da la'akari da alaƙar sassa ba."
+    },
+    {
+      "hyp": "Rukunin masu amfani da kasuwanci na New Zealand sun yi mafi rauni a yarjejeniya da duk sauran ƙananan rukuni."
+    },
+    {
+      "hyp": "Mun tattauna abubuwan da suka shafi sakamakon bincikenmu kan muhimman abubuwa a cikin karɓar sabis kuma saboda haka kan samar da hasashen da ya dace."
+    },
+    {
+      "hyp": "Ana kuma tunani kan wasu abubuwan da suka fi muhimmanci ga hasashen kimiyya a nan gaba, la'akari da tasirin sauyin yanayi da ake tsammani."
+    },
+    {
+      "hyp": "Mun kammala ta hanyar bayar da shawarar zane-zane na ra'ayi don haskaka muhimmin haɗin kai tsakanin haɗin gwiwar ci gaban samfurin hasashe da daidaito/daidaiton kimiyya."
+    },
+    {
+      "hyp": "Mutanen Afirka ta Kudu, da na New Zealand suna amincewa da hasashen yanayin teku"
+    },
+    {
+      "hyp": "Mutanen Afirka ta Kudu da na New Zealand da ke aiki da zama a yankunan bakin teku sun dogara da ayyukan hasashen yanayi da suke da sauƙin amfani, kuma waɗanda ke bayar da ingantattun hasashe a kowane lokaci."
+    },
+    {
+      "hyp": "Hidimomin hasashen kasa da kuma shafukan yanar gizo na kasuwanci daban-daban suna bayar da hasashe game da yadda yanayi zai kasance."
+    },
+    {
+      "hyp": "Suna ƙoƙari su zama daidai kuma masu amfani gwargwadon yiwuwa."
+    },
+    {
+      "hyp": "Babban adadin kimiyya da tunanin kimiyya suna shiga cikin irin waɗannan hasashe."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu binciken sun zaɓi duba yadda mutane a Afirka ta Kudu da New Zealand ke amfani da ayyukan hasashen yanayi - duka ƙasashen suna da dogayen gabar teku, amma suna da bambancin yawan jama'a da yanayin gabar teku."
+    },
+    {
+      "hyp": "Suna so su gano sau nawa waɗannan mazauna bakin teku ke amfani da ayyukan hasashen kasa ko na kasuwanci, don wane dalilai da kuma ko sun ga waɗannan suna da amfani da amintattu."
+    },
+    {
+      "hyp": "Waɗannan su ne muhimman abubuwa a cikin hasken yadda sauyin yanayi na gaba zai iya shafar hasashen yanayi."
+    },
+    {
+      "hyp": "An amsa takardar tambayoyin kan layi daga 'yan Afirka ta Kudu 31 da 'yan New Zealand 126."
+    },
+    {
+      "hyp": "Wadannan sun haɗa da mutanen da ke amfani da hasashen yanayi don dalilan aiki (misali, masu kamun kifi da ƙungiyoyin bincike da ceto), da kuma wasu da ke shiga cikin wasanni da ayyukan nishaɗi masu alaƙa da teku kamar su hawan igiyar ruwa, tuka kwale-kwale, ko iyo."
+    },
+    {
+      "hyp": "Masu binciken sun tambaya game da yadda sauƙin amfani da sabis na hasashen yanayi da aka fi so yake, da kuma yadda daidai da daidaiton hasashensa yake."
+    },
+    {
+      "hyp": "Masu halarta sun jera abubuwan da suka sa ya zama mafi amfani da muhimmanci a gare su kuma sun ce ko waɗannan na iya canzawa saboda sauyin yanayi."
+    },
+    {
+      "hyp": "Sun kuma yi bayanin ko suna amincewa da bayanan da hukumomin yanayi na ƙasa suka bayar, da kuma yadda suke ji game da shi."
+    },
+    {
+      "hyp": "Yawancin 'yan Afirka ta Kudu da suka shiga cikin binciken sun kasance masu tseren ruwa, ko kuma mutanen da suka taimaka wajen ayyukan bincike da ceto ko ayyukan bincike."
+    },
+    {
+      "hyp": "Yawancin mutanen New Zealand da suka amsa tambayoyin sun kalli hasashen yanayi domin suna son su je kamun kifi, su tuka jirgi ko su yi iyo zuwa teku."
+    },
+    {
+      "hyp": "Maharta daga ƙasashen biyu sun amince da bayanan da aka ba su daga hukumomin yanayi na ƙasashensu."
+    },
+    {
+      "hyp": "Sun fi son ayyukan hasashen da suke daidai, daidaitacce, masu sauƙin amfani kuma suna da fasaloli da za a iya daidaita su don dacewa da bukatunsu."
+    },
+    {
+      "hyp": "Masu halartar da suka yi amfani da sabis ɗin don dalilan aiki gabaɗaya sun gano cewa hasashen yanayi na yanayin teku kusa da gabar ba su da isasshen daidaito."
+    },
+    {
+      "hyp": "Bayanan wasu wurare sun fi na wasu daidai."
+    },
+    {
+      "hyp": "'Yan Afirka ta Kudu sun fi amfani da ayyukan yanayi fiye da 'yan New Zealand, kuma suna dubawa a kalla sau ɗaya a rana."
+    },
+    {
+      "hyp": "Ga 9 daga cikin kowane 10 na masu amsa, tsarin hasashen da ya yi kyau sosai yana da matukar muhimmanci."
+    },
+    {
+      "hyp": "Yawancin mutane sun fi son sabis wanda ke bayar da hangen nesa na kwana uku zuwa bakwai a gaba."
+    },
+    {
+      "hyp": "Mutanen da suka yi aiki a gonakin kiwon kifi ko kuma suka yi shiri kan yiwuwar yanayin gaggawa suna son hasashen dogon lokaci da na yanayi."
+    },
+    {
+      "hyp": "Yawancin masu amfani sun yi imani cewa saboda karuwar sauyin yanayi, ayyukan hasashen yanayi za su yi amfani da ingantattun bayanan kimiyya a nan gaba don tabbatar da ingantattun hasashe."
+    },
+    {
+      "hyp": "Ƙalilan ne irin waɗannan nazari da aka yi a baya a ƙasashe da ke Kudancin Duniya."
+    },
+    {
+      "hyp": "Masu binciken suna fatan sun sami isasshen ilimi daga mahalarta bisa tambayoyin da suka yi musu."
+    },
+    {
+      "hyp": "Wani rauni mai yiwuwa shi ne cewa mutane da yawa da ke zaune a New Zealand fiye da na Afirka ta Kudu sun shiga cikin binciken."
+    },
+    {
+      "hyp": "Aikinsu zai taimaka wa mutanen da ke aiki a ayyukan hasashen yanayi su tsara kayayyaki mafi kyau waɗanda ke kula da bukatun abokan cinikinsu."
+    },
+    {
+      "hyp": "Za su iya yin gyare-gyare da canje-canje bisa ga yadda abokan cinikinsu suka gamsu da kuma dalilin da ya sa suke amfani da shi."
+    },
+    {
+      "hyp": "Hanyar Shiga Tsare-Tsare don Tantance Zamani na Tsoma Baya na Aikin Noma:"
+    },
+    {
+      "hyp": "Al'amarin Lushoto"
+    },
+    {
+      "hyp": "Manufar noman zamani (CSA) tana samun karbuwa a fadin duniya."
+    },
+    {
+      "hyp": "Duk da haka, ba a fayyace abin da ya kamata a rufe a ƙarƙashin ginshiƙansa guda uku—yawan amfanin gona, juriya da rage tasiri ba."
+    },
+    {
+      "hyp": "Sakamakon haka, CSA ya ƙunshi ayyukan noma/kimiyoyi daban-daban, wanda ke sa ya zama da wahala a fifita manufofin CSA."
+    },
+    {
+      "hyp": "Da farko, akwai rashin bayyanannun ka'idoji da hanyoyi masu aiki don tantance ingancin yanayi na tsoma baki."
+    },
+    {
+      "hyp": "Abu na biyu, akwai ƙarancin bayanai game da tasirin matakan da aka riga aka inganta a matsayin CSA, musamman a duniya masu tasowa."
+    },
+    {
+      "hyp": "A ƙarshe, fifita CSA ba ya la'akari da ra'ayoyin masu ruwa da tsaki don tabbatar da cewa tsoma bakin ya dace, ya dace kuma yana da babban damar karɓuwa."
+    },
+    {
+      "hyp": "A nan, muna bayyana sabon tsarin shiga don tantance yanayin zamani na tsoma bakin aikin gona a cikin ayyukan ƙananan manoma."
+    },
+    {
+      "hyp": "Wannan yana gano alamomi (da fihirisa) a matakin gona don ginshiƙan wadatar abinci da daidaitawa na CSA."
+    },
+    {
+      "hyp": "Hakanan yana tallafawa tantancewa ta hanyar shiga, yana ba da damar yin kimantawa na asali da na gaba na noman zamani."
+    },
+    {
+      "hyp": "An yi test na tsarin a tsakanin manoma 72 da ke aiwatar da nau'ikan tsare-tsaren CSA a cikin kauyen yanayi mai hankali na Lushoto, Tanzania."
+    },
+    {
+      "hyp": "Manoma sun fi daraja matakan da suka inganta ƙasar gona da tsari, rage gudun ruwa a saman ƙasa, da dawo da ƙasa da ta lalace saboda tasirin da suke da shi wajen samarwa da kuma aikin gona a lokacin da ba na damina ba."
+    },
+    {
+      "hyp": "Yawanci, tsoma bakin CSA ya ƙara yawan samar da dabbobi, samar da abinci, cin abinci da kuma samun kuɗi."
+    },
+    {
+      "hyp": "Tsarin yana da sauƙin daidaitawa zuwa yankuna daban-daban da tsarin noma kuma yana ba da damar fifita matakan tsoma baki."
+    },
+    {
+      "hyp": "Amma muna ba da shawarar cewa a rungumi CSA a matsayin wani ɓangare na tsarin sa ido, kimantawa da koyo."
+    },
+    {
+      "hyp": "Sabbin hanyoyin sa ido suna taimaka wa masana kimiyya da manoma su shirya don sauyin yanayi"
+    },
+    {
+      "hyp": "Masana kimiyya da ke aiki tare da manoma a Tanzania yanzu suna iya auna yadda sabbin hanyoyin noma ke aiki don rage tasirin sauyin yanayi."
+    },
+    {
+      "hyp": "Suna fatan hanyar su za ta inganta samar da abinci da samarwa ga manoma a wasu sassan duniya ma."
+    },
+    {
+      "hyp": "\"Noman zamani\" wani abu ne da Majalisar Dinkin Duniya ke ƙarfafawa don taimakawa ƙananan manoma su shirya don sauyin yanayi."
+    },
+    {
+      "hyp": "Manomi mai noman zamani yana daidaitawa da canjin yanayin yanayi kuma yana iya ƙara wadatar abinci ta hanyar haɓaka yawan amfanin gonarsu."
+    },
+    {
+      "hyp": "Wannan matsala ce mai matuƙar muhimmanci ga manoman Tanzaniya, domin ƙasar tana fuskantar ƙarancin samar da muhimman amfanin hatsi saboda sauyin yanayi."
+    },
+    {
+      "hyp": "Amma, masu bincike sun ce yana da wahala a auna nasarar tsoma baki na noman-zamani, kamar yin takin zamani, kuma ba koyaushe ake tuntubar manoma ba game da ko tsoma bakin yana aiki kamar yadda aka yi niyya."
+    },
+    {
+      "hyp": "A wannan binciken, masu bincike sun so su tsara wata hanya don auna nasarar tsoma bakin noman zamani, tare da mayar da hankali na musamman kan inganta wadatar abinci da dacewa."
+    },
+    {
+      "hyp": "Da farko, sun yi karanta wasu nazarin aikin gona kuma sun samar da jerin guda 2 da suka haɗa da abubuwa 14, ko “alamu”, waɗanda suke da muhimmanci wajen auna tsaron abinci da daidaitawa."
+    },
+    {
+      "hyp": "Daga nan, suna aiki a gundumar Lushoto ta Tanzaniya, masu binciken sun haɗa kai da manoma na gida da kuma wasu masana aikin gona don gano mafi mahimmancin alamomi daga kowanne jeri."
+    },
+    {
+      "hyp": "Manoma sun gano samar da abinci a matsayin muhimmin alamar tabbatar da wadatar abinci."
+    },
+    {
+      "hyp": "A wasu kalmomi, duk wani tsoma baki da ya inganta samarwa daga amfanin gonarsu yana da matuƙar daraja."
+    },
+    {
+      "hyp": "A halin yanzu, dangane da bangaren dacewa, manoman sun fi sha'awar matakan da suka taimaka musu kare ƙasar gonakinsu, da kuma waɗanda suka inganta iliminsu, ƙwarewarsu, da kuma samun kuɗi."
+    },
+    {
+      "hyp": "Da zarar masu binciken sun tantance muhimmancin kowanne alama, sun iya amfani da su don gwada ko nau'ikan ayyukan sa-baki guda shida a Lushoto sun yi nasara."
+    },
+    {
+      "hyp": "A kowane yanayi, sun tambayi manoman yankin, a kan sikeli na 1-5, ko akwai karin kowane alama tun lokacin da aka fara shirin."
+    },
+    {
+      "hyp": "Wannan ya ba su damar ganin wane daga cikin matakan ya fi tasiri kan wadatar abinci da dacewa."
+    },
+    {
+      "hyp": "Sun gano cewa daga cikin matakan sa-baki guda 6 da ake amfani da su, guda 3 ne kawai suka yi tasiri na gaske."
+    },
+    {
+      "hyp": "Waɗannan sun kasance yin takin zamani, nau'ikan amfanin gona masu jure fari, da samar da ciyarwa mafi kyau ga dabbobin abinci."
+    },
+    {
+      "hyp": "Masu binciken sun ce hanyar su tana sauƙaƙa tabbatar da cewa matakan da za a ɗauka a nan gaba sun cika bukatun manoman Lushoto da kuma manufofin noman zamani."
+    },
+    {
+      "hyp": "Sun ƙara da cewa zaɓar matakan da suka dace yana kuma ƙara yiwuwar cewa manoma za su ba da shawarar kyawawan ayyuka ga makwabtansu, ta haka suna yada ra'ayoyin noman zamani."
+    },
+    {
+      "hyp": "A cikin ma'anoni mafi fadi, ana iya amfani da hanyar a wasu yankuna, kuma tana iya taimakawa wajen tabbatar da cewa dabarun noman zamani suna la'akari da yanayin gida da ilimin manoma ta hanyar ci gaba da sa ido da kuma kimantawa."
+    },
+    {
+      "hyp": "Ta yin haka, ayyukan noman zamani suna da yuwuwar samun nasara da samun karɓuwa, duka a Tanzaniya da kuma a sauran sassan Afirka."
+    },
+    {
+      "hyp": "Binciken ya kasance na haɗin gwiwa ne a tsakanin masana kimiyya daga Kenya da Netherlands."
+    },
+    {
+      "hyp": "K'wayoyin Cututtuka na Dabbobi Masu Ƙashin Baya a Matsayin Jinsuna Masu Mamayewa: Fahimta daga Afirka ta Kudu"
+    },
+    {
+      "hyp": "Binciken ƙwayoyin cuta a matsayin baƙin jinsuna masu mamayewa bai sami kulawa sosai a fannin kimiyyar mamayewa ba."
+    },
+    {
+      "hyp": "K'wayoyin cututtuka da aka gabatar suna iya yin tasiri mai girma akan halittu masu rai, tsarin yanayin da suke zaune a ciki, da tattalin arzikin da tsarin yanayin ke tallafawa."
+    },
+    {
+      "hyp": "A wannan babi, mun yi amfani da keɓaɓɓen nazarin cututtukan da aka shigo da su na dabbobin gida da namun daji (ciwon hauka na karnuka, tarin fuka na shanu, da rinderpest) da na mutane (ciwon kyanda, shan inna da cuta mai karya garkuwar jiki, cuta mai karya garkuwar jiki) don nuna irin tasirin da waɗannan k'wayoyin cututtuka za su iya yi."
+    },
+    {
+      "hyp": "Mummunan tasirin da aka gani zuwa yanzu shi ne na cutar rinderpest, wanda ya haifar da mutuwar miliyoyin shanu, kuma kusan ya kawar da wasu nau'ikan namun daji daga manyan sassan kudancin Afirka."
+    },
+    {
+      "hyp": "Wannan a sakamakon haka ya yi mummunar tasiri ga tattalin arzikin yankin, kuma ya haifar da sauye-sauye masu yawa ga tsarin da kuma motsin tsarin yanayi."
+    },
+    {
+      "hyp": "An kawar da cutar rinderpest a duniya, amma ciwon hauka na karnuka da kuma tarin fuka na shanu suna nan, kuma za a buƙaci ci gaba da lura da sarrafawa don hana su yaduwa."
+    },
+    {
+      "hyp": "Daga cikin cututtukan ɗan adam, an kawar da cutar sankarau a duniya baki ɗaya, amma tasirin cutar, wanda masu mulkin mallaka na Turai suka kawo, ya kasance mai tsanani."
+    },
+    {
+      "hyp": "A farkon shekarun 1700, babban kaso (har zuwa kashi 90% a wasu al'ummomi) na mutanen Khoekhoe na asali sun mutu, suna lalata al'adunsu da hanyar rayuwarsu, kuma suka bar 'yan tsirarun da suka rage don a dauke su aiki a matsayin ma'aikatan gona."
+    },
+    {
+      "hyp": "Cuta mai karya garkuwar jiki, da aka fara gano a Afirka ta Kudu a shekarar 1982, ta kuma yi tasiri mai yawa kuma maganin rigakafin cutar ƙanjamau kadai yana kashe gwamnati ZAR biliyan 66.4 a kowace shekara."
+    },
+    {
+      "hyp": "Mun kuma haɗa da cutar West Nile Virus da African Swine Fever a matsayin misalan cututtuka da suka samo asali daga Afirka, kuma waɗanda za su iya zama masu lalata duniya gaba ɗaya."
+    },
+    {
+      "hyp": "Muna hasashen cewa sabbin cututtuka za su bayyana yayin da mutane ke ci gaba da faɗaɗa yankunansu zuwa wuraren daji, da kuma yayin da yawan kasuwanci ke ƙaruwa."
+    },
+    {
+      "hyp": "Abin da masana kimiyya suka sani game da ƙananan masu mamayewa da ke haifar da cuta a Afirka ta Kudu"
+    },
+    {
+      "hyp": "Wannan babin littafi yana taƙaita sabbin bayanai kan cututtuka kamar su rinderpest, cutar hauka, masassara da cuta mai karya garkuwar jiki, duk wanda ƙwayoyin cuta masu mamayewa suka haifar (kwayoyin cuta, bacteria da wasu ƙananan halittu da ake ɗauka a matsayin jinsin da ba na asali ba, ma'ana ba a samunsu a yanayi na musamman ba)."
+    },
+    {
+      "hyp": "Waɗannan cututtuka duk suna shafar dabbobi da mutane a Afirka ta Kudu, kuma bullar cutar a ƙarshe tana cutar da tattalin arzikin ƙasar."
+    },
+    {
+      "hyp": "A cikin fannin bincike da ake kira ‘kimiyyar mamayewa’, masana kimiyya suna nazarin ƙwayoyin halitta da ke bunƙasa kuma suna haifar da illa bayan an shigo da su cikin sabbin yanayi inda ba a saba samun su ba."
+    },
+    {
+      "hyp": "Yawancin bincike ya mai da hankali kan manyan \"nau'o'i masu mamayewa\" kamar tsirrai da dabbobi, amma ƙananan masu mamayewa da ke haifar da cuta suna da mahimmanci."
+    },
+    {
+      "hyp": "A wannan babi, marubutan sun tattauna wasu cututtukan dabbobi da na mutane a Afirka ta Kudu da waɗanda ƙwayoyin cuta da aka shigo da su suka haifar."
+    },
+    {
+      "hyp": "Sun ce mafi haɗari ita ce cutar 'rinderpest', da aka gano a Afirka ta Kudu a shekarar 1896."
+    },
+    {
+      "hyp": "Cutar Rinderpest tana haifar da ƙwayar cuta kuma tana shafar shanu da ɓaunaye."
+    },
+    {
+      "hyp": "Irin wannan ƙwayar cuta ce ta haifar da sankarau a cikin mutane."
+    },
+    {
+      "hyp": "Mutane da yawa a yankunan karkara sun fuskanci yunwa bayan bullar cutar a shekarar 1896, amma yanzu an kawar da cutar ta hanyar allurar rigakafi."
+    },
+    {
+      "hyp": "Marubutan sun ce tsakanin 1772 da 1861, karnuka da dama a Afirka ta Kudu sun kamu da ciwon hauka, ko da yake mutane ba su san wace irin cuta ce wannan ba."
+    },
+    {
+      "hyp": "A shekarar 1893, an san cewa ciwon hauka yana haifar da kwayar cuta, don haka gwamnati ta yanke shawarar kashe karnukan da abin ya shafa da kuma yi wa waɗanda ba su shafa ba allurar rigakafi."
+    },
+    {
+      "hyp": "Duk da haka, wannan bai kawar da cutar ba kuma har yanzu tana shafar dabbobin daji da yawa kamar duikers, zaki, karnukan daji, jakkali da kuma yanyawa."
+    },
+    {
+      "hyp": "Marubutan sun ce a shekarar 1928, yara 2 sun samu cizo daga Mongoose launin rawaya kuma suka mutu da ciwon hauka."
+    },
+    {
+      "hyp": "Tun daga lokacin, ciwon hauka ya zama ruwan dare a Afirka ta Kudu."
+    },
+    {
+      "hyp": "Sun ce a shekarar 1954, mutane da dama a Afirka ta Kudu sun kuma kamu da cutar sankarau."
+    },
+    {
+      "hyp": "Lokacin da ake rubuta wannan babi, cutar sankarau tana kashe kimanin yara 400 a kowace rana."
+    },
+    {
+      "hyp": "Sun ce cutar sankarau ta fi yawa inda mutane da shanu suke hulɗa da juna sosai."
+    },
+    {
+      "hyp": "Marubutan sun kuma ambaci wata cuta da ake kira tarin fuka na shanu (BTB), wanda ƙwayoyin cuta ke haifarwa."
+    },
+    {
+      "hyp": "BTB ya kashe shanu, buffalo, alade na daji, damisa, zaki, kudus, birrai da zakuna."
+    },
+    {
+      "hyp": "Sun ce an fara bayar da rahoton cutar BTB a wani gandun daji na ƙasa a Afirka ta Kudu a shekarar 1996."
+    },
+    {
+      "hyp": "Gwamnati ta shawo kan cutar ta hanyar kashe ɓaunayen da suka kamu da cutar."
+    },
+    {
+      "hyp": "Marubutan sun ce wata ƙwayar cuta, da matafiya daga Turai suka shigo da ita Afirka ta Kudu, ta haifar da wata cuta da ake kira 'ciwon kanana' a cikin mutane."
+    },
+    {
+      "hyp": "Cutar ta kashe sama da kashi 90% na mutanen Khoekhoe na gida."
+    },
+    {
+      "hyp": "A ƙarshen ɓarkewar cutar, al'adar Khoekhoe ta kusan lalacewa gaba ɗaya."
+    },
+    {
+      "hyp": "Marubutan sun kuma bayar da rahoto kan kwayar cutar karya garkuwar jiki (HIV) da ta haifar da barkewar cutar AIDS."
+    },
+    {
+      "hyp": "Masana kimiyya har yanzu suna tsammanin ƙwayar cutar an fara yaɗa ta ne zuwa ga mutane daga dabbobi, a wani tsari da ake kira yaɗa cuta daga abin da ba ɗan’adam ba zuwa ɗan’adam."
+    },
+    {
+      "hyp": "An fara gano ƙwayar cutar a Afirka ta Kudu a shekarar 1982."
+    },
+    {
+      "hyp": "Sun ce, tun daga shekarar 2019, cuta mai karya garkuwar jiki ba ta da magani ko kuma warkarwa."
+    },
+    {
+      "hyp": "Sun kammala babin ta hanyar magana game da cutar West Nile Virus da African Swine Fever, wanda suka ce sun samo asali daga Afirka kuma suka yaɗu zuwa Turai da Amurka."
+    },
+    {
+      "hyp": "Kwayar cutar West Nile sauro ne ya yaɗa ta kuma ta kashe yawanci tsuntsaye, amma ta kuma shafi dawaki da mutane."
+    },
+    {
+      "hyp": "Sun ce dabbobi kamar barewa da alade na daji suna yada cutar zazzabin alade na Afirka."
+    },
+    {
+      "hyp": "Cutar ta shafi aladu, kuma ta yi mummunar illa ga kasuwancin aladu."
+    },
+    {
+      "hyp": "Marubutan sun ce sun tattauna ne kawai game da cututtuka da ƙwayoyin cuta da ƙwayoyin cuta ke haifarwa, don haka wannan babin ba cikakken bayani ba ne na dukkan ƙananan ƙwayoyin cuta masu kutsawa."
+    },
+    {
+      "hyp": "Waɗanda suka gudanar da wannan binciken sun fito ne daga ƙasar Afirka ta Kudu."
+    },
+    {
+      "hyp": "Algoritm na tiyata bisa shaidar gudanarwa na Odontogenic keratocyst"
+    },
+    {
+      "hyp": "Ingantaccen sarrafa odontogenic keratocyst (OKC) ya kasance batun sha'awa da rikice-rikice a cikin adabin tiyatar baki da maxillofacial."
+    },
+    {
+      "hyp": "A halin yanzu, akwai rashin jituwa game da mafi dacewar magani ga marasa lafiya masu fama da odontogenic keratocyst."
+    },
+    {
+      "hyp": "Daga cikin zaɓuɓɓukan magani daban-daban da ake da su, babu wata hanya da aka nuna ta nuna ƙimar sake dawowa sifili ko kusa da sifili sai dai babban cirewa tare da iyakoki masu tsabta."
+    },
+    {
+      "hyp": "Tare da karancin shaidu na hanyoyin tiyata da aka dogara da su don kula da marasa lafiya masu odontogenic keratocyst a cikin adabi, wannan binciken yana nufin gabatar da wani tsarin tiyata, bisa sakamakon meta-analysis, wanda fatan zai zama mai amfani wajen inganta jiyya ga marasa lafiya da ke da wannan yanayin."
+    },
+    {
+      "hyp": "Amfani da sigogi na; girma, nau'in rauni (na farko ko na biyu), yanayin cuta ko na kadaita na rauni, kasancewar ɓarkewar cortical, da yawan wurare; mun gabatar da itacen yanke shawara, don taimakawa shirye-shiryen magani da taimakawa samun ƙarancin yiwuwar dawowa a cikin kula da odontogenic keratocyst."
+    },
+    {
+      "hyp": "Masu bincike sun ba da shawarar hanyoyi don inganta maganin cutar haƙori."
+    },
+    {
+      "hyp": "Ta hanyar haɗa sakamakon daga binciken da ake da su, masu bincike sun fayyace matakai bayyanannu da likitoci za su iya bi don gano da kuma kula da marasa lafiya da ke da wata cuta ta haƙori da ake kira 'odontogenic karatocyst' (OKC)."
+    },
+    {
+      "hyp": "OKC wani rauni ne, ko kuma wani girma na ban mamaki, a kan haƙoran mutum."
+    },
+    {
+      "hyp": "Likitoci suna ganin yanayin yana da wahala a yi magani, kuma marasa lafiya sau da yawa suna haɓaka wani OKC ko da bayan nasarar jiyya."
+    },
+    {
+      "hyp": "Saboda haka, likitoci suna neman hanyoyin da za su warkar da waɗannan raunukan haƙora cikin inganci da dindindin."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu bincike sun nemi matakan da likitoci ya kamata su dauka don gano da magance cutar."
+    },
+    {
+      "hyp": "Sun yi wannan ta hanyar bincika ta cikin wallafe-wallafen da ake da su, ko maƙalolin kimiyya, game da OKC."
+    },
+    {
+      "hyp": "Sun kasance suna neman bayani musamman kan yadda likitoci suka gudanar da OKC a tsawon shekara 1, kamar yadda aka ruwaito a cikin maƙalu 46 da suka samo."
+    },
+    {
+      "hyp": "Masu binciken sun gano cewa OKC ya fi yawa a cikin maza fiye da mata, kuma yana iya shafar mutane har zuwa shekaru 90, ko da yake yana da yawa tsakanin shekaru 20 da 30."
+    },
+    {
+      "hyp": "Cutar ta fi shafar ƙasan haƙori."
+    },
+    {
+      "hyp": "OKC yana farawa daga cikin ƙashi, tare da kumburin haƙori da ke bayyana daga baya."
+    },
+    {
+      "hyp": "Marasa lafiya yawanci suna jin zafi kuma suna da wani ruwa (ruwa, kamar ƙari, wanda ke fita daga rauni ko ciwo), kuma tushen haƙoransu na iya motsawa daga wurin."
+    },
+    {
+      "hyp": "Sun bayar da shawarar cewa likitoci su cire dukkan ciwon da hakoran da ke kusa."
+    },
+    {
+      "hyp": "Da zarar an cire, ya kamata su shafa wani magani da ake kira Carnoy’s solution, tare da nitrogen mai ruwa (wani ruwa mai sanyi sosai da ake amfani da shi don cire fata da ta lalace cikin sauri) da fluorouracil (wanda aka fi sani da 5FU, wani maganin ciwon daji gama-gari)."
+    },
+    {
+      "hyp": "Bayan wannan jiyya, masu bincike sun ba da shawarar cewa mara lafiya ya yi duba lafiyar sa na tsawon shekaru 25."
+    },
+    {
+      "hyp": "Sun ce wannan magani ya fi dacewa da raunukan da suka fi ƙaramin 'ya'yan itacen strawberries (3 cm)."
+    },
+    {
+      "hyp": "Don raunuka masu girma fiye da 3 cm, masu bincike sun ba da shawarar karin kulawa."
+    },
+    {
+      "hyp": "Sun ce ya kamata likitoci su fara rage matsin a cikin rauni kuma su cire ruwa, sannan kuma su cire dukkan ƙwayoyin nama a kusa da haƙori."
+    },
+    {
+      "hyp": "Daga nan sai a yi wa ƙashin magani da maganin Carnoy."
+    },
+    {
+      "hyp": "Sun bayar da shawarar cewa likitoci su duba wadannan marasa lafiya kowane watanni 2 na tsawon shekaru 2."
+    },
+    {
+      "hyp": "Idan majiyyaci yana da raunuka da yawa, likitoci na iya zubar da su da wasu na'urorin asibiti na musamman."
+    },
+    {
+      "hyp": "Amma gabaɗaya, nazarin da aka duba ya nuna cewa a mafi yawan lokuta, idan likitoci sun cire ciwon kuma suka yi amfani da 5FU, marasa lafiya ba za su sake samun OKC ba."
+    },
+    {
+      "hyp": "Duk da haka sun yi gargaɗin cewa shaidar waɗannan magunguna ba koyaushe take da ƙarfi ba, kuma sun sami ƙasidu na kimiyya kaɗan akan wannan batu."
+    },
+    {
+      "hyp": "Masu binciken ba su gudanar da nasu gwaje-gwaje don bayar da waɗannan shawarwari ba; maimakon haka, sun yi ƙoƙarin tattara mafi kyawun zaɓuɓɓukan magani da aka sani daga binciken da wasu masu bincike suka yi."
+    },
+    {
+      "hyp": "Saboda haka, waɗannan masu bincike da ke Nijeriya da Amurka sun bayar da shawarar ƙarin bincike a ƙasashe daban-daban don test nasarar magungunan da aka ba da shawara a nan."
+    },
+    {
+      "hyp": "Har ila yau, sun ƙarfafa likitoci su yi la'akari da sauran yanayin marasa lafiya yayin jiyya."
+    },
+    {
+      "hyp": "Maganin SARS-CoV-2 (2019-nCoV), MERS-CoV da SARSr-CoV na roba: Nazarin kwamfuta na kwatanci don bayar da shawarar mai motsa amsawar garkuwar jiki na ɗan takara"
+    },
+    {
+      "hyp": "Coronaviruses yawanci suna da takamaiman rukunin dabba a matsayin mazauni, dabbobi masu shayarwa ko tsuntsaye gwargwadon jinsinsu; duk da haka, waɗannan ƙwayoyin cuta wani lokaci suna iya canza mazauni sakamakon sauyi."
+    },
+    {
+      "hyp": "HCoV-229E yana ɗaya daga cikin ƙwayoyin cutar coronavirus guda shida na ɗan adam wanda ya haɗa da HCoV-NL63, HCoV-OC43, HCoV-HKU1, MERS-CoV da SARSr-CoV (SARSr-CoV-1 da SARS-CoV2) kuma yana yaduwa a duniya."
+    },
+    {
+      "hyp": "MERS-CoV da SARS-CoV-2 na iya ci gaba da kasancewa a kan saman da ba na rai ba kamar (karfe, gilashi ko roba har tsawon kwanaki tara) (Huang, C.-L, 2020)."
+    },
+    {
+      "hyp": "Matakan kariya da maganin hydrochloroquine suna da amfani, amma ana iya buƙatar magani mai tasiri mai kyau don dakatar da yaɗuwar annobar covid-19."
+    },
+    {
+      "hyp": "Manufar bincikenmu ita ce gano mai motsa amsawar garkuwar jiki na magani ta hanyoyin nazartar bayanan halitta."
+    },
+    {
+      "hyp": "Kayan aiki da Hanya"
+    },
+    {
+      "hyp": "An samo cikakkun jerin ilahirin ƙwayoyin gadon SARS-CoV-2 daga 2019 Novel Coronavirus Resource (2019nCoVR) da rumbunan bayanai guda biyu, ciki har da Cibiyar Kasa ta Bayanan Kimiyyar Halittu (NCBI) Global Initiative on Sharing All Inﬂuenza Data (GISAID) da TAURAU/T-bio-infoserver don nazartar bayanan halitta ta yanar gizo."
+    },
+    {
+      "hyp": "Za mu bayar da taƙaitaccen bita kan asalin kwayar cuta, mu kwatanta bayanan jerin don gano yankin da aka adana, mafi yawan yankin furotin (ƙwayar halitta a jiki) da ƙirar jituwa don wani yuwuwar kwayar halitta (mai motsa amsawar garkuwar jiki) don dabarun magani don sabon gano 2019-nCoV, nau'in SARSr-CoV da MERS-CoV."
+    },
+    {
+      "hyp": "Abin sha'awa, kwatanta jeri tsakanin SARS-CoV-2 da wani nau'i ya nuna cewa ragowar da ke cikin motsin hulɗa da mai karɓa suna da matuƙar tsaro tare da kashi 70% na kamance."
+    },
+    {
+      "hyp": "Mun tallafa wa amino asit guda biyar masu muhimmanci (L455, Y473, N479, F486, Q493) a kan yankin muhimmin ɓangaren ƙwayar cuta daga furotin mai kauri wanda ke da alhakin hulɗa tsakanin ƙwayar cuta da mai masauki."
+    },
+    {
+      "hyp": "A cikin SARS-CoV_ RBD akwai ragowar (D480, da T487) waɗanda suka ba da damar cuta tsakanin jinsuna."
+    },
+    {
+      "hyp": "Duk da haka, a cikin SARS-CoV-2, canjin wasu ragowar kaɗan na iya haɓaka hulɗa da mai karɓar ƙwayar halitta na ɗan'adam: L455, F486, Q493, da N501."
+    },
+    {
+      "hyp": "A cikin SARS-CoV, an danganta manyan ragowar guda biyu (479 da 487) da gane mai karɓar ACE2 na ɗan’adam."
+    },
+    {
+      "hyp": "A cikin SARS-CoV-2, ragowar da suka dace da N479 sun dace da Q493 da T487 zuwa N501."
+    },
+    {
+      "hyp": "Mun gano jerin amino asit waɗanda aka kiyaye sosai a cikin yawancin coronaviruses ciki har da 2019nCoV da sauran nau'o'i, an gano alamar KRSFIEDLLFNKVTLADAGF a matsayin wanda aka kiyaye sosai a cikin wannan binciken kuma yana da alaƙa da yankin kusa da ɗaya daga cikin sanannun wuraren yanke na cutar SARS waɗanda ake tsammanin ana buƙatar su don kunna ƙwayar cuta don shiga cikin ƙwayar halitta."
+    },
+    {
+      "hyp": "Wannan jeri na motif da bambance-bambancen da ke kewaye sun zama tushen bayar da shawarar wani takamaiman mai motsa amsawar garkuwar jiki na magani na roba, wannan binciken na iya samar da 'yan takara masu ƙarfi na ƙananan kwayoyin halitta da kuma manufa masu daurewa."
+    },
+    {
+      "hyp": "Wannan binciken yana ba da bayanai da damar tabbatarwa ta hanyar ilimin halittu."
+    },
+    {
+      "hyp": "Duk da haka, za a iya bayyana aikin a cikin sharuddan nazartar bayanan halitta, kuma wasu za su iya maimaita shi cikin sauƙi, ko da yake sabbin bayanai da bincike kan Covid-19 suna fitowa kuma suna canzawa cikin sauri."
+    },
+    {
+      "hyp": "Masana kimiyya suna kwatanta Covid-19 da ƙwayoyin cuta masu alaƙa don taimakawa wajen nemo magunguna."
+    },
+    {
+      "hyp": "A watan Satumba na shekarar 2020, masana kimiyya a Mali sun kwatanta bayanan ilahirin ƙwayoyin halittar cutar Covid-19 da wasu ƙwayoyin cuta biyu na coronavirus da ke da alaƙa sosai don gano abubuwan da za su iya taimakawa wajen haɓaka magani."
+    },
+    {
+      "hyp": "A lokacin, masana kimiyya suna ci gaba da neman nasarar maganin Covid-19."
+    },
+    {
+      "hyp": "Sun so gano sauye-sauye a cikin ƙwayar cutar Covid-19 da za su iya taka rawa a cikin cuta."
+    },
+    {
+      "hyp": "Saboda haka, masu bincike na Mali sun kwatanta ƙwayar cutar Covid-19 (SARS-CoV-2) da wasu ƙwayoyin cuta biyu na coronavirus da ke haifar da cuta a cikin mutane, wato MERS-CoV da SARS-CoV."
+    },
+    {
+      "hyp": "Ɗaya daga cikin manyan manufofin binciken shine gano wurare na musamman akan kwayar cutar Covid-19, da ake kira epitopes, waɗanda tsarin garkuwar jikin ɗan adam zai iya gane su."
+    },
+    {
+      "hyp": "Gano su na iya taimaka wa masana kimiyya su ƙirƙiri magunguna masu inganci."
+    },
+    {
+      "hyp": "Masu binciken sun kuma kwatanta dukkan ƙwayoyin cuta uku don ganin ko akwai kamanceceniya ta kwayoyin halitta da za ta iya taimakawa wajen ci gaban magani."
+    },
+    {
+      "hyp": "Sun mayar da hankali kan jerin kwayoyin halitta na furotin ɗin tsinin ƙwayoyin cuta, wanda su ne furotin da ke da alhakin taimakawa coronaviruses su haɗa da kuma kamuwa da ƙwayoyin halitta na ɗan’adam."
+    },
+    {
+      "hyp": "Abin da masu binciken suka gano shi ne cewa furotin mai kauri na dukkan ƙwayoyin cuta uku suna da matuƙar kama da juna a fannin ilahirin ƙwayoyin gado, musamman sassan da ke hulɗa da ƙwayoyin halitta na ɗan’adam."
+    },
+    {
+      "hyp": "Abin da ya fice game da ƙwayar cutar Covid-19 shi ne cewa akwai wasu ƙananan sauye-sauye a cikin furotin mai kauri wanda zai iya sa ƙwayar cutar ta fi dacewa wajen ɗaurewa da ƙwayoyin halittar ɗan’adam."
+    },
+    {
+      "hyp": "Sakamakon wannan binciken na iya bai wa wasu masu bincike damar haɓaka magungunan Covid-19 masu inganci ta hanyar taimaka musu gano wurare a kan kwayar cutar da suke da kyau don magani."
+    },
+    {
+      "hyp": "Binciken ya kuma bayar da sabbin bayanai game da kamanceceniya da bambance-bambancen gado tsakanin ƙwayar cutar Covid-19 da sauran coronaviruses."
+    },
+    {
+      "hyp": "Masu binciken sun lura cewa ya kamata binciken nan gaba ya mai da hankali kan ko bambance-bambancen ƙwayoyin gado a cikin ƙwayar cutar Covid-19 suna sa ta fi saurin kamuwa da kuma fiye da haɗari fiye da sauran coronaviruses."
+    },
+    {
+      "hyp": "Rashin Daidaiton Bugun Zuciya a Masu Cutar COVID-19: Tsararriyar Bita da Nazarin-gauraye"
+    },
+    {
+      "hyp": "Atemiya na zuciya ba za a iya watsi da shi ba a cikin marasa lafiya da ke da cutar coronavirus 2019 (COVID-19) saboda yana da tasiri mai girma akan sakamakon."
+    },
+    {
+      "hyp": "Saboda haka, wannan binciken ya nufi gina hujja mai ƙarfi game da yawan faruwar atemiya na zuciya a cikin marasa lafiya da ke da COVID-19."
+    },
+    {
+      "hyp": "Mun gudanar da bincike mai tsari don rumbunan adana bayanai/masu bincike masu aminci ciki har da PubMed, Scopus, Cochrane Library da kuma web of science."
+    },
+    {
+      "hyp": "Bayan tantancewa, an fitar da bayanan da suka dace kuma an tattara yawan faruwar daga binciken daban-daban da aka haɗa don nazarin binciken da suka gabata."
+    },
+    {
+      "hyp": "A ƙarshe, an haɗa bincike guda tara a cikin bincikenmu wanda ya ƙunshi majiyyata 1445."
+    },
+    {
+      "hyp": "Sakamakon binciken meta-analysis ya nuna cewa yawan faruwar arrhythmia a cikin marasa lafiya na COVID-19 ya kai kashi 19.7% tare da tazara na amincewa (CI) na kashi 95% daga 11.7 zuwa 27.6%."
+    },
+    {
+      "hyp": "Hakanan akwai bambance-bambance masu muhimmanci (I2□=□94.67%)."
+    },
+    {
+      "hyp": "Atemiya na zuciya sun kasance masu yawa sosai a cikin marasa lafiya na COVID-19 kuma an lura da su a cikin kashi 19.7% na su."
+    },
+    {
+      "hyp": "Daidaitaccen saka-idanu ta hanyar electrocardiogram tare da gano arrhythmias daidai da wuri yana da mahimmanci don kyakkyawan kulawa da sakamako."
+    },
+    {
+      "hyp": "Yawancin marasa lafiya na Covid-19 suna da bugun zuciya ba bisa ƙa'ida ba."
+    },
+    {
+      "hyp": "Masu bincike sun ce kusan 1 cikin 5 na marasa lafiya na Covid-19 suna fuskantar atemiya na zuciya, wanda kuma aka sani da bugun zuciya na yau da kullum."
+    },
+    {
+      "hyp": "Tun da yake abu ne gama gari, suna ba da shawarar a duba bugun zuciyar majiyyaci ta amfani da na'ura mai suna electrocardiogram, domin likitoci su iya gano da kuma magance duk wani atemiya na zuciya da wuri-wuri."
+    },
+    {
+      "hyp": "Ko da yake Covid-19 yana shafar huhu da tsarin numfashi mafi yawa, wasu bincike sun nuna cewa zai iya shafar zuciya ma."
+    },
+    {
+      "hyp": "Masu bincike sun so su duba bayanan marasa lafiya don ganin yadda matsalolin bugun zuciya suka kasance a cikin marasa lafiya masu Covid-19 a shekarar 2020, kusa da farkon annobar duniya."
+    },
+    {
+      "hyp": "Sun gudanar da nazarin-gauraye, wanda yake nufin lokacin da masu bincike ke nazarin bincike daban-daban akan wani batu don ƙoƙarin samun ƙarshe na gaba ɗaya daga haɗin dukkan binciken."
+    },
+    {
+      "hyp": "Sun nemi nazarin da wasu masu bincike suka yi wanda aka duba ta hanyar abokan aiki a cikin runmbunan bayanai na gama gari, kuma suka fitar da duk wani muhimmin bayani game da bugun zuciya mara tsari a cikin marasa lafiya na Covid-19."
+    },
+    {
+      "hyp": "A ƙarshe, sun haɗa da aiyuka 9 tare da bayanai kan majiyyata 1445."
+    },
+    {
+      "hyp": "Sun gano cewa an lura da atemiya na zuciya a cikin kashi 19.7% na marasa lafiya da ke da Covid-19."
+    },
+    {
+      "hyp": "Sun yi gargaɗin cewa ƙarancin adadin binciken da suka yi amfani da shi na iya rage ƙarfafa kammalawarsu."
+    },
+    {
+      "hyp": "Wasu daga cikin binciken ba su fayyace ainihin nau'in matsalar zuciya ba, kuma gazawar kowanne bincike na iya rikitar da gazawar nazarin binciken da suka gabata."
+    },
+    {
+      "hyp": "Sun ba da shawarar duba gaba kan dalilin da ya sa marasa lafiya da yawa masu Covid-19 suka sami rashin daidaiton bugun zuciya."
+    },
+    {
+      "hyp": "Mawallafan wannan takarda sun fito ne daga Masar, duk da haka marasa lafiyar da ke cikin wannan binciken sun fito ne daga China da USA."
+    },
+    {
+      "hyp": "Ra'ayoyin Wasu Masana Kimiyya kan Hijira, Lafiyar Hankali da PTSD:"
+    },
+    {
+      "hyp": "Bita na Adabin da ya Dace"
+    },
+    {
+      "hyp": "A cikin wannan babi, mun bayar da bita kan nazarin gwaji da aka gudanar kan PTSD, lafiyar hankali da jin daɗin baƙin haure."
+    },
+    {
+      "hyp": "Yawancin bincike yana nuna cewa duka damuwar kafin-ƙaura da bayan-ƙaura suna shafar lafiyar hankali da PTSD na baƙin haure da 'yan gudun hijira."
+    },
+    {
+      "hyp": "A ƙasashen asali, fuskantar mummunan abu da azabtarwa suna haifar da manyan haɗari ga lafiyar tunanin baƙin haure."
+    },
+    {
+      "hyp": "Matsalolin lafiyar ƙwaƙwalwa da ke haifar da damuwa mai tsanani ga masu ƙaura a ƙasashen mazauni sun haɗa da damuwar al'adu, matsalar doka, rabuwa da iyali, shingen harshe, rashin samun ingantaccen kulawar lafiya, wariya, wariyar launin fata, jin rashin taimako, raguwar darajar kai, damuwa mai tsanani da kuma tsananin kulawa."
+    },
+    {
+      "hyp": "Daga cikin dukkan matsalolin lafiyar hankali, an ɗauki ciwon damuwa, damuwa da PTSD a matsayin mafi yawan su tare da adadin yawaitar su na kashi 4–40%, 5–44% da 9–36% bi-da-bi."
+    },
+    {
+      "hyp": "Gabaɗaya, an gano tallafin zamantakewa da hanyoyin juriya na daidaitawa a matsayin masu rage tasiri."
+    },
+    {
+      "hyp": "Lafiyar hankali ta 'yan gudun hijira tana shafar yanayin da aka bari a baya da kuma yadda ake zaunawa a sabon wuri."
+    },
+    {
+      "hyp": "'Yan gudun hijira da 'yan gudun hijira da ke tserewa zuwa ƙasashen waje sau da yawa suna fuskantar ci gaba da matsalar biyo-bayan damuwa da sauran matsalolin lafiyar ƙwaƙwalwa."
+    },
+    {
+      "hyp": "Duk da yake yawancin waɗannan matsalolin suna haifar da abubuwan da suka faru a ƙasashensu na asali, masana kimiyya sun ce yana da muhimmanci a gane cewa damuwar rayuwa a sabuwar ƙasa na iya ƙara wa matsalar."
+    },
+    {
+      "hyp": "A cewar wasu bincike daban-daban, damuwa, tashin hankali, da matsalar biyo-bayan damuwa (PTSD) dukkan su matsalolin lafiyar hankali ne da suka zama ruwan dare gama gari a tsakanin 'yan hijira da 'yan gudun hijira."
+    },
+    {
+      "hyp": "PTSD yawanci sakamakon tsira daga abubuwan haɗari ko masu lahani ne, kuma mutane sau da yawa suna fuskantar sakamakon waɗannan abubuwan mummuna na tsawon watanni, ko ma shekaru."
+    },
+    {
+      "hyp": "A cikin wannan bincike, masu bincike sun so su fahimci abubuwa daban-daban da ke taka rawa a cikin matsalolin lafiyar hankali na baƙin haure kamar PTSD."
+    },
+    {
+      "hyp": "Saboda haka sun gudanar da wani nau'i na bincike da ake kira bita, inda suka taƙaita bayanai daga wasu bincike da dama kan batun, don gano abubuwan da suka yi kama ko jigo."
+    },
+    {
+      "hyp": "A lokuta da dama, matsalolin lafiyar hankali na 'yan hijira sun kasance sakamakon abubuwan ban tsoro kamar yaƙi, rasa masoya, ko kuma cin zarafi na jiki da suka faru a ƙasashensu na asali."
+    },
+    {
+      "hyp": "Lokacin da waɗannan mutanen suka bar waɗannan yanayi, sun fuskanci tafiye-tafiye masu wahala amma sai suka ji sauƙi lokacin da suka isa wata sabuwar ƙasa."
+    },
+    {
+      "hyp": "Duk da haka, masu binciken sun ce wannan sauƙin yakan kasance na ɗan lokaci, saboda baƙin haure suna fuskantar sabbin ƙalubale bayan sun koma wani wuri."
+    },
+    {
+      "hyp": "Sun gano cewa baƙin haure sau da yawa suna fuskantar wahala a sabuwar ƙasa ma, musamman idan ba su fahimci harshen ba, ko kuma suna da wahalar daidaitawa da al'adar."
+    },
+    {
+      "hyp": "Lokacin da mutane suka isa ƙasar ba bisa ka'ida ba, ko suna ƙoƙarin samun mafaka, suna kuma fuskantar matsalolin doka, kuma sau da yawa suna da wahalar samun sabis kamar kiwon lafiya."
+    },
+    {
+      "hyp": "Ga wasu, wariyar launin fata da nuna bambanci a sabuwar ƙasarsu sun ƙara musu jin rashin tsaro, kuma da yawa sun bar 'yan uwansu a baya kuma suna kadaici."
+    },
+    {
+      "hyp": "Waɗannan abubuwan sun taimaka wajen ci gaba da matsalolin taɓin hankali, ko da kuwa waɗannan baƙin haure suna cikin yanayi mafi aminci fiye da wanda suke a ƙasarsu ta asali."
+    },
+    {
+      "hyp": "Masu binciken sun ƙara da cewa baƙin haure suna da dabaru daban-daban na magance waɗannan matsalolin, daga tsara yadda za su iya tinkarar su a hankali, zuwa neman taimako daga wasu a cikin al'ummarsu, ko kuma hanyoyi marasa kyau kamar amfani da miyagun ƙwayoyi."
+    },
+    {
+      "hyp": "Masu bincike sun ce ana buƙatar ƙarin bincike a kan dukkan matakai na tafiyar baƙin haure."
+    },
+    {
+      "hyp": "Musamman, yana da muhimmanci a bincika abubuwan da ke shafar lafiyar hankali a ƙasashen asali na mutane, amma kuma a kan dogon lokaci a sabbin ƙasashensu."
+    },
+    {
+      "hyp": "Sun ƙara da cewa tafiyar mutanen da ke ƙaura daga Afirka zuwa Turai na buƙatar karin kulawa daga masu bincike."
+    },
+    {
+      "hyp": "Wannan binciken ya kasance haɗin gwiwa ne tsakanin masana kimiyya da ke zaune a Afirka ta Kudu da Jamus, kuma wani ɓangare ne na wani littafi game da abubuwan da 'yan gudun hijira na Afirka ke fuskanta a ƙasashen Turai."
+    },
+    {
+      "hyp": "Kasancewa da Dorewar Amblyomma Hebraeum na Ƙara Nauyin Cutar Heartwater a Gundumar Kudu ta Botswana"
+    },
+    {
+      "hyp": "Zuciyar ruwa cuta ce da kaska ke ɗauke da ita, wadda ke da damar takaita ci gaban kasuwancin noma a Botswana."
+    },
+    {
+      "hyp": "Wannan barazana ga wadatar abinci na ƙasa ana danganta ta da ƙarancin samarwa da mutuwar dabbobi a cikin noma na dogaro da kai na ƙananan dabbobi fiye da gonakin kasuwanci."
+    },
+    {
+      "hyp": "Wannan binciken yana ba da hangen nesa kan nauyin cutar heartwater a Botswana."
+    },
+    {
+      "hyp": "An gano kaska masu ciyarwa a kan dabbobi da ake kiwo a cikin ƙananan gundumomi huɗu na Kudu a Botswana ta hanyar nazarin siffa da na kwayoyin halitta."
+    },
+    {
+      "hyp": "An yi hira da manoma kan yadda ake sarrafa nauyin heartwater a cikin ƙananan gundumominsu."
+    },
+    {
+      "hyp": "An tattara rahotannin lokuta na asibitin dabbobi don tantance yawan lokuta a fadin Gundumar Kudu ta Botswana."
+    },
+    {
+      "hyp": "Sakamakon binciken ya bayyana; yaduwar Amblyomma hebraeum a dukkanin ƙananan gundumomi huɗu da aka yi nazari, ƙaruwa a hankali na lamuran zazzaɓin zuciya a ƙaramar gundumar Moshupa da kuma alamar ƙaruwa na tasiri akan nau'in awaki na asali duk da ƙoƙarin da aka yi na sarrafa masu ɗaukar cuta da kashi 63% na manoman da aka yi hira da su."
+    },
+    {
+      "hyp": "Amblyomma hebraeum, babban mai ɗaukar Ehrlichia ruminantium a Kudancin Afirka yana yaduwa sosai a Gundumar Kudu ta Botswana kuma hakan yana haifar da ƙalubale ga samar da dabbobi a wannan gunduma da kuma wataƙila a wasu wurare a cikin ƙasar inda kaska ke kamuwa da dabbobi."
+    },
+    {
+      "hyp": "Don haka akwai buƙatar sake duba matakan kariya na kaska da ake da su tare da niyyar rage nauyin cutar heartwater musamman a tumaki da awaki."
+    },
+    {
+      "hyp": "Yawan kaska a kudancin Botswana yana kara tsananta cutar heartwater a cikin dabbobi."
+    },
+    {
+      "hyp": "Wannan bincike ya bayar da rahoto kan yawaitar kaska da cutar heartwater a kudancin Botswana tsakanin shekarar 2017 zuwa 2019."
+    },
+    {
+      "hyp": "Sakamakon binciken na iya taimaka wa gwamnati da manoma su tsara yadda za su fi shawo kan cutar heartwater."
+    },
+    {
+      "hyp": "Wasu kaska suna ɗauke da kwayar cuta mai suna Ehrlichia ruminantium, wadda ke haifar da wata cuta da ake kira heartwater a cikin shanu, tumaki da awaki."
+    },
+    {
+      "hyp": "Wannan ƙwayar cuta kaska ce, ma'ana tana ciyar da kanta daga wasu halittu masu rai kamar dabbobi, tana jawo musu lahani."
+    },
+    {
+      "hyp": "Dabbobin da ke fama da cutar heartwater yawanci suna da yanayin zafin jiki mai yawa, suna rasa sha'awar cin abinci, suna da matsalolin numfashi, kuma a ƙarshe suna iya mutuwa."
+    },
+    {
+      "hyp": "Ciwon zuciya yana da matuƙar yawa a kudancin Botswana, kuma manoma a wannan yanki suna rasa dabbobinsu ga cutar."
+    },
+    {
+      "hyp": "A cikin wannan bincike, masu bincike sun binciki nauyin cutar heartwater a kudancin Botswana."
+    },
+    {
+      "hyp": "Da farko sun tattara, ƙirga kuma gano kaska daga shanu, tumaki da awaki don kwatanta adadin kaska masu ɗauke da kaska na heartwater da sauran kaska."
+    },
+    {
+      "hyp": "Masu binciken sun kuma yi hira da wasu manoma kan abubuwan da suka fuskanta da heartwater, kuma sun tattara wasu rahotanni na heartwater daga ofishin likitan dabbobi (lafiyar dabbobi)."
+    },
+    {
+      "hyp": "Masu binciken sun ce kaska masu cutarwa sun yadu a yankin binciken, kuma adadin lokutan cutar heartwater ya ƙaru daga shekara zuwa shekara."
+    },
+    {
+      "hyp": "Sun tattara ƙudan zuma guda 310 tsakanin shekarar 2017 da 2019."
+    },
+    {
+      "hyp": "Sun gano nau'ikan kaska guda 3: kaska bont na Afirka ta Kudu, kaska mai ƙafafu bont, da kaska mai launin ruwan kasa na kare."
+    },
+    {
+      "hyp": "Mafi yawan kaska ita ce kaska bont ta Afirka ta Kudu (85%), kuma wannan ce ke ɗauke da kwayar cutar da ke haifar da cutar heartwater."
+    },
+    {
+      "hyp": "Sauran nau'ikan kaska guda 2 da suka gano ba sa bada gudummawa ga cutar heartwater, amma suna da alaƙa da wasu cututtukan dabbobi kamar 'theileriosis', 'anaplasmosis' da 'babesiosis'."
+    },
+    {
+      "hyp": "Yankin da masu binciken suka yi nazari ya haɗa da Goodhope, Kanye, Moshupa, da Jwaneng."
+    },
+    {
+      "hyp": "Kaska sun fi yawa a Goodhope, Kanye da Moshupa."
+    },
+    {
+      "hyp": "Waɗannan yankuna sun fi yawa jiƙaƙƙu, masu duwatsu kuma suna da karin tsirrai."
+    },
+    {
+      "hyp": "Jwaneng, wanda ya fi kowa ƙarancin kaska, ya kasance busasshe, mai yashi kuma yana da ƙarancin tsirrai."
+    },
+    {
+      "hyp": "Masu binciken sun ce bayanan dabbobi sun bayyana jimillar lokuta 42 na ciwon heartwater a Goodhope, 38 a Jwaneng, 75 a Kanye, da 146 a Moshupa, daga shekarar 2017 zuwa 2019."
+    },
+    {
+      "hyp": "Masu bincike sun ce cutar heartwater ta fi shafar nau’o’in awaki da shanu na gida fiye da nau’o’in daga wasu ƙasashe."
+    },
+    {
+      "hyp": "Sun ce manoma sun yi wasu ƙoƙari don shawo kan kaska."
+    },
+    {
+      "hyp": "Misali, kashi 63% na manoma sun nutsar da dabbobi a cikin magungunan kashe ƙwari (sinadarai da ake amfani da su don kashe ƙwari kamar kaska)."
+    },
+    {
+      "hyp": "Kusan kashi ɗaya bisa uku (kashi 30%) na manoma sun shafa mai a dabbobinsu don sarrafa kaska, yayin da wasu (kashi 7%) suka koma gina sababbin wuraren kiwo."
+    },
+    {
+      "hyp": "Masu binciken sun kuma gano cewa kashi 44% na manoma ba su yi komai ba don magance dabbobi da ake zargin suna da rashin lafiya, yayin da kashi 15% suka ce za su ziyarci jami’an dabbobi don neman shawara, amma sukan ba dabbobin magani da kansu."
+    },
+    {
+      "hyp": "Ko da yake akwai magani da ake da shi don hana cutar heartwater, masu binciken sun ce kashi 93% na manoma ba su yi amfani da shi ba."
+    },
+    {
+      "hyp": "Manoma sun shaida wa masu binciken cewa hakan ya faru ne saboda ba a ilmantar da su game da maganin, kuma saboda ba za su iya sayen maganin ba."
+    },
+    {
+      "hyp": "Wasu bincike a baya sun duba yadda kaska take rarrabuwa a Afirka, ciki har da Botswana, amma a cewar masu binciken, nasu shi ne na farko da ya duba dangantaka tsakanin kaska da al'amuran heartwater a Botswana."
+    },
+    {
+      "hyp": "Sun ce lokutan ciwon zuciya da likitocin dabbobi suka rubuta na iya zama ƙasa da ainihin lokutan da manoma suka fuskanta, saboda likitocin dabbobi yawanci suna yin test na ciwon zuciya ne kawai idan dabba ta mutu, wanda ke nufin cewa dabbobin da ke rayuwa da cutar ko dabbobin da suka warke ba a ko da yaushe ake ƙirga su ba."
+    },
+    {
+      "hyp": "Masu binciken sun ba da shawarar cewa a wayar da kan manoma kan yadda za su shawo kan cutar heartwater a cikin dabbobinsu, don rage nauyinta a yankin."
+    },
+    {
+      "hyp": "Haka nan kuma sun ce ya kamata a yi ƙarin bincike don gano abubuwan da ke haifar da yawaitar kaska."
+    },
+    {
+      "hyp": "Masu binciken sun kasance a ƙasar Botswana."
+    },
+    {
+      "hyp": "Matsaloli ga Gwajin Wurin Kula a Indiya da Afirka ta Kudu"
+    },
+    {
+      "hyp": "Ana ganin gwajin Point of Care (POC) a cikin al'ummomi, gidaje, da cibiyoyin kiwon lafiya na farko yana da babbar damar rage jinkiri wajen gano cututtuka da fara jiyya ga cututtuka kamar cuta mai karya garkuwar jiki, tarin fuka, sifilis, da zazzabin cizon sauro."
+    },
+    {
+      "hyp": "Tantancewa cikin sauri da kuma yanke shawarar gudanarwa a cikin wannan ganawar asibiti ko aƙalla a wannan rana, yayin da majiyyaci ke jira, suna da alkawarin shawo kan jinkiri da ke tattare da gwaje-gwajen da ake yi a dakin gwaje-gwaje na gargajiya."
+    },
+    {
+      "hyp": "Duk da haka, samun gwaje-gwaje masu arha, sauƙi, da sauri da za a iya gudanarwa a wajen dakunan gwaje-gwaje ba ya tabbatar da nasarar gwajin POC kai tsaye."
+    },
+    {
+      "hyp": "Domin fahimtar sabbin ayyuka da ƙalubalen da na'urorin likitanci irin waɗannan ke fuskanta, dole ne mu yi nazari kan yadda ake amfani da binciken lafiya a wurin kula da marasa lafiya da kuma yadda ake haɗa su cikin tsarin aiki da hanyoyin marasa lafiya."
+    },
+    {
+      "hyp": "Wannan babin yana nazarin sakamako da aka zaɓa daga wani aikin bincike na inganci kan shingayen gwajin POC a Indiya da Afirka ta Kudu kuma yana tattauna su ta hanyar kwatanta."
+    },
+    {
+      "hyp": "Aikin ya yi amfani da tsararrun tambayoyin tattaunawa da tattaunawa ta rukuni don bincika hanyoyin gano cututtuka a fadin manyan cututtuka da masu ruwa da tsaki a gidaje, asibitoci, al'ummomi, asibitoci, da dakunan gwaje-gwaje a Afirka ta Kudu da Indiya."
+    },
+    {
+      "hyp": "A cikin kwatanta sakamakon da aka zaɓa, ya bayyana cewa ƙasashen biyu suna da tsarin gano cuta daban-daban sosai wanda ke samar da yanayi daban-daban don gwajin POC."
+    },
+    {
+      "hyp": "Babin ya ƙare ta hanyar tunani kan yadda za a yi la'akari da irin waɗannan fahimta lokacin tsara shirye-shiryen gwajin POC."
+    },
+    {
+      "hyp": "Rashin ingancin gwajin wurin kula a Afirka ta Kudu da Indiya yana jinkirta kiwon lafiya"
+    },
+    {
+      "hyp": "Kulawar wurin (POC) yana nufin gwaje-gwajen kiwon lafiya da ake yi a wurin da majiyyaci ke karɓar kulawa, maimakon aika samfurin majiyyaci zuwa dakin gwaje-gwaje don gwaji."
+    },
+    {
+      "hyp": "Afirka ta Kudu da Indiya ba sa yin gwaji cikin sauri da inganci saboda rashin kyawun tsarin POC da dakunan gwajinsu."
+    },
+    {
+      "hyp": "Gwajin POC yana ba marasa lafiya damar samun gwaji mai sauri tare da sakamako cikin gaggawa don magani da kuma sarrafa cututtuka."
+    },
+    {
+      "hyp": "Ana iya yin wannan da injina masu arha da sauƙi waɗanda za su iya bayar da sakamakon gwaji cikin sauri ba tare da buƙatar kai samfurori zuwa dakunan gwaje-gwaje ba."
+    },
+    {
+      "hyp": "Amma akwai ƙalubale da yawa a POC da ke hana kula da majinyata a Afirka ta Kudu da Indiya."
+    },
+    {
+      "hyp": "Marubutan sun so kwatanta gwaje-gwajen POC a Afirka ta Kudu da Indiya don su iya gano matsaloli."
+    },
+    {
+      "hyp": "Sun gudanar da hira da tarurruka na rukuni tare da ma’aikatan kiwon lafiya, marasa lafiya da kamfanonin na’urorin likitanci daga Satumba, 2012, zuwa Yuni, 2013, a kasashen biyu."
+    },
+    {
+      "hyp": "Sun yi tambaya game da hanyoyin POC da matsalolin da suka shafi su."
+    },
+    {
+      "hyp": "A kiwon lafiyar jama'a, Indiya tana amfani da ƙananan dakunan gwaje-gwaje da yawa kuma suna yin gwaje-gwaje na asali, amma ba a ba su isasshen kuɗi ba, don haka ba su da isassun kayan aiki don yin gwajin."
+    },
+    {
+      "hyp": "A sau da yawa ana gaya wa marasa lafiya su dawo a wani lokaci ko su tafi wani wuri, wanda hakan ke haifar da matsaloli ga marasa lafiyan."
+    },
+    {
+      "hyp": "Masu binciken sun kuma lura cewa wani lokaci ana yi wa marasa lafiya gwaji amma yana ɗaukar lokaci kafin sakamakon ya dawo, kuma suna samun wahalar tuntuɓar likitansu bayan haka."
+    },
+    {
+      "hyp": "Masu halartar sun ce ya kamata a sami karin dakunan gwaje-gwaje a asibitoci, kuma za a iya yin gwaji a wurin da marasa lafiya ke shiga."
+    },
+    {
+      "hyp": "Har ila yau, sun ce bin diddigi, jiyya ko shawarwari ya kamata su kasance a wuri ɗaya."
+    },
+    {
+      "hyp": "A Afirka ta Kudu, sun gano cewa a cikin kiwon lafiyar jama'a, kamfani guda ɗaya ne ke kula da duk gwaje-gwajen, don haka samfurori suna zuwa wannan kamfani."
+    },
+    {
+      "hyp": "Ana yin wasu gwaje-gwaje na asali a wurin kulawa, kuma marasa lafiya suna samun sakamakon cikin sauri."
+    },
+    {
+      "hyp": "Gwaje-gwajen cutar HIV da TB suna ɗaukar lokaci mai tsawo don haka bin diddigi ko jiyya ma suna jinkiri."
+    },
+    {
+      "hyp": "Sauran jinkiri suna faruwa ne saboda sufuri, kuskuren rubuta sunayen majiyyata, kuskuren lakabin samfurori, da kuma lalacewar tsarin kwamfuta."
+    },
+    {
+      "hyp": "Don gwajin cutar HIV, wasu dakunan gwaje-gwaje sun yi amfani da hanyoyi daban-daban na gwaji, kuma wannan yana bayar da sakamako marasa tabbas."
+    },
+    {
+      "hyp": "Sun gano cewa marasa lafiya suna ƙoƙarin yin gwajin cutar HIV bisa ga nisan wurin ko nau'in gwajin, kuma saboda haka wani lokaci suna amfani da katin shaida daban, wanda ke haifar da matsaloli lokacin ƙoƙarin samun tarurrukan bin diddigi."
+    },
+    {
+      "hyp": "Masu binciken sun ba da shawarar cewa ma’aikatan kiwon lafiya dole ne su yi aiki tare don raba nauyin aiki."
+    },
+    {
+      "hyp": "Sun ce idan sababbin kayan gwajin cutar HIV sun zo, ya kamata a sake horar da ma’aikata kuma dole ne a sabunta tsarin."
+    },
+    {
+      "hyp": "Marubutan sun kwatanta bayanan POC daga ƙasashen biyu kuma sun ba da shawarar cewa hukumomi su duba POC da kyau kafin ƙara sabbin kayayyaki ko na'urori."
+    },
+    {
+      "hyp": "Sun kuma ce akwai buƙatar ƙarin ƙoƙari a sanya wajen magance nauyin aiki a ɗakunan gwaje-gwaje da fahimtar rawar da mara lafiya ke takawa a cikin kiwon lafiyarsu."
+    },
+    {
+      "hyp": "Mawallafan wannan takarda sun fito ne daga Afirka ta Kudu, Indiya, Kanada da kuma Netherlands."
+    },
+    {
+      "hyp": "Zuƙowa ga ma'anoni na rashin lafiya mai tsanani da kula mai tsanani ta amfani da nazarin ra'ayi"
+    },
+    {
+      "hyp": "Tun da \"rashin lafiya mai tsanani\" da \"kulawa mai tsanani\" ba su da ma'anoni da aka amince da su gaba ɗaya, wannan binciken yana nufin bincika yadda ake amfani da waɗannan ra'ayoyin, bayyana halayensu na musamman da bayar da shawarar yiwuwar ma'anoni."
+    },
+    {
+      "hyp": "Mun yi amfani da hanyar mataki-mataki ta Walker da Avant don nazarin ra'ayi."
+    },
+    {
+      "hyp": "An gano amfani da ma'anar ra'ayoyin ta hanyar bita mai zurfi na adabi da kuma binciken kan intanet na masana kiwon lafiya 114 na duniya."
+    },
+    {
+      "hyp": "Ta hanyar nazarin abun ciki na bayanai mun fitar da lambobi, rukuni da jigogi don tantance siffofin da ke bayyana ra'ayoyin kuma mun ba da shawarar yiwuwar ma'anoni."
+    },
+    {
+      "hyp": "Don taimakawa fahimta, muna gabatar da samfur, batutuwa masu alaƙa da akasin su game da ra'ayoyin, mun gano abubuwan da suka gabata da sakamakon ra'ayoyin, kuma mun ayyana ma'anar gwaji."
+    },
+    {
+      "hyp": "Siffofin da ke bayyana rashin lafiya mai tsanani sun haɗa da babban haɗarin mutuwa nan da nan; rashin aiki na muhimman gabobi; buƙatar kulawa don guje wa mutuwa; da yiwuwar dawowa daidai."
+    },
+    {
+      "hyp": "Abubuwan da ke bayyana kula mai tsanani sun haɗa da gano, sa ido da kuma jiyya na rashin lafiya mai tsanani; tallafin muhimman gabobi; kulawa ta farko da ci gaba; duk wata kulawa ta rashin lafiya mai tsanani; da kuma ƙwararrun albarkatun ɗan adam da na jiki."
+    },
+    {
+      "hyp": "Ma'anar rashin lafiya mai tsanani da muka bayar ita ce, \"wani yanayi na rashin lafiya tare da rashin aiki na muhimman gabobi, babban haɗarin mutuwa nan da nan idan ba a ba da kulawa ba da kuma yiwuwar dawowa daidai\"."
+    },
+    {
+      "hyp": "Ma'anar da muka bayar na kula mai tsanani ita ce, \"gano, sa ido da jiyya na marasa lafiya da ke da rashin lafiya mai tsanani ta hanyar tallafi na farko da ci gaba na ayyukan mahimman gabobin jiki.\""
+    },
+    {
+      "hyp": "Ra'ayoyin rashin lafiya mai tsanani da kula mai tsanani ba su da ma'anoni da aka amince da su kuma suna da amfani daban-daban."
+    },
+    {
+      "hyp": "Ta hanyar nazarin ra'ayoyi na amfani da ma'anoni a cikin adabi da tsakanin ƙwararru mun gano siffofin da ke bayyana ra'ayoyin kuma mun bayar da shawarar ma'anoni waɗanda za su iya taimakawa aikin asibiti, bincike, da kuma ƙirƙirar manufofi."
+    },
+    {
+      "hyp": "Ƙarfin da Iyakokin Binciken"
+    },
+    {
+      "hyp": "Wannan nazarin ra'ayi shi ne binciken farko da ya bayyana amfani da ma'anoni na ra'ayoyin rashin lafiya mai tsanani da kuma kula mai tsanani ta hanyar tsari."
+    },
+    {
+      "hyp": "Binciken yana amfani da bita mai zurfi na adabi da kuma shigar da fiye da ɗari na masana kiwon lafiya daga wurare daban-daban a duniya don gano siffofin da ke bayyana kuma su bayar da shawarwarin ma'anoni na ra'ayoyin."
+    },
+    {
+      "hyp": "Wasu amfani da ma'anoni na ra'ayoyin a cikin harsuna daban da Ingilishi, a cikin rubuce-rubucen da ba a wallafa ba da kuma daga kwararrun likitoci da ba a haɗa su a cikin binciken ba na iya kasancewa an rasa su."
+    },
+    {
+      "hyp": "Tun da yadda ake amfani da ra'ayoyin yanzu ya bambanta, ma'anonin da aka gabatar ba za a iya karɓa a ko'ina ba kuma an yi niyya ne don ƙarfafa tattaunawa mai zurfi."
+    },
+    {
+      "hyp": "Masu bincike sun sake fayyace ma'anar marasa lafiya \"mai tsanani\" da kuma kulawarsu."
+    },
+    {
+      "hyp": "Daidaitattun ma'anoni don kula da marasa lafiya da duk likitoci ke amfani da su a duk duniya na iya taimakawa wajen kula da marasa lafiya masu tsananin rashin lafiya."
+    },
+    {
+      "hyp": "A cikin wannan binciken, wata ƙungiyar masu bincike ta ƙasa da ƙasa sun ba da shawarar cewa \"rashin lafiya mai tsanani\" ya kamata ya nufin cewa yayin da mara lafiya ke da babban yiwuwar mutuwa, suna iya kuma murmurewa."
+    },
+    {
+      "hyp": "Sun kuma ce \"kulawa\" da ake bai wa marasa lafiya masu matsanancin rashin lafiya ya kamata ya zama duk wata kulawa da aka ba su tun daga lokacin da suka isa asibiti, har sai sun mutu ko sun murmure."
+    },
+    {
+      "hyp": "Ya kamata kuma kada ya kasance kawai yana nufin kulawa ta amfani da kayan aiki na musamman."
+    },
+    {
+      "hyp": "A asibitoci, likitoci sau da yawa suna kiran marasa lafiya masu tsananin rashin lafiya da suna \"masu matsanancin rashin lafiya\", kuma kulawa da tallafin da waɗannan marasa lafiya ke buƙata ana kiran su da \"kulawar gaggawa\"."
+    },
+    {
+      "hyp": "Duk da haka, likitocin da ke aiki a wurare ko asibitoci daban-daban suna fahimtar waɗannan kalmomi daban-daban, saboda ma'anarsu ta bambanta daga wuri zuwa wuri."
+    },
+    {
+      "hyp": "Wannan yana haifar da, misali, marasa lafiya da ke da yanayi iri ɗaya suna samun magunguna ko kulawa daban-daban, gwargwadon wanda ke taimaka musu."
+    },
+    {
+      "hyp": "Mabanbantan ma'anoni kuma suna sa ya zama da wahala ga gwamnatoci su san ainihin adadin cututtuka masu tsanani a cikin ƙasarsu."
+    },
+    {
+      "hyp": "A wannan binciken, masu binciken sun fara nazarin yadda likitoci daban-daban suka bayyana \"ciwon mai tsanani\" da \"kulawar mai tsanani\", sannan suka ba da shawarar ƙarin ma'anoni daidaitattu."
+    },
+    {
+      "hyp": "Sun tattara bayanan ta hanyar nazarin wasu maƙaloli da aka buga."
+    },
+    {
+      "hyp": "Haka nan sun kuma yi hira da likitoci daga wasu ƙasashe daban-daban a duniya waɗanda suke da kwarewa wajen jinyar marasa lafiya masu matuƙar rashin lafiya."
+    },
+    {
+      "hyp": "Masu binciken sun rubuta ma'anoni daban-daban na rashin lafiya mai tsanani, kuma sun lura cewa gaba ɗaya yana da alaƙa da babban yiwuwar mutuwar majiyyata; wasu sassan jiki ba sa aiki; buƙatar a kula da su don guje wa mutuwa; da yiwuwar murmurewa."
+    },
+    {
+      "hyp": "A kan batun mutuwa da murmurewa, wasu ma'anoni sun nuna cewa duk marasa lafiya masu tsananin rashin lafiya za su mutu a ƙarshe, yayin da wasu suka nuna yiwuwar cewa mara lafiyar zai iya murmurewa duk da kasancewa cikin tsananin rashin lafiya."
+    },
+    {
+      "hyp": "A ƙarshe, masu binciken sun ba da shawarar ayyana rashin lafiya mai tsanani a matsayin rashin lafiya inda sassan jiki suka daina aiki, inda akwai babban yiwuwar cewa mara lafiyar zai mutu idan ba a kula da shi sosai ba, amma tare da yiwuwar murmurewa."
+    },
+    {
+      "hyp": "Don kulawa mai tsanani, likitoci sun bayyana shi da kusan iri ɗaya, amma sun bambanta game da inda irin wannan kulawa za a bayar, da kuma buƙatar kayan aiki na musamman."
+    },
+    {
+      "hyp": "Wasu majiyoyi sun ce ana iya bayar da kulawa mai tsanani ne kawai a wasu wurare na musamman a asibiti tare da kayan aiki na musamman."
+    },
+    {
+      "hyp": "Wasu sun ji cewa kulawa mai tsanani na iya haɗawa da amfani da kayan aiki na musamman, amma ba wajibi ba ne."
+    },
+    {
+      "hyp": "Sun ce za a iya bayar da kulawa mai tsanani a cikin dakunan jinya na gaba ɗaya, a ƙananan cibiyoyin kiwon lafiya, a cikin al'umma ko a cikin motoci masu ɗaukar marasa lafiya."
+    },
+    {
+      "hyp": "Sun ce ko a wuraren da ba su da yalwar arziki, marasa lafiya masu matsanancin rashin lafiya suna buƙatar kulawa mai zurfi."
+    },
+    {
+      "hyp": "Masu bincike sun bayar da shawarar cewa za a iya ayyana kula da marasa lafiya masu tsanani a matsayin duk kulawar da marasa lafiya masu tsanani suka samu tun daga lokacin da suka ziyarci ma'aikatan kiwon lafiya don neman shawara har zuwa lokacin da suka mutu ko suka warke."
+    },
+    {
+      "hyp": "Masu binciken sun ce wannan shi ne binciken farko da ya tattara bayanai kan ma'anoni daban-daban na rashin lafiya mai tsanani da kuma kulawa, kuma sakamakonsu zai taimaka wajen inganta kulawar mutane da ke da rashin lafiya mai tsanani."
+    },
+    {
+      "hyp": "Duk da haka sun ce binciken nasu na iya kasancewa da iyaka saboda ba su yi amfani da ma'anoni daga wasu harsuna bayan Ingilishi ko daga majiyoyin da ba a wallafa ba."
+    },
+    {
+      "hyp": "Sun kuma tattauna da likitoci daga wasu ƙasashe kaɗan ne kawai, don haka nazarinsu ba ya wakiltar duk ƙasashen duniya."
+    },
+    {
+      "hyp": "Masu binciken, waɗanda suka fito daga jami'o'i a Malawi, Tanzaniya, Sweden da Ingila, sun ce za a iya gyara ƙa'idodin da suka gabatar idan an buƙata."
+    },
+    {
+      "hyp": "Binciken CRISPR-Cas9 na kwayar halitta gabaɗaya ya gano CENPJ a matsayin mai kula da mazauni na canjin tsari na microtubule yayin cutar hanta ta Plasmodium."
+    },
+    {
+      "hyp": "Kafin fara zazzaɓin cizon sauro mai alamu, sporozoite ɗaya na Plasmodium yana kamuwa da hepatocyte kuma yana haɓaka zuwa dubban merozoites, ta wani ɓangare ta hanyar amfani da albarkatun mazauni."
+    },
+    {
+      "hyp": "Mun nuna cewa microtubules na mazauni suna sake tsarawa cikin motsi a kusa da kaska na matakin hanta (LS) da ke ci gaba."
+    },
+    {
+      "hyp": "Ta amfani da allon CRISPR-Cas9 mai faɗin kwayar halitta, mun gano masu kula da mazauni na tsari na cytoskeleton, zirga-zirgar vesicle, damuwar ER/Golgi da haɓakar lipid waɗanda ke kula da ci gaban Plasmodium LS."
+    },
+    {
+      "hyp": "Wadannan sabbin masu kula da cuta, ciki har da Centromere Protein J (CENPJ), sun jagorance mu don bincika yadda cibiyoyin shirya microtubule (MTOCs) suke sarrafawa yayin kamuwa da cuta."
+    },
+    {
+      "hyp": "Foci na γ-tubulin sun kasance a gefen kaska; raguwar CENPJ ta ƙara tsananta wannan sake matsayi kuma ta ƙara cuta."
+    },
+    {
+      "hyp": "Bugu da ƙari, mun nuna cewa Golgi yana aiki a matsayin MTOC mara tsakiya ta hanyar tsara γ-tubulin da kuma motsa ƙwayar microtubule a gefen kaska."
+    },
+    {
+      "hyp": "Gaba ɗaya, mun nuna cewa Plasmodium LS yana ɗaukar mazauni Golgi don ƙirƙirar hanyoyin da MT ke jagoranta inda ake ɗaukar ƙwayoyin mazauni zuwa PVM, don tallafawa ci gaban matakin hanta."
+    },
+    {
+      "hyp": "Abubuwan da muka gano suna nuna cewa yawancin masu hana magunguna da aka nufa da mazauni na iya hana cutar LS."
+    },
+    {
+      "hyp": "Masana kimiyya suna nazarin yadda zazzaɓin cizon sauro ke kutsa cikin ƙwayoyin halitta domin ƙoƙarin faɗaɗa zaɓuɓɓukan magani."
+    },
+    {
+      "hyp": "Kaskoki da dama suna amfani da sinadarai da albarkatun ƙwayoyin halitta na mazaunin su na mutum ko dabba don haifar da kansu."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu bincike sun gano wasu ƙwayoyin gado na musamman da ke taka rawa a cikin cutar zazzaɓin cizon sauro a cikin ƙwayoyin halittar hanta, wanda zai iya haifar da sabbin magungunan da za su yi niyya ga zazzaɓin cizon sauro a nan gaba."
+    },
+    {
+      "hyp": "Zazzaɓin cizon sauro cuta ce da ta yaɗu sosai kuma mai yiwuwa ta zama mai haɗari ga rayuwa, wadda ƙwayar cutar Plasmodium ke haifarwa, wanda ake yaɗawa ta hanyar cizon sauro."
+    },
+    {
+      "hyp": "Da zarar ta shiga jiki, Plasmodium tana nufin hanta kai tsaye don yin ninkaya - wannan matakin farko ya dace da maganin zazzaɓin cizon sauro saboda babu alamun cuta tukuna kuma ba za a iya yaɗa cutar ba."
+    },
+    {
+      "hyp": "A cikin wannan bincike, masu bincike sun so su gano sauye-sauye na musamman ga kwayoyin halitta da furotoci a cikin ƙwayoyin hanta da suka kamu da cuta wanda zai iya canza yadda cuta ke ci gaba."
+    },
+    {
+      "hyp": "Ta amfani da fasahar gyaran kwayoyin halitta CRISPR-Cas9, masu binciken sun iya kashe ko \"knockout\" wasu kwayoyin halitta na musamman don ganin abin da ya canza lokacin da waɗannan kwayoyin halitta ba su aiki."
+    },
+    {
+      "hyp": "Daga nan sai suka cutar da duka ƙwayoyin hanta na al'ada da kuma waɗanda aka \"fitar\" da su tare da ƙwayoyin cutar zazzabin cizon sauro."
+    },
+    {
+      "hyp": "Waɗannan siffofi masu kama da bututu suna da hannu a, tsakanin sauran abubuwa, motsin sinadarai da kayan aiki a cikin ƙwayoyin halitta, kuma suna yawan samar da hanyar sadarwa a kusa da tantanin ƙwayar halitta."
+    },
+    {
+      "hyp": "Ɗaya daga cikin manyan abubuwan da aka gano shi ne cewa Plasmodium yana kwace microtubules a cikin ƙwayoyin halitta na hanta - maimakon microtubules su taru a kusa da tantani suna kai abinci da kayan aiki zuwa inda ƙwayar halitta ke bukata, microtubules suna taruwa a kusa da kaska suna kai abinci da kayan aiki don taimakawa kaska ta hayayyafa."
+    },
+    {
+      "hyp": "Masu binciken sun ga cewa lokacin da suka cire wani furotin da ake kira CENPJ, kaska ta zama mai nasara sosai wajen tattara microtubules a kusa da kanta, kuma kaskokin sun girma kuma sun yi ƙarin kwafi na kansu."
+    },
+    {
+      "hyp": "Masana kimiyya sun kuma gano wasu ƙwayoyin halitta da dama waɗanda ke shafar yadda cutar plasmodium ke tsananta."
+    },
+    {
+      "hyp": "Masu binciken a baya sun nuna cewa wasu kaskoki suna sake tsara microtubules don karkatar da albarkatu a cikin ƙwayar halitta zuwa gare su."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu binciken sun tabbatar da cewa kaskokin Plasmodium na iya amfani da wannan dabarar don karkatar da sinadarai da sauran albarkatu don ci gabansu."
+    },
+    {
+      "hyp": "A nan gaba, masana kimiyya suna fatan amfani da fahimtarsu kan yadda kwayoyin halitta da kaska ke mu'amala a cikin ƙwayar halitta don gano sabbin magunguna ga zazzaɓin cizon sauro."
+    },
+    {
+      "hyp": "Ko da yake masu bincike sun gano wasu canje-canje masu ban sha'awa a cikin furotin na ƙwayar halittar hanta a farkon matakan zazzabin cizon sauro, akwai bukatar yin karin aiki don fahimtar daidai yadda Plasmodium ke sauya sinadaran ƙwayar halitta da aikinta don a iya gano ƙwayar halitta a jiki da za a yi amfani da ita wajen magunguna."
+    },
+    {
+      "hyp": "Dubban dubatar mutuwa har yanzu suna faruwa kowace shekara daga zazzaɓin cizon sauro, tare da yawancin waɗannan a Afirka."
+    },
+    {
+      "hyp": "A cewar Hukumar Lafiya ta Duniya, sama da kashi 90% na masu kamuwa da zazzaɓin cizon sauro na duniya a shekarar 2019 sun faru a Afirka, wanda hakan ya sa wannan batu ya zama mai muhimmanci da ke buƙatar ci gaba da ƙoƙari wajen sarrafawa da tsoma baki."
+    },
+    {
+      "hyp": "Mamayewar Halittu a Matsayin Wani Bangare na Ƙoƙarin Binciken Sauyin Duniya na Afirka ta Kudu"
+    },
+    {
+      "hyp": "A wannan babi, mun tantance yawan binciken da aka yi a Afirka ta Kudu wanda aka mai da hankali kan mamayewar halittu idan aka kwatanta da sauran abubuwan sauyin duniya."
+    },
+    {
+      "hyp": "Ta amfani da Web of Science, mun yi nazarin adabi da ya shafi tsarin yanayi na Afirka ta Kudu da aka buga tsakanin 2000 da 2018 kuma yana da alaƙa da mamayewar halittu, sauyin yanayi, yawan kamawa, canjin muhalli, gurbatawa, da/ko CO2 na sararin samaniya."
+    },
+    {
+      "hyp": "Mun gano takardu guda 1149 da suka dace waɗanda aka kimanta dangane da yadda suka rufe direbobi da hulɗar direbobi da ke shafar ɗimbin halittu ko ayyukan tsarin muhalli."
+    },
+    {
+      "hyp": "An lura da tasiri mai ƙarfi na sarari da lokaci akan ƙoƙarin bincike."
+    },
+    {
+      "hyp": "Da farko, ƙoƙari ya bambanta tsakanin yankuna, tare da canjin muhalli, gurbatawa da kuma yawan kamawa suna samun mafi girman mayar da hankali na bincike a cikin yankunan ƙasa, ruwa mai tsabta da kuma teku/masarautar bakin ruwa bi da bi."
+    },
+    {
+      "hyp": "Na biyu, wasu abubuwan da aka yi nazari sosai a duniya ba a rubuta su a cikin ayyukan gida ba (misali, akwai ƙasa da takardu biyar akan acidification na teku)."
+    },
+    {
+      "hyp": "Mun gano mu'amala 21 daban-daban tsakanin direbobi, tare da mu'amala tsakanin nau'o'i masu mamayewa da canjin muhalli (misali, sauya tsare-tsaren wuta a wuraren da aka mamaye) suna kasancewa mafi fice."
+    },
+    {
+      "hyp": "Ko yaya, ƙasa da kashi 4% na takardu sun yi magana kan hulɗar tsakanin direbobi uku ko fiye."
+    },
+    {
+      "hyp": "Wannan yana nufin cewa duk da cewa an gane muhimmancin fahimtar mu'amalar direbobi, an yi kaɗan wajen binciken haɗin tasirin mu'amalar direbobi a cikin tsarin yanayi na Afirka ta Kudu."
+    },
+    {
+      "hyp": "Dogon bayanin da aka dade ana ambata cewa jinsuna masu mamayewa suna haifar da barazana ta biyu mafi girma ga kiyaye ɗimbin halittu, bayan canjin muhalli, ya dace da sakamakon bincike na wannan dalili a Afirka ta Kudu."
+    },
+    {
+      "hyp": "Haɓaka cikakken hoto na ƙididdiga na muhimmancin direbobin sauyin duniya zai kasance ƙalubale, ba kawai a cikin bayyana direbobin ba tare da shakku ba, amma kuma saboda rashin daidaiton samuwar sakamakon bincike a ma'aunin sarari da lokaci da za a iya kwatanta."
+    },
+    {
+      "hyp": "Cikakken balaga na aikin kan nau’o’i masu mamayewa na iya bayar da tushe don bincika irin waɗannan mu’amaloli masu rikitarwa kuma ta haka ya taimaka wajen shawo kan irin waɗannan shingayen."
+    },
+    {
+      "hyp": "Masu bincike dole ne su tsara tasirin haɗin gwiwa na nau'o'i masu mamayewa, sauyin yanayi da ayyukan ɗan adam a Afirka ta Kudu."
+    },
+    {
+      "hyp": "Jinsuna masu mamayewa sune barazana ta biyu mafi girma ga kiyaye ɗimbin halittu a Afirka ta Kudu - wani gaskiya da masu bincike suka ce ya dace da yawan takardun bincike da aka yi kan batun."
+    },
+    {
+      "hyp": "Wannan yana da alaƙa da sauran barazanar kamar gurbatawa, sauyin yanayi, yawan girbi ko canje-canje a muhalli."
+    },
+    {
+      "hyp": "Wadannan barazana ga tsarin yanayi sune abin da masana kimiyya ke kira direbobin sauyin duniya, wanda shine nazarin yadda Duniya, a matsayin tsari, take canzawa tare da duk mu'amala tsakanin ayyukan ɗan adam da sauran hanyoyin jiki, sinadarai da na halittu."
+    },
+    {
+      "hyp": "A cikin wani babi na littafi na baya-bayan nan, masu bincike sun duba daidai yadda ake gudanar da bincike a Afirka ta Kudu kan mamayewar halittu, wanda ke nufin lokacin da aka shigar da jinsuna kamar tsirrai ko dabbobi zuwa wani sabon wuri inda suke bunƙasa, su kafa kansu kuma su iya cutar da wasu jinsuna na kusa ko muhalli."
+    },
+    {
+      "hyp": "Sun kuma duba bincike kan yadda wannan direba ke mu'amala da sauran direbobi."
+    },
+    {
+      "hyp": "Bincika ta hanyar takardun bincike da aka buga tsakanin shekara ta 2000 zuwa ta 2018 a cikin rumbun bayanai na \"Web of Science\", sun gano bincike 1149 masu dacewa."
+    },
+    {
+      "hyp": "Binciken su na nazarin ya nuna cewa binciken da aka yi a kan ƙasa (terrestrial) ya fi mayar da hankali kan canje-canje a cikin muhalli, yayin da binciken ruwa mai tsabta ya mai da hankali kan gurɓataccen ruwa, kuma binciken teku da bakin teku ya fi kallo kan yawan kamun kifi."
+    },
+    {
+      "hyp": "Sun kuma gano cewa abubuwan da aka rubuta sosai a duniya da suke shafar ɗimbin halittu ko ayyukan tsarin muhalli, ba a rubuta su sosai a cikin binciken cikin gida na Afirka ta Kudu."
+    },
+    {
+      "hyp": "Misali, sun sami takardu guda 5 kawai da ke duba acidification na teku, wanda ke lalata sarkar abinci kuma yana cutar da rayuwar teku."
+    },
+    {
+      "hyp": "Wannan yana faruwa ne saboda yawan iskar carbon dioxide a cikin yanayi, daga ayyukan ɗan adam kamar ƙonewar ɓurɓushin halittu, yana narkewa a cikin ruwan teku."
+    },
+    {
+      "hyp": "Canje-canje na muhalli, kamar gobara ko sauyin yanayi, suna haifar da girman nau'o'i masu mamayewa."
+    },
+    {
+      "hyp": "Sun ce carbon dioxide ya ƙaru da kusan kashi 40%, kuma yana iya haifar da yanayi mafi kyau ga tsirrai su girma a ciki."
+    },
+    {
+      "hyp": "Amma, akwai ɗan bincike kaɗan da aka yi kan wannan batu a Afirka ta Kudu."
+    },
+    {
+      "hyp": "Sun sami takardu guda 21 da ke nazarin yadda direbobi daban-daban ke mu'amala."
+    },
+    {
+      "hyp": "Yawancin waɗannan sun mai da hankali ne kan haɗa canje-canje na muhalli da jinsuna masu mamayewa."
+    },
+    {
+      "hyp": "Amma, ƙananan takardu kaɗan ne suka duba direbobi 3 ko fiye a lokaci guda."
+    },
+    {
+      "hyp": "Marubutan sun ce wannan yana nuni da cewa ana buƙatar ƙarin bincike kan yadda direbobin canjin duniya ke hulɗa don shafar tsarin yanayi a Afirka ta Kudu."
+    },
+    {
+      "hyp": "Marubutan Afirka ta Kudu sun amince cewa zai yi wahala a samar da cikakken hoto na yadda direbobin canjin duniya ke hulɗa a Afirka ta Kudu, amma sun ce binciken gida da ake da shi akan jinsuna masu mamayewa na iya riga ya sanar da bincike a wannan fagen mai rikitarwa."
+    },
+    {
+      "hyp": "Abubuwan ƙasa da ke sarrafa ƙasa mai ɗauke da sinadarin carbon da adana C a cikin dazuzzukan miombo, Zambia"
+    },
+    {
+      "hyp": "Abin da ke cikin ƙasa na kwayoyin halitta (SOM) shi ne muhimmin sashi na samar da albarkatun daji da kuma adadin carbon na ƙasa."
+    },
+    {
+      "hyp": "Duk da haka, ana da ƙarancin sani game da bambancin SOM da C a cikin dazuzzukan miombo wanda ke da muhimmanci a cikin tsarin gandun daji na Afirka ta ƙasa da Sahara kuma yana da mahimmanci ga dabarun REDD+."
+    },
+    {
+      "hyp": "A cikin wannan bincike, an auna abubuwa guda tara na ƙasa kuma an yi amfani da su don nazarin bambancin SOM a wuraren dazuzzukan miombo tare da tsarukan itatuwa daban-daban a Luanshya, Zambia."
+    },
+    {
+      "hyp": "Sakamakon ya nuna babban bambanci na adadin SOM a wurare daban-daban na zurfin ƙasa:"
+    },
+    {
+      "hyp": "36.67 zuwa 113.89 Mg ha-1 a zurfin 0–10 cm, 28.67 zuwa 79.56 Mg ha-1 a zurfin 10–20 cm, da 31.89 zuwa 98.56 Mg ha-1 a zurfin 20–30 cm."
+    },
+    {
+      "hyp": "Wadannan ƙimar SOM a zurfafa daban-daban sun bambanta tsakanin wuraren daji na miombo na matakai daban-daban na ci gaba, musamman wuraren da aka yi wa itatuwa kwashe kwanan nan suna da mafi girman abun ciki na SOM fiye da matsakaici a kowane mataki (0–10 cm: +5.57%; 10–20 cm: +4.20%; 20–30 cm: +4.30%)."
+    },
+    {
+      "hyp": "Nazarin daidaiton wasiƙa (CCA) ya bayyana cewa mafi muhimmancin abubuwan muhalli da ke tasiri ga SOM su ne rage daji ta hanyar sharewa, da kuma yawan laka a cikin ƙasa."
+    },
+    {
+      "hyp": "Wannan bincike ya nuna cewa CCA za a iya amfani da shi don nuna muhimmancin matakai daban-daban na ci gaban dazuzzuka a matsayin aikin dabarun gudanarwa, da kuma abubuwan ƙasa, wajen tantance abun cikin SOM na ƙasar miombo."
+    },
+    {
+      "hyp": "Sakamakon wannan binciken yana da matuƙar muhimmanci wajen magance dabarun sake dasa itatuwa da gudanarwa na REDD+ na yanzu waɗanda ake nufi da ƙara yawan ajiyar carbon a dazuzzukan zafi na kudu da Sahara."
+    },
+    {
+      "hyp": "Yanke itatuwa a hankali don inganta ƙasa, in ji masana kimiyya da ke nazarin dazuzzukan Zambiya."
+    },
+    {
+      "hyp": "Masu bincike sun ce wuraren da aka share da ƙasa ta sama a cikin daji a Zambia suna da karin sinadarin organic, wanda ke nufin ingantacciyar ƙasa."
+    },
+    {
+      "hyp": "Yana da muhimmanci a fahimci ingancin ƙasa a yankin Afirka kudu da Sahara tun da yana da babban tasiri kan yadda tsirrai da itatuwa ke iya bunƙasa."
+    },
+    {
+      "hyp": "Ƙasa tana da sinadarai daban-daban, kuma abubuwan halitta da carbon sune mafi muhimmanci don taimakawa tsirrai su girma."
+    },
+    {
+      "hyp": "Sinadaran halitta sune haɗe-haɗe a cikin ƙasa da suka fito daga ragowar tsirrai da dabbobi da suka mutu."
+    },
+    {
+      "hyp": "Fiye da rabin (58%) na kayan organic kawai gawayi ne, sauran kuma ruwa ne da sauran sinadirai."
+    },
+    {
+      "hyp": "Ƙasa mai ɗauke da karin sinadarin halitta, da kuma carbon, tana riƙe ruwa na tsawon lokaci kuma tana da karin wasu sinadarai."
+    },
+    {
+      "hyp": "Masana kimiyya ba su san da yawa game da canje-canje a cikin sinadarin carbon da kayan halitta a cikin ƙasa na kudu da hamadar sahara ba, ko da yake suna da matuƙar muhimmanci ga girman tsirrai da itatuwa."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu binciken sun so gano yadda kwayoyin halitta na ƙasa a cikin daji suka canza, da abin da ke tantance adadin."
+    },
+    {
+      "hyp": "Sun yi bincikensu a wani daji a Zambia."
+    },
+    {
+      "hyp": "Sun tattara samfuran ƙasa a saman (0-10 cm), tsakiya (10-20 cm), da zurfi (20-30 cm), da kuma a wurare daban-daban na daji."
+    },
+    {
+      "hyp": "Daga nan sai masu binciken suka gwada ƙasar a dakin gwaje-gwaje don bincika yawan abubuwan halitta da take dauke da su."
+    },
+    {
+      "hyp": "Dakin gwaje-gwaje gini ne inda masana kimiyya ke yin gwaje-gwaje da kuma gwaje-gwaje, sau da yawa suna amfani da kayan aiki na musamman don auna takamaiman ma'auni."
+    },
+    {
+      "hyp": "Sun kuma rubuta wasu kaddarorin ƙasa kamar nau'inta, misali yashi ko irin yumbu."
+    },
+    {
+      "hyp": "Sakamakonsu ya nuna cewa adadin kayan organic ya sha bamban tsakanin wurare daban-daban, da kuma a zurfafa daban-daban."
+    },
+    {
+      "hyp": "Ƙasa ta sama tana da mafi girman sinadarin organic har zuwa miligram 114 (mg) a kowace hekta, sannan ƙasa mai zurfi (kusan 100 mg a kowace hekta)."
+    },
+    {
+      "hyp": "Ƙasa ta tsakiya tana da mafi ƙarancin adadi har zuwa 80 mg a kowace hekta."
+    },
+    {
+      "hyp": "Masu binciken sun ce wuraren da aka kwashe a cikin daji kwanan nan suna da karin kayan organic fiye da wuraren da ba a kwashe ba."
+    },
+    {
+      "hyp": "Sun ba da shawarar cewa sare itatuwa a cikin daji, tare da gudanarwa mai kyau, zai iya kara yawan sinadarin ƙasa na halitta."
+    },
+    {
+      "hyp": "Masu binciken sun kuma lura cewa launin ƙasa ya canza daga ruwan kasa mai duhu (ƙasa ta sama) zuwa ruwan kasa mai rawaya (ƙasa mai zurfi), kuma ƙasa mai yashi da yumbu suna da karin sinadarin halitta."
+    },
+    {
+      "hyp": "Yankuna a cikin daji da suka fi fuskantar hasken rana suna da manya da tsofaffin bishiyoyi, da kuma karin kayan halitta."
+    },
+    {
+      "hyp": "Masu binciken, waɗanda suka kasance a Zambia da Afirka ta Kudu, sun ce wasu na iya amfani da hanyoyinsu don tantance ingancin ƙasa a wurare daban-daban da kuma a zurfi daban-daban."
+    },
+    {
+      "hyp": "Inganta Samar da Wake da Haɓaka Yawan Amfani ta Hanyar Dandalin Ƙirƙire-ƙirƙire na Masu Ruwa da Tsaki a Habasha"
+    },
+    {
+      "hyp": "Cicer (Cicer arietinum L.) ita ce ta uku a muhimmancin wake-wake na abinci duka a fannin yanki da kuma samarwa bayan wake-wake na gama gari da wake-wake na faba a Habasha."
+    },
+    {
+      "hyp": "Duk da haka, yawan amfanin gona ya yi ƙasa sosai idan aka kwatanta da yiwuwar sakamakon rashin amfani da ingantattun iri da fasahohin da tsarin bincike ya samar."
+    },
+    {
+      "hyp": "Domin inganta amfani da ingantattun fasahohin bincike da kuma haɗin gwiwa, an kafa Dandalin Kirkire-kirkire na Masu Ruwa da Tsaki na Kasa na Chickpea a shekarar 2013 da nufin haɗa masu ruwa da tsaki daban-daban da ke aiki a kan sarkar darajar don gano manyan ƙalubale da nemo mafita da za a aiwatar ta hanyar haɗin gwiwa."
+    },
+    {
+      "hyp": "Dandalin ya gano karancin iri a matsayin babban cikas a cikin sashen."
+    },
+    {
+      "hyp": "An magance wannan matsala ta hanyar kafa ƙungiyoyin masu samar da iri na manoma tare da taimakon abokan R&D kuma a halin yanzu su ne manyan masu samarwa a ƙasa baki ɗaya."
+    },
+    {
+      "hyp": "A lokaci guda, dandamali ya ƙarfafa ƙoƙarin tsawo da haifar da yaɗuwar fasahohin ingantattu ga yawancin manoma."
+    },
+    {
+      "hyp": "Sakamakon haka, yawan amfanin gona na manoman samfur ya ƙaru sau huɗu kuma yawan amfanin gona na ƙasa ya ninka zuwa ton 2 ha−1 a cikin shekarun da suka gabata."
+    },
+    {
+      "hyp": "Dandalin kuma ya yi aiki kan inganta samun damar kasuwa kuma kwanan nan wake ya shiga kasuwar musayar kayayyakin Habasha."
+    },
+    {
+      "hyp": "Da yake sane da babbar damar ci gaban amfanin gona, dandamali yana ƙoƙarin ƙara ƙarfafa shirin da kuma amfana da damar."
+    },
+    {
+      "hyp": "Yadda Habasha ta bunƙasa samar da wake mai suna chickpea"
+    },
+    {
+      "hyp": "Masu binciken sun bayyana yadda ƙasar Habasha ta ƙara yawan samar da wake ta hanyar tabbatar da cewa manoma suna da damar samun ingantattun iri da horo kan ingantattun hanyoyin noma."
+    },
+    {
+      "hyp": "Ciciyar wake amfanin gona ne mai kama da wake da ake yawan nomawa a Habasha."
+    },
+    {
+      "hyp": "Yawancin amfanin ƙasar ana ma fitar da su zuwa wasu ƙasashe."
+    },
+    {
+      "hyp": "Shekaru da suka gabata, mutane da dama sun gane cewa manoma za su iya samar da ƙarin chickpeas idan sun yi amfani da ingantattun iri da za su iya jure wa kwari da cututtuka."
+    },
+    {
+      "hyp": "Wani sabon littafi ya rubuta yadda samar da chickpea a ƙasar Habasha ya ƙaru tun bayan wannan fahimtar."
+    },
+    {
+      "hyp": "Marubutan sun ce a shekarar 2013, Habasha ta kafa wani ‘Dandalin Kirkire-Kirkire na Masu Ruwa da Tsaki na Kasa kan Ciyawa’ wanda ya tattauna matsalolin da ke cikin samar da ciyawa kuma ya fito da mafita."
+    },
+    {
+      "hyp": "Dandali yana kama da ƙungiya."
+    },
+    {
+      "hyp": "Dandalin ya haɗa da masu bincike, Ma'aikatar Noma ta Habasha, ƙungiyoyin manoma da ƙungiyoyi, masu sarrafa abinci, masu samar da iri, da abokan fitarwa."
+    },
+    {
+      "hyp": "Marubutan sun ce dandamali ya ga ƙarancin iri a matsayin babbar ƙalubale, sannan suka kafa ƙungiyoyi don samar da iri a duk faɗin ƙasa."
+    },
+    {
+      "hyp": "Wannan canjin ya ninka samar da chickpea zuwa tan 2 a kowace hekta."
+    },
+    {
+      "hyp": "Wani matsala da suka gano shi ne ƙarancin ingancin amfanin gona."
+    },
+    {
+      "hyp": "Sun horar da manoma kan hanyoyin samar da kayayyaki mafi kyau, kamar amfani da takin zamani don inganta ingancin ƙasa."
+    },
+    {
+      "hyp": "Sun kuma lura cewa manoma suna fama da wahalar sarrafa ciyawa."
+    },
+    {
+      "hyp": "Saboda haka, sun ba manoma iri na chickpea da zai iya girma da kyau ko da an feshe shi da magungunan kashe ciyawa, waɗanda su ne sinadarai da manoma ke amfani da su don sarrafa ciyawa ko tsirrai marasa so."
+    },
+    {
+      "hyp": "Marubutan sun ce dandamali ya tabbatar da cewa an horar da manoma don ƙara iliminsu kan samar da chickpea."
+    },
+    {
+      "hyp": "Manoma kuma sun halarci abubuwan da suka ba su damar musayar bayanai da kuma kwarewarsu."
+    },
+    {
+      "hyp": "Marubutan sun ce dandamalin ya kuma haɗa manoma da masu saye, da kuma masu samar da iri da waɗanda ke da alhakin saye da rarraba iri ga manoma."
+    },
+    {
+      "hyp": "Dandalin ya kuma kafa kuma ya horar da ƙungiyoyin mata da matasa kan samar da chickpea."
+    },
+    {
+      "hyp": "Sun ƙara ƙarfafa mata da matasa su shiga cikin samar da iri."
+    },
+    {
+      "hyp": "Marubutan sun ce duk da nasarorin da aka samu, har yanzu akwai ƙarancin iri na chickpea."
+    },
+    {
+      "hyp": "Har ila yau, sun ce dandali zai iya cim ma ƙari idan suna da albarkatu don su rika haɗuwa akai-akai."
+    },
+    {
+      "hyp": "Sun bayar da shawarar cewa Ma'aikatar Noma ta Habasha da masu bincike su tallafa wa dandamali da kuɗi don kada ya rushe."
+    },
+    {
+      "hyp": "Sun kuma ba da shawarar inganta ingancin wake-waken chickpea da yadda ake sarrafa haɗarin samar da chickpea, kamar cututtuka."
+    },
+    {
+      "hyp": "A ƙarshe, marubutan sun yi kira da a samar da ƙarin ingantattun iri da za a iya girbe su cikin sauƙi ta amfani da injuna, kuma waɗanda ba su shafi magungunan kashe ciyawa."
+    },
+    {
+      "hyp": "Wani bambancin SARS-CoV-2 na layin A (A.23.1) tare da canjin spike ya bayyana kuma yana mamaye annobar Uganda ta yanzu."
+    },
+    {
+      "hyp": "Sa-ido kan ilahirin ƙwayoyin halittar SARS-CoV-2 a Uganda yana ba da dama don bayar da cikakken bayani kan ci gaban ƙwayar cutar a cikin ƙaramar ƙasa mai kulle a Gabashin Afirka."
+    },
+    {
+      "hyp": "Anan muna nuna wani sabon canji a cikin annobar gida tare da sabon layin A.23 da ke fitowa zuwa A.23.1 wanda yanzu ya mamaye lamuran Uganda kuma ya bazu zuwa wasu ƙasashe 26."
+    },
+    {
+      "hyp": "Ko da yake ainihin sauye-sauyen a cikin A.23.1 yayin da ta daidaita sun bambanta da sauye-sauyen a cikin nau'ikan damuwa (VOC), juyin halitta yana nuna haɗuwa a kan irin wannan saitin furotin."
+    },
+    {
+      "hyp": "Yankin lambar furotin mai kauri na A.23.1 ya tara sauye-sauye da suka yi kama da yawancin sauye-sauyen da aka gani a cikin VOC ciki har da sauyi a matsayi na 613, sauyi a wurin yanke furin wanda ke tsawaita tsarin amino acid na asali, da sauye-sauye da yawa a cikin yankin N-terminal mai haifar da rigakafi."
+    },
+    {
+      "hyp": "Bugu da ƙari, A.23.1lineage yana ɗauke da canje-canje a cikin furotin da ba na spike ba waɗanda sauran VOC ke nunawa (nsp6, ORF8 da ORF9)."
+    },
+    {
+      "hyp": "Tasirin A.23.1 iri a fannin asibiti bai bayyana ba tukuna, duk da haka yana da muhimmanci a ci gaba da sa-ido mai kyau a kan wannan iri, da kuma saurin tantance sakamakon sauye-sauyen furotin na spike kan tasirin magani."
+    },
+    {
+      "hyp": "Masu bincike sun bayar da rahoto kan ci gaban bambancin SARS-CoV-2 a Uganda."
+    },
+    {
+      "hyp": "A cikin shekarar 2021, masu bincike sun bayar da rahoton cewa sabon bambancin SARS-CoV-2, ƙwayar cutar da take haifar da Covid-19, ta ɓulla a Uganda kuma ta yaɗu zuwa wasu ƙasashe 26."
+    },
+    {
+      "hyp": "Sun sanya wa bambancin suna \"A.23.1\", kuma sun ce yana da yawancin irin waɗannan sauye-sauyen a cikin furotin da masu bincike suka lura da su a cikin wasu bambance-bambancen da ke da damuwa a duniya a wannan lokacin."
+    },
+    {
+      "hyp": "Masana kimiyya suna bin diddigin yadda nau'ikan coronavirus ke canzawa don su fi fahimtar yadda magunguna za su iya aiki da kyau kan sabbin nau'ikan."
+    },
+    {
+      "hyp": "Covid-19 ta kashe mutane da yawa a duk faɗin duniya."
+    },
+    {
+      "hyp": "A cikin wani tsari da aka sani da sa-ido na ilahirin ƙwayoyin halitta, masana kimiyya suna sa-ido kan yadda ilahirin ƙwayoyin gado da furotin na ƙwayar cutar suke canzawa yayin da take yaɗuwa."
+    },
+    {
+      "hyp": "Suna amfani da wannan bayanin don sarrafa cutar da kuma jagorantar ci gaban rigakafi."
+    },
+    {
+      "hyp": "Misali, ta hanyar fahimtar tsarin furotin ɗin ƙwanƙolin ƙwayar cutar, masu bincike za su iya tsara magunguna da suka fi dacewa da waɗannan furotin don taimakawa hana ƙwayar cutar shiga ƙwayoyin halitta na ɗan’adam."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu bincike sun kalli musamman yadda SARS-CoV-2 ke canzawa a Uganda."
+    },
+    {
+      "hyp": "Masu bincike sun tantance jerin ƙwayoyin gado na ƙwayar cutar a cikin samfuran da suka nuna COVID-19 da aka tattara a fadin Uganda."
+    },
+    {
+      "hyp": "Sun yi amfani da manhajar kwamfuta don bin asalinsa (ko tarihin dangi) na sabon nau'in da suka gano ta wannan hanya (wanda ake kira A.23.1), kuma sun iya ganin inda nau'in ya dace a cikin bishiyar dangi ta SARS-CoV-2."
+    },
+    {
+      "hyp": "Sakamakonsu ya nuna cewa bambancin A.23.1 kwanan nan ya samo asali daga wani bambanci da ake kira A.23, kuma an gano shi a cikin kashi 90% na dukkan samfurin da suka kasance masu kyau."
+    },
+    {
+      "hyp": "A wasu kalmomi, ya mamaye samfuran ƙasar Yuganda tun watan Oktoba 2020."
+    },
+    {
+      "hyp": "Sun kuma gano cewa bambancin A.23.1 yana da sauye-sauye da dama a cikin furotin mai kauri da suka yi kama da sauye-sauyen da aka gani a cikin wasu bambance-bambancen da ke da damuwa."
+    },
+    {
+      "hyp": "Canje-canje na iya sa bambancin ya fi saurin yaɗuwa (yana yaɗuwa cikin sauri), kuma ya fi juriya ga magani da magunguna."
+    },
+    {
+      "hyp": "Wannan binciken yana ƙara wa ƙoƙarin da ake yi na jeri nau'ikan SARS-CoV-2 a duniya."
+    },
+    {
+      "hyp": "Sakamakon yana ƙara zuwa ga shaidar da ke ƙaruwa cewa SARS-CoV-2 yana saurin juyin halitta yayin da yake yaɗuwa don kamuwa da ƙarin mutane da kuma kauce wa magani."
+    },
+    {
+      "hyp": "Duk da haka, ana buƙatar ƙarin bincike don fahimtar menene ainihin tasirin ko ayyukan sauye-sauyen furotin mai kauri a cikin bambancin A.23.1 za su kasance."
+    },
+    {
+      "hyp": "Masu binciken sun ba da shawarar ƙarin sa-ido na ƙwayoyin halitta don taimaka mana fahimtar yadda nau'ikan ƙwayar cuta ke amsawa ga magungunan da ake da su a Uganda da sauran ƙasashe."
+    },
+    {
+      "hyp": "Har ila yau, suna cewa sa-ido kan tafiye-tafiyen ƙasa da ƙasa yana da muhimmanci domin masu bincike su fi fahimtar yadda ƙwayar cutar ke yawo a cikin gida."
+    },
+    {
+      "hyp": "Menene Yake Sa Mace?"
+    },
+    {
+      "hyp": "Nazarin Lokuta da ke Bayyana Dalilai da Yanayin Yankan Al'aurar Mata a Indonesia, Habasha da Kenya"
+    },
+    {
+      "hyp": "Yanke/illata al'aurar mata wata mummunar al'ada ce wadda take take haƙƙin mata kuma tana da mummunan tasiri ga lafiyar su."
+    },
+    {
+      "hyp": "Wannan takarda ta gabatar da dalilai da yanayin yi wa mata kaciya/ yanke al'aura (FGM/C) a wasu wurare na ƙasashe uku - Indonesiya, Habasha da Kenya."
+    },
+    {
+      "hyp": "An tattara bayanai ta hanyar wani binciken gidaje tare da matasa (shekaru 15-24) da kuma ta hanyar tattaunawar rukunin mayar da hankali, tambayoyi masu zurfi da manyan tambayoyi na tattaunawa da matasa da masu ruwa da tsaki na al'umma a cikin shekarar 2016 da 2017."
+    },
+    {
+      "hyp": "An gudanar da ƙididdigar bayanin da kuma nazarin abun ciki na jigogi."
+    },
+    {
+      "hyp": "Sakamakon binciken ya tabbatar da wasu daga cikin dalilan FGM/C da aka rubuta a baya, yana lura cewa waɗannan dalilan suna da alaƙa sosai, kuma ka'idojin jinsi sune tushen motsa jiki."
+    },
+    {
+      "hyp": "A cikin dukkanin saituna uku, waɗannan dalilai suna haifar da sauye-sauyen jikin mata don haifar da jiki mai 'al'ada' wanda ya dace da matsayin maza na gargajiya."
+    },
+    {
+      "hyp": "Wannan yana haifar da ‘tsarkakakken jiki’ a Indonesia, ‘jikin da aka horar’ a Habasha da kuma ‘jikin manya’ a Kenya."
+    },
+    {
+      "hyp": "Ma’aikatan kiwon lafiya da iyaye suna taka muhimmiyar rawa wajen yanke shawara game da FGM/C a dukkan wurare."
+    },
+    {
+      "hyp": "A Kenya, musamman, matan matasa suna tattauna rawar da suke takawa wajen yanke shawara game da FGM/C yayin da suke manya a lokacin kaciya."
+    },
+    {
+      "hyp": "Binciken ya bayyana yadda sauye-sauyen yanayin doka da zamantakewa a kowane wuri ke kawo sauye-sauye a al'adar FGM/C wanda ke haifar da likitanci na FGM/C a Indonesia, rage shekarun yankewa ga 'yan mata a Kenya da kuma kara boye aikin FGM/C a Habasha."
+    },
+    {
+      "hyp": "Misalan guda uku suna nuna babbar bambanci a cikin aiwatar da FGM/C da kuma ma'anar zamantakewa da matasa mata da al'ummominsu ke danganta masa."
+    },
+    {
+      "hyp": "Akwai buƙatar ƙarin bincike kan rawar da iyaye ke takawa a cikin yanke shawara."
+    },
+    {
+      "hyp": "Saboda dangantaka tsakanin masu haifar da FGM/C daban-daban a cikin kowane yanayi, binciken ya kammala cewa ya kamata a ɗauki matakan da suka dace da kevavvun yanayi don samar da canji mai ɗorewa."
+    },
+    {
+      "hyp": "Don dakatar da yankewar al'aurar mata, da farko muna buƙatar fahimtar dalilin da yasa ake yin sa."
+    },
+    {
+      "hyp": "Yankan al'aurar mata, wata al'ada inda ake yanke ko cire wasu sassan al'aurar mata, har yanzu yana faruwa ba bisa ka'ida ba ko a boye a ƙasashe kamar Kenya, Habasha da Indonesiya."
+    },
+    {
+      "hyp": "Masu bincike sun ce fahimtar dalilin da ya sa hakan ke faruwa shine mabuɗin dakatar da wannan mummunar al'ada, da kuma hana matsalolin kiwon lafiya da na tunani da mata ke fuskanta sakamakon haka."
+    },
+    {
+      "hyp": "A wasu sassan Afirka da Asiya, yankan al'aurar mata (FGM), wanda a wasu lokuta ake kira 'kaciya ta mata', har yanzu ana yawan yin sa."
+    },
+    {
+      "hyp": "Mutane da yawa suna da kuskuren imani cewa FGM yana da muhimmanci don tsafta mai kyau ko don kiyaye mata cikin kunya (ba tare da alfahari ba kuma masu tawali'u), da kuma tabbatar da cewa za su iya haihuwa."
+    },
+    {
+      "hyp": "Babu buƙatar FGM ga kowanne daga cikin waɗannan bisa ga shaidar kimiyya."
+    },
+    {
+      "hyp": "A lokuta da dama, duk da haka, yara da aka yi wa FGM suna gamuwa da matsalolin lafiya a baya a rayuwa, kamar cututtuka masu cutarwa, wahalar yin fitsari, da matsalolin lafiyar hankali."
+    },
+    {
+      "hyp": "Saboda wannan al'ada tana da matuƙar cutarwa kuma tana take haƙƙin ɗan adam na mata, ƙasashe da yawa sun haramta ta, amma mutane har yanzu suna yin ta a ɓoye."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu bincike sun so su fahimci ƙarin dalilin da yasa FGM ke faruwa a ƙasashe daban-daban, da kuma abin da mutane ke imani game da wannan al'ada."
+    },
+    {
+      "hyp": "Saboda haka sun tattara bayanai game da FGM a Kenya, Habasha da Indonesiya."
+    },
+    {
+      "hyp": "A kowace ƙasa, masu binciken sun yi magana da mutane game da wannan al'ada, ciki har da iyaye, matasa, shugabannin gargajiya, ma'aikatan lafiya, da 'yan yankewa' (tsofaffin mata da suka saba yin FGM a kan 'yan mata)."
+    },
+    {
+      "hyp": "A wasu lokuta, sun yi hira da waɗannan mutanen ɗaya bayan ɗaya, amma sun kuma yi magana da rukunonin mutane, ciki har da matasa da samari, waɗanda suka sha wahalar FGM."
+    },
+    {
+      "hyp": "Masu binciken sun gano cewa dalilan FGM, yadda aka yi shi, da imani game da wannan al'ada, sun bambanta a kowace ƙasa."
+    },
+    {
+      "hyp": "Sun kuma gano cewa mutane da yawa har yanzu suna aiwatar da shi, ko da a wuraren da ba bisa ƙa'ida ba ne."
+    },
+    {
+      "hyp": "Misali, a Indonesia, masu haihuwa na gargajiya suna amfani da wuƙa ko allura don yanke wani ɓangare na al'aura (ƙashin da ke da alhakin jin daɗin jima'i a mata) lokacin da jaririya mace ta kai kwanaki 40."
+    },
+    {
+      "hyp": "Mutane sun yi imani cewa wannan yana taimakawa wajen 'cire datti' kuma yana da muhimmanci saboda dalilai na addini."
+    },
+    {
+      "hyp": "A Habasha, FGM ta faru ma da wuri, wani lokaci lokacin da jarirai suke da kwanaki 7 kawai."
+    },
+    {
+      "hyp": "Masu binciken sun gano cewa mutanen can sun yi imani cewa wannan zai tabbatar da cewa yarinyar za ta zama 'matar kirki' wata rana, kuma za ta kasance mai biyayya, ba mai tsokana ga mijinta ba."
+    },
+    {
+      "hyp": "Mutane da yawa sun kuma yi imani cewa FGM yana sauƙaƙa haihuwa amma a zahiri yana iya sa haihuwa ya zama da wahala maimakon haka."
+    },
+    {
+      "hyp": "A halin yanzu a Kenya, FGM yana nuna cewa yarinya ta kai matsayin balaga, kuma yawanci yana faruwa daga baya a rayuwa, lokacin da take matashiya."
+    },
+    {
+      "hyp": "A wasu lokuta, duk da haka, sun gano cewa 'yan mata na iya fuskantar FGM tun suna 'yan shekara 8, kuma cewa da yawa daga cikin 'yan mata sun sami juna biyu a lokacin samartaka, saboda ana ɗaukar su sun isa yin jima'i bayan FGM."
+    },
+    {
+      "hyp": "Masu binciken sun ce binciken nasu ya nuna cewa akwai dalilai daban-daban da yawa da ke sa FGM har yanzu yana faruwa."
+    },
+    {
+      "hyp": "Yayin da dokoki da ra'ayoyin zamantakewa ke canzawa, yadda da inda ake yin sa ma yana canzawa."
+    },
+    {
+      "hyp": "Alal misali, iyaye na iya ƙoƙarin yin hakan a ɓoye ko da yake ba bisa doka ba ne, domin suna tunanin yana da muhimmanci ga 'yarsu ta kasance lafiya ko ta sami miji mai kyau."
+    },
+    {
+      "hyp": "Yana da muhimmanci a fahimci cewa saboda FGM ba bisa doka ba ne a wasu wurare, bincike kan batun na iya zama da wahala, kuma mutane ba za su iya bayar da amsoshin gaskiya ba koyaushe game da batun."
+    },
+    {
+      "hyp": "A nan gaba, ban da haramta shi, masu bincike sun ce gwamnatoci da hukumomin kiwon lafiya ya kamata su yi niyya su dakatar da FGM ta hanyar magance ƙarya da mutane ke yi game da wannan aiki da kuma ilmantar da su game da haɗarinsa."
+    },
+    {
+      "hyp": "Wannan binciken haɗin gwiwa ne tsakanin masana kimiyya daga Habasha, Indonesia da Netherlands, kuma yana cikin wani babban shiri, mai suna 'Yes I Do programme', wanda ke da nufin rage yawan juna biyu a tsakanin matasa, auren yara da kuma FGM."
+    },
+    {
+      "hyp": "Rashin Daidaiton Hormonan Haihuwa, Mutuwar Germ Cell, Abnormal Sperm Morphophenotypes da Sauye-sauyen Ultrastructural a cikin Testis na Babban Berayen Afirka (Cricetomys gambianus, Waterhouse, 1840) da aka fallasa ga Guba na Sodium Metavanadate"
+    },
+    {
+      "hyp": "Bayyanar muhalli ga vanadium ya kasance yana ƙaruwa a cikin 'yan kwanakin nan."
+    },
+    {
+      "hyp": "Wannan ƙarfe sanannen guba ne."
+    },
+    {
+      "hyp": "Binciken da aka yi a yanzu an gudanar da shi ne don bincikar guba ta haihuwa na sodium metavanadate (SMV) a cikin mazan ɓerayen Afirka manya."
+    },
+    {
+      "hyp": "An gudanar da bayar da SMV ta hanyar ciki kowace rana na tsawon kwanaki 14 a jere a cikin kashi na 3mg/kg na nauyin jiki."
+    },
+    {
+      "hyp": "An ba da ruwa mai tsabta ga rukunin kulawa."
+    },
+    {
+      "hyp": "Mun yi nazarin ƙwayoyin halitta na haihuwa a cikin jini, adadin maniyyi da ingancinsa da kuma sauye-sauyen tsarin ciki na gwaiwa bayan maganin SMV."
+    },
+    {
+      "hyp": "Sakamakonmu ya nuna cewa ƙungiyar AGR da aka fallasa SMV ta sami ƙarin ƙwayoyin sarrafa haila a cikin kididdiga amma ta rage yawan testosterone, FSH da LH."
+    },
+    {
+      "hyp": "Haka kuma, rukunin da aka bi da SMV ya sami raguwa a cikin motsi da aikin taro na maniyyi tare da ƙaruwa a cikin kashi na morphophenotypes marasa kyau na maniyyi da kuma haɓaka ƙwayar halitta mai P53 immunopositive."
+    },
+    {
+      "hyp": "Binciken tsarin ƙwayoyin halitta ya bayyana vocuolation na ƙwayoyin halitta da Sertoli, cytoplasmic da tantani; kuma an kuma lura da kumburi da vocuolations na mitochondria."
+    },
+    {
+      "hyp": "Akwai mummunan rugujewar bututun seminiferous, atrophy da lalacewar ƙwayoyin myeloid da apoptosis na Leydig, Sertoli da ƙwayoyin halitta na haihuwa."
+    },
+    {
+      "hyp": "A ƙarshe, fallasa SMV ta cikin ciki yana haifar da mummunan tasiri akan wasu jinin hormones na haihuwa, rage adadin maniyyi da inganci, apoptosis da canje-canje na lalacewa na Leydig, Sertoli da ƙwayoyin halitta wanda zai iya haifar da rashin haihuwa."
+    },
+    {
+      "hyp": "Masu bincike sun ce ƙarfe da aka samu a cikin iska mai gurɓata yana sa bera rashin haihuwa."
+    },
+    {
+      "hyp": "Masu bincike sun gano cewa vanadium, wani nau'in ƙarfe, yana lalata ƙwayoyin halittar ɓeraye da kuma iyawarsu na haifar da 'ya'ya (haihuwa)."
+    },
+    {
+      "hyp": "Saboda wannan ƙarfe yana da guba ga mutane, sun ba da shawarar a yi karin bincike don gano ko ƙarfen, wanda ake samu a cikin muhallinmu saboda gurbatawa, na iya haifar da irin waɗannan mummunan tasiri ga lafiyar ɗan adam."
+    },
+    {
+      "hyp": "Ko da yake vanadium ƙarfe ne, yana iya shiga cikin iska a ƙananan adadi lokacin da aka ƙone ɓurɓushin halittu, kamar mai da gawayi."
+    },
+    {
+      "hyp": "Yayin da duniya ke amfani da waɗannan hanyoyin mai da yawa, yawan gurbacewar vanadium yana ƙaruwa."
+    },
+    {
+      "hyp": "Mun riga mun sani cewa mutane da suka kamu da shi na iya fama da matsalolin lafiya kamar rashin jini, bushewar makogwaro da idanu, da ciwon kirji."
+    },
+    {
+      "hyp": "Kwanan nan, masana kimiyya sun kuma fara sha'awar tasirin da vanadium zai iya yi akan haihuwa."
+    },
+    {
+      "hyp": "Sun fara nazarin waɗannan tasirin a cikin ɓeraye, waɗanda ake yawan amfani da su a dakin gwaje-gwaje saboda kamanninsu da ɗan’adam."
+    },
+    {
+      "hyp": "A wannan binciken, masana kimiyya sun yi sha'awar tasirin vanadium a kan wani nau'in ɓera da aka fi samu a Yammacin Afirka, wanda ake kira African Giant Rat."
+    },
+    {
+      "hyp": "Sun so su fahimci yadda vanadium ke canza tsarin haihuwar ɓeraye maza, musamman maniyyi, sinadaran hormone, da ƙwayoyin halittar gwaiwarsu."
+    },
+    {
+      "hyp": "Masu binciken sun yi allurar vanadium ga mazan ɓeraye 6 sau ɗaya a rana, na tsawon kwanaki 14."
+    },
+    {
+      "hyp": "A lokaci guda, sun yi allurar ruwa ga wasu ɓeraye 6 a matsayin gwajin “na kulawa”."
+    },
+    {
+      "hyp": "Saboda ruwa ba zai yi tasiri ga ɓerayen ba, masu binciken za su iya tabbatar da cewa duk wani sauye-sauye da suka gani a cikin ɓeraye shida na farko sakamakon allurar vanadium ne."
+    },
+    {
+      "hyp": "Bayan kwana 14, sun bincika ko adadin sinadaran halitta, kamar testosterone, ya canza, kuma sun duba ƙwayoyin haihuwarsu sannan suka ƙirga maniyyi."
+    },
+    {
+      "hyp": "Ta yin amfani da wata dabara da ake kira Transmission Electron Microscopy (TEM), sun sami damar ganin duk wani canji da ya faru a cikin ƙwayoyin maniyyi dalla-dalla, har zuwa matakin ɗaiɗaikun ƙwayoyin halitta."
+    },
+    {
+      "hyp": "Masu binciken sun gano cewa ɓerayen da aka yi musu allurar vanadium suna da matakin testosterone mai ƙasa sosai, da sauran sinadarai masu muhimmanci ga haihuwa."
+    },
+    {
+      "hyp": "ɓerayen da aka yi wa allurar vanadium suma suna da ƙananan maniyyi sosai, kuma maniyyinsu ba shi da lafiya sosai."
+    },
+    {
+      "hyp": "Masu binciken sun gani, misali, cewa wasu daga cikin maniyin ɓerayen ba su da kai ko kuma suna da wutsiya mai lanƙwashe, kuma ba su motsa kamar maniyin daga ɓerayen da aka yi musu allurar ruwa."
+    },
+    {
+      "hyp": "Saboda maniyyi su ne ƙwayoyin halitta na jinsi na maza, ana amfani da su don yin taro da ƙwai a cikin mata, waɗannan sauye-sauyen za su sa ya fi wahala ga ɓerayen su yi nasarar haihuwa."
+    },
+    {
+      "hyp": "A ƙarshe, masu binciken sun gano cewa wasu daga cikin ƙwayoyin halitta daga cikin gwaiwar ɓerayen sun lalace sosai ko ma an lalata su ta hanyar vanadium."
+    },
+    {
+      "hyp": "Masu binciken sun ce sauye-sauyen da suka gano na iya haifar da rashin haihuwa gaba ɗaya."
+    },
+    {
+      "hyp": "Sun lura cewa tun da dabbobin da aka fallasa su ga vanadium da sauran gurɓataccen yanayi a muhalli na iya kasa haihuwa, suna iya bacewa saboda wadannan tasirin."
+    },
+    {
+      "hyp": "Saboda mutane dabbobi ne masu shayarwa kamar ɓeraye, masana kimiyya ya kamata su kuma binciki duk wani mummunan tasiri mai yiwuwa na vanadium a cikin gurɓatattun muhalli akan lafiyar ɗan’adam."
+    },
+    {
+      "hyp": "Masu binciken sun yi gargadi cewa wasu daga cikin sauye-sauyen da suka gano a cikin tsarin jikin dabbobi da sinadarai sun bambanta da abin da binciken kimiyya na baya ya gano, don haka ana buƙatar ƙarin aiki domin fahimtar lalacewar da vanadium ke haifarwa."
+    },
+    {
+      "hyp": "Wannan binciken na haɗin gwiwa ne tsakanin masana kimiyya daga Nijeriya da Misira, kuma yana ƙara wa abin da masana kimiyya suka sani game da yadda gurɓatar yanayi ke shafar dabbobi, da kuma yiwuwar mutane."
+    },
+    {
+      "hyp": "Amfani da Tsirrai na Gidan Gona a cikin Al'ummar Asali a Arewa Maso Yamma na Habasha"
+    },
+    {
+      "hyp": "Haɗin ganyayyaki na lambunan gida a Arewa maso Yammacin Habasha gaba ɗaya, da kuma yankin Gozamin musamman, ya sami ɗan kulawa daga bincike."
+    },
+    {
+      "hyp": "Manufar wannan binciken ita ce don ingantaccen fahimtar tsarin tsirrai da muhimmancin al'adu na lambunan gida."
+    },
+    {
+      "hyp": "An yi amfani da tsarin samfurin bazuwar mai rarrabuwa bisa la'akari da bambancin yanayin noma a cikin kebeles da aka zaɓa."
+    },
+    {
+      "hyp": "An tattara bayanan lambun gida ta hanyar raba lambun gida zuwa nau'in quadrats guda hudu, na farko ya miƙe daga gidan manomi zuwa mita 10, na biyu daga mita 10 zuwa mita 20, na uku daga mita 20 zuwa mita 30, kuma na huɗu daga mita 30 zuwa mita 40 a kwance ta amfani da gidan manomi a matsayin ma'auni gwargwadon girman lambun."
+    },
+    {
+      "hyp": "An gudanar da wata hira da aka tsara rabin tsari don rubuta ilimin mai bayar da rahoto kan nau'in tsirrai."
+    },
+    {
+      "hyp": "Jimillar nau’o’in tsirrai 238 masu muhimmanci ga al’adu daga iyalai 81 aka gano."
+    },
+    {
+      "hyp": "Daga cikin waɗannan, kashi 39% ganye ne, kashi 29% ƙananan bishiyoyi ne, kashi 6% masu hawa ne."
+    },
+    {
+      "hyp": "Tsirrai masu tsawon rai sun kasance mafi yawan ɓangaren nau’o’in da aka noma (83%), yayin da na shekara-shekara suka kasance saura (17%)."
+    },
+    {
+      "hyp": "Iyalan Poaceae suna da nau’o’i mafi yawa, guda 22, sai Fabaceae, wanda ke da 21, da kuma Asteraceae wanda ke da 15."
+    },
+    {
+      "hyp": "Daga cikin waɗannan tsirrai da aka rubuta, 140 (58.6%) nau'ikan da aka yi amfani da su don amfanin muhalli, 84 (35%) amfanin gona, 83 (34.7%) nau'ikan tsirrai na magani, 39 (16.3%) nau'ikan ciyawa, 57 (23.8%) tsirrai don amfani da kayan aiki, 60 (25%) nau'ikan itacen mai, 50 (21%) tsirrai don amfanin zamantakewa da 1 (0.4%) mai guba."
+    },
+    {
+      "hyp": "Matsayin matrix kai tsaye ya bayyana cewa an gano Cordia Africana a matsayin shuka mai mahimmanci a al'adu a yankin wanda kuma ke cikin barazana sosai, sannan Ficus sur."
+    },
+    {
+      "hyp": "Amfanin Cordia africana mafi girma shine don Gina, kuma ƙimar da aka fi amfani da ita shine don magani."
+    },
+    {
+      "hyp": "Matsayin kamanceceniya na Sorensen don kashi 64 na wuraren da aka bincika ya kasance ƙasa da 0.5."
+    },
+    {
+      "hyp": "Sakamakon ya nuna cewa lambunan gida suna da ayyuka da yawa, kuma suna da tsarin samarwa na dogon lokaci."
+    },
+    {
+      "hyp": "Wadatar abinci da kiyaye bambancin halittu suna samun goyon baya daga ilimin al'adu na al'ummomin kabilu da ke da alaƙa da lambun gidajensu."
+    },
+    {
+      "hyp": "Ƙarancin kamanceceniya/bambance-bambancen nau'o'i masu yawa a yankin tsakanin kebeles ya nuna cewa akwai bambance-bambancen nau'o'i masu yawa wannan ya faru ne saboda bambancin yanayin noman gargajiya tsakanin kebeles."
+    },
+    {
+      "hyp": "Lambunan Habasha suna tallafawa amincin abinci da kiyayewa"
+    },
+    {
+      "hyp": "Masu bincike sun ce yawancin 'yan Habasha suna shuka abinci, tsirrai masu kyau, tsirrai na magani da tsirrai don abincin dabbobi, inuwa ko shinge a lambun su."
+    },
+    {
+      "hyp": "Sun yi nazarin waɗannan lambuna don ganin muhimmancinsu wajen tabbatar da amincin abinci da kuma taimakawa wajen kiyaye muhalli."
+    },
+    {
+      "hyp": "Al'ummomi a duniya suna ajiye lambuna don abinci, don samun kuɗi da kuma wasu dalilai na al'adu."
+    },
+    {
+      "hyp": "Lambuna kuma suna kare muhimman tsirrai waɗanda sau da yawa ba su nan ko kuma suna ɓacewa a wasu wurare."
+    },
+    {
+      "hyp": "A Habasha, ba a yi bincike mai yawa kan abin da al'ummomi ke shuka a lambun su ba."
+    },
+    {
+      "hyp": "A cikin wannan binciken, masu binciken sun so su bincika irin shukokin da mutane a gundumar Gozamin, Arewa maso Yammacin Habasha, suke shukawa a lambunansu da kuma abin da suke amfani da su."
+    },
+    {
+      "hyp": "Sun gano kuma sun ƙirga tsire-tsire a cikin lambuna guda 357 a yankin."
+    },
+    {
+      "hyp": "Sun kuma yi hira da al'umma kan abin da suke amfani da tsirrai don yi."
+    },
+    {
+      "hyp": "Masu binciken sun gano cewa dukkan lambunan da ke Gozamin sun kasance ƙasa da kadada guda a girma."
+    },
+    {
+      "hyp": "Sun tattara kuma sun gano tsirrai daban-daban guda 238."
+    },
+    {
+      "hyp": "Yawancin (83%) tsire-tsire an noma su a duk shekara, kuma kaɗan ne kawai (17%) suke na yanayi."
+    },
+    {
+      "hyp": "Sakamakon su ya nuna cewa al'umma suna amfani da tsirrai don abinci, magani, gine-gine, ciyawar shanu (abincin dabbobi), da sauran amfanin al'adu."
+    },
+    {
+      "hyp": "Yawancin tsirrai suna yi wa fiye da manufa ɗaya."
+    },
+    {
+      "hyp": "Alal misali, ana iya amfani da bishiyar mai manyan ganye ta Arewa don magani, ado, ciyawar shanu, inuwa, shinge da sauran amfanin al'ada."
+    },
+    {
+      "hyp": "Fiye da rabin (59%) na tsirrai an yi amfani da su ne don dalilai na muhalli kamar shinge, shinge-shinge, inuwa da kuma ado."
+    },
+    {
+      "hyp": "Masu binciken sun ce wannan ya taimaka wajen kare muhalli."
+    },
+    {
+      "hyp": "Shingaye na tsirrai sun kuma taimaka wajen kare amfanin gona."
+    },
+    {
+      "hyp": "Fiye da kashi ɗaya bisa uku (35%) na tsirrai an girbe su don abinci, kamar 'ya'yan itatuwa, kayan lambu, hatsi da kayan ƙamshi."
+    },
+    {
+      "hyp": "Duk da haka sun ce lambunan a yankin sun fi samar da 'ya'yan itatuwa."
+    },
+    {
+      "hyp": "Masu binciken sun ce kashi 35% na shuke-shuke ana amfani da su a matsayin maganin gargajiya don jin daɗin ɗan adam da dabbobi, yayin da kashi 21% ake amfani da su don al'adu da dalilai na addini, shan taba, turare da yin burodi."
+    },
+    {
+      "hyp": "Wasu tsirrai (kashi 17%) an yi amfani da su a matsayin ciyawar shanu don ciyar da shanu, tumaki, da jakuna."
+    },
+    {
+      "hyp": "Wasu (kashi 24%) sun kasance kayan gini, yin kayan aikin lambu, rufin rufi da kuma yin igiyoyi."
+    },
+    {
+      "hyp": "Tun da yawancin al'ummomin karkara sun ruwaito suna amfani da itacen wuta, kashi 25% na tsirrai an yi amfani da su don haka."
+    },
+    {
+      "hyp": "Masu binciken sun ce an ambaci shuka ɗaya kawai (0.4%) don dalilan guba."
+    },
+    {
+      "hyp": "Sun kuma ce yadda aka rarraba tsirrai a yankin yana da tasiri daga muhalli, abin da mutane ke son ci, da kuma matsayin kuɗin iyali da bukatun kasuwanci."
+    },
+    {
+      "hyp": "Alal misali, wani yanki da ake kira Wenka wanda yake da ruwan ban ruwa kuma kusa da babban gari, yana da lambuna da yawa kuma ya rubuta tsirrai 130 daban-daban."
+    },
+    {
+      "hyp": "Mutanen Wenka su ma suna noman 'ya'yan itatuwa da kayan lambu kuma suna kaiwa kasuwar gari."
+    },
+    {
+      "hyp": "A ƙarshe, masu binciken sun ce mafi yawan manoma sun fi son shuka tsirrai da suke da amfani da yawa."
+    },
+    {
+      "hyp": "Masu binciken sun ce sakamakonsu ya tabbatar da cewa lallai manoma suna shuka nau'ikan tsire-tsire daban-daban masu yawa a lambunansu, kuma don amfani daban-daban."
+    },
+    {
+      "hyp": "Ko da yake wadannan masu bincike sun gano cewa yawancin manoma suna noman ganye, wasu masu bincike sun ce itatuwa sun fi yawa a yankin."
+    },
+    {
+      "hyp": "Masu binciken wannan binciken sun kasance a jami'o'i a kasar Habasha."
+    }
+  ],
+  "schema_version": "1.0"
+}

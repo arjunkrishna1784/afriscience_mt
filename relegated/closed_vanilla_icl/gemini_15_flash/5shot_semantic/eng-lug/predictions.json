@@ -1,0 +1,2918 @@
+{
+  "experiment_id": "icl_5shot_semantic_eng_lug",
+  "source_lang": "eng",
+  "target_lang": "lug",
+  "samples": [
+    {
+      "hyp": "Okwekebejja omuwendo gw’okugezesa abantu bonna akawuka ka SARS-CoV-2 ogulimu okusobola okutangira okusaasaana kw’akawuka mu kibuga Lusaka ekikulu mu Zambia nga waliwo n’abatalaba bubonero bw’akawuka:"
+    },
+    {
+      "hyp": "Okunoonyereza okulwangu ku mutetenkanyirizo gwa kannakubala"
+    },
+    {
+      "hyp": "Obulwadde bw’akawuka ka corona akapya (COVID-19), obuleetebwa akawuka ka kolona-2 akakosa omussizo (SARS-CoV-2), mu Afirika bulagiddwa okuba n’abantu bangi abatalaga bubonero (oba abalwala obulwadde obutono) abateeberezebwa okuba n’ekigendererwa mu kusaasaanya obuwuka."
+    },
+    {
+      "hyp": "Omuwendo era n’obuwuka bw’abalwadde abatali na bubonero bwa bulwadde tebunnyonnyolekeddwa bulungi."
+    },
+    {
+      "hyp": "Okunoonyereza okwo kyokka kulaga nti okubalagaza kye kyetaagisa okutangira okusaasaana kwa SARS-CoV-2."
+    },
+    {
+      "hyp": "Twakola omutetenkanyirizo omwangu gwa matekemateke gwa bantu abayinza okukwatibwa obulwadde, abalina obulwadde, abatalaga bubonero, n’abawonye (SEIR) okwekenneenya omulimu gw’okweggyawo abantu abalina COVID-19 nga tebalaga bubonero nga tukozesa okukebera abantu bonna okutangira obulwadde okusaasaana mu Disitulikiti ya Lusaka mu Zambia."
+    },
+    {
+      "hyp": "Wano twakola embeera bbiri; (1) nga tulowooza nti abantu abatalaga bubonero baali 70% ku bantu bonna abalina COVID-19 era (2) abantu abatalaga bubonero baali 50% ku bantu bonna abalina COVID-19."
+    },
+    {
+      "hyp": "Okugeraageranya, omutetenkanyirizo gwekebezebwa olubereberye nga kigambibwa nti abantu abatalaga bubonero ba kisiiga mu ngeri y’emu ng’abo abalaga bubonero, oluvannyuma ne lwa kubuulirira, era nga kisinga obutuufu, nga kigambibwa nti abantu abatalaga bubonero ba kisiiga kimu kya kubiri ku abo abalaga bubonero."
+    },
+    {
+      "hyp": "Mu mutetenkanyirizo ogutwala nti abantu abatalaga bubonero ba bitundu 70%, omuwendo omutono ogw’okukebera abantu bonna buli lunaku ogwa ≥ 7911 okukebera/abantu 100000 gwali gumala okulwanyisa obulwadde obubalukawo singa abantu abatalaga bubonero balina ekisiiga kya bitundu 50% kyokka, ate singa ekisiiga kyabwe kye kimu, omwendo gw’okukebera gwali gwa ≥ 10028 okukebera/abantu 100000."
+    },
+    {
+      "hyp": "Ku bantu abatalaga bubonero 50%, omuwendo omutono ogw’okugemesa abantu bonna ogwa ≥ 4540 okwekebera ku bantu 100000 gwali gumu ku gukendeeza ekirwadde ku mitindo gyombi egya kisiiga eri abantu abatalaga bubonero mu kwetula n’eri abantu abalaga bubonero."
+    },
+    {
+      "hyp": "Okukubaganya ebirowoozo n’okukubira"
+    },
+    {
+      "hyp": "Omutetenkanyirizo gwaffe ogulaga nti okweggyawo abalwadde ba COVID-19, nga mw’otwalidde n’abatali na bubonero, okuyitira mu kukebera abantu bonna, kiyinza okukozesebwa ng’engeri emu ey’okutangira okusaasaana kwa SARS-Cov-2 mu Lusaka, Zambia, naye kijja kuba kya muwendo omungi."
+    },
+    {
+      "hyp": "Okwekebera abantu bangi mu bibuga ebinene nga Lusaka kiyinza okukendeeza okusaasaana kwa COVID-19, naye kiba kikolerwa bulungi?"
+    },
+    {
+      "hyp": "Mu 2020, emitetenkanyirizo gya kompyuta yateebereza nti ensaasaana ya COVID-19 mu bibuga ebinene yandisobodde okufugibwa bulungi okuyitira mu kukebera abantu bangi, n’oluvannyuma okwawula abagenda okukebezebwa nga balwadde."
+    },
+    {
+      "hyp": "Wabula, abanoonyereza baagamba nti engeri eno eyinza okuba n’ebbeeyi era nga teyagwanika."
+    },
+    {
+      "hyp": "Ku ntandikwa y’omuwookeera, abantu bangi abaakwatibwa COVID-19 tebaalaga bubonero bwonna bw’ekirwadde, naye ne batwala ekirwadde eri abalala."
+    },
+    {
+      "hyp": "Ebyokunoonyereza ebimu biraga nti abantu abali wakati wa 50% ne 80% abalina COVID-19 tebaalina bubonero (obutalaga bubonero) era bayinza okuba nga be baavuddemu obuwuka obupya wakati wa 40% ne 70%."
+    },
+    {
+      "hyp": "Abanoonyereza baali baagala okumanya oba okunoonya n’okwawula abantu abatalaga bubonero kyandisobodde okuyamba mu kutereeza okusaasaana kwa COVID-19."
+    },
+    {
+      "hyp": "Era baayagala okumanya oba okukebeza abantu bangi mu bujjuvu, ekitegeeza okukebeza abantu bangi mu bukyamu, kizuula abantu abatalaga bubonero mu ngeri esobola okuganyulwa."
+    },
+    {
+      "hyp": "Abanoonyereza baakola omutetenkanyirizo gwa kompyuta oguteebereza engeri abantu gye bayita okuva ku kubeera nga bayinza okukwatibwa, okukwatibwa, okulwala, n’okweggyibwawo."
+    },
+    {
+      "hyp": "Baatunuulira obubaka okuva mu disitulikiti y’e Lusaka mu Zambia, ekyaŋŋamba ekya kampuni n’ekisaawe ky’ensi yonna ekikwatagana n’amawanga abiri."
+    },
+    {
+      "hyp": "Olw’okuba engeri COVID-19 gye yali ebonerera yali eky’enjawulo okuva ekifo ku kifo, baatunula embeera nnya, awamu obuwuka bwa COVID-19 obuli 50% oba 70% nga buli obutalaga bubonero, era obuwuka buno nga buli bwa buwuka obulwadde oba nga bwa buwuka obuli kimu ku bibiri eby’obuwuka obulwadde."
+    },
+    {
+      "hyp": "Omutetenkanyirizo gw’abanoonyereza gwalaga nti kyali kisoboka okukwata okusaasaana kwa COVID-19 nga bakola okukebera abantu bonna era nga bawummula abantu bonna abaazuulwamu obulwadde, ne bo abo abatalina bimujjo."
+    },
+    {
+      "hyp": "Baagamba nti okukendeeza omuwendo gw’abalwadde abasinga obungi ku bitundu 90% mu embeera zonna, abantu 10% mu Lusaka baali beetaaga okukeberwa buli lunaku."
+    },
+    {
+      "hyp": "Era baalaba nti singa twagala obuwuka obw’omukutu gwa Covid-19 obw’omukutu obw’omukutu obupya busigale nga bumu, abantu 22% baalina okwekebezebwa buli lunaku."
+    },
+    {
+      "hyp": "Wadde Zambia yateekawo enkola nyingi ezimenyawo okusaasaana kwa COVID-19, abantu abakwatibwa akawuka kaali akawona okuwonya."
+    },
+    {
+      "hyp": "Okwekebejja abantu bonna mu kibuga kitono eky’e Italy kyakendeeza omuwendo gw’abantu abalina COVID-19 n’ebitundu 90%."
+    },
+    {
+      "hyp": "Wabula, tewali kunoonyereza kwonna kw’emabega okwoleka nti kyandibadde kya mugaso mu kibuga kinene ekirala."
+    },
+    {
+      "hyp": "Kyetegeerezebwa nti abanoonyereza tebaakola kugezesa abantu bonna mu kunoonyereza kuno; wabula baakola omutetenkanyirizo ogulaga nti okwekebeza abantu bonna kwandibadde kukola okuyimiriza okusaasaana kwa COVID-19 mu bibuga ebinene."
+    },
+    {
+      "hyp": "Wabula, baalabula nti kirabika kijja kuba kya ssente nnyingi."
+    },
+    {
+      "hyp": "Era baagamba nti kiyinza okuba nga kikyangu okukikola singa kigattibwa ne mikolo emirala, gamba ng’omuggalo, okugezaako abantu ababadde ne muntu alwadde, n’okutema eddagala."
+    },
+    {
+      "hyp": "Abanoonyereza okuva mu Zambia era baategeeza nti abalwadde ba COVID-19 abatalaga bubonero baalabikanga nga bangi mu Afirika mu kiseera ekyo."
+    },
+    {
+      "hyp": "Okutono kwetaaga okukozesa obubonero bwa polygenic mu bantu b’omu Afirika olw’enjawulo mu ndagabutonde n’obuwangwa."
+    },
+    {
+      "hyp": "Abantu ba Afirika tebakiikirirwa bulungi mu kunoonyereza ku ndagabutonde, naye balina enjawulo ya ndagabutonde ennyingi era balina obubonero bw’obutonde obw’enjawulo mu nsi yonna."
+    },
+    {
+      "hyp": "Olw’okuba okwekebejja okutereezebwa obulungi okw’okuteebereza okw’endagabutonde tekannakoleddwa mu bantu abava mu Afirika abalina enjawulo, twabala obuwumbi bw’endagabutonde (PRS) mu kugezesa mu Afirika yonna ne mu bubaka obuva mu South Afirika, Uganda, ne UK okutegeera obulungi enkolagana y’okunoonyereza ku ndagabutonde."
+    },
+    {
+      "hyp": "Obuwanguzi bwa PRS bweyongera singa abantu abanoonyerezebwa bafanana mu buzaale okusinga okunoonyereza kw’abantu abatali bafaananagana mu buzaale."
+    },
+    {
+      "hyp": "Mu bantu ba South Afirika abalina obuwangwa n’ebika eby’enjawulo, tusanga nti obugenderevu bw’omugero gwa PRS buwanvu ku buli kibonero kyonna, naye bukyuka mu bibinja."
+    },
+    {
+      "hyp": "Enjawulo mu bazzukulu ba Bafrika zikwata nnyo ku nkyukakyuka mu bukozese bw’omugero gwa PRS okusinga enjawulo endala ez’ebibinja ebinene ebyalowoolezebwa wakati w’abantu mu Bungereza ne Uganda."
+    },
+    {
+      "hyp": "Twabala PRS mu bantu ab’omu Afirika nga tukozesa ebyo ebyaliwo eby’omu Bulaaya bokka, nga tubigeraageranya n’okunoonyereza okutunuulira enjawulo mu bantu; enjawulo eyongeddeyo eyingiza obugulumivu obusingawo ku kipimo kya puloteyini ya sukaali n’omuwendo gw’abantu ab’omubiri omumweru, ekiraga enjawulo enkulu ez’endagabutonde ez’omukisa mu ndagabutonde ezimanyiddwa okukwata ku ndwadde ya sickle cell n’okulwala okw’obuwuka, okusinziira ku buli kimu."
+    },
+    {
+      "hyp": "Enjawulo mu bukozeseza bw’omugero gwa PRS mu bantu ba Afirika abava mu bitundu eby’enjawulo, zikulu nga za bantu abava ebweru kwa Afirika, era ekyo kyetaaga okutegeera obulungi."
+    },
+    {
+      "hyp": "Lwaki tetusobola kuteesa bulungi endwadde ez’endagabutonde mu bantu abava mu Afirika."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti enkola ezikozesebwa kati okuteesa oba omuntu ajja kulwala obulwadde obw’endagabutonde oba nedda tezikolera bulungi bantu abava mu Afirika."
+    },
+    {
+      "hyp": "Kino kuba nti obubaka obuli emabega w’okuteebereza okwo, obungi bwabwo bulaga endagabutonde z’abantu abava mu Bulaaya."
+    },
+    {
+      "hyp": "Obubaka bwa GWAS buyimirira “Okunoonyereza ku Bikola Endagabutonde Ebyawamu”, era abayizi b’amasomo ag’ebyenjigiriza bagikozesa okunoonya ebikolwa n’endwadde nga bakozesa endagabutonde."
+    },
+    {
+      "hyp": "Mu butuufu, basobola okukozesa GWAS okubala obulabe bw’endagabutonde bw’omuntu olw’obulwadde oba obulago."
+    },
+    {
+      "hyp": "Kyokka, ebubaka bwingi bw’endagabutonde mu GWAS buva ku bantu abava mu Bulaaya."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baali baagala okulaba obulungi bw’okubala kwe bakozesa okumanya obulabe bw’endwadde ez’endagabutonde nga bakozesa GWAS ku bantu abava mu Afirika."
+    },
+    {
+      "hyp": "Baagala era okulaba obanga okunoonyereza kwa GWAS okw’enjawulo, mu kwogera kwe okulala obubaka obulimu ebikozesebwa ku ndagabutonde za Bafirika, buyongera okutereeza ebyo ebyogerwa."
+    },
+    {
+      "hyp": "Okuwulira kuno kweyambisibwa mu ngeri za sayansi nga “polygenic risk score”, oba PRS."
+    },
+    {
+      "hyp": "Baakozesa kompyuta okubala obungi bw’obulabe obw’endagabutonde obuteeberezebwa eri abantu ba Afirika nga bakozesa GWAS, era baakozesa ebiwandiiko by’eby’obulamu by’abantu ba Afirika okulaba enfaanana oba endwadde ezisinziira ku nkyukakyuka mu ndagabutonde."
+    },
+    {
+      "hyp": "Bwe baakozesa GWAS ey’Ababulaya, baalaba nti omuwendo gw’obulabe bw’endagabutonde gwali mu bujjuvu obusinga singa abantu balina omuntu wa Bulaaya okusinga omuntu wa Afirika ku bintu bingi."
+    },
+    {
+      "hyp": "Baagamba nti obuwuka bw’obulabe buli wansi nnyo wakati w’ebitundu bya Afirika olw’okuba waliwo enjawulo nnyingi mu bantu, ekyo tekyogerera ku ebyo bye tulabye ku bantu abava mu Bulaaya."
+    },
+    {
+      "hyp": "Era baagamba nti obugenderevu bwa PRS bweyongera nga obutaka bwa Afirika bwe buseetera."
+    },
+    {
+      "hyp": "Abantu ba Ethiopia baalabika nga balina obusembayo obulungi mu kwesimba ku ndwadde ezivudde ku ndagabutonde kubanga balina obugattire mu ndagabutonde ng’abantu ba Bulaaya."
+    },
+    {
+      "hyp": "Bwe tukozesa GWAS eya njawulo ennyo erimu abantu abava mu Afirika, obugenderevu bw’okuteebereza bwongera."
+    },
+    {
+      "hyp": "Okuteebereza endwadde ez’omusaayi kyali kyennyini kya bugenderevu."
+    },
+    {
+      "hyp": "Okunoonyereza okw’emabega kulaze nti PRS mpeke eri abantu ba Afirika, ekitegeeza nti  omutindo gwa GWAS gulaga akabenje k’obutonde bw’omubiri obutono eri abantu abava mu Afirika."
+    },
+    {
+      "hyp": "Naye tukimanyi nti kino tekyali kituufu."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kulaga nti obuwuka obutono bw’obulabe bw’endwadde mu ndagabutonde kuba endagabutonde z’Abafrika teziyimiriddwa bulungi mu bubaka bwa GWAS, era n’amagezi g’omuwendo gwa PRS agaliwo kati tegayamba nnyo mu kwesimba endwadde ez’endagabutonde mu Afirika."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti kyandibadde kirungi okukozesa obubaka obulungi obw’enjawulo obulimu obubaka ku ndagabutonde okuva mu bantu abava mu Afirika."
+    },
+    {
+      "hyp": "Kyeyava kibeetaagisa omulimu omugwo okugaziya okunoonyereza kwa GWAS okukwata n’abantu abava mu Afirika, tulyoke tutegeere bulungi enkizo y’endwadde ez’endagabutonde mu bantu ba Afirika."
+    },
+    {
+      "hyp": "Abawandiisi b’okunoonyereza kuno baali bava mu Afirika, USA ne Bungereza."
+    },
+    {
+      "hyp": "Okwekebejja okw’amaaso n’okwekebejja okw’obusembayo mu kuziyiza kookolo w’omumwa gwa nabaana n’ekitundu ky’omumwa gwa nabaana ekitali kya kookolo mu Namibia"
+    },
+    {
+      "hyp": "Kigambibwa nti abakyala nga 851,340 mu Namibia bali mu kabi ak’okufuna akawuka ka HPV akasobola okuleeta kookolo w’omumwa gwa nabaana."
+    },
+    {
+      "hyp": "Okwekebeza ng’olaba n’akasito (VIA) n’okujjanjaba n’obusujju byaweebwa obujulizi obulaga nti bikola nnyo."
+    },
+    {
+      "hyp": "Kyokka, obubaka obukwata ku kukozesa kwa pulogulaamu z’okusunsula kookolo w’omumwa gwa nabaana tebuliwo."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakira okusonzesa okulongooseza n’okusonzesa okw’ekitundu ky’omubiri okutangira obulwadde bwa CIN n’ekookolo w’omumwa gwa nabaana mu Namibia."
+    },
+    {
+      "hyp": "Ebyazuulibwa byalaga nti abakyala abalina akawuka ka HPV, obulwadde mu lubuto lw’omumwa, koilocytosis n’enkyukakyuka ezitali za bulijjo mu butaffaali balimu enkyukakyuka ey’okufuna omuwendo omulungi mu kukebera kwa VIA."
+    },
+    {
+      "hyp": "Abakyala abakulu, naddala abalina HIV, basobola okufuna kookolo w’olususu olusembayo (SCC)."
+    },
+    {
+      "hyp": "Enkola ya VIA ebonerera okuba ey’omugaso mu kusunsula, wadde nti okukozesa colposcopy mu kugoberera abalwadde mu buwangwa bwa Namibia kyetaagisa okuddamu okulowoozebwa era ne kukozesebwa nga waliwo ebyavaamu ebirungi ebya HR-HPV."
+    },
+    {
+      "hyp": "Okuteesa okukozesa enkola ez’okusunsula okulimu okukebera akawuka ka HPV mu bibiina by’obukadde n’obulabe obw’enjawulo (e.g. abalina HIV, abalina obulwadde obwonoona obugonvu bw’omubiri) ."
+    },
+    {
+      "hyp": "Okweyambisa okusunsula kuyinza okweyongera okutereezebwa mu ngeri ez’okujjanjabya ezikozesa omutetenkanyirizo ogukozesa ebyava mu kukebera obulwadde, ebiruubirirwa by’obulamu bw’abakazi, okumanya n’enkola ebikulu mu ggwanga."
+    },
+    {
+      "hyp": "Abakyala Abanamibiya abali mu kabi olw’okokolo w’omumwa gwa nabaana basaanidde okwekebezebwa era n’okujjanjubwa mu bwangu."
+    },
+    {
+      "hyp": "Ebigezo bingi bisobola okulaga obulabe bw’omukyala okuva mu kookolo w’omumwa gwa nabaana, naye okukebera buli kiseera mu Namibia tebikozesezza buli kiseera bino."
+    },
+    {
+      "hyp": "Abanoonyereza batendereza okukebera buli kiseera, okusobola okuzuula obubonero obw’okulabula mu bwangu, kino kiyinza okutaasa abakyala okuva mu ndwadde eno etta."
+    },
+    {
+      "hyp": "Kookolo w’omumwa gwa nabaana (kookolo w’ekitundu ekikadde eky’olubuto) gubaawo okufa kwa bakyala bangi mu nsi yonna."
+    },
+    {
+      "hyp": "Ekimu ku bintu ebisinga okuleeta kookolo w’omumwa gwa nabaana kwe kawuka ka Human Papillomavirus (HPV)."
+    },
+    {
+      "hyp": "Akawuka ka HPV konoona obutaffaali bw’omubiri gw’omukazi, ne kuteekawo ebiwundu ebiyitibwa obulema, ebiyinza okukoma okuba kookolo."
+    },
+    {
+      "hyp": "Wadde waliwo eddagala ery’okwewala akawuka ka HPV, abakazi bangi mu mawanga ga Afrika, nga mw’otwaliddeko Namibia, tebali na kyakukifuna."
+    },
+    {
+      "hyp": "Kino kitegeeza nti okwekebera akawuka oba obubonero bwe buleeta kikulu nnyo eri abakyala bano, kubanga y’engeri esingayo obulungi ey’okuyamba okwewala kookolo."
+    },
+    {
+      "hyp": "Abanoonyereza mu kunoonyereza kuno bagamba nti amalwaliro era yeetaaga obulagirizi obutuufu n’amawulire agakwata ku bikebero ebisinga obulungi okukozesa."
+    },
+    {
+      "hyp": "Baayongerako nti abakozi b’eby’obujjanjabi era beetaaga obubaka obulala ku ngeri embeera gamba nga myaka oba obulamu bwe bizingiramu okuvaako omuntu okufuna akawuka ka HPV ne kookolo."
+    },
+    {
+      "hyp": "Baanoonyereza engeri enzirukanya ezimu ez’okwekebera (eziyitibwa enkola z’okusunsula) bwe zaali mu kuvumba akawuka ka HPV n’ebibala."
+    },
+    {
+      "hyp": "Era baali baagala okugeraageranya enkola z’okusunsula, ng’ekyokulabirako okukunganya obutaffaali okuva mu lubuto okwekebera obulyo obwonooneka okugeraageranya n’okunoonya ebikomere byokka."
+    },
+    {
+      "hyp": "Era baayagala okumanya oba enjawulo wakati w’abakazi, gamba ng’emyaka gyabwe, oba nga balina endwadde endala gamba ng’aka HIV, kyakyusanga omukisa gwabwe okufuna akawuka ka HPV ne kookolo."
+    },
+    {
+      "hyp": "Okumanya obubaka buno kuyamba amalwaliro n’amakaaliiko okukozesa enkola z’okusunsula mu ngeri esingayo obulungi."
+    },
+    {
+      "hyp": "Abanoonyereza baalaba ebiwandiiko by’abalwadde ku bakyala 214 abaali bakebeddwa era ne bajjanjabwa akawuka ka HPV, ebisansa, ne kookolo w’omumwa gwa nabaana mu ddwaaliro e Windhoek, Namibia."
+    },
+    {
+      "hyp": "Baateekateeka nnyo ku kookolo w’omumwa gwa nabaana ogw’omutindo ogw’olubereberye, gwe gumu gwe kirwadde kiyinza okujjanjabwa mu buwanguzi era mu ngeri esingako."
+    },
+    {
+      "hyp": "Baakuŋŋaanya n’obubaka obukwata ku myaka gya buli mukyala, awamu n’obulamu bwe obwa bulijjo."
+    },
+    {
+      "hyp": "Bwe baalondoola ebiwandiiko bino, baazuula nti enkola za okusunsula ez’enjawulo emirundi mingi zaawanga abeebyobulamu amawulire ag’enjawulo, era nga ziyinza okuba nga wa mugaso nnyo nga akawuka ka HPV tekannafuuka kookolo oba oluvannyuma lw’okufuuka kookolo."
+    },
+    {
+      "hyp": "Okugeza, kookolo yakwatibwa emirundi mingi nga bakunganya ne bakebera obutaffaali bw’omubiri gw’omwana."
+    },
+    {
+      "hyp": "Kyokka, ebiziyiro byandirabika mu kulengera, nga tuyita mu ngeri eyitibwa “okulengera oluvannyuma lw’okufuka akawuka aka acetic acid” (VIA)."
+    },
+    {
+      "hyp": "Akinnyonnyo kya ngeri eno kwe kuba nti kiyamba abasawo okukizuula obulwadde mangu era nga si kya buseere."
+    },
+    {
+      "hyp": "Kuba kikozesa ebikozesebwa eby’obujjanjabi ebyangu ebya bulijjo ebikozesebwa mu kwekebeza abakyala mu buwala, gamba ng’ekikozesebwa eky’ekyuma ekikwata ekibira (speculum)."
+    },
+    {
+      "hyp": "Era baakizuula nti okukozesa enkola ezitali zimu emirundi mingi kiwa abasawo ebikwata ku kukanula kwa mukazi okufuna kookolo, naddala mu kwekebeza okw’enjawulo."
+    },
+    {
+      "hyp": "Okwongera, abanoonyereza baazuula nti abakyala abakulu, naddala abo abalina HIV, be baasobola okufuna kookolo, n’olwekyo okubasunsulanga emirundi mingi kiyinza okuba kikulu nnyo."
+    },
+    {
+      "hyp": "Abanoonyereza baagattako nti abakazi batono nnyo be baakebezebwa kookolo ya HPV (nga tebannafuna bisigalira) wadde ng’omukebezewo guliwo."
+    },
+    {
+      "hyp": "Okukola bwetyo kiyinza okuba ng’engeri ya muwendo nnyo ey’okuzula endwadde eyo ne mu bwangu."
+    },
+    {
+      "hyp": "Mu bujjuvu, bagamba nti ebyava mu kunoonyereza kwabwe byalaga nti waliwo obwetaavu bw’okuteesa enkola y’obujjanjabi mu Namibia okuteekateeka enkola z’okwewala akawuka ka HPV ne kookolo w’omumwa gwa nabaana mu ngeri esingako, nga bakozesa enkola z’okukebera ez’enjawulo era ez’obulungi okusobola okuzuula endwadde zino mu bwangu."
+    },
+    {
+      "hyp": "Okunoonyereza kwakolebwa bannassaayansi b’omu Namibia n’ab’omu South Africa."
+    },
+    {
+      "hyp": "Kinnyonnyola ekigambo mu kw’obulabe bwa HBV/HIV bw’ogeraageranya n’obulabe bwa HBV bokka mu kibinja ky’abantu mu South Africa"
+    },
+    {
+      "hyp": "Olw’ebiruubirirwa by’ensi yonna eby’okumalawo akawuka ka Hepatitis B (HBV), twatandika okwekenneenya abantu abalina akawuka ka HBV bokka, n’abo abalina akawuka ka HBV/HIV, okwekenneenya omulimu gw’eddagala, n’okukulembera okutereeza obujjanjabi."
+    },
+    {
+      "hyp": "Tulaga obubaka obuva mu kwegendereza abantu mu kibinja eky’abantu 115 abakulu abalina obuwuka obw’obuwuka obwa Hepatitis B (CHB), mu ddwaaliro ly’e yunivasite e Cape Town, South Africa."
+    },
+    {
+      "hyp": "Okufuna HIV wamu kwali mu bantu 39 (34%)."
+    },
+    {
+      "hyp": "Twawandiika ebikwata ku balwadde, eby’obujjanjabi n’ebya mu laboretri."
+    },
+    {
+      "hyp": "Bw’ogeraageranya n’abo abalina obuwuka bwa HIV, abantu abakulu abalina obuwuka bwa HBV bokka tebaali baasobola kuba nga balina HBeAg (p=0.01), tebaali baasobola kuba nga baweereddwa okukemebwa okukozesa elastography (p<0.0001), era tebaali baasobola kuba nga bakozesa eddagala ly’obuwuka (p<0.0001); baali basobola okuba nga balina HBV viraemia ey’okulabika (p=0.04), era baali basobola okuba nga balina obubonero bw’obulwadde bw’ekibumba omuli thrombocytopaenia eya bukadde/ey’amaanyi (p=0.007), bilirubin ey’ewaggulu (p=0.004), n’ebigero bya APRI eby’ewaggulu (p=0.02)."
+    },
+    {
+      "hyp": "Ebyokubiri ebya kookolo w’ekibumba byonna byava mu kubulankana kwa HBV."
+    },
+    {
+      "hyp": "Obubaka bwaffe bulaga nti abantu abalina akawuka ka HBV bokka bayinza okuba nga bali wansi mu mbeera okusinga abo abalina akawuka ka HIV, nga kino kiraga obutali bwenkanya mu kusindika abantu eri abasawo, okulaba embeera y’obuwuka, n’okujjanjaba."
+    },
+    {
+      "hyp": "Abanoonyereza bawa obulagirizi okuyamba okujjanjaba akawuka ka Hepatitis B."
+    },
+    {
+      "hyp": "Mu kunoonyereza kwa gye buvuddeko, abanoonyereza baasobola okwoleka engeri okubeera n’obuwuka bwa Hepatitis B (HBV) ne akawuka ka HIV gye kiyinza okuwa omukisa mu bujjanjabi okusinga okubeera n’obuwuka bwa HBV bokka."
+    },
+    {
+      "hyp": "Mu bukiika kkono bwa Afirika, obuwuka obwa HBV ne HIV obuwulira ekiseera kiwanvu kizibu kinene."
+    },
+    {
+      "hyp": "Abasawo beetaaga okutegeera engeri akawuka kano n’eddagala eryakozesebwa okujjanjaba gye gakwatagana, basobole okutambuza bulungi n’okulabirira abalwadde."
+    },
+    {
+      "hyp": "Abanoonyereza baayagala okugerageranya engeri obujjanjabi bwe bukozesebwa ku balwadde abalina HBV bokka, n’abalwadde abalina HBV ne HIV."
+    },
+    {
+      "hyp": "Okunoonyereza kuno, abanoonyereza baafuna abalwadde abakulu 115 abalina obuwuka obw’ekibumba ky’omundu ekitaliimu (CHB)."
+    },
+    {
+      "hyp": "Baafunibwa mu ddwaaliro e Tygerberg, e Cape Town, mu South Africa."
+    },
+    {
+      "hyp": "Abawadde abamu baalina akawuka ka HIV (39) ate abalala baalina akawuka ka HBV bokka."
+    },
+    {
+      "hyp": "Abanoonyereza baatunuulira ekika, emyaka n’ekikula, era ne bakola ebigezo eby’enjawulo eby’ekisawo n’ebya mu lubuga."
+    },
+    {
+      "hyp": "Baalaba nti abalwadde abaalina HBV bokka baali basusse okuba nga tebali ku ddagala ly’obuwuka, nga balaga obubonero obwa bulijjo bw’endwadde y’ekibumba (kubanga HBV ye akawuka akasobola okuleeta endwadde y’ekibumba ey’amaanyi)."
+    },
+    {
+      "hyp": "Abanoonyereza baasobola okulaga nti abantu abalina HBV bokka baali mu buzibu bw’okulemwa bw’ogeraageranya n’abo abalina HIV ne HBV, kubanga abalwadde abalina akawuka k’ombi baali basobola okufuna eddagala ly’obuwuka lya HIV, eriyamba n’okulwanyisa obuwuka bwa HBV."
+    },
+    {
+      "hyp": "Ebibala ku kunoonyereza kuno biraga obukulu bw’enjawulo wakati w’okujjulira, okugoberera, n’enkola z’okuwanga obujjanjabi bw’akaati ka HBV bwe zigeraageranyizibwa n’akaati ka HIV ne HBV nga kazina wamu, ekigenderera abalina akaati ka HIV ne HBV bombi."
+    },
+    {
+      "hyp": "Abanoonyereza baasomesa nti tulina okutereeza era tuwe abalwadde abalina HBV bokka omulimu omutebenkevu era omutaliimu."
+    },
+    {
+      "hyp": "Obutamanya bw’okunoonyereza kuno bwe bulimu obutono bw’abantu abaakozeseddwa era nga baali ba mu ggwanga limu n’amawuliro gaalyo."
+    },
+    {
+      "hyp": "Ebimu, omuli eby’eddwaliro ebisinga obugwanvu, biyinza okwoleka endowooza eyenkanankana bw’egerageranyizibwa n’ebyaazuulwa mu kunoonyereza kuno."
+    },
+    {
+      "hyp": "Okunoonyereza okulala kulina okukolebwa okutuuka ku kutegeera enjawulo ezasangibwa mu kunoonyereza kuno."
+    },
+    {
+      "hyp": "Ekitabo kino kyalaze amaanyi g’okukolagana, nga abanoonyereza abakola ku pulojekiti eno bavudde mu South Africa ne mu Bungereza."
+    },
+    {
+      "hyp": "Okukozesa abalwadde okuva mu South Africa mu kunoonyereza kuno, kyetaagisa ekimu ku bantu ba Afirika."
+    },
+    {
+      "hyp": "Okwongera, okunoonyereza kuno kuyinza okuyamba mu kukola enteekateeka z’obujjanjabi obulungi eri abo abalwadde ba HBV, HIV oba bombi."
+    },
+    {
+      "hyp": "Okwekenneenya Obuzibu bw’Obutali bwa Bwongo ku Mirimu gy’Obusuubuzi bw’Abakyala mu Kitundu kya Gavumenti ekya SHIRORO mu Ggwanga lya Niger."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakebera omulimu gw’obulabe bw’obutakkiriza ku mirimu gy’obusuubuzi gy’abakyala mu kitundu kya Gavumenti ez’ebitundu eky’e Shiroro mu ssaza ly’e Niger, nga kikulembera ku nsonga ez’okutegeka kw’abakyala ku ssente, omulamwa gw’emirimu gy’obusuubuzi egya bulijjo gye bali, n’engeri obulabe bw’obutakkiriza bw’okukwata ku mirimu gyabwe gy’obusuubuzi."
+    },
+    {
+      "hyp": "Sampolo y’abakazi 377 yakenenyeddwa, era ekyo kyavuddemu ebiwulire nti abakazi mu Shiroro baagala okukola omulimu nnyo era balina obugagga obw’enjawulo, era bakola omulimu mu bitundu ebitono eby’obuwangwa."
+    },
+    {
+      "hyp": "Okunoonyereza okwo era kwalaga nti wadde obutakwatagana bulina omuwendo mubi ku mirimu gy’abakyala egy’okwekulaakulanya mu ngeri y’okufiirwa oba okukendeera kw’ensimbi wakati w’ebintu ebirala, omuwendo gw’abakyala abakola emirimu gy’okwekulaakulanya tegulakanye kukendeera kwa maanyi."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kuweesa nti wandibaddewo pulogulaamu ez’olubeerera okuyamba abakyala okufuna era okukozesa obuweereza bw’ensimbi, era n’ebitongole by’okukuuma omutemwa mu bitundu ebyo bisinze okukolebwa era ne bikuumibwa bulungi okutaliisa obutali bwa butebenkevu mu kitundu ekyo ekyonoonyerezebwa."
+    },
+    {
+      "hyp": "Abakyala abakola omulimu mu Niger beetaaga obukuumi obusingawo."
+    },
+    {
+      "hyp": "Abanoonyereza baazuula nti abakazi abakola obuyinza mu Niger baalina obugagga obw’enjawulo era nga beeyimirirwa mu byensimbi, naye obulamu obutaliiko bukyamu ku bantu abakola obumenyi bw’amateeka buli nsonga."
+    },
+    {
+      "hyp": "Abanoonyereza baayagala okumanya obutonde n’obutebenkevu bw’abakyala abakolera emirimu mu kitundu kya Gavumenti ekya Shiroro mu ssaza lya Niger, n’engeri ekyo gye kiyinza okukwata ku mirimu gyabwe n’obugagga bwabwe."
+    },
+    {
+      "hyp": "Baabuuza abakyala 377 mu kitundu kino ebizibu bye baasanga mu mirimu gyabwe egy’obusuubuzi, obulimba bw’ensimbi n’obulamu obutali butebenkevu."
+    },
+    {
+      "hyp": "Baategeeza nti ebitundu 43% eby’abakazi baagamba nti tebaali beesiga basajja ku ssente, ate ebitundu 32% baagamba nti baali balina abantu abalala ababeesiga ku ssente."
+    },
+    {
+      "hyp": "Abanoonyereza era baazuula nti ebitundu 85% eby’abakazi baali bafuna ssente okuva mu mirimu egy’enjawulo, ate batono bokka be baagamba nti baali beesiga musaala."
+    },
+    {
+      "hyp": "Ebitundu nga 56% baafuna ensimbi okulimira, ate ebitundu 79% okulimu butunzi."
+    },
+    {
+      "hyp": "Abakyala nga omu ku bataano baafuna ensimbi okuyita mu kukola engoye, okussa, okubuuza oba okuwoza."
+    },
+    {
+      "hyp": "Abakyala abasinga obungi (91%) baategeeza abanoonyereza nti emirimu gyabwe gyakosebwa olw’okutya okukwatibwa ababbi n’abamenyi b’amateeka."
+    },
+    {
+      "hyp": "Bafiirwa ssente ne bbaabwe olw’ebikwekweto ebyo, oluusi ne kibaviirako okulabirira abaana baabwe bokka."
+    },
+    {
+      "hyp": "Abakazi era baagamba nti tebalina busobozi bwa maanyi n’ensimbi za kweyongereza ku mirimu gyabwe."
+    },
+    {
+      "hyp": "Abanoonyereza baategeeza nti wadde nga waliwo obuzibu obwo, abakyala ba Nigeria beeyongera okukola bulungi nnyo mu bizinensi zaabwe."
+    },
+    {
+      "hyp": "Baagamba nti Shiroro mwalimu abantu b’ebika n’eddiini ezitali zimu, era n’ekyo kyali kirungi ku bulimu."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kukakasa ebyazuulibwa by’abanoonyereza abalala abaategeeza nti abakyala tebafuna bulungi mu bulimu olw’okukuuma awaka."
+    },
+    {
+      "hyp": "Wabula, abanoonyereza bano bagamba nti okukulaakulana kw’abakyala abakugu mu by’obusuubuzi mu kitundu kino eky’e Niger kikosebwa nnyo olw’obutakwatagana bw’abamenyi b’amateeka n’ababbi."
+    },
+    {
+      "hyp": "Abanoonyereza baateesa nti abakwatibwako bonna balina okukwatagana okulwanyisa ebizibu ebiyinza okulemesa okukulaakulana kw’ebyenzige."
+    },
+    {
+      "hyp": "Okugeza, abakazi mu Niger basaanidde okufuna obuyambi obw’ensimbi, ettaka n’obuweerwa obw’okwerinda."
+    },
+    {
+      "hyp": "Era baateesa nti abakyala abakola bizinensi basobola okukola ggwangaaliro ebiyinza okubayamba okulwanyisa ababbi n’abamenyi b’amateeka."
+    },
+    {
+      "hyp": "Amayengo ga Seleniyamu, Ekikomo ne Zinki mu Lusaayisaayi lwa Maama mu kiseera ky’obuto ateekawo akabenje ak’okuzaala omwana atannatuuka: Okunoonyereza okw’okugerageranya okuva e Malawi"
+    },
+    {
+      "hyp": "Okuzaala omwana atannatuuka kwe kuzaala nga olunaku lw’obuzaalibwa tegunnuuddwa wiiki 37."
+    },
+    {
+      "hyp": "Okunoonyereza kukoleddwa okwekebejja enkolagana eri wakati w’obungi bw’obusobozi bwa seleniyamu, ekikomo, ne zinki mu lusaayisaayi lw’amaama, n’okuzaala omwana atannatuuka."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno okw’okugeraageranya okw’omu njuyi, waaliwo abakyala 181, 90 ku 181 (49.7%) nga baali bazaala mu kiseera, ate 91 ku 181 (50.3%) nga baali bazaala nga tebannaweza."
+    },
+    {
+      "hyp": "Omukkati gw’obungi bw’omuwendo gwa seleniyamu mu lusaayisaayi gwali 77.0; SD 19.4µg/L, ekikomo gwali 2.50; SD 0.52 mg/L era zinki gwali 0.77; SD 0.20 mg/L nga emiwendo egikwatagana gya 47-142µg/L, 0.76-1.59mg/L ne 0.59-1.11 mg/L, okusinziira ku bwetaavu."
+    },
+    {
+      "hyp": "Ebyavudde mu kunoonyereza biraga nti tewali buzibu bwa seleniyamu, ne zinki; era nga waliwo lusaayisaayi lya kikopa lingi mu kiseera ky’obukyala."
+    },
+    {
+      "hyp": "Okuzaala omwana atannatuuka kwakwatagana n’obungi bw’ekikomo ne zinki mu lusaayisaayi lwa maama."
+    },
+    {
+      "hyp": "Amagulu ga zinki, ekikomo, ne seleniyamu agatwalagana n’okuzaala omwana atannatuuka"
+    },
+    {
+      "hyp": "Abanoonyereza baazuula ebitundu bingi eby’ebiriisa bya seleniyamu, ekikomo, ne zinki mu bakyala abazaala abaana nga tebannaatuuka, naye tebakimanyi oba ebitundu bino bingi biva mu mmere gye balya."
+    },
+    {
+      "hyp": "Okuzaala omwana atannatuuka kubawo nga omukyala azaala nga tannatuuka wiiki 37 ng’ali olubuto."
+    },
+    {
+      "hyp": "Okuzaala omwana atannatuuka kukwatagana n’ebintu ebibi ebivaako obuzibu ku mwana okuva ku bulema okutuuka ku kufa."
+    },
+    {
+      "hyp": "Waliwo ensonga nnyingi ezisobola okuleeta okuzaala omwana atannatuuka, naye omulimu gw’ebiriisa bingi ebisangibwa mu mmere ne mu nzirukanya tegumanyiddwa bulungi."
+    },
+    {
+      "hyp": "Ebiriisa bino bikulu mu kukula kw’omwana, naye abanoonyereza baagala okumanya ekibawo nga biba bingi nnyo."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baagala okupima obungi bwa seleniyamu, ekikomo, ne zinki mu bakyala abazaala abaana nga tannatuuka, oluvannyuma ne bamanye obusobozi bw’okuzaala omwana nga tannatuuka olw’obungi bw’ebiriisa buli kimu ekyanoonyerezebwa."
+    },
+    {
+      "hyp": "Abanoonyereza baakuŋŋaanya sampolo z’omusaayi okuva ku bakyala 181 mu bwangu oluvannyuma lw’okubaaza mu malwaliro abiri mu Lilongwe, olukibuga olukalu e Malawi, wakati wa Juuni 2016 ne Maaki 2017."
+    },
+    {
+      "hyp": "Baatwala sampolo z’omusaayi ne bazitwala mu kkeberero e Norway gye baaggyaamu lusaayisaayi, ekika kya musaayi omulongoofu, ne bapima obungi bwa seleniyamu, ekikomo ne zinki."
+    },
+    {
+      "hyp": "Abakyala nga kati abasukka mu kitundu ekimu ku 181 abaali mu kunoonyereza baazaala abaana nga tebanatuuka, era abanoonyereza baazuula seleniyamu, ekikomo ne zinki bingi nnyo."
+    },
+    {
+      "hyp": "Oluvannyuma ne batereeza ebirowoozo byabwe okutegeera ebintu ebirala bingi gamba ng’emyaka, obulamu obutali bwa buli kiseera, n’ebyo ebibaddewo mu buzaala okusobola okumanya engeri ekiriisa gye kiyinza okuleeta okuzaala omwana atannatuuka."
+    },
+    {
+      "hyp": "Baakuteekawo nti obungi bwa seleniyamu ne kikopa tebwalina kye buleeta mu kuba okuzaala omwana atannatuuka, naye obungi bwa zinki bwayongera enkizo y’okuzaala omwana atannatuuka emirundi egisukka mu mukaaga."
+    },
+    {
+      "hyp": "Kyokka, obungi bw’ekikomo bwali buli bw’obutakkaanya eri abanoonyereza, olw’emigaso gyabwo egy’obutwa egy’etegeerekeka."
+    },
+    {
+      "hyp": "Okuba nga baali abakyala 181 bokka abenyigidde mu kunoonyereza kuno kyaleetera abanoonyereza obutamanyanga bulungi ensobi ezikwata ku mitindo gya seleniyamu egigulumivu, kubanga omuwendo omutuufu gw’abantu abalina okwenyigira gwe 600."
+    },
+    {
+      "hyp": "Endya z’abeetabi ez’ennaku zonna tezaanoonyerezebwa okumanya ebiweebwayo ebiyinza okuba eby’ebiriisa ebisatu, era obugabize bw’obuzito n’obuwanvu bw’emibiri gyabwe tebwawandiikibwa."
+    },
+    {
+      "hyp": "Gunno gwe kunoonyereza okw’omuwendo gwakyo okusooka okugema engeri seleniyamu, ekikomo ne zinki gye zikoleramu mu bakyala ab’olubuto mu Malawi."
+    },
+    {
+      "hyp": "Afirika erimu emitindo gya waggulu egy’okuzaala abaana abatanatuuka - okusinga 18% nga bwe kiri mu mawanga g’ebuvanjuba 5%, kyeyava abanoonyereza baagala okumanya oba endya erina omulimu."
+    },
+    {
+      "hyp": "Eŋŋendo ey’okudda ewuwo, Okubeera mu Kifo Kimu, n’Okwegalamira Ettaka ly’Omusaayi gwa Pancake (Malacochersus tornieri) mu Kenya"
+    },
+    {
+      "hyp": "Ebisolo birina enneeyisa ya njawulo mu bifo n’obudde ebisobozesa okusigala nga balamu."
+    },
+    {
+      "hyp": "Okutegeera engeri ezo kye kintu ekikulu mu kukuumirwa n’okulabirira obulungi, naddala ebitonde ebiri mu kabi."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, twagezaako okulaba obusobozi bw’enjagu ya Pancake okuzzaayo awaka singa ekyusiddwa, era twakola n’okunoonyereza ku kubaako ekifo ekimu n’obuwangwa bw’okwekwata ekifo mu bifo byabwe eby’obulamu mu Kitui County, Kenya."
+    },
+    {
+      "hyp": "Ebikolwa by’enjagu 39 ezaali zibeera mu nnyingiriri ez’amayinja 12 ezaali ziwawukana mu kifo byanoonyerezebwa okuva mu July 2020 okutuuka mu June 2022 nga mu kunoonyereza kuno mukozeseddwa enkola y’okukolera ku nsolo nga zikozesa reedio, kamera ezikwata ebifaananyi, n’okugezesa ku kibiina kyonna awamu n’okugezesa okutali kwa buli kiseera."
+    },
+    {
+      "hyp": "Eŋŋamira kkumi nnya zaasibwako ebyokutambuza amasimu era ne zitwalibwa okuva mu buli kifo kyazo eky’awaka okudda mu binnya ebirala ebitali kye by’awaka era ne byetambula byazo n’empisa byabyo ne bitunulwa."
+    },
+    {
+      "hyp": "Okujjawo abakazi babiri bokka abaasobola okwefuga bulungi mu bulimi obw’enjawulo obwali babasindikiddwamu, ensolo endala zonna zaageragerera okudda mu maka gaazo, nga 46.15% ku zo zaasobodde okudda mu bulimi bwazo obwa bulijjo nga zikakasa bulungi, ate 15.38% nazo zaatuukira mu bifo ebirowoozebwa okuba mu bitundu byazo eby’awaka."
+    },
+    {
+      "hyp": "Okudda awaka okulungi tekuwavuuna ku bujulizi bw’obukadde obw’amaanyi mu bika."
+    },
+    {
+      "hyp": "Okwekenneenya okukwata ku kuba kw’ensolo ez’ekika kya tortoise mu buli kifo kwakiraga nti tewali njawulo ya maanyi wakati w’obuwumbi bw’ensolo ezaaliwo mu kusooka mu buli kifo n’obuwumbi bwazo obusembayo mu nnaku 162 ez’okugezesa (F(1,22) = 0.0699, P >0.05), era kino kyongera okukakasa nti ensolo zino zikulabirako ebifo byazo."
+    },
+    {
+      "hyp": "Ku luuyi olulala, ebifaananyi ebyakubibwa kkamera n’okugezaako okukola okunoonyereza okw’enjawulo byalaga nti ensolo ez’ekika kya Pancake tortoises zikwata ettaka, nga basajja balwanyisa ennyo ettaka lyabwe okuva ku basajja abalala abalaba."
+    },
+    {
+      "hyp": "Enjagu ezibulwa eza pancake zirina obusobozi obw’amaanyi obw’okudda awaka."
+    },
+    {
+      "hyp": "Abanoonyereza baafunye ekintu ekyewuunyisa nga banoonyereza ku mpisa y’enjagu ez’omu buvanjuba bwa Afrika (Malacochersus tornieri): ensolo zino zisobola okudda eka oluvannyuma lw’okutwalibwa ebbanga."
+    },
+    {
+      "hyp": "Okutegeera engeri gye bakola bwe batyo n’ensonga lwaki bakikola kiyinza okuba ekikulu mu kukuuma ebyewalula bino eby’ekitalo."
+    },
+    {
+      "hyp": "Engeri y’okunoonya awaka ensolo zino ez’enjagu eziraga eyitibwa “okudda awaka”, era n’ensolo endala nnyingi zisobola okukikola."
+    },
+    {
+      "hyp": "Okusobola okuddayo mu bifo ebimu kiyamba ensolo okuddayo ku mmere, ku bannaabwe, ne ku kifo eky’okubeeramu, ekyo ne kyongera omukisa gwazo okuguma n’okuzaala."
+    },
+    {
+      "hyp": "Wadde ng’okudda eka kw’ebisolo kuwumulwa mu ntungo n’amazzi, abanoonyereza mu kunoonyereza kuno bagamba nti tukyamanyi kitono nnyo ku kudda eka kw’enjagu (ebisolo eby’oku nsi ebigeraageranyizibwa ku ntungo)."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baayagala okutegeera ebisingawo ku mpisa y’ensolo ez’ekika kya pancake tortoise mu maka gaazo e Kenya mu bitundu eby’amabala."
+    },
+    {
+      "hyp": "Baakolera ku nsolo nga zivaayo, nga zirya, era ne bwe zaagendanga okuwummula mu bulimba oba mu buwaŋŋoŋo bw’amayinja."
+    },
+    {
+      "hyp": "Abanoonyereza beetegereza ebika by’enjoka za pancake okumala ebbanga lya myaka kumpi ebiri, era ne bassaako kamera okuwandiika vidiyo y’ensolo zino nga tebabalaba."
+    },
+    {
+      "hyp": "Era baasikirako obutambi obw’amasannyalaze ku nsolo ez’enkalu 14."
+    },
+    {
+      "hyp": "Gano ge bitonde obutono ebiyamba abanoonyereza okulondoola entambula y’ensolo, n’okulaba awatambulira emisana n’ekiro."
+    },
+    {
+      "hyp": "Awo abanoonyereza ne basengula ebiwato ebimu ebyo ebyabadde bikwatibwako mu kitundu ekiggya, baleme okuyiga bulungi."
+    },
+    {
+      "hyp": "Kyokka, ekyewuunyisa abanoonyereza, bibinja bibiri ku by’enjagu byatandika okudda mu bitundu byabyo eby’edda, wakati wa kilometeri emu ne 2.5 okuva we baali basudduse."
+    },
+    {
+      "hyp": "Lwaki abanoonyereza baasalawo okugezaako okusengula ensolo ezingi okuva mu maka gaazo, okulaba obanga zandiraga empisa efaanana ey’okudda eka."
+    },
+    {
+      "hyp": "Ekintu ekikwata ku mutima, kitegeeza nti obukadde bw’ensolo zino ez’amasasi obusembayo bwazuulibwa nga buzzeeyo mu buli bw’ebisumuluzo bye byali bibaddemu nga tebinnatandikibwa, emirundi mingi nga bitambula olugendo oluwera emitala 1.5 okutuuka eyo."
+    },
+    {
+      "hyp": "Ate abalala 15% baasobola okudda mu kitundu, naye tebasobola kuzuula bulimba gye baali batwaliddwa."
+    },
+    {
+      "hyp": "Abanoonyereza era baazuula nti obuwuka obwa njawulo businga okuba n’obungi bw’enjagu ezisulamu obulingana, ekyo ne kiraga nti enjagu zikolera mu bifo bimu okuwummula."
+    },
+    {
+      "hyp": "Okuva mu kkamera kwatulaga nti enkoko ennume zaali n’ettaka lyazo, ekitegeeza nti zaalwana ennume endala ezali zeeyongera okuyingira ettaka lyazo oba olulimi."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti guno gwe mulundi gwasooka okulaba empisa y’okudda mu maka gaayo ku bikoko bya pancake tortoises, era nti ebyo bye baazuula biraga nti ensolo zino zikulaakulana okubeera n’okwesiima mu bifo bimu buli lwe zisobola."
+    },
+    {
+      "hyp": "Okunoonyereza kwabwe tekuwanika bulungi ng’enjagu zino zezuula engeri gy’ezzeewo, n’olwekyo okunoonyereza okunaakolebwa mu maaso kulina okussa essira ku kutegeera ensonga eno ekikulu."
+    },
+    {
+      "hyp": "Olw’okuba ensolo oluusi zibeerawetaagisa okusazibwa mu bitundu bipya olw’okukuuma, obubaka buno buyamba abakuuma ensolo okukuuma ebisolo eby’ennyonyi mu maka gaabwe agakya."
+    },
+    {
+      "hyp": "Okunoonyereza kwakolerwa mu mukwano wakati wa bannassaayansi okuva mu Kenya ne China, era kwongereza ku kumanya kwaffe okukwata ku ndabika y’okudda mu maka gaayo mu bikoko n’ebisolo ebirala."
+    },
+    {
+      "hyp": "Emirimu gy’eddagala mu musaayi ogw’omubiri ogwa Rifampicin ey’omugugu omungi eyawangulwa mu kamwa ne eyawangulwa mu mituba mu balwadde abalina akafuba akagugubira mu bwongo:"
+    },
+    {
+      "hyp": "Okugezesa okw’akawuka okwalabiraawodwa"
+    },
+    {
+      "hyp": "Obungi bw’eddagala lya rifampisin eryawangulwa mu mituba gisobola okwongera ku bulungi bw’obujjanjabi bw’akafuluba ak’omu bwongo naye tekikolwa mu mawanga agalina obulwadde obwo obungi."
+    },
+    {
+      "hyp": "Twategeeza nti obungi bw’eddagala lya rifampicin mu musaayi bwandyeetera okufanana wakati w’okunywa eddagala mu kamwa ka 35 mg/kg ya buzito bw’omubiri n’okuyongeza eddagala mu mitogo gya 20 mg/kg, ekintu ekyategeerezebwa okukozesebwa mu kugeza ku buwanguzi bw’eddagala mu kulwanyisa akafuba akagwira ubwonjo."
+    },
+    {
+      "hyp": "Twakola okunoonyereza okw’okwesomesa okw’ebibinja ebikwatiriganya nga kwekaliriza mu kunoonyereza okw’ekikugu ku bujjanjabi obw’amaanyi obw’eddagala eritta obuwuka olw’akafafa k’omu bwongo."
+    },
+    {
+      "hyp": "Abantu abalina akawuka ka HIV abalina akafuba akwata ku bwongo baafunibwa mu malwaliro ga South Africa era ne bassibwa mu bibiina bisatu eby’enjawulo eby’omuwendo gw’eddagala lya rifampicin:"
+    },
+    {
+      "hyp": "Eky’omugaso (okuwanga mu kamwa 10 mg/kg), ekya waggulu (okuwanga mu kamwa 35 mg/kg), n’ekya mu mittaano (20 mg/kg)."
+    },
+    {
+      "hyp": "Okwekebejja kwa pharmacokinetic okw’amaanyi kwaakolebwa ku lunaku olw’okusatu."
+    },
+    {
+      "hyp": "Obubaka bwannyonnyolwa nga tukozesa enneekaliriza etali ya compartments, era ebibuuzo byageraageranyizibwa na geometric mean ratios (GMRs)."
+    },
+    {
+      "hyp": "Abantu 46 baatwalibwa ku mugezo gw’eddagala (omuwendo ogwa bulijjo, n = 17; omuwendo omungi ogw’okuwanga mu kamwa, n = 15; okuwanga mu mitogo, n = 14)."
+    },
+    {
+      "hyp": "Omuwendo gwa CD4 ogusinga obungi gwali 130 cells/mm3 (obusookerwako [IQR], 66 okutuuka ku 253 cells/mm3)."
+    },
+    {
+      "hyp": "Amatobo g’omukkati g’ekibalo g’ekitundu ekisangibwa wansi w’omuwendo gw’eddagala mu mubiri mu kiseera (AUC0–24) ga rifampicin gaali 42.9mg · h/ml (obukakafu bwa 95% [CI], 24.5 okutuuka ku 75.0mg ·h/ml) ku bungi obwa bulijjo, 295.2mg · h/ml (obukakafu bwa 95% [CI], 189.9 okutuuka ku 458.8mg · h/ml) ku bungi obusinga obwa mu kanwa, ne 206.5mg · h/ml (obukakafu bwa 95% [CI], 154.6 okutuuka ku 275.8mg · h/ml) ku bungi obw’okugemesa mu mitogo."
+    },
+    {
+      "hyp": "Obuwuka bwa rifampicin AUC0–24 GMR bwali 1.44 (90% CI, 0.84 okutuuka ku 2.21) ate omugaso gw’eddagala mu lusaayisaayi (Cmax) GMR n’eba 0.89 (90% CI, 0.63 okutuuka ku 1.23) mu kuwanga eddagala mu ngeri ya waggulu ng’ogeraageranya n’okuliwa mu mitogo."
+    },
+    {
+      "hyp": "Obungi bw’eddagala lya rifampicin mu musaayi okuva ku ssaawa 0 okutuuka ku ssaawa 24 bwali busingawo oluvannyuma lw’okunywa eddagala erya 35-mg/kg okusinga okufuna eddagala nga liwumulwa mu mituba egy’omubiri ku 20-mg/kg mu nnaku ezisooka ez’okuwangaza akafuba (TB)."
+    },
+    {
+      "hyp": "Ebyazuulibwa bino biwagira okugabulwa kw’eddagala lya rifampicin mu kamwa mu gezesa g’omu maaso ag’obulwadde bwa meningitis bwa tuberculous."
+    },
+    {
+      "hyp": "Eddagala ery’omuwendo omwanguwa liyinza okugezesebwa ku balwadde ba HIV abalina akawuka ka TB meningitis."
+    },
+    {
+      "hyp": "Abanoonyereza bakakasizza nti kyetaagisa okutandika okukebera oba obuwuka obw’eddagala erya rifampicin obw’amaanyi buyinza okuwonya abalwadde ba HIV abalina akafuba k’omu bwongo."
+    },
+    {
+      "hyp": "Abalwadde ba HIV abasukka mu 3 ku buli 5 era abafuna akawuka ka TB akawuka akalwanyi akamenyaamenya akabonero akalwanyi ka meningitis, bafa olw’obulwadde buno obulumba enkola y’amawulire."
+    },
+    {
+      "hyp": "Abawona batera okusigala nga balina omulimu gw’amaanyi ogwonooneka mu buntu bw’amaanyi ag’omubiri era n’amaanyi ag’omukulu agava mu bwongo."
+    },
+    {
+      "hyp": "Kino kisobola okukosa embeera zaabwe n’okutambula kwabwe."
+    },
+    {
+      "hyp": "Abamu ku balwadde bafuna okwesika oba obukwaayi, oba ebitundu by’amaaso oba omubiri gwabwe ne bifuuka buleme."
+    },
+    {
+      "hyp": "Rifampicin, eddagala ery’amaanyi ery’obujjanjabi ery’akafuba, litera okuweebwa nga kapisuli okugezaako okuzikiriza akawuka akaleeta akafuba k’omu bwongo."
+    },
+    {
+      "hyp": "Abalwadde abalwadde nnyo batera okukiraba nga kizibu okumira amapipi."
+    },
+    {
+      "hyp": "Rifampicin era esobola okuweebwayo mu mittaano (mu mitogo) nga ya muzigo."
+    },
+    {
+      "hyp": "Oluvannyuma, empiso etteekwa mu misuwa gy’omulwadde, amazzi gabireme okuyingira mu mubiri."
+    },
+    {
+      "hyp": "Tekinnakolebwa kugeza konna okumanya engeri omubiri gw’omulwadde gye gutwala eddagala lino nga enkola eno ekozesebwa."
+    },
+    {
+      "hyp": "Obujjanjabi bw’eccupa buwetaaga ebintu bingi, okubeera mu malwaliro n’omukozi w’obulamu abategefu era amanyi okuyingiza akakondo k’eccupa mu ngeri etuufu."
+    },
+    {
+      "hyp": "N’olwekyo si kya kutegeerezebwa nti kiba kyetaagisa mu bitundu ebitalina bulungi bikozesebwa mu nsi."
+    },
+    {
+      "hyp": "Abasawo bamanyi bulungi nti rifampicin teyeyongera bulungi mu mubiri mu buwaaya bw’otwe, omugongo n’omutwe, gye guli obuwuka bwe buyinza okwekuuma."
+    },
+    {
+      "hyp": "Nga bwe kiri, wetaaga obungi bw’eddagala okusobola okutta obuwuka bwonna mu mubiri gw’omulwadde."
+    },
+    {
+      "hyp": "Kyokka, abanoonyereza tebaali bakakasa muwendo gwa ddozi eyandibadde ekola era nga teerina bulabe."
+    },
+    {
+      "hyp": "Abanoonyereza okuva mu South Africa ne United Kingdom kyebava baagala okumanya, nga bakozesa abalwadde batono, oba nga kya buteefu okuwa eddagala lya rifampicin mu bunene obw’enjawulo oba nga liweebwayo mu mpya oba mu mutwe, n’engeri emitiri gyabwe gye gikiteekako buli kika."
+    },
+    {
+      "hyp": "Kino kikulu okukimanya nga abanoonyereza abalala tebannaba kutandika ku gezi ezinene, oba okukebera, mwe baateekateeka okuwa abalwadde bangi ennyo omuwendo gw’eddagala lya rifampicin."
+    },
+    {
+      "hyp": "Omu ku ngeri ssatu ez’okujjanjaba akafuba nga mukozesebwa eddagala eriyitibwa rifampicin, yagabibwa abalwadde 46 abalina akawuka ka HIV okuva mu South Africa abalina akafuba akwata ku bwongo."
+    },
+    {
+      "hyp": "Okusooka kwali kwekulakulanya eddagala erisukka mu mubiri ery’ebikombolero ebiweebwa abalwadde kati, nga buli kilogramu omuwendo gwa rifampicin gwe balina okuweebwa guli 10mg."
+    },
+    {
+      "hyp": "Ekibinja ekirala kyafuna obujjanjabi obw’obuwungaanyi obw’amakapuuli ag’emigero 35 ku kilo emu ey’omubiri gw’omulwadde."
+    },
+    {
+      "hyp": "Ekibinja ekisatu baakiwa eddagala mu mittaano, nga buli muntu afuna emiligiramu 20 ku buli kilo y’omubiri gwe."
+    },
+    {
+      "hyp": "Sampolo z’omusaayi zaggyibwa ku balwadde oluvannyuma lw’ennaku ssatu."
+    },
+    {
+      "hyp": "N’oluvannyuma abanoonyereza baapima obungi bwa rifampisin obwali mu plasma ya musaayi gwabwe (ekitundu ekisikiriza mu musaayi)."
+    },
+    {
+      "hyp": "Rifampicin nyingi ezasangibwa mu mibiri gy’abalwadde abaafuna obujjanjabi obw’obuwuka obw’amaanyi okusinga abo abaafuna obujjanjabi obw’omu mituba gy’omusaayi oba obujjanjabi obwa bulijjo."
+    },
+    {
+      "hyp": "Obungi bw’eddagala mu pulazuma y’omusaayi bwali bumu ku muwendo omwanguwa ne ku bujjanjabi obw’omu mittaano."
+    },
+    {
+      "hyp": "Emikwano gino gyali gya waggulu okusinga bwe baali bafuna buli muntu omuwendo gwa bulijjo."
+    },
+    {
+      "hyp": "Okusinziira ku bannoonyereza, kino kiraga nti embeera y’obulamu bw’abalwadde abalwadde akawuka ka meningitis aka tuberculosis esobola okutereezebwa singa bafuna obungi bw’eddagala lya rifampicin."
+    },
+    {
+      "hyp": "Tekikulu nti bakifuna nga bipuli oba nga bakifunira mu mituba gy’omusaayi - ekikulu kwe kufuna doozi eziwera, kubanga omubiri gwaabwe gujja kusobola okukuŋŋaanya obungi bw’eddagala."
+    },
+    {
+      "hyp": "Ebyazuulibwa bino bikwata ku byazuulibwa mu geesiga ezakolebwa mu Uganda ne mu Indonesia."
+    },
+    {
+      "hyp": "Ekyokulabirako, geesiga ez’obutono bbiri ezaakolebwa mu Indonesia biraga nti obulamu bw’abalwadde bangi busobola okutaasibwa singa bawa edosi ey’omuwendo gwa rifampicin, oba nga bagiwanywa oba nga bagiwaddibwa."
+    },
+    {
+      "hyp": "Kyokka, eky’ennaku, abanoonyereza balabula nti abantu abatonotono be bazeeyambisa mu kunoonyereza kuno okusinga bwe baali balongoosezza, era nga kino kiyinza okwonoona bye baazuula."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakolebwa mu South Africa."
+    },
+    {
+      "hyp": "Kino kiwagira enteekateeka y’okukola okugezesa okulaba oba kiba kya mugaso okuwa abalwadde ba HIV abalina akafuba k’omu bwongo amayengo mangi ga rifampicin."
+    },
+    {
+      "hyp": "Kisuubirwa nti obujjanjabi obwo bujja kutaasa obulamu bw’abantu bangi mu Afirika ne mu bitundu by’ensi ebirala ewali obulwadde bw’obwongo obw’akafafa kye kizibu kinene."
+    },
+    {
+      "hyp": "Okukozesa omugongo n’ebyandayanda awamu kisobola okutereeza ettaka ery’omu ddwaliro ery’oku lubalama olwonooneka nnyo?"
+    },
+    {
+      "hyp": "Okusereba kw’obugimu bw’ettaka kizibu kinene eri okulimira mu Afirika eri wansi w’eddungu Sahara."
+    },
+    {
+      "hyp": "Okuvaayo kw’ebyandayanda n’ebigimusa eby’omutaka ku bugobero bw’ettaka kyawandiikiddwa abawandiisi bangi."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, waliwo okugerageranya okwakolebwa mu lubboogo okumala ennaku 30 nga bakozesa sampolo 120 g buli emu ey’ettaka lya Haplic acrisol erongebwaako ebyandayanda eby’ekikunka kya kasooli (cbio), ebyandayanda eby’omusulo gw’omubale (rbio), ebyandayanda eby’obusuku bw’omugogo (coco300 ne coco700) oba omugongo gw’ebinyonyi (compost); ne ebyandayanda eby’omusulo gw’omubale ebyakolebwa wamu (rcocomp) oba ebyandayanda eby’ekikunka kya kasooli ebyakolebwa wamu (cococomp) ku mitindo gya 1% w/w ekyongezebwa: ettaka, okusinziira ku buli kimu."
+    },
+    {
+      "hyp": "Ebyokulongoosa ebirala mu kunoonyereza kuno byali byakubaganya omugongo gw’ebinyonyi ne ebyandayanda ebya corn cob oba ebya rice husk (1% omugongo + 1% ebyandayanda: 1% ettaka w/w), okwekenneenya engeri bye bikolela ku kufuluma kwa kaboni mu ttaka, obuwufu bw’ettaka; kaboni w’obulamu obutono mu ttaka; obusobozi bw’okukyuusa cation; kaboni yonna eya bulimu, nayitrogeni yonna n’obungi bwa nayitrogeni esoboka."
+    },
+    {
+      "hyp": "Ebyandayanda n’ekigimusa ebyakozesebwa byokka oba awamu, n’ebyandayanda ebyagimusizzibwa byayongera ku pH y’ettaka obuwumbo 0.28–2.29 ogw’obuwumbo bwa pH okusinga ettaka eryalekebwa nga bwe liri."
+    },
+    {
+      "hyp": "Obuwuka obw’omutwe okuva mu komposito y’ekika kyokka oba komposito ey’amaganda g’omubazzi, oba ebyandayanda eby’ekikunka kya kasooli oba ebyandayanda ebyagattibwa ne komposito byali by’amaanyi okusinga ebyo ebitaliiko kyakyongeza, ebyali bifaana n’ebyo ebyava mu byandayanda byokka."
+    },
+    {
+      "hyp": "TOC mu mutunzi gw’omuddo gwokka n’emikutu egy’ebyandayanda bya kasooli n’omutunzi gw’omuddo gye yali gy’ekisobyo, byali byeyongedde ku bitundu 37% ne 117% okusinga ku kya muwendo."
+    },
+    {
+      "hyp": "Okukozesa wamu ebyandayanda eby’omusulo gw’omuyembe n’ekigimusa kyongera ku MBC ku bitundu 132%, ate okukozesa ekigimusa kyokka kyongera ku MBC ku bitundu 247%, okutwaliza awamu ne mu kigezo."
+    },
+    {
+      "hyp": "Wano, okunoonyereza kulaze nti okuteekawo omukutu oba okukozesa wamu omukutu n’ebyandayanda, oba ebyandayanda ebyakutuse, byongera obungi bw’ebintu ebirungi mu ttaka gamba nga pH ya ttaka ne MBC, era bikulaakulanya okunyweza kaboni mu ttaka okuyitira mu kwongera TOC n’okukendeeza ku kubuze kwa kaboni mu ttaka okuyitira mu basal respiration."
+    },
+    {
+      "hyp": "Ebyandayanda n’obusa bituuma ettaka okuba eddungi eri ebibala."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwanoonyereza engeri ebyandayanda, ebyo ebya bulimu, eby’obugimu, era eby’omugugu, gye biyinza okukozesebwa okwongera ku mutindo gw’ettaka mu bitundu bya Afirika ebiri wansi w’eddungu Sahara."
+    },
+    {
+      "hyp": "Okunoonyereza kwalaga nti ebyandayanda byongera obungi bw’ettaka mu ngeri y’emu ng’enkola endala ez’ebbeeyi nnyingi era ezitaliwo bulungi."
+    },
+    {
+      "hyp": "Ekimu ku bizibu eby’enjawulo ebikaluubiriza omulimo gw’obulimi mu Afirika eri wansi w’eddungu Sahara kwe kuseebuwa kw’obugimu bw’ettaka."
+    },
+    {
+      "hyp": "Ettaka eddungi lingaleeta amakungula amalungi, era ekyo kirina okukendeeza ku bwavu mu byalo n’okuddawo ku nsonga y’okwonooneka kw’obugagga bw’obutonde."
+    },
+    {
+      "hyp": "Okunoonyereza kulaze nti ebyandayanda, ebyo ebya bulimu, eby’obugimu obw’amaanyi, era ebirimu kaboni, bisobola okukozesebwa okwongera obugimu bw’ettaka."
+    },
+    {
+      "hyp": "Ebyandayanda bye bintu ebiva mu kwokya ebintu eby’omubiri, oba eby’omukisa, nga tewali musana oba musana muto."
+    },
+    {
+      "hyp": "Ebyandayanda biraga nti byongera obungi bw’ettaka, byongera amazzi n’omukka, era ne bizuukusa obutonde bw’obulamu mu ttaka."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakebera omulimu gw’ebyandayanda n’omukka ku mutindo gw’ettaka nga bakozesa ebintu eby’okulabirako gamba nga okuwunya kw’ettaka, pH y’ettaka, obuwanguzi bw’obuwuka obutono, obungi bw’ekaboni, n’obungi bw’omugavu oguliwo."
+    },
+    {
+      "hyp": "Abanoonyereza baakola ebyandayanda ebya kasooli, eby’ekikolo ky’ekikajjo, n’ebya lukusa lwa kalisi, nga bakozesa enkola eyitibwa pyrolysis, eya kwoleka ebintu eby’obutonde mu bbugumu obuli wansi wa 450 °C mu kikozeso ekyakolebwa mu ggwanga."
+    },
+    {
+      "hyp": "Abanoonyereza baakola ebyandayanda ebiva mu lukwata lw’ekikookoli, nga bakozesa enkola eyitibwa pyrolysis ku bbugumu bwa 300 °C ne 700 °C."
+    },
+    {
+      "hyp": "Awo abanoonyereza ne bassa sampolo z’ettaka ezivangiddwaamu ebyandayanda mu kibbo okumala ennaku 30."
+    },
+    {
+      "hyp": "Buli sampolo mwaliyo ettaka eryategekebwa mu ngeri ey’enjawulo eryayitibwa Haplic acrisol, eryavangiddwaamu ebyandayanda ebyakolebwa okuva mu bikoola bya kasooli, ebibala bya layisi oba ebibala bya kookonati, ne komposito y’emmeeza z’enkoko."
+    },
+    {
+      "hyp": "Sampolo endala zaali zikubamu ekitundu ky’ettaka n’omutta gwa nnyonyi, awamu n’ebyandayanda ebya rice husk, n’ebyandayanda ebya corn cob, okusinziira ku buli kimu."
+    },
+    {
+      "hyp": "Buli sampolo yalina 1% y’ekikomposito, 1% ya buli ebyandayanda, baleme okwekenneenya omulimu gw’ekibululo kyonna ku mutindo gw’ettaka."
+    },
+    {
+      "hyp": "Abanoonyereza baazuula nti okweyongerayo kw’ebyandayanda n’ekigimusa mu ttaka, oba nga bikolebwa kye kimu oba nga bikolebwa awamu, kyongera muwendo gwa pH gw’ettaka okuva ku 0.28–2.29 ebitundu bya pH, nga bageraageranya n’ettaka eritaliimu kigimusa."
+    },
+    {
+      "hyp": "Okweyongera kwa pH kitegeeza nti ettaka lyakendeera okwonooneka."
+    },
+    {
+      "hyp": "Okunoonyereza kwalaga nti omuwendo omutono ogw’omukka gwa kaboni ogwava mu ttaka, oba okulongoosa okusookerwako, kweyongera singa omugimusa gwokka gweyongerwako, oba singa omugimusa gwakwatibwa wamu n’ebisusunku bya rice, oba ebyandayanda ebya corn cob oba ebyandayanda ebyakwatibwa wamu."
+    },
+    {
+      "hyp": "Sampolo z’ettaka zaalaga okweyongera kw’obungi bw’ekirungo kya kaboni mu buzima obw’omunda bwa 37% bwe baakozesa omugongo gwokka, era okweyongera kwa 117% bwe baasakaanya ebyandayanda ebiva mu bikondo bya kasooli ne mugongo."
+    },
+    {
+      "hyp": "Obungi bw’ebikolwa by’obulamu obutono bwayongezeka ku bitundu 132% gye waliwo oluvanyuma lw’okuvangulwa kw’ettaka n’ekigimusa n’ebyandayanda eby’omusoro gw’omuyembe, nga bwe kigeraageranyizibwa n’okuyongera kwa bitundu 247% mu sampolo z’ettaka ezaalina ekigimusa kyokka."
+    },
+    {
+      "hyp": "Ebyavudde mu kunoonyereza kuno biraga nti kisoboka okukendeeza obuzito bw’ettaka nga okozesa ebyandayanda, ebisoboka okufuna bulungi era nga tebiva ku bwerere."
+    },
+    {
+      "hyp": "Kino ky’enjawulo ku ngeri endala ey’okuteeka akalimo mu ttaka, ekintu ekigula nnyo era ekitaliwo mu bungi eri abalimi abato mu bitundu by’ebuvanjuba bwa Afirika."
+    },
+    {
+      "hyp": "Obutambi bw’Fayibulini obutaddamu Kutegeerekeka mu Bulwadde bw’Ennyingo n’Enkola ya Bwo ku Busibage, Okulungula Omubiri n’Okukakkana kw’Omusaayi"
+    },
+    {
+      "hyp": "Obulabe bw’ebizibu by’omutima mu balwadde ba RA bweyongera mu buwanguzi olw’okulungula omubiri okw’omu mubiri gwonna."
+    },
+    {
+      "hyp": "Obuwuka bw’okukosebwa kwa citrullination ekuŋŋaana n’obutaffaali obulamu ku nsonga n’obusobozi bw’okukosa omusaayi gwa fayibulini(ojini) tebumanyiddwa."
+    },
+    {
+      "hyp": "N’olwekyo, twageraageranya ebiragiro eby’obukolerera bw’ebitundu eby’omusaayi, okulungula omubiri, okukakkana kw’omusaayi, n’engeri fayibulini gye yeesiikirizaamu mu balwadde ba RA n’abo abalungi, ne tusekerera enkolagana wakati w’ebiragiro."
+    },
+    {
+      "hyp": "Sampolo z’omusaayi zaggyibwa ku balwadde ba RA 30 n’abantu abalamu obulungi 25 abalinga mu myaka n’obukyala."
+    },
+    {
+      "hyp": "Amagimu ga SAA, CRP, ICAM-1 ne VCAM-1 gaapimibwa ngaakozesebwa enkola ya sandwich immunoassay."
+    },
+    {
+      "hyp": "Okukakkana kw’omusaayi ogw’omubiri gwonna kwakeberwa nga tuyita mu Thromboelastography."
+    },
+    {
+      "hyp": "Obutambi bw’omuwendo gwa fayibulini n’ebikula by’obuguwa byakeberedwa nga bakozesa ekyuma ekizimbulukusa."
+    },
+    {
+      "hyp": "Okukkenga n’okumanya obungi bwa citrullination mu fayibulini ezikolebwa kwakolebwa nga tukozesa Citrulline monoclonal antibody eyalagibwa omusana n’okukozesa Confocal Microscopy."
+    },
+    {
+      "hyp": "Ebigero bya SAA, CRP ne ICAM-1 byali bya waggulu nnyo mu balwadde ba RA okusinga abalala."
+    },
+    {
+      "hyp": "Ebipimo bya TEG ebiragira okutandika kw’okukoma (R ne K), obuwanguzi bw’okukoma kwa fayibulini (α-Angle), n’ekiseera eky’okutuuka ku buwanguzi bw’okukoma (TMRTG) byali bitono mu balwadde ba RA."
+    },
+    {
+      "hyp": "Ebiramulirwako ebikwata ku buvuvu bw’omusaayi ogukakkana (MA, MRTG, TGG) tebyali na njawulo ya maanyi wakati wa abo abalina RA n’abo abatalina."
+    },
+    {
+      "hyp": "Okukolera ku mutetenkanyirizo gw’emigabanyo gy’ebivuddemu kwakiraga akakwate akamaanyi wakati w’ebintu ebyoleka obulwadde obw’amaanyi (CRP, SAA) n’ebintu ebyoleka obukolerera bw’omubiri okusinga ebibonero ebyoleka obukolerera bw’ebitundu eby’omu musaayi."
+    },
+    {
+      "hyp": "Okunoonyereza okw’amamicropskoopi kulaze obutambi obw’amaanyi obw’ensimbi za fayibulini ezikaluubirira mu balwadde ba RA okusinga abalala [median (interquartile range) 214 (170-285) vs 120 (100-144) nm okusinziira ku bwebalamu, p<0.0001, Odds ratio=22.7)."
+    },
+    {
+      "hyp": "Okukizuula bitundu bingi ebya citrullinated mu by’ekikuta kya fayibulini mu balwadde ba RA, ekyali kitono mu sampolo z’abantu abatalina bulwadde (p<0.05, OR=2.2)."
+    },
+    {
+      "hyp": "Abalwadde abalina obulwadde bwa RA obw’omukka balaga engeri y’okukwata kwa musaayi eyenjawulo ku ebyo ebiboneka mu bulwadde obulala obw’obutonde."
+    },
+    {
+      "hyp": "Okukyusa kwekikula kya puloteyini okuva mu citrullination ekyekuusa ku butabagano bw’omubiri olw’okulwanyisa obutaffaali obulamu, kiyinza okubaako omulimu mu kutegeka ekikula kya fayibulini n’obusobozi bw’okuleetawo akatyabaga akawaggulu ak’okufuna obuwuka mu balwadde ba RA."
+    },
+    {
+      "hyp": "Okwekwata kw’omusaayi mu balwadde ba mawanga kuyinza okunnyonnyola akatyabaga kaabwe akawaggulu okufuna okulwala kw’omutima, oba okuwanguka."
+    },
+    {
+      "hyp": "Okunoonyereza okupya ku bulwadde bw’ennyingo kuwadde okutegeera okusinga obulungi okukwata ku kukwata wakati w’obulwadde buno n’okweyongera kw’akatyabaga k’obulwadde bw’omutima."
+    },
+    {
+      "hyp": "Obulwadde bw’ennyingo (RA) bulwadde obulumiriza era obunafuya obw’obusibage, obukwata ku okulungula omubiri mu nnyingo ne mu mubiri gwonna."
+    },
+    {
+      "hyp": "Okuva edda, abayizi ba science bamanyi nti abalwadde balina omugaso gwa 50% ogw’okufuna obulwadde bw’omutima (CVD) – gamba nga okuwanguka kw’omusaayi oba okuwanguka kw’omutima."
+    },
+    {
+      "hyp": "Kintu ekikulu mu bulabe obwo kwe kuba nti okulungula omubiri kukwata ku nkola y’okwekwata kw’omusaayi."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baanoonyereza enkolagana eno, okukizuula ddala lwaki ekirwadde kya RA kyongera ku buzibu bw’endwadde y’omutima."
+    },
+    {
+      "hyp": "Nga kyennyini bwe kiri, abanoonyereza baakebera engeri okulungula omubiri n’enkyukakyuka ez’ekikula gye zikosaamu puloteyini ez’enjawulo ezitwala ku kuzimba omusaayi, eziyitibwa fayibulini."
+    },
+    {
+      "hyp": "Puloteyini zino ziba nga ziri mu mizingo emimanyiro egikola omuzingo ogw’enjawulo ogw’omusaayi ogukoma, n’olwekyo enkyukakyuka yonna ku fayibulini zennyini eyinza okuba n’obuzibu ku nkola yonna ey’okukoma kw’omusaayi."
+    },
+    {
+      "hyp": "Abanoonyereza baageraageranya sampolo z’omusaayi z’abalwadde ba RA ku sampolo okuva ku bantu abalamu."
+    },
+    {
+      "hyp": "Mu buli kifo, abanoonyereza baali banoonya “obubonero” mu musaayi obulaga okulungula omubiri, awamu n’enkyukakyuka eza buli kifo mu nkola ya bulijjo ey’okukakkalabya omusaayi eyandiwonyezza obungi bw’obulabe bwa CVD."
+    },
+    {
+      "hyp": "Ebibbo byokka byaakeberwa n’omukutu ogwa mayikulosokopi, okukizuula enkyukakyuka zonna mu nteekateeka ya puloteyini ezikwata omusaayi."
+    },
+    {
+      "hyp": "Abanoonyereza baalaba nti obugobe okuva ku balwadde ba RA bwabumbulukuka mangu okusinga obw’abantu abalamu, era nti emigwa gya puloteyini gye byali bikoleddwaako gyali gya buwufu nnyo okusinga fayibulini eza bulijjo."
+    },
+    {
+      "hyp": "Waaliwo n’enkyukakyuka mu asidi akola puloteyini ezikola fayibulini, ezaaviirako okutambuza obuyambi bw’omubiri okulwanyisa endwadde, nga kino kireetawo okulungula omubiri okweyongera."
+    },
+    {
+      "hyp": "Abanoonyereza abalala baalabye enkyukakyuka mu kitone kya amino acid kya fayibulini mu bbugumu bw’abalwadde ba RA, naye lino lye lumu lwaasooka abanoonyereza okulaba omugezo gumu mu musaayi."
+    },
+    {
+      "hyp": "Bwe bigattibwa n’enkyukakyuka endala ezaalaba mu musaayi okwekwata, bye baazuula biyinza okuyamba bannassaayansi okutegeera bulungi enkolagana wakati wa RA ne CVD, n’engeri y’okukizuula obubonero bw’endwadde zino mu buto."
+    },
+    {
+      "hyp": "Wadde ebyavaamu eby’okusooka byawera bulungi, kyetaagisa okulowooza nti sampolo ey’okunoonyereza yali ntono mu ngeri."
+    },
+    {
+      "hyp": "Abanoonyereza era baategeeza nti enkola gye baakozesa okuzuula enkyukakyuka z’aminoo asiidi mu puloteyini yandisobodde n’okufuna ebibala okuva ku bintu ebitaliiko mukago, ekyoleka nti okukebera okw’enjawulo okweteekateeka fayibulini kujja kuba kyetaagibwa okukakasa ebibala mu biseera eby’omu maaso."
+    },
+    {
+      "hyp": "Ekiseera nga kiyiseewo, okutegeera enkolagana enzibu wakati wa RA n’akatyabaga akawaggulu ak’okufuna obulwadde bw’omutima kiyinza okutumbula ebibala ku balwadde ba RA nga bwe tujja okumanya okwekenneenya n’okujjanjaba obulwadde buno obulungi."
+    },
+    {
+      "hyp": "Abanoonyereza okuva mu South Africa, Denmark ne Bungereza baali mu kunoonyereza kuno, okwali kusasulwa  olukiiko lw’okunoonyereza ku by’obujjanjabi mu South Africa."
+    },
+    {
+      "hyp": "Enteebereza z’embeera y’obudde eziweebwa ku nnyanja eri abakozesa ennyanja – endowooza, okukozesebwa kwazo n’okukwatibwa kwazo."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kugezaako okukola ku nsonga y’obutakkaanya wakati wa ssaayansi n’abantu bonna, nga kye kifo eky’obutakkaanya mu kutwala n’okwetaaga amawulire, ekintu ekimanyiddwa nga ‘ebbanga ly’okukozesa’."
+    },
+    {
+      "hyp": "Mu mbeera eno, tukola ku bukulu bw’obubaka obukwata ku mbeera y’obudde mu nyanja (metocean) nga bwe bwetegerezebwa abakozesa mu mawanga abiri ag’obukiikaddyo bw’ensi:"
+    },
+    {
+      "hyp": "South Afirika ne New Zealand."
+    },
+    {
+      "hyp": "Wano, ekigendererwa si ku kutunuulira byokka endowooza, okukozesa n’okukwatirako enteebereza z’embeera y’obudde eziyitiridde, wabula kutandika ku kutegeera enteebereza z’embeera y’obudde eza bulijjo."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakolebwa nga kukozesa okunoonyereza, okwakolebwa okwetooloola ebibuuzo by’okunoonyereza bisatu."
+    },
+    {
+      "hyp": "Ebibuuzo by’okunoonyereza byakwata ku nsonga okuva ku ngeri ebyuma eby’okuteebereza ebikozesebwamu, obuzima n’obutayinza kubaako ku buli kiseera, okukozesebwa kwabyo, enkisa y’ekitongole, n’obutakkaanya obukwata ku nkyukakyuka y’embeera y’obudde (okutwala ng’ekyokulabirako)."
+    },
+    {
+      "hyp": "Ebibuuzo by’oku mutimbagano byagabanirizibwa okutuuka ku bakozesa bonna, ab’obuwangwa n’ab’obusuubuzi."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwesomesa ku kutegeera embeera z’okulonda eziyinza okubaako omuwendo gw’enjawulo ku byetaago by’amawulire by’abantu abakozesa ennyanja eya ku lubalama."
+    },
+    {
+      "hyp": "Okunoonyereza okw’engeri y’okutegeera kw’abantu bonna (CCA) kwakozesebwa okunoonyereza okutegeera okugattiddwaamu n’enjawulo mu ndowooza mu kibiina kyonna eky’abo abaabuuziddwa, awamu n’ebibiina eby’enjawulo n’ebya mawanga."
+    },
+    {
+      "hyp": "Twalabye enkwatagana eya mitindo egy’enjawulo mu kibiina kyonna (abantu abava mu mawanga gonna n’ebitundu byonna nga bikuŋŋaanye) nga bigeraagerannyizibwa n’ebibiina ebitono eby’abakozesa."
+    },
+    {
+      "hyp": "Abeetabi bonna awamu baalaga okukkirizigana kwa buwanguzi mu nsonga ezaaliwo, naye nga waliwo enjawulo mu ndaba mu buli ggwanga, ekiraga nti waliwo obuwangwa obutono obw’enjawulo."
+    },
+    {
+      "hyp": "Bwe twakola okwekenneenya ku bitundu by’eggwanga n’ebitundu by’emirimu egy’enjawulo, twalaba okukkirizigana okw’amaanyi mu bantu abakozesa mu South Africa, nga bakkirizigana nnyo ka babe nga bali mu mirimu ki."
+    },
+    {
+      "hyp": "Abakozesa ab'obulunzi ba New Zealand be baali baakakkana nnyo n'ebibinja ebirala byonna."
+    },
+    {
+      "hyp": "Tukubaganya ebirowoozo ku bintu ebikulu ebiva mu byawandiikibwa byaffe ku bintu ebikulu mu kwakula kw’obuweereza era n’okukola enteebereza ennungi."
+    },
+    {
+      "hyp": "Ebintu ebisinga obukulu mu biteebereza bya sayansi mu biseera ebijja nabyo bitwalibwa mu bujjuvu, nga tulowooza ku bintu ebiyinza okuva mu nkyukakyuka y’embeera y’obudde."
+    },
+    {
+      "hyp": "Tukubira nga tuwaayo oluyimba olufaananako olugero okwoleka enkolagana ey’amaanyi wakati w’okukola wamu okukola ebintu eby’okubikkula n’obutuukirivu/obuyonjo bw’ensimbi."
+    },
+    {
+      "hyp": "Abantu ba South Afirika, n’aba New Zealand beesiga ebiteeberezo by’obudde ku nnyanja."
+    },
+    {
+      "hyp": "Abantu ba South Afirika n’aba New Zealand abakolera era abeera mu bitundu ebyetoolodde ennyanja beesigama ku buweereza bw’amawulire g’embeera y’obudde abulungi okukozesa, era obuwa ebiteeberezo eby’amazima buli kiseera."
+    },
+    {
+      "hyp": "Obuweereza bw’okuteebereza obudde bw’eggwanga n’ebitongole by’obusuubuzi ebitali bimu eby’oku ‘internet’ biwa ebiteeberezebwa ku ngeri obudde bwe buliba."
+    },
+    {
+      "hyp": "Baafuba okubeera abatuufu era abawanguzi mu ngeri yonna."
+    },
+    {
+      "hyp": "Omulimu omunene nnyo ogw’ensikirani n’okuteesa okw’ensikirani gukolebwa mu biteeberezo ng’ebyo."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baasalawo okutunuulira engeri abantu mu South Afirika ne New Zealand gye bayitira mu buweereza bw’okuteebereza embeera y’obudde – n’amawanga gombi galina obuwanja obw’ebbugumu obw’obuwanja, naye galina abantu ab’obungi obutali bumu n’embeera z’oku lubalama lw’ennyanja ezitali zimu."
+    },
+    {
+      "hyp": "Baayagala okuzuula emirundi abatuuze bano ab’oku lubalama gye bakozesa obusembayo bw’eggwanga oba obw’obusuubuzi, ensonga ze bakozeseramu era n’okumanya oba babulimuwa nga mulimu era nga beesigwa."
+    },
+    {
+      "hyp": "Ebyo bye bintu bya mukulu olw’engeri enkyukakyuka y’embeera y’obudde ejja okukwata ku kuteebereza embeera y’obudde mu biseera ebijja."
+    },
+    {
+      "hyp": "Ebibuuzo by’oku mutimbagano byayankuliddwa abantu 31 okuva e South Africa ne 126 okuva e New Zealand."
+    },
+    {
+      "hyp": "Bano baali bawebako abakozesa enteebereza y’embeera y’obudde mu mirimu gyabwe (ng’abalobi n’ab’ekibiina ekikola ku kununula abantu mu mazzi), n’abalala abenyigira mu mizannyo egy’omu nnyanja n’ebikolwa eby’okwepumula gamba ng’okusubwa, okukuba ebyato, oba okuwugira."
+    },
+    {
+      "hyp": "Abanoonyereza baabuuza ku ngeri obujjanjabi bw’obwenge obw’ekirungi bwe buba bwe bunyamu, n’engeri ebiragiro byabwo gye bibeera by’amazima era nga bikwatagana."
+    },
+    {
+      "hyp": "Abantu abaali batabwe baawandiika ebintu ebyabafumbatako era nga by’omugaso, ne bagamba oba ebyo byandikyukira olw’enkyukakyuka y’embeera y’obudde."
+    },
+    {
+      "hyp": "Era baalina okwogera ku bukuumi bw’amawulire ge baweebwa ekitongole ky’eggwanga ekikola ku by’obudde, n’engeri gye baawuliramu ku byo."
+    },
+    {
+      "hyp": "Abasajja n’abakazi abasinga obungi abaava mu South Africa abaali mu kunoonyereza kuno baali abasubi, oba abayamba mu kunoonya n’okuwonya abantu oba mu mirimu gy’okunoonyereza."
+    },
+    {
+      "hyp": "Abantu abasinga obungi mu New Zealand abaayawula ebibuuzo baatunuulira ebiteebereza by’obudde kubanga baali baagala okukoma, okukuba oluguudo oba okuwummula mu nnyanja."
+    },
+    {
+      "hyp": "Abantu abaali beetabye okuva mu mawanga gombi baawuliriza amawulire ge baweebwa ebitongole by’eggwanga eby’embeera y’obudde."
+    },
+    {
+      "hyp": "Baasanyukira enkola z’okuteebereza ezituukiridde, ezitera okubaamu kituufu, ezirina obulungi okukozesa era nga ziriko ebintu ebisobola okukolerwako okuterekeza okusinziira ku byetaago byabwe."
+    },
+    {
+      "hyp": "Abantu abaakozesa omulimu guno olw’emirimu gyabwe mu bulijjo baalaba nti nteebereza z’embeera y’ennyanja okumpi n’okuwaawaawa tezaali ntuukirivu."
+    },
+    {
+      "hyp": "Obubaka bwa bitundu ebimu bwali bulungi okusinga obw’ebirala."
+    },
+    {
+      "hyp": "Abantu ba South Africa baali baasooka okukozesa obuweereza bw’embeera y’obudde okusinga abantu ba New Zealand, era baalukijjukirako okumala omulundi gumu buli lunaku."
+    },
+    {
+      "hyp": "Ku beetabi 9 ku buli 10, enkola ya kuteebereza ennungi nnyo yali ya muwendo nnyo."
+    },
+    {
+      "hyp": "Abasinga obungi baasalawo ku buweereza obwali buwa okulaba eby’omu maaso okumala ennaku ssatu okutuuka mu nnaku musanvu."
+    },
+    {
+      "hyp": "Abantu abaakola omulimu gw’okulunda ebyennyanja oba abaalina okuteekateeka ebintu nga waliwo embeera ey’obwongo oluusi baali baagala enteebereza ez’emyaka mingi n’ez’ebiseera by’omwaka."
+    },
+    {
+      "hyp": "Abasaba abasinga baali bakkiriza nti olw’okweyongera kw’enkyukakyuka y’embeera y’obudde, obuweereza bw’okuteebereza bujja kwetaaga okukozesa amawulire amalungi agasinga agasigadde ku sayansi mu biseera eby’omu maaso okukakasa okuteebereza okutuukiridde."
+    },
+    {
+      "hyp": "Okunoonyereza kungi nga kuno tekulikoleddwa mu mawanga agali mu kibira kya Ddaala."
+    },
+    {
+      "hyp": "Abanoonyereza balowooza nti baasobola okuyiga bingi okuva ku beetabi okusinziira ku bibuuzo bye baababuuzizza."
+    },
+    {
+      "hyp": "Obunafu obulala obusoboka bwe buli nti abantu abasinga obungi ababeera e New Zealand okusinga ab’e South Africa be baatabira mu kunoonyereza kuno."
+    },
+    {
+      "hyp": "Omulimu gwabwe gujja kuyamba abantu abakolera mu buweereza bw’okuteebereza embeera y’obudde okukola ebyamaguzi ebirungi ebikuumira mu nkyukakyuka ebyetaago by’abakkiriya baabwe."
+    },
+    {
+      "hyp": "Bajja kusobola okukola enkyukakyuka n’okulongooseza ebintu okusinziira ku ngeri abakkiriya baabwe gye basanyukira era n’ensonga lwaki bakikozesa."
+    },
+    {
+      "hyp": "Engeri y’Okwetaba mu Kunoonyereza ku Bukozesa bw’Enkola z’Obulimi ezikuuma Obutonde:"
+    },
+    {
+      "hyp": "Ekyokulabirako kya Lushoto"
+    },
+    {
+      "hyp": "Eky'okutegeera eky'obulimi n'obulunzi obukuuma obutonde (CSA) kweyongera okufuna obukulu mu nsi yonna."
+    },
+    {
+      "hyp": "Kyokka, tekitangaazanga bulungi kye kigwanidde okubikkibwa wansi w’empagi zaayo esatu—okuyongera obungi bw’ebintu, okukakasa n’okwewala."
+    },
+    {
+      "hyp": "N’olwekyo, CSA ekwata enkola n’obuwangwa obw’enjawulo obw’obulimi, ekifuula ekizibu okussaawo ebigendererwa bya CSA."
+    },
+    {
+      "hyp": "Okusooka, tewali mitindo gya lwatu era egy’okukoleraako awamu n’enkola z’okumanya embeera y’obuwangwa obutonde bw’enkola."
+    },
+    {
+      "hyp": "Okusingira ddala, waliwo obubaka butono obukwata ku nsonga z’obuweerwa obw’enjawulo obumaze okutongozebwa nga CSA, naddala mu mawanga agakyakula."
+    },
+    {
+      "hyp": "Okusooka, okukulembeza CSA tekitwala mu mbeera endowooza z’abantu abali mu nsonga eno okukakasa nti obuyambi bulimu, bubulijjo era bulina omukisa ogw’okukkirizibwa."
+    },
+    {
+      "hyp": "Wano, tulageka enkola empya ey’okwetabamu ey’okumanya obulungi bw’obulimi n’obulunzi obukuuma obutonde mu mirimu gy’abalimi abasigadde."
+    },
+    {
+      "hyp": "Kino kiraga eby’okulabirako (n’ebitundu) eby’okufaananya eby’obulimi eby’emmere ey’okwerindisa n’okwegendereza mu nkyukakyuka z’obutonde bw’ensi."
+    },
+    {
+      "hyp": "Era kiwagira okutereka obubonero mu ngeri ey’okwetabamu, ekireeta okusooka okwekebejja embeera y’obutonde n’embeera y’omu maaso."
+    },
+    {
+      "hyp": "Enteekateeka eno yagezesebwa mu balimi 72 abaakozesa enkola ez’enjawulo ez’okukuuma obutonde mu kyalo kya Lushoto eky’embeera y’obudde ennungi, e Tanzania."
+    },
+    {
+      "hyp": "Abalimi naddala baasiima enkola ezaayongera ku buvubuka n’omutindo gw’ettaka, n’okukendeeza ku mazzi agayitamu ku luuyi lw’ettaka, n’okuddamu okukola ettaka eryonoonese olw’obuvunaanyizibwa obulungi ku amakungula n’obulimi bw’ebirime mu biseera ebitali bya buli mwaka."
+    },
+    {
+      "hyp": "Okusinga obugimu, enkola za CSA zaayongera ku kuzimba ensolo, kuzimba emmere, okukozesa emmere n’enfuna."
+    },
+    {
+      "hyp": "Enkola eno esobola okukwatibwa bulungi mu bitundu eby’enjawulo n’enkola za bulimi era ekiraga nti ebintu ebikulu by’okukolako bisobola okuteekebwa mu bifo ebisobola."
+    },
+    {
+      "hyp": "Naye tukiteesa nti CSA etwalibwe nga kye kimu ku nkola y’okukola obukugu, okwekenneenya n’okuyiga."
+    },
+    {
+      "hyp": "Amatendekezo agapya ag’okuketta gayamba bannassaayansi n’abalimi okuteeketera enkyukakyuka y’embeera y’obudde."
+    },
+    {
+      "hyp": "Bannassaayansi abakola ne balimi mu Tanzania kati basobola okupima obulungi bw’enkola empya ez’obulimi okusobozesa okukendeeza ku kukosebwa kw’enkyukakyuka y’embeera y’obudde."
+    },
+    {
+      "hyp": "Basuubira nti engeri yaabwe ejja kweyongera ku mmere ey’okwerindisa n’amakukungula g’abalimi mu bitundu ebirala eby’ensi."
+    },
+    {
+      "hyp": "“Obulimi n’obulunzi obukuuma obutonde” kye kimu ku ebyo Omuungwana gw’ensi yonna akubiriza okusobola okuyamba abalimi abalimu olutiba lutono okwetegekera enkyukakyuka y’embeera y’obudde."
+    },
+    {
+      "hyp": "Omulimi akuuma obutonde afuga enkyukakyuka z’embeera y’obudde era asobola okwongera ku mmere ey’okwerindisa ng’ayongera obungi bw’ebimera bye."
+    },
+    {
+      "hyp": "Kino kye kizibu ekikulu nnyo eri abalimi ba Tanzania, kubanga eggwanga limaze okufuna amakungula agatono g’ebirime ebikulu eby’emmere olw’enkyukakyuka y’embeera y’obudde."
+    },
+    {
+      "hyp": "Kyokka, abanoonyereza bagamba nti kizibu okupima obwatuufu bw’enkola ezikuuma obutonde, gamba ng’okukola omukono, era abalimi bennyini tebeekubirwaako buli kiseera okulaba obanga enkola zikola nga bwe zaali zitegeerezebwa."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baayagala okukola enkola ey’okupima obulungi bw’enkola ezikuuma embeera y’obudde, nga beetegefu ku kwongera ku mmere ey’okwerindisa n’okwekenneenya."
+    },
+    {
+      "hyp": "Mu kusooka, baasoma mu kunoonyereza okulala ku bulimi ne bakola akaluluka ka bitundu bibiri nga buli kimu kirimu ebintu 14, oba “ebikwata,” ebikulu mu kupima emmere ey’okwerindisa n’okwekenneenya."
+    },
+    {
+      "hyp": "Awo, nga bakolera mu disitulikiti y’e Lushoto mu Tanzania, abanoonyereza ne bakolera wamu n’abalimi b’omu kitundu n’abakugu mu byobulimi okusobola okuzuula eby’enjawulo ebikulu okuva mu buli lukalala."
+    },
+    {
+      "hyp": "Abalimi baalaga nti okukola emmere kye kintu ekikulu ennyo ekigendererwa okulaba nga wabaawo emmere ey’okwerindisa."
+    },
+    {
+      "hyp": "Mu ngeri endala, obutabanguko bwonna obwongerera ku amakungula g’ebirime byabwe bwali bwa muwendo nnyo."
+    },
+    {
+      "hyp": "Kyokka, ku nsonga y’okwekenneenya, abalimi baali baagala nnyo obuyambi obubayamba okukuuma ettaka ly’ebintu byabwe, n’obubayamba okwongera ku kumanya kwabwe, obukugu, n’emali."
+    },
+    {
+      "hyp": "Bwe baamala okumanya obukulu bw’ekyoleko buli kimu, baasobola okubikozesa okugeza oba engeri mukaaga ez’okujjanjaba mu Lushoto zaali zaafuluma."
+    },
+    {
+      "hyp": "Mu buli kifo, baabuuza abalimi b’omu kitundu, ku lutiba oluva ku 1-5, oba waabaddewo okweyongera mu buli kintu okuva omulimu gwatandika."
+    },
+    {
+      "hyp": "Kino kyabawa omukisa okukiraba ekyo ku byo ebyakolera ku emmere ey’okwerindisa n’okuguŋŋumira."
+    },
+    {
+      "hyp": "Baazuula nti 3 ku bikolebwa 6 ebyakozesebwa byokka bye byalina omuwendo."
+    },
+    {
+      "hyp": "Ebyo byali ebimera ebyakolerwanga omukutu, ebigumira ekyeya, era nga biwa emmere ennungi ennyama."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti enkola yaabwe etera okwanguyiriza okukakasa nti enkola ezijja mu maaso zijjukira ebyetaago by’abalimi ba Lushoto awamu n’ebigendererwa by’obulimi obukuuma obutonde."
+    },
+    {
+      "hyp": "Baagattako nti okusalawo ku ngeri ennungi ez’okuyamba nakyo kyongera omukisa gw’okuba nti abalimi bajja kuteesa abatuuze baabwe enkola ennungi, nga bwe batambuza ebirowoozo eby’obulimi obukuuma obutonde."
+    },
+    {
+      "hyp": "Mu ngeri ey’enjawulo, enkola eno esobola okukozesebwa mu bitundu ebirala, era esobola okuyamba okukakasa nti enkola ezikuuma obutonde ziteekateeka embeera z’omu bitundu n’okumanya kw’abalimi mu bujjuvu okuyitira mu kkulirwako n’okwekebejja."
+    },
+    {
+      "hyp": "Bwetyo, enteekateeka z’obulimi n’obulunzi obukuuma obutonde zirina amagoba ag’okuba n’obulungi era okufuna obukulu, mu Tanzania ne mu nsi endala za Afrika."
+    },
+    {
+      "hyp": "Okunoonyereza kwakolebwa omukago gwa bannassaayansi okuva mu Kenya ne Budaaki."
+    },
+    {
+      "hyp": "Obuwuka obuleeta Endwadde mu Bisolo ebirimu Egitundu ekikola nga Ebitonde ebirumbaganyi: Ebyo bye Tulowoozezza okuva mu South Africa"
+    },
+    {
+      "hyp": "Okwekenneenya ebitonde ebivaako obulwadde nga olulyo olugwira tekyaddibwa ku kisaanikira mu kusoma okukwata ku bulumbaganyi bw’ebitonde."
+    },
+    {
+      "hyp": "Obuwuka obuleeta endwadde obutali bwa wano busobola okuba n’obuzibu bungi ku bitonde ebyalamu, obutonde bw’ebitundu bye bituulamu, n’eby’enfuna ebyo butonde bw’ebitundu bye busisinkana."
+    },
+    {
+      "hyp": "Mu ssuula eno, tukozesa ebyokulabirako by’endwadde ezaayingiziddwa mu nsolo ez’ewaka n’ez’omu nsiko (ekikwekweto ky’embwa, obuwuka obw’obuwuka mu nnyama, n’endwadde y’ennyama), n’abantu (obuwuka obw’omusujja, omusujja gw’abaana, n’akawoka ka HIV) okusobola okwoleka engeri obuwuka obuleeta endwadde bwe buyinza okukola."
+    },
+    {
+      "hyp": "Okuvangawo okusinga okw’amaanyi okutuukirira kati kwabadde kwa rinderpest, ekyaleetera ensolo ez’ennyama okuba obukadde okufa, era nga kyakazimbye ebika by’ensolo ez’omu nsiko mu bitundu bingi eby’obukiikaddyo bwa Afrika."
+    },
+    {
+      "hyp": "Kino kyongedde okukosa ennyo ebyenfuna by’ekitundu, era kyavuddemu enkyukakyuka ez’enjawulo mu nteekateeka n’engeri obutonde bw’ensi bwe butambulira."
+    },
+    {
+      "hyp": "Endwadde ya rinderpest emaziddwa mu nsi yonna, naye endwadde eva ku kulumwa embwa n’endwadde ya kafulensi mu nsolo ez’ennyama zikyaliwo, era kijja kwetaagisa okwegendereza n’okulabirira okweyongera okubikuuma."
+    },
+    {
+      "hyp": "Mu bulwadde bw’abantu, ebiseera ebikwata ku kikungulu kibadde kiwonyezebwa mu nsi yonna, naye omulimu gw’obulwadde obwali bwetooloddwa abakoloni b’omu Bulaaya gwali mubi nnyo."
+    },
+    {
+      "hyp": "Mu ntandikwa za myaka gya 1700, abantu ba Khoekhoe abasinga obungi (okutuuka ku 90% mu bibiina ebimu) baafa, ne bamenyaamenya obulamu bwabwe n’obuwangwa bwabwe, era abasigaddewo batono ne baweebwa omulimu gw’okukolera ku bibbira."
+    },
+    {
+      "hyp": "HIV, eyasangibwa mu South Afirika mu 1982, era erinawo omulimu omungi, era eddagala lya antiretroviral liweza gavumenti obuwumbi 66.4 za ZAR buli mwaka."
+    },
+    {
+      "hyp": "Tulina n’akaawuka ka West Nile n’akaawuka k’omusujja gw’embizzi z’e Afirika nga bye bintu ebyokulabirako eby’endwadde ezaava mu Afirika, era eziyinza okwonoona ensi yonna."
+    },
+    {
+      "hyp": "Tutegeera nti endwadde empya zijja okuvaayo nga bantu beeyongera okutuukirira mu bitundu eby’obutonde, era nga obuwumbi bw’ebyobusuubuzi bweyongera."
+    },
+    {
+      "hyp": "Ebyo bannassaayansi bye bamanyi ku bitonde ebitono ebivaako endwadde mu South Africa"
+    },
+    {
+      "hyp": "Ssuula eno mu kitabo eno ekuŋŋaanya amawulire agakadde ku ndwadde gamba nga rinderpest, ekikumba, omusujja gw’abaana, ne HIV, zonna zireetebwa obutonde obwonoonyi (akawuka, obulwadde obutono, n’ebitonde ebirala ebitono ebiweebwa olugero lw’olulyo olwonoonyi, kitegeeza nti tebisangibwa mu butonde mu kifo ekimu)."
+    },
+    {
+      "hyp": "Endwadde zino zonna zikosa ensolo n’abantu mu South Africa, era okubalukawo kwazo kuggwaako okwonoona ebyenfuna by’eggwanga."
+    },
+    {
+      "hyp": "Mu kifo ky’okunoonyereza ekiyitibwa ‘okunoonyereza ku bitonde eby’obulabe’, bannabyabufuzi bannyonnyola ebitonde ebikula bulungi era ne bikosa ebintu oluvannyuma lw’okuteekebwa mu bifo ebipya gye bitaba."
+    },
+    {
+      "hyp": "Okunoonyereza okusinga kukuumye ku bitonde ebirumbaganyi ebinene gamba nga bimera n’ensolo, naye n’ebitonde ebitono ebitabalika ebiyambaza endwadde bikulu."
+    },
+    {
+      "hyp": "Mu ssuula eno, abawandiisi baayogera ku ndwadde ezimu ez’ebisolo n’abantu eziri mu South Africa, ezibaleetebwa obulwadde obwava ebweru."
+    },
+    {
+      "hyp": "Bagamba nti endwadde eyali ey’akabi ennyo ye ‘rinderpest’, eyafunibwamu mu South Africa mu mwaka gwa 1896."
+    },
+    {
+      "hyp": "Obulwadde bwa rinderpest bwali buvudde mu kawuka era bwakwata ente n’embogo."
+    },
+    {
+      "hyp": "Akawuka kamu ke kaaleetera abantu obulwadde bw’ekikamwa."
+    },
+    {
+      "hyp": "Abantu bangi ab’omu byalo baalumwa enjala oluvannyuma lw’okubalukawo kw’obulwadde mu 1896, naye kati bumaze okumala olw’okutema eggala."
+    },
+    {
+      "hyp": "Abawandiisi bagamba nti wakati wa 1772 ne 1861, embwa nyingi mu South Africa zaalwala endwadde eva ku kulumwa ensolo, wadde nga abantu tebaamanyi nti endwadde ki eno."
+    },
+    {
+      "hyp": "Nga 1893, kyali kimanyise nti endwadde eva ku kulumwa ensolo yavanga ku akawuka, n’olwekyo gavumenti yasalawo okutta embwa ezaalwako endwadde ne kugemesa ezo ezaali tezinaako."
+    },
+    {
+      "hyp": "Kyokka, kino tekyazikiriza ndwadde eno era yakwata ensolo nnyingi ez’omu nsiko gamba nga obusika, empologoma, embwa ez’omu nsiko, amagunju n’ebibe."
+    },
+    {
+      "hyp": "Abawandiisi bagamba nti mu 1928, abaana babiri baakubwa kakolwa era nebafa olw’endwadde eva ku kulumwa ensolo."
+    },
+    {
+      "hyp": "Okuva olwo, endwadde eva ku kulumwa ensolo eeyongedde okweyoleka mu South Africa."
+    },
+    {
+      "hyp": "Baagamba nti mu 1954, Abasouth Afirika bangi nabo baakwatibwa akawuka ka mumps."
+    },
+    {
+      "hyp": "Bwe kyakyawandiikibwa essuulu lino, akawuka ka measles kaali katta abaana nga 400 buli lunaku."
+    },
+    {
+      "hyp": "Baagamba nti kikung'aali kyeeyongera mu bifo abantu n'ente mwe baali bali kumpi."
+    },
+    {
+      "hyp": "Abalunzi era baayogera ku bulwadde bwe bayita akafuba k’ente (BTB), akaleetebwa akawuka ka bakitiriya."
+    },
+    {
+      "hyp": "Obulwadde bwa BTB bwakwata ente, ennyama, enkoko, ensolo ez’ennyama, empologoma, ensolo eza kudus, enkumbi n’empologoma."
+    },
+    {
+      "hyp": "Baagamba nti obulwadde bwa BTB bwali bumaze okubikkulirwa mu ppaaka y’eggwanga eya South Africa mu 1996."
+    },
+    {
+      "hyp": "Gavumenti yaziyiza obulwadde obwo ng’etta embogo ezaali zirwadde."
+    },
+    {
+      "hyp": "Abawandiisi bagamba nti akawuka akalala, akayingiziddwa mu South Africa abantu abava mu Bulaaya, kavaako endwadde eyitibwa ‘kakwata’."
+    },
+    {
+      "hyp": "Obulwadde bwo butta abantu ba Khoekhoe abasukka mu 90%."
+    },
+    {
+      "hyp": "Mu kiseera eky’enkomerero y’okusaasaana kw’endwadde, omuntu gw’abantu ba Khoekhoe gaali gwakendedde nnyo."
+    },
+    {
+      "hyp": "Abawandiisi era baategeeza ku kawuka akalwanyiisa obugendereze bw’omuntu (HIV) akavuddemu obulwadde bwa AIDS."
+    },
+    {
+      "hyp": "Abasayansi bakyalirowooza nti akawuka kaasooka okuva ku nsolo ne kajja mu bantu, mu nkola ekiyitibwa zoonosis."
+    },
+    {
+      "hyp": "Akawuka kaasangibwa mu South Afirika mu 1982."
+    },
+    {
+      "hyp": "Baagamba nti, mu 2019, HIV teyaliiko ddagala erigema wadde eddagala ery’okuwonya."
+    },
+    {
+      "hyp": "Baakomekkereza essuula nga boogera ku Kawuka ka West Nile n’Akawuka k’Enkoko z’e Ng’ombe, nga bagamba nti byava mu Afrika ne biyanguwa okugenda e Bulaaya ne Amerika."
+    },
+    {
+      "hyp": "Akawuuka ka West Nile kaasaasaanyizibwa ensiri era ne katta ennyonyi nnyingi, naye ne kakosa embalaasi n’abantu."
+    },
+    {
+      "hyp": "Baagamba nti ensolo ng’empologoma n’embizzi z’omu nsiko zaasaanyizza obulwadde bw’akaawa k’embizzi z’omu Afirika."
+    },
+    {
+      "hyp": "Obulwadde obwo bwakosa embizzi, era bwakosa nnyo emirimu gy’okulunda embizzi."
+    },
+    {
+      "hyp": "Bawandiisi bagamba nti baayogera ku ndwadde eziviirwa mu bakitiriya n’akawuka aka virus bokka, n’olwekyo essuula eno si lunnyiriri olujjuvu lw’obuwuka obwonna obutuuka mu mubiri."
+    },
+    {
+      "hyp": "Abaawandiika baava mu South Africa."
+    },
+    {
+      "hyp": "Enkola y’okujjanjaba eky’obujjanjabi ekwata ku bukakafu obw’obujulizi bw’okuwona kwa  Odontogenic keratocyst"
+    },
+    {
+      "hyp": "Okulongoosa obulungi ekikulukuto kya  odontogenic keratocyst (OKC) kikyali kintu ekikulu era ekikyamu mu bitabo by’obujjanjabi bw’ennwawo n’amagulu."
+    },
+    {
+      "hyp": "Mu kiseera kino, tewali kigendererwa kya buli muntu ku ngeri esingayo obulungi ey’okujjanjaba abalwadde abalina endwadde y’amenyo ag’amaanyi."
+    },
+    {
+      "hyp": "Mu ngeri za bujjanjabi ez’enjawulo eziriwo, tewali ngeri yonna ekiraze nti tewali kuddamu kw’ekikulukuto oba kyetaagisa okuddamu okutwalibwawo okutaliimu, okuggyako okuggyawo ekikulukuto kyonna n’okulekawo akatundu akatono."
+    },
+    {
+      "hyp": "Olw’obutabeerawo kwa bukakafu bw’ebigambo eby’okujjanjaba abalwadde abalina ekizibu ky’odontogenic keratocyst mu bitabo, kunoonyereza kuno kugenderera okuteekawo enkola y’okujjanjaba, esigamiziddwa ku biva mu kunoonyereza kw’ebibalo, erina essuubi ery’okuyamba mu kutumbula enzijanjaba y’abalwadde abalina ekizibu kino."
+    },
+    {
+      "hyp": "Ng’okozesa ebipimo bya; obuwufu, ekika ky’ekibwa (ekikulu oba ekikyusiddwa), ekibwa ekirwaddemu abantu bangi oba ekimu, obuwuka obwonoona amalusu, n’obuwuka obw’enjawulo; tulaga omulamwa gw’okusalawo, okuyamba mu kulondawo enzijanjaba n’okufuna omukisa omutono ow’okuddamu okufuna obulwadde mu kujjanjaba ekibwa ky’amenyo."
+    },
+    {
+      "hyp": "Abanoonyereza bateesa engeri ezisingako okujjanjaba obulwadde bw’amasusu."
+    },
+    {
+      "hyp": "Mu kukozesa awamu ebibala by’okunoonyereza okw’emabega, abanoonyereza baategeka entambula eyo y’obulongoofu abasawo gye bayinza okukolera okutonda n’okujanjaba abalwadde abalina obulwadde bw’amasubi oluyitibwa ‘odontogenic karatocyst’ (OKC)."
+    },
+    {
+      "hyp": "OKC lye zigiro, oba ekikula ekitali kya bulijjo, ku mannyo g’omuntu."
+    },
+    {
+      "hyp": "Abasawo basanga embeera eno kizibu okugijjanjaba, era abalwadde batera okufuna endwadde endala ya OKC ne oluvannyuma lw’okuwona."
+    },
+    {
+      "hyp": "Abasawo kyeyava basunsula engeri ez’enjawulo ez’okujjanjaba amalwadde gano ag’omu kamwa mu bujjuvu era eteriiko bukyamu."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baanoonya  ebigendererwa ebikulu abasawo bye basaana okukola okusobola okuzuula n’okujanjaba endwadde eyo."
+    },
+    {
+      "hyp": "Baakikola nga banoonya mu biwandiiko ebyaliwo, oba mu bitundu by’okunoonyereza, eby’OKC."
+    },
+    {
+      "hyp": "Baali baagala nnyo okufuna amawulire agakwata ku ngeri abasawo gye baakolamu ku OKC mu bbanga lya mwaka gumu, nga bwe kyali kibikiddwa mu bitundu 46 bye baazuula."
+    },
+    {
+      "hyp": "Abanoonyereza baazuula nti OKC yasinga okubalabika mu basajja okusinga mu bakyala, era eyinza okukwata abantu okutuuka ku myaka 90, wadde nga yasinga okubalabika wakati w’emyaka 20 ne 30."
+    },
+    {
+      "hyp": "Obulwadde bwakose ebikwaŋŋa eby’awansi."
+    },
+    {
+      "hyp": "Obulwadde bwa OKC butandika mu gwama, okuwuluka kw’akakomo kuliko kuwoneka oluvannyuma."
+    },
+    {
+      "hyp": "Abalwadde baasanga nga balumwa era nga balina omusaayi (amazzi, gamba nga obutonto, agava mu kibwa oba mu kibonerezo), era enkombe z’amenyo gaabwe zisobola okugenda mu bifo ebitali bya bulijjo."
+    },
+    {
+      "hyp": "Baateesa nti abasawo baggyayo ekibikwa kyonna n’amenyo agali okumpi."
+    },
+    {
+      "hyp": "Bwe ziggyibwawo, basaanidde okuteekaako eddagala eriyitibwa Carnoy’s solution, awamu n’omukka ogubisi (omukka ogubisi ennyo ogukozesebwa okuggyawo olususu olwonooneka mangu) ne fluorouracil (erimanyikiddwa nga 5FU, eddagala ery’ekkookolo erikozesebwa nnyo)."
+    },
+    {
+      "hyp": "Oluvannyuma lw’obujjanjabi buno, abanoonyereza baateesa nti omulwadde asaanidde okwekebejjebwa bulijjo okumala emyaka 25."
+    },
+    {
+      "hyp": "Baagamba nti obujjanjabi buno bwe bulungi ennyo ku bizigiro ebitono okusinga akatunda k’omusota (3 cm)."
+    },
+    {
+      "hyp": "Ku bunafu obuzingiramu omusaawo gwa sentimita 3, abanoonyereza baateesa nti waliwo okwetegereza okusingawo."
+    },
+    {
+      "hyp": "Baagamba nti abasawo basaanidde okusooka okukendeeza ku bwanyigirizi mu kibikwa ekyo n’okuggyawo amazzi, era n’okuggyawo obugoma bwonna obuli ku lusu lw’ekikono."
+    },
+    {
+      "hyp": "Oluvannyuma lw’ekyo, ggumba liteekebwa mu madagala ga Carnoy."
+    },
+    {
+      "hyp": "Baateesa nti abasawo basaanidde okukolako ku balwadde bano buli myezi 2 okumala emyaka 2."
+    },
+    {
+      "hyp": "Bwe kiba nti omulwadde alina ebizigiro bingi, abasawo bayinza n’okubisaanyaamu nga bakozesa ebyuma ebikulu eby’omu malwaliro."
+    },
+    {
+      "hyp": "Naye mu bujjuvu, okunoonyereza okwekebejje kwalaga nti mu mbeera nyingi, singa abasawo baggyawo ekizibe ne bassaako 5FU, abalwadde tebakomawo na OKC."
+    },
+    {
+      "hyp": "Wabula baalabula nti obujulizi bw’obujjanjabi obwo tebwalimu bukakafu buli kiseera, era baafuna ebiwandiiko bya sayansi bitono ku nsonga eno."
+    },
+    {
+      "hyp": "Ate era abanoonyereza tebaakola ge bigezo byabwe okusobozesa okuwa amagezi gano; wabula baagezaako okuŋŋaanya enkola z’obujjanjabi ezisinga obulungi ezaategeerezebwa okuva mu kunoonyereza okwakolebwa abanoonyereza abalala."
+    },
+    {
+      "hyp": "Abanoonyereza bano, abaali mu Nigeria ne USA, kyeyava bateesa okuba nti wabeerewo okunoonyereza okulala mu mawanga amalala okusobola okugezaako obulungi bw’enkola y’obujjanjabi eteezebwa wano."
+    },
+    {
+      "hyp": "Era baakubiriza abasawo okuteesa ku mbeera endala ez’abalwadde mu kiseera ky’okujjanjaba."
+    },
+    {
+      "hyp": "Eddagala erigema ery’akawuka ka SARS-CoV-2 (2019-nCoV), MERS-CoV ne SARSr-CoV: Okugerageranya okukozesa kompyuta okusobola okuteesa epitope ez’okugezesa."
+    },
+    {
+      "hyp": "Akawuka ka kolona bulijjo kaba kakwata ku buli kika kya nsolo, eky’ennyama nnyama oba eby’ebinyonyi okusinziira ku buli kika kyako; kyokka, akawuka kano oluusi kasobola okukyukira ku nsolo endala olw’okufuukafuuka."
+    },
+    {
+      "hyp": "HCoV-229E y’emu ku kawuka ka kolona ka bantu mukaaga, nga mulimu ne HCoV-NL63, HCoV-OC43, HCoV-HKU1, MERS-CoV ne SARSr-CoV (SARSr-CoV-1 ne SARS-CoV-2), era gasambiddwa mu nsi yonna."
+    },
+    {
+      "hyp": "MERS-CoV ne SARS-CoV-2 biyinza okusigala ku bintu ebitali bulamu gamba nga (ekyuma, glasi oba pulaasitiki okutuusa ku nnaku mwenda) (Huang, C.-L, 2020)."
+    },
+    {
+      "hyp": "Engeri z’okwewala obulwadde n’okujjanjabwa kw’eddagala erya Hydroxychloroquine bya mugaso, naye eddagala erigema erikola obulungi liyinza okwetaagibwa okukomya okusaasaana kw’akawuka ka covid-19."
+    },
+    {
+      "hyp": "Ekigendererwa ky’okunoonyereza kwaffe kyali okumanya ebintu ebiyinza okuba eddagala erigema nga tukozesa enkola ez’ebibalo kannabulamu."
+    },
+    {
+      "hyp": "Ebikozesebwa n'Enkola"
+    },
+    {
+      "hyp": "Endagabutonde eziwera ez’akawuka ka SARS-CoV-2 zaafunibwa okuva mu 2019 Novel Coronavirus Resource (2019nCoVR) ne tterekero bibiri, nga mubaddemu  National Center for Biotechnology Information (NCBI) Global Initiative on Sharing All Influenza Data (GISAID) ne TAURAU/T-bio-infoserver ez’okukozesa ku mutindo gwa kompyuta."
+    },
+    {
+      "hyp": "Tujja kubuulirirako obuwanvu ku lwakiri lw’akawuka, tugeraageranye obubaka bw’enjawulo okusobola okumanya ebitundu ebikuumirwa, ekifo eky’ekirungi ekisinga okubonekagana (ekifo eky’okukwatagana n’ekiruubirirwa), n’okukola enkyusakyusa ey’omukutu ogw’omukisa ogw’omoolekyu (epitope) ey’okuyamba mu kulwanyisa obulwadde 2019-nCoV, SARSr-CoV, ne MERS-CoV ebipya."
+    },
+    {
+      "hyp": "Kyenkanyi, okugerageranya ensengeka wakati wa SARS-CoV-2 n’ekika ekirala kyalaze nti ebisigalira ebiri mu kitundu ekikwata ku kifunyi bikuumirwa nnyo n’obufaanana bwa 70%."
+    },
+    {
+      "hyp": "Twawadde ensimbi za bulimu asidi akola puloteyini ttaano ez’omugaso (L455, Y473, N479, F486, Q493) ku kitundu kya puloteyini enfunyi ey’ekika kya spike ekivunaanyizibwa ku kukwatagana wakati w’akawuka n’omubiri gw’omuntu."
+    },
+    {
+      "hyp": "Mu kitundu kya SARS-CoV-2 ekya RBD mulimu ebisigalira (D480, ne T487) ebyayamba akawuka okuva ku bika by’ensolo okudda ku bantu."
+    },
+    {
+      "hyp": "Kyokka, mu SARS-CoV-2, enkyukakyuka ntono ku ebisigalira ebimu ziyinza okwongera ku kukozesa ekifunyi kya buli sela ya muntu: L455, F486, Q493, ne N501."
+    },
+    {
+      "hyp": "Mu SARS-CoV, ebisigalira bibiri ebikulu (479 ne 487) bizuuliddwa okuba nga bikwatagana n’okutegeera ekifunyi kya ACE2 eky’omuntu."
+    },
+    {
+      "hyp": "Mu kawuka ka SARS-CoV-2, ebisigalira ebiri ku namba N479 bikwatagana ne Q493, ate ebiri ku namba T487 bikwatagana ne N501."
+    },
+    {
+      "hyp": "Twazuula ensengeka z’asidi akola puloteyini ezikuuma obulungi mu bika by’akawuka ka kolona bingi omuli 2019nCoV n’ebika ebirala, ekika kya KRSFIEDLLFNKVTLADAGF kyazuuliddwa okuba nga kikuumibwa bulungi mu kunoonyereza kuno era kikwatagana n’ekitundu ekiri okumpi n’ekimu ku bifo eky’okutema eky’akawuka ka SARS ekiteeberezebwa okuba nga kyetaagisa okusobozesa akawuka okweyongera mu sela."
+    },
+    {
+      "hyp": "Ensengeka eno n’enjawulo ez’emirira ezigiweŋŋamira zaali musingi gw’okuteesa ku epitope ya eddagala erigema ery’ekikolwa, ekyo kisobola okukola abakandida ab’enjawulo ab’obutono era ab’amaanyi n’ebitundu ebyekwata."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kuwa obubaka n’emikisa gy’okukakasa ebintu eby’obutonde."
+    },
+    {
+      "hyp": "Nga bwe kiri, omulimu guno gusobola okwongerwako mu ngeri y’okunoonyereza ku butonde bw’abantu n’ebitonde, era gujja kuba mangu okukopiwanga abalala, wadde nga obubaka obupya n’okunoonyereza ku COVID-19 bujjawo era bukyuka mu kaseera k’akawungeezi."
+    },
+    {
+      "hyp": "Bannassaayansi bageraageranya COVID-19 n’ebika by’akawuka agakwatagana okusobola okuyamba okufuna eddagala erigema."
+    },
+    {
+      "hyp": "Mu September 2020, abayizi ba bya sayansi mu Mali baagerageranya amawulire g’endagabutonde okuva mu kawuka ka Covid-19 n’akawuka ka kolona abiri agakwatagana okusobola okumanya ebintu ebiyinza okuyamba mu kutonda omusaayi."
+    },
+    {
+      "hyp": "Mu kiseera ekyo, bannassaayansi baali bakyanoonya eddagala erigema erya COVID-19 eryatuukiridde."
+    },
+    {
+      "hyp": "Baayagala okuzuula okufuukafuuka mu kawuka ka Covid-19 okusobola okutegeera omulimu gwabyo mu buwuka."
+    },
+    {
+      "hyp": "Abanoonyereza b’e Mali kyeyava bageraageranya akawuka ka Covid-19 (SARS-CoV-2) n’akawuka akalala ka kolona kabiri akaleeta obulwadde eri abantu, kwe kugamba MERS-CoV ne SARS-CoV."
+    },
+    {
+      "hyp": "Ekimu ku binnongo by’okunoonyereza kuno kwe kyali okunoonyereza ebifo ebimu ku kawuka ka Covid-19, ebiyitibwa epitopes, ebisobola okukengebwa obusibage bw’omuntu."
+    },
+    {
+      "hyp": "Okubazuula kuyamba bannassaayansi okukola eddagala erigema erikola obulungi."
+    },
+    {
+      "hyp": "Abanoonyereza era baageraageranya akawuka konna asatu okulaba obwaliwo obuganda mu ndagabutonde obuyinza okweyongera okuyamba mu kukola eddagala erigema."
+    },
+    {
+      "hyp": "Baateeka essanyu ku nsengeka y’endagabutonde ya puloteyini z’akawuka ez’omugogo, nga zino ze puloteyini ezisobozesa akawuka ka kolona okukwatagana n’obutaffaali bw’omuntu, ne bubulwaza."
+    },
+    {
+      "hyp": "Abanoonyereza baazuula nti puloteyini enfunyi za buli kawuka ku bisatu byonna zaali zifaanagana nnyo mu ndagabutonde, naddala ebitundu ebikolagana n’obutaffaali bw’omuntu."
+    },
+    {
+      "hyp": "Ekyavuddemu mu kawuka ka Covid-19 kwe kuba nti waabaddewo enkyukakyuka ntono mu puloteyini ya spike ezaasobodde okukola akawuka okuba akakwatirira bulungi mu bulimba bw’omuntu."
+    },
+    {
+      "hyp": "Ebyava mu kunoonyereza kuno biyinza okukwata abanoonyereza abalala okukola eddagala erigema erya Covid-19 erisinga obukulu nga bibayamba okuzuula ebitundu ku kawuka ebiba ekitundu ekiruubirirwa ekirungi ky’eddagala erigema."
+    },
+    {
+      "hyp": "Okunoonyereza kuno era kwaleeta amawulire agapya agakwata ku ngeri endagabutonde z’akawuka ka Covid-19 gye zeefanaganaamu ne gye zibeera enjawulo ku kawuka akalala aka kolona."
+    },
+    {
+      "hyp": "Abanoonyereza baalaba nti okunoonyereza okw’omu maaso kulina okussa essira ku ky’okulaba obanga enkyukakyuka mu ndagabutonde z’akawuka ka Covid-19 zikifuula okuba akamenyera era nga kikyamu okusinga akawuka akalala ka kolona."
+    },
+    {
+      "hyp": "Enkuba y’omutima embi mu Balwadde ba COVID-19: Okwekaliriza ebizuuliddwa mu kunoonyereza okw’enjawulo okukoleddwa"
+    },
+    {
+      "hyp": "Enkuba y’omutima embi teyinzika kwerabirwa mu balwadde ba akawuka ka kolona 2019 (COVID-19) kubanga erina kinene ky’ekola ku bivuddemu."
+    },
+    {
+      "hyp": "N’olwekyo, okunoonyereza kuno kyalina ekigendererwa eky’okukola obujulizi obukakafu ku bungi bw’enkuba y’omutima embi mu balwadde ba COVID-19."
+    },
+    {
+      "hyp": "Twayita okunoonyereza okutongolebwa mu materekero g’obubaka/amasenge g’okunoonyereza agali mu buwombeefu omuli PubMed, Scopus, Cochrane library ne web of science."
+    },
+    {
+      "hyp": "Oluvannyuma lw’okusunsula, obubaka obulimu obulungi bwakusazibwa, era ebyabaawo mu kunoonyereza okw’enjawulo okwakozesebwa kwagattibwa wamu okukola okunoonyereza kw’ebibalo."
+    },
+    {
+      "hyp": "Okunoonyereza kwa mirundi mwenda kwe kwatuukirira mu kunoonyereza kwaffe nga kulimu abalwadde 1445."
+    },
+    {
+      "hyp": "Ebyavudde mu okunoonyereza kw’ebibalo byalaga nti omuwendo gw’endwadde z’omutima ez’enjawulo mu balwadde ba COVID-19 gwali 19.7% nga ekisaanikiro kya 95% (CI) kiri wakati wa 11.7 ne 27.6%."
+    },
+    {
+      "hyp": "Wabaawo n’enjawulo ey’amaanyi (I2□=□94.67%)."
+    },
+    {
+      "hyp": "Enkuba y’omutima embi zaali nnyingi nnyo mu balwadde ba COVID-19 era zaalabikidde mu 19.7% ku bo."
+    },
+    {
+      "hyp": "Okulondoola obulungi okuyita mu electrocardiogram nga mumaze okumanya bulungi era mu bwangu enkyukakyuka z’obutaffaali eziremesa eddagala okukola kikulu nnyo okusobola okufuna enkola ennungi n’ebiragiro ebirungi."
+    },
+    {
+      "hyp": "Abalwadde ba Covid-19 bangi baalina enkuba y’omutima etali ya bulijjo."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti abalwadde ba Covid-19 abamu ku bataano balumwa enkuba y’omutima embi, emanyikiddwa nga enkuba y’omutima etali ya bulijjo."
+    },
+    {
+      "hyp": "Olw’okuba kizingiramu nnyo, bateesa okugoberera enkuba y’omutimba gw’omulwadde nga bakozesa ekikola ekya electrocardiogram, baleme abasawo okumanya era okukola ku nkuba y’omutimba embi mu bwangu."
+    },
+    {
+      "hyp": "Wadde Covid-19 ekosa amawuggwe n’ekitundu ky’omubiri ekivuga omukka okusinga, okunoonyereza okumu kulaze nti esobola okukosa n’omutima."
+    },
+    {
+      "hyp": "Abanoonyereza baayagala okwetegereza obubaka bw’abalwadde okukiraba engeri obuzibu bw’omutima gye bwali buli buli mu balwadde ba COVID-19 mu 2020, wakati mu ntandikwa y’ennawookeera y’ensi yonna."
+    },
+    {
+      "hyp": "Baakola okunoonyereza kw’ebibalo, nga kino kiba kwekaliriza kunoonyereza okw’enjawulo ku nsonga emu okusobola okufuna ebirowoozo ebya bulijjo okuva mu kunoonyereza konna nga kigattiddwa."
+    },
+    {
+      "hyp": "Baanoonyereza ku kunoonyereza okukebeddwa abantu bannaabwe mu materekero g’obubaka ag’enjawulo, ne baggyawo buli bubaka obukwata ku nkuba y’omutima ebitali za bulijjo mu balwadde ba Covid-19."
+    },
+    {
+      "hyp": "Mu nkomerero, baakwata okunoonyereza kwa mirundi 9 okwali obubaka obukwata ku balwadde 1445."
+    },
+    {
+      "hyp": "Baakizuula nti enkuba y’omutima embi yalabikidde mu bitundu 19.7% eby’abalwadde ba COVID-19."
+    },
+    {
+      "hyp": "Wabula balabula nti obungi obutono bw’okunoonyereza kwe baakozesa buyinza okwonoona okuwunzika kwabwe."
+    },
+    {
+      "hyp": "Ebirimu ku kunoonyereza kuno tebyalaga bulungi ekika kya buzibu bw’omutima, era ebikukugira bya buli kunoonyereza kuyinza okukosa ebikukugira by’okunoonyereza kw’ebibalo."
+    },
+    {
+      "hyp": "Baateesa nti mu biseera ebijja kutunulwe lwaki abalwadde bangi abalina Covid-19 baalina obutambi bw’omutima obutali bwa bulijjo."
+    },
+    {
+      "hyp": "Abawandiisi b’olupapula luno baali bava mu Egypt, naye abalwadde mu kunoonyereza kuno baali bava mu China ne Amerika."
+    },
+    {
+      "hyp": "Emizeeyo gy’abawenzi abalala ku kusenguka, embeera y’obwongo ne PTSD:"
+    },
+    {
+      "hyp": "Okwetegereza ku biwandiiko eby’omuwendo"
+    },
+    {
+      "hyp": "Mu ssuula eno, tuwa akabonero k’okunoonyereza okukoleddwa ku PTSD, embeera y’obwongo n’okubeera obulungi kw’abantu abasenguka."
+    },
+    {
+      "hyp": "Ebyobungi by’okunoonyereza biraga nti ebizibu ebibaawo nga tebannasenguka n’ebibaawo nga bamaze okusenguka byonna bikosa embeera y’obwongo n’ekizibu ky’okusigala mu kyobeera mu bantu abasenguka n’abafugibwa."
+    },
+    {
+      "hyp": "Mu mawanga gye basibuka, okuwonawo obubi n’okutulugunyizibwa byali bizingiramu ennyo embeera y’abantu abasenguka ku bwongo."
+    },
+    {
+      "hyp": "Ebizibu by’obulamu bw’omuntu ebiviiriddeko okubonaabona okw’amaanyi eri abasenguka mu mawanga mwe baddukira, mubaddemu okweraliikirira okuva mu kwegenderezaako obuwangwa obulala, embeera y’obutuuze, okwawukana n’ab’omu maka, obuzibu bw’olulimi, obutafuna bulungi obujjanjabi, obwennyamivu, obusujjuzi, okuwulira nga tebasobola kukola kintu kyonna, okukendeera kw’okwemanya, okweraliikirira okw’olubeerera n’okwegendereza ennyo."
+    },
+    {
+      "hyp": "Mu buzibu bwonna obw’obulamu bw’omuntu, obweraliikirivu, okutya n’okuŋŋanga oluvannyuma lw’akabenje (PTSD) biteeberezebwa okuba bya bulijjo, nga buli kimu kirimu ebitundu 4–40%, 5–44% ne 9–36% okusinziira ku buwanguzi."
+    },
+    {
+      "hyp": "Mu bunene, obuyambi bw’abantu n’enkola z’okuvvuunuka ezikyusa embeera byalaga nti bya kusaabaza."
+    },
+    {
+      "hyp": "Embeera y’obwongo y’abafuge etatibwa embeera gye baasiibula n’okubeera mu kifo ekipya."
+    },
+    {
+      "hyp": "Abasenguka n’abafugibwa abadduka mu mawanga amalala batera okubeera n’ekizibu ky’okusigala mu kyobeera n’ebizibu ebirala ku bwongo."
+    },
+    {
+      "hyp": "Wadde ng’ebizibu bingi ebyo bive mu bintu ebyabaawo mu mawanga gaabwe, abayizi ba sayansi bagamba nti kikulu okukkiriza nti okweraliikirira okubeera mu ggwanga eddala kiyamba ku kizibu."
+    },
+    {
+      "hyp": "Okusinziira ku byeekuusa ebikwata ku kunoonyereza okwawukana, obulumi bw’omutima, okweraliikirira, n’ekizibu ky’okusigala mu kyobeera (PTSD) byonna bye bizibu ebya bulijjo ku bwongo mu bantu abasenguka n’abafugibwa."
+    },
+    {
+      "hyp": "Bulijjo ekizibu ky’okusigala mu kyobeera (PTSD) kiva ku kuwona mu mbeera ez’akabi oba ez’obulabe, era abantu batera okufaananako ebyava mu mbeera ezo embi okumala myezi, oba ne myaka."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baabadde baagala okutegeera ebintu eby’enjawulo ebyenyigira mu bizibu by’embeera y’obwongo bw’abantu abasenguka gamba nga PTSD."
+    },
+    {
+      "hyp": "N’olwekyo baakola okunoonyereza okuyitibwa okwekaliriza, mwe baafunza obubaka okuva mu kunoonyereza okulala okw’enjawulo ku nsonga eyo, okunoonya ebintu eby’enjawulo oba emitima egy’enjawulo."
+    },
+    {
+      "hyp": "Mu mbeera nnyingi, ebizibu by’abatemu ku bwongo bibaawo olw’ebintu eby’okweraliikiriza gamba nga oluyimba, okufiirwa abantu baabwe baagala, oba okubembeddewa mu mawanga gaabwe."
+    },
+    {
+      "hyp": "Bwe baava mu mbeera ezo, baasangaŋŋangaŋa eŋŋendo ez’obusobozi, naye oluvannyuma ne basanyuka bwe batuuka mu ggwanga eddala."
+    },
+    {
+      "hyp": "Naye, abanoonyereza baagamba nti obuweerwa buno businga kuba obw’akaseera, kubanga abasenguka basangawo okusoomooza okulala oluvannyuma lw’okukyusa ekifo."
+    },
+    {
+      "hyp": "Baakizuula nti abasenze batera okufuna obuzibu mu nsi empya, naddala singa tebategeera lulimi, oba nga babonaabona okwewoomesa ku buwangwa."
+    },
+    {
+      "hyp": "Bwe baali batuuse mu ggwanga mu bukyamu, oba nga baali baagala okufuna obubudamu, nabo baalina okukolagana n’ebizibu by’amateeka, era emirundi mingi baali balina obuzibu okufuna obuyambi ng’ebyobulamu."
+    },
+    {
+      "hyp": "Abamu, obusujja n’okuyawukanyizibwa mu nsi empya byongedde okubawa okuwulira nga tebakyakwata, era bangi baali basigaddewo ab’eŋŋanda nga bali bokka."
+    },
+    {
+      "hyp": "Ebintu bino byagattako ebizibu ku bwongo ebyagenda mu maaso, ne bwe baali mu mbeera ey’okwerinda okusinga eyo gye baali mu mawanga gaabwe."
+    },
+    {
+      "hyp": "Abanoonyereza bwe baayongerako nti abasenze baalina enkola ez’enjawulo ez’okukolagana n’ebizibu bino, okuva mu kulonzeza enkola y’okubyeesenza, okunoonya obuyambi mu bantu abalala mu kitundu kyabwe, oba enkola embi gamba ng’okukozesa ebiragalalagala."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti okunoonyereza okusingawo kwetaagisa mu mitendera gyonna egy’obulamu bw’omusenzi."
+    },
+    {
+      "hyp": "Mu butuufu, kikulu nnyo okunoonyereza ku bintu ebyonoona embeera y’obwongo mu mawanga gaabwe, naye ne mu biseera eby’oluvannyuma mu mawanga gaabwe agakya."
+    },
+    {
+      "hyp": "Bagattako nti olugendo lw’abantu abava mu Africa okudda e Bulaaya lwetaaga okugobererwa obulungi okuva mu bannoonyereza."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakolebwa bannassaayansi ababeera mu South Africa ne Bugirimaani nga bali mu mukago, era nga kitundu ku kitabo ekikwata ku byafaayo by’abatuuze ba Afrika abaabeera mu mawanga ga Bulaaya."
+    },
+    {
+      "hyp": "Okubaawo n’Okweyongera kwa Amblyomma Hebraeum Kweyongera Okuwambaza Omulimu gw’Endwadde ya Heartwater mu Disitulikiti ey’e Ddyo e Botswana"
+    },
+    {
+      "hyp": "Heartwater y’endwadde etwalibwa enkwa, era emenya omusaayi, era esobola okulemesa okukula kwa bulimu mu Botswana."
+    },
+    {
+      "hyp": "Obulabe buno ku nteekateeka y’eggwanga ey’okufuna emmere emala butuukibwako olw’obuwungaavu bw’obuwumbi n’okufa kw’ensolo ezirundibwa mu bulimi obw’okwetunga obuto okusinga mu bulimi obw’obusuubuzi."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kulaga embeera y’endwadde ey’omutima mu Botswana."
+    },
+    {
+      "hyp": "Enkwa eziriisa ensolo ezisibibwa mu bisenge bya bukiika bbiri mu bukiika bwa Botswana zaategeerezebwa okuyitira mu kubuuliriza n’okunoonyereza ku buwangwa bwazo."
+    },
+    {
+      "hyp": "Abalimi baabuuzibwa ebibuuzo ku mutindo gw’okulabirira obulwadde bwa heartwater mu ggombolola zaabwe."
+    },
+    {
+      "hyp": "Ebiwandiiko by’endwadde ez’ensolo ebyava mu ddwaliro byakusanyizibwa okusobola okumanya emirundi gy’obweyolesi gw’endwadde ezo mu disitulikiti y’obukiikaddyo eya Botswana."
+    },
+    {
+      "hyp": "Ebyava mu kunoonyereza byalaga; okusaasaana kwa Amblyomma hebraeum okweyongera mu disitulikiti zonna ennya ezaanoonyerezebwa, okweyongera kwa buli mwaka mu buwuka bw’omu mutima mu disitulikiti ya Moshupa n’akabonero akalaga okweyongera kw’obuzibu ku nsolo ez’omu nsi eno wadde abalimi 63% abaabuuziddwa baafuba okuziyigganya."
+    },
+    {
+      "hyp": "Amblyomma hebraeum, ekikulukuta ekikulu ekisaasaanya Ehrlichia ruminantium mu Bukiikaddyo bwa Afirika, kiwandiikiddwa mu bitundu bingi eby’obukiikaddyo bw’eggwanga lya Botswana era n’ekyoleka obukulu bw’obuzibu eri omulimu gw’okulunda ensolo mu kitundu ekyo, era oboolyawo n’ebitundu ebirala eby’eggwanga, we kikulukuta kino kiyoleka ku nsolo ezirundibwa."
+    },
+    {
+      "hyp": "Kyeyavaamu obwetaavu bw’okuddamu okulaba enkola ez’okutangira enkwa eziryo, nga kigendererwa okukendeeza ku kizibu ky’omusaajja gw’omu mutima, naddala mu ndiga n’embuzi."
+    },
+    {
+      "hyp": "Obungi bw’enkwawa mu bukiika kkono bwa Botswana bulemeza endwadde ya heartwater mu nsolo ezirundibwa."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwalaba ku buzito bw’endwadde ey’enkwali n’endwadde y’omutima mu bukiika kkono bwa Botswana wakati wa 2017 ne 2019."
+    },
+    {
+      "hyp": "Ebyava mu kunoonyereza kuno biyinza okuyamba gavumenti n’abalimi okuteekateeka enkola ennungi ey’okulwanyisa obulwadde bw’omutima."
+    },
+    {
+      "hyp": "Enkwa ezimu zibala bakiteriya ekiyitibwa Ehrlichia ruminantium, ekireeta obulwadde obumanyiddwa nga heartwater mu nte, endiga n’embuzi."
+    },
+    {
+      "hyp": "Bakitiriya eno ye kinyuunyunsi, ekitegeeza nti erya ku bulamu obulala gamba ng’ensolo ez’okufaamu, ne zibalemesa."
+    },
+    {
+      "hyp": "Ensolo ezirwadde obulwadde bwa heartwater, busukka mu bujjuvu, ziba n’ebbugumu, zireka okulya, ziba n’obuzibu bw’okupulika, era ziyinza okukka waggulu."
+    },
+    {
+      "hyp": "Obulwadde bwa Heartwater bulabika nnyo mu bukiika kkono bwa Botswana, era abalunzi mu kitundu ekyo bafiirwa ensolo zaabwe olw’obulwadde obwo."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baakebera obungi bw’obulwadde bwa heartwater mu bukiika kkono bwa Botswana."
+    },
+    {
+      "hyp": "Okusooka baakuŋŋaanya, ne balayira, era ne bategereza enkwa okuva ku nte, endiga n’embuzi okusobola okugerageranya omuwendo gw’enkwa ezirwadde ekinyunyunsi kya heartwater n’enkwa endala."
+    },
+    {
+      "hyp": "Ate era abanoonyereza baabuuzanga abalimi abamu ku byo bye baayiseemu nga balwala akawuka ka heartwater, era ne bakuŋŋaanya ebiwandiiko ebikwata ku heartwater okuva mu ofiisi y’obulamu bw’ensolo."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti enkwa ez’akabi zaali za bulijjo mu kitundu ekyonoonyerezebwa, era nti omuwendo gw’abantu abalwala obulwadde bw’omu mutima gwongera buli mwaka."
+    },
+    {
+      "hyp": "Baakuŋŋaanya akasuku 310 wakati wa 2017 ne 2019."
+    },
+    {
+      "hyp": "Baazuula ebika by’ebivu bisatu: ekivu kya South Africa ekya bont, ekivu eky’amagulu amatooke, n’ekivu eky’ebwala eky’embwa."
+    },
+    {
+      "hyp": "Ekisinga okubaawo kwe kunkwa ya South Africa eya bont (85%), era eno ye etwala obulwadde obubaawo obuleeta obulwadde bw’omutima."
+    },
+    {
+      "hyp": "Enkya endala ebbiri ze baazuula teziwaayo musujja gwa heartwater, naye zikwatagana n’endwadde endala ez’ensolo ez’enfaanana nga ‘theileriosis’, ‘anaplasmosis’ ne ‘babesiosis’."
+    },
+    {
+      "hyp": "Ebitundu abanoonyereza bye baayiga byali birangira Goodhope, Kanye, Moshupa, ne Jwaneng."
+    },
+    {
+      "hyp": "Enkwa zaali nnyingi mu Goodhope, Kanye ne Moshupa."
+    },
+    {
+      "hyp": "Ebifo ebyo byali bisinga okuba eby’omukka, eby’amayinja era nga birina obungi bw’ebimera."
+    },
+    {
+      "hyp": "Jwaneng, eyalimu enkwatte ntono, yali ekkalu, ennyongoofu era nga tebalimu bimera bingi."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti ebiwandiiko by’abasawo b’ensolo byalaga obuwuka obw’endwadde ya heartwater bwa 42 mu Goodhope, 38 mu Jwaneng, 75 mu Kanye, ne 146 mu Moshupa, okuva mu 2017 okutuuka mu 2019."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti obulwadde bwa heartwater bwakwata embuzi n’ente ez’omu kitundu okusinga endyo okuva mu mawanga amalala."
+    },
+    {
+      "hyp": "Baagamba nti abalimi baafuba okufuga enkwa."
+    },
+    {
+      "hyp": "Okugeza, ebitundu 63% eby’abalimi baali bafulumya ensolo zaabwe mu maddagala (ebintu eby’ekikemo ebyetta obuwuka obwonoona ensolo gamba nga enkwa)."
+    },
+    {
+      "hyp": "Abalimi nga kumpi kimu kya kusatu (30%) baafukira amafuta ku nsolo zaabwe okufuga enkwa, ate abalala (7%) baakola ebisenge ebipya."
+    },
+    {
+      "hyp": "Abanoonyereza era baazuula nti 44% ku balunzi tebaakola kintu kyonna kukolako nsolo eyali ebaddewo obulwadde, ate 15% baagamba nti banagenda eri abasawo b’ensolo okubabuulirira, naye ne bawa ensolo eddagala bokka."
+    },
+    {
+      "hyp": "Wadde nga waaliwo eddagala erigema eryaliwo okuziyiza obulwadde bw’omutima, abanoonyereza baagamba nti abalimi 93% tebaali bakikozesa."
+    },
+    {
+      "hyp": "Ababalunzi bagamba abanoonyereza nti kyali olw’okubulwa okusoma ku ddagala, era n’olw’obutaasobola kukuguza."
+    },
+    {
+      "hyp": "Okunoonyereza okulala mu biseera ebyayita kwalaba engeri ebikwa gye byali bisaaasaanyeemu mu Afirika, nga Botswana mulimu, naye okusinziira ku bannoonyereza, okwabalwo kwabwe kwe kwabadde ekisooka okulaba enkolagana wakati w’ebikwa n’ebizibu by’omutima eby’omu Botswana."
+    },
+    {
+      "hyp": "Baagamba nti, obuwuka obw’endwadde ya heartwater obuwandiikibwa abasawo b’ensolo buyinza okuba butono okusinga obuwuka obutuufu abalunzi bwe babuuza, kubanga abasawo b’ensolo batera okwekebejja endwadde ya heartwater buli lw’ensolo efa, ekitegeeza nti ensolo ezirwadde oba ensolo eziweddewo teziibalwa bulijjo."
+    },
+    {
+      "hyp": "Abanoonyereza baateesa nti abalimi basaanidde okusomesebwa engeri y’okutangira n’okulwanyisa obulwadde bwa Heartwater mu nsolo zaabwe, okusobola okukendeeza obungi bwabwo mu kitundu ekyo."
+    },
+    {
+      "hyp": "Era baagamba nti okunoonyereza okulala kulina okukolebwa okumanya ebintu ebiviirako enkwa okweyongera."
+    },
+    {
+      "hyp": "Abanoonyereza baali bava mu Botswana."
+    },
+    {
+      "hyp": "Emiziziiko mu kukebera obulwadde mu kifo ekimu mu India ne South Africa"
+    },
+    {
+      "hyp": "Okwekebeza mu bifo ebisembayo (POC) mu mawanga, mu maka, ne mu bifo by’obujjanjabi bw’ebiseera byonna, kiteeberezebwa okuba n’obuyinza obw’amaanyi mu kukendeeza okulindirira okwekebezebwa n’okutandika obujjanjabi bw’ebiwuka nga HIV, kafulera, kasusu, ne malariya."
+    },
+    {
+      "hyp": "Okukebera okwanguwa n’okusalawo okw’okujjanjaba okw’okweyongerayo okukolebwa mu kiseera kimu eky’okukebera oba okutereerawo olunaku lwe lumu, ng’omulwadde alinda, kusuubiza okunogga enkizo eziva mu kukebera okwa bulijjo okukozesa laboretri."
+    },
+    {
+      "hyp": "Kyokka, okuba nti waliwo eby’okukebera eby’ebbeeyi ntono, ebikolwa bulungi, era ebyangu ebiyinza okukolebwa ebweru w’amalabulatoli tebikakasa bulungi bwa nkebera za POC."
+    },
+    {
+      "hyp": "Okusobola okutegeera omulimu omupya n’okusoomooza ebikozesebwa mu byobulamu gamba nga bino bye bisanga, twetaaga okwekenneenya engeri eby’okwekebeza gye bikolebwamu ku muntu era ne gye bikubibwamu mu mirimu egy’oku bulijjo n’enkola y’okujjanjaba abalwadde."
+    },
+    {
+      "hyp": "Ssuuluuno likunula ebiwandiiko ebimu ebyafuna okuva mu kunoonyereza okw’omutindo gwa buli muntu ku bizibu eby’okwekebeza obulwadde mu bantu mu Buyindi ne South Afirika era ne bibyogerako nga bigeraageranyizibwa."
+    },
+    {
+      "hyp": "Omulimu guno gwakozesezza okubuuzibwa n’okukubaganya ebirowoozo mu bibinja okwekenneenya enkola z’okumanya obulwadde mu bulwadde obw’enjawulo n’abantu abawulira mu maka, mu malwaliro, mu bitundu, mu malwaliro agakulu, ne mu bifo eby’okugezesa mu South Africa ne mu Buyindi."
+    },
+    {
+      "hyp": "Bwe tugeraageranya ebyavaamu ebyalondebwa, kiragiddwa bulungi nti ensi zombi ziriko enkola za bulijjo ez’okumanya obulwadde ez’enjawulo nnyo, eziteekawo embeera ez’enjawulo nnyo ku kukebera kwa POC."
+    },
+    {
+      "hyp": "Essuula eno ekomekkerezebwa okulowooza ku ngeri y’okuteeka mu nnyimirira ebirowoozo bino nga tuweesa pulogulaamu z’okugezesa kwa POC."
+    },
+    {
+      "hyp": "Okukebera obulwadde obutali bulungi mu bifo eby’obujjanjabi mu Afirika eya Ddaala ne mu Buyindi kwolemesa obujjanjabi."
+    },
+    {
+      "hyp": "Okukebera okw’okuwo (POC) kutegeeza okukebera kw’obulamu okukolebwa mu kifo kye kimu omulwadde gy’afuna obujjanjabi, mu kifo ky’okusindika sampolo z’omulwadde mu lubuuliro okwekebezebwa."
+    },
+    {
+      "hyp": "South Africa ne India tebawa bukebera bwa maanyi era obumalirivu olw’ebintu ebitali birungi eby’okukebera mu bifo eby’enjawulo n’ebitongole by’okugezesa."
+    },
+    {
+      "hyp": "Okwekebeza kwa POC kiyamba abalwadde okufuna okukebera amangu nga ebyavaamu bivaayo mangu olw’obujjanjabi n’okulabirira endwadde."
+    },
+    {
+      "hyp": "Kino kisobola okukolebwa nga tuyita mu mikono egy’ebbeeyi entono era egy’abantu, egiyinza okuwa ebivaamu mu bwangu awatali kutussa sampolo mu labo."
+    },
+    {
+      "hyp": "Kyokka waliwo obuzibu bungi mu kukebera obulwadde mu mubiri (POC) obukwata ku bujjanjabi bw’abalwadde mu South Africa ne India."
+    },
+    {
+      "hyp": "Abawandiisi baayagala okugeraageranya okukebera kwa POC mu South Africa ne mu India basobole okuzuula obuzibu."
+    },
+    {
+      "hyp": "Baakola emboozi n’okukuŋŋaana mu bibinja n’abakozi b’ebyobulamu, abalwadde n’amakampuni agakola eby’obujjanjabi okuva mu September, 2012, okutuuka mu June, 2013, mu nsi zombi."
+    },
+    {
+      "hyp": "Baabuuza ku nkola za POC n’ebizibu."
+    },
+    {
+      "hyp": "Mu byobulamu by’omwulire mu Buindi, bakozesa obukadde obutono bw’ebitongole by’okukebera era bakola okukebera okw’enjawulo, naye ebitongole ebyo tebiweebwa ssente zimala, n’olwekyo tebirina bikozesebwa bimala by’okukolera okukebera."
+    },
+    {
+      "hyp": "Abawadde batera okugambibwa okuddayo olunaku olulala oba okugenda awalala, ekyo ne kireetera abalwadde obuzibu."
+    },
+    {
+      "hyp": "Abanoonyereza era baalaba nti oluusi abalwadde bakeberwa, naye ne kitwala ebbanga eddene ebyavuyo okubaawo, era ne basanga kizibu okutuuka ku dduktora waabwe oluvannyuma."
+    },
+    {
+      "hyp": "Abantu abenyigira mu kunoonyereza bagamba nti wandibaddewo amakaati g’okukebera agasinga mu malwaliro, era nti okukebera kwandikoleddwa mu kifo kye kimu awali abalwadde bayingira."
+    },
+    {
+      "hyp": "Era baagamba nti okugobererwa, obujjanjabi oba okubudaabuda byonna byandibaddewo mu kifo kimu."
+    },
+    {
+      "hyp": "Mu South Afirika, baazuula nti mu by’obulamu obw’omwuka, kkampuni emu ye etwala emirimu gyonna egy’okugezesa, n’olwekyo sampolo zigenda mu kkampuni eno."
+    },
+    {
+      "hyp": "Ebigezo ebimu eby’enjawulo bikolebwa mu kifo we bafunira obujanjabi, era abalwadde bafuna ebyavaamu mu bwangu."
+    },
+    {
+      "hyp": "Okukebera kwa HIV ne TB kutwala ebbanga eddene, n’olwekyo okugoberera oba okujjanjabwa nakwo kusesema."
+    },
+    {
+      "hyp": "Ebirala ebyaleetera okusubwa ebbanga kwe buzibu bw’entambula, okuwandiika amannya g’abalwadde mu ngeri etali ya mazima, okuleeta akabonero ku sampolo mu ngeri etali ya mazima, n’okwonooneka kw’emiyungo gya kompyuta."
+    },
+    {
+      "hyp": "Mu kukebera kwa HIV,  ebigezeso ebimu byakozesa engeri za kukebera ezitali zimu, era kino kivaamu ebyavuddemu ebitali bituufu."
+    },
+    {
+      "hyp": "Baazuula nti abalwadde gezaako okufuna okukeberebwa kwa HIV okusinziira ku buwanvu bw’ekifo oba ekika ky’okukeberebwa, era olw’ekyo oluusi bakozesa akaadi k’okuwulira akalala, ekireeta obuzibu bw’okufuna olukiiko lw’okuddamu."
+    },
+    {
+      "hyp": "Abanoonyereza baategeeza nti abakozi b’ebyobulamu balina okukola wamu okugaba omulimu."
+    },
+    {
+      "hyp": "Baagamba nti bwe ziba zikomyewo ebyokwekebeza HIV eby’omukisa, abakozi basaanidde okuddamu okutendekebwa era n’amateeka gasaanidde okuganyulwa."
+    },
+    {
+      "hyp": "Abawandiisi baagerageranya obubaka obuva mu mawanga gombi era baateesa nti abakulu balina okukola ku bubaka obwo obulungi nga tebannaongeza bintu oba ebyuma bipya."
+    },
+    {
+      "hyp": "Era bagamba nti waliwo okufuba okusingawo okulina okuteekebwa mu kukola ku mirimu emingi mu magezeserezo, n’okutegeera omulimu oguliko omulwadde mu kujjanjaba kwe."
+    },
+    {
+      "hyp": "Abawandiisi b’olupapula luno baali bava mu South Africa, India, Canada ne Netherlands."
+    },
+    {
+      "hyp": "Okutuuka ku butegeze bw’obulwadde obw’amaanyi n’okulabirira abalwadde abayi nga tukozesa okwekenneenya ebirowoozo."
+    },
+    {
+      "hyp": "Okuva “obulwadde obw’amaanyi” ne “okufaayo okw’amaanyi” tebirina butegeereze bwe buli, kunoonyereza kuno kutegeera engeri embeera zino gye zikozesebwamu, okwolesa ebintu ebibyoleka era n’okuteesa ebibuuzo ebisobola okuba eby’obutegeereze."
+    },
+    {
+      "hyp": "Twakozesa enkola ya Walker ne Avant ey’okuyongera ku kintu ku kintu okwekenneenya endowooza."
+    },
+    {
+      "hyp": "Okukozesa n’amakulu g’ebiteekateeka byalabikira mu kuteekateeka obugazi bw’ebyekalirizibwa mu bitabo n’okunoonyereza mu bantu 114 abakugu mu by’obujjanjabi okuva mu nsi yonna."
+    },
+    {
+      "hyp": "Ng'okozesa enkola y'okwekaliriza obubaka, twafuna koodi, ebika n'emiramwa okusobola okumanya ebintu eby'enjawulo eby'ebiteeso era ne tuwaayo ebibuuzo ebisobola okuba eby'obujjukizo."
+    },
+    {
+      "hyp": "Okusobola okuyamba okutegeera, tulaga omutetenkanyirizo, n’emisango egikwata ku nsonga eno n’egy’enjawulo, twalaba ebintu ebyasookawo n’ebibaawo oluvannyuma lw’ensonga eno, era ne tweraga ebintu eby’empisa eby’enjawulo."
+    },
+    {
+      "hyp": "Ebiranga obulwadde obw’amaanyi byali: omutindo gwa kufa mangu; obutakola bulungi bw’ebitundu by’omubiri ebikulu; obwetaavu bw’okulabirirwa okwewala okufa; n’obusobozi bw’okudda mu mbeera ya bulijjo."
+    },
+    {
+      "hyp": "Ebintu eby’enjawulo eby’okulabirira abalwadde abayi bye byali: okuzuula, okugoberera n’okuwangaza obulwadde obw’amaanyi; okuwagira ebitundu by’omubiri ebikulu; okujjanjaba okusooka n’okuddamu; okujjanjaba kwonna okw’obulwadde obw’amaanyi; n’ebintu by’abantu n’ebintu eby’omubiri eby’enjawulo."
+    },
+    {
+      "hyp": "Eky'okutegeeza ekyaffe ku bulwadde obw'amaanyi kwe kuba, “embeera y'obulamu obutali bulungi ng'ebitundu by'omubiri ebikulu tebikola bulungi, nga waliwo omugezo gw'okufa mangu singa tewali kujjanjabwa, era nga waliwo omukisa gw'okufuna obulamu obulungi.”"
+    },
+    {
+      "hyp": "Eky'obuggya kyaffe ku byokulwanyisa obulwadde obw'amaanyi kiri nti, “okunoonyereza, okulaba, n'okujjanjaba abalwadde abalina obulwadde obw'amaanyi okuyita mu kuyambagiza emirimu gy'ebitundu by'omubiri ebikulu.”"
+    },
+    {
+      "hyp": "Ebirowoozo bya bulwadde obw’amaanyi n’okulabirira abalwadde abayi tebirina kutegeera kw’akawaguli, era bikozesebwa mu ngeri za njawulo."
+    },
+    {
+      "hyp": "Okubayita mu kutegeera ebitegeero ebyakozesebwa n’ennyinyonnyola mu bitabo n’okuva mu bakugu, tuzuulidde ebintu eby’enjawulo eby’ebitegeero era tuteesa ennyinyonnyola ezisobola okuyamba mu bujjanjabi, okunoonyereza, n’okuteesa eby’obufuzi."
+    },
+    {
+      "hyp": "Amatendekero n’obunafu bw’okunoonyereza"
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwe kusooka okutegeka okulaga engeri z’okukozesa n’amakulu g’ebigambo obulwadde obw’amaanyi n’okufaayo eri abalwadde ab’amaanyi."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kukozesezza okwekenneenya ebiwandiiko n’obujulizi okuva ku bakugu abasoba mu kikumi mu by’obujjanjabi okuva mu bifo ebyenjawulo okwetooloola ensi okusobola okumanya ebintu eby’enjawulo era ne bawa ebirowozo ku bigambo."
+    },
+    {
+      "hyp": "Ebikozesebwa n’ebitegeeza by’ebigambo mu nnimi ezitali Lungereza, ebiri mu biwandiiko ebitali bifulumizibwa era nga tebinnafulumizibwa, ne biva ku bakugu mu by’obujjanjabi abatali mu kunoonyereza kuno, biyinza okuba nga tebyalaba."
+    },
+    {
+      "hyp": "Olw’okukozesa okw’ebintu ebyo nga bikyali bya njawulo, ennyinyonnyola ezaweebwayo ziyinza obutaba za bulijjo era zigendereddwaamu okukubiriza okwogerawo okw’okwongera."
+    },
+    {
+      "hyp": "Abanoonyereza baddamu okutegeeza amakulu g’abalwadde “abayi” n’okubalabirira."
+    },
+    {
+      "hyp": "Ebiragiro eby’omugaso eby’okulabirira abalwadde ebyakozesebwa mu nsi yonna abasawo bonna bisobola okuyamba mu kulabirira abalwadde abalwadde nnyo."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, ekibiina ky’abanoonyereza okuva mu nsi ez’enjawulo kigamba nti “obulwadde obw’amaanyi” kitegeeza nti wadde omulwadde alina omukisa omungi okufa, asobola n’okuwona."
+    },
+    {
+      "hyp": "Era baagamba nti “okulabirira” abalwadde abayi nnyo kitegeeza okulabirira kwonna okuva ku kiseera we batuuka mu ddwaaliro okutuusa lwe bafa oba lwe bawona."
+    },
+    {
+      "hyp": "Era tekitandika kutegeeza ku kujjanjaba nga okozesa ebikozesebwa bya njawulo."
+    },
+    {
+      "hyp": "Mu malwaliro, abasawo batera okuyita abalwadde abalwadde nnyo “abalwadde abayi”, era obuyambi n’obuweerero abalwadde bano bye beetaaga buyitibwa “obuyambi bw’abalwadde abayi”."
+    },
+    {
+      "hyp": "Wabula, abasawo abakolera mu bitundu oba mu malwaliro ag’enjawulo bategeera ebiwo nga bitya, kubanga ebibuuzo byabyo bya njawulo okuva mu kifo kimu okudda mu kirala."
+    },
+    {
+      "hyp": "Kino kyoleka, gamba, abalwadde abalina obulwadde bumwe okufuna obujjanjabi oba okulabirirwa okwawukana, okusinziira ku muntu abayambako."
+    },
+    {
+      "hyp": "Ennyonnyonnyo ez’enjawulo era zikoleeza gavumenti okuzuula omuwendo ow’amazima gw’endwadde ez’akabi mu mawanga gaazo."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baasooka okukaliriza engeri abasawo ab’enjawulo gye baategeezangaamu “obulwadde obw’amaanyi” ne “okufaayo eri abalwadde ab’amaanyi”, oluvannyuma ne bateesa ku bitegezo ebisinga obulungi."
+    },
+    {
+      "hyp": "Baakuŋŋaanya obubaka nga beekebeza ebiwandiiko ebimu ebyasasulwa."
+    },
+    {
+      "hyp": "Era baabuuza abasawo okuva mu mawanga agatali gamu okwetoloola ensi abalina obumanyirivu mu kujjanjaba abalwadde abalwadde nnyo."
+    },
+    {
+      "hyp": "Abanoonyereza baawandiika ebirowoozo eby’enjawulo ku bulwadde obw’amaanyi, era baalaba nti mu bulijjo bukuŋŋaana n’omuwendo omwangu gwa balwadde okufa; ebitundu by’omubiri ebimu obutaba bikolera; obwetaagisa okulabirirwa okwewala okufa; n’obusobozi bw’okuwonera."
+    },
+    {
+      "hyp": "Ku nsonga y’okufa n’okuwona, ebiragiro ebimu byategeeza nti abalwadde bonna abalwadde nnyo baali balifa mu kiseera, ate ebirala byategeeza omukisa gw’okuwona omulwadde wadde nga alwadde nnyo."
+    },
+    {
+      "hyp": "Mu nkomerero, abanoonyereza baategeeza nti obulwadde obw’amaanyi buyinza okutegeerezebwa nga obulwadde obukozesa ebitundu by’omubiri okuyimirira, nga waliwo omukisa omungi nnyo ogw’okuba nti omulwadde ayinza okufa singa tebamulabirira bulungi, naye nga waliwo omukisa gw’okuwona."
+    },
+    {
+      "hyp": "Ku kujjanjaba abalwadde abayi, abasawo baalabika nga bakitegeeza mu ngeri eyenkanankana, naye ne batatukana ku waaki obujjanjabi obwo bwe buwandiikibwa, n’obwetaagisa bw’ebyuma eby’enjawulo."
+    },
+    {
+      "hyp": "Ensimbi ezimu zagamba nti okujjanjaba okulongooseza kusobola okukolebwa mu bifo ebimu eby’enjawulo mu ddwaaliro ebirina ebyuma eby’enjawulo."
+    },
+    {
+      "hyp": "Abalala baalowooza nti okulabirira abalwadde abayi kuyinza okubaamu okukozesa ebintu eby’enjawulo, naye tekyali kyetaagisa."
+    },
+    {
+      "hyp": "Bagamba nti obuyambi bw’abawadde abayi busobola okubawanga ne mu bitundu by’amalwaliro, mu malwaliro amatono, mu bitundu, oba mu mmotoka z’okuwanika abalwadde."
+    },
+    {
+      "hyp": "Bagamba nti ne mu bifo ebikyamu, abalwadde abayi nnyo beetaaga obujjanjabi obw’amaanyi."
+    },
+    {
+      "hyp": "Abanoonyereza bwe batyo baateesa nti okujjanjaba okulongooseza kuyinza okutegeezebwa nga bujjanjabi bwonna abalwadde abalwadde ennyo bwe baafuna okuva mu kiseera we baasisinkana abakozi b’obujjanjabi okusaba obulagirizi okutuuka we bafiira oba we bawona."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti kino kwe kunoonyereza okusooka okukusanya amawulire agakwata ku ngeri ez’enjawulo ez’okutegeera obulwadde obw’amaanyi n’okujjanjaba, era nti ebyavaamu bijja kuyamba okulongoosa obuyambi bw’abantu abalwadde nnyo."
+    },
+    {
+      "hyp": "Wabula bagamba nti okunoonyereza kwabwe kuyinza okuba nga kukoseddwa olw’okuba tebaakozesa ebiragiro okuva mu nnimi endala ng’oggyeeko Oluzungereza oba okuva mu biwandiiko ebitali bifulumizibwa."
+    },
+    {
+      "hyp": "Ate era baabuuza madokita okuva mu mawanga gakyamu, n’olwekyo okwekenneenya kwabwe tekikiikirira mawanga gonna ag’ensi."
+    },
+    {
+      "hyp": "Abanoonyereza, abaava mu yunivasite za Malawi, Tanzania, Sweden ne Bungereza, baagamba nti ebiragiro bye baateekateeka bisobola okukyusabwa okusingawo singa kiba kyetaagisa."
+    },
+    {
+      "hyp": "Okunoonyereza okw’omutindo gwa genome-wide CRISPR-Cas9 kulaze CENPJ ng’omulamuzi w’omubiri omukulu ow’enjawulo y’enteekateeka y’obutambi bw’obutonde (microtubule) mu kiseera ky’obuwuka bwa Plasmodium mu kibumba."
+    },
+    {
+      "hyp": "Bwe kiba nga omusujja gw’ensiri tegunnabaawo, ekiyonkerezi kya Plasmodium sporozoite kimu kimenyawo essira ly’omubiri (hepatocyte) era ne kibaawo obuwuka obuwuka obuwuka (merozoites) obuwuka, mu bitundu ebimu nga bikolera ku bintu eby’omubiri."
+    },
+    {
+      "hyp": "Tulaga nti enseke z’obutaffaali ez’omubiri gw’omuntu zikyukakyuka mu ngeri ey’amaanyi okwetooloola ekinyunyunsi ekikula ekya liver stage (LS)."
+    },
+    {
+      "hyp": "Nga tukozesa genome-wide CRISPR-Cas9 screen, twazuula abawagizi b’omubiri abawagira enteekateeka y’amasoboza, okusindika kwa vesicle, ER/Golgi stress ne lipid biogenesis eziwaguza okukula kwa Plasmodium LS."
+    },
+    {
+      "hyp": "Abawummula bano abapya b’obulwadde, omuli Centromere Protein J (CENPJ), batuleetera okwebuuza engeri ebitongole eby’okutegeka microtubule (MTOCs) gye bitambulirwa mu kiseera ky’obulwadde."
+    },
+    {
+      "hyp": "Ebifo bya γ-tubulin ebisangibwa ku mpeta y’ekinyunyunsi; okuggyawo CENPJ kyongera okukyusa ekifo kino era kyongera obuwuka."
+    },
+    {
+      "hyp": "Okwongera, tulaga nti Golgi yeeraga nga MTOC etali ya centrosome nga eteeka γ-tubulin ate ne yeegatta ku kutondeka kwa microtubule ku mabbali g’ekinyunyunsi."
+    },
+    {
+      "hyp": "Wamu, tulaga nti Plasmodium LS eragira Golgi ya munnakigwa okukola ebiyiiya eby’okutwala ebintu eby’omubiri eby’omukutu (MT mediated conduits) ebyo ebiyiiya eby’omubiri eby’omukutu (host organelles) bye bitwalibwa ku PVM, okuwagira okukulaakulana kw’omutindo gw’omundu."
+    },
+    {
+      "hyp": "Ebyo bye tuzuula biraga nti abawonnyi bangi abalwanyisa obuwuka boogerera ku buwuka bwa LS."
+    },
+    {
+      "hyp": "Bannassaayansi banoonyereza engeri omusujja gw’ensiri gye gukozesa obutaffaali bw’omubiri okusobola okwongerawo engeri ez’okujjanjabwa."
+    },
+    {
+      "hyp": "Ebinyunyunsi bingi bikozesa ebirungo n’ebintu ebiri mu buli cell ya muntu oba ensolo okwezaala."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baazuula endagabutonde ezimu ezitwala omulimu mu buwuka bw’omusujja gw’ensiri mu bulimba bw’ebisiba, ekyo kiyinza okukuleeta ekitundu ekiruubirirwa ky’eddagala ery’okulwanyisa omusujja gw’ensiri mu biseera eby’omu maaso."
+    },
+    {
+      "hyp": "Omusujja gw’ensiri mulwadde omuyitirivu era guyinza okutta omuntu, gukolebwa akawuka ka Plasmodium, akaasasaanyizibwa ensiri bwe ziruma abantu."
+    },
+    {
+      "hyp": "Bwe kiyingira mu mubiri, Plasmodium kiddamu kugenda ku kibumba okweyongera - ekiseera kino eky’okusooka kiba kirungi okukolamu obujjanjabi bw’ensiri kubanga tewali bubonero bw’obulwadde era obulwadde tebusobola kusasaana."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baayagala okuzuula enkyukakyuka enzigu mu ndagabutonde ne puloteyini mu butaffaali bw’ekibumba obulimu obuwuka eziyinza okukyusa engeri obuwuka bwe bukula."
+    },
+    {
+      "hyp": "Ng’okozesa tekinologiya y’okukyusa endagabutonde eyitibwa CRISPR-Cas9, abanoonyereza basobodde okuggyawo amaanyi oba “okukuba” endagabutonde ezimu okusobola okulaba enkyukakyuka ezibaawo ng’endagabutonde ezo tezikolera."
+    },
+    {
+      "hyp": "Oluvannyuma baazikuba obutaffaali bw’obwongo obwa bulijjo n’obwakyusiddwa akawuka k’omusujja gw’ensiri."
+    },
+    {
+      "hyp": "Ebikula ebifaana obutimbi bino binyigira mu, wakati wa bintu ebirala, okusaasaana kw’emivule n’ebintu ebiri mu butaffaali, era bikola omulamwa okwetooloola nucleus ya butaffaali."
+    },
+    {
+      "hyp": "Ekimu ku bibuuzo ebikulu kwe kuba nti Plasmodium yeyambisa enseke z’obutaffaali mu bulimba bw’ebiwuka - mu kifo ky’okuba nti enseke z’obutaffaali zikung’aanira okumpi n’ekitundu ekikulu eky’obuwuka nga ziwa ebiweebwayo n’ebintu ebyetaagibwa mu kifo ekyo, enseke z’obutaffaali zikung’aanira okumpi n’ekinyunyunyusi nga ziwa ebiweebwayo n’ebintu ebyetaagibwa okusobola okuyamba ekinyunyunsi okubala."
+    },
+    {
+      "hyp": "Abanoonyereza baalaba nti bwe baasala puloteyini eyitibwa CENPJ, ekinyunyunsi kyeyongera okukola bulungi okukunganya enseke z’obutaffaali okwetooloola, era ebinyunyunsi byakula era ne bikola ebikopi bingi byabyo."
+    },
+    {
+      "hyp": "Abayizi ba science era baazuula endagabutonde endala ezimu ezikosa ennyo obukali bw’obuwuka bwa plasmodium."
+    },
+    {
+      "hyp": "Abanoonyereza baalaga dda nti ebiyonkerezi ebirala bikyuusa enseke z’obutaffaali okusobola okuddamu ebyetaago by’obulamu mu sela eri bye."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza bakakasizza nti ebiyonkerezi bya Plasmodium bisobola era okukozesa enkola eno okuddamu okutwala ebiriisa n’ebintu ebirala eby’omugaso okukulaakulana kwabyo."
+    },
+    {
+      "hyp": "Mu biseera ebijja, bannassaayansi basuubira okukozesa okutegeera kwabwe okw’engeri endagabutonde n’ebinyunyuntusi gye bikolaganamu mu buli sela okusobola okuzuula obujjanjabi obw’omukisa bw’omusujja gw’ensiri."
+    },
+    {
+      "hyp": "Wadde abanoonyereza baazuula enkyukakyuka ez’enjawulo mu puloteyini z’obutaffaali bw’ekibumba mu mitandiko gy’omusujja gw’ensiri, okunoonyereza okungi kyetaagibwa okutegeera bulungi engeri Plasmodium gy’ekyukakyuzaamu kemikeri y’obutaffaali n’obukolererwa bwabwo, bweti okusobola okuzuula ekitundu ekiruubirirwa ekigwanira eddagala."
+    },
+    {
+      "hyp": "Enkumi n’enkumi z’abantu zikyali zifa buli mwaka olw’omusujja gw’ensiri, era bangi ku abo bali mu Afirika."
+    },
+    {
+      "hyp": "Okusinziira ku Kalakiriro k’Obulamu bw’ensi yonna, obukadde obuwera 90% bw’omusujja gw’ensiri mu mwaka gwa 2019 bwali mu Afirika, ekikola kino kuba kintu ekikulu ekyetaaga okufuba okweyongera okukikuma n’okukikolako."
+    },
+    {
+      "hyp": "Okulumbibwa kw’Ebitonde nga Kitundu ky’Obuweerero bw’Okunoonyereza ku Ky’Enkyukakyuka y’ensi yonna e South Africa"
+    },
+    {
+      "hyp": "Mu ssuula eno, twekaliriza obungi bw’okunoonyereza mu South Africa obuteereddwa ku buzuuzi mu byobulamu okukwatagana n’ebintu ebirala eby’enkyukakyuka y’ensi."
+    },
+    {
+      "hyp": "Nga tuyitira mu Web of Science, twakolera okwetegereza kwa magezi ebitabo eby’enjawulo eby’ekitundu ky’obutonde bwa South Africa ebyawandiikibwa wakati wa 2000 ne 2018 era eby’ekikwata ku bulumbaganyi bw’ebitonde, enkyukakyuka y’embeera y’obudde, okukungaanya ebintu okusinga obungi, enkyukakyuka y’ebifo eby’obusungwa, obwennyigo, ne/oba CO2 mu bbanga."
+    },
+    {
+      "hyp": "Twazuula ebiwandiiko 1149 ebikwata ku nsonga eno, era nga byawumulwa okusinziira ku ngeri gye bikwata ku nsonga ezisendasenda n’engeri gye zikwatagana, ezikwata ku ndyo z’ebimera n’ebisolo oba emiganyulo gy’obutonde."
+    },
+    {
+      "hyp": "Waalabikirawo omugezo gw’amaanyi wakati mu kifo n’ekiseera ku bulimu bw’okunoonyereza."
+    },
+    {
+      "hyp": "Okusooka, kaweefube yali ya njawulo mu bitundu, ng’okukyusa kw’ebifo eby’obusukuzi, obwennyigo n’okukungaanya ebintu okusinga okwetooloobwa okunoonyereza mu bitundu by’oku nsi, amazzi ag’omubuga n’ennyanja/ebitundu by’ennyanja eby’omubuga okusinziira ku buli kimu."
+    },
+    {
+      "hyp": "Ekyokubiri, ebintu ebimu eby’ensi yonna ebyonoonyerezebwa bulungi tebyawandiikibwa mu bitabo by’ekitundu (e.g. waliwo ebiwandiiko bitono okusinga etaano ku kulumya kw’amazzi g’ennyanja)."
+    },
+    {
+      "hyp": "Twazuula enkolagana 21 ez’enjawulo wakati w’ebintu ebivaako, nga nkolagana wakati w’ebitonde eby’obulabe n’enkyukakyuka y’ebifo (ng’ekyokulabirako enkyukakyuka mu muliro mu bifo ebyalumbibwa ebitonde) ye yasinga okuba ey’amaanyi."
+    },
+    {
+      "hyp": "Kyokka, ebiwandiiko bitono okusinga 4% bye byogedde ku kukwatiikirigana wakati w’ensonga ssatu oba okusingawo."
+    },
+    {
+      "hyp": "Kino kiraga nti wadde okumanya obulumbaganyi bw’ebintu ebivaako ebintu ebirala kukulu, waliwo okunoonyereza kutono ku bikosebwa ebiva mu bulumbaganyi bw’ebintu ebivaako ebintu ebirala mu bitundu by’obutonde mu South Africa."
+    },
+    {
+      "hyp": "Ebigambo ebyayogerwako okumala ebbanga eddene nti ebitonde ebirumbaganyi bye bisinga okukosa okukuuma endyo z’ebimera n’ebisolo, oluvannyuma lw’okukyusa aw’ebitonde ebyo, bikwatagana n’okunoonyereza okukolebwa ku nsonga eno mu South Africa."
+    },
+    {
+      "hyp": "Okufuna ebifaananyi eby’omubala eby’enjawulo eby’obuwanvu ku bwetaavu bw’ebintu ebivaako enkyukakyuka y’ensi kyokka kijja kuba kya ntiisa, si mu kutegeera bulungi ebintu ebivaako enkyukakyuka, wabula era olw’obutabeerawo kwa buli kintu ku mitindo gy’ekifo n’ebiseera ebigeraageranyizibwa."
+    },
+    {
+      "hyp": "Obuvuganyizi bw’okunoonyereza ku bitonde eby’obulabe buyinza okuba omusingi gw’okunoonyereza ku bikwata wamu eby’enjawulo era ne kiyambe mu kuvvuunukira ebizibu bino."
+    },
+    {
+      "hyp": "Abanoonyereza balina okukola olukalala lw’emikutu gya bitonde eby’obulabe, enkyukakyuka y’embeera y’obudde n’ebikolwa by’abantu mu South Africa."
+    },
+    {
+      "hyp": "Ebitonde ebirumbaganyi bye kabi akasinga okubiri mu kwerinda endyo z’ebimera n’ebisolo mu South Africa – ekintu abanoonyereza kye bagamba nti kikwatiikiriza n’obungi bw’ebitabo ebyawandiikiddwa ku nsonga eyo."
+    },
+    {
+      "hyp": "Kino kikwata ku bintu ebirala eby’obulabe gamba nga obwennyigo, enkyukakyuka y’embeera y’obudde, okukungula okw’amaanyi oba enkyukakyuka mu nnyumba."
+    },
+    {
+      "hyp": "Ebintu ebyo eby’obulabe eri obutonde bw’ensi bye bannassaayansi bayita n’okuba enkizo z’enkyukakyuka y’ensi yonna, era ekyo kye kyetaagisa okwekenneenya engeri ensi, nga y’ekintu kimu, gyeekyukamu nga waliwo enkolagana wakati w’ebikolwa by’abantu n’ebintu ebirala eby’obutonde, eby’ekikemo n’ebya bulimu."
+    },
+    {
+      "hyp": "Mu ssuula y’ekitabo ekyaakayita, abanoonyereza batunuulidde ddala obungi bw’okunoonyereza okukolebwa mu South Africa ku bulumbaganyi bw’ebitonde, ekiba nga ebitonde gamba nga bimera oba ebisawo biyingizibwa mu kifo ekipya we bikula bulungi, ne bituulawo era ne biyinza okwonoona ebitonde ebirala ebibiikira oba obutonde bw’ensi."
+    },
+    {
+      "hyp": "Era baatunula okunoonyereza ku ngeri omusomo guno gye gukolagana n’emisomo emirala."
+    },
+    {
+      "hyp": "Bwe baanoonyereza mu biwandiiko by’okunoonyereza ebyafulumizibwa wakati wa 2000 ne 2018 mu tterekero ly’ebiwandiiko “Web of Science”, baazuula okunoonyereza 1149 okw’omuwendo."
+    },
+    {
+      "hyp": "Okwekenneenya kwabwe okw’okunoonyereza kwalaze nti okunoonyereza okukolebwa ku nsi (okuwaŋŋanga) kwesigamye nnyo ku nkyukakyuka mu bifo eby’obusukuzi, ate okunoonyereza mu mazzi amalongoofu kwesigamye ku kwonoona kwa mazzi, ate okunoonyereza mu nnyanja n’omu mayanja ag’omu nnyanja kwesigamye nnyo ku kukozesa ebintu okusinga."
+    },
+    {
+      "hyp": "Era baakizuula nti ebintu eby’amaanyi ebyawandiikiddwako bulungi okwetooloola ensi okukosa obutonde bw’ensi oba ebifunibwa mu butonde bw’ensi, tebiwandiikiddwako bulungi mu kunoonyereza kwa South Africa."
+    },
+    {
+      "hyp": "Okugeza, baazuula ebipapula 5 byokka ebyetunuulidde okukendeera kw’omwenge mu nnyanja, ekintu ekisobya enkwaso y’emmere era ne kimenya ennyamagana."
+    },
+    {
+      "hyp": "Kino kiba kubanga omukka gwa kaboni ogw’omwaga mu bbanga, okuva mu bikolwa by’abantu gamba ng’okwokya ebyobugagga ebisimbibwa, gukyuka amazzi g’ennyanja."
+    },
+    {
+      "hyp": "Enkyukakyuka mu maka, gamba ng’omuliro oba enkyukakyuka y’embeera y’obudde, zireeta ku kukula kw’olulyo olwonoonyi."
+    },
+    {
+      "hyp": "Baagamba nti omukka gwa kaboni wongerwako mu bitundu nga 40%, era kiyinza okuba nga kuteekawo embeera ennungi ey’okukula kw’ebimera ebigwira."
+    },
+    {
+      "hyp": "Naye, okunoonyereza kutono nnyo okukoleddwa ku nsonga eno mu South Africa."
+    },
+    {
+      "hyp": "Baazuula ebiwandiiko 21 ebikwata ku ngeri abavuzi ab’enjawulo gye beeyisaamu."
+    },
+    {
+      "hyp": "Ebingi ku bino byali bikuumirwa ku kwanika enkyukakyuka z’ebifo eby’obusulamu n’ebitonde ebirumbaganyi."
+    },
+    {
+      "hyp": "Naye, ebiwandiiko bitono nnyo bye byatunuulira abavuzi 3 oba okusingawo mu kiseera kimu."
+    },
+    {
+      "hyp": "Abawandiisi bagamba nti kino kiraga nti waliwo obwetaavu bw’okunoonyereza okusingawo ku ngeri abavuga enkyukakyuka ez’ensi yonna gye bakolera awamu okukwata ku bitonde mu South Africa."
+    },
+    {
+      "hyp": "Abawandiiki ba South Africa bagamba nti kijja kuba kizibu okulaba bulungi engeri enkyukakyuka ez’ensi yonna gye zikwatagana mu South Africa, naye bagamba nti okunoonyereza okw’omu ggwanga ku bitonde ebirumbaganyi kusobola dda okuyamba okunoonyereza mu kifo kino ekikalu."
+    },
+    {
+      "hyp": "Ebintu by’ettaka ebisalawo omugaso gw’omukka gw’ettaka n’okukuŋŋaanya kwa kaboni mu bibira bya Miombo, Zambia"
+    },
+    {
+      "hyp": "Ebintu eby’omubiri mu ttaka (SOM) kye kintu kikulu mu bungi bw’ebirime mu kibira n’obungi bw’ekikunka kya kaboni mu ttaka."
+    },
+    {
+      "hyp": "Kyokka, tebamanyi kintu kinene ku nkyukakyuka za SOM ne C mu bibira bya Miombo, ekyo nga kye kintu kikulu mu bibira bya Afirika eby’obukiika obwa ddyo era kikulu nnyo mu nteekateeka za REDD+."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, ebintu omwenda eby’ettaka byapimibwa era ne bikozesebwa okwekenneenya enjawulo y’omuwendo gw’omukka mu bitundu by’omugga ogw’emisitu gya miombo egiriko obusika bw’emiti obutafaanagana mu Luanshya, Zambia."
+    },
+    {
+      "hyp": "Ebyazuulibwa byalaga nti waliwo enjawulo ya maanyi mu bungi bw’omukka mu ttaka ku bunene obwa ttaka obutafaanana."
+    },
+    {
+      "hyp": "Ekitundu kya 36.67 okutuuka ku 113.89 Mg ha-1 ku buwanvu bwa 0–10 cm, 28.67 okutuuka ku 79.56 Mg ha-1 ku buwanvu bwa 10–20 cm, ne 31.89 okutuuka ku 98.56 Mg ha-1 ku buwanvu bwa 20–30 cm."
+    },
+    {
+      "hyp": "Bikiŋŋo bya SOM ku buwanvu obwa njawulo byakwatiirako n’ebifo eby’omu nsenyi za miombo eby’omuwendo gw’okukulaakulana ogwa njawulo, naddala nga ebitundu ebyakosebwa okutabula emiti gye buvuddeko byalina omugaso gwa SOM ogusinga omuwendo ogwa bulijjo buli lya (0–10 cm: +5.57%; 10–20 cm: +4.20%; 20–30 cm: +4.30%)."
+    },
+    {
+      "hyp": "Okwekenneenya okw’enjawulo wakati w’ebintu ebiri (CCA) kwalaga nti ebintu by’obutonde eby’enkulu ennyo ebyali bikulembera omusoboze gw’omutaka gwali okutema emiti mu kibira, n’omuwendo gw’omusenyu mu ttaka."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kulaga nti CCA esobola okukozesebwa okulaga obukulu bw’ebitundu by’omudumu gw’ebibira eby’enjawulo nga kyetaagisa enkola z’okulabirira, awamu n’ebintu eby’ettaka, mu kutegeera obungi bw’omukka mu ttaka lya Miombo."
+    },
+    {
+      "hyp": "Ebyavudde mu kunoonyereza kuno bikulu nnyo mu kutereeza enkola za REDD+ ez’okusimba emiti emirala n’okulabirira ebimera ebiriwo nga ziteekebwawo okwongera ku ttaka lya kaboni mu bibira eby’ebbugumu ebiri mu bitundu bya Afirika ebiri wansi w’eddungu Sahara."
+    },
+    {
+      "hyp": "Abanoonyereza abakola ku bibira bya Zambia bagamba nti okutema emiti mu bukkakkamu kiyamba okwongera ku mutindo gw’ettaka."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti ettaka eryazimbibwa obuyambi n’ettaka eriri waggulu mu kibira eky’e Zambia, lyalina omukka gwa bulimu, ekiraga nti ettaka lyali eddungi."
+    },
+    {
+      "hyp": "Kikulu okutegeera obungi bw’ettaka mu Afirika eri wansi w’eddungu Sahara kubanga kyetaagisa nnyo mu ngeri entalo ne miti gy’eyinza okukulaamu obulungi."
+    },
+    {
+      "hyp": "Ettaka lirina ebiriisa eby’enjawulo, era omutindo gw’ettaka n’ekikulukuto bye bya mugaso ennyo okuyamba ebimera okukula obulungi."
+    },
+    {
+      "hyp": "Ebintu eby’omubiri gwa bulimu bye bintu ebiri mu ttaka ebiva mu bisigalira by’ebimera n’ensolo ezafa."
+    },
+    {
+      "hyp": "Okusinga omuwendo gw’ekitundu ekimu (58%) eky’ebintu ebibaawo mu bulamu kiba kaboni, ate ekyo ekisigaddewo kiba mazzi n’ebirungo ebirala."
+    },
+    {
+      "hyp": "Ettaka eririna omutindo gwa buwumbi, era nga kye kirimu kaboni, likuuma amazzi okumala ebbanga eddene era nga lirina n’emirimu emirala."
+    },
+    {
+      "hyp": "Bannassaayansi tebamanyi bingi ku nkyukakyuka mu bitundu eby’omubiri era ne kaboni mu ttaka ly’omu bitundu bya Afirika eby’obukiikakkono, wadde nga bikulu nnyo ku kukula kw’ebimera n’emiti."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baayagala okuzuula engeri omutindo gw’ettaka mu kibira gye gwakyuka, n’ekyo ekisalawo obungi bwakyo."
+    },
+    {
+      "hyp": "Baakolera okunoonyereza kwabwe mu kibira ekiri mu Zambia."
+    },
+    {
+      "hyp": "Baakunganya sampolo z’ettaka ku mitendera egy’oku ntikko (0-10 cm), eky’omuddutule (10-20 cm), n’eky’omunnya (20-30 cm), era mu bitundu eby’enjawulo eby’ekibira."
+    },
+    {
+      "hyp": "Awo abanoonyereza ne bagezesa ettaka mu lubuuliro okulaba obungi bw’ebintu ebibaawo ebirimu."
+    },
+    {
+      "hyp": "Labaalatoli ye kizimbe abayizi b’amasomo g’ebyennyanja gye bakolera okukebera n’okugezaako, nga batera okukozesa ebyuma eby’omugaso okupima ebintu ebimu."
+    },
+    {
+      "hyp": "Era baawandiika n’enkalira endala ez’ettaka gamba ng’ekika kyalyo, eky’okulabirako ettaka ery’omusenyu oba ery’ebbumba."
+    },
+    {
+      "hyp": "Bye baazuula byalaga nti obungi bw’ebintu eby’omubiri byali bwa njawulo nnyo mu bifo eby’enjawulo, era ne ku bunene obw’enjawulo."
+    },
+    {
+      "hyp": "Ettaka ery’oku ntikko lye lyali lya waggulu mu by’omubiri eby’obulamu okutuuka ku 114 milligrams (mg) mu hekta emu, oluvannyuma lw’ettaka ery’omunyanja (kumpi 100 mg buli hekta)."
+    },
+    {
+      "hyp": "Ettaka ery’akawereere lye lyali lya bungi obutono okutuuka ku 80 mg buli hekta."
+    },
+    {
+      "hyp": "Abanoonyereza baagamba nti ebifo mu kibira ebyali biwedde okusibulwa byalina omubiri ogw’obutonde okusinga ebifo ebitaliwedde kusibulwa."
+    },
+    {
+      "hyp": "Bagamba nti okutema emiti mu kibira, nga kikoleddwa mu nteekateeka, kisobola okwongeza ku bungi bw’ebintu eby’omubiri mu ttaka."
+    },
+    {
+      "hyp": "Abanoonyereza era baalaba nti ekika ky’ettaka kyakyukakyuka okuva ku kibubuka ekikookolo (ettaka ery’oku ntikko) okutuuka ku kibubuka ekya buwufu (ettaka ery’omunyanja), era nti ettaka ly’omusenyu n’ettaka ly’ebbumba byalina omutindo gwa buwuka obungi."
+    },
+    {
+      "hyp": "Ebifo mu kibira ebyali bisinziddewo enjuba byalina emiti emikulu era emikaddiye, n’ebintu eby’omubiri bingi."
+    },
+    {
+      "hyp": "Abanoonyereza, abaali bassekkedde mu Zambia ne mu South Africa, baagamba nti enkola zaabwe zisobola okukwatibwawo abalala okusobola okumanya obugimu bw’ettaka mu bifo ebyenjawulo era ku mitindo egyenjawulo."
+    },
+    {
+      "hyp": "Okwongera Omulimo gw’Ebbale n’Obuwanguzi bw’Omulimo ogwo okuyita mu Nteekateeka y’Okukolagana kw’Abantu Abakwata ku Nsonga mu Ethiopia"
+    },
+    {
+      "hyp": "Kakaawa (Cicer arietinum L.) lye lya ssatu mu bungi n’obuwanguzi mu bijimbe by’emmere oluvannyuma lw’eŋŋaani n’ebijimbe bya fava mu Ethiopia."
+    },
+    {
+      "hyp": "Wabula, obungi bw’ekirime kyali wansi nnyo bw’ogeraageranya n’obuwanguzi obusoboka olw’obutabaako kukozeseza ebirime ebirongooseemu n’obuwangwa obutondebwa mu nteekateeka y’okunoonyereza."
+    },
+    {
+      "hyp": "Okwongera okukozesa tekinologiya ebirongooseemu n’ebigendererwa byayo eby’okunoonyereza,  Olukiiko lw’Abantu Bonna Abakwatagana ku Bulimi bw’Eŋŋaŋa lwatandikibwawo mu 2013 nga lwegendereza okukuŋŋaanya abantu abakwatagana mu mulimu gw’okulima okuva ku ntandikwa okutuuka ku nkomerero, okusobola okumanya obuzibu obuleetebwa n’okunoonya obuyambi obw’okubikolako nga bakolera wamu."
+    },
+    {
+      "hyp": "Ekitongole kyatandika nti obusembayo bw’ensigo bwe buzibu bukadde mu kitundu kino."
+    },
+    {
+      "hyp": "Ensonga eno etunguddwawo okuyitira mu kutondawo ebibiina by’abalimi abakola ensigo nga bayambibwako abakugu mu kunoonyereza n’okukola, era kati be baagaba abakulu mu ggwanga lyonna."
+    },
+    {
+      "hyp": "Ekkubo lino, nga liri awamu, lyanyweza omulimu gw’okuyamba abalimi era ne lyeteeka mu nkola okusaasaanya tekinologiya ennungi eri abalimi bangi."
+    },
+    {
+      "hyp": "Nga bwe kiri, obungi bw’ebirime ebyakungulwa abalimi abayigiriza bweyongedde emirundi ena era obungi bw’ebirime mu ggwanga bweyongedde emirundi ebiri okutuuka ku ttanni 2 ku hekta mu myaka kkumi egiyise."
+    },
+    {
+      "hyp": "Ate era olukalambira lwakolera ku kutumbula okufuna akatale era gye buvuddeko, akawunga ka chickpea kajja ku katale ka Ethiopia Commodity Exchange."
+    },
+    {
+      "hyp": "Ng’etegeera obusobozi bwa maanyi mu kukulaakulanya omulimi guno,  ekitongole kino keetaaga okwongera okunyweza omulimu guno n’okufuna emikisa."
+    },
+    {
+      "hyp": "Engeri Ethiopia gye yazzaamu omulimo gw’okulima eŋŋaŋa."
+    },
+    {
+      "hyp": "Abanoonyereza bannyonnyodde engeri Ethiopia gye yeyongeddemu omulimo gw’ebijanjaalo nga bakakasa nti abalimi bafunye ensigo ennongooseemu n’okutendekebwa ku ngeri ennongooseemu ez’obulimi."
+    },
+    {
+      "hyp": "Kakaawa kye kirime ky’emmere ekifaanana ebijanjaalo ekirumibwa nnyo mu Ethiopia."
+    },
+    {
+      "hyp": "Ebitonde by'eggwanga bingi bitwalibwa n'ebirala."
+    },
+    {
+      "hyp": "Emyaka gye buvuddeko, abantu bangi baategeera nti abalimi basobola okukungula eŋŋaano ez’ebinyebwa ezisinga singa bakozesa ensigo ezirongooseemu ezisobola okugumira ebiwuka n’endwadde."
+    },
+    {
+      "hyp": "Ekitabo ekyaakamala okufulumizibwa kiraga engeri omulimo gw’ebijanjaalo mu Ethiopia gweyongeddemu okuva olw’okutegeera okwo."
+    },
+    {
+      "hyp": "Abawandiisi bagamba nti mu 2013, Ethiopia yatandika ‘ekibiina ekikuŋŋaanya abantu abakola ku nsenene eza chickpea’ ekyayogerako obuzibu mu kulima nsenene eza chickpea era ne balaba engeri z’okubikolamu."
+    },
+    {
+      "hyp": "Omukutu gufaanana nga kibiina."
+    },
+    {
+      "hyp": "Ekitongole kyali kizingiramu abanoonyereza, Minisitule y’ebyobulimi eya Ethiopia, amawanga n’ebibiina by’abalimi, abakola ku mmere, abasaba ensigo, n’abakola ku by’okutunda ebweru."
+    },
+    {
+      "hyp": "Abawandiisi baagamba nti ekifo ekyo kyalaze nti obutabula bw’ensigo kwe kwali kusoomooza okusinga, oluvannyuma ne batonda ebibiina okugabula ensigo mu nsi yonna."
+    },
+    {
+      "hyp": "Enkyukakyuka eno yagwongeza obungi bw’ebinyebwa bya kikweeto emirundi ebiri okutuuka ku ttanni 2 buli heekiteya."
+    },
+    {
+      "hyp": "Akalala ke baazuula kwe kwali omutindo mwa wansi w’ebintu ebibalwa."
+    },
+    {
+      "hyp": "Baasomesa abalimi enkola ennungi ez’obulimi, gamba ng’okukozesa ebigimusa okutereeza obungi bw’ettaka."
+    },
+    {
+      "hyp": "Baalaba nti abalimi baali balina obuzibu mu kulwanyisa omuddo."
+    },
+    {
+      "hyp": "N'olwekyo baawa abalimi ensigo z'ebijanjaalo ebyasobola okukula obulungi ne bwe byabawanga obuyambi, obuwuka obw'ekikemo abalimi bwe bakozesa okuzikiriza omuddo oba ebimera ebitali byagala."
+    },
+    {
+      "hyp": "Abawandiisi baagamba nti ekifo ekyo kyakiriza nti abalimi baayigirizibwa okwongera okumanya kwabwe ku bulimi bw’ebijanjaalo."
+    },
+    {
+      "hyp": "Abalimi era baagenda mu nkuŋŋaana mwe baasobola okugabana amawulire n’ebyo bye baayiseemu."
+    },
+    {
+      "hyp": "Abawandiisi baagamba nti ekifo ekyo era kyayunga abalimi n’abaguzi, n’abakola ensigo n’abo abavunaanyizibwa ku kugula n’okusaasaanya ensigo eri abalimi."
+    },
+    {
+      "hyp": "Enkolererwa eno era yatuuma n’okutendeka ebibinja by’abakyala n’abavubuka ku bikwata ku kulima eŋŋaano."
+    },
+    {
+      "hyp": "Baakubiriza okusingawo abakazi n’abavubuka okwetaba mu kulima ensigo."
+    },
+    {
+      "hyp": "Abawandiisi baagamba nti wadde nga waabaddewo okutuukiriza ebintu, waliwo obwetaavu bw’ensigo za kaakaati."
+    },
+    {
+      "hyp": "Era baagamba nti olukalambira luno lwandibadde lukoze bingi singa baafunye ebyetaago okukwatagana buli kiseera."
+    },
+    {
+      "hyp": "Baateesa nti Minisitule y’obulimi mu Ethiopia n’abanoonyereza basaanidde okuwagira ekifo ekyo n’ensimbi, baleme kukiswaza."
+    },
+    {
+      "hyp": "Era baateesa ku kongooseza omutindo gw’ebijanjaalo n’engeri ebibuzi by’okulima ebijanjaalo, gamba nga endwadde, gye bikolabwamu."
+    },
+    {
+      "hyp": "Wabula, abawandiisi baasaba ensigo ennongooseemu endala ezinaatera okukungulwa mu madaala, era nga tezikosebwa byakusasaanya."
+    },
+    {
+      "hyp": "Omuwendo gwa SARS-CoV-2 ogw’ekika A (A.23.1) ogulina enkyukakyuka mu spike guvuddewo era gukulembera obulwade obusaasaana amangu mu Uganda kati."
+    },
+    {
+      "hyp": "Okulondoola endagabutonde ya SARS-CoV-2 mu Uganda kiwa omukisa okwolesa enkyukakyuka y’akawuka mu ggwanga lya Bulaaya ekitono ekya Bussiika."
+    },
+    {
+      "hyp": "Wano tulaga enkyukakyuka eyaliwo gye buvuddeko mu bulwadde obusaasaana amangu obw’omu kitundu, nga omutindo gwa A.23 omupya guvuddemu A.23.1 ogukulemberamu mu bulwadde bwa Uganda era guyingidde mu mawanga amalala 26."
+    },
+    {
+      "hyp": "Wadde ng’enkyukakyuka enziguufu mu A.23.1 nga bwe yeesinzeemu za njawulo ku nkyukakyuka mu bika by’akawuka eby’obutakkaanya (VOC), okukulaakulana kwakyo kulaga okukwatagana ku puloteyini ez’ekika kimu."
+    },
+    {
+      "hyp": "Ekibira ky’ensengeka za puloteyini ya spike ekya A.23.1 kiguddemu enkyukakyuka ezifaanana nnyo n’enkyukakyuka nyingi eziri mu VOC okuli enkyukakyuka mu kifo kya 613, enkyukakyuka mu kifo eky’okutema kwa furin ekiggyawo akabonero k’asidi ya amino, n’enkyukakyuka nyingi mu kitundu kya N-terminal ekigumya obulamu."
+    },
+    {
+      "hyp": "Okwongera, oluyimba lwa A.23.1 lukozesa enkyukakyuka mu puloteyini ezitali za spike eziraga ebirala eby’enjawulo (VOC) (nsp6, ORF8 ne ORF9)."
+    },
+    {
+      "hyp": "Obuzibu bw’omuwendo gwa A.23.1 tebunnaba kutegeerekeka bulungi, naye kikulu nnyo okweyongera okulondoola omukutu guno, awamu n’okukola obukugu obumalirivu ku bivudde mu nkyukakyuka za spike protein ku butuukirivu bw’eddagala erigema."
+    },
+    {
+      "hyp": "Abanoonyereza baategeeza ku nkyukakyuka y’omuwendo gwa SARS-CoV-2 mu Uganda."
+    },
+    {
+      "hyp": "Mu 2021, abanoonyereza baategeeza nti akawuka aka SARS-CoV-2 akalala, akawuka kaleeta COVID-19, kaavuddewo mu Uganda ne kasaasaana mu mawanga amalala 26."
+    },
+    {
+      "hyp": "Baatuuma oluyika “A.23.1”, era baagamba nti lulina enkyukakyuka nyingi ezimu mu puloteyini ez’abanoonyereza baazuula mu buyika obulala obw’obutakwatagana mu nsi yonna wakati w’ekiseera kino."
+    },
+    {
+      "hyp": "Abayizi ba bya sayansi bakolera ku ngeri obulungi bw’akawuka ka kolona bwe bukyukakyuka, basobole okutegeera obulungi engeri eddagala erigema lye likolera ku bika bipya."
+    },
+    {
+      "hyp": "COVID-19 etta abantu bangi okwetooloola ensi."
+    },
+    {
+      "hyp": "Mu nkola emanyiddwa nga okulondoola endagabutonde, bannabyabufuzi balondoola enkyukakyuka ez’endagabutonde n’eby’amasannyalaze by’akawuka nga bwe kasaasaana."
+    },
+    {
+      "hyp": "Bakikozesa okukola ku bulwadde n’okukulembera okukola eddagala erigema."
+    },
+    {
+      "hyp": "Okugeza, okutegeera enkola y’ebitundu bya puloteyini eby’akawuka, abanoonyereza bayinza okukola eddagala erigema eririna okulwanyisa puloteyini ezo okuyamba okuziyiza akawuka okuyingira obutaffaali bw’omuntu."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baatunula naddala ku ngeri SARS-CoV-2 gye yali ekyuka mu Uganda."
+    },
+    {
+      "hyp": "Abanoonyereza baategeera ensengeka z’endagabutonde z’akawuka mu sampolo za COVID-19 ezaaliwo ezaakuŋŋaanyizibwa mu Uganda yonna."
+    },
+    {
+      "hyp": "Baakozesa pulogalamu y’ekkompyuta okugoberera oluyombo (oba omuntu w’amaka) lw’ekika ekipya kye baazuula mu ngeri eno (ekyeyitibwa A.23.1), era ne basobola okulaba ekika ekyo kye ki mu muti gw’amaka gwa SARS-CoV-2."
+    },
+    {
+      "hyp": "Ebizuulo byabwe byayoleka nti akawuka aka A.23.1 kaali kaakafuuka wakati wakati okuva mu akawuka akalala akayitibwa A.23, era kaasangibwa mu sampolo 90% ku sampolo zonna ezaali za mulemwa."
+    },
+    {
+      "hyp": "Mu ngeri endala, kyali kye kisinga obungi mu sampolo za Uganda okuva mu Okitobba 2020."
+    },
+    {
+      "hyp": "Baalaba nti akawuka aka A.23.1 kalina enkyukakyuka ez’enjawulo mu puloteyini ya spike efaanana n’enkyukakyuka ezaalaba mu kawuka akalala akali mu kabi."
+    },
+    {
+      "hyp": "Enkyukakyuka ezo zikwata nti olukalala luno lusaasaana mangu, era lukoma obulungi ku ddagala erigema n’obujanjabi."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwongera ku kaweefube akaagenda mu maaso okukola ensengeka z’ebika bya SARS-CoV-2 mu nsi yonna."
+    },
+    {
+      "hyp": "Ebizuuliddwa byongera ku bujulizi bukyeyongera obulaga nti SARS-CoV-2 ekyuka mangu nga esaasaana okukwata abantu abasinga era n’okwewalula eddagala erigema."
+    },
+    {
+      "hyp": "Kyokka, okunoonyereza okusingawo kyetaagibwa okutegeera ddala ebyavaamu oba omulimu gw’enkyukakyuka za puloteyini enfunyi mu kika kya A.23.1."
+    },
+    {
+      "hyp": "Abanoonyereza bateesa okulondoola ennyo endagabutonde okutuyamba okutegeera engeri obika bw’akawuka bwe bweeyisa ku ddagala erigema erisangibwa mu Uganda n’amawanga amalala."
+    },
+    {
+      "hyp": "Era bagamba nti okulondoola eby’obulamu mu mawanga amalala kikulu, kisobozese abanoonyereza okutegeera obulungi engeri akawuka gye kasaasaana mu bitundu."
+    },
+    {
+      "hyp": "Kiki Ekifuula Omukazi?"
+    },
+    {
+      "hyp": "Ebyafaayo eby’okulaga Enkumu n’embeera ezivuga Okusekera/okukoola Ebitundu by’ekyama ky’abakyala mu Indonesia, Ethiopia ne Kenya"
+    },
+    {
+      "hyp": "Okutema/okukozesa ebitundu by’omubiri gw’omukazi mu ngeri etali ya njawulo kikyamu era kimenya eddembe ly’abakyala era kivaamu ebibi ku bulamu bwabwe."
+    },
+    {
+      "hyp": "Olupapula luno luwa ensonga n’embeera ezaaleeta okusekera ebitundu by’ekyama ky’omukazi (FGM/C) mu bifo ebimu mu mawanga asatu – Indonesia, Ethiopia ne Kenya."
+    },
+    {
+      "hyp": "Obubaka bwakuŋŋaanyizibwa okuyita mu kunoonyereza mu maka, nga bakozesa abavubuka (ab’emyaka 15-24), awamu n’okukubaganya ebirowoozo mu bibinja, okubuuzibwa okw’obutonde, n’okubuuzibwa abantu ab’enkizo mu bavubuka ne mu batabani b’omwaka mu 2016 ne 2017."
+    },
+    {
+      "hyp": "Ebibalo ebirimu okunnyonnyola n’okukaliriza emiramwa gya mu byawandiikibwa byakolebwa."
+    },
+    {
+      "hyp": "Ebibonyoobonyo ebyava mu kunoonyereza kuno bikakasa ensonga ezimu ezivuddeko okukola FGM/C ezaalondeddwa mu kunoonyereza okw’emabega, nga bwe biraga nti ensonga zino zikwatagana nnyo, era emitindo gy’obutonde bw’abakyala gye gisisinkana."
+    },
+    {
+      "hyp": "Mu mbeera zonna ezo, ensonga zino zikulembeza enkyukakyuka ez’omubiri gw’omukazi okusobola okuvaamu omubiri ‘ogw’omukisa’ ogukkirizigwa mu bufuzi bw’obusajja."
+    },
+    {
+      "hyp": "Kino kyaleetera ‘omubiri omulongoofu’ mu Indonesia, ‘omubiri omuteefu’ mu Ethiopia, ne ‘omubiri gw’omuntu omukulu’ mu Kenya."
+    },
+    {
+      "hyp": "Abakozi b'ebyobulamu ne bazadde balina omulimu mu kutereeza ku kyetaagisa okukola ku FGM/C mu bifo byonna."
+    },
+    {
+      "hyp": "Mu Kenya naddala, abawala abato bakubaganya ebirowoozo ku bulamu bwabwe mu bwetaavu bw’okutusaaza ebibuuzo ebikwata ku FGM/C nga bwe baba bakaddiye mu kiseera ky’okukomola."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kulaga engeri embeera z’amateeka n’obuwangwa ezikyuse mu buli kifo gye zireetawo enkyukakyuka mu mpisa ya FGM/C, nga kivuddemu okutambuza FGM/C mu ngeri y’obujjanjabi mu Indonesia, okukendeeza ku myaka gy’okutema abawala mu Kenya n’okukola FGM/C mu kyama mu Ethiopia."
+    },
+    {
+      "hyp": "Ebyokubadde bisatu ebyo biraga enjawulo ennene mu ngeri gye bakolamu okuseesa/okukola FGM/C n’amakulu ag’enjawulo abawala abato n’ebika byabwe bye babiteekaako."
+    },
+    {
+      "hyp": "Waliwo obwetaavu bw’okwongera okunoonyereza ku mulimu gw’abazadde mu kusalawo."
+    },
+    {
+      "hyp": "Olw’omukwano wakati w’ebintu ebitali bimu ebiviirako okusembeza abaana abawala mu buli mbeera, okukebera kuno kuteesa nti enkola ezituukira ku mbeera eyo zeesaanye okukozesebwa mu kulwanyisa ekizibu kino okusobola okuleeta enkyukakyuka eziyima."
+    },
+    {
+      "hyp": "Okulemesa okusekera ebitundu by’ekyama ky’omukazi, tusooka kwetaaga okutegeera lwaki kikolebwa."
+    },
+    {
+      "hyp": "Okusembeza ebitundu by’omubiri gw’omukazi, omuze ogw’okutema oba okuggya ebitundu by’ebitundu by’okufuna abaana, kikyaliwo mu kyama oba mu kyama mu mawanga gamba nga Kenya, Ethiopia ne Indonesia."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti okutegeera lwaki kino kibaawo kye kyetaagisa okukomya omuze guno omwonoonyo, n’okutangira obuzibu bw’obulamu n’obw’omutima abakyala bye bafuna olw’ekyo."
+    },
+    {
+      "hyp": "Mu bitundu bya Afirika n’Asiya, okutema ku bitundu by’ekyama ky’omukazi (FGM), ekintu ekintu ekikyayitibwa ‘okukomola abakazi’, kikyali kintu ekikolerwa nnyo."
+    },
+    {
+      "hyp": "Abantu bangi balowooza mu bukyamu nti okusembeza ku bintu by’ekyama kyetaagisa olw’obulongoofu oba okusigala nga bakazi ba bujjukujju (abatali ba bwennyamivu era abawombeefu), n’okukakasa nti bajja kuzaala abaana."
+    },
+    {
+      "hyp": "Okukola FGM tekwetaagisa mu bintu bino byonna okusinziira ku bujulizi bwa sayansi."
+    },
+    {
+      "hyp": "Kyokka, mu mbeera nnyingi, abaana abakolebwa FGM, oluvannyuma batuuka ku buzibu bw’obulamu mu bulamu bwabwe, gamba ng’obuwuka obw’obulabe, obuzibu bw’okumisa (okumisa), n’ebizibu by’obulamu bw’omutwe."
+    },
+    {
+      "hyp": "Olw’okuba empisa eno mbi nnyo era emenya eddembe ly’obuntu ly’abakyala, amawanga mangi gigaayisa etteeka okugigoba, naye abantu bakyagikola mu kyama."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baayagala okutegeera ebisingawo ku lwaki okusalako ebitundu by’ekibiriiti ky’omukazi kiba mu mawanga ag’enjawulo, n’embeera abantu gye balowooza ku mukolo guno."
+    },
+    {
+      "hyp": "N’olwekyo baakung’aanya amawulire agakwata ku FGM mu Kenya, Ethiopia ne Indonesia."
+    },
+    {
+      "hyp": "Mu buli ggwanga, abanoonyereza baayogera n’abantu ku bikolwa ebyo, nga mw’otwalidde abazadde, abavubuka, abakulembeze b’obulugu, abakozi b’ebyobulamu, n’abo abakola okukomola (abakazi abakulu abaali basooka okukola okukomola ku bawala abato)."
+    },
+    {
+      "hyp": "Mu mbeera ezimu, baababuuzanga buli omu ku bo, naye era baayogeranga n’ebibinja by’abantu, nga mwe muli abavubuka n’abato, abaali baakosebwa okusalwa ekibira."
+    },
+    {
+      "hyp": "Abanoonyereza baazuula nti ensonga ezivuddeko okukola FGM, engeri gye yakolebwamu, n’ebyo abantu bye bakkiririzaamu ku bikwata ku mukolo guno, byali byawuka mu buli ggwanga."
+    },
+    {
+      "hyp": "Baakizuula era nti abantu bangi baali bakikyekolera, ne mu bifo we kyali kimenya amateeka."
+    },
+    {
+      "hyp": "Ng’ekyokulabirako, mu Indonesia, abayizi ba bulijjo abaayambanga abakyala okuzaala baakozesanga ekitimba oba olugoye okutema ekimu ku kitundu ky’ekitundu ky’omubiri ekya clitoris (ekitundu ekisinga okukwata ku ssanyu ery’okwegatta ku bakyala) omwana ow’omukazi bw’aba awezezza ennaku 40."
+    },
+    {
+      "hyp": "Abantu baakkiriza nti kino kyayamba ‘okuggyawo ebintu ebitali birungi’ era nti kyali kikulu olw’ensonga za bujjajja."
+    },
+    {
+      "hyp": "Mu Ethiopia, okusekera abaana abawala kyakolebwanga ne mu buto nnyo, oluusi nga baakamala ennaku musanvu nga bazaalibwa."
+    },
+    {
+      "hyp": "Abanoonyereza baazuula nti abantu eyo baali bakkiriza nti kino kyanditendereza omuwala okuba mukazi ‘omusajja’ olunaku olumu, era nga ajja kuba muwulize, so si mubbi bba."
+    },
+    {
+      "hyp": "Abantu bangi era baali bakkiriza nti okusekera abawala (FGM) kwanguyisa okuzaala, naye mu butuufu kiyinza okukomawo okukomawo okuzaala."
+    },
+    {
+      "hyp": "Awo mu Kenya, okukomola kwa bakazi (FGM) kwali kutegeeza nti omuwala atuuse mu bukadde, era kiteekawo oluusi nga yakaddiwa, nga yaakamaze okubeera mu buvubuka."
+    },
+    {
+      "hyp": "Wabula, mu mbeera ezimu baazuula nti abawala bayinza okukola FGM nga bakyali abato nga ba myaka 8, era abawala bangi baafuna embuto nga bakyali mu myaka gy’obuvubuka, kubanga baali batwalibwa nga bakuze okwegatta oluvannyuma lw’okukola FGM."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti bye baazuula biraga nti waliwo ensonga nnyingi ez’enjawulo lwaki okusekera abawala (FGM) kukyagenda mu maaso."
+    },
+    {
+      "hyp": "Ng’amateeka n’ebyo ebyobulamu by’abantu bikyukakyuka, n’engeri n’ekifo we bikolebwa nabyo bikyukakyuka."
+    },
+    {
+      "hyp": "Okugeza, abazadde bayinza okufuba okukikola mu kyama wadde nga kimenya amateeka, kubanga balowooza nti kikulu okulaba nga muwala waabwe alya bulungi oba afuna omwami omulungi."
+    },
+    {
+      "hyp": "Kikulu okutegeera nti olw’okuba okusalako ebitundu by’ekyama ky’obuwala kumenya amateeka mu bifo ebimu, okunoonyereza ku nsonga eno kiyinza okuba kizibu, era abantu bayinza obutaawa ebyokuddamu eby’amazima ku nsonga eyo."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti mu biseera ebijja, okugatta ku kukiteeka mu mateeka, gavumenti n’abakulembeze mu by’obulamu balina okufuba okuziyiza okukola FGM nga bakola ku nkyukakyuka ez’obutamanya abantu bye balina ku bikolwa ebyo ne babasomesa ku bulabe obulimu."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakolebwa abayizi b’ensi nnyonnyola okuva mu Ethiopia, Indonesia ne Netherlands, era kye kimu ku birungi bya pulogulaamu ya ‘Yes I Do’, ekigendererwa kyayo kwe kukoowola embuto ez’abavubuka, obufumbo bw’abaana n’okusembeza."
+    },
+    {
+      "hyp": "Obutali bwa buwunga bw’obuwangwa, okufa kw’ebitundu eby’obuwangwa, ebiwangwa ebitali bimu, n’enkyukakyuka mu by’omunda mu buwangwa bw’emmese za Cricetomys gambianus (Waterhouse, 1840) eziweereddwa obusagwa bwa Sodium Metavanadate."
+    },
+    {
+      "hyp": "Okweyoleseza eri vanadium mu kyakalwazi kyeyongedde mu kiseera kino."
+    },
+    {
+      "hyp": "Ekiuma kino kye kintu ekimenya."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakolebwa okwetegereza obulabe obw’obuwangwa bw’omubiri ogw’ekirungo kya sodium metavanadate (SMV) mu mmese ensajja ez’ekika kya Afrika."
+    },
+    {
+      "hyp": "Okugabulwa kwa SMV kwakolebwa mu lubuto buli lunaku okumala ennaku 14 ez’oluyombo, nga buli kilogramu y’omubiri efuna 3mg."
+    },
+    {
+      "hyp": "Amazzi amalongoofu gaweebwa ekibinja ekigeraageranyizibwako."
+    },
+    {
+      "hyp": "Twakebera lusaayisaayi, obusimu obuzaazi, obuwummulo n’obuwongeera bw’ensigo z’obusajja, awamu n’enkyukakyuka mu bw’ennyama bw’amagoba oluvannyuma lw’obujjanjabi bwa SMV."
+    },
+    {
+      "hyp": "Ebyava mu kunoonyereza kwaffe byalaga nti abantu abali mu kibiina kya AGR abaasibibwa SMV baalina progesterone eyongedde mu ngeri esobola okubalwa, naye testosterone, FSH ne LH ne zikendeera."
+    },
+    {
+      "hyp": "Ate era, olukiiko olwatuumirwamu SMV lwalina okukendeera kw’amaanyi g’ensiri n’obuwanguzi bwazo nga kyetaagisa obuwanguzi bw’ensiri ezitali za bulijjo era nga P53 immunopositive cell eyongedde."
+    },
+    {
+      "hyp": "Okwekebejja kw’ebitundu ebitono byalaga okuzimba kw’ebitundu eby’amagi n’ebya Sertoli, ebitundu by’omubiri n’obuwongo; era okuzimba kw’ebitundu bya mitochondria n’okuzimba kw’ebitundu ebitono byalabikako."
+    },
+    {
+      "hyp": "Waaliwo okwonooneka okw’amaanyi kw’ebitundu eby’obusajja, okupalama n’okwonooneka kw’obutaffaali bw’omusaayi n’okufa kw’obutaffaali bwa Leydig, Sertoli n’obutaffaali obutwala omwana."
+    },
+    {
+      "hyp": "Mu nkomerero, okweyolekera kwa SMV mu lubuto lwa munda kuleetawo enkyukakyuka embi nnyingi ku lusaayisaayi lw’obuwangwa, okukendeeza ku buwanguzi n’obuwanguzi bw’ensiri, okufa kw’ensiri n’okwonooneka kw’ensiri za Leydig, Sertoli n’ensiri ez’obuwangwa ebiyinza okuleeta obutabula."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti ebyuma ebisangibwa mu bbanga eryonoonefu bifulumya akawuka mu mbeera y’obutazaala."
+    },
+    {
+      "hyp": "Abanoonyereza baalaba nti vanadium, ekika ky’ekyuma, kinonoona obutaffaali bw’emmese n’obusobozi bwazo obw’okufuna abaana (obuvubuka)."
+    },
+    {
+      "hyp": "Olw’okuba ekyuma kino kye kikyamu eri abantu, bagamba nti waliwo okwetaaga okunoonyereza okusingawo okukizuula oba ekyuma kino, ekyeeyongera okusangibwa mu nzirukanya yaffe olw’obutali bulongoofu, kiyinza okubaako emiramwa egy’akabi ku bulamu bw’abantu."
+    },
+    {
+      "hyp": "Wadde vanadium lye lumuuma, liyinza okuyingira mu mpewo mu bunene obutono nga ebyobugagga ebisimbibwa, ng’amafuta n’amanda, byokebwa."
+    },
+    {
+      "hyp": "Ng'ensi eyongera okukozesa ebiweebwayo by'amafuta gano, obungi bw'obutali bulungi bwa vanadium buweyongera."
+    },
+    {
+      "hyp": "Tukimanyi bulungi nti abantu abakolebwaako bayinza okufuna obuzibu bw’obulamu gamba nga obuwuka, omumwa n’amaaso agakalu, n’okulumizibwa mu kifuba."
+    },
+    {
+      "hyp": "Gye buvuddeko, bannassaayansi era bafunye okuwagama ku ngeri vanadium gy’eyinza okukwata ku buzaale."
+    },
+    {
+      "hyp": "Baatandise okukebera ebyo mu mmese, ezitera okukozesebwa mu lubuuliro olw’engeri gye zifaananamu abantu."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abayizi baali baagala okumanya engeri vanadium gy’ekolelako ku mmese eya bulijjo esangibwa mu buvanjuba bwa Afrika, ekiyitibwa Ommese Omukulu ow’e Afrika."
+    },
+    {
+      "hyp": "Baali baagala okutegeera engeri vanadium gy’ekyusaamu enkula ya mbeera z’okubala eza mmese ennume, okusingira ddala omubisi gw’obulamu, omuwendo gw’amahomoni, n’obusembayo bw’amaganda gaazo."
+    },
+    {
+      "hyp": "Abanoonyereza baasuula emmese 6 ensajja vanadium omulundi gumu buli lunaku, okumala ennaku 14."
+    },
+    {
+      "hyp": "Mu kiseera kye kimu, baawanga emmese endala mukaaga amazzi ng’engeri y’okukebera ekigambo."
+    },
+    {
+      "hyp": "Olw’okuba amazzi tegayinza kubaako kye gakola ku mmese, abanoonyereza baali basobola okuba abakakafu nti enkyukakyuka yonna gye baalaba mu mmese mukaaga egyasooka yava mu kuweebwayo kwa vanadium."
+    },
+    {
+      "hyp": "Oluvannyuma lw’ennaku kkumi nnya, baakebera okulaba oba obungi bw’obusimu, gamba ng’obutesturoloni, bwakyuka, era ne beekebera amabanga gaazo ne babala busimu bwazo."
+    },
+    {
+      "hyp": "Bakozesa akakodyo akayitibwa Transmission Electron Microscopy (TEM), baasobola okulaba enkyukakyuka yonna eyabaawo mu buliwo mu bujjuvu, okutuuka ku mutindo gwa butaffaali kinnakamu."
+    },
+    {
+      "hyp": "Abanoonyereza baazuula nti emmese ezaawerekeddwa vanadium zaalina obungi obutono nnyo bw’ekitonde kya testosterone, n’ebintu ebirala eby’omubiri eby’omukwano eby’omukwano."
+    },
+    {
+      "hyp": "Emmese ezaawanguddwa vanadium nazo zaalina buwuka obutono nnyo, era obwo buwuka bwali buli mbi."
+    },
+    {
+      "hyp": "Abanoonyereza baalaba, ng’ekyokulabirako, nti emu ku mmese, omugogo gwazo gwali tegulina mutwe oba gwali gukamuse, era nga tegutambula ng’omugogo gw’emmese ezaawerekeddwa amazzi."
+    },
+    {
+      "hyp": "Olw’okuba obusigo bwe bulimu obusembayo bw’obusajja, obukozesebwa okufumita amagi g’abakyala, enkyukakyuka zino zandibadde zikaluubiriza emmese okufuna abaana."
+    },
+    {
+      "hyp": "Wabula, abanoonyereza baazuula nti obutaffaali obumu obuva mu bulimba bw’emmese bwali bwononekedde nnyo oba nga bwali bumaze okwonooneka olw’ekintu ekya vanadium."
+    },
+    {
+      "hyp": "Abanoonyereza baagamba nti enkyukakyuka ze baazuula zisobola okukoma ku kulemesa okuzaala ddala."
+    },
+    {
+      "hyp": "Baalaba nti okuva bwe kiri nti ensolo ezikosebwa vanadium n’ebintu ebirala ebyonoona obutonde bw’ensi biyinza obutabeera na buyinza kuzaala, ziyinza okwonooneka olw’ebyo ebivaamu."
+    },
+    {
+      "hyp": "Olw’okuba abantu be bisolo ebiringa abammese, abayizi ba sayansi nabo basaanidde okwekenneenya ebiyinza okubaawo ebibi eby’ekintu ekya vanadium mu bifo ebyonoonese ku bulamu bw’abantu."
+    },
+    {
+      "hyp": "Abanoonyereza balaze nti ebimu ku nkyukakyuka bye baazuula mu mubiri gw’ensolo n’obwo oba homoni byali bya njawulo ku ebyo okunoonyereza kw’ebya sayansi okw’olubereberye kwe kwazuula, n’olwekyo omulimu omulala gwetaagibwa okutegeera omulimu gw’okwonoona kwa vanadium."
+    },
+    {
+      "hyp": "Okunoonyereza kuno kwakolebwa omukago gw’abawalangira okuva mu ggwanga lya Nigeria ne Egypt, era kyongera ku bye bawalangira bakiri okumanya ku ngeri ensolo, era oboolyawo n’abantu, gye zikosebwawo okwonoona."
+    },
+    {
+      "hyp": "Okukozesa Ebimera eby’omu Busolwa mu Nteekateeka y’Obuwangwa mu Kibiina ky’Abantu ba Womuntu mu Bupotozi bw’ebuvanjuba bwa Ethiopia"
+    },
+    {
+      "hyp": "Ebika by’ebimera ebisangibwa mu nnimiro z’awaka mu bukiika kkono bwa Ethiopia okutwalira awamu, ne mu disitulikiti ya Gozamin naddala, tebinnoonyerezeddwaako nnyo."
+    },
+    {
+      "hyp": "Ekigendererwa ky’okunoonyereza kuno kwe kutegeera obulungi obusembayo bw’ebimera n’obuwangwa bw’ennimiro z’awaka."
+    },
+    {
+      "hyp": "Engeri y’okulonda ebintu mu busobozi obuwanvu eyakozesebwa, nga bakolera ku njawulo y’embeera y’obutonde mu bitundu ebyalondebwa."
+    },
+    {
+      "hyp": "Obubaka obukwata ku nnimiro ez’awaka bwakung’aanyizibwa nga nnimiro eyo egabanyizibwa mu bitundu bina, ekitundu ekisooka nga kutandika okuva ewuwe w’omulimi okutuuka ku mita 10, ekya kkubiri okuva ku mita 10 okutuuka ku 20, ekya kusatu okuva ku mita 20 okutuuka ku 30, era ekya kuna okuva ku mita 30 okutuuka ku 40 mu buwanvu nga bakozesa ennyumba y’omulimi ng’ekikwata ku bugazi bw’ennimiro."
+    },
+    {
+      "hyp": "Okubuuza ebibuuzo ebitali bimu, kwakolebwa okwandiika obumanyi bw’oyo eyabuuzibwa ku ngeri y’ebimera."
+    },
+    {
+      "hyp": "Ebika by’ebimera 238 ebikulu mu buwangwa okuva mu bika 81 byazuuliddwa."
+    },
+    {
+      "hyp": "Ku bino, 39% byali mmeera, 29% bitittiriri, 6% byali ebimera ebisambatukira."
+    },
+    {
+      "hyp": "Ebimera eby’emyaka mingi bye byali bisinga obungi mu bimera ebyasibwa (83%), ate eby’omwaka gumu bye byali bisigaddewo (17%)."
+    },
+    {
+      "hyp": "Omulimu gwa Poaceae gwali gwa waggulu, nga gulina ebika 22, oluvannyuma lw’ogwa Fabaceae, nga gulina 21, ate ogwa Asteraceae nga gulina 15."
+    },
+    {
+      "hyp": "Mu bimera ebyo ebyawandiikibwa, 140 (58.6%) byali ebika ebyakozesebwa mu bikwata ku nzirukanya y’obutonde, 84 (35%) ebyokulya, 83 (34.7%) ebimera eby’eddagala, 39 (16.3%) emmere y’ebisolo, 57 (23.8%) ebimera eby’ebyuma, 60 (25%) enku z’okutuuka, 50 (21%) ebimera eby’omukago gw’abantu, ne 1 (0.4%) eby’obuwongoofu."
+    },
+    {
+      "hyp": "Okwekenneenya okw’obutondemu kwaalaga nti omukoome gwa Cordia Africana gwalabikiddwa nga kimera ekikulu mu buwangwa mu kitundu ekyo era nga kyetaagisa okuziŋŋamizibwa nnyo, oluvannyuma lw’omukoome gwa Ficus sur."
+    },
+    {
+      "hyp": "Omugaso gwa Cordia africana ogusinga obukulu gwali ku kukuuma, ate ogw’okubala gwali ku ddagala."
+    },
+    {
+      "hyp": "Omuwendo gw’okufanana kwa Sorensen ku bitundu 64 ku buli 100 ebyakebererwa gwali wansi wa 0.5."
+    },
+    {
+      "hyp": "Ebyavuddeyo byalaga nti obulimi mu maka bulimu ebintu bingi, era bulimu obutegeka obw’emyaka mingi."
+    },
+    {
+      "hyp": "Emmere ey’okwerindisa n’okukuuma obutonde bw’obutonde butambula butambula buyambibwako amaanyi g’abantu b’ebika eby’obuwangwa nga bakolera mu nnimiro zaabwe."
+    },
+    {
+      "hyp": "Okusaanira kwa buwundu/obuwundu bw’ebika eby’enjawulo mu kitundu wakati w’ebikondo kyali kiraga nti waabaddewo obuwundu bw’ebika eby’enjawulo, era kino kyali kiva ku mbeera za buli kifo ezaali za njawulo."
+    },
+    {
+      "hyp": "Ennimiro za Ethiopia zikwata ku emmere ey’okwerindisa n’okukuuma."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti Abanye-Ethiopia bangi balimi emmere, ebimera eby’okuzimba, ebimera eby’eddagala n’ebimera eby’okulisa ensolo, ekisiikirize oba okuzimba olulimi mu nnimiro zaabwe."
+    },
+    {
+      "hyp": "Baakaliriza ennimiro zino okulaba obukulu bwazo mu kuteekawo emmere ey’okwerindisa n’okuyamba mu kuwonya obutonde bw’ensi."
+    },
+    {
+      "hyp": "Abantu mu nsi yonna basimba obulimi olw’okufuna emmere, okufuna ssente n’olw’emirimu emirala egy’obuwangwa."
+    },
+    {
+      "hyp": "Ennimiro zikuumirako era ebimera ebikulu ebitera obutabawo oba okusaana mu bitundu ebirala."
+    },
+    {
+      "hyp": "Mu Ethiopia, okunoonyereza kutandiseeko kutono ku ebyo obulimu obutali bwa bulijjo abantu mu byalo bye balimanga mu nnimiro zaabwe."
+    },
+    {
+      "hyp": "Mu kunoonyereza kuno, abanoonyereza baayagala okunoonyereza ku bimera abantu mu disitulikiti ya Gozamin, ebuvanjuba bwa Ethiopia, bye balimanga mu nnimiro zaabwe n’engeri gye babikozesaamu."
+    },
+    {
+      "hyp": "Baakizuula era ne babala ebimera mu nnimiro 357 mu kitundu ekyo."
+    },
+    {
+      "hyp": "Ate era ne babuuza abantu b’omu kitundu ekyo bye bakolera ebimera ebyo."
+    },
+    {
+      "hyp": "Abanoonyereza baakizuula nti ennimiro zonna ezaali mu Gozamin zaali wansi wa heekiteya."
+    },
+    {
+      "hyp": "Baakuŋŋaanya ne bategeera ebimera eby’enjawulo 238."
+    },
+    {
+      "hyp": "Ebitooke ebingi (83%) byali bikulimbibwa okwabaddewo omwaka gwonna, ate ebitono (17%) byokka bye byali by’ekiseera."
+    },
+    {
+      "hyp": "Ebyawandiikibwa byabwe byalaga nti abantu baakoleranga ebimera emmere, eddagala, okuzimba, emmere y’ebisolo, n’ebintu ebirala eby’obuwangwa."
+    },
+    {
+      "hyp": "Ebimera ebisinga byali bikola omulimu ogusingawo gumu."
+    },
+    {
+      "hyp": "Okugeza, omukoola ogw’ennyanja ogw’amakaali gasukka mu bugazi gusobola okukozesebwa mu ddagala, okwoleka, emmere y’ebisolo, ebisiikirize, okuzimba olulimi n’ebirala eby’obuwangwa."
+    },
+    {
+      "hyp": "Okusinga omuwendo gw’ekitundu (59%) gy’ebimera byakozesebwa mu bikolwa eby’obutonde okugeza okukola obulimi, obusika, ebisiikirize n’okuzimba."
+    },
+    {
+      "hyp": "Abanoonyereza baagamba nti kino kyayamba okuyamba okukuuma obutonde bw'ensi."
+    },
+    {
+      "hyp": "Ebimera eby’obukomera era byayamba okutaasa ebibala eby’omu nnimiro."
+    },
+    {
+      "hyp": "Okusingawo ku kizinga kimu (35%) ku bimera byakungulwa olw’emmere, gamba ng’ebibala, enva endiirwa, emmere ey’empeke n’ebikozesebwa okwongera obulungi bw’emmere."
+    },
+    {
+      "hyp": "Kyokka baagamba nti ennimiro ez’omu kitundu ekyo zaali zikulaga obulamu obw’ebibala."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti ebitundu 35% eby’ebimera ebyo byakozesebwa ng’eddagala ly’ekinnansi eri abantu n’ensolo, ate ebitundu 21% byakozesebwa mu bikolwa eby’obusobozi, ebintu eby’eddiini, okufumya, amafuta ag’akaloosa n’okubaka."
+    },
+    {
+      "hyp": "Ebimera ebimu (17%) byali bikozesebwa ng’emmere ey’ente, endiga n’endogoyi."
+    },
+    {
+      "hyp": "Abalala (24%) baali baweebwa omulimu gw’okuzimba, okukola ebyokulimira, okufuka ennyumba n’okukola emigwa."
+    },
+    {
+      "hyp": "Okuva abantu abasinga obungi mu byalo nga baategeeza nti bakozesa enku, 25% w’ebimera byakozesebwa ekyo."
+    },
+    {
+      "hyp": "Abanoonyereza bagamba nti ekimera kimu (0.4%) kyokka kye kyayogerwako olw’okukozesebwa okwonoona."
+    },
+    {
+      "hyp": "Era baagamba nti engeri ebimera gye byali bisambazibwa mu kitundu ekyo yali etwalibwawo embeera y’obutonde, ebintu abantu bye baali baagala okulya, awamu n’embeera y’ebyenfuna ey’amaka n’ebyetaago by’obusuubuzi."
+    },
+    {
+      "hyp": "Okugeza, ekifo ekya Wenka ekyalina amazzi ag’okubunyisa era nga kyegasse ku kibuga ekikulu, kyali n’ennimiro nnyingi era nga kyawandiikibwako ebimera eby’enjawulo 130."
+    },
+    {
+      "hyp": "Abantu ba Wenka era baalimiira era ne bawaayo ebibala n’obuwunga ku katale k’omu kibuga."
+    },
+    {
+      "hyp": "Okusooka, abanoonyereza baagamba nti abalimi abasinga obungi baali baagala okusaaba ebirime ebyalina enkolererwa nnyingi."
+    },
+    {
+      "hyp": "Abanoonyereza baagamba nti ebyavudde mu kunoonyereza kwabwe byakakasa nti ddala abalimi balimanga obungi bw’ebika by’ebirime eby’enjawulo mu nnimiro zaabwe, era nga bikolebwa ebintu eby’enjawulo."
+    },
+    {
+      "hyp": "Wadde ng’abanoonyereza bano baazuula nti abalimi abasinga baasimba omwenge, abanoonyereza abalala baali bagambye nti emiti gye gyali gisinga obungi mu kitundu ekyo."
+    },
+    {
+      "hyp": "Abanoonyereza b’okunoonyereza kuno baali bava mu yunivasite z’omu Ethiopia."
+    }
+  ],
+  "schema_version": "1.0"
+}
