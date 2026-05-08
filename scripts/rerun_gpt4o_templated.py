@@ -39,6 +39,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import io
 import json
 import os
 import re
@@ -51,6 +52,66 @@ from pathlib import Path
 from tqdm import tqdm
 
 warnings.filterwarnings("ignore", category=FutureWarning)
+
+
+# --- Brevo email notifier (mirrors scripts/rerun_gemini_newer.py) ----------
+
+def _send_brevo_email(*, api_key: str, sender: str, recipient: str,
+                      subject: str, body: str) -> bool:
+    import urllib.request
+    payload = json.dumps({
+        "sender": {"email": sender, "name": "AfriScience-MT"},
+        "to": [{"email": recipient}],
+        "subject": subject,
+        "textContent": body,
+    }).encode("utf-8")
+    req = urllib.request.Request(
+        "https://api.brevo.com/v3/smtp/email",
+        data=payload,
+        headers={
+            "accept": "application/json",
+            "api-key": api_key,
+            "content-type": "application/json",
+        },
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return r.status < 300
+    except Exception as e:
+        print(f"  ✗ brevo notify failed: {e}", file=sys.stderr)
+        return False
+
+
+class Notifier:
+    def __init__(self, *, api_key, sender, recipient, every_n):
+        self.api_key = api_key
+        self.sender = sender
+        self.recipient = recipient
+        self.every_n = every_n
+        self.enabled = bool(api_key and sender and recipient)
+        self.last_t = time.time()
+
+    def send(self, subject, body):
+        if not self.enabled:
+            return
+        ok = _send_brevo_email(
+            api_key=self.api_key, sender=self.sender, recipient=self.recipient,
+            subject=f"[AfriScience-MT] {subject}", body=body,
+        )
+        if ok:
+            print(f"  ✉ notified {self.recipient}: {subject}")
+        self.last_t = time.time()
+
+    def maybe_progress(self, *, i, total, last_cfg):
+        if not self.enabled:
+            return
+        if i % self.every_n == 0 or (time.time() - self.last_t) > 3600:
+            self.send(
+                f"Progress: {i}/{total} configs",
+                f"Last completed: {last_cfg}\n"
+                f"Elapsed since last update: {time.time()-self.last_t:.0f}s",
+            )
 
 ROOT = Path(__file__).resolve().parents[1]
 TEST_DIR = ROOT / "data" / "processed_files" / "test"
@@ -189,35 +250,22 @@ def call_one(api_client, system: str, user: str) -> str:
     return (api_client._call_api(messages) or "").strip()
 
 
-def submit_batch(api_client, prompts: list[tuple[str, str]],
-                 *, job_label: str, poll_seconds: int,
-                 state_file: Path) -> list[str]:
-    """Use the OpenAI Batch API. Each row sent as a flattened user prompt
-    'system\\n\\nuser' since the existing OpenAIClient.submit_batch_job
-    takes List[str], not List[messages]."""
-    state = json.loads(state_file.read_text()) if state_file.exists() else {}
-    flat = [(f"{s}\n\n{u}" if s else u) for s, u in prompts]
-
-    job_id = state.get(job_label)
-    if not job_id:
-        print(f"    submitting batch ({len(flat)} prompts)...")
-        job_id = api_client.submit_batch_job(prompts=flat, job_name=job_label)
-        state[job_label] = job_id
-        state_file.parent.mkdir(parents=True, exist_ok=True)
-        state_file.write_text(json.dumps(state, indent=2))
-        print(f"    submitted: {job_id}")
-    else:
-        print(f"    resuming batch: {job_id}")
-
-    while True:
-        out = api_client.retrieve_batch_results(job_id)
-        if out is not None:
-            print(f"    batch complete ({len(out)} responses)")
-            state.pop(job_label, None)
-            state_file.write_text(json.dumps(state, indent=2))
-            return out
-        print(f"    pending; sleeping {poll_seconds}s...")
-        time.sleep(poll_seconds)
+def split_for_batch(prompts: list[tuple[str, str]]) -> tuple[list[str], str | None]:
+    """If every row's system part is identical, return (user_prompts, system).
+    If it varies per row (templates 4/5 with row-specific glossary), return
+    flattened "System: ...\\nHuman: ..." strings as user_prompts and system=None.
+    Either way the prompt content is byte-identical to what legacy gpt-4o saw."""
+    if not prompts:
+        return [], None
+    sys_parts = {sp for sp, _ in prompts}
+    if len(sys_parts) == 1 and next(iter(sys_parts)) != "":
+        sys_text = next(iter(sys_parts))
+        return [u for _, u in prompts], sys_text
+    flat = [
+        f"System: {sp}\nHuman: {up}" if sp else up
+        for sp, up in prompts
+    ]
+    return flat, None
 
 
 def write_canonical(*, out_dir: Path, model: str, short_name: str,
@@ -304,10 +352,21 @@ def main() -> int:
                     help="OpenAI API key (default: $OPENAI_API_KEY).")
     ap.add_argument("--use-batch", action="store_true",
                     help="Submit prompts via the OpenAI Batch API "
-                         "(50% cheaper, ~24h SLA, no per-minute caps).")
+                         "(50%% cheaper, ~24h SLA, no per-minute caps).")
     ap.add_argument("--batch-poll-seconds", type=int, default=120)
+    ap.add_argument("--batch-concurrency", type=int, default=5,
+                    help="Max in-flight batch jobs at once (--use-batch only).")
     ap.add_argument("--batch-state-file",
                     default="experiments/_openai_batch_state.json")
+    # Brevo email notifications.
+    ap.add_argument("--notify-email", default="afriannotate@gmail.com",
+                    help="Recipient for Brevo notifications.")
+    ap.add_argument("--notify-from", default=os.environ.get("BREVO_SENDER_EMAIL"),
+                    help="Verified Brevo sender (default: $BREVO_SENDER_EMAIL).")
+    ap.add_argument("--brevo-api-key", default=os.environ.get("BREVO_API_KEY"),
+                    help="Brevo API key (default: $BREVO_API_KEY).")
+    ap.add_argument("--notify-every", type=int, default=25,
+                    help="Send a progress email every N completed configs.")
     ap.add_argument("--legacy-temp", type=float, default=0.0,
                     help="Legacy dump temperature to read prompts FROM "
                          "(default 0.0). The new model is run at "
@@ -385,45 +444,40 @@ def main() -> int:
 
     out_temp_dir = EXP_ROOT / temp_setting(args.temperature) / "icl" / short_name
     state_file = ROOT / args.batch_state_file
+    state = json.loads(state_file.read_text()) if state_file.exists() else {}
     t0 = time.time()
 
-    for idx, (tmpl, k, src, tgt, tsv) in enumerate(configs, 1):
-        pair = f"{src}-{tgt}"
-        strategy = f"template{tmpl}_{k}shot"
-        out_dir = out_temp_dir / strategy / pair
+    notifier = Notifier(
+        api_key=args.brevo_api_key, sender=args.notify_from,
+        recipient=args.notify_email, every_n=args.notify_every,
+    )
+    if not notifier.enabled:
+        print("notify: disabled (need BREVO_API_KEY + --notify-from + --notify-email)")
+    else:
+        print(f"notify: enabled → {args.notify_email} every {args.notify_every} configs")
+        notifier.send(
+            f"Started: {args.model} (rerun_gpt4o_templated)",
+            f"Model: {args.model}\nShort: {short_name}\n"
+            f"T={args.temperature}  legacy_T={args.legacy_temp}  "
+            f"direction={args.direction}\nConfigs: {len(configs)}\n"
+            f"Mode: {'batch' if args.use_batch else 'direct'}",
+        )
 
-        prompts = read_prompts(tsv)
-        sys_const = system_is_constant(prompts)
-        cache_path = cache_path_for(out_dir)
-        cached = load_cache(cache_path)
-
-        print(f"\n[{idx}/{len(configs)}] {strategy} {pair}  "
-              f"({len(prompts)} prompts, {len(cached)} cached)  "
-              f"-> {out_dir.relative_to(ROOT)}")
-
-        ts = time.time()
-        if args.use_batch:
-            hyps = submit_batch(
-                api_client, prompts,
-                job_label=f"{short_name}/{pair}/{strategy}",
-                poll_seconds=args.batch_poll_seconds,
-                state_file=state_file,
+    notify_state = {"i": 0, "total": len(configs), "last_cfg": ""}
+    if notifier.enabled:
+        import traceback as _tb
+        def _excepthook(exc_type, exc_value, exc_tb):
+            notifier.send(
+                f"FAILED at config {notify_state['i']}/{notify_state['total']}",
+                f"Last attempted: {notify_state['last_cfg']}\n"
+                f"Error: {exc_type.__name__}: {exc_value}\n\n"
+                + "".join(_tb.format_exception(exc_type, exc_value, exc_tb)),
             )
-        else:
-            hyps = [None] * len(prompts)
-            for i, (s, u) in enumerate(tqdm(prompts, desc=strategy, leave=False)):
-                if i in cached:
-                    hyps[i] = cached[i]
-                    continue
-                try:
-                    text = call_one(api_client, s, u)
-                except Exception as e:
-                    print(f"  ! row {i} failed ({type(e).__name__}: {e})", file=sys.stderr)
-                    text = ""
-                hyps[i] = text
-                append_cache(cache_path, i, text)
+            sys.__excepthook__(exc_type, exc_value, exc_tb)
+        sys.excepthook = _excepthook
 
-        # score inline (cheap; metric module loads once per process)
+    def score_and_write(*, src, tgt, hyps, sys_const, tmpl, k, out_dir,
+                        ts, idx, label):
         metrics = None
         try:
             from afriscience_mt.evaluation.metrics import compute_all_metrics
@@ -438,23 +492,146 @@ def main() -> int:
                 "chrf": m.get("chrf"), "ssa_comet": m.get("ssa_comet"),
                 "num_samples": n,
             }
-            print(f"   ChrF={metrics['chrf']:.2f}  COMET={100*metrics['ssa_comet']:.1f}  "
+            cf, sc = metrics["chrf"], metrics["ssa_comet"]
+            print(f"   ChrF={cf:.2f}  COMET={100*sc:.1f}  "
                   f"({time.time()-ts:.1f}s)")
         except Exception as e:
             print(f"   scoring failed ({type(e).__name__}: {e})")
-
         write_canonical(
             out_dir=out_dir, model=args.model, short_name=short_name,
             src=src, tgt=tgt, template=tmpl, n_shots=k,
             temp=args.temperature, hyps=hyps, system_constant=sys_const,
             metrics=metrics,
         )
-        # cache survived? leave it for forensic; remove only on full success.
+        cache_path = cache_path_for(out_dir)
         if metrics is not None and cache_path.exists():
             try:
                 cache_path.unlink()
             except OSError:
                 pass
+        notify_state["i"] = idx
+        notify_state["last_cfg"] = label
+        notifier.maybe_progress(i=idx, total=len(configs), last_cfg=label)
+
+    if args.use_batch:
+        # Parallel sliding-window orchestrator. Up to --batch-concurrency
+        # OpenAI Batch jobs in flight; poll all every --batch-poll-seconds;
+        # as each returns, write predictions and submit the next from the queue.
+        print(f"batch mode: concurrency={args.batch_concurrency}, "
+              f"poll every {args.batch_poll_seconds}s")
+        queue = list(configs)
+        in_flight: dict[str, dict] = {}
+        done_count = 0
+
+        def fill_window():
+            while len(in_flight) < args.batch_concurrency and queue:
+                tmpl, k, src, tgt, tsv = queue.pop(0)
+                pair = f"{src}-{tgt}"
+                strategy = f"template{tmpl}_{k}shot"
+                label = f"{strategy}/{pair}"
+                job_label = f"{short_name}/{pair}/{strategy}"
+                out_dir = out_temp_dir / strategy / pair
+
+                print(f"\n[submit] {label}  (from {tsv.name})")
+                prompts = read_prompts(tsv)
+                user_prompts, sys_text = split_for_batch(prompts)
+                sys_const = sys_text is not None
+                print(f"  prompts: {len(user_prompts)}  system_constant={sys_const}")
+
+                existing = state.get(job_label)
+                if existing:
+                    job_id = existing
+                    print(f"  resuming pre-submitted job: {job_id}")
+                else:
+                    job_id = api_client.submit_batch_job(
+                        prompts=user_prompts, job_name=job_label,
+                        system_prompt=sys_text,
+                    )
+                    state[job_label] = job_id
+                    state_file.parent.mkdir(parents=True, exist_ok=True)
+                    state_file.write_text(json.dumps(state, indent=2))
+                    print(f"  submitted: {job_id}")
+
+                in_flight[job_label] = {
+                    "cfg": (tmpl, k, src, tgt, tsv),
+                    "label": label,
+                    "job_id": job_id,
+                    "sys_const": sys_const,
+                    "out_dir": out_dir,
+                    "started_at": time.time(),
+                }
+
+        fill_window()
+        while in_flight or queue:
+            completed_keys = []
+            for job_label, info in list(in_flight.items()):
+                try:
+                    hyps = api_client.retrieve_batch_results(info["job_id"])
+                except Exception as e:
+                    print(f"  ✗ {info['label']} retrieve failed "
+                          f"({type(e).__name__}: {e}); will retry next poll")
+                    continue
+                if hyps is None:
+                    continue
+                tmpl, k, src, tgt, tsv = info["cfg"]
+                hyps = [(h or "").strip() for h in hyps]
+                print(f"\n[done] {info['label']}  ({len(hyps)} responses)")
+                state.pop(job_label, None)
+                state_file.write_text(json.dumps(state, indent=2))
+                done_count += 1
+                score_and_write(
+                    src=src, tgt=tgt, hyps=hyps, sys_const=info["sys_const"],
+                    tmpl=tmpl, k=k, out_dir=info["out_dir"],
+                    ts=info["started_at"], idx=done_count, label=info["label"],
+                )
+                completed_keys.append(job_label)
+            for jk in completed_keys:
+                del in_flight[jk]
+            fill_window()
+            if in_flight:
+                time.sleep(args.batch_poll_seconds)
+    else:
+        # Direct (non-batch) sequential loop with per-row cache.
+        for idx, (tmpl, k, src, tgt, tsv) in enumerate(configs, 1):
+            pair = f"{src}-{tgt}"
+            strategy = f"template{tmpl}_{k}shot"
+            label = f"{strategy}/{pair}"
+            out_dir = out_temp_dir / strategy / pair
+
+            prompts = read_prompts(tsv)
+            sys_const = system_is_constant(prompts)
+            cache_path = cache_path_for(out_dir)
+            cached = load_cache(cache_path)
+
+            print(f"\n[{idx}/{len(configs)}] {label}  "
+                  f"({len(prompts)} prompts, {len(cached)} cached)  "
+                  f"-> {out_dir.relative_to(ROOT)}")
+
+            ts = time.time()
+            hyps = [None] * len(prompts)
+            for i, (s, u) in enumerate(tqdm(prompts, desc=strategy, leave=False)):
+                if i in cached:
+                    hyps[i] = cached[i]
+                    continue
+                try:
+                    text = call_one(api_client, s, u)
+                except Exception as e:
+                    print(f"  ! row {i} failed ({type(e).__name__}: {e})", file=sys.stderr)
+                    text = ""
+                hyps[i] = text
+                append_cache(cache_path, i, text)
+
+            score_and_write(
+                src=src, tgt=tgt, hyps=hyps, sys_const=sys_const,
+                tmpl=tmpl, k=k, out_dir=out_dir,
+                ts=ts, idx=idx, label=label,
+            )
+
+    notifier.send(
+        f"Run complete: {args.model}",
+        f"All {len(configs)} configs done.\n"
+        f"Output dir: experiments/llm/closed/{temp_setting(args.temperature)}/icl/{short_name}/",
+    )
 
     print(f"\nTotal: {time.time() - t0:.1f}s")
     print("Aggregate to update summary.csv:")
