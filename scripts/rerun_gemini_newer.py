@@ -16,9 +16,12 @@ land in ``summary.csv`` automatically when you run
 Usage (from repo root):
 
     export GOOGLE_API_KEY=...
+    # default sweep: 0, 5, 10, 20 shots on all 12 pairs
     python scripts/rerun_gemini_newer.py --model gemini-2.0-flash
+    # subset of pairs
     python scripts/rerun_gemini_newer.py --model gemini-2.5-pro --pairs eng-amh eng-hau
-    python scripts/rerun_gemini_newer.py --model gemini-2.5-flash --shot-counts 0 5 10
+    # only 5-shot if you want a quick sanity check
+    python scripts/rerun_gemini_newer.py --model gemini-2.5-flash --shot-counts 5
 
 Notes:
   - ``--short-name`` controls the output directory name and the
@@ -192,8 +195,9 @@ def main() -> int:
                     help="model_short used in summary.csv. Defaults to sanitised --model.")
     ap.add_argument("--pairs", nargs="+", default=None,
                     help="Subset of language pairs (default: all 12).")
-    ap.add_argument("--shot-counts", type=int, nargs="+", default=[0, 5],
-                    help="Shot counts to run (default: 0 5).")
+    ap.add_argument("--shot-counts", type=int, nargs="+", default=[0, 5, 10, 20],
+                    help="Shot counts to run (default: full sweep up to 20). "
+                         "50-shot is forbidden by project policy.")
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--max-output-tokens", type=int, default=1024)
     ap.add_argument("--retrieval", choices=["random", "semantic"], default="random",
