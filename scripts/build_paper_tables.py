@@ -725,108 +725,163 @@ def build_closed_ablations(rows, metric):
 
 def build_template_shot_ablation(rows, metric):
     """**Appendix.** Template/shot ablation across the four reference
-    models that have full templated coverage at T=0:
-    Gemini-1.5-Flash, GPT-4o, Llama3-8B, Gemma2-9B-IT.
+    models with full templated coverage at T=0
+    (Gemini-1.5-Flash, GPT-4o, Llama3-8B, Gemma2-9B-IT).
 
-    Each row is a (template, shot-count) configuration; each column is
-    one model; the value is the bidirectional avg COMET across the 12
-    language pairs at T=0. The locked universal choice
-    (\\texttt{template5\\_10shot}) is bolded, and the per-model best
-    cell is italicised.
+    Layout follows Tables 11/12 of the existing draft
+    (tab:models_performances_templates_*): per-model multirow block,
+    one row per (template, shot) configuration, language pairs as
+    columns (eng->xxx then xxx->eng) with per-row Avg, and a per-model
+    avg row at the bottom of each block. Bold cells are the per-lang
+    column maximum within each model block. The locked universal
+    choice template5_10shot is highlighted via cmidrule emphasis in
+    the caption (see docs/PAPER_TODOS.md "2026-05-08 -- DECISION").
     """
     metric_label = "chrF" if metric == "chrf" else "COMET"
     AB_MODELS = ["gemini_15_flash", "gpt4o", "llama3_8b", "gemma2_9b_it"]
 
-    # Configs in display order. Templates 1, 2, 4 are 0-shot only;
-    # templates 3 and 5 carry the shot sweep (5/10/20). 50-shot is
-    # banned project-wide; 20-shot stays so readers can see the
-    # plateau past 10-shot directly.
+    # Configs sorted: by template number, then by shot count. Templates
+    # 1, 2, 4 are 0-shot only; templates 3 and 5 carry the shot sweep.
+    # 50-shot banned project-wide; 20-shot kept so readers see the
+    # plateau directly.
     CONFIGS = [
-        ("template1_0shot", 1, 0),
-        ("template2_0shot", 2, 0),
-        ("template4_0shot", 4, 0),
-        ("template3_5shot", 3, 5),
-        ("template5_5shot", 5, 5),
+        ("template1_0shot",  1, 0),
+        ("template2_0shot",  2, 0),
+        ("template3_5shot",  3, 5),
         ("template3_10shot", 3, 10),
-        ("template5_10shot", 5, 10),
         ("template3_20shot", 3, 20),
+        ("template4_0shot",  4, 0),
+        ("template5_5shot",  5, 5),
+        ("template5_10shot", 5, 10),
         ("template5_20shot", 5, 20),
     ]
+    LOCKED_CONFIG = "template5_10shot"
 
     def avg_(vs):
         nums = [v for v in vs if v is not None]
         return sum(nums) / len(nums) if nums else None
 
-    def cell(model, strategy):
-        d = lookup(rows, metric=metric, model_short=model,
-                   experiment_type="llm_icl", temp_setting="t0",
-                   prompt_strategy=strategy)
-        return avg_([d.get(p) for p in PAIRS])
+    def pull(model, strategy):
+        return lookup(rows, metric=metric, model_short=model,
+                      experiment_type="llm_icl", temp_setting="t0",
+                      prompt_strategy=strategy)
 
-    # rows: list of (config_label, template, shots, [v_per_model], cross_avg)
-    table_rows = []
-    for label, tmpl, shots in CONFIGS:
-        vs = [cell(m, label) for m in AB_MODELS]
-        table_rows.append((label, tmpl, shots, vs, avg_(vs)))
+    # Format a (template, shots) label like "1" / "3$_{s=5}$"
+    def cfg_label(tmpl, shots):
+        if shots == 0:
+            return str(tmpl)
+        return f"{tmpl}$_{{s={shots}}}$"
 
-    # column maxes for italic highlighting
-    col_max = []
-    for ci in range(len(AB_MODELS) + 1):  # +1 for Avg col
-        col_vals = []
-        for _, _, _, vs, ca in table_rows:
-            v = vs[ci] if ci < len(AB_MODELS) else ca
-            if v is not None:
-                col_vals.append(v)
-        col_max.append(max(col_vals) if col_vals else None)
+    def cell_str(v):
+        return "--" if v is None else f"{v:.1f}"
 
-    LOCKED_CONFIG = "template5_10shot"
+    lang_cols_e2x = [r"\textbf{\texttt{" + l + "}}" for l in LANGS]
+    lang_cols_x2e = [r"\textbf{\texttt{" + l + "}}" for l in LANGS]
+    n_lang_cols = 12  # 6 e2x + 6 x2e
+    avg_col_idx = n_lang_cols  # 13th data column
+
+    # Build column spec: model, config, 12 lang cols, Avg
+    col_spec = "ll" + "r" * n_lang_cols + "r"
 
     lines = [
         f"% ---- template_shot_ablation_{'chrf' if metric=='chrf' else 'comet'} ----",
         r"\begin{table*}[t]",
         r"\centering",
-        r"\small",
+        r"\footnotesize",
+        r"\setlength{\tabcolsep}{4pt}",
         r"\renewcommand{\arraystretch}{1.05}",
-        r"\begin{tabular}{lr" + "r" * len(AB_MODELS) + r"r}",
+        r"\resizebox{\textwidth}{!}{",
+        r"\begin{tabular}{" + col_spec + r"}",
         r"\toprule",
-        (r"\textbf{Config} & \textbf{Shots} & "
-         + " & ".join(MODEL_DISP.get(m, m) for m in AB_MODELS)
+        # Direction header row spanning the 12 lang cols
+        (r"\textbf{Model} & \textbf{Config} & "
+         r"\multicolumn{6}{c}{\textbf{eng$\to$}} & "
+         r"\multicolumn{6}{c}{\textbf{$\to$eng}} & \\"),
+        r"\cmidrule(lr){3-8}\cmidrule(lr){9-14}",
+        # Lang headers
+        (r"  &   & " + " & ".join(lang_cols_e2x + lang_cols_x2e)
          + r" & \textbf{Avg} \\"),
         r"\midrule",
     ]
 
-    for label, tmpl, shots, vs, ca in table_rows:
-        is_locked = (label == LOCKED_CONFIG)
-        cells_in = vs + [ca]
-        cells_out = []
-        for ci, v in enumerate(cells_in):
-            s = fmt(v)
-            if v is not None and col_max[ci] is not None and abs(v - col_max[ci]) < 1e-9:
-                s = f"\\emph{{{s}}}"
-            cells_out.append(s)
-        first_col = f"template{tmpl}"
-        if is_locked:
-            first_col = r"\textbf{" + first_col + r"}"
-            shots_disp = r"\textbf{" + str(shots) + r"}"
-        else:
-            shots_disp = str(shots)
-        lines.append(f"{first_col} & {shots_disp} & " + " & ".join(cells_out) + r" \\")
+    for mi, model in enumerate(AB_MODELS):
+        if mi > 0:
+            lines.append(r"\midrule")
+
+        # Per-model: pull data for every config × lang pair
+        config_rows = []  # list of (label, tmpl, shots, [12 vals], avg)
+        for label, tmpl, shots in CONFIGS:
+            d = pull(model, label)
+            vals = [d.get(p) for p in PAIRS]   # PAIRS = e2x + x2e (12 entries)
+            config_rows.append((label, tmpl, shots, vals, avg_(vals)))
+
+        # Per-language column max within this model block (12 cols + Avg)
+        block_col_max = []
+        for ci in range(n_lang_cols + 1):
+            cv = []
+            for _, _, _, vals, a in config_rows:
+                v = vals[ci] if ci < n_lang_cols else a
+                if v is not None:
+                    cv.append(v)
+            block_col_max.append(max(cv) if cv else None)
+
+        # Per-language avg row across the configs (column avg)
+        col_avgs = []
+        for ci in range(n_lang_cols + 1):
+            cv = []
+            for _, _, _, vals, a in config_rows:
+                v = vals[ci] if ci < n_lang_cols else a
+                if v is not None:
+                    cv.append(v)
+            col_avgs.append(avg_(cv))
+
+        # Emit rows. First row carries the multirow model name.
+        n_block_rows = len(config_rows) + 1   # configs + per-lang avg
+        for ri, (label, tmpl, shots, vals, a) in enumerate(config_rows):
+            cells = vals + [a]
+            cells_str = []
+            for ci, v in enumerate(cells):
+                s = cell_str(v)
+                if (v is not None and block_col_max[ci] is not None
+                        and abs(v - block_col_max[ci]) < 1e-9):
+                    s = r"\textbf{" + s + r"}"
+                cells_str.append(s)
+            cfg = cfg_label(tmpl, shots)
+            if label == LOCKED_CONFIG:
+                cfg = r"\underline{" + cfg + r"}"
+            if ri == 0:
+                model_cell = (r"\multirow{" + str(n_block_rows) + r"}{*}{"
+                              + r"\rotatebox{90}{"
+                              + MODEL_DISP.get(model, model)
+                              + r"}}")
+            else:
+                model_cell = ""
+            lines.append(f"{model_cell} & {cfg} & "
+                         + " & ".join(cells_str) + r" \\")
+
+        # cmidrule before the per-lang avg row to separate it
+        lines.append(r"\cmidrule(l){2-" + str(2 + n_lang_cols + 1) + "}")
+        avg_cells = [cell_str(v) for v in col_avgs]
+        lines.append(r" & \textbf{avg} & "
+                     + " & ".join(avg_cells) + r" \\")
 
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
+        r"}",
         (r"\caption{Template/shot ablation for the four reference models "
          "with bidirectional templated coverage at $T{=}0$ "
-         f"({metric_label}; bidirectional avg over the 12 \\texttt{{eng}}"
-         r"$\leftrightarrow$\texttt{xxx} pairs). \texttt{template5\_10shot} "
-         r"(\textbf{bolded row}) is the project-wide locked configuration "
+         f"({metric_label}). Each row is a (template, shot-count) "
+         r"configuration (template number first, shot count as subscript "
+         r"$s$); the underlined row \texttt{5}$_{s=10}$ is the "
+         r"project-wide locked configuration "
          r"(see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''). "
-         r"20-shot edges 10-shot by at most $0.2$ COMET in any column, "
-         r"well below the $1$-COMET adoption threshold we set, so we cap "
-         r"shots at 10. The five other open LLMs in our headline tables "
-         r"inherit this configuration via "
-         r"\texttt{scripts/rerun\_open\_llm\_template.py}. "
-         r"\emph{Italic}: column maximum.}"),
+         r"\textbf{Bold}: per-language column maximum within each model "
+         r"block. The bottom \textbf{avg} row of each block reports the "
+         r"per-language average across configurations. 50-shot is banned "
+         r"project-wide; 20-shot is included so the plateau past 10-shot "
+         r"is visible -- the gain from 10$\to$20 shots is at most "
+         r"$0.2$ COMET, far below our $1$-COMET adoption threshold.}"),
         r"\label{tab:template_shot_ablation_" + ("chrf" if metric == "chrf" else "comet") + "}",
         r"\end{table*}",
     ]
