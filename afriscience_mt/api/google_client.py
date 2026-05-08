@@ -189,16 +189,28 @@ class GoogleAIClient(APIClient):
             self._initialize_client()
 
         # Build JSONL with indexed keys for reliable re-ordering on retrieval.
-        # Format: {"key": "0", "request": {"contents": [...], "config": {...}}}
+        # The Batch API expects generationConfig and systemInstruction as
+        # top-level request fields (not nested under "config"). Earlier code
+        # used "config" which the server rejects with "no such field: 'config'".
+        gen_config: Dict[str, Any] = {}
+        if self.config.temperature is not None:
+            gen_config["temperature"] = self.config.temperature
+        if self.config.max_tokens:
+            gen_config["maxOutputTokens"] = self.config.max_tokens
+        if self.config.top_p is not None:
+            gen_config["topP"] = self.config.top_p
+
         lines: List[str] = []
         for i, prompt in enumerate(prompts):
             req: Dict[str, Any] = {
                 "contents": [{"role": "user", "parts": [{"text": prompt}]}],
             }
             if system_prompt:
-                req["config"] = {
-                    "system_instruction": {"parts": [{"text": system_prompt}]},
+                req["systemInstruction"] = {
+                    "parts": [{"text": system_prompt}],
                 }
+            if gen_config:
+                req["generationConfig"] = gen_config
             lines.append(_json.dumps({"key": str(i), "request": req}, ensure_ascii=False))
 
         jsonl_content = "\n".join(lines)
