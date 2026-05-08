@@ -461,6 +461,112 @@ Draft (paste-ready, edit to taste):
 
 ---
 
+## 2026-05-08 — Template-vs-shot dependence; open-LLM template/shot sweep plan
+
+**Status:** WAITING FOR DATA. Llama3 + Gemma2 (and possibly others)
+template/shot sweep is being run / queued for run by user. Once the
+results land, follow the plan below, then write either a body
+replacement or an appendix paragraph on prompt-engineering effects.
+
+### What we already know (from the closed-API sweep, 2026-05-08)
+
+Holding the prompt template fixed and varying shot count barely moves
+performance; the dominant lever is the template itself. Numbers are
+COMET avg across the six \texttt{eng}$\to$\texttt{xxx} pairs for
+Gemini-1.5 (the only model with full template$\times$shot coverage):
+
+| strategy                       | 5-shot | 10-shot | 20-shot | 50-shot |
+|--------------------------------|-------:|--------:|--------:|--------:|
+| `template3_*` (good template)  | 64.66  | 64.90   | 65.01   | 65.31   |
+| `template5_*` (good template)  | 64.80  | 64.96   | 64.98   | 65.37   |
+| `semantic_*` (different prompt) | 59.50  | 65.82   | 66.05   | 66.36   |
+| `icl_5shot`        (vanilla random)   | 58.33 | -- | -- | -- |
+| `icl_5shot_semantic` (vanilla semantic) | 59.50 | -- | -- | -- |
+
+Two interpretations:
+
+1. With a *good* template, 5--50 shots are essentially indistinguishable
+   ($\Delta < 1$ COMET).
+2. The earlier "$+6$ COMET from 5 to 10 shots" claim was an artifact of
+   the prompt template changing between `icl_5shot_semantic` (vanilla)
+   and `semantic_10shot` (better-formatted) --- not a shot-count effect.
+
+The open LLMs in Table~\ref{tab:open_vs_closed_icl_comet} currently use
+the vanilla `icl_5shot` prompt, so they are likely under-performing
+relative to what a template3/5 prompt would deliver.
+
+### Decision rules (lock these in before re-running anything)
+
+- **Shot cap: 10.** If 10-shot beats 5-shot by $> 1$ COMET, we adopt
+  10-shot; otherwise we keep 5-shot. We do not consider 20- or 50-shot
+  for the open LLMs --- the closed-API evidence shows returns plateau
+  immediately past 10.
+- **Template: choose the per-model best.** For each open LLM we pick
+  the (template, shot-count$\le 10$) pair with the highest avg COMET
+  on \texttt{eng}$\to$\texttt{xxx} (and report the same configuration
+  for \texttt{xxx}$\to$\texttt{eng} when available).
+- **Apples-to-apples constraint.** If we update the body Table~2 row
+  for an open LLM to a non-vanilla template, we should disclose the
+  template choice in methodology and either (a) update the closed-API
+  Table~2 row to the same template family for fairness, or (b) keep
+  the closed-API row at its current vanilla setting and explicitly
+  flag the asymmetry.
+
+### Quick re-run plan once the sweep results land
+
+1. Aggregate: `python -m afriscience_mt aggregate --out experiments/summary.csv`.
+2. Pick winners: a small script (TBD: `scripts/select_best_template_shot.py`)
+   reads the new rows, applies the decision rules above, and emits a
+   per-model JSON like
+   `{"llama3_8b": {"template": "5", "shots": 10, "avg_comet": 64.x}}`.
+3. **If a winner beats the current vanilla 5-shot row by $> 1$ COMET avg**:
+   replace the corresponding row in Table~2 (rebuild via
+   `python scripts/build_paper_tables.py` after extending
+   `build_open_vs_closed_icl` to honor the per-model strategy choice).
+4. **Otherwise**: leave Table~2 alone and put the sweep summary in an
+   appendix table + paragraph titled "Effect of prompt engineering on
+   open-LLM in-context learning."
+
+### Discussion / appendix prose (to use depending on outcome)
+
+If body is unchanged (open LLMs stay at vanilla 5-shot):
+
+> \paragraph{Prompt engineering at scale.}
+> Closed APIs gain about $5$--$6$ COMET on \texttt{eng}$\to$\texttt{xxx}
+> when their vanilla 5-shot ICL prompt is replaced by a more carefully
+> structured template (templates~3 and~5 in our sweep), at the same
+> shot count; further shots add at most $0.7$ COMET on top of that
+> (Table~\ref{tab:closed_ablations_comet}). A matching sweep on the
+> open LLMs yields broadly the same picture
+> (Table~\ref{tab:open_template_shot_sweep}): prompt format is the
+> dominant lever and 10-shot is enough --- $20$ and $50$-shot returns
+> are within metric noise. We retain the vanilla 5-shot prompt in
+> Table~\ref{tab:open_vs_closed_icl_comet} for cross-group
+> comparability and report the per-model best configurations in the
+> appendix.
+
+If body switches to per-model best template (cap 10 shots):
+
+> \paragraph{Per-model prompt selection.}
+> Following our prompt-engineering sweep
+> (Table~\ref{tab:open_template_shot_sweep}), each open LLM in
+> Table~\ref{tab:open_vs_closed_icl_comet} now reports its highest-
+> scoring (template, shot-count) configuration capped at 10 shots
+> rather than the vanilla 5-shot baseline; closed APIs are likewise
+> reported under their per-pair best template. Beyond 10 shots we
+> see $< 0.7$ COMET improvement across all models, so we stop there.
+
+### Still needs writing
+
+- The `scripts/select_best_template_shot.py` selection script.
+- The appendix Table `tab:open_template_shot_sweep` and its caption.
+- The closed-API counterpart (already partly there in
+  `figures/new/gpt-vs-gemini/...pdf` and the closed_ablations table) ---
+  decide whether it stays as-is or gets folded into a unified open+closed
+  template/shot table.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
