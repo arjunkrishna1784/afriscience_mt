@@ -575,6 +575,72 @@ If body switches to per-model best template (cap 10 shots):
 
 ---
 
+## 2026-05-08 — Table 2 ICL row: swap vanilla -> templated (DEFERRED)
+
+**Status:** WAITING. Don't change Table 2 yet --- wait for the open-LLM
+(Llama3-8B, Gemma2-9B, and any peers) template/shot sweep to land in
+`summary.csv` first. Once it does, pick the per-model best template at
+$\le 10$ shots and swap the rows uniformly across closed and open
+groups so the table stays apples-to-apples.
+
+### Why this is deferred
+
+Two pieces of evidence have to be in hand before we touch Table 2:
+
+1. **Closed-API templated runs already qualify** for replacement.
+   Vanilla `icl_5shot` at $T{=}0$ for Gemini-1.5-Flash sits at COMET
+   58.3 (eng->xxx avg); the same model with `template3_5shot` /
+   `template5_5shot` lands at 64.6 / 64.8 --- a $\sim 6$ COMET gap that
+   easily clears the "$> 1$ COMET" decision rule. GPT-4o has the same
+   gap (`icl_5shot_semantic` 58.2 vs `semantic_5shot` 64.6).
+
+2. **Open-LLM templated runs are not yet imported.** As of 2026-05-08
+   `experiments/llm/open/icl/<model>/` only has `0shot/` and `5shot/`
+   directories using the vanilla `few_shot` template (config field
+   confirms). If we swap closed-API rows now, the table compares
+   open-LLM vanilla against closed-API templated --- which is exactly
+   the asymmetry we are trying to eliminate.
+
+### Action plan once the open sweep lands
+
+1. Run `python -m afriscience_mt aggregate --out experiments/summary.csv`.
+2. Use a small selection script (TBD: `scripts/select_best_template_shot.py`,
+   already mentioned in the earlier template-vs-shot bookmark) to find
+   the per-model best `(template, shots)` configuration with `shots
+   <= 10` and emit per-model JSON, e.g.
+   `{"llama3_8b": {"template": "5", "shots": 10, "comet_avg": 64.x}}`.
+3. Extend `build_open_vs_closed_icl` in
+   `scripts/build_paper_tables.py` to read that per-model choice when
+   filling the 5-shot ICL block (or rename the row label to
+   "ICL (best template, $\le$10 shots)" if shot counts vary
+   across models).
+4. Regenerate paper tables and verify the row labels in
+   `tables/new/open_vs_closed_icl_{comet,chrf}.tex` reflect the
+   actual per-model setup.
+5. Update Table 2's caption and the body prose: explicitly say which
+   template each row uses, and reference
+   `Appendix~\ref{tab:closed_ablations_comet}` for the
+   prompt-engineering ablation.
+
+### Headline-shift risk
+
+Swapping vanilla -> templated lifts closed-API ICL avg by $\sim 6$
+COMET, putting Gemini-1.5 (~65) and GPT-4o (~64.5) within $\sim 2$
+COMET of fine-tuned NLLB-1.3B (67.3). That changes the body story
+from "fine-tuning still wins by a wide margin against ICL" to
+"fine-tuned NLLB barely edges templated closed-API ICL". The body
+prose currently sells the wider margin --- be ready to soften that
+language when the swap lands.
+
+### Reminder: 50-shot is still off the table
+
+The shot cap is 10 for the open-LLM sweep (decision rule above). The
+project-wide 50-shot drop (2026-05-08) means we will not consider any
+configuration above 20 shots even if a row scores marginally higher
+there.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
