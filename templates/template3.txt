@@ -1,0 +1,7 @@
+Instruction:
+Translate the following scientific text from {src_lang} to {tgt_lang}, using the provided translation examples for consistency. Do not send the {src_lang} text back in the response, generate only the translation and nothing more.
+{examples}
+Now generate the {tgt_lang} translation of the following {src_lang} text:
+
+{src_lang}: {src_text}
+{tgt_lang}: 

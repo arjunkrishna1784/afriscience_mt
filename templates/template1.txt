@@ -1,0 +1,5 @@
+Instruction:
+Translate the following text from {src_lang} to {tgt_lang}. Ensure that the meaning is preserved, and the translation sounds natural. Do not send the {src_lang} text back in the response, generate only the translation and nothing more.
+
+{src_lang}: {src_text}
+{tgt_lang}: 

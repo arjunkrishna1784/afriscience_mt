@@ -1,0 +1,5 @@
+Instruction:
+Translate the following scientific text from {src_lang} to {tgt_lang}, ensuring that all technical terms are accurately translated with no additional explanations. Do not send the {src_lang} text back in the response, generate only the translation and nothing more.
+
+{src_lang}: {src_text}
+{tgt_lang}: 
