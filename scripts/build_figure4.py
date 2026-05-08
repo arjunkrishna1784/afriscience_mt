@@ -1,8 +1,10 @@
 """Figure-4-style ChrF curves for closed APIs (GPT-4o & Gemini-1.5-Flash):
 
 For every language pair × API, plot ChrF as a function of #shots
-(0, 5, 10, 20, 50), one line per template (1..5), plus template-5
-semantic-prompt variant on Eng→xxx.
+(0, 5, 10, 20), one line per template (1..5), plus template-5
+semantic-prompt variant on Eng→xxx. We cap the sweep at 20 shots:
+50-shot adds <1 COMET on top of 10-shot for both closed APIs in our
+data, so the extra column was dropped from figures and tables.
 
 Layout matches page 22 of the existing draft:
     (a)  3 rows × 2 lang-cols, each cell is a (gemini | gpt-4o) pair-frame.
@@ -35,7 +37,7 @@ FIG_DIR = (
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 LANGS = ["amh", "hau", "lug", "nso", "yor", "zul"]
-SHOTS = [0, 5, 10, 20, 50]
+SHOTS = [0, 5, 10, 20]
 TEMPLATES = [1, 2, 3, 4, 5]
 MODELS = [("gemini_15_flash", "gemini"),
           ("gpt4o",            "gpt-4o")]
@@ -86,14 +88,14 @@ def metric_curve(model: str, temp_setting: str, template: int, pair: str,
 def semantic_curve(model: str, pair: str, metric: str) -> list[float | None]:
     """eng→xxx only (semantic ICL lives under t0/.../semantic_{K}shot/)."""
     out = [None]  # no 0-shot semantic by construction
-    for k in [5, 10, 20, 50]:
+    for k in [5, 10, 20]:
         out.append(metric_at(model, "t0", f"semantic_{k}shot", pair, metric))
     return out
 
 
 def _setup_subplot(ax, *, ylim=None, model_label=None):
     ax.set_xticks(SHOTS)
-    ax.set_xticklabels(["0", "5", "10", "20", "50"])
+    ax.set_xticklabels(["0", "5", "10", "20"])
     if ylim:
         ax.set_ylim(*ylim)
     ax.tick_params(pad=1)

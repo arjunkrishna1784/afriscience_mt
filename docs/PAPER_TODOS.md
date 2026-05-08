@@ -394,19 +394,26 @@ run on \texttt{xxx}$\to$\texttt{eng}):
 ($\le$0.2 COMET delta on Gemini, 0 on GPT-4o ZS). Going from 5- to
 10-shot semantic-similarity retrieval jumps both Gemini and GPT-4o
 by **+7 COMET** (Gemini 58.3 → 65.8, GPT-4o 58.2 → 65.0). Returns
-plateau past 10 shots (50-shot adds <1 COMET over 10-shot). At 10+
+plateau past 10 shots (20-shot adds <0.5 COMET over 10-shot). At 10+
 semantic shots both closed APIs reach roughly 65--66 COMET on
 \texttt{eng}$\to$\texttt{xxx}, on par with fine-tuned NLLB-1.3B
 (67.3 avg in Table~\ref{tab:main_zs_ft_comet}).
 
 **Scope of the closed_ablations table** (after 2026-05-08 trim):
 the retrieval block is restricted to 5-shot only (random vs semantic
-for each model). The 10/20/50-shot semantic numbers are kept in
+for each model). The 10- and 20-shot semantic numbers are kept in
 `summary.csv` and will go into a separate **template/shot ablation
 table** once the open-LLM (Llama3, Gemma2) template/shot runs are
 imported, so that one table compares both groups uniformly. Until
 those imports land, the closed-side template/shot story is conveyed
 by the existing `figures/new/gpt-vs-gemini/...pdf` curves.
+
+**50-shot dropped (2026-05-08).** We are capping all reported shot
+counts at 20: 50-shot adds <1 COMET over 10-shot for both closed APIs
+in our data, while doubling token cost and visual clutter. Removed
+from `scripts/build_figure4.py` (`SHOTS = [0, 5, 10, 20]`) and from
+the bookmark text below; the 50-shot rows remain in `summary.csv` as
+provenance but no rendered output references them.
 
 ### Final prose — Discussion (one sentence)
 
@@ -475,17 +482,17 @@ performance; the dominant lever is the template itself. Numbers are
 COMET avg across the six \texttt{eng}$\to$\texttt{xxx} pairs for
 Gemini-1.5 (the only model with full template$\times$shot coverage):
 
-| strategy                       | 5-shot | 10-shot | 20-shot | 50-shot |
-|--------------------------------|-------:|--------:|--------:|--------:|
-| `template3_*` (good template)  | 64.66  | 64.90   | 65.01   | 65.31   |
-| `template5_*` (good template)  | 64.80  | 64.96   | 64.98   | 65.37   |
-| `semantic_*` (different prompt) | 59.50  | 65.82   | 66.05   | 66.36   |
-| `icl_5shot`        (vanilla random)   | 58.33 | -- | -- | -- |
-| `icl_5shot_semantic` (vanilla semantic) | 59.50 | -- | -- | -- |
+| strategy                       | 5-shot | 10-shot | 20-shot |
+|--------------------------------|-------:|--------:|--------:|
+| `template3_*` (good template)  | 64.66  | 64.90   | 65.01   |
+| `template5_*` (good template)  | 64.80  | 64.96   | 64.98   |
+| `semantic_*` (different prompt) | 59.50  | 65.82   | 66.05   |
+| `icl_5shot`        (vanilla random)   | 58.33 | -- | -- |
+| `icl_5shot_semantic` (vanilla semantic) | 59.50 | -- | -- |
 
 Two interpretations:
 
-1. With a *good* template, 5--50 shots are essentially indistinguishable
+1. With a *good* template, 5--20 shots are essentially indistinguishable
    ($\Delta < 1$ COMET).
 2. The earlier "$+6$ COMET from 5 to 10 shots" claim was an artifact of
    the prompt template changing between `icl_5shot_semantic` (vanilla)
@@ -498,9 +505,10 @@ relative to what a template3/5 prompt would deliver.
 ### Decision rules (lock these in before re-running anything)
 
 - **Shot cap: 10.** If 10-shot beats 5-shot by $> 1$ COMET, we adopt
-  10-shot; otherwise we keep 5-shot. We do not consider 20- or 50-shot
-  for the open LLMs --- the closed-API evidence shows returns plateau
-  immediately past 10.
+  10-shot; otherwise we keep 5-shot. We do not consider 20-shot for
+  the open LLMs --- the closed-API evidence shows returns plateau
+  immediately past 10. (50-shot was dropped from the project entirely
+  on 2026-05-08; see the closed-API ablation bookmark above.)
 - **Template: choose the per-model best.** For each open LLM we pick
   the (template, shot-count$\le 10$) pair with the highest avg COMET
   on \texttt{eng}$\to$\texttt{xxx} (and report the same configuration
