@@ -426,7 +426,7 @@ def build_bilingual_vs_multilingual(rows) -> str:
     note = (r"\textbf{Note.} Multilingual LoRA (mmt) was trained on "
             r"\texttt{eng}$\to$\texttt{xxx} only, so reverse-direction cells are intentionally empty.")
     return render_pair_table(
-        caption=("Bilingual (per-pair) vs. multilingual training on the same backbone. "
+        caption=("Bilingual (per-pair) vs. multilingual training on the same model. "
                  "Best per column in bold."),
         label="tab:bil_vs_multi",
         blocks=blocks,
@@ -521,7 +521,7 @@ def build_pretrained_vs_finetuned(rows) -> str:
 
     blocks = [("ChrF", block("chrf")), ("SSA-COMET", block("ssa_comet"))]
     return render_pair_table(
-        caption=("Effect of fine-tuning on AfriScience-MT for Seq2Seq backbones. "
+        caption=("Effect of fine-tuning on AfriScience-MT for seq2seq models. "
                  "Best per column in bold."),
         label="tab:pretrained_vs_finetuned",
         blocks=blocks,

@@ -242,7 +242,7 @@ def fig_seq2seq_heatmaps(rows, family: str, models: list[str], out_name: str):
 
 
 def fig_lora_heatmap(rows):
-    """Best LoRA backbones (Gemma2-9B and LLaMA-3.1-8B at r=64) — chrF + COMET."""
+    """Best LoRA models (Gemma2-9B and LLaMA-3.1-8B at r=64) — chrF + COMET."""
     fig, axes = plt.subplots(1, 2, figsize=(7.0, 1.9))
     models = ["gemma2_9b_it", "llama3_8b"]
     rl = ["Gemma2-9B (r=64)", "LLaMA-3.1-8B (r=64)"]
@@ -495,7 +495,7 @@ def fig_lora_7x7(rows, model_short, model_disp, lora_rank, fname):
 
 
 def fig_n2n_heatmap(rows):
-    """6x6 African-to-African zero-shot heatmaps for the two larger backbones
+    """6x6 African-to-African zero-shot heatmaps for the two larger seq2seq models
     (NLLB-1.3B, M2M100-1.2B), chrF and SSA-COMET. Diagonal masked (src == tgt).
     """
     models = [
@@ -612,10 +612,10 @@ def fig_spider_per_pair_subdir(metric: str = "chrf"):
     Backbone rationale:
       * best seq2seq:    NLLB-1.3B fine-tuned on dcs
       * best open LLM:   Gemma2-9B at LoRA r=64 (avg SSA-COMET 57.9 — top of
-                         the open LoRA backbone matrix)
+                         the open-LLM LoRA matrix)
       * best closed LLM: GPT-4o template5_10shot ICL (the locked body config)
       * + Tiny-Aya-Earth LoRA r=64 for the 4-system version (Africa-focused
-        open backbone; avg SSA-COMET 57.1, second only to Gemma).
+        open base model; avg SSA-COMET 57.1, second only to Gemma).
     """
     domain_order = [
         "chemistry", "biology", "biochemistry", "agriculture", "statistics",
@@ -910,9 +910,9 @@ def main():
     written.append(fig_multilingual_nllb(rows))
     written.append(fig_n2n_heatmap(rows))
 
-    # Figure 7-style 7×7 zero-shot vs fine-tuned, per backbone × metric.
+    # Figure 7-style 7×7 zero-shot vs fine-tuned, per seq2seq model × metric.
     # Output mirrored under fig7/{comet,chrf}/<short>.pdf.
-    # Layout: figures/new/n2n/{small,large}/{comet,chrf}/<backbone>.pdf
+    # Layout: figures/new/n2n/{small,large}/{comet,chrf}/<model>.pdf
     fig7_targets = [
         # (model_short, display, size_bucket)
         ("m2m100_418m",             "M2M100-418M", "small"),
