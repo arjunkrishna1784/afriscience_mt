@@ -755,6 +755,114 @@ flagging in the methodology paragraph as a recommendation.
 
 ---
 
+## 2026-05-09 — chrF strategic-inclusion policy
+
+**Status:** Locked policy for the paper. Not all chrF mirrors of
+COMET tables are inputted; we add chrF only where it earns the page.
+
+**The rule.** chrF appears in the paper only when:
+
+1. The metric-divergence story actually changes the conclusion in
+   that table (e.g. ranking flips, COMET~$\gg$~chrF degeneration
+   visible in the row), OR
+2. A claim in the prose nearby explicitly compares the two metrics.
+
+**Where chrF is currently in the paper (keep these):**
+
+- `tab:prompt_engineering_open` --- COMET and chrF are inline,
+  side-by-side. The COMET-vs-chrF gap is the story (degeneration on
+  3 of 7 open LLMs).
+- `tab:mafand_nllb` --- COMET on top, chrF on bottom in the same
+  table for the cross-domain transfer story.
+- The Tiny-Aya-G appendix paragraph (Decoding controls and manual
+  inspection) cites concrete chrF numbers inline (lug-eng:
+  $47.0 \to 44.9$ chrF vs.\ $63.9 \to 21.9$ COMET).
+
+**Where chrF mirrors are *generated but not inputted*:**
+
+- `tables/new/main_zs_ft_chrf.tex`
+- `tables/new/open_vs_closed_icl_chrf.tex`
+- `tables/new/doc_chrf.tex`
+- `tables/new/closed_ablations_chrf.tex`
+- `tables/new/template_shot_ablation_chrf.tex`
+- `tables/new/lora_chrf.tex`
+- `tables/new/seq2seq_chrf.tex`, `seq2seq_smaller_chrf.tex`
+- `tables/new/llm_sentence_chrf.tex`
+
+These exist for ad-hoc inspection while writing. If reading the body
+prose surfaces a metric-divergence claim that needs a full chrF table
+to back it up, the file is one `\input{tables/new/<name>_chrf}` away
+in the appendix.
+
+**Trigger conditions for adding a chrF mirror later:**
+
+- A reviewer asks "does the seq2seq winner change on chrF?"
+- A specific language pair flips between metrics in a body claim.
+- We argue NLLB-1.3B leads on COMET but a different system tops chrF
+  on $X$ pairs.
+
+If we add a new chrF mirror, document the *prose claim* it supports
+in this bookmark.
+
+---
+
+## 2026-05-09 — Removing "50-shot" from the paper (post-cap decision)
+
+**Status:** ACTION REQUIRED in Overleaf. The
+2026-05-08 decision capped shot counts at 20; rendered tables and
+build script are clean, but the paper text still references 50-shot
+in three places. List below shows exactly what to edit.
+
+### `acl_latex.tex`
+
+**Line 459 (results prose):** four mentions of "50-shot" in the
+sentence-level ICL paragraph; the sentence cites stale numbers from
+\Cref{tab:models_performances_templates_eng_xxx,tab:models_performances_templates_xxx_eng}.
+Replace the entire paragraph with a tighter version that cites the
+new \Cref{tab:open_vs_closed_icl_comet} (template5\_10shot) numbers.
+
+**Line 461 (results prose):** three mentions of "50-shot" in the
+"few-shot learning provides limited and inconsistent gains"
+paragraph. Replace with the
+\Cref{tab:template_shot_ablation_comet} 10-vs-20 plateau finding
+(gain $\le 0.2$ COMET past 10 shots).
+
+**Line 463:** references the now-stale figure
+`fig:template_shots_gpt_gemini_eng_xxx` and stale tables
+`tab:models_performances_templates_*`. Replace with
+\Cref{tab:prompt_engineering_open} for the prompt-engineering claim
+and \Cref{fig:gpt_gemini_eng_xxx,fig:gpt_gemini_xxx_eng} for the
+template$\times$shot curves.
+
+### `appendix_plots_and_tables.tex`
+
+**Line 130 (caption of `fig:gpt_gemini_eng_xxx`):**
+`shot counts $\in\{0,5,10,20,50\}$` $\to$ `$\{0,5,10,20\}$`.
+
+**Line 151 (caption of `fig:gpt_gemini_xxx_eng`):** same change.
+
+**Line 351 (`\input{table_icl_llm}`):** *remove* this line. The
+inputted file (`table_icl_llm.tex`) contains the stale Tables 11/12
+with 50-shot rows + older models (Llama-3.2-3B, Llama-3.1-8B). It is
+fully superseded by `tab:template_shot_ablation_comet` (which is
+already inputted nearby).
+
+**Line 377 (`\input{table_icl_llm_doc}`):** review whether the doc-
+level template/shot tables in `table_icl_llm_doc.tex` still add
+information beyond `tab:doc_comet`. If they only repeat what the
+new doc table covers, *remove* this `\input` too.
+
+### `figures/new/gpt-vs-gemini/`
+
+The .pdf files were generated when `SHOTS=[0,5,10,20,50]` in
+`scripts/build_figure4.py`. The script now defaults to
+`SHOTS=[0,5,10,20]`; rerunning it on the box that has matplotlib +
+`experiments/summary.csv` will regenerate the four .pdfs at the
+correct shot range. After regeneration, replace the .pdfs in the
+overleaf project so the rendered figure matches the new caption.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
