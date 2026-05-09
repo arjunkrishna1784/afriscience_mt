@@ -24,6 +24,6 @@
  & Tiny-Aya-G & 38.1 & 60.9 & 47.3 & 57.6 & 38.3 & \emph{56.2} & 56.9 & 60.1 & 49.2 & 55.9 & 48.2 & 63.4 \\
 \bottomrule
 \end{tabular}
-\caption{LoRA fine-tuning: $r{=}4$ vs. $r{=}64$ (chrF)}
+\caption{LoRA fine-tuning of six open-source LLMs at two ranks (chrF). Each cell is one (language, direction) pair; each model is fine-tuned bilingually per pair for 10 epochs with early stopping. Comparing $r{=}4$ (low-rank, parameter-efficient) against $r{=}64$ (the headline rank used elsewhere in the paper) isolates the effect of adapter capacity. \textbf{Bold}: best score for that (language, direction) pair across both ranks; \emph{italic}: best score for that pair within a single rank block.}
 \label{tab:lora_chrf}
 \end{table*}

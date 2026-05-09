@@ -338,7 +338,7 @@ TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.
  & Tiny-Aya-G & 38.1 & 60.9 & 47.3 & 57.6 & 38.3 & \emph{56.2} & 56.9 & 60.1 & 49.2 & 55.9 & 48.2 & 63.4 \\
 \bottomrule
 \end{tabular}
-\caption{LoRA fine-tuning: $r{=}4$ vs. $r{=}64$ (chrF)}
+\caption{LoRA fine-tuning of six open-source LLMs at two ranks (chrF). Each cell is one (language, direction) pair; each model is fine-tuned bilingually per pair for 10 epochs with early stopping. Comparing $r{=}4$ (low-rank, parameter-efficient) against $r{=}64$ (the headline rank used elsewhere in the paper) isolates the effect of adapter capacity. \textbf{Bold}: best score for that (language, direction) pair across both ranks; \emph{italic}: best score for that pair within a single rank block.}
 \label{tab:lora_chrf}
 \end{table*}
 
@@ -368,7 +368,7 @@ TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.
  & Tiny-Aya-G & \textbf{61.9} & \textbf{61.6} & \textbf{65.7} & \textbf{65.3} & \textbf{65.2} & \textbf{63.1} & \emph{67.3} & \textbf{67.2} & \textbf{64.3} & \textbf{66.4} & \textbf{63.8} & \textbf{67.2} \\
 \bottomrule
 \end{tabular}
-\caption{LoRA fine-tuning: $r{=}4$ vs. $r{=}64$ (COMET)}
+\caption{LoRA fine-tuning of six open-source LLMs at two ranks (COMET). Each cell is one (language, direction) pair; each model is fine-tuned bilingually per pair for 10 epochs with early stopping. Comparing $r{=}4$ (low-rank, parameter-efficient) against $r{=}64$ (the headline rank used elsewhere in the paper) isolates the effect of adapter capacity. \textbf{Bold}: best score for that (language, direction) pair across both ranks; \emph{italic}: best score for that pair within a single rank block.}
 \label{tab:lora_comet}
 \end{table*}
 
@@ -745,6 +745,6 @@ Gemma2-9B LoRA r=64 (MMT) & 31.8 & 56.8 & 43.6 & 56.3 & 35.5 & 48.2 & 45.4 & 53.
 Gemma2-9B LoRA r=128 (MMT) & 30.2 & 55.7 & 43.1 & 54.0 & 35.0 & 46.5 & 44.1 & 50.3 & 55.8 & 61.6 & 62.2 & 57.1 & 54.6 & 57.0 \\
 \bottomrule
 \end{tabular}
-\caption{Bilingual vs. multilingual fine-tuning on eng$\to$xxx (chrF and COMET side-by-side). Three model families: NLLB-600M (multilingual checkpoint sweep against NLLB-600M and 1.3B bilingual fine-tunes); Llama-3.1-8B-Instruct (same instruct model on both sides); Gemma-2-9B non-instruct base (same base both sides; the Gemma2-9B-IT instruct variant used in the main tables is a different base). For NLLB, bilingual fine-tuning is dramatically stronger than the (short, early-stage) multilingual checkpoints. For Gemma LoRA, bilingual leads by $\sim$3.7 COMET / $\sim$5 chrF at the best rank. For Llama LoRA, bilingual and multilingual end up essentially tied at COMET ($\sim$57) -- Llama is the outlier; the r=64 bilingual row also shows a chrF-up/COMET-down degeneration pattern relative to the other Llama bilingual ranks. \textbf{Bold}: column maximum across the table.}
+\caption{Bilingual vs. multilingual fine-tuning on eng$\to$xxx (chrF and COMET side-by-side). Three model families: NLLB-600M (multilingual checkpoint sweep against NLLB-600M and 1.3B bilingual fine-tunes); Llama-3.1-8B-Instruct (same instruct model on both sides); Gemma-2-9B non-instruct base (same base both sides; the Gemma2-9B-IT instruct variant used in the main tables is a different base). For NLLB, bilingual fine-tuning is dramatically stronger than the (short, early-stage) multilingual checkpoints. For Gemma LoRA, bilingual leads by $\sim$3.7 COMET / $\sim$5 chrF at the best rank. For Llama LoRA, bilingual and multilingual end up essentially tied at COMET ($\sim$57) -- Llama is the outlier; the r=64 bilingual row also shows a chrF-up/COMET-down degeneration pattern relative to the other Llama bilingual ranks. \textbf{Bold}: best score for that target language (or Avg) within each metric, across all rows of the table.}
 \label{tab:multilingual_vs_bilingual}
 \end{table*}

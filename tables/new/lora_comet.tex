@@ -24,6 +24,6 @@
  & Tiny-Aya-G & \textbf{61.9} & \textbf{61.6} & \textbf{65.7} & \textbf{65.3} & \textbf{65.2} & \textbf{63.1} & \emph{67.3} & \textbf{67.2} & \textbf{64.3} & \textbf{66.4} & \textbf{63.8} & \textbf{67.2} \\
 \bottomrule
 \end{tabular}
-\caption{LoRA fine-tuning: $r{=}4$ vs. $r{=}64$ (COMET)}
+\caption{LoRA fine-tuning of six open-source LLMs at two ranks (COMET). Each cell is one (language, direction) pair; each model is fine-tuned bilingually per pair for 10 epochs with early stopping. Comparing $r{=}4$ (low-rank, parameter-efficient) against $r{=}64$ (the headline rank used elsewhere in the paper) isolates the effect of adapter capacity. \textbf{Bold}: best score for that (language, direction) pair across both ranks; \emph{italic}: best score for that pair within a single rank block.}
 \label{tab:lora_comet}
 \end{table*}

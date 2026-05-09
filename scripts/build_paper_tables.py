@@ -380,7 +380,17 @@ def build_lora(rows, metric):
     ]
     return render_table(
         label=f"tab:lora_{'chrf' if metric=='chrf' else 'comet'}",
-        caption=f"LoRA fine-tuning: $r{{=}}4$ vs. $r{{=}}64$ ({metric_label})",
+        caption=(f"LoRA fine-tuning of six open-source LLMs at "
+                 f"two ranks ({metric_label}). Each cell is one "
+                 f"(language, direction) pair; each model is fine-tuned "
+                 f"bilingually per pair for 10 epochs with early "
+                 f"stopping. Comparing $r{{=}}4$ (low-rank, "
+                 f"parameter-efficient) against $r{{=}}64$ (the headline "
+                 f"rank used elsewhere in the paper) isolates the effect "
+                 f"of adapter capacity. \\textbf{{Bold}}: best score "
+                 f"for that (language, direction) pair across both "
+                 f"ranks; \\emph{{italic}}: best score for that pair "
+                 f"within a single rank block."),
         blocks=[("LoRA $r{=}4$", r4_rows), ("LoRA $r{=}64$", r64_rows)],
     )
 
@@ -1219,7 +1229,8 @@ def build_multilingual_vs_bilingual(rows, metric=None):
          r"tied at COMET ($\sim$57) -- Llama is the outlier; the "
          r"r=64 bilingual row also shows a chrF-up/COMET-down "
          r"degeneration pattern relative to the other Llama bilingual "
-         r"ranks. \textbf{Bold}: column maximum across the table.}"),
+         r"ranks. \textbf{Bold}: best score for that target language "
+         r"(or Avg) within each metric, across all rows of the table.}"),
         r"\label{tab:multilingual_vs_bilingual}",
         r"\end{table*}",
     ]
