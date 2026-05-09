@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "llm_icl__translategemma_12b__template5_10shot__amh-eng",
+  "experiment_type": "llm_icl",
+  "timestamp": "2026-05-09T02:55:37.438837",
+  "model": {
+    "name": "Infomaniak-AI/vllm-translategemma-12b-it",
+    "type": "llm",
+    "short_name": "translategemma_12b"
+  },
+  "source_lang": "amh",
+  "target_lang": "eng",
+  "lang_pair": "amh-eng",
+  "split": "test",
+  "dataset": "dcs",
+  "config": {
+    "prompt_strategy": "template5_10shot",
+    "n_shots": 10,
+    "temperature": 0.0,
+    "template": 5,
+    "selection_method": "random"
+  },
+  "metrics": {
+    "chrf": 0.6567869334225982,
+    "ssa_comet": 0.41650424230536187,
+    "num_samples": 970
+  },
+  "metadata": {
+    "source": "rerun_open_llm_template",
+    "is_ablation": false,
+    "prompt_strategy": "template5_10shot",
+    "n_shots": 10,
+    "prompt_provenance": "replayed_from_gemini-1.5-flash-002_temp_0.0",
+    "system_constant_per_tsv": false,
+    "comet_metric": "ssa-comet",
+    "needs_eval": true,
+    "rescored": [
+      {
+        "metric": "chrf",
+        "value": 0.6567869334225982,
+        "timestamp": "2026-05-09T09:23:00.916230"
+      },
+      {
+        "metric": "ssa_comet",
+        "value": 0.41650424230536187,
+        "timestamp": "2026-05-09T09:23:00.916230"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "experiment_id": "llm_icl__afriqueqwen_8b__template5_10shot__eng-lug",
+  "experiment_type": "llm_icl",
+  "timestamp": "2026-05-09T00:11:47.130495",
+  "model": {
+    "name": "McGill-NLP/AfriqueQwen-8B",
+    "type": "llm",
+    "short_name": "afriqueqwen_8b"
+  },
+  "source_lang": "eng",
+  "target_lang": "lug",
+  "lang_pair": "eng-lug",
+  "split": "test",
+  "dataset": "dcs",
+  "config": {
+    "prompt_strategy": "template5_10shot",
+    "n_shots": 10,
+    "temperature": 0.0,
+    "template": 5,
+    "selection_method": "random"
+  },
+  "metrics": {
+    "chrf": 9.629959153834386,
+    "ssa_comet": 0.4074207660617288,
+    "num_samples": 970
+  },
+  "metadata": {
+    "source": "rerun_open_llm_template",
+    "is_ablation": false,
+    "prompt_strategy": "template5_10shot",
+    "n_shots": 10,
+    "prompt_provenance": "replayed_from_gemini-1.5-flash-002_temp_0.0",
+    "system_constant_per_tsv": false,
+    "comet_metric": "ssa-comet",
+    "needs_eval": true,
+    "rescored": [
+      {
+        "metric": "chrf",
+        "value": 9.629959153834386,
+        "timestamp": "2026-05-09T09:40:44.780951"
+      },
+      {
+        "metric": "ssa_comet",
+        "value": 0.4074207660617288,
+        "timestamp": "2026-05-09T09:40:44.780951"
+      }
+    ]
+  }
+}
