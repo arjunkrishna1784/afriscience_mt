@@ -888,14 +888,13 @@ def build_template_shot_ablation(rows, metric):
          f"({metric_label}). Each row is a (template, shot-count) "
          r"configuration (template number first, shot count as subscript "
          r"$s$); the underlined row \texttt{5}$_{s=10}$ is the "
-         r"project-wide locked configuration "
-         r"(see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''). "
+         r"configuration we use throughout the body of the paper. "
          r"\textbf{Bold}: per-language column maximum within each model "
          r"block. The bottom \textbf{avg} row of each block reports the "
-         r"per-language average across configurations. 50-shot is banned "
-         r"project-wide; 20-shot is included so the plateau past 10-shot "
-         r"is visible -- the gain from 10$\to$20 shots is at most "
-         r"$0.2$ COMET, far below our $1$-COMET adoption threshold.}"),
+         r"per-language average across configurations. We cap shot count "
+         r"at 20: the gain from 10$\to$20 shots is at most $0.2$ COMET, "
+         r"well below the $1$-COMET threshold we set for adopting a "
+         r"higher shot count.}"),
         r"\label{tab:template_shot_ablation_" + ("chrf" if metric == "chrf" else "comet") + "}",
         r"\end{table*}",
     ]
