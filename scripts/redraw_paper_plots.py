@@ -597,22 +597,23 @@ def fig_spider_per_pair_subdir(metric: str = "chrf"):
     """Per-pair spider PDFs in two flavours:
 
       figures/new/spider_per_pair/<pair>.pdf       -- 3 systems
-        (NLLB-1.3B FT, Gemma2-9B LoRA r=64, GPT-4o template3-5shot)
+        (NLLB-1.3B FT, Gemma2-9B LoRA r=64, GPT-4o template5_10shot)
 
       figures/new/spider_per_pair_4sys/<pair>.pdf  -- 4 systems
         (adds Tiny-Aya-Earth LoRA r=64)
 
     Both directions (12 pairs each). Drop into LaTeX as `\\subfigure`s.
 
-    GPT-4o uses the same template (template3-5shot) on both directions to
-    keep the polygon apples-to-apples (template3 wins 53% of GPT-4o
-    per-cell template comparisons, the highest frequency).
+    GPT-4o uses ``template5_10shot`` at $T{=}0$ on both directions --
+    this matches the locked body configuration in
+    Table~\\ref{tab:open_vs_closed_icl_comet}, so the spider plot
+    aligns with the headline numbers.
 
     Backbone rationale:
       * best seq2seq:    NLLB-1.3B fine-tuned on dcs
       * best open LLM:   Gemma2-9B at LoRA r=64 (avg SSA-COMET 57.9 — top of
                          the open LoRA backbone matrix)
-      * best closed LLM: GPT-4o template3 5-shot ICL
+      * best closed LLM: GPT-4o template5_10shot ICL (the locked body config)
       * + Tiny-Aya-Earth LoRA r=64 for the 4-system version (Africa-focused
         open backbone; avg SSA-COMET 57.1, second only to Gemma).
     """
@@ -624,8 +625,10 @@ def fig_spider_per_pair_subdir(metric: str = "chrf"):
     nllb_base   = EXP_DIR / "seq2seq" / "finetune" / "nllb_200_1_3b" / "dcs"
     gemma_base  = EXP_DIR / "llm" / "open" / "finetune" / "gemma2_9b_it" / "r64"
     aya_base    = EXP_DIR / "llm" / "open" / "finetune" / "tiny_aya_earth" / "r64"
-    gpt_e2x     = EXP_DIR / "llm" / "closed" / "t06" / "icl" / "gpt4o" / "template3_5shot"
-    gpt_x2e     = EXP_DIR / "llm" / "closed" / "t0"  / "icl" / "gpt4o" / "template3_5shot"
+    # GPT-4o template5_10shot at T=0 in both directions (per-domain rescored
+    # 2026-05-09, commit 81083391).
+    gpt_e2x     = EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt4o" / "template5_10shot"
+    gpt_x2e     = gpt_e2x
 
     # Each system: (name, base_dir, line_color, fill_color, linestyle, marker).
     # Distinct linestyle+marker per system so the spider remains legible in
