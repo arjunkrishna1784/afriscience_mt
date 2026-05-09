@@ -251,8 +251,6 @@ def render_table(*, label, caption, blocks):
         r"\centering",
         r"\small",
         r"\renewcommand{\arraystretch}{1.05}",
-        f"\\caption{{{caption}}}",
-        f"\\label{{{label}}}",
         r"\begin{tabular}{llrrrrrrrrrrrr}",
         r"\toprule",
         r"\textbf{Setup} & \textbf{Model} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\",
@@ -291,6 +289,8 @@ def render_table(*, label, caption, blocks):
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
+        f"\\caption{{{caption}}}",
+        f"\\label{{{label}}}",
         r"\end{table*}",
     ]
     return "\n".join(lines) + "\n"

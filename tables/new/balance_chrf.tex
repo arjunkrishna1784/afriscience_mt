@@ -3,8 +3,6 @@
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\caption{Domain-balance ablation on NLLB-1.3B fine-tuned on AfriScience-MT (ChrF). $\tau{=}1$ uses the natural domain proportions; $\tau{=}2$ applies sqrt smoothing; $\tau{=}\infty$ samples uniformly across all 11 domains. Best per column in bold.}
-\label{tab:balance_chrf}
 \begin{tabular}{llrrrrrrrrrrrr}
 \toprule
 \textbf{Setup} & \textbf{$\tau$} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\
@@ -16,4 +14,6 @@
  & $\tau{=}\infty$ & 43.7 & 66.3 & 50.5 & 63.4 & 17.4 & 65.0 & 61.8 & 62.8 & 54.1 & 63.8 & 50.8 & 68.0 \\
 \bottomrule
 \end{tabular}
+\caption{Domain-balance ablation on NLLB-1.3B fine-tuned on AfriScience-MT (ChrF). $\tau{=}1$ uses the natural domain proportions; $\tau{=}2$ applies sqrt smoothing; $\tau{=}\infty$ samples uniformly across all 11 domains. Best per column in bold.}
+\label{tab:balance_chrf}
 \end{table*}

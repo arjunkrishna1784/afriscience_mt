@@ -4,8 +4,6 @@
 \small
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.05}
-\caption{Domain-level ChrF for NLLB-1.3B on Eng$\to$xxx with uniform-temperature sampling ($\tau{=}\infty$). Numbers in parentheses are the change relative to the natural-distribution baseline ($\tau{=}1$); blue = improvement, red = decrease. Total training volume is identical across the two conditions (5\,792 sentences) --- only the per-example sampling weight changes.}
-\label{tab:balance_domain_eng_xxx}
 \begin{tabular}{lrrrrrrr}
 \toprule
 \textbf{domain} & \textbf{\#sents} & \multicolumn{6}{c}{\textbf{domain-level ChrF}} \\
@@ -27,4 +25,6 @@ sociology & 670 & 46.6 \textcolor{red}{(-1.4)} & 68.2 \textcolor{red}{(-1.8)} & 
 health & 2605 & 41.2 \textcolor{red}{(-1.8)} & 63.3 \textcolor{red}{(-0.9)} & 48.3 \textcolor{red}{(-1.4)} & 61.3 \textcolor{red}{(-0.9)} & 18.0 \textcolor{red}{(-0.6)} & 61.7 \textcolor{red}{(-2.4)} \\
 \bottomrule
 \end{tabular}
+\caption{Domain-level ChrF for NLLB-1.3B on Eng$\to$xxx with uniform-temperature sampling ($\tau{=}\infty$). Numbers in parentheses are the change relative to the natural-distribution baseline ($\tau{=}1$); blue = improvement, red = decrease. Total training volume is identical across the two conditions (5\,792 sentences) --- only the per-example sampling weight changes.}
+\label{tab:balance_domain_eng_xxx}
 \end{table*}

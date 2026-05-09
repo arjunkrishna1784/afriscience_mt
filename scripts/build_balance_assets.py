@@ -141,8 +141,6 @@ def render_balance_table(*, label: str, caption: str, blocks: list):
         r"\centering",
         r"\small",
         r"\renewcommand{\arraystretch}{1.05}",
-        f"\\caption{{{caption}}}",
-        f"\\label{{{label}}}",
         r"\begin{tabular}{llrrrrrrrrrrrr}",
         r"\toprule",
         r"\textbf{Setup} & \textbf{$\tau$} & \multicolumn{6}{c}{\textbf{Eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$Eng}} \\",
@@ -166,7 +164,10 @@ def render_balance_table(*, label: str, caption: str, blocks: list):
                 if ri == 0 else ""
             )
             lines.append(f"{head_cell} & {tau_label} & " + " & ".join(cells) + r" \\")
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table*}"]
+    lines += [r"\bottomrule", r"\end{tabular}",
+              f"\\caption{{{caption}}}",
+              f"\\label{{{label}}}",
+              r"\end{table*}"]
     return "\n".join(lines) + "\n"
 
 
@@ -316,8 +317,6 @@ def render_domain_x_lang_table(*, label: str, caption: str,
         r"\small",
         r"\setlength{\tabcolsep}{4pt}",
         r"\renewcommand{\arraystretch}{1.05}",
-        f"\\caption{{{caption}}}",
-        f"\\label{{{label}}}",
         r"\begin{tabular}{lrrrrrrr}",
         r"\toprule",
         r"\textbf{domain} & \textbf{\#sents} & \multicolumn{6}{c}{\textbf{domain-level ChrF}} \\",
@@ -358,7 +357,10 @@ def render_domain_x_lang_table(*, label: str, caption: str,
         disp = dom_key  # exact original casing — matches earlier doc style
         lines.append(f"{disp} & {dom_n} & " + " & ".join(cells) + r" \\")
 
-    lines += [r"\bottomrule", r"\end{tabular}", r"\end{table*}"]
+    lines += [r"\bottomrule", r"\end{tabular}",
+              f"\\caption{{{caption}}}",
+              f"\\label{{{label}}}",
+              r"\end{table*}"]
     return "\n".join(lines) + "\n"
 
 
