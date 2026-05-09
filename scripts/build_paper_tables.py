@@ -1108,12 +1108,16 @@ def build_multilingual_vs_bilingual(rows, metric=None):
     # --- assemble per-family rows ----------------------------------------
     families = []  # list of (family_name, [row tuples])
 
-    # NLLB family
+    # NLLB family. is_ablation="False" matters here: NLLB-1.3B has 3 rows
+    # per pair in summary.csv (1 headline + 2 ablations), and without the
+    # filter `lookup` returns whichever was loaded last (an ablation).
     nllb_rows = [
         row_for("nllb_200_1_3b",         "NLLB-1.3B FT (bilingual)",
-                experiment_type="seq2seq_finetune", dataset="dcs"),
+                experiment_type="seq2seq_finetune", dataset="dcs",
+                is_ablation="False"),
         row_for("nllb_200_distilled_600m", "NLLB-600M FT (bilingual)",
-                experiment_type="seq2seq_finetune", dataset="dcs"),
+                experiment_type="seq2seq_finetune", dataset="dcs",
+                is_ablation="False"),
     ]
     for step in ("40k", "80k", "200k", "400k"):
         nllb_rows.append(row_nllb_ckpt(f"NLLB-600M MMT @ {step}", step))
