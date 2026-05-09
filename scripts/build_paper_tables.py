@@ -901,22 +901,31 @@ def build_template_shot_ablation(rows, metric):
     return "\n".join(lines) + "\n"
 
 
-def build_prompt_engineering_open(rows, metric):
-    """**Appendix.** Per-open-LLM vanilla vs. templated ICL ablation.
+def build_prompt_engineering_open(rows, metric=None):
+    """**Appendix.** Per-open-LLM vanilla vs. templated ICL ablation,
+    with COMET and chrF shown side-by-side in two column groups.
 
-    Three columns of data per model: vanilla 0-shot (basic template),
-    vanilla 5-shot (basic template + random retrieval), and
-    template5_10shot (the locked uniform body config). Plus a delta
-    column showing the lift over vanilla 5-shot. Bidirectional avg
-    over the 12 lang pairs.
+    Layout per row:
 
-    Three rows show the COMET-much-greater-than-ChrF degeneration
-    signature: AfriqueLlama-8B, AfriqueQwen-8B, TranslateGemma-12B.
-    These models are off-distribution for template5 and recover with
-    their vanilla prompt (already documented as
-    docs/PAPER_TODOS.md "2026-05-09 -- Open-LLM templated rerun").
+      Model | COMET: V0 V5 T10 Δ | chrF: V0 V5 T10 Δ
+
+    where V0 = vanilla 0-shot (basic template), V5 = vanilla 5-shot
+    (basic template + random retrieval), T10 = template5_10shot
+    (locked body config), Δ = lift over V5. Bidirectional avg over
+    the 12 lang pairs.
+
+    The two-metric layout makes the COMET-much-greater-than-ChrF
+    degeneration signal visible at a glance: AfriqueLlama-8B,
+    AfriqueQwen-8B, and TranslateGemma-12B post large COMET deltas
+    but their ChrF deltas are negative (-21.7 / -5.9 / -23.9),
+    indicating the model is generating fluent off-target text rather
+    than translating.
+
+    The ``metric`` parameter is accepted but ignored (this builder
+    produces a single combined table; the main loop's per-metric
+    iteration writes the same content to two files which we then
+    deduplicate by emitting a single non-suffixed table file).
     """
-    metric_label = "chrF" if metric == "chrf" else "COMET"
     OPEN = ["afriquellama_8b", "afriqueqwen_8b", "gemma2_9b_it",
             "llama3_8b", "tiny_aya_earth", "tiny_aya_global",
             "translategemma_12b"]
@@ -928,29 +937,35 @@ def build_prompt_engineering_open(rows, metric):
         nums = [v for v in d.values() if v is not None]
         return sum(nums) / len(nums) if nums else None
 
-    def pull_zs(model):
-        return lookup(rows, metric=metric, model_short=model,
+    def pull_zs(model, m):
+        return lookup(rows, metric=m, model_short=model,
                       experiment_type="llm_zero_shot", is_ablation="False")
 
-    def pull_icl(model, strategy):
-        # See note in build_open_vs_closed_icl: template5_10shot is tagged
-        # is_ablation=True for the 4 reference models (legacy from when it
-        # was an ablation), False for the 3 newly-rerun ones. Drop the filter.
-        return lookup(rows, metric=metric, model_short=model,
-                      experiment_type="llm_icl",
-                      prompt_strategy=strategy)
+    def pull_icl(model, strategy, m):
+        return lookup(rows, metric=m, model_short=model,
+                      experiment_type="llm_icl", prompt_strategy=strategy)
 
-    table_rows = []   # (model, vzs_avg, v5_avg, t10_avg, delta)
-    for m in by_disp(OPEN):
-        vzs = avg_(pull_zs(m))
-        v5  = avg_(pull_icl(m, "icl_5shot"))
-        t10 = avg_(pull_icl(m, "template5_10shot"))
-        delta = (t10 - v5) if (t10 is not None and v5 is not None) else None
-        table_rows.append((m, vzs, v5, t10, delta))
+    # For each model: [(vzs_c, v5_c, t10_c, dc), (vzs_f, v5_f, t10_f, df)]
+    table_rows = []
+    for model in by_disp(OPEN):
+        per_metric = []
+        for m in ("ssa_comet", "chrf"):
+            vzs = avg_(pull_zs(model, m))
+            v5  = avg_(pull_icl(model, "icl_5shot", m))
+            t10 = avg_(pull_icl(model, "template5_10shot", m))
+            d   = (t10 - v5) if (t10 is not None and v5 is not None) else None
+            per_metric.append((vzs, v5, t10, d))
+        table_rows.append((model, per_metric))
 
-    # Column maxes for bolding (across models, per column)
-    cols = list(zip(*[(r[1], r[2], r[3], r[4]) for r in table_rows]))
-    col_max = [max((v for v in c if v is not None), default=None) for c in cols]
+    # Per-column maxes (across models): 8 cols total (4 per metric block)
+    n_cols = 8
+    col_max = []
+    for ci in range(n_cols):
+        metric_idx = 0 if ci < 4 else 1
+        cell_idx = ci % 4
+        vals = [r[1][metric_idx][cell_idx] for r in table_rows
+                if r[1][metric_idx][cell_idx] is not None]
+        col_max.append(max(vals) if vals else None)
 
     def fmt_v(v):
         return "--" if v is None else f"{v:.1f}"
@@ -958,48 +973,57 @@ def build_prompt_engineering_open(rows, metric):
         return "--" if v is None else f"{v:+.1f}"
 
     lines = [
-        f"% ---- prompt_engineering_open_{'chrf' if metric=='chrf' else 'comet'} ----",
-        r"\begin{table}[t]",
+        r"% ---- prompt_engineering_open ----",
+        r"\begin{table*}[t]",
         r"\centering",
         r"\small",
+        r"\setlength{\tabcolsep}{4pt}",
         r"\renewcommand{\arraystretch}{1.05}",
-        r"\begin{tabular}{lrrrr}",
+        r"\begin{tabular}{lrrrrrrrr}",
         r"\toprule",
-        (r"\textbf{Model} & \textbf{Vanilla} & \textbf{Vanilla} & "
-         r"\textbf{template5} & \textbf{$\Delta$} \\"),
-        r"  & 0-shot & 5-shot & 10-shot & vs.\ 5-shot \\",
+        (r"\textbf{Model} & \multicolumn{4}{c}{\textbf{COMET}} & "
+         r"\multicolumn{4}{c}{\textbf{chrF}} \\"),
+        r"\cmidrule(lr){2-5}\cmidrule(lr){6-9}",
+        (r" & V$_0$ & V$_5$ & T$_{10}$ & $\Delta$ "
+         r"& V$_0$ & V$_5$ & T$_{10}$ & $\Delta$ \\"),
         r"\midrule",
     ]
-    for m, vzs, v5, t10, delta in table_rows:
-        cells = [fmt_v(vzs), fmt_v(v5), fmt_v(t10), fmt_d(delta)]
-        cells_b = []
-        for ci, (s, mxv) in enumerate(zip(cells, col_max)):
-            v = (vzs, v5, t10, delta)[ci]
+    for model, per_metric in table_rows:
+        all_vals = []
+        for vzs, v5, t10, d in per_metric:
+            all_vals += [vzs, v5, t10, d]
+        all_strs = [fmt_v(v) if i % 4 != 3 else fmt_d(v) for i, v in enumerate(all_vals)]
+        # Bold column max
+        cells_out = []
+        for ci, (s, v) in enumerate(zip(all_strs, all_vals)):
+            mxv = col_max[ci]
             if v is not None and mxv is not None and abs(v - mxv) < 1e-9:
                 s = r"\textbf{" + s + r"}"
-            cells_b.append(s)
-        disp = MODEL_DISP.get(m, m)
-        lines.append(f"{disp} & " + " & ".join(cells_b) + r" \\")
+            cells_out.append(s)
+        disp = MODEL_DISP.get(model, model)
+        lines.append(f"{disp} & " + " & ".join(cells_out) + r" \\")
 
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
-        (r"\caption{Vanilla vs.\ templated ICL on the seven open LLMs "
-         f"(bidirectional avg {metric_label} over the 12 \\texttt{{eng}}"
-         r"$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$). "
-         r"Vanilla rows use the \texttt{basic} / \texttt{few\_shot} "
-         r"prompt (random retrieval at 5-shot); the templated column "
-         r"is the locked body configuration "
-         r"\texttt{template5\_10shot}. The $\Delta$ column shows the "
-         r"lift over the vanilla 5-shot baseline. AfriqueLlama-8B, "
-         r"AfriqueQwen-8B, and TranslateGemma-12B post large $\Delta$ "
-         r"COMET but degenerate at the templated prompt (their ChrF "
-         r"row in the chrF mirror is near-zero), so the COMET gain "
-         r"reflects fluent off-target generations rather than a real "
-         r"translation improvement; their vanilla numbers are the "
-         r"truer signal. \textbf{Bold}: column maximum.}"),
-        r"\label{tab:prompt_engineering_open_" + ("chrf" if metric == "chrf" else "comet") + "}",
-        r"\end{table}",
+        (r"\caption{Vanilla vs.\ templated ICL on the seven open LLMs, "
+         r"bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$"
+         r"\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. "
+         r"V$_0$: vanilla 0-shot (\texttt{basic}); "
+         r"V$_5$: vanilla 5-shot (\texttt{few\_shot}, random retrieval); "
+         r"T$_{10}$: \texttt{template5\_10shot} (the locked body "
+         r"configuration); $\Delta$: lift over V$_5$. The metric-pair "
+         r"layout exposes the COMET~$\gg$~chrF degeneration signal: "
+         r"AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B post "
+         r"large positive $\Delta$ COMET but negative $\Delta$ chrF "
+         r"(-21.7 / -5.9 / -23.9), indicating that the templated prompt "
+         r"is off-distribution for those models and the resulting "
+         r"outputs are fluent off-target generations rather than real "
+         r"translations. The other four open LLMs (Gemma2-9B, "
+         r"Llama3-8B, Tiny-Aya-E, Tiny-Aya-G) gain or hold steady on "
+         r"both metrics. \textbf{Bold}: column maximum.}"),
+        r"\label{tab:prompt_engineering_open}",
+        r"\end{table*}",
     ]
     return "\n".join(lines) + "\n"
 
@@ -1018,6 +1042,9 @@ def main():
         ("doc",                build_doc),
         ("closed_ablations",   build_closed_ablations),
         ("template_shot_ablation", build_template_shot_ablation),
+    ]
+    # Builders that emit a single combined table (no per-metric mirror).
+    combined_builders = [
         ("prompt_engineering_open", build_prompt_engineering_open),
     ]
     written = []
@@ -1028,6 +1055,17 @@ def main():
             out = OUT_DIR / f"{name}_{suffix}.tex"
             out.write_text(content)
             written.append(out)
+    for name, fn in combined_builders:
+        # Stale per-metric files from a previous build can confuse readers;
+        # remove them now that the combined table replaces them.
+        for stale in (OUT_DIR / f"{name}_chrf.tex",
+                      OUT_DIR / f"{name}_comet.tex"):
+            if stale.exists():
+                stale.unlink()
+        content = fn(rows)
+        out = OUT_DIR / f"{name}.tex"
+        out.write_text(content)
+        written.append(out)
 
     # Concatenate into a single sheet that mirrors new_results.tex
     sheet = "\n".join(p.read_text() for p in written)
