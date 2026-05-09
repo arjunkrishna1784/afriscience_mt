@@ -997,8 +997,8 @@ def build_prompt_engineering_open(rows, metric=None):
         (r"\textbf{Model} & \multicolumn{5}{c}{\textbf{COMET}} & "
          r"\multicolumn{5}{c}{\textbf{chrF}} \\"),
         r"\cmidrule(lr){2-6}\cmidrule(lr){7-11}",
-        (r" & V$_0$ & V$_5$ & T$_{10}$ & $\Delta$ & $\Delta_{\text{shot}}$ "
-         r"& V$_0$ & V$_5$ & T$_{10}$ & $\Delta$ & $\Delta_{\text{shot}}$ \\"),
+        (r" & V$_0$ & V$_5$ & T$_{10}$ & $\Delta_{V\to T}$ & $\Delta_{T_{\text{shot}}}$ "
+         r"& V$_0$ & V$_5$ & T$_{10}$ & $\Delta_{V\to T}$ & $\Delta_{T_{\text{shot}}}$ \\"),
         r"\midrule",
     ]
     for model, per_metric in table_rows:
@@ -1024,19 +1024,21 @@ def build_prompt_engineering_open(rows, metric=None):
          r"V$_0$: vanilla 0-shot (\texttt{basic}); "
          r"V$_5$: vanilla 5-shot (\texttt{few\_shot}, random retrieval); "
          r"T$_{10}$: \texttt{template5\_10shot} (the locked body "
-         r"configuration); $\Delta = $T$_{10} - $V$_5$ is the headline "
-         r"lift; $\Delta_{\text{shot}} = $T$_{10} - $T$_5$ isolates the "
+         r"configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the "
+         r"headline lift from vanilla to templated; "
+         r"$\Delta_{T_{\text{shot}}} = $T$_{10} - $T$_5$ isolates the "
          r"shot-count effect (template fixed at \texttt{template5}). "
          r"Only Llama3-8B and Gemma2-9B-IT have T$_5$ data among the "
-         r"open LLMs; for those two $\Delta_{\text{shot}}$ is small "
+         r"open LLMs; for those two $\Delta_{T_{\text{shot}}}$ is small "
          r"($\le 1.5$ COMET, $\le 2.4$ chrF), so almost all the V$_5\to$T$_{10}$ "
          r"jump is from prompt templating rather than the shot-count "
          r"increase. The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, "
          r"AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration "
-         r"signal: large positive $\Delta$ COMET paired with large "
-         r"negative $\Delta$ chrF ($-21.7$ / $-5.9$ / $-23.9$), "
-         r"indicating fluent off-target generations rather than real "
-         r"translations. \textbf{Bold}: column maximum.}"),
+         r"signal: large positive $\Delta_{V\to T}$ COMET paired with "
+         r"large negative $\Delta_{V\to T}$ chrF "
+         r"($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target "
+         r"generations rather than real translations. \textbf{Bold}: "
+         r"column maximum.}"),
         r"\label{tab:prompt_engineering_open}",
         r"\end{table*}",
     ]
