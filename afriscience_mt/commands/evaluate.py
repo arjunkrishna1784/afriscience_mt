@@ -45,6 +45,13 @@ def _test_text_column(lang: str) -> tuple[str, ...]:
         return tuple(r["text"] for r in csv.DictReader(f, delimiter="\t"))
 
 
+def _metric_present(r, label: str) -> bool:
+    """True iff results.json already has a value for this metric label."""
+    if label in {"bleu", "chrf", "ssa_comet"}:
+        return getattr(r.metrics, label, None) is not None
+    return label in r.metrics.extra
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(prog="afriscience-mt evaluate")
     p.add_argument("--mode", required=True,
@@ -69,18 +76,35 @@ def _rescore(argv: list[str]) -> int:
                    choices=["bleu", "chrf", "ssa_comet"])
     p.add_argument("--metric-name", default=None,
                    help="override metric label (default: same as --metric)")
+    p.add_argument("--skip-existing", action="store_true",
+                   help="skip files whose results.json already has this metric set")
     args = p.parse_args(argv)
+    label = args.metric_name or args.metric
 
     from afriscience_mt.evaluation.metrics import compute_bleu, compute_chrf, MetricsCalculator
     calc = (MetricsCalculator(metrics=["ssa_comet"])
             if args.metric == "ssa_comet" else None)
 
     n_done = n_skip = 0
-    for pred_path in Path(args.src).rglob("predictions.json"):
+    preds = sorted(Path(args.src).rglob("predictions.json"))
+    total = len(preds)
+    print(f"found {total} predictions.json under {args.src}")
+    for idx, pred_path in enumerate(preds, 1):
+        if args.skip_existing:
+            rp = pred_path.parent / "results.json"
+            if rp.exists():
+                try:
+                    existing = load_result(rp)
+                except Exception:
+                    existing = None
+                if existing is not None and _metric_present(existing, label):
+                    print(f"  [{idx}/{total}] skip {pred_path.parent}: {label} already set")
+                    n_skip += 1
+                    continue
         try:
             pf = load_predictions(pred_path)
         except Exception as e:
-            print(f"  skip {pred_path}: {e}")
+            print(f"  [{idx}/{total}] skip {pred_path}: {e}")
             n_skip += 1
             continue
 
@@ -102,7 +126,7 @@ def _rescore(argv: list[str]) -> int:
             refs.append(ref)
             hyps.append(hyp)
         if not hyps:
-            print(f"  skip {pred_path}: no usable samples (no ref in predictions and no test split for {pf.source_lang}/{pf.target_lang})")
+            print(f"  [{idx}/{total}] skip {pred_path}: no usable samples (no ref in predictions and no test split for {pf.source_lang}/{pf.target_lang})")
             n_skip += 1
             continue
 
@@ -120,16 +144,17 @@ def _rescore(argv: list[str]) -> int:
             print(f"  warn no results.json at {result_path.parent}")
         else:
             r = load_result(result_path)
-            label = args.metric_name or args.metric
-            setattr(r.metrics, label if label in {"bleu", "chrf", "ssa_comet"} else "extra",
-                    value)
+            if label in {"bleu", "chrf", "ssa_comet"}:
+                setattr(r.metrics, label, value)
+            else:
+                r.metrics.extra[label] = value
             r.metadata.setdefault("rescored", []).append({
                 "metric": label, "value": value,
                 "timestamp": datetime.utcnow().isoformat(),
             })
             save_result(r, result_path)
         n_done += 1
-        print(f"  {pred_path.parent}: {args.metric}={value:.4f}")
+        print(f"  [{idx}/{total}] {pred_path.parent}: {args.metric}={value:.4f}")
 
     print(f"\nrescored {n_done}, skipped {n_skip}")
     return 0
