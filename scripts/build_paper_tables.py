@@ -911,6 +911,145 @@ def build_template_shot_ablation(rows, metric):
     return "\n".join(lines) + "\n"
 
 
+def build_doc_template_shot_ablation(rows, metric):
+    """**Appendix.** Document-level template/shot ablation for the two
+    closed APIs (GPT-4o, Gemini-1.5-Flash) -- the only models with the
+    full 3-templates x 3-shots grid at doc level.
+
+    Open LLMs only have a single doc_0shot/doc_1shot config each (no
+    template variants), so they appear in tab:doc_comet (the headline
+    doc table) but not here. SSA-COMET is already populated for all
+    432 llm_doc rows; no rescore needed.
+
+    Layout mirrors tab:template_shot_ablation_comet (sentence-level):
+    per-model multirow block, one row per (template, shot) config, 12
+    pair columns (eng->xxx then xxx->eng), per-row Avg.
+    """
+    metric_label = "chrF" if metric == "chrf" else "COMET"
+    AB_MODELS = ["gemini_15_flash", "gpt4o"]
+
+    # 9 configs: every (template, shots) combination
+    CONFIGS = []
+    for tmpl in (1, 2, 3):
+        for shots in (0, 1, 5):
+            CONFIGS.append((f"doc_{shots}shot_template{tmpl}", tmpl, shots))
+
+    def avg_(vs):
+        nums = [v for v in vs if v is not None]
+        return sum(nums) / len(nums) if nums else None
+
+    def pull(model, strategy):
+        return lookup(rows, metric=metric, model_short=model,
+                      experiment_type="llm_doc",
+                      prompt_strategy=strategy)
+
+    def cfg_label(tmpl, shots):
+        return f"{tmpl}$_{{s={shots}}}$"
+
+    def cell_str(v):
+        return "--" if v is None else f"{v:.1f}"
+
+    lang_cols_e2x = [r"\textbf{\texttt{" + l + "}}" for l in LANGS]
+    lang_cols_x2e = [r"\textbf{\texttt{" + l + "}}" for l in LANGS]
+    n_lang_cols = 12
+    col_spec = "ll" + "r" * n_lang_cols + "r"
+
+    lines = [
+        f"% ---- doc_template_shot_ablation_{'chrf' if metric=='chrf' else 'comet'} ----",
+        r"\begin{table*}[t]",
+        r"\centering",
+        r"\footnotesize",
+        r"\setlength{\tabcolsep}{4pt}",
+        r"\renewcommand{\arraystretch}{1.05}",
+        r"\resizebox{\textwidth}{!}{",
+        r"\begin{tabular}{" + col_spec + r"}",
+        r"\toprule",
+        (r"\textbf{Model} & \textbf{Config} & "
+         r"\multicolumn{6}{c}{\textbf{eng$\to$}} & "
+         r"\multicolumn{6}{c}{\textbf{$\to$eng}} & \\"),
+        r"\cmidrule(lr){3-8}\cmidrule(lr){9-14}",
+        (r"  &   & " + " & ".join(lang_cols_e2x + lang_cols_x2e)
+         + r" & \textbf{Avg} \\"),
+        r"\midrule",
+    ]
+
+    for mi, model in enumerate(AB_MODELS):
+        if mi > 0:
+            lines.append(r"\midrule")
+
+        config_rows = []
+        for label, tmpl, shots in CONFIGS:
+            d = pull(model, label)
+            vals = [d.get(p) for p in PAIRS]
+            config_rows.append((label, tmpl, shots, vals, avg_(vals)))
+
+        # Per-language column max within this model block
+        block_col_max = []
+        for ci in range(n_lang_cols + 1):
+            cv = [vals[ci] if ci < n_lang_cols else a
+                  for _, _, _, vals, a in config_rows
+                  if (vals[ci] if ci < n_lang_cols else a) is not None]
+            block_col_max.append(max(cv) if cv else None)
+
+        # Per-language avg row across configs
+        col_avgs = []
+        for ci in range(n_lang_cols + 1):
+            cv = [vals[ci] if ci < n_lang_cols else a
+                  for _, _, _, vals, a in config_rows
+                  if (vals[ci] if ci < n_lang_cols else a) is not None]
+            col_avgs.append(avg_(cv))
+
+        n_block_rows = len(config_rows) + 1
+        for ri, (label, tmpl, shots, vals, a) in enumerate(config_rows):
+            cells = vals + [a]
+            cells_str = []
+            for ci, v in enumerate(cells):
+                s = cell_str(v)
+                if (v is not None and block_col_max[ci] is not None
+                        and abs(v - block_col_max[ci]) < 1e-9):
+                    s = r"\textbf{" + s + r"}"
+                cells_str.append(s)
+            cfg = cfg_label(tmpl, shots)
+            if ri == 0:
+                model_cell = (r"\multirow{" + str(n_block_rows) + r"}{*}{"
+                              + r"\rotatebox{90}{"
+                              + MODEL_DISP.get(model, model)
+                              + r"}}")
+            else:
+                model_cell = ""
+            lines.append(f"{model_cell} & {cfg} & "
+                         + " & ".join(cells_str) + r" \\")
+
+        lines.append(r"\cmidrule(l){2-" + str(2 + n_lang_cols + 1) + "}")
+        avg_cells = [cell_str(v) for v in col_avgs]
+        lines.append(r" & \textbf{avg} & "
+                     + " & ".join(avg_cells) + r" \\")
+
+    lines += [
+        r"\bottomrule",
+        r"\end{tabular}",
+        r"}",
+        (r"\caption{Document-level template/shot ablation for the two "
+         r"closed APIs with the full 3-template $\times$ 3-shot grid "
+         f"({metric_label}). Each row is a (template, shot-count) "
+         r"configuration for that model (template number first, shot "
+         r"count as subscript $s$). Open-source LLMs are not included "
+         r"here -- they only have a single \texttt{doc\_0shot} / "
+         r"\texttt{doc\_1shot} configuration each (no template "
+         r"variants); see \Cref{tab:doc_comet} for the headline "
+         r"open-vs-closed doc-level comparison. SSA-COMET is reported "
+         r"throughout (no rescore needed; values were already in the "
+         r"per-result JSONs from the closed-API doc-level imports). "
+         r"\textbf{Bold}: per-language column maximum within each "
+         r"model block. The bottom \textbf{avg} row of each block "
+         r"reports the per-language average across configurations.}"),
+        r"\label{tab:doc_template_shot_ablation_"
+        + ("chrf" if metric == "chrf" else "comet") + "}",
+        r"\end{table*}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 def build_prompt_engineering_open(rows, metric=None):
     """**Appendix.** Per-open-LLM vanilla vs. templated ICL ablation,
     with COMET and chrF shown side-by-side in two column groups, and
@@ -1275,6 +1414,7 @@ def main():
         ("doc",                build_doc),
         ("closed_ablations",   build_closed_ablations),
         ("template_shot_ablation", build_template_shot_ablation),
+        ("doc_template_shot_ablation", build_doc_template_shot_ablation),
     ]
     # Builders that emit a single combined table (no per-metric mirror).
     combined_builders = [
