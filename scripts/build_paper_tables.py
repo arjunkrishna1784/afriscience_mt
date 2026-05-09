@@ -1070,27 +1070,22 @@ def build_multilingual_vs_bilingual(rows, metric=None):
     holds together and the COMET-much-greater-than-chrF degeneration
     signal stays visible.
     """
-    PAIRS    = ['eng-amh','eng-hau','eng-lug','eng-nso','eng-yor','eng-zul']
-    PAIRS_R  = ['amh-eng','hau-eng','lug-eng','nso-eng','yor-eng','zul-eng']
+    PAIRS = ['eng-amh','eng-hau','eng-lug','eng-nso','eng-yor','eng-zul']
 
     def avg_(vs):
         nums = [v for v in vs if v is not None]
         return sum(nums) / len(nums) if nums else None
 
-    def vec_pair(model, metric, pairs=PAIRS, **filters):
+    def vec_pair(model, metric, **filters):
         d = lookup(rows, metric=metric, model_short=model, **filters)
-        return [d.get(p) for p in pairs]
+        return [d.get(p) for p in PAIRS]
 
     def row_for(model, label, **filters):
-        v_chrf  = vec_pair(model, 'chrf',      PAIRS,   **filters)
-        v_comet = vec_pair(model, 'ssa_comet', PAIRS,   **filters)
-        # xxx->eng Avg only (we don't show per-language for the reverse dir)
-        chrf_r  = avg_(vec_pair(model, 'chrf',      PAIRS_R, **filters))
-        comet_r = avg_(vec_pair(model, 'ssa_comet', PAIRS_R, **filters))
-        return (label, v_chrf, avg_(v_chrf), chrf_r,
-                       v_comet, avg_(v_comet), comet_r)
+        v_chrf  = vec_pair(model, 'chrf',      **filters)
+        v_comet = vec_pair(model, 'ssa_comet', **filters)
+        return (label, v_chrf, avg_(v_chrf), v_comet, avg_(v_comet))
 
-    def vec_nllb_ckpt(metric, step, pairs):
+    def vec_nllb_ckpt(metric, step):
         # NLLB-600M MMT checkpoints are distinguished only by original_path
         # substring (no schema field). Filter by '{step}_updates'.
         out = {}
@@ -1099,19 +1094,16 @@ def build_multilingual_vs_bilingual(rows, metric=None):
             if r['model_short'] != 'nllb_200_distilled_600m': continue
             if r['experiment_type'] != 'multilingual_finetune': continue
             if marker not in r.get('original_path',''): continue
-            if r['lang_pair'] not in pairs: continue
+            if r['lang_pair'] not in PAIRS: continue
             v = metric_val(r, metric)
             if v is not None:
                 out[r['lang_pair']] = v
-        return [out.get(p) for p in pairs]
+        return [out.get(p) for p in PAIRS]
 
     def row_nllb_ckpt(label, step):
-        v_chrf  = vec_nllb_ckpt('chrf',      step, PAIRS)
-        v_comet = vec_nllb_ckpt('ssa_comet', step, PAIRS)
-        chrf_r  = avg_(vec_nllb_ckpt('chrf',      step, PAIRS_R))
-        comet_r = avg_(vec_nllb_ckpt('ssa_comet', step, PAIRS_R))
-        return (label, v_chrf, avg_(v_chrf), chrf_r,
-                       v_comet, avg_(v_comet), comet_r)
+        v_chrf  = vec_nllb_ckpt('chrf',      step)
+        v_comet = vec_nllb_ckpt('ssa_comet', step)
+        return (label, v_chrf, avg_(v_chrf), v_comet, avg_(v_comet))
 
     # --- assemble per-family rows ----------------------------------------
     # Each family is (family_header, [(subblock_label, [(row_label, tuple), ...]), ...])
@@ -1173,21 +1165,18 @@ def build_multilingual_vs_bilingual(rows, metric=None):
     ))
 
     # --- column maxes (per metric, across the whole table) ----------------
-    # Per-row tuple: (label, v_chrf, a_chrf, chrf_r, v_comet, a_comet, comet_r).
-    # Display layout: 6 chrf eng->xxx + chrF Avg eng-> + chrF Avg ->eng
-    #               + 6 comet eng->xxx + COMET Avg eng-> + COMET Avg ->eng
+    # Per-row tuple: (label, v_chrf, a_chrf, v_comet, a_comet).
+    # Layout: 6 chrf eng->xxx + chrF Avg + 6 comet eng->xxx + COMET Avg.
     n_pairs = len(PAIRS)
-    n_cols = 2 * (n_pairs + 2)  # +2 = (Avg eng-> , Avg ->eng) per metric
+    n_cols = 2 * (n_pairs + 1)
     all_rows = [tup for _, subs in families for _, rs in subs for _, tup in rs]
 
     def cell_at(tup, ci):
-        _, v_chrf, a_chrf, chrf_r, v_comet, a_comet, comet_r = tup
+        _, v_chrf, a_chrf, v_comet, a_comet = tup
         if   ci <  n_pairs:        return v_chrf[ci]
         elif ci == n_pairs:        return a_chrf
-        elif ci == n_pairs + 1:    return chrf_r
-        elif ci <  2*n_pairs + 2:  return v_comet[ci - n_pairs - 2]
-        elif ci == 2*n_pairs + 2:  return a_comet
-        else:                       return comet_r
+        elif ci < 2 * n_pairs + 1: return v_comet[ci - n_pairs - 1]
+        else:                      return a_comet
 
     col_max = []
     for ci in range(n_cols):
@@ -1202,12 +1191,6 @@ def build_multilingual_vs_bilingual(rows, metric=None):
                  for l in ['amh','hau','lug','nso','yor','zul']]
     n_data_cols = n_cols + 1  # +1 for the leading Setup column
 
-    # cmidrule spans:
-    #   chrF block:  cols 2 .. n_pairs+3   (6 langs + 2 avgs = 8 data cols)
-    #   COMET block: cols n_pairs+4 .. 2*n_pairs+5
-    chrf_lo, chrf_hi   = 2, n_pairs + 3        # 2..9
-    comet_lo, comet_hi = n_pairs + 4, n_cols+1 # 10..17
-
     lines = [
         r"% ---- multilingual_vs_bilingual ----",
         r"\begin{table*}[t]",
@@ -1215,24 +1198,13 @@ def build_multilingual_vs_bilingual(rows, metric=None):
         r"\footnotesize",
         r"\setlength{\tabcolsep}{4pt}",
         r"\renewcommand{\arraystretch}{1.05}",
-        r"\begin{tabular}{l" + "r" * (n_pairs + 2) + "r" * (n_pairs + 2) + r"}",
+        r"\begin{tabular}{l" + "r" * (n_pairs + 1) + "r" * (n_pairs + 1) + r"}",
         r"\toprule",
-        (r"\textbf{Setup} & \multicolumn{8}{c}{\textbf{chrF}} & "
-         r"\multicolumn{8}{c}{\textbf{COMET}} \\"),
-        f"\\cmidrule(lr){{{chrf_lo}-{chrf_hi}}}"
-        f"\\cmidrule(lr){{{comet_lo}-{comet_hi}}}",
-        (r" & \multicolumn{6}{c}{\texttt{eng}$\to$\texttt{xxx}}"
-         r" & \multicolumn{2}{c}{\textbf{Avg}}"
-         r" & \multicolumn{6}{c}{\texttt{eng}$\to$\texttt{xxx}}"
-         r" & \multicolumn{2}{c}{\textbf{Avg}} \\"),
-        f"\\cmidrule(lr){{{chrf_lo}-{chrf_lo+5}}}"
-        f"\\cmidrule(lr){{{chrf_lo+6}-{chrf_hi}}}"
-        f"\\cmidrule(lr){{{comet_lo}-{comet_lo+5}}}"
-        f"\\cmidrule(lr){{{comet_lo+6}-{comet_hi}}}",
-        (r" & " + " & ".join(lang_cols)
-         + r" & \texttt{e$\to$} & \texttt{$\to$e}"
-         + r" & " + " & ".join(lang_cols)
-         + r" & \texttt{e$\to$} & \texttt{$\to$e} \\"),
+        (r"\textbf{Setup} & \multicolumn{7}{c}{\textbf{chrF}} & "
+         r"\multicolumn{7}{c}{\textbf{COMET}} \\"),
+        r"\cmidrule(lr){2-8}\cmidrule(lr){9-15}",
+        (r" & " + " & ".join(lang_cols) + r" & \textbf{Avg}"
+         r" & " + " & ".join(lang_cols) + r" & \textbf{Avg} \\"),
         r"\midrule",
     ]
     for fi, (fam_name, subs) in enumerate(families):
@@ -1262,30 +1234,27 @@ def build_multilingual_vs_bilingual(rows, metric=None):
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
-        (r"\caption{Bilingual vs. multilingual fine-tuning, chrF and "
-         r"COMET side-by-side. Per-language columns are "
-         r"\texttt{eng}$\to$\texttt{xxx}; \texttt{e$\to$} and "
-         r"\texttt{$\to$e} columns are the directional averages. "
-         r"Three model families: NLLB-600M (multilingual checkpoint "
-         r"sweep against NLLB-600M and 1.3B bilingual fine-tunes); "
-         r"Llama-3.1-8B-Instruct (same instruct model on both sides); "
-         r"Gemma-2-9B non-instruct base (same base both sides; the "
-         r"Gemma2-9B-IT instruct variant used in the main tables is a "
-         r"different base). The Llama and Gemma multilingual LoRA "
-         r"runs and the entire Gemma block (bilingual and multilingual) "
-         r"were trained \texttt{eng}$\to$\texttt{xxx} only, so the "
-         r"\texttt{$\to$e} cells are blank for those rows; NLLB MMT "
-         r"and the Llama bilingual side cover both directions. "
-         r"For NLLB, bilingual fine-tuning is "
-         r"dramatically stronger than the (short, early-stage) "
-         r"multilingual checkpoints. For Gemma LoRA, bilingual leads "
-         r"by $\sim$3.7 COMET / $\sim$5 chrF at the best rank. For "
-         r"Llama LoRA, bilingual and multilingual end up essentially "
-         r"tied at COMET ($\sim$57) -- Llama is the outlier; the "
-         r"r=64 bilingual row also shows a chrF-up/COMET-down "
-         r"degeneration pattern relative to the other Llama bilingual "
-         r"ranks. \textbf{Bold}: best score for that column within "
-         r"each metric, across all rows of the table.}"),
+        (r"\caption{Bilingual vs. multilingual fine-tuning on "
+         r"\texttt{eng}$\to$\texttt{xxx} (chrF and COMET side-by-side). "
+         r"Restricted to \texttt{eng}$\to$\texttt{xxx} because the "
+         r"Llama and Gemma multilingual LoRA runs were trained in this "
+         r"direction only, so the reverse direction has no MMT side to "
+         r"compare against. Three model families: NLLB-600M "
+         r"(multilingual checkpoint sweep against NLLB-600M and 1.3B "
+         r"bilingual fine-tunes); Llama-3.1-8B-Instruct (same instruct "
+         r"model on both sides); Gemma-2-9B non-instruct base (same "
+         r"base both sides; the Gemma2-9B-IT instruct variant used in "
+         r"the main tables is a different base). For NLLB, bilingual "
+         r"fine-tuning is dramatically stronger than the (short, "
+         r"early-stage) multilingual checkpoints. For Gemma LoRA, "
+         r"bilingual leads by $\sim$3.7 COMET / $\sim$5 chrF at the "
+         r"best rank. For Llama LoRA, bilingual and multilingual end "
+         r"up essentially tied at COMET ($\sim$57) -- Llama is the "
+         r"outlier; the r=64 bilingual row also shows a "
+         r"chrF-up/COMET-down degeneration pattern relative to the "
+         r"other Llama bilingual ranks. \textbf{Bold}: best score for "
+         r"that target language (or Avg) within each metric, across "
+         r"all rows of the table.}"),
         r"\label{tab:multilingual_vs_bilingual}",
         r"\end{table*}",
     ]
