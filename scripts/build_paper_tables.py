@@ -1210,16 +1210,16 @@ def build_multilingual_vs_bilingual(rows, metric=None):
          r"NLLB-600M and 1.3B bilingual fine-tunes); "
          r"Llama-3.1-8B-Instruct (same instruct model on both sides); "
          r"Gemma-2-9B non-instruct base (same base both sides; the "
-         r"instruct variant Gemma2-9B-IT used in the main tables is a "
+         r"Gemma2-9B-IT instruct variant used in the main tables is a "
          r"different base). For NLLB, bilingual fine-tuning is "
-         r"dramatically stronger than the multilingual checkpoints "
-         r"(though those are short/early-stage runs). For Llama LoRA, "
-         r"bilingual and multilingual end up essentially tied at COMET "
-         r"(~57). For Gemma LoRA, bilingual leads at chrF (COMET pending "
-         r"rescore for the bilingual side). The Llama r=64 bilingual row "
-         r"shows a chrF-up/COMET-down degeneration pattern relative to "
-         r"the other ranks. \textbf{Bold}: column maximum across the "
-         r"table.}"),
+         r"dramatically stronger than the (short, early-stage) "
+         r"multilingual checkpoints. For Gemma LoRA, bilingual leads "
+         r"by $\sim$3.7 COMET / $\sim$5 chrF at the best rank. For "
+         r"Llama LoRA, bilingual and multilingual end up essentially "
+         r"tied at COMET ($\sim$57) -- Llama is the outlier; the "
+         r"r=64 bilingual row also shows a chrF-up/COMET-down "
+         r"degeneration pattern relative to the other Llama bilingual "
+         r"ranks. \textbf{Bold}: column maximum across the table.}"),
         r"\label{tab:multilingual_vs_bilingual}",
         r"\end{table*}",
     ]

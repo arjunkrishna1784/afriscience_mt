@@ -931,11 +931,11 @@ model, not for the LoRA LLMs.
 
 ### What the new table shows (eng$\to$xxx avg)
 
-| Family | Bilingual | Multilingual | Verdict |
+| Family | Bilingual best | Multilingual best | Verdict |
 |---|---|---|---|
-| NLLB-600M | 66.7 COMET (FT) | 39.8 COMET (400k MMT) | Bilingual dramatically better; MMT ckpts are early/short |
-| Llama-3.1-8B-Instruct LoRA | $\sim$57.3 COMET (best non-r64 rank) | $\sim$57.4 COMET (best rank, r=16) | Essentially tied; old claim doesn't hold |
-| Gemma-2-9B (non-instruct) LoRA | best 50.4 chrF (r=128); COMET pending rescore | best 45.5 chrF (r=32); 58.8 COMET | chrF: bilingual ahead; COMET: pending |
+| NLLB-600M | 66.7 COMET / 51.7 chrF (FT) | 39.8 COMET / 30.2 chrF (400k MMT) | Bilingual dramatically better; MMT ckpts are short/early-stage |
+| Llama-3.1-8B-Instruct LoRA | $\sim$57.3 COMET (best non-r64 rank) | $\sim$57.4 COMET (r=16) | **Essentially tied -- the outlier** |
+| Gemma-2-9B (non-instruct) LoRA | 62.5 COMET / 50.4 chrF (r=128) | 58.8 COMET / 45.5 chrF (r=32-64) | Bilingual leads by $\sim$3.7 COMET / $\sim$5 chrF |
 
 ### Where to edit the body in `acl_latex.tex`
 
@@ -945,33 +945,42 @@ asserts bilingual > multilingual "across all model architectures"
 "outperforms" near a bilingual/multilingual comparison). Replace with
 something like:
 
-> Bilingual fine-tuning is dramatically stronger than the
-> short multilingual checkpoints for our seq2seq model
-> (Table~\ref{tab:multilingual_vs_bilingual}); for LoRA on the
-> decoder-only LLMs, bilingual and multilingual training end up
-> essentially tied at SSA-COMET, with chrF slightly favouring the
-> bilingual side.
+> Bilingual fine-tuning outperforms multilingual fine-tuning for
+> NLLB and for Gemma-2-9B LoRA, both at SSA-COMET and chrF
+> (Table~\ref{tab:multilingual_vs_bilingual}); the only exception
+> is Llama-3.1-8B-Instruct LoRA, where bilingual and multilingual
+> training end up essentially tied at SSA-COMET ($\sim$57) across
+> matching ranks.
 
 ### Caveats baked into the caption (do not lose in the body)
 
 1. NLLB MMT checkpoints are short/early-stage runs -- the gap is
    partly a steps-of-training confound, not purely a
    bilingual-vs-multilingual difference.
-2. Gemma bilingual SSA-COMET is not yet rescored -- only chrF is
-   filled in for that block.
-3. **Llama r=64 bilingual is anomalous** (chrF 49.0, the highest in
+2. **Llama r=64 bilingual is anomalous** (chrF 49.0, the highest in
    the bilingual block, while COMET is 53.8, the lowest). The other
    bilingual ranks {8, 16, 32, 128} cluster at chrF~46 / COMET~57.
    This is a chrF-up/COMET-down degeneration signature -- worth
    flagging if Llama r=64 numbers appear elsewhere in the paper.
 
+### Why is Llama the outlier? (open question)
+
+Two leads worth noting if a reviewer or co-author asks:
+
+- **Instruct vs base model.** Llama-3.1-8B-*Instruct* (RLHF'd) is
+  on both sides; Gemma-2-9B is the *non-instruct* base on both
+  sides. The instruction-tuned starting point may be flexible
+  enough that the multilingual shared parameters do not cost
+  anything per pair, whereas the raw base benefits from per-pair
+  specialization.
+- **Llama r=64 bilingual is the degenerate outlier** (caveat #2
+  above) -- without it, the Llama bilingual cluster is also a few
+  COMET below the Gemma bilingual gain. Hard to rule out that the
+  full Llama bilingual ceiling is just lower than what a clean run
+  would produce.
+
 ### What's still missing
 
-- SSA-COMET rescore on the new
-  `experiments/llm/open/finetune/gemma2_9b/r{8,16,32,64,128}/eng-*/`
-  imports (needs GPU). Command:
-  `python -m afriscience_mt evaluate --mode rescore --src
-  experiments/llm/open/finetune/gemma2_9b`
 - Decision on whether to re-train the NLLB MMT checkpoints longer
   (so the seq2seq comparison is apples-to-apples in updates), or
   just keep the disclaimer.
