@@ -845,7 +845,17 @@ def fig_per_domain_radar():
 
 
 def fig_per_domain_weighted():
-    """Bar chart: per-domain chrF for the top systems, ordered by domain size."""
+    """Two-panel bar chart: per-domain SSA-COMET (top) and chrF (bottom)
+    for the three reference systems used in the per-pair spider plot
+    (\\ref{fig:spider_per_pair}), ordered by domain size ascending. Same
+    overall figure height as the previous single-panel chrF chart;
+    split into two equal halves so both metrics are visible.
+
+    Systems:
+      - NLLB-1.3B (fine-tuned)         -- best seq2seq
+      - Gemma2-9B-IT LoRA $r{=}64$     -- best open LLM
+      - GPT-4o (10-shot, template5)    -- closed-API headline config
+    """
     domain_sizes = {
         "chemistry": 46, "Indigenous knowledge": 92, "engineering": 93,
         "statistics": 184, "computer science": 213, "geography": 218,
@@ -855,40 +865,60 @@ def fig_per_domain_weighted():
     domains_sorted = sorted(DOMAINS, key=lambda d: domain_sizes[d])
 
     systems = [
-        ("NLLB-1.3B (zero-shot)",
-         EXP_DIR / "seq2seq" / "zero_shot" / "nllb_200_1_3b",        "#9ecae1"),
         ("NLLB-1.3B (fine-tuned)",
          EXP_DIR / "seq2seq" / "finetune" / "nllb_200_1_3b" / "dcs", "#3182bd"),
-        ("GPT-4o (5-shot ICL)",
-         EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt4o" / "5shot_semantic",
+        ("Gemma2-9B-IT LoRA $r{=}64$",
+         EXP_DIR / "llm" / "open" / "finetune" / "gemma2_9b_it" / "r64",
+         "#e6550d"),
+        ("GPT-4o (10-shot, template5)",
+         EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt4o" / "template5_10shot",
          "#74c476"),
     ]
-    per_sys = {}
-    for name, base, _ in systems:
-        domain_chrf = defaultdict(list)
-        for lang in LANGS:
-            d = per_domain_chrf(base / f"eng-{lang}" / "predictions.json", "eng", lang)
-            for cat, v in d.items():
-                domain_chrf[cat].append(v)
-        per_sys[name] = {cat: sum(vs)/len(vs) for cat, vs in domain_chrf.items()}
 
-    fig, ax = plt.subplots(figsize=(7.5, 2.8))
+    def per_sys_for(metric):
+        out = {}
+        for name, base, _ in systems:
+            domain_vals = defaultdict(list)
+            for lang in LANGS:
+                d = per_domain_metric(base / f"eng-{lang}" / "predictions.json",
+                                      "eng", lang, metric)
+                for cat, v in d.items():
+                    domain_vals[cat].append(v)
+            out[name] = {cat: sum(vs)/len(vs) for cat, vs in domain_vals.items()}
+        return out
+
+    per_comet = per_sys_for("ssa_comet")
+    per_chrf  = per_sys_for("chrf")
+
+    # Same total height as the old chart (2.8) -- now split into two halves.
+    fig, (ax_c, ax_h) = plt.subplots(2, 1, figsize=(7.5, 5.6),
+                                     sharex=True,
+                                     gridspec_kw={"hspace": 0.12})
     x = np.arange(len(domains_sorted))
-    w = 0.25
+    w = 0.27
+
     for i, (name, _, color) in enumerate(systems):
-        vals = [per_sys[name].get(d, 0) for d in domains_sorted]
-        ax.bar(x + (i - 1) * w, vals, width=w, label=name,
-               color=color, edgecolor="black", linewidth=0.3)
-    # Annotate domain sizes under labels (real newline; LaTeX-safe via mathtext-off)
+        vals_c = [per_comet[name].get(d, 0) for d in domains_sorted]
+        vals_h = [per_chrf[name].get(d, 0)  for d in domains_sorted]
+        ax_c.bar(x + (i - 1) * w, vals_c, width=w, label=name,
+                 color=color, edgecolor="black", linewidth=0.3)
+        ax_h.bar(x + (i - 1) * w, vals_h, width=w,
+                 color=color, edgecolor="black", linewidth=0.3)
+
+    ax_c.set_ylabel("SSA-COMET")
+    ax_c.set_ylim(0, 100)
+    ax_h.set_ylabel("ChrF")
+    ax_h.set_ylim(0, 80)
+
     labels = [DOMAIN_DISP[d].replace("\n", " ") + f"\n(N={domain_sizes[d]})"
               for d in domains_sorted]
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels, fontsize=6.5)
-    ax.set_ylabel("ChrF (avg over Eng$\\to$xxx)")
-    ax.set_ylim(0, 80)
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, 1.18),
-              ncol=3, frameon=False)
-    fig.tight_layout()
+    ax_h.set_xticks(x)
+    ax_h.set_xticklabels(labels, fontsize=6.5)
+
+    # Single legend at the top of the figure spanning both panels.
+    ax_c.legend(loc="upper center", bbox_to_anchor=(0.5, 1.22),
+                ncol=3, frameon=False, fontsize=8)
+
     out = FIG_DIR / "weighted_chrf_score.pdf"
     fig.savefig(out, bbox_inches="tight")
     plt.close(fig)
