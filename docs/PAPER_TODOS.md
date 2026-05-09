@@ -4,6 +4,17 @@ Items captured during drafting that need either user input or specific data
 before they can be finalized. Each entry has the proposed wording verbatim
 so it can be edited later without re-deriving the argument.
 
+## Style rules (ALWAYS follow when drafting paper text)
+
+- **Never use the word "backbone"** in any paper text or table caption.
+  Say "encoder--decoder model" / "seq2seq model" / "base model" /
+  the explicit model name instead.
+- **Never use the LaTeX `.\` construct** (period followed by backslash-space)
+  in captions or prose. Plain `. ` is correct -- the spacing is handled
+  by `\frenchspacing` or normal LaTeX. This rule was set 2026-05-08;
+  earlier captions with `vs.\ ` etc. have been swept and replaced with
+  plain `vs. `.
+
 ---
 
 ## 2026-05-06 — Prompt-template asymmetry between closed APIs and open LLMs
@@ -906,6 +917,66 @@ We have per-domain data already for:
 
 Missing per-domain data: GPT-4o `template5_10shot` (the locked body
 config).
+
+---
+
+## 2026-05-09 — Multilingual vs bilingual: original claim is too strong
+
+**Status:** new appendix table ready
+(`tables/new/multilingual_vs_bilingual.tex`,
+`\label{tab:multilingual_vs_bilingual}`). The body needs one
+sentence rewritten -- the old "bilingual outperforms multilingual
+across all model architectures" claim is only true for the seq2seq
+model, not for the LoRA LLMs.
+
+### What the new table shows (eng$\to$xxx avg)
+
+| Family | Bilingual | Multilingual | Verdict |
+|---|---|---|---|
+| NLLB-600M | 66.7 COMET (FT) | 39.8 COMET (400k MMT) | Bilingual dramatically better; MMT ckpts are early/short |
+| Llama-3.1-8B-Instruct LoRA | $\sim$57.3 COMET (best non-r64 rank) | $\sim$57.4 COMET (best rank, r=16) | Essentially tied; old claim doesn't hold |
+| Gemma-2-9B (non-instruct) LoRA | best 50.4 chrF (r=128); COMET pending rescore | best 45.5 chrF (r=32); 58.8 COMET | chrF: bilingual ahead; COMET: pending |
+
+### Where to edit the body in `acl_latex.tex`
+
+Find the sentence in the LoRA / multilingual training discussion that
+asserts bilingual > multilingual "across all model architectures"
+(the old claim was around line 419 in an earlier draft -- search for
+"outperforms" near a bilingual/multilingual comparison). Replace with
+something like:
+
+> Bilingual fine-tuning is dramatically stronger than the
+> short multilingual checkpoints for our seq2seq model
+> (Table~\ref{tab:multilingual_vs_bilingual}); for LoRA on the
+> decoder-only LLMs, bilingual and multilingual training end up
+> essentially tied at SSA-COMET, with chrF slightly favouring the
+> bilingual side.
+
+### Caveats baked into the caption (do not lose in the body)
+
+1. NLLB MMT checkpoints are short/early-stage runs -- the gap is
+   partly a steps-of-training confound, not purely a
+   bilingual-vs-multilingual difference.
+2. Gemma bilingual SSA-COMET is not yet rescored -- only chrF is
+   filled in for that block.
+3. **Llama r=64 bilingual is anomalous** (chrF 49.0, the highest in
+   the bilingual block, while COMET is 53.8, the lowest). The other
+   bilingual ranks {8, 16, 32, 128} cluster at chrF~46 / COMET~57.
+   This is a chrF-up/COMET-down degeneration signature -- worth
+   flagging if Llama r=64 numbers appear elsewhere in the paper.
+
+### What's still missing
+
+- SSA-COMET rescore on the new
+  `experiments/llm/open/finetune/gemma2_9b/r{8,16,32,64,128}/eng-*/`
+  imports (needs GPU). Command:
+  `python -m afriscience_mt evaluate --mode rescore --src
+  experiments/llm/open/finetune/gemma2_9b`
+- Decision on whether to re-train the NLLB MMT checkpoints longer
+  (so the seq2seq comparison is apples-to-apples in updates), or
+  just keep the disclaimer.
+- Overleaf-side edit of the body sentence (above) once the user
+  confirms the wording.
 
 ---
 
