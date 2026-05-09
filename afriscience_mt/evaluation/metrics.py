@@ -1,5 +1,6 @@
 """Translation quality metrics with SSA-COMET support for African languages."""
 
+import gc
 from typing import Any, Dict, List, Optional, Union
 import torch
 
@@ -352,6 +353,13 @@ class SSACOMETScorer:
             for src, hyp, ref in zip(sources, hypotheses, references)
         ]
 
+        # pytorch_lightning's Trainer (re-instantiated by COMET on every
+        # predict()) leaves cached blocks behind; clear them before each call
+        # so memory doesn't accumulate across repeated invocations.
+        gc.collect()
+        if self.device == "cuda":
+            torch.cuda.empty_cache()
+
         output = model.predict(data, batch_size=batch_size, gpus=self.gpus)
 
         return {
@@ -456,14 +464,14 @@ class MetricsCalculator:
         if "chrf" in self.metrics:
             results.update(compute_chrf(hypotheses, references))
 
-        # SSA-COMET (primary metric for African languages)
+        # SSA-COMET (primary metric for African languages).
+        # Failures here used to be caught and downgraded to a warning, which
+        # let callers silently write null SSA scores into results.json on OOM.
+        # Let the exception propagate so the caller can decide.
         if "ssa_comet" in self.metrics:
-            try:
-                scorer = self._get_ssa_comet_scorer()
-                ssa_results = scorer.score(sources, hypotheses, references)
-                results.update(ssa_results)
-            except Exception as e:
-                logger.warning(f"SSA-COMET computation failed: {e}")
+            scorer = self._get_ssa_comet_scorer()
+            ssa_results = scorer.score(sources, hypotheses, references)
+            results.update(ssa_results)
 
         # Standard COMET (for comparison or non-African languages)
         if "comet" in self.metrics:

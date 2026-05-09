@@ -127,39 +127,72 @@ def rescore_one(pred_path: Path, calc, force: bool = False) -> dict[str, dict] |
     except Exception:
         existing = {}
 
-    by_cat = defaultdict(lambda: {"src": [], "ref": [], "hyp": []})
+    # Flatten everything into one list, but remember each sample's category
+    # so we can split per-sample SSA-COMET scores after a single predict() call.
+    # Doing one big predict per dir (instead of one per category) cuts the
+    # number of predict() calls ~10x, which keeps pytorch_lightning's per-call
+    # GPU overhead from accumulating into OOM on long-running workers.
+    all_src: list[str] = []
+    all_ref: list[str] = []
+    all_hyp: list[str] = []
+    cat_indices: dict[str, list[int]] = defaultdict(list)
     for i, s in enumerate(samples):
         hyp = s.get("hyp") or ""
         if not hyp:
             continue
         cat = src_tsv[i]["category"]
-        by_cat[cat]["src"].append(src_tsv[i]["text"])
-        by_cat[cat]["ref"].append(tgt_tsv[i]["text"])
-        by_cat[cat]["hyp"].append(hyp)
+        cat_indices[cat].append(len(all_src))
+        all_src.append(src_tsv[i]["text"])
+        all_ref.append(tgt_tsv[i]["text"])
+        all_hyp.append(hyp)
 
+    # First pass: bleu/chrf per category from the existing per-cat slices,
+    # plus collect which categories still need SSA-COMET.
     out: dict[str, dict] = {}
-    for cat, bag in by_cat.items():
+    cats_need_ssa: list[str] = []
+    for cat, idxs in cat_indices.items():
         prev = existing.get(cat) or {}
-        entry: dict = {"n": len(bag["hyp"])}
+        entry: dict = {"n": len(idxs)}
+
+        cat_hyp = [all_hyp[i] for i in idxs]
+        cat_ref = [all_ref[i] for i in idxs]
 
         bleu_v = prev.get("bleu")
         if force or bleu_v is None:
-            bleu_v = compute_bleu(bag["hyp"], bag["ref"])["bleu"]
+            bleu_v = compute_bleu(cat_hyp, cat_ref)["bleu"]
         entry["bleu"] = bleu_v
 
         chrf_v = prev.get("chrf")
         if force or chrf_v is None:
-            chrf_v = compute_chrf(bag["hyp"], bag["ref"])["chrf"]
+            chrf_v = compute_chrf(cat_hyp, cat_ref)["chrf"]
         entry["chrf"] = chrf_v
 
         ssa_v = prev.get("ssa_comet")
         if force or ssa_v is None:
-            ssa_v = calc.compute(hypotheses=bag["hyp"],
-                                 references=bag["ref"],
-                                 sources=bag["src"]).get("ssa_comet")
-        entry["ssa_comet"] = ssa_v
+            cats_need_ssa.append(cat)
+        else:
+            entry["ssa_comet"] = ssa_v
 
         out[cat] = entry
+
+    # Single predict over the whole dir; split per-sample scores by category.
+    if cats_need_ssa:
+        result = calc.compute(hypotheses=all_hyp,
+                              references=all_ref,
+                              sources=all_src)
+        per_sample = result.get("ssa_comet_scores")
+        if not per_sample or len(per_sample) != len(all_src):
+            raise RuntimeError(
+                f"SSA-COMET returned {len(per_sample) if per_sample else 0} "
+                f"per-sample scores for {len(all_src)} samples"
+            )
+        for cat in cats_need_ssa:
+            idxs = cat_indices[cat]
+            cat_scores = [per_sample[i] for i in idxs]
+            out[cat]["ssa_comet"] = (
+                sum(cat_scores) / len(cat_scores) if cat_scores else None
+            )
+
     return out
 
 
