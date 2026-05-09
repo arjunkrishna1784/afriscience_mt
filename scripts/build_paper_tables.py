@@ -950,7 +950,10 @@ def build_prompt_engineering_open(rows, metric=None):
         return lookup(rows, metric=m, model_short=model,
                       experiment_type="llm_icl", prompt_strategy=strategy)
 
-    # For each model: [(v0, v5, t5, dp, t10, ds) per metric]
+    # For each model: [(v0, v5, t10, d_v5_t10, d_t5_t10) per metric]
+    # The headline delta (d_v5_t10) is V5 -> T10 -- this is what shows
+    # the chrF degeneration on the broken models. The shot-only delta
+    # (d_t5_t10) is T10 - T5, available only for models with T5 data.
     table_rows = []
     for model in by_disp(OPEN):
         per_metric = []
@@ -959,13 +962,13 @@ def build_prompt_engineering_open(rows, metric=None):
             v5  = avg_(pull_icl(model, "icl_5shot", m))
             t5  = avg_(pull_icl(model, "template5_5shot", m))
             t10 = avg_(pull_icl(model, "template5_10shot", m))
-            dp  = (t5 - v5) if (t5  is not None and v5 is not None) else None
-            ds  = (t10 - t5) if (t10 is not None and t5 is not None) else None
-            per_metric.append((v0, v5, t5, dp, t10, ds))
+            d_v5_t10 = (t10 - v5) if (t10 is not None and v5 is not None) else None
+            d_t5_t10 = (t10 - t5) if (t10 is not None and t5 is not None) else None
+            per_metric.append((v0, v5, t10, d_v5_t10, d_t5_t10))
         table_rows.append((model, per_metric))
 
-    # 12 cols: 6 per metric block
-    n_per = 6
+    # 10 cols: 5 per metric block
+    n_per = 5
     n_cols = 2 * n_per
     col_max = []
     for ci in range(n_cols):
@@ -980,7 +983,7 @@ def build_prompt_engineering_open(rows, metric=None):
     def fmt_d(v):
         return "--" if v is None else f"{v:+.1f}"
 
-    DELTA_COL_IDX = {3, 5}   # within a 6-col block
+    DELTA_COL_IDX = {3, 4}  # both delta columns within a 5-col block
 
     lines = [
         r"% ---- prompt_engineering_open ----",
@@ -989,13 +992,13 @@ def build_prompt_engineering_open(rows, metric=None):
         r"\small",
         r"\setlength{\tabcolsep}{4pt}",
         r"\renewcommand{\arraystretch}{1.05}",
-        r"\begin{tabular}{lrrrrrrrrrrrr}",
+        r"\begin{tabular}{lrrrrrrrrrr}",
         r"\toprule",
-        (r"\textbf{Model} & \multicolumn{6}{c}{\textbf{COMET}} & "
-         r"\multicolumn{6}{c}{\textbf{chrF}} \\"),
-        r"\cmidrule(lr){2-7}\cmidrule(lr){8-13}",
-        (r" & V$_0$ & V$_5$ & T$_5$ & $\Delta_{\text{prompt}}$ & T$_{10}$ & $\Delta_{\text{shot}}$ "
-         r"& V$_0$ & V$_5$ & T$_5$ & $\Delta_{\text{prompt}}$ & T$_{10}$ & $\Delta_{\text{shot}}$ \\"),
+        (r"\textbf{Model} & \multicolumn{5}{c}{\textbf{COMET}} & "
+         r"\multicolumn{5}{c}{\textbf{chrF}} \\"),
+        r"\cmidrule(lr){2-6}\cmidrule(lr){7-11}",
+        (r" & V$_0$ & V$_5$ & T$_{10}$ & $\Delta$ & $\Delta_{\text{shot}}$ "
+         r"& V$_0$ & V$_5$ & T$_{10}$ & $\Delta$ & $\Delta_{\text{shot}}$ \\"),
         r"\midrule",
     ]
     for model, per_metric in table_rows:
@@ -1020,23 +1023,20 @@ def build_prompt_engineering_open(rows, metric=None):
          r"\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. "
          r"V$_0$: vanilla 0-shot (\texttt{basic}); "
          r"V$_5$: vanilla 5-shot (\texttt{few\_shot}, random retrieval); "
-         r"T$_5$ / T$_{10}$: \texttt{template5} at 5 / 10 shots. "
-         r"$\Delta_{\text{prompt}} = $T$_5 - $V$_5$ isolates the "
-         r"prompt-format effect at fixed shot count; "
-         r"$\Delta_{\text{shot}} = $T$_{10} - $T$_5$ isolates the "
-         r"shot-count effect at fixed template. Only Llama3-8B and "
-         r"Gemma2-9B-IT have T$_5$ data among the open LLMs (the other "
-         r"five show \texttt{--} for T$_5$ and the deltas). For both "
-         r"clean rows the prompt-format jump is large (5--10 COMET) "
-         r"while the shot jump is small ($\le 1.5$ COMET), indicating "
-         r"most of the gain in T$_{10}$ comes from templating rather "
-         r"than from going to 10 shots. The COMET~$\gg$~chrF "
-         r"divergence on AfriqueLlama-8B, AfriqueQwen-8B, and "
-         r"TranslateGemma-12B exposes a degeneration signal: their "
-         r"chrF V$_5\to$T$_{10}$ deltas are large negatives "
-         r"($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target "
-         r"generations rather than real translations. \textbf{Bold}: "
-         r"column maximum.}"),
+         r"T$_{10}$: \texttt{template5\_10shot} (the locked body "
+         r"configuration); $\Delta = $T$_{10} - $V$_5$ is the headline "
+         r"lift; $\Delta_{\text{shot}} = $T$_{10} - $T$_5$ isolates the "
+         r"shot-count effect (template fixed at \texttt{template5}). "
+         r"Only Llama3-8B and Gemma2-9B-IT have T$_5$ data among the "
+         r"open LLMs; for those two $\Delta_{\text{shot}}$ is small "
+         r"($\le 1.5$ COMET, $\le 2.4$ chrF), so almost all the V$_5\to$T$_{10}$ "
+         r"jump is from prompt templating rather than the shot-count "
+         r"increase. The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, "
+         r"AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration "
+         r"signal: large positive $\Delta$ COMET paired with large "
+         r"negative $\Delta$ chrF ($-21.7$ / $-5.9$ / $-23.9$), "
+         r"indicating fluent off-target generations rather than real "
+         r"translations. \textbf{Bold}: column maximum.}"),
         r"\label{tab:prompt_engineering_open}",
         r"\end{table*}",
     ]
