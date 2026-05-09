@@ -903,28 +903,33 @@ def build_template_shot_ablation(rows, metric):
 
 def build_prompt_engineering_open(rows, metric=None):
     """**Appendix.** Per-open-LLM vanilla vs. templated ICL ablation,
-    with COMET and chrF shown side-by-side in two column groups.
+    with COMET and chrF shown side-by-side in two column groups, and
+    the prompt-vs-shot effects disentangled.
 
-    Layout per row:
+    Layout per row (per metric block):
 
-      Model | COMET: V0 V5 T10 Δ | chrF: V0 V5 T10 Δ
+      V0  V5  T5  Dp  T10  Ds
 
     where V0 = vanilla 0-shot (basic template), V5 = vanilla 5-shot
-    (basic template + random retrieval), T10 = template5_10shot
-    (locked body config), Δ = lift over V5. Bidirectional avg over
-    the 12 lang pairs.
+    (basic template + random retrieval), T5 = template5_5shot, T10 =
+    template5_10shot, Dp = T5 - V5 (prompt effect, shot count fixed
+    at 5), Ds = T10 - T5 (shot effect, template fixed at 5).
 
-    The two-metric layout makes the COMET-much-greater-than-ChrF
-    degeneration signal visible at a glance: AfriqueLlama-8B,
-    AfriqueQwen-8B, and TranslateGemma-12B post large COMET deltas
-    but their ChrF deltas are negative (-21.7 / -5.9 / -23.9),
-    indicating the model is generating fluent off-target text rather
-    than translating.
+    Only Llama3-8B and Gemma2-9B-IT have T5 data among the open LLMs;
+    rows for the other 5 show -- for T5/Dp/Ds. The two clean rows show
+    that the prompt jump (Dp) is roughly +5-10 COMET while the shot
+    jump (Ds) is +0.5-1.5 COMET --- i.e. most of the gain comes from
+    templating, not from going to 10 shots.
+
+    The metric-pair layout exposes the COMET-much-greater-than-chrF
+    degeneration signal for AfriqueLlama-8B, AfriqueQwen-8B, and
+    TranslateGemma-12B: their COMET deltas are positive but chrF
+    deltas are -5.9 to -23.9, indicating fluent off-target generations
+    rather than real translations.
 
     The ``metric`` parameter is accepted but ignored (this builder
-    produces a single combined table; the main loop's per-metric
-    iteration writes the same content to two files which we then
-    deduplicate by emitting a single non-suffixed table file).
+    emits a single combined table; the main loop's per-metric
+    iteration is special-cased for it).
     """
     OPEN = ["afriquellama_8b", "afriqueqwen_8b", "gemma2_9b_it",
             "llama3_8b", "tiny_aya_earth", "tiny_aya_global",
@@ -945,24 +950,27 @@ def build_prompt_engineering_open(rows, metric=None):
         return lookup(rows, metric=m, model_short=model,
                       experiment_type="llm_icl", prompt_strategy=strategy)
 
-    # For each model: [(vzs_c, v5_c, t10_c, dc), (vzs_f, v5_f, t10_f, df)]
+    # For each model: [(v0, v5, t5, dp, t10, ds) per metric]
     table_rows = []
     for model in by_disp(OPEN):
         per_metric = []
         for m in ("ssa_comet", "chrf"):
-            vzs = avg_(pull_zs(model, m))
+            v0  = avg_(pull_zs(model, m))
             v5  = avg_(pull_icl(model, "icl_5shot", m))
+            t5  = avg_(pull_icl(model, "template5_5shot", m))
             t10 = avg_(pull_icl(model, "template5_10shot", m))
-            d   = (t10 - v5) if (t10 is not None and v5 is not None) else None
-            per_metric.append((vzs, v5, t10, d))
+            dp  = (t5 - v5) if (t5  is not None and v5 is not None) else None
+            ds  = (t10 - t5) if (t10 is not None and t5 is not None) else None
+            per_metric.append((v0, v5, t5, dp, t10, ds))
         table_rows.append((model, per_metric))
 
-    # Per-column maxes (across models): 8 cols total (4 per metric block)
-    n_cols = 8
+    # 12 cols: 6 per metric block
+    n_per = 6
+    n_cols = 2 * n_per
     col_max = []
     for ci in range(n_cols):
-        metric_idx = 0 if ci < 4 else 1
-        cell_idx = ci % 4
+        metric_idx = 0 if ci < n_per else 1
+        cell_idx = ci % n_per
         vals = [r[1][metric_idx][cell_idx] for r in table_rows
                 if r[1][metric_idx][cell_idx] is not None]
         col_max.append(max(vals) if vals else None)
@@ -972,6 +980,8 @@ def build_prompt_engineering_open(rows, metric=None):
     def fmt_d(v):
         return "--" if v is None else f"{v:+.1f}"
 
+    DELTA_COL_IDX = {3, 5}   # within a 6-col block
+
     lines = [
         r"% ---- prompt_engineering_open ----",
         r"\begin{table*}[t]",
@@ -979,27 +989,26 @@ def build_prompt_engineering_open(rows, metric=None):
         r"\small",
         r"\setlength{\tabcolsep}{4pt}",
         r"\renewcommand{\arraystretch}{1.05}",
-        r"\begin{tabular}{lrrrrrrrr}",
+        r"\begin{tabular}{lrrrrrrrrrrrr}",
         r"\toprule",
-        (r"\textbf{Model} & \multicolumn{4}{c}{\textbf{COMET}} & "
-         r"\multicolumn{4}{c}{\textbf{chrF}} \\"),
-        r"\cmidrule(lr){2-5}\cmidrule(lr){6-9}",
-        (r" & V$_0$ & V$_5$ & T$_{10}$ & $\Delta$ "
-         r"& V$_0$ & V$_5$ & T$_{10}$ & $\Delta$ \\"),
+        (r"\textbf{Model} & \multicolumn{6}{c}{\textbf{COMET}} & "
+         r"\multicolumn{6}{c}{\textbf{chrF}} \\"),
+        r"\cmidrule(lr){2-7}\cmidrule(lr){8-13}",
+        (r" & V$_0$ & V$_5$ & T$_5$ & $\Delta_{\text{prompt}}$ & T$_{10}$ & $\Delta_{\text{shot}}$ "
+         r"& V$_0$ & V$_5$ & T$_5$ & $\Delta_{\text{prompt}}$ & T$_{10}$ & $\Delta_{\text{shot}}$ \\"),
         r"\midrule",
     ]
     for model, per_metric in table_rows:
-        all_vals = []
-        for vzs, v5, t10, d in per_metric:
-            all_vals += [vzs, v5, t10, d]
-        all_strs = [fmt_v(v) if i % 4 != 3 else fmt_d(v) for i, v in enumerate(all_vals)]
-        # Bold column max
         cells_out = []
-        for ci, (s, v) in enumerate(zip(all_strs, all_vals)):
-            mxv = col_max[ci]
-            if v is not None and mxv is not None and abs(v - mxv) < 1e-9:
-                s = r"\textbf{" + s + r"}"
-            cells_out.append(s)
+        ci = 0
+        for vals in per_metric:
+            for slot, v in enumerate(vals):
+                s = fmt_d(v) if slot in DELTA_COL_IDX else fmt_v(v)
+                mxv = col_max[ci]
+                if v is not None and mxv is not None and abs(v - mxv) < 1e-9:
+                    s = r"\textbf{" + s + r"}"
+                cells_out.append(s)
+                ci += 1
         disp = MODEL_DISP.get(model, model)
         lines.append(f"{disp} & " + " & ".join(cells_out) + r" \\")
 
@@ -1011,17 +1020,23 @@ def build_prompt_engineering_open(rows, metric=None):
          r"\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. "
          r"V$_0$: vanilla 0-shot (\texttt{basic}); "
          r"V$_5$: vanilla 5-shot (\texttt{few\_shot}, random retrieval); "
-         r"T$_{10}$: \texttt{template5\_10shot} (the locked body "
-         r"configuration); $\Delta$: lift over V$_5$. The metric-pair "
-         r"layout exposes the COMET~$\gg$~chrF degeneration signal: "
-         r"AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B post "
-         r"large positive $\Delta$ COMET but negative $\Delta$ chrF "
-         r"(-21.7 / -5.9 / -23.9), indicating that the templated prompt "
-         r"is off-distribution for those models and the resulting "
-         r"outputs are fluent off-target generations rather than real "
-         r"translations. The other four open LLMs (Gemma2-9B, "
-         r"Llama3-8B, Tiny-Aya-E, Tiny-Aya-G) gain or hold steady on "
-         r"both metrics. \textbf{Bold}: column maximum.}"),
+         r"T$_5$ / T$_{10}$: \texttt{template5} at 5 / 10 shots. "
+         r"$\Delta_{\text{prompt}} = $T$_5 - $V$_5$ isolates the "
+         r"prompt-format effect at fixed shot count; "
+         r"$\Delta_{\text{shot}} = $T$_{10} - $T$_5$ isolates the "
+         r"shot-count effect at fixed template. Only Llama3-8B and "
+         r"Gemma2-9B-IT have T$_5$ data among the open LLMs (the other "
+         r"five show \texttt{--} for T$_5$ and the deltas). For both "
+         r"clean rows the prompt-format jump is large (5--10 COMET) "
+         r"while the shot jump is small ($\le 1.5$ COMET), indicating "
+         r"most of the gain in T$_{10}$ comes from templating rather "
+         r"than from going to 10 shots. The COMET~$\gg$~chrF "
+         r"divergence on AfriqueLlama-8B, AfriqueQwen-8B, and "
+         r"TranslateGemma-12B exposes a degeneration signal: their "
+         r"chrF V$_5\to$T$_{10}$ deltas are large negatives "
+         r"($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target "
+         r"generations rather than real translations. \textbf{Bold}: "
+         r"column maximum.}"),
         r"\label{tab:prompt_engineering_open}",
         r"\end{table*}",
     ]
