@@ -1,0 +1,22 @@
+% ---- prompt_engineering_open_chrf ----
+\begin{table}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Model} & \textbf{Vanilla} & \textbf{Vanilla} & \textbf{template5} & \textbf{$\Delta$} \\
+  & 0-shot & 5-shot & 10-shot & vs.\ 5-shot \\
+\midrule
+AfriqueLlama-8B & 25.0 & 29.0 & 7.3 & -21.7 \\
+AfriqueQwen-8B & 11.3 & 17.9 & 12.0 & -5.9 \\
+Gemma2-9B & 26.2 & 30.6 & \textbf{34.9} & \textbf{+4.4} \\
+Llama3-8B & 20.9 & 24.6 & 27.7 & +3.1 \\
+Tiny-Aya-E & 30.9 & 35.9 & 34.0 & -1.9 \\
+Tiny-Aya-G & 30.8 & 35.6 & 33.8 & -1.9 \\
+TranslateGemma-12B & \textbf{32.9} & \textbf{36.1} & 12.2 & -23.9 \\
+\bottomrule
+\end{tabular}
+\caption{Vanilla vs.\ templated ICL on the seven open LLMs (bidirectional avg chrF over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$). Vanilla rows use the \texttt{basic} / \texttt{few\_shot} prompt (random retrieval at 5-shot); the templated column is the locked body configuration \texttt{template5\_10shot}. The $\Delta$ column shows the lift over the vanilla 5-shot baseline. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B post large $\Delta$ COMET but degenerate at the templated prompt (their ChrF row in the chrF mirror is near-zero), so the COMET gain reflects fluent off-target generations rather than a real translation improvement; their vanilla numbers are the truer signal. \textbf{Bold}: column maximum.}
+\label{tab:prompt_engineering_open_chrf}
+\end{table}

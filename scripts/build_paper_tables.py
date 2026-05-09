@@ -487,18 +487,23 @@ def build_main_zs_ft(rows, metric):
 
 
 def build_open_vs_closed_icl(rows, metric):
-    """**Main paper Table 2.** Closed-API zero-shot + 5-shot ICL alongside
-    per-model open-LLM 5-shot ICL. Open-LLM per-model zero-shot rows are
-    deliberately omitted (they appear in Table 1); a single per-cell
-    \"Best open\" row keeps the zero-shot block readable as a baseline
-    against the closed APIs.
+    """**Main paper Table 2.** Closed-API zero-shot + ICL alongside
+    per-model open-LLM ICL, all at the locked universal config
+    (template5, 10 shots, T=0). Open-LLM zero-shot rows live in
+    Table 1; a single per-cell \"Best open\" row keeps the zero-shot
+    block readable as a baseline against the closed APIs.
+
+    Three open LLMs (AfriqueLlama-8B, AfriqueQwen-8B,
+    TranslateGemma-12B) degenerate at template5_10shot (visible as
+    COMET >> ChrF in their rows) -- that's an honest result of running
+    the same prompt across all models. Vanilla-vs-templated ablation is
+    in the appendix table prompt_engineering_open.
     """
     metric_label = "chrF" if metric == "chrf" else "COMET"
-    # Open-weight LLMs include TranslateGemma-12B in zero-shot and ICL
-    # (we evaluate it but don't fine-tune it — same convention as Table 1).
     open_models = ["llama3_8b", "gemma2_9b_it", "afriquellama_8b",
                    "afriqueqwen_8b", "tiny_aya_earth", "tiny_aya_global",
                    "translategemma_12b"]
+    HEADLINE_STRATEGY = "template5_10shot"  # locked 2026-05-08
 
     def by_disp(model_list):
         return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
@@ -508,14 +513,14 @@ def build_open_vs_closed_icl(rows, metric):
                       experiment_type="llm_zero_shot", is_ablation="False")
 
     def llm_icl(model):
-        # GPT-4o eng-X via 5shot_semantic, X-eng via 5shot; Gemini + open
-        # LLMs cover all 12 pairs with 5shot.
-        return first_with_pred(rows, metric=metric, candidates=[
-            dict(experiment_type="llm_icl", prompt_strategy="icl_5shot",
-                 model_short=model, is_ablation="False"),
-            dict(experiment_type="llm_icl", prompt_strategy="icl_5shot_semantic",
-                 model_short=model, is_ablation="False"),
-        ])
+        # No is_ablation filter: template5_10shot for the 4 reference models
+        # came from the prompt-engineering sweep (tagged is_ablation=True),
+        # while the 3 newly-rerun open LLMs are tagged False. We're now
+        # promoting template5_10shot to the headline body config across the
+        # board, so the ablation tag is irrelevant for this lookup.
+        return lookup(rows, metric=metric, model_short=model,
+                      experiment_type="llm_icl",
+                      prompt_strategy=HEADLINE_STRATEGY)
 
     def best_open_zs():
         out = {p: None for p in PAIRS}
@@ -537,13 +542,22 @@ def build_open_vs_closed_icl(rows, metric):
     return render_grouped_table(
         label=f"tab:open_vs_closed_icl_{'chrf' if metric=='chrf' else 'comet'}",
         caption=("Open vs. closed-source LLMs at sentence-level "
-                 f"in-context learning ({metric_label}). "
-                 "\\textit{Best open} rows are the per-language best "
-                 "performances across the seven open LLMs in "
+                 f"in-context learning ({metric_label}), all rows at the "
+                 "uniform \\texttt{template5\\_10shot} configuration "
+                 "(see \\Cref{tab:template_shot_ablation_" +
+                 ("chrf" if metric == "chrf" else "comet") + "} for the "
+                 "template/shot ablation that selected this config). "
+                 "\\textit{Best open} in the zero-shot block is the "
+                 "per-cell maximum across the seven open LLMs in "
                  "\\Cref{tab:main_zs_ft_" +
                  ("chrf" if metric == "chrf" else "comet") + "}. "
+                 "AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B "
+                 "degenerate at this prompt (visible as COMET~$\\gg$~ChrF in "
+                 "their rows); see \\Cref{tab:prompt_engineering_open_" +
+                 ("chrf" if metric == "chrf" else "comet") + "} for their "
+                 "vanilla-prompt baseline. "
                  "\\textbf{Bold}: best performance across "
-                 "\\textit{zero-shot} and \\textit{5-shot ICL}; "
+                 "\\textit{zero-shot} and \\textit{ICL}; "
                  "\\emph{italic}: best performance within open or closed "
                  "model group."),
         major_groups=[
@@ -551,7 +565,7 @@ def build_open_vs_closed_icl(rows, metric):
                 (None, [("best_open", vec(best_open_zs()))]),
                 (None, closed_zs_rows),
             ]),
-            ("5-shot ICL", [
+            ("template5, 10-shot ICL", [
                 (None, closed_icl_rows),
                 (None, open_icl_rows),
             ]),
@@ -888,6 +902,109 @@ def build_template_shot_ablation(rows, metric):
     return "\n".join(lines) + "\n"
 
 
+def build_prompt_engineering_open(rows, metric):
+    """**Appendix.** Per-open-LLM vanilla vs. templated ICL ablation.
+
+    Three columns of data per model: vanilla 0-shot (basic template),
+    vanilla 5-shot (basic template + random retrieval), and
+    template5_10shot (the locked uniform body config). Plus a delta
+    column showing the lift over vanilla 5-shot. Bidirectional avg
+    over the 12 lang pairs.
+
+    Three rows show the COMET-much-greater-than-ChrF degeneration
+    signature: AfriqueLlama-8B, AfriqueQwen-8B, TranslateGemma-12B.
+    These models are off-distribution for template5 and recover with
+    their vanilla prompt (already documented as
+    docs/PAPER_TODOS.md "2026-05-09 -- Open-LLM templated rerun").
+    """
+    metric_label = "chrF" if metric == "chrf" else "COMET"
+    OPEN = ["afriquellama_8b", "afriqueqwen_8b", "gemma2_9b_it",
+            "llama3_8b", "tiny_aya_earth", "tiny_aya_global",
+            "translategemma_12b"]
+
+    def by_disp(model_list):
+        return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
+
+    def avg_(d):
+        nums = [v for v in d.values() if v is not None]
+        return sum(nums) / len(nums) if nums else None
+
+    def pull_zs(model):
+        return lookup(rows, metric=metric, model_short=model,
+                      experiment_type="llm_zero_shot", is_ablation="False")
+
+    def pull_icl(model, strategy):
+        # See note in build_open_vs_closed_icl: template5_10shot is tagged
+        # is_ablation=True for the 4 reference models (legacy from when it
+        # was an ablation), False for the 3 newly-rerun ones. Drop the filter.
+        return lookup(rows, metric=metric, model_short=model,
+                      experiment_type="llm_icl",
+                      prompt_strategy=strategy)
+
+    table_rows = []   # (model, vzs_avg, v5_avg, t10_avg, delta)
+    for m in by_disp(OPEN):
+        vzs = avg_(pull_zs(m))
+        v5  = avg_(pull_icl(m, "icl_5shot"))
+        t10 = avg_(pull_icl(m, "template5_10shot"))
+        delta = (t10 - v5) if (t10 is not None and v5 is not None) else None
+        table_rows.append((m, vzs, v5, t10, delta))
+
+    # Column maxes for bolding (across models, per column)
+    cols = list(zip(*[(r[1], r[2], r[3], r[4]) for r in table_rows]))
+    col_max = [max((v for v in c if v is not None), default=None) for c in cols]
+
+    def fmt_v(v):
+        return "--" if v is None else f"{v:.1f}"
+    def fmt_d(v):
+        return "--" if v is None else f"{v:+.1f}"
+
+    lines = [
+        f"% ---- prompt_engineering_open_{'chrf' if metric=='chrf' else 'comet'} ----",
+        r"\begin{table}[t]",
+        r"\centering",
+        r"\small",
+        r"\renewcommand{\arraystretch}{1.05}",
+        r"\begin{tabular}{lrrrr}",
+        r"\toprule",
+        (r"\textbf{Model} & \textbf{Vanilla} & \textbf{Vanilla} & "
+         r"\textbf{template5} & \textbf{$\Delta$} \\"),
+        r"  & 0-shot & 5-shot & 10-shot & vs.\ 5-shot \\",
+        r"\midrule",
+    ]
+    for m, vzs, v5, t10, delta in table_rows:
+        cells = [fmt_v(vzs), fmt_v(v5), fmt_v(t10), fmt_d(delta)]
+        cells_b = []
+        for ci, (s, mxv) in enumerate(zip(cells, col_max)):
+            v = (vzs, v5, t10, delta)[ci]
+            if v is not None and mxv is not None and abs(v - mxv) < 1e-9:
+                s = r"\textbf{" + s + r"}"
+            cells_b.append(s)
+        disp = MODEL_DISP.get(m, m)
+        lines.append(f"{disp} & " + " & ".join(cells_b) + r" \\")
+
+    lines += [
+        r"\bottomrule",
+        r"\end{tabular}",
+        (r"\caption{Vanilla vs.\ templated ICL on the seven open LLMs "
+         f"(bidirectional avg {metric_label} over the 12 \\texttt{{eng}}"
+         r"$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$). "
+         r"Vanilla rows use the \texttt{basic} / \texttt{few\_shot} "
+         r"prompt (random retrieval at 5-shot); the templated column "
+         r"is the locked body configuration "
+         r"\texttt{template5\_10shot}. The $\Delta$ column shows the "
+         r"lift over the vanilla 5-shot baseline. AfriqueLlama-8B, "
+         r"AfriqueQwen-8B, and TranslateGemma-12B post large $\Delta$ "
+         r"COMET but degenerate at the templated prompt (their ChrF "
+         r"row in the chrF mirror is near-zero), so the COMET gain "
+         r"reflects fluent off-target generations rather than a real "
+         r"translation improvement; their vanilla numbers are the "
+         r"truer signal. \textbf{Bold}: column maximum.}"),
+        r"\label{tab:prompt_engineering_open_" + ("chrf" if metric == "chrf" else "comet") + "}",
+        r"\end{table}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 # ---------------- main ----------------
 
 def main():
@@ -902,6 +1019,7 @@ def main():
         ("doc",                build_doc),
         ("closed_ablations",   build_closed_ablations),
         ("template_shot_ablation", build_template_shot_ablation),
+        ("prompt_engineering_open", build_prompt_engineering_open),
     ]
     written = []
     for name, fn in builders:

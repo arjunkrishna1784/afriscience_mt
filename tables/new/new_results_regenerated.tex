@@ -106,21 +106,21 @@ Best open & \emph{28.1} & \emph{52.5} & \emph{17.7} & \emph{23.7} & \emph{14.5} 
 Gemini-1.5 & \textbf{36.4} & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & \textbf{58.5} & 56.7 & 47.6 & 52.1 & 42.0 & 60.3 & 46.4 \\
 GPT-4o & 21.1 & \textbf{58.0} & \textbf{41.9} & \textbf{47.3} & \textbf{16.3} & \textbf{58.5} & 53.0 & \textbf{60.7} & \textbf{51.1} & \textbf{58.5} & \textbf{49.0} & \textbf{65.8} & \textbf{48.4} \\
 \midrule\midrule
-\multicolumn{14}{l}{\textit{5-shot ICL}} \\
+\multicolumn{14}{l}{\textit{template5, 10-shot ICL}} \\
 \midrule
-Gemini-1.5 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
-GPT-4o & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+Gemini-1.5 & \textbf{39.5} & 57.7 & 41.0 & 50.9 & \textbf{22.2} & 49.5 & \textbf{59.7} & 59.1 & 49.1 & 55.6 & 46.7 & 62.7 & 49.5 \\
+GPT-4o & 31.1 & \textbf{60.7} & \textbf{47.0} & \textbf{53.4} & 21.2 & \textbf{60.5} & 53.4 & \textbf{61.1} & \textbf{51.8} & \textbf{59.4} & \textbf{50.5} & \textbf{66.0} & \textbf{51.3} \\
 \midrule
-AfriqueLlama-8B & 25.2 & 33.2 & 20.6 & 27.2 & 23.7 & 32.7 & 44.8 & 31.7 & 22.9 & 26.3 & 27.4 & 32.7 & 29.0 \\
-AfriqueQwen-8B & 12.1 & 30.1 & 14.1 & 14.3 & 11.0 & 23.1 & 20.8 & 21.3 & 14.5 & 10.1 & 18.9 & 24.5 & 17.9 \\
-Gemma2-9B & 12.1 & 37.2 & 11.9 & 20.7 & 11.0 & 24.0 & 43.9 & 51.7 & \textbf{35.5} & \textbf{37.7} & 30.2 & 51.0 & 30.6 \\
-Llama3-8B & 9.2 & 30.1 & 15.5 & 17.4 & 14.8 & 16.9 & 29.0 & 43.7 & 29.9 & 28.7 & 25.9 & 33.7 & 24.6 \\
-Tiny-Aya-E & \textbf{30.2} & 56.0 & 10.0 & 12.7 & 19.0 & \textbf{51.7} & 52.8 & \textbf{55.6} & 24.8 & 21.9 & \textbf{37.1} & \textbf{58.9} & 35.9 \\
-Tiny-Aya-G & 29.9 & \textbf{56.3} & 10.0 & 12.0 & 19.2 & 51.6 & 52.2 & 55.0 & 24.4 & 21.9 & 36.4 & 58.6 & 35.6 \\
-TranslateGemma-12B & 26.2 & 45.4 & \textbf{23.1} & \textbf{32.2} & \textbf{23.9} & 43.8 & \textbf{55.4} & 49.3 & 35.2 & 33.2 & 32.5 & 33.1 & \textbf{36.1} \\
+AfriqueLlama-8B & 2.7 & 9.4 & 8.9 & 10.6 & 6.3 & 9.8 & 1.1 & 7.8 & 6.8 & 7.4 & 7.1 & 9.6 & 7.3 \\
+AfriqueQwen-8B & 6.7 & 16.4 & 11.3 & 12.5 & 7.5 & 14.7 & 15.6 & 13.7 & 10.5 & 9.7 & 11.5 & 14.0 & 12.0 \\
+Gemma2-9B & 16.0 & 44.6 & 16.7 & 28.1 & 17.4 & 30.4 & 45.5 & \emph{52.7} & \emph{38.3} & \emph{42.1} & 35.2 & 52.3 & \emph{34.9} \\
+Llama3-8B & 8.8 & 34.6 & \emph{25.5} & \emph{28.9} & \emph{21.5} & 25.8 & 30.3 & 43.6 & 30.9 & 22.0 & 27.1 & 33.5 & 27.7 \\
+Tiny-Aya-E & 27.3 & \emph{51.6} & 8.5 & 8.0 & 14.7 & \emph{47.1} & \emph{51.0} & 51.9 & 26.2 & 24.2 & \emph{42.5} & \emph{55.3} & 34.0 \\
+Tiny-Aya-G & \emph{27.6} & 51.3 & 8.2 & 8.0 & 14.8 & 46.9 & 50.7 & 51.2 & 25.6 & 23.9 & 42.0 & 55.0 & 33.8 \\
+TranslateGemma-12B & 6.6 & 25.9 & 15.5 & 19.0 & 11.9 & 26.9 & 0.5 & 10.5 & 7.8 & 7.5 & 3.6 & 11.1 & 12.2 \\
 \bottomrule
 \end{tabular}
-\caption{Open vs. closed-source LLMs at sentence-level in-context learning (chrF). \textit{Best open} rows are the per-language best performances across the seven open LLMs in \Cref{tab:main_zs_ft_chrf}. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{5-shot ICL}; \emph{italic}: best performance within open or closed model group.}
+\caption{Open vs. closed-source LLMs at sentence-level in-context learning (chrF), all rows at the uniform \texttt{template5\_10shot} configuration (see \Cref{tab:template_shot_ablation_chrf} for the template/shot ablation that selected this config). \textit{Best open} in the zero-shot block is the per-cell maximum across the seven open LLMs in \Cref{tab:main_zs_ft_chrf}. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B degenerate at this prompt (visible as COMET~$\gg$~ChrF in their rows); see \Cref{tab:prompt_engineering_open_chrf} for their vanilla-prompt baseline. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{ICL}; \emph{italic}: best performance within open or closed model group.}
 \label{tab:open_vs_closed_icl_chrf}
 \end{table*}
 
@@ -142,21 +142,21 @@ Best open & \emph{35.7} & \emph{36.2} & \emph{42.2} & \emph{40.4} & \emph{40.4} 
 Gemini-1.5 & \textbf{57.9} & 55.8 & 59.4 & 62.2 & \textbf{57.5} & 53.9 & \textbf{62.6} & 61.4 & 58.1 & 59.8 & 54.8 & 60.8 & \textbf{58.7} \\
 GPT-4o & 39.4 & \textbf{56.8} & \textbf{60.7} & \textbf{62.6} & 54.6 & \textbf{58.3} & 60.5 & \textbf{62.3} & \textbf{59.3} & \textbf{62.0} & \textbf{57.8} & \textbf{62.1} & 58.0 \\
 \midrule\midrule
-\multicolumn{14}{l}{\textit{5-shot ICL}} \\
+\multicolumn{14}{l}{\textit{template5, 10-shot ICL}} \\
 \midrule
-Gemini-1.5 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
-GPT-4o & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+Gemini-1.5 & \textbf{64.9} & 62.5 & 67.0 & 68.5 & 64.6 & 62.2 & \textbf{68.7} & 67.9 & 65.6 & 67.5 & 64.5 & 67.6 & \textbf{66.0} \\
+GPT-4o & 54.9 & \textbf{62.7} & \textbf{68.5} & \textbf{68.6} & \textbf{65.5} & \textbf{64.8} & 67.2 & \textbf{68.4} & \textbf{66.3} & \textbf{68.4} & \textbf{65.6} & \textbf{68.3} & 65.8 \\
 \midrule
-AfriqueLlama-8B & 35.8 & 37.7 & \textbf{43.2} & \textbf{41.7} & 41.0 & 38.7 & 36.0 & 36.1 & 42.6 & 39.9 & 39.2 & 36.9 & 39.1 \\
-AfriqueQwen-8B & 33.7 & 32.1 & 38.0 & 36.8 & 38.0 & 32.2 & 33.8 & 32.5 & 35.4 & 36.4 & 35.6 & 31.6 & 34.7 \\
-Gemma2-9B & 34.9 & 36.8 & 39.6 & 40.4 & 35.2 & 36.7 & 41.6 & 39.5 & 43.1 & 42.9 & 41.5 & 40.3 & 39.4 \\
-Llama3-8B & 22.4 & 30.5 & 38.4 & 34.8 & 28.4 & 28.1 & 40.2 & 38.1 & 41.6 & 41.3 & 41.0 & 37.0 & 35.2 \\
-Tiny-Aya-E & 37.2 & 32.6 & 34.3 & 32.7 & 39.4 & 34.5 & 46.6 & 42.8 & 42.6 & 43.6 & 47.2 & \textbf{66.4} & 41.6 \\
-Tiny-Aya-G & \textbf{37.5} & \textbf{60.3} & 33.6 & 32.4 & \textbf{48.2} & \textbf{49.3} & 46.9 & \textbf{44.0} & \textbf{44.6} & \textbf{45.8} & \textbf{50.2} & 66.3 & \textbf{46.6} \\
-TranslateGemma-12B & 29.0 & 29.7 & 37.5 & 36.6 & 36.2 & 32.3 & \textbf{52.3} & 38.4 & 39.4 & 37.7 & 44.4 & 37.0 & 37.6 \\
+AfriqueLlama-8B & 50.1 & 49.0 & 48.7 & 49.1 & 49.8 & 48.5 & 36.6 & 50.4 & 53.6 & 52.4 & 47.1 & 50.4 & 48.8 \\
+AfriqueQwen-8B & 43.8 & 42.9 & 41.2 & 44.0 & 47.8 & 43.5 & 42.8 & 41.3 & 43.0 & 43.5 & 44.4 & 41.0 & 43.3 \\
+Gemma2-9B & 33.7 & 50.4 & 37.5 & 40.4 & 35.1 & 40.0 & 64.1 & \emph{66.3} & \emph{61.3} & \emph{63.0} & 60.4 & 65.1 & 51.4 \\
+Llama3-8B & 25.9 & 36.1 & 44.2 & 40.2 & 38.5 & 32.8 & 56.5 & 63.4 & 56.9 & 54.8 & 57.2 & 56.9 & 46.9 \\
+Tiny-Aya-E & 55.6 & \emph{56.7} & 36.8 & 31.7 & 61.4 & 59.0 & \emph{66.3} & 66.0 & 50.3 & 50.4 & \emph{63.4} & \emph{66.2} & \emph{55.3} \\
+Tiny-Aya-G & \emph{55.8} & 56.1 & 35.9 & 30.6 & \emph{61.7} & \emph{59.2} & 66.2 & 66.0 & 50.6 & 50.2 & 63.3 & 66.1 & 55.1 \\
+TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.2 & 39.2 & 45.8 & 43.6 & 31.6 & 39.4 & 45.7 \\
 \bottomrule
 \end{tabular}
-\caption{Open vs. closed-source LLMs at sentence-level in-context learning (COMET). \textit{Best open} rows are the per-language best performances across the seven open LLMs in \Cref{tab:main_zs_ft_comet}. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{5-shot ICL}; \emph{italic}: best performance within open or closed model group.}
+\caption{Open vs. closed-source LLMs at sentence-level in-context learning (COMET), all rows at the uniform \texttt{template5\_10shot} configuration (see \Cref{tab:template_shot_ablation_comet} for the template/shot ablation that selected this config). \textit{Best open} in the zero-shot block is the per-cell maximum across the seven open LLMs in \Cref{tab:main_zs_ft_comet}. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B degenerate at this prompt (visible as COMET~$\gg$~ChrF in their rows); see \Cref{tab:prompt_engineering_open_comet} for their vanilla-prompt baseline. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{ICL}; \emph{italic}: best performance within open or closed model group.}
 \label{tab:open_vs_closed_icl_comet}
 \end{table*}
 
@@ -671,3 +671,49 @@ GPT-4o & 10-shot (template3) $T{=}0.6$ & 51.9 & 62.8 & 67.8 & 68.1 & 64.6 & 65.2
 \caption{Template/shot ablation for the four reference models with bidirectional templated coverage at $T{=}0$ (COMET). Each row is a (template, shot-count) configuration (template number first, shot count as subscript $s$); the underlined row \texttt{5}$_{s=10}$ is the project-wide locked configuration (see \texttt{docs/PAPER\_TODOS.md} ``2026-05-08 -- DECISION''). \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations. 50-shot is banned project-wide; 20-shot is included so the plateau past 10-shot is visible -- the gain from 10$\to$20 shots is at most $0.2$ COMET, far below our $1$-COMET adoption threshold.}
 \label{tab:template_shot_ablation_comet}
 \end{table*}
+
+% ---- prompt_engineering_open_chrf ----
+\begin{table}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Model} & \textbf{Vanilla} & \textbf{Vanilla} & \textbf{template5} & \textbf{$\Delta$} \\
+  & 0-shot & 5-shot & 10-shot & vs.\ 5-shot \\
+\midrule
+AfriqueLlama-8B & 25.0 & 29.0 & 7.3 & -21.7 \\
+AfriqueQwen-8B & 11.3 & 17.9 & 12.0 & -5.9 \\
+Gemma2-9B & 26.2 & 30.6 & \textbf{34.9} & \textbf{+4.4} \\
+Llama3-8B & 20.9 & 24.6 & 27.7 & +3.1 \\
+Tiny-Aya-E & 30.9 & 35.9 & 34.0 & -1.9 \\
+Tiny-Aya-G & 30.8 & 35.6 & 33.8 & -1.9 \\
+TranslateGemma-12B & \textbf{32.9} & \textbf{36.1} & 12.2 & -23.9 \\
+\bottomrule
+\end{tabular}
+\caption{Vanilla vs.\ templated ICL on the seven open LLMs (bidirectional avg chrF over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$). Vanilla rows use the \texttt{basic} / \texttt{few\_shot} prompt (random retrieval at 5-shot); the templated column is the locked body configuration \texttt{template5\_10shot}. The $\Delta$ column shows the lift over the vanilla 5-shot baseline. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B post large $\Delta$ COMET but degenerate at the templated prompt (their ChrF row in the chrF mirror is near-zero), so the COMET gain reflects fluent off-target generations rather than a real translation improvement; their vanilla numbers are the truer signal. \textbf{Bold}: column maximum.}
+\label{tab:prompt_engineering_open_chrf}
+\end{table}
+
+% ---- prompt_engineering_open_comet ----
+\begin{table}[t]
+\centering
+\small
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Model} & \textbf{Vanilla} & \textbf{Vanilla} & \textbf{template5} & \textbf{$\Delta$} \\
+  & 0-shot & 5-shot & 10-shot & vs.\ 5-shot \\
+\midrule
+AfriqueLlama-8B & 37.8 & 39.1 & 48.8 & +9.8 \\
+AfriqueQwen-8B & 33.7 & 34.7 & 43.3 & +8.6 \\
+Gemma2-9B & \textbf{39.4} & 39.4 & 51.4 & +12.1 \\
+Llama3-8B & 34.9 & 35.2 & 46.9 & +11.8 \\
+Tiny-Aya-E & 36.4 & 41.6 & \textbf{55.3} & \textbf{+13.7} \\
+Tiny-Aya-G & 36.3 & \textbf{46.6} & 55.1 & +8.6 \\
+TranslateGemma-12B & 37.7 & 37.6 & 45.7 & +8.2 \\
+\bottomrule
+\end{tabular}
+\caption{Vanilla vs.\ templated ICL on the seven open LLMs (bidirectional avg COMET over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$). Vanilla rows use the \texttt{basic} / \texttt{few\_shot} prompt (random retrieval at 5-shot); the templated column is the locked body configuration \texttt{template5\_10shot}. The $\Delta$ column shows the lift over the vanilla 5-shot baseline. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B post large $\Delta$ COMET but degenerate at the templated prompt (their ChrF row in the chrF mirror is near-zero), so the COMET gain reflects fluent off-target generations rather than a real translation improvement; their vanilla numbers are the truer signal. \textbf{Bold}: column maximum.}
+\label{tab:prompt_engineering_open_comet}
+\end{table}

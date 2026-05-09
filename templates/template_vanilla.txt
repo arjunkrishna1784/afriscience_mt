@@ -1,0 +1,8 @@
+Translate {src_lang} scientific texts to {tgt_lang}.
+
+Examples:
+{examples}
+
+Now translate:
+{src_lang}: {src_text}
+{tgt_lang}:
