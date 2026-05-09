@@ -861,6 +861,52 @@ The .pdf files were generated when `SHOTS=[0,5,10,20,50]` in
 correct shot range. After regeneration, replace the .pdfs in the
 overleaf project so the rendered figure matches the new caption.
 
+### Spider plot (`fig:spider_per_pair`) -- GPT-4o config drift
+
+**Status:** ACTION REQUIRED. The spider PDFs at
+`figures/new/spider_per_pair/{comet,chrf}/<pair>.pdf` were rendered
+from GPT-4o's *per-domain* SSA-COMET data, which only exists for
+`template3_5shot` (xxx-eng at T=0; eng-xxx at T=0.6 because the
+T=0 eng-xxx templated runs landed only after the spider rescore).
+The legend (line 194) and caption (line 197) of
+`appendix_plots_and_tables.tex` accurately describe the rendered
+data ("GPT-4o (5-shot ICL, template 3)") but disagree with the
+body Table~2 config (`template5_10shot`) for that model.
+
+Pick one fix:
+
+1. **Text-only fix (cheaper).** Leave the spider data as-is; clarify
+   in the caption that the GPT-4o panel uses an earlier
+   `template3_5shot` configuration retained for the per-domain
+   rescore. One sentence in the caption:
+   *"The GPT-4o panel uses the earlier `template3_5shot` setup
+   that was rescored per-domain; differs from the headline
+   `template5_10shot` in Table~\ref{tab:open_vs_closed_icl_comet}
+   by $\le$ 0.2 COMET on average."*
+2. **Data fix (cleaner, needs GPU).** Run
+   `python scripts/rescore_per_domain_ssa.py --src
+   experiments/llm/closed/t0/icl/gpt4o/template5_10shot` on a box
+   with the SSA-COMET model. Then re-render the spider PDFs (the
+   spider build script reads from the per-domain field). Update the
+   legend/caption accordingly:
+
+   - Line 194: `\textcolor{spcGPT}{\textbf{$\cdot\cdot\cdot$}}
+     GPT-4o (5-shot ICL)` $\to$ `... GPT-4o (10-shot ICL, template5)`
+   - Line 197: `GPT-4o (5-shot ICL, template 3)` $\to$
+     `GPT-4o (10-shot ICL, template5)`
+
+   The same per-domain rescore should ideally cover Gemini-1.5
+   `template5_10shot` too if Gemini shows up in any future spider
+   variant.
+
+We have per-domain data already for:
+- NLLB-1.3B FT (`experiments/seq2seq/finetune/nllb_200_1_3b/dcs`)
+- Gemma2-9B-IT LoRA r=64 (`experiments/llm/open/finetune/gemma2_9b_it/r64`)
+- GPT-4o `template3_5shot` (T=0 xxx-eng + T=0.6 eng-xxx)
+
+Missing per-domain data: GPT-4o `template5_10shot` (the locked body
+config).
+
 ---
 
 ## How to add a new bookmark
