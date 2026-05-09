@@ -186,7 +186,10 @@ def write_canonical(*, out_dir: Path, model_name: str, short_name: str,
                     src: str, tgt: str, template: int, shots: int,
                     temp: float, hyps: list[str], system_constant: bool,
                     prompt_source_model: str, prompt_source_temp: float,
-                    metrics: dict | None = None) -> None:
+                    metrics: dict | None = None,
+                    anti_degeneration: bool = False,
+                    rep_penalty: float | None = None,
+                    freq_penalty: float | None = None) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     pair = f"{src}-{tgt}"
     strategy = f"template{template}_{shots}shot"
@@ -234,6 +237,9 @@ def write_canonical(*, out_dir: Path, model_name: str, short_name: str,
             "system_constant_per_tsv": system_constant,
             "comet_metric": "ssa-comet",
             "needs_eval": metrics is None,
+            "anti_degeneration": anti_degeneration,
+            "rep_penalty": rep_penalty,
+            "freq_penalty": freq_penalty,
         },
     }, indent=2, ensure_ascii=False))
 
@@ -269,6 +275,19 @@ def main() -> int:
                     help="skip configs whose results.json already exists.")
     ap.add_argument("--skip-scoring", action="store_true",
                     help="write predictions only; defer ChrF + SSA-COMET.")
+    ap.add_argument("--anti-degeneration", action="store_true",
+                    help="apply anti-degeneration decoding controls "
+                         "(repetition_penalty, frequency_penalty, explicit "
+                         "chat-template stop tokens). Recommended for models "
+                         "that produce empty/echo/wrong-language outputs at "
+                         "default decoding (caught for AfriqueLlama, "
+                         "AfriqueQwen, TranslateGemma at template5_10shot on "
+                         "2026-05-09; same fix family as Tiny-Aya-G).")
+    ap.add_argument("--rep-penalty", type=float, default=1.08,
+                    help="vLLM repetition_penalty (only when --anti-degeneration). "
+                         "Default 1.08 (soft, matches the locked Tiny-Aya-G fix).")
+    ap.add_argument("--freq-penalty", type=float, default=0.0,
+                    help="vLLM frequency_penalty (only when --anti-degeneration).")
     args = ap.parse_args()
 
     if args.shots > 20:
@@ -317,6 +336,27 @@ def main() -> int:
     # Lazy-import vLLM only now (so --help works without it).
     from afriscience_mt.inference.vllm_client import VLLMClient
 
+    if args.anti_degeneration:
+        print(f"  anti-degeneration ON: rep_penalty={args.rep_penalty} "
+              f"freq_penalty={args.freq_penalty} + chat-template stop tokens")
+
+    def _collect_stop_token_ids(tokenizer) -> list[int]:
+        """End-of-turn ids for common chat templates plus standard EOS."""
+        ids: list[int] = []
+        if getattr(tokenizer, "eos_token_id", None) is not None:
+            ids.append(tokenizer.eos_token_id)
+        for cand in ("<|END_OF_TURN_TOKEN|>", "<|end_of_turn|>",
+                     "<end_of_turn>", "<|im_end|>", "<|eot_id|>"):
+            try:
+                tid = tokenizer.convert_tokens_to_ids(cand)
+            except Exception:
+                continue
+            if (tid is not None and tid >= 0
+                    and tid != getattr(tokenizer, "unk_token_id", -1)
+                    and tid not in ids):
+                ids.append(tid)
+        return ids
+
     t0 = time.time()
     for short_name in models:
         model_name = DEFAULT_MODELS[short_name]
@@ -330,6 +370,21 @@ def main() -> int:
             max_new_tokens=args.max_new_tokens,
             trust_remote_code=True,
         )
+
+        # Build anti-degen SamplingParams once per model (uses tokenizer's stop ids).
+        anti_degen_sp = None
+        if args.anti_degeneration:
+            from vllm import SamplingParams
+            stop_ids = _collect_stop_token_ids(client._tokenizer)
+            anti_degen_sp = SamplingParams(
+                temperature=args.temperature, top_p=1.0,
+                max_tokens=args.max_new_tokens,
+                repetition_penalty=args.rep_penalty,
+                frequency_penalty=args.freq_penalty,
+                stop_token_ids=stop_ids,
+                skip_special_tokens=True,
+            )
+            print(f"  stop_token_ids for {short_name}: {stop_ids}")
 
         for pair in pairs:
             if pair not in prompts_per_pair:
@@ -347,23 +402,35 @@ def main() -> int:
             ts = time.time()
             print(f"  [{pair}] generating {len(ps)} prompts ...")
 
-            # Send proper system+user when system is constant across the TSV;
-            # otherwise flatten so prompt content stays byte-identical.
+            # Build the formatted prompts (system+user when constant, else flat).
             if sys_const and ps[0][0]:
-                user_only = [u for _, u in ps]
-                hyps = client.generate_batch(
-                    prompts=user_only,
-                    system_prompt=ps[0][0],
-                    max_new_tokens=args.max_new_tokens,
-                    temperature=args.temperature,
-                )
+                formatted = [client._format_prompt(u, system_prompt=ps[0][0])
+                             for _, u in ps]
             else:
-                flat = [(f"{s}\n\n{u}" if s else u) for s, u in ps]
-                hyps = client.generate_batch(
-                    prompts=flat,
-                    max_new_tokens=args.max_new_tokens,
-                    temperature=args.temperature,
-                )
+                formatted = [client._format_prompt(
+                    (f"{s}\n\n{u}" if s else u))
+                             for s, u in ps]
+
+            if anti_degen_sp is not None:
+                outs = client.llm.generate(formatted, sampling_params=anti_degen_sp)
+                hyps = [o.outputs[0].text.strip() for o in outs]
+            else:
+                # default path: same as before, via VLLMClient.generate_batch
+                if sys_const and ps[0][0]:
+                    user_only = [u for _, u in ps]
+                    hyps = client.generate_batch(
+                        prompts=user_only,
+                        system_prompt=ps[0][0],
+                        max_new_tokens=args.max_new_tokens,
+                        temperature=args.temperature,
+                    )
+                else:
+                    flat = [(f"{s}\n\n{u}" if s else u) for s, u in ps]
+                    hyps = client.generate_batch(
+                        prompts=flat,
+                        max_new_tokens=args.max_new_tokens,
+                        temperature=args.temperature,
+                    )
 
             metrics = None
             if not args.skip_scoring:
@@ -394,6 +461,9 @@ def main() -> int:
                 prompt_source_model=args.prompt_source_model,
                 prompt_source_temp=args.prompt_source_temp,
                 metrics=metrics,
+                anti_degeneration=args.anti_degeneration,
+                rep_penalty=args.rep_penalty if args.anti_degeneration else None,
+                freq_penalty=args.freq_penalty if args.anti_degeneration else None,
             )
 
         # release GPU before next model

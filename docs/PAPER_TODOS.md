@@ -677,6 +677,84 @@ decisions.
 
 ---
 
+## 2026-05-09 — Open-LLM templated rerun: 3 of 5 models degenerated
+
+**Status:** RE-RUN PENDING. Same fix family as Tiny-Aya-G (2026-05-07);
+re-running the 3 broken models with anti-degeneration controls
+(`--anti-degeneration`, default `rep_penalty=1.08`, `freq_penalty=0.0`,
+explicit chat-template stop tokens).
+
+**What we found.** After running
+`scripts/rerun_open_llm_template.py` (default config: `template5_10shot`,
+random retrieval, T=0) on the 5 missing open LLMs, three of them
+showed the COMET-much-greater-than-ChrF degeneration signal:
+
+| model              | ChrF  | COMET | gap pattern       |
+|--------------------|------:|------:|-------------------|
+| AfriqueLlama-8B    |  6.91 | 47.22 | wrong-language    |
+| AfriqueQwen-8B     | 11.44 | 41.63 | echo-the-prompt   |
+| TranslateGemma-12B | 12.43 | 44.46 | empty/partial out |
+| Llama3-8B          | 27.71 | 46.94 | normal            |
+| Gemma2-9B-IT       | 34.94 | 51.44 | normal            |
+| Tiny-Aya-Earth     | 34.01 | 55.32 | normal            |
+| Tiny-Aya-Global    | 33.78 | 55.14 | normal            |
+| Gemini-1.5         | 49.47 | 65.96 | normal            |
+| GPT-4o             | 51.34 | 65.77 | normal            |
+
+**Per-model failure modes (eyeballed from predictions.json):**
+
+- **AfriqueLlama-8B** keeps generating English continuations of the
+  source (paper-header style: ``a mathematical modelling study\n  •
+  1International Research Centre of Health, University of
+  Florence...``) instead of translating to the target.
+- **AfriqueQwen-8B** echoes the prompt itself back, sometimes with a
+  DOI prefix; on Amharic targets it outputs the *instruction* in
+  Amharic and then the example list verbatim. Classic
+  off-distribution behaviour.
+- **TranslateGemma-12B** truncates after a partial Amharic
+  translation and emits an empty hyp on many rows.
+
+The COMET-vs-ChrF gap is the same diagnostic that flagged Tiny-Aya-G's
+sentence-doubling on 2026-05-07 (`docs/PAPER_TODOS.md` "2026-05-07 --
+Tiny-Aya-G xxx->eng degeneration"). COMET tolerates fluent text in
+*any* language; ChrF requires lexical overlap with the reference. When
+they diverge by tens of points, the model is generating something
+fluent that isn't actually a translation.
+
+**Remediation (in flight):**
+
+`scripts/rerun_open_llm_template.py` now has `--anti-degeneration`
+which routes vLLM through a custom `SamplingParams` with
+`repetition_penalty=1.08`, `frequency_penalty=0.0`, and explicit
+chat-template end-of-turn stop tokens (`<|END_OF_TURN_TOKEN|>`,
+`<|end_of_turn|>`, `<end_of_turn>`, `<|im_end|>`, `<|eot_id|>`).
+The metadata fields `anti_degeneration`, `rep_penalty`,
+`freq_penalty` are recorded in each `results.json` so we can later
+distinguish the two runs.
+
+**Server command to fill the gap:**
+
+    python scripts/rerun_open_llm_template.py \
+        --models afriquellama_8b afriqueqwen_8b translategemma_12b \
+        --anti-degeneration
+
+(no `--skip-existing`: we *want* to overwrite the broken results.)
+
+**What's still missing.** After the 3-model rerun lands, decide:
+- Are the new ChrF values in the 25-50 range (matching Llama3 / Gemma2 /
+  Tiny-Aya)? If yes, ship; if not, try `--rep-penalty 1.15` (the
+  v1 Tiny-Aya-G setting) and re-evaluate.
+- Whether to also re-run the 2 already-clean Aya models (Earth and
+  Global) with `--anti-degeneration` for a uniform decoding setup
+  across the 5 open LLMs we filled in. They have no degeneration so
+  it's optional.
+
+**Lesson for the paper (locked in the Tiny-Aya-G appendix paragraph):**
+the COMET >> ChrF gap is a cheap, free degeneration signal --- worth
+flagging in the methodology paragraph as a recommendation.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
