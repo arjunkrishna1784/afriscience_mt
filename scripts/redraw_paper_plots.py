@@ -890,10 +890,11 @@ def fig_per_domain_weighted():
     per_comet = per_sys_for("ssa_comet")
     per_chrf  = per_sys_for("chrf")
 
-    # Same total height as the old chart (2.8) -- now split into two halves.
-    fig, (ax_c, ax_h) = plt.subplots(2, 1, figsize=(7.5, 5.6),
+    # Total height matches the previous single-panel chart (~2.8") so the
+    # figure occupies the same vertical space; two halves share the x-axis.
+    fig, (ax_c, ax_h) = plt.subplots(2, 1, figsize=(7.5, 3.2),
                                      sharex=True,
-                                     gridspec_kw={"hspace": 0.12})
+                                     gridspec_kw={"hspace": 0.10})
     x = np.arange(len(domains_sorted))
     w = 0.27
 
@@ -905,10 +906,12 @@ def fig_per_domain_weighted():
         ax_h.bar(x + (i - 1) * w, vals_h, width=w,
                  color=color, edgecolor="black", linewidth=0.3)
 
-    ax_c.set_ylabel("SSA-COMET")
+    ax_c.set_ylabel("SSA-COMET", fontsize=8)
     ax_c.set_ylim(0, 100)
-    ax_h.set_ylabel("ChrF")
+    ax_c.tick_params(axis="y", labelsize=7)
+    ax_h.set_ylabel("ChrF", fontsize=8)
     ax_h.set_ylim(0, 80)
+    ax_h.tick_params(axis="y", labelsize=7)
 
     labels = [DOMAIN_DISP[d].replace("\n", " ") + f"\n(N={domain_sizes[d]})"
               for d in domains_sorted]
@@ -916,8 +919,8 @@ def fig_per_domain_weighted():
     ax_h.set_xticklabels(labels, fontsize=6.5)
 
     # Single legend at the top of the figure spanning both panels.
-    ax_c.legend(loc="upper center", bbox_to_anchor=(0.5, 1.22),
-                ncol=3, frameon=False, fontsize=8)
+    ax_c.legend(loc="upper center", bbox_to_anchor=(0.5, 1.32),
+                ncol=3, frameon=False, fontsize=7.5)
 
     out = FIG_DIR / "weighted_chrf_score.pdf"
     fig.savefig(out, bbox_inches="tight")
