@@ -184,6 +184,26 @@ def list_legacy_configs(legacy_dir: Path):
             if k > 20:
                 continue
             out.append((0, k, m.group("src"), m.group("tgt"), tsv))
+
+    # The legacy semantic TSVs do not live in the *_temp_<T>/ dir; they sit
+    # in a sibling LLMS/semantic-prompts/<model>/ folder with the naming
+    # <src>-<tgt>_<K>-shots.tsv (no "-to-", underscore separator). Scan it
+    # for T=0 dumps so semantic_<K>shot configs are picked up.
+    if "_temp_0.0" in legacy_dir.name:
+        model = legacy_dir.name.split("_temp_")[0]
+        sem_dir = legacy_dir.parent / "semantic-prompts" / model
+        rx_sem_actual = re.compile(
+            r"^(?P<src>[a-z]+)-(?P<tgt>[a-z]+)_(?P<k>\d+)-shots\.tsv$"
+        )
+        if sem_dir.is_dir():
+            for tsv in sorted(sem_dir.glob("*.tsv")):
+                m = rx_sem_actual.match(tsv.name)
+                if not m:
+                    continue
+                k = int(m.group("k"))
+                if k > 20:
+                    continue
+                out.append((0, k, m.group("src"), m.group("tgt"), tsv))
     return out
 
 
