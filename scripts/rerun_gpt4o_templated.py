@@ -173,6 +173,13 @@ def list_legacy_configs(legacy_dir: Path):
             k = int(m.group("k")) if m.group("k") else 0
             if k > 20:
                 continue
+            # Skip bare `template5.tsv` (no shot suffix): template 5 is the
+            # few-shot template and never legitimately 0-shot. The legacy
+            # gpt-4o T=0.6 dump has this file with 1 example embedded —
+            # parses as 0-shot but content is 1-shot, and there is no
+            # 1-shot sentence-level condition in the paper grid.
+            if int(m.group("n")) == 5 and not m.group("k"):
+                continue
             out.append((int(m.group("n")), k,
                         m.group("src"), m.group("tgt"), tsv))
             continue

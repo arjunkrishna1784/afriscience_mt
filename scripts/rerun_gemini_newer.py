@@ -134,6 +134,12 @@ def list_legacy_configs(legacy_dir: Path) -> list[tuple[int, int, str, str, Path
             k = int(m.group("k"))
             if k > 20:
                 continue
+            # Skip bare `template5.tsv` (no shot suffix): template 5 is the
+            # few-shot template and never legitimately 0-shot. The Gemini
+            # T=0.6 dump uses explicit shots, so this branch is a no-op
+            # here — kept for parity with rerun_gpt4o_templated.py.
+            if int(m.group("n")) == 5 and k == 0:
+                continue
             out.append((int(m.group("n")), k,
                         m.group("src"), m.group("tgt"), tsv))
             continue
