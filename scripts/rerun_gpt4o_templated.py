@@ -146,25 +146,44 @@ def find_legacy_dump(temp: float, override: Path | None = None) -> Path:
 
 def list_legacy_configs(legacy_dir: Path):
     """Yield (template, shots, src, tgt, tsv_path) from the dump.
-    Handles three filename conventions seen across legacy GPT-4o dumps:
+    Handles four filename conventions seen across legacy GPT-4o dumps:
       <src>-to-<tgt>-template<N>-shots<K>.tsv   (T=0 xxx->eng layout)
       <src>-to-<tgt>-template<N>-shot-<K>.tsv   (T=0.6 eng->xxx layout)
       <src>-to-<tgt>-template<N>.tsv            (T=0.6 0-shot variants)
+      <src>-to-<tgt>-semantic-shots<K>.tsv      (semantic-similarity exemplars)
+
+    For semantic files we yield template=0 as a sentinel; ``write_canonical``
+    interprets template=0 as the ``semantic_<K>shot`` strategy.
     Skips 50-shot and any *-old.tsv files per project policy.
     """
-    rx_shots = re.compile(
+    rx_tmpl = re.compile(
         r"^(?P<src>[a-z]+)-to-(?P<tgt>[a-z]+)-template(?P<n>\d+)"
+        r"(?:-shots?-?(?P<k>\d+))?(?P<old>(-old)?)\.tsv$"
+    )
+    rx_sem = re.compile(
+        r"^(?P<src>[a-z]+)-to-(?P<tgt>[a-z]+)-semantic"
         r"(?:-shots?-?(?P<k>\d+))?(?P<old>(-old)?)\.tsv$"
     )
     out = []
     for tsv in sorted(legacy_dir.glob("*.tsv")):
-        m = rx_shots.match(tsv.name)
-        if not m or m.group("old"):
+        m = rx_tmpl.match(tsv.name)
+        if m:
+            if m.group("old"):
+                continue
+            k = int(m.group("k")) if m.group("k") else 0
+            if k > 20:
+                continue
+            out.append((int(m.group("n")), k,
+                        m.group("src"), m.group("tgt"), tsv))
             continue
-        k = int(m.group("k")) if m.group("k") else 0
-        if k > 20:
-            continue
-        out.append((int(m.group("n")), k, m.group("src"), m.group("tgt"), tsv))
+        m = rx_sem.match(tsv.name)
+        if m:
+            if m.group("old"):
+                continue
+            k = int(m.group("k")) if m.group("k") else 0
+            if k > 20:
+                continue
+            out.append((0, k, m.group("src"), m.group("tgt"), tsv))
     return out
 
 
@@ -274,7 +293,13 @@ def write_canonical(*, out_dir: Path, model: str, short_name: str,
                     metrics: dict | None = None) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     pair = f"{src}-{tgt}"
-    strategy = f"template{template}_{n_shots}shot"
+    # template == 0 is the sentinel for semantic-similarity exemplars
+    # (see list_legacy_configs). All other template numbers come from the
+    # numbered prompt-templates.tex inventory.
+    if template == 0:
+        strategy = f"semantic_{n_shots}shot"
+    else:
+        strategy = f"template{template}_{n_shots}shot"
     exp_id = f"llm_icl__{short_name}__{strategy}__{pair}"
 
     refs = load_test_refs(tgt)
@@ -527,7 +552,8 @@ def main() -> int:
             while len(in_flight) < args.batch_concurrency and queue:
                 tmpl, k, src, tgt, tsv = queue.pop(0)
                 pair = f"{src}-{tgt}"
-                strategy = f"template{tmpl}_{k}shot"
+                strategy = (f"semantic_{k}shot" if tmpl == 0
+                            else f"template{tmpl}_{k}shot")
                 label = f"{strategy}/{pair}"
                 job_label = f"{short_name}/{pair}/{strategy}"
                 out_dir = out_temp_dir / strategy / pair
@@ -594,7 +620,8 @@ def main() -> int:
         # Direct (non-batch) sequential loop with per-row cache.
         for idx, (tmpl, k, src, tgt, tsv) in enumerate(configs, 1):
             pair = f"{src}-{tgt}"
-            strategy = f"template{tmpl}_{k}shot"
+            strategy = (f"semantic_{k}shot" if tmpl == 0
+                        else f"template{tmpl}_{k}shot")
             label = f"{strategy}/{pair}"
             out_dir = out_temp_dir / strategy / pair
 
