@@ -58,11 +58,17 @@ from afriscience_mt.doc_prompts import DocPromptBuilder  # noqa: E402
 EXP_ROOT = ROOT / "experiments" / "llm" / "closed"
 
 # ---- experiment grid -------------------------------------------------------
+# Doc-level closed-API runs use the LIGHT config from configs/experiments/
+# llm_closed.yaml and configs/experiments/icl_document.yaml: single
+# template (template 1, the "basic" / "explicit" one) and shots [0, 1].
+# That's 1 template x 2 shots x 12 pairs = 24 cells per model.
+# Override via --templates / --shot-counts to reproduce the heavier legacy
+# 3-template x 3-shot grid if you ever need it.
 LANGS = ["amh", "hau", "lug", "nso", "yor", "zul"]
 PAIRS = [(s, t) for s in ("eng", *LANGS) for t in ("eng", *LANGS)
          if s != t and "eng" in (s, t)]
-TEMPLATES = [1, 2, 3]
-SHOT_COUNTS = [0, 1, 5]
+TEMPLATES = [1]
+SHOT_COUNTS = [0, 1]
 N_PAPERS_EXPECTED = 28
 
 
