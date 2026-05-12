@@ -7,3 +7,9 @@ __version__ = "0.1.0"
 PACKAGE_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PACKAGE_ROOT.parent
 DEFAULT_CONFIG_DIR = REPO_ROOT / "configs"
+
+try:
+    from dotenv import load_dotenv
+    load_dotenv(REPO_ROOT / ".env", override=False)
+except ImportError:
+    pass

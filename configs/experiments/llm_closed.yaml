@@ -27,16 +27,17 @@ skip_completed: true
 # =============================================================================
 models:
 
-  # OpenAI GPT-5
-  - id: "gpt-5"
-    name: "gpt5"
+  # OpenAI GPT-5.4
+  - id: "gpt-5.4"
+    name: "gpt54"
     backend: "openai"
     # api_key: "sk-..."   # or set OPENAI_API_KEY env var
     delay: 1.0            # seconds between API calls (rate limiting)
 
-  # Google Gemini 3.1 Pro
-  - id: "gemini-3-flash-preview"
-    name: "gemini_3_flash"
+  # Google Gemini 3.1 Flash (Lite — only non-preview 3.1 flash text model on the API as of 2026-05).
+  # Replaces the previous "gemini-3-flash-preview" entry.
+  - id: "gemini-3.1-flash-lite"
+    name: "gemini_31_flash_lite"
     backend: "google"
     # api_key: "..."   # or set GOOGLE_API_KEY env var
     delay: 1.0
