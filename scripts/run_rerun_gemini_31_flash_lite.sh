@@ -40,6 +40,7 @@ run_stage() {
         --model "$MODEL" \
         --short-name "$SHORT" \
         --use-batch \
+        --skip-existing \
         --notify-every 25 \
         "$@" \
         2>&1 | tee "$log"

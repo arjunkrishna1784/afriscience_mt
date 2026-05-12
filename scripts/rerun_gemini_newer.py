@@ -593,6 +593,16 @@ def main() -> int:
                     help="Subset of templates (default: all 1..5 that exist).")
     ap.add_argument("--shots", nargs="+", type=int, default=None,
                     help="Subset of shot counts (default: 0,5,10,20).")
+    ap.add_argument("--shot-counts", nargs="+", type=int, default=None, dest="shots",
+                    help="Alias for --shots (kept for parity with the OpenAI rerun).")
+    ap.add_argument("--skip-existing", action="store_true",
+                    help="No-op alias: this script already skips cells whose "
+                         "predictions.json exists by default; --force is the "
+                         "opposite (re-run completed cells). Accepted for "
+                         "wrapper-script symmetry with rerun_openai_doc.py "
+                         "etc.")
+    ap.add_argument("--direction", choices=["e2x", "x2e", "both"], default="both",
+                    help="Restrict to eng->xxx (e2x), xxx->eng (x2e), or both.")
     ap.add_argument("--temperature", type=float, default=0.0,
                     help="Picks legacy dump dir: 0.0 → gemini-1.5-flash-002_temp_0.0/")
     ap.add_argument("--max-output-tokens", type=int, default=1024)
@@ -638,12 +648,17 @@ def main() -> int:
         legacy_configs = [c for c in legacy_configs if c[0] in args.templates]
     if args.shots is not None:
         legacy_configs = [c for c in legacy_configs if c[1] in args.shots]
+    if args.direction == "e2x":
+        legacy_configs = [c for c in legacy_configs if c[2] == "eng"]
+    elif args.direction == "x2e":
+        legacy_configs = [c for c in legacy_configs if c[3] == "eng"]
 
     out_root = EXP_ROOT / temp_setting(args.temperature) / "icl" / short_name
 
     todo = []
     for tmpl, k, src, tgt, tsv in legacy_configs:
-        out_dir = out_root / f"template{tmpl}_{k}shot" / f"{src}-{tgt}"
+        strat = f"semantic_{k}shot" if tmpl == 0 else f"template{tmpl}_{k}shot"
+        out_dir = out_root / strat / f"{src}-{tgt}"
         if (out_dir / "predictions.json").exists() and not args.force:
             continue
         todo.append((tmpl, k, src, tgt, tsv, out_dir))
