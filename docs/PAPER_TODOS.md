@@ -989,6 +989,79 @@ Two leads worth noting if a reviewer or co-author asks:
 
 ---
 
+## 2026-05-12 — Closed-API rerun asymmetry: GPT-5.4 will have ~half the templated configs Gemini-3.1-flash-lite has
+
+**Status:** observation surfaced while monitoring the four parallel closed-API
+reruns (`run_everything.sh`). User to confirm whether the asymmetry is acceptable
+as-is or whether the GPT gap should be filled with newly-built (non-replay) prompts.
+
+### Observation
+
+The reruns replay byte-identical prompts from the legacy TSV dumps under
+`/ext_data/idris/DCS-MT-Updated/old_experiments/LLMS/<model>_temp_<T>/`. Counted
+TSVs:
+
+| Legacy dump | xxx→eng templated | eng→xxx templated | total TSVs |
+|---|---|---|---|
+| `gpt-4o_temp_0.0`            | ✅ 6 pairs × 11 conds = 66 | ❌ (only semantic-similarity strategies exist) | 66 |
+| `gpt-4o_temp_0.6`            | ❌                          | ✅ 6 × 12 = 72                  | 72 |
+| `gemini-1.5-flash-002_temp_0.0` | ✅ 6 × 11 = 66          | ✅ 6 × 11 = 66                  | 132 |
+| `gemini-1.5-flash-002_temp_0.6` | ✅ 6 × 11 ≈ 66          | ✅ 6 × 11 ≈ 66                  | ~132 |
+
+This matches the structural gap documented at `scripts/rerun_gpt4o_templated.py:8-14`:
+> The closed-API audit (2026-05-08) found one structural gap: GPT-4o
+> ``eng->xxx`` at T=0 only has the semantic-similarity strategies; the
+> templated runs (templates 1..5) live exclusively at T=0.6.
+
+GPT-4o was originally run **split**: templates at T=0 only for xxx→eng, templates
+at T=0.6 only for eng→xxx. Gemini-1.5 was run **symmetric**: both directions at
+both temperatures.
+
+### Effect on the in-flight reruns
+
+After all four sweeps land (`gpt54` × T={0, 0.6}, `gemini_31_flash_lite` × T={0, 0.6}):
+
+- **gpt54** ≈ **126 templated configs** total — each (pair, template, shots) cell
+  appears at **exactly one** temperature (xxx→eng at T=0, eng→xxx at T=0.6).
+- **gemini_31_flash_lite** ≈ **216 templated configs** total — every cell at **both**
+  temperatures.
+
+This is **not duplication on Gemini's side** — it's missing coverage on GPT's side
+inherited verbatim from the legacy design. Comparable cells *do* exist between the
+two models (every cell appears under at least one temperature), but the temperature
+ablation only exists for Gemini.
+
+### Implications for the paper
+
+- **For any plot/table that compares closed APIs at a fixed temperature**: only the
+  cells that exist for *both* models are comparable. Concretely:
+    - xxx→eng templated, T=0 — GPT-5.4 ✅, Gemini-3.1-flash-lite ✅
+    - eng→xxx templated, T=0.6 — GPT-5.4 ✅, Gemini-3.1-flash-lite ✅
+    - The other two quadrants exist only for Gemini.
+- **For closed-API temperature ablations**: only Gemini supports a head-to-head
+  T=0 vs T=0.6 comparison across every cell. GPT can only be temperature-compared
+  by switching direction simultaneously, which confounds the ablation.
+
+### Options
+
+1. **Accept the asymmetry** (cheap). Note it explicitly in the closed-API table
+   captions and skip GPT-5.4 from any temperature-ablation plot. Same caveat as
+   the legacy gpt-4o/gemini-1.5 comparison the paper already lives with.
+2. **Fill the GPT gap** (~$$, ~hours). Build new prompts (using the current
+   `build_translation_prompt()` templates) for the two missing GPT quadrants —
+   xxx→eng at T=0.6 and eng→xxx at T=0 — and run them against gpt-5.4. Would
+   require a new `scripts/rerun_gpt54_fillgaps.py` (no source TSVs to replay).
+   Resulting prompts would not be byte-identical to the original gpt-4o run, so
+   comparison to legacy gpt-4o becomes prompt-not-identical for those cells.
+
+### What's still missing
+
+- User decision: option 1 vs option 2.
+- If option 2, agreement on whether to use template5 + 10-shot only (the paper's
+  canonical config per the 2026-05-08 decision) or the full template/shot sweep.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
