@@ -1062,6 +1062,76 @@ ablation only exists for Gemini.
 
 ---
 
+## 2026-05-13 — Closed-API rerun audit: ICL done; doc has real gap; vanilla-template question open
+
+**Status:** ICL sweeps for `gpt54` and `gemini_31_flash_lite` are complete or
+on-track. Audited `summary.csv` (gpt4o keys) against `gpt54` outputs on disk
+applying current scope policy (no 50-shot, no `template5_0shot`, T=0.6 +
+semantic = ablation eng→xxx only). Two unresolved items below.
+
+### What's done
+
+- **ICL T=0 (`gpt54`)** — 126 dirs on disk; matches scope-filtered plan exactly.
+  All 24 "missing vs gpt4o" cells are out-of-scope (50-shot policy + invalid
+  `template5_0shot` + xxx→eng excluded for semantic).
+- **ICL T=0.6 (`gpt54`)** — 54 dirs on disk; all 18 "missing vs gpt4o" cells
+  are out-of-scope (50-shot policy + xxx→eng excluded for ablation +
+  `template5_0shot` invalid).
+- **ICL T=0 (`gemini_31_flash_lite`)** — running, 32/122 done at audit time.
+  Plan is the same 126 cells as `gpt54` t0 → 1-to-1 head-to-head guaranteed
+  at T=0.
+
+### Doc audit: real gap
+
+`gpt54` doc currently has only `doc_{0,1}shot_template1` (24 dirs,
+bidirectional). With the **5-shot drop now extended to doc** (`doc_5shot_*`
+out per project policy), the remaining doc work for `gpt54` is:
+
+- `doc_{0,1}shot_template2` — 12 dirs each
+- `doc_{0,1}shot_template3` — 12 dirs each
+- **Total: 4 strategies × 12 dirs = 48 cells**
+
+The `doc_{0,1}shot_legacy` rows in gpt4o summary are gpt-4o-only artifacts
+(legacy prompts that can't be replayed) — not part of the rerun plan.
+
+### Vanilla-template (open-vs-closed) question
+
+Open models (`llama3_8b`, `gemma2_9b_it`, `tiny_aya_*`, `afriquellama_8b`,
+`afriqueqwen_8b`, `translategemma_12b`) use **vanilla** strategies that the
+closed-API runs do NOT have:
+
+| Slice | Open vanilla strategy | Closed counterpart |
+|---|---|---|
+| ICL | `0shot`, `5shot` | `template{1,2,4}_0shot` (≈ 0shot), `template{3,5}_5shot` (5-shot) |
+| Doc | `doc_0shot`, `doc_1shot` | `doc_{0,1}shot_template{1,2,3}` |
+
+Closed APIs have only the templated variants. Open models have only the
+vanilla variants. **Effect:** any direct closed-vs-open table at the doc or
+ICL level requires picking one templated cell as "the" closed proxy for the
+open vanilla, since they aren't byte-identical prompts.
+
+**Open question:** do we need to also run `gpt54` (and
+`gemini_31_flash_lite`) on the vanilla `0shot`/`5shot` ICL prompts and
+`doc_0shot`/`doc_1shot` doc prompts to enable direct closed-vs-open
+comparison, or is the templated proxy acceptable?
+
+### What's still missing
+
+- User decision on vanilla-template question (run vanillas on closed APIs, or
+  document the templated-vs-vanilla mismatch as a known caveat).
+- If running vanillas: a script that emits the vanilla prompts (no legacy TSV
+  to replay) and writes to `experiments/llm/closed/{icl,doc}/<short>/<vanilla
+  strategy>/<pair>/`.
+- Launch `doc_{0,1}shot_template{2,3}` for `gpt54` (48 cells) — confirmed
+  in-scope.
+
+### Cross-refs
+
+- Scope policy: this doc, sections "2026-05-08" (50-shot drop) and
+  "2026-05-12" (closed-API asymmetry).
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.
