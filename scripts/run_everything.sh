@@ -42,13 +42,15 @@ launch() {
     echo "  PID: $!"
 }
 
-launch "sent / gpt-5.4"                 scripts/run_rerun_gpt54.sh
-launch "sent / gemini-3.1-flash-lite"   scripts/run_rerun_gemini_31_flash_lite.sh
-launch "doc  / gpt-5.4"                 scripts/run_doc_gpt54.sh
-launch "doc  / gemini-3.1-flash-lite"   scripts/run_doc_gemini_31_flash_lite.sh
+launch "sent / gpt-5.4 (templated)"            scripts/run_rerun_gpt54.sh
+launch "sent / gemini-3.1-flash-lite (templated)" scripts/run_rerun_gemini_31_flash_lite.sh
+launch "doc  / gpt-5.4 (templates 1-3)"        scripts/run_doc_gpt54.sh
+launch "doc  / gemini-3.1-flash-lite (templates 1-3)" scripts/run_doc_gemini_31_flash_lite.sh
+launch "vanilla / gpt-5.4 (sent+doc, open-LLM-comparable)"     scripts/run_vanilla_gpt54.sh
+launch "vanilla / gemini-3.1-flash-lite (sent+doc, open-LLM-comparable)" scripts/run_vanilla_gemini_31_flash_lite.sh
 
 echo
-echo "All four jobs running in the background."
+echo "All six jobs running in the background."
 echo "Each will email progress independently via Brevo (set BREVO_API_KEY"
 echo "+ BREVO_SENDER_EMAIL in .env)."
 echo
