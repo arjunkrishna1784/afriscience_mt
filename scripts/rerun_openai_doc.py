@@ -58,16 +58,24 @@ from afriscience_mt.doc_prompts import DocPromptBuilder  # noqa: E402
 EXP_ROOT = ROOT / "experiments" / "llm" / "closed"
 
 # ---- experiment grid -------------------------------------------------------
-# Doc-level closed-API runs use the LIGHT config from configs/experiments/
-# llm_closed.yaml and configs/experiments/icl_document.yaml: single
-# template (template 1, the "basic" / "explicit" one) and shots [0, 1].
-# That's 1 template x 2 shots x 12 pairs = 24 cells per model.
-# Override via --templates / --shot-counts to reproduce the heavier legacy
-# 3-template x 3-shot grid if you ever need it.
+# Doc-level closed-API runs use templates {1, 2, 3} (the three numbered
+# doc templates from prompt-templates.tex) crossed with shots {0, 1}.
+# That's 3 templates x 2 shots x 12 pairs = 72 cells per model.
+#
+# We previously ran only template 1 to match the lightweight headline
+# config from configs/experiments/llm_closed.yaml, but that left
+# gpt-5.4 / gemini-3.1-flash-lite absent from
+# tab:doc_template_shot_ablation_comet (which compares the full
+# 3-template x 3-shot grid for the legacy gpt-4o / gemini-1.5 doc
+# data). With templates 2 + 3 added, the new models populate that
+# table directly. 5-shot remains dropped per project policy
+# (each prompt carries 5 full-document exemplars -> ~5x size).
+#
+# Use --templates / --shot-counts to override.
 LANGS = ["amh", "hau", "lug", "nso", "yor", "zul"]
 PAIRS = [(s, t) for s in ("eng", *LANGS) for t in ("eng", *LANGS)
          if s != t and "eng" in (s, t)]
-TEMPLATES = [1]
+TEMPLATES = [1, 2, 3]
 SHOT_COUNTS = [0, 1]
 N_PAPERS_EXPECTED = 28
 
