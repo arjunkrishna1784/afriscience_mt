@@ -80,6 +80,10 @@ def load_rows() -> list[dict]:
             for k in ("bleu", "chrf", "ssa_comet"):
                 v = r.get(k)
                 r[k] = float(v) if v not in (None, "", "None") else None
+            if not r.get("temp_setting"):
+                r["temp_setting"] = "t0"
+            elif r["temp_setting"] == "t6":
+                r["temp_setting"] = "t06"
             rows.append(r)
     return rows
 
@@ -391,7 +395,7 @@ def build_lora(rows, metric):
                  f"(language, direction) pair; each model is fine-tuned "
                  f"bilingually per pair for 10 epochs with early "
                  f"stopping. Comparing $r{{=}}4$ (low-rank, "
-                 f"parameter-efficient) against $r{{=}}64$ (the headline "
+                 f"parameter-efficient) against $r{{=}}64$ (the main "
                  f"rank used elsewhere in the paper) isolates the effect "
                  f"of adapter capacity. \\textbf{{Bold}}: best score "
                  f"for that (language, direction) pair across both "
@@ -628,23 +632,43 @@ def build_closed_ablations(rows, metric):
     HEADLINE_STRATEGY = {
         "gemini_15_flash":      "template5_10shot",   # avg 65.96
         "gpt4o":                 "template3_10shot",  # avg 65.87 (template5_10shot is 65.77)
-        "gemini_31_flash_lite": "template5_10shot",   # locked headline
-        "gpt54":                 "template5_10shot",  # locked headline
+        "gemini_31_flash_lite": "template5_10shot",   # locked
+        "gpt54":                 "template5_10shot",  # locked
     }
-    CLOSED = ("gemini_15_flash", "gpt4o",
-              "gemini_31_flash_lite", "gpt54")
+    # Family + version grouping — rendered with \multirow on the first
+    # two columns so the table reads "Gemini {1.5, 3.1}; GPT {4o, 5.4}"
+    # instead of repeating "Gemini-1.5 / GPT-4o / ..." on every row.
+    FAMILIES = [
+        ("Gemini", [("1.5",  "gemini_15_flash"),
+                    ("3.1",  "gemini_31_flash_lite")]),
+        ("GPT",    [("4o",   "gpt4o"),
+                    ("5.4",  "gpt54")]),
+    ]
+    CLOSED = tuple(m for _, vs in FAMILIES for _, m in vs)
 
     def pull(model, etype, temp, *, strategies, pairs):
         merged = {}
-        for ps in strategies:
-            filters = dict(model_short=model, experiment_type=etype,
-                           temp_setting=temp)
-            if ps is not None:
-                filters["prompt_strategy"] = ps
-            d = lookup(rows, metric=metric, **filters)
-            for p in pairs:
-                if p in d:
-                    merged.setdefault(p, d[p])
+        # Legacy closed APIs (gpt4o, gemini_15_flash) store ZS under
+        # experiment_type=llm_zero_shot; the latest closed APIs
+        # (gpt54, gemini_31_flash_lite) store the same vanilla ZS run
+        # under experiment_type=llm_icl, prompt_strategy="0shot".
+        # When the caller asks for llm_zero_shot, also fall back to the
+        # llm_icl/0shot variant so the row populates for both vintages.
+        if etype == "llm_zero_shot":
+            etypes = [("llm_zero_shot", strategies),
+                      ("llm_icl",       ("0shot",))]
+        else:
+            etypes = [(etype, strategies)]
+        for et, strats in etypes:
+            for ps in strats:
+                filters = dict(model_short=model, experiment_type=et,
+                               temp_setting=temp)
+                if ps is not None:
+                    filters["prompt_strategy"] = ps
+                d = lookup(rows, metric=metric, **filters)
+                for p in pairs:
+                    if p in d:
+                        merged.setdefault(p, d[p])
         return merged
 
     def vec(d, pairs):
@@ -681,20 +705,26 @@ def build_closed_ablations(rows, metric):
                                  "llm_icl", "t0", ("semantic_10shot",), PAIRS_E2X))
 
     # ---- block 3: temperature ablation (eng->xxx, T=0 vs T=0.6).
-    # Each model's headline templated config replayed at T=0.6. Now clean
-    # for both models since we have GPT-4o templated coverage at both
-    # temperatures.
+    # Only the templated 10-shot row is shown so the ablation is
+    # comparable across all four closed APIs:
+    #   * Gemini-1.5 has a genuine vanilla ZS rerun at T=0.6;
+    #   * GPT-4o's "ZS T=0.6" in the legacy dump is literally identical
+    #     to its ZS T=0 (no separate rerun was performed);
+    #   * Gemini-3.1 and GPT-5.4 were not run at vanilla 0shot T=0.6
+    #     (the new closed-API vanilla pass is T=0 only).
+    # The templated 10-shot config IS rerun at T=0.6 for all four.
     temp_abl = []
     for m in CLOSED:
         s = HEADLINE_STRATEGY[m]
-        temp_abl.append(row(m, "ZS ($T{=}0$)",
-                            "llm_zero_shot", "t0",  (None,), PAIRS_E2X))
-        temp_abl.append(row(m, "ZS ($T{=}0.6$)",
-                            "llm_zero_shot", "t06", (None,), PAIRS_E2X))
-        temp_abl.append(row(m, f"10-shot ({s.split('_')[0]}) $T{{=}}0$",
-                            "llm_icl", "t0",  (s,), PAIRS_E2X))
-        temp_abl.append(row(m, f"10-shot ({s.split('_')[0]}) $T{{=}}0.6$",
-                            "llm_icl", "t06", (s,), PAIRS_E2X))
+        candidates = [
+            row(m, f"10-shot ({s.split('_')[0]}) $T{{=}}0$",
+                "llm_icl", "t0",  (s,), PAIRS_E2X),
+            row(m, f"10-shot ({s.split('_')[0]}) $T{{=}}0.6$",
+                "llm_icl", "t06", (s,), PAIRS_E2X),
+        ]
+        for cand in candidates:
+            if any(v is not None for v in cand[2][:-1]):
+                temp_abl.append(cand)
 
     # ---- per-block column max for bold highlighting.
     def col_max(brows):
@@ -705,7 +735,13 @@ def build_closed_ablations(rows, metric):
         return cols
 
     lang_cols = [r"\texttt{" + l + "}" for l in LANGS]
-    lang_head = " & ".join(["  ", "  "] + lang_cols + [r"\textbf{Avg}"]) + r" \\"
+    # Three left-side columns (Model, Version, Setting) + 6 lang + Avg = 10
+    n_cols = 10
+    lang_head = " & ".join(["  ", "  ", "  "] + lang_cols + [r"\textbf{Avg}"]) + r" \\"
+
+    # Reverse lookup: model_short -> (family, version)
+    model_to_famver = {m: (fam, ver)
+                       for fam, vs in FAMILIES for ver, m in vs}
 
     lines = [
         f"% ---- closed_ablations_{'chrf' if metric=='chrf' else 'comet'} ----",
@@ -713,10 +749,11 @@ def build_closed_ablations(rows, metric):
         r"\centering",
         r"\small",
         r"\renewcommand{\arraystretch}{1.05}",
-        r"\begin{tabular}{llrrrrrrr}",
+        r"\begin{tabular}{lllrrrrrrr}",
         r"\toprule",
-        r"\textbf{Model} & \textbf{Setting} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\",
-        r"\cmidrule(lr){3-8}",
+        (r"\textbf{Model} & \textbf{Version} & \textbf{Setting} & "
+         r"\multicolumn{6}{c}{\textbf{eng$\to$}} & \\"),
+        r"\cmidrule(lr){4-9}",
         lang_head,
     ]
 
@@ -725,17 +762,57 @@ def build_closed_ablations(rows, metric):
             lines.append(r"\midrule")
         else:
             lines.append(r"\midrule\midrule")
-        lines.append(r"\multicolumn{9}{l}{\textit{" + name + r"}} \\")
+        lines.append(r"\multicolumn{" + str(n_cols)
+                     + r"}{l}{\textit{" + name + r"}} \\")
         lines.append(r"\midrule")
-        for model_short, setting_label, vals in brows:
-            disp = MODEL_DISP.get(model_short, model_short)
-            cells = []
-            for ci, v in enumerate(vals):
-                s = fmt(v)
-                if v is not None and cmax[ci] is not None and abs(v - cmax[ci]) < 1e-9:
-                    s = f"\\textbf{{{s}}}"
-                cells.append(s)
-            lines.append(f"{disp} & {setting_label} & " + " & ".join(cells) + r" \\")
+
+        # Group rows by (family, version) preserving FAMILIES order.
+        by_famver = {}
+        for r_model, r_label, r_vals in brows:
+            by_famver.setdefault(r_model, []).append((r_label, r_vals))
+
+        # Per-family row counts (sum over its present versions)
+        fam_counts = {fam: sum(len(by_famver.get(m, []))
+                               for _, m in vs)
+                      for fam, vs in FAMILIES}
+
+        for fi, (fam, vs) in enumerate(FAMILIES):
+            if fi > 0:
+                lines.append(r"\cmidrule(lr){1-" + str(n_cols) + "}")
+            fam_n = fam_counts[fam]
+            if fam_n == 0:
+                continue
+            fam_emitted = False
+            for vi, (ver, model) in enumerate(vs):
+                rows_here = by_famver.get(model, [])
+                if not rows_here:
+                    continue
+                ver_n = len(rows_here)
+                if vi > 0:
+                    # divider between versions within a family
+                    lines.append(r"\cmidrule(lr){2-" + str(n_cols) + "}")
+                for ri, (setting_label, vals) in enumerate(rows_here):
+                    cells = []
+                    for ci, v in enumerate(vals):
+                        s = fmt(v)
+                        if (v is not None and cmax[ci] is not None
+                                and abs(v - cmax[ci]) < 1e-9):
+                            s = f"\\textbf{{{s}}}"
+                        cells.append(s)
+                    if not fam_emitted:
+                        fam_cell = (r"\multirow{" + str(fam_n) + r"}{*}{"
+                                    + fam + r"}")
+                        fam_emitted = True
+                    else:
+                        fam_cell = ""
+                    if ri == 0:
+                        ver_cell = (r"\multirow{" + str(ver_n) + r"}{*}{"
+                                    + ver + r"}")
+                    else:
+                        ver_cell = ""
+                    lines.append(f"{fam_cell} & {ver_cell} & "
+                                 f"{setting_label} & "
+                                 + " & ".join(cells) + r" \\")
 
     rep_max  = col_max(reported)
     ret_max  = col_max(retrieval_abl)
@@ -757,15 +834,18 @@ def build_closed_ablations(rows, metric):
          r"numbers from Table~\ref{tab:open_vs_closed_icl_" +
          ("chrf" if metric == "chrf" else "comet") + r"} for the four "
          r"closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, "
-         r"GPT-5.4) at their headline templated 10-shot configuration "
+         r"GPT-5.4) at their best templated 10-shot configuration "
          r"(Gemini-1.5: \texttt{template5\textunderscore{}10shot}; "
          r"GPT-4o: \texttt{template3\textunderscore{}10shot}; "
          r"latest: \texttt{template5\textunderscore{}10shot}). "
          r"\textit{Retrieval ablation} contrasts the same templated "
          r"10-shot run against semantic-similarity 10-shot exemplars at "
          r"$T{=}0$. "
-         r"\textit{Temperature ablation} replays each model's headline "
-         r"templated configuration at $T{=}0.6$ to isolate temperature. "
+         r"\textit{Temperature ablation} replays each model's best "
+         r"templated configuration at $T{=}0.6$ to isolate temperature "
+         r"(ZS at $T{=}0.6$ is omitted: only Gemini-1.5 has a genuine "
+         r"vanilla rerun at $T{=}0.6$, and the templated row is the "
+         r"comparable contrast across all four APIs). "
          r"All ablations are \texttt{eng}$\to$\texttt{xxx} only "
          r"(no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). "
          r"\textbf{Bold}: column maximum within the block.}"),
@@ -968,10 +1048,15 @@ def build_doc_template_shot_ablation(rows, metric):
     AB_MODELS = ["gemini_15_flash", "gpt4o",
                  "gemini_31_flash_lite", "gpt54"]
 
-    # 9 configs: every (template, shots) combination
+    # 6 configs: 3 templates x 2 shot counts (0, 1).
+    # Legacy closed APIs (gpt-4o, gemini-1.5) also have a 5-shot dump
+    # per template, but the latest closed APIs (gpt-5.4, gemini-3.1)
+    # were only run at doc_0shot/doc_1shot per template to conserve
+    # credits, so the combined ablation drops 5-shot to keep the grid
+    # uniform across all four models.
     CONFIGS = []
     for tmpl in (1, 2, 3):
-        for shots in (0, 1, 5):
+        for shots in (0, 1):
             CONFIGS.append((f"doc_{shots}shot_template{tmpl}", tmpl, shots))
 
     def avg_(vs):
@@ -1071,13 +1156,13 @@ def build_doc_template_shot_ablation(rows, metric):
         r"}",
         (r"\caption{Document-level template/shot ablation for the four "
          r"closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, "
-         r"GPT-5.4) across the 3-template $\times$ 3-shot grid "
+         r"GPT-5.4) across the 3-template $\times$ 2-shot grid "
          f"({metric_label}). Each row is a (template, shot-count) "
          r"configuration for that model (template number first, shot "
          r"count as subscript $s$). Open-source LLMs are not included "
          r"here -- they only have a single \texttt{doc\textunderscore{}0shot} / "
          r"\texttt{doc\textunderscore{}1shot} configuration each (no template "
-         r"variants); see \Cref{tab:doc_comet} for the headline "
+         r"variants); see \Cref{tab:doc_comet} for the main "
          r"open-vs-closed doc-level comparison. SSA-COMET is reported "
          r"throughout (no rescore needed; values were already in the "
          r"per-result JSONs from the closed-API doc-level imports). "
@@ -1215,7 +1300,7 @@ def build_prompt_engineering_open(rows, metric=None):
          r"V$_5$: vanilla 5-shot (\texttt{few\textunderscore{}shot}, random retrieval); "
          r"T$_{10}$: \texttt{template5\textunderscore{}10shot} (the locked body "
          r"configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the "
-         r"headline lift from vanilla to templated; "
+         r"main lift from vanilla to templated; "
          r"$\Delta_{T_{\text{shot}}} = $T$_{10} - $T$_5$ isolates the "
          r"shot-count effect (template fixed at \texttt{template5}). "
          r"Only Llama3-8B and Gemma2-9B-IT have T$_5$ data among the "
@@ -1580,8 +1665,8 @@ def build_closed_evolution(rows, metric=None):
         r"\end{tabular}",
         (r"\caption{Closed-API evolution. Two legacy models "
          r"(GPT-4o, Gemini-1.5) and two latest models (GPT-5.4, "
-         r"Gemini-3.1-Flash-Lite) at the headline sentence-level "
-         r"configuration (template~5, 10-shot, $T{=}0$) and the headline "
+         r"Gemini-3.1-Flash-Lite) at the main sentence-level "
+         r"configuration (template~5, 10-shot, $T{=}0$) and the main "
          r"document-level configuration (vanilla \texttt{doc\textunderscore{}0shot}). "
          r"Per-direction averages over the six target languages, plus an "
          r"overall Avg. Both directions move in favour of the latest "

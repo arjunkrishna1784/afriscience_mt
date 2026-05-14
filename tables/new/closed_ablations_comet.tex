@@ -3,54 +3,55 @@
 \centering
 \small
 \renewcommand{\arraystretch}{1.05}
-\begin{tabular}{llrrrrrrr}
+\begin{tabular}{lllrrrrrrr}
 \toprule
-\textbf{Model} & \textbf{Setting} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\
-\cmidrule(lr){3-8}
-   &    & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
+\textbf{Model} & \textbf{Version} & \textbf{Setting} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \\
+\cmidrule(lr){4-9}
+   &    &    & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \textbf{Avg} \\
 \midrule
-\multicolumn{9}{l}{\textit{Reported ($T{=}0$)}} \\
+\multicolumn{10}{l}{\textit{Reported ($T{=}0$)}} \\
 \midrule
-Gemini-1.5 & ZS & 57.9 & 55.8 & 59.4 & 62.2 & 57.5 & 53.9 & 57.8 \\
-Gemini-1.5 & 10-shot (template5) & 64.9 & 62.5 & 67.0 & 68.5 & 64.6 & 62.2 & 65.0 \\
-GPT-4o & ZS & 39.4 & 56.8 & 60.7 & 62.6 & 54.6 & 58.3 & 55.4 \\
-GPT-4o & 10-shot (template3) & 53.9 & 63.4 & 68.3 & 68.6 & 65.0 & 65.4 & 64.1 \\
-Gemini-3.1 & ZS & -- & -- & -- & -- & -- & -- & -- \\
-Gemini-3.1 & 10-shot (template5) & \textbf{67.8} & \textbf{64.8} & 70.3 & 70.1 & 67.8 & 65.9 & 67.8 \\
-GPT-5.4 & ZS & -- & -- & -- & -- & -- & -- & -- \\
-GPT-5.4 & 10-shot (template5) & 66.6 & 64.8 & \textbf{70.6} & \textbf{70.7} & \textbf{68.0} & \textbf{66.2} & \textbf{67.8} \\
+\multirow{4}{*}{Gemini} & \multirow{2}{*}{1.5} & ZS & 57.9 & 55.8 & 59.4 & 62.2 & 57.5 & 53.9 & 57.8 \\
+ &  & 10-shot (template5) & 64.9 & 62.5 & 67.0 & 68.5 & 64.6 & 62.2 & 65.0 \\
+\cmidrule(lr){2-10}
+ & \multirow{2}{*}{3.1} & ZS & 55.6 & 55.1 & 58.7 & 53.0 & 53.0 & 52.2 & 54.6 \\
+ &  & 10-shot (template5) & \textbf{67.8} & \textbf{64.8} & 70.3 & 70.1 & 67.8 & 65.9 & 67.8 \\
+\cmidrule(lr){1-10}
+\multirow{4}{*}{GPT} & \multirow{2}{*}{4o} & ZS & 39.4 & 56.8 & 60.7 & 62.6 & 54.6 & 58.3 & 55.4 \\
+ &  & 10-shot (template3) & 53.9 & 63.4 & 68.3 & 68.6 & 65.0 & 65.4 & 64.1 \\
+\cmidrule(lr){2-10}
+ & \multirow{2}{*}{5.4} & ZS & 61.7 & 58.4 & 64.3 & 66.7 & 55.9 & 63.2 & 61.7 \\
+ &  & 10-shot (template5) & 66.6 & 64.8 & \textbf{70.6} & \textbf{70.7} & \textbf{68.0} & \textbf{66.2} & \textbf{67.8} \\
 \midrule\midrule
-\multicolumn{9}{l}{\textit{Retrieval ablation: templated vs. semantic-similarity, $T{=}0$}} \\
+\multicolumn{10}{l}{\textit{Retrieval ablation: templated vs. semantic-similarity, $T{=}0$}} \\
 \midrule
-Gemini-1.5 & 10-shot (templated, template5) & 64.9 & 62.5 & 67.0 & 68.5 & 64.6 & 62.2 & 65.0 \\
-Gemini-1.5 & 10-shot (semantic similarity) & 65.0 & 62.9 & 68.4 & 69.5 & 65.8 & 63.5 & 65.8 \\
-GPT-4o & 10-shot (templated, template3) & 53.9 & 63.4 & 68.3 & 68.6 & 65.0 & 65.4 & 64.1 \\
-GPT-4o & 10-shot (semantic similarity) & 57.2 & 63.4 & 69.2 & 69.8 & 65.1 & 65.3 & 65.0 \\
-Gemini-3.1 & 10-shot (templated, template5) & \textbf{67.8} & \textbf{64.8} & 70.3 & 70.1 & 67.8 & 65.9 & 67.8 \\
-Gemini-3.1 & 10-shot (semantic similarity) & 55.6 & 56.5 & 57.3 & 56.5 & 58.1 & 56.0 & 56.7 \\
-GPT-5.4 & 10-shot (templated, template5) & 66.6 & 64.8 & \textbf{70.6} & \textbf{70.7} & \textbf{68.0} & \textbf{66.2} & \textbf{67.8} \\
-GPT-5.4 & 10-shot (semantic similarity) & 14.6 & 21.8 & 36.6 & 33.4 & 35.7 & 24.9 & 27.8 \\
+\multirow{4}{*}{Gemini} & \multirow{2}{*}{1.5} & 10-shot (templated, template5) & 64.9 & 62.5 & 67.0 & 68.5 & 64.6 & 62.2 & 65.0 \\
+ &  & 10-shot (semantic similarity) & 65.0 & 62.9 & 68.4 & 69.5 & 65.8 & 63.5 & 65.8 \\
+\cmidrule(lr){2-10}
+ & \multirow{2}{*}{3.1} & 10-shot (templated, template5) & \textbf{67.8} & \textbf{64.8} & 70.3 & 70.1 & 67.8 & 65.9 & 67.8 \\
+ &  & 10-shot (semantic similarity) & 55.6 & 56.5 & 57.3 & 56.5 & 58.1 & 56.0 & 56.7 \\
+\cmidrule(lr){1-10}
+\multirow{4}{*}{GPT} & \multirow{2}{*}{4o} & 10-shot (templated, template3) & 53.9 & 63.4 & 68.3 & 68.6 & 65.0 & 65.4 & 64.1 \\
+ &  & 10-shot (semantic similarity) & 57.2 & 63.4 & 69.2 & 69.8 & 65.1 & 65.3 & 65.0 \\
+\cmidrule(lr){2-10}
+ & \multirow{2}{*}{5.4} & 10-shot (templated, template5) & 66.6 & 64.8 & \textbf{70.6} & \textbf{70.7} & \textbf{68.0} & \textbf{66.2} & \textbf{67.8} \\
+ &  & 10-shot (semantic similarity) & 14.6 & 21.8 & 36.6 & 33.4 & 35.7 & 24.9 & 27.8 \\
 \midrule\midrule
-\multicolumn{9}{l}{\textit{Temperature ablation ($T{=}0$ vs $T{=}0.6$)}} \\
+\multicolumn{10}{l}{\textit{Temperature ablation ($T{=}0$ vs $T{=}0.6$)}} \\
 \midrule
-Gemini-1.5 & ZS ($T{=}0$) & 57.9 & 55.8 & 59.4 & 62.2 & 57.5 & 53.9 & 57.8 \\
-Gemini-1.5 & ZS ($T{=}0.6$) & 57.8 & 55.7 & 58.9 & 61.9 & 57.5 & 53.7 & 57.6 \\
-Gemini-1.5 & 10-shot (template5) $T{=}0$ & 64.9 & 62.5 & 67.0 & 68.5 & 64.6 & 62.2 & 65.0 \\
-Gemini-1.5 & 10-shot (template5) $T{=}0.6$ & 64.8 & 62.4 & 66.8 & 68.4 & 64.7 & 62.2 & 64.9 \\
-GPT-4o & ZS ($T{=}0$) & 39.4 & 56.8 & 60.7 & 62.6 & 54.6 & 58.3 & 55.4 \\
-GPT-4o & ZS ($T{=}0.6$) & 39.4 & 56.8 & 60.7 & 62.6 & 54.6 & 58.3 & 55.4 \\
-GPT-4o & 10-shot (template3) $T{=}0$ & 53.9 & 63.4 & 68.3 & 68.6 & 65.0 & 65.4 & 64.1 \\
-GPT-4o & 10-shot (template3) $T{=}0.6$ & 51.9 & 62.8 & 67.8 & 68.1 & 64.6 & 65.2 & 63.4 \\
-Gemini-3.1 & ZS ($T{=}0$) & -- & -- & -- & -- & -- & -- & -- \\
-Gemini-3.1 & ZS ($T{=}0.6$) & -- & -- & -- & -- & -- & -- & -- \\
-Gemini-3.1 & 10-shot (template5) $T{=}0$ & \textbf{67.8} & \textbf{64.8} & 70.3 & 70.1 & 67.8 & 65.9 & 67.8 \\
-Gemini-3.1 & 10-shot (template5) $T{=}0.6$ & -- & -- & -- & -- & -- & -- & -- \\
-GPT-5.4 & ZS ($T{=}0$) & -- & -- & -- & -- & -- & -- & -- \\
-GPT-5.4 & ZS ($T{=}0.6$) & -- & -- & -- & -- & -- & -- & -- \\
-GPT-5.4 & 10-shot (template5) $T{=}0$ & 66.6 & 64.8 & \textbf{70.6} & \textbf{70.7} & \textbf{68.0} & \textbf{66.2} & \textbf{67.8} \\
-GPT-5.4 & 10-shot (template5) $T{=}0.6$ & -- & -- & -- & -- & -- & -- & -- \\
+\multirow{4}{*}{Gemini} & \multirow{2}{*}{1.5} & 10-shot (template5) $T{=}0$ & 64.9 & 62.5 & 67.0 & 68.5 & 64.6 & 62.2 & 65.0 \\
+ &  & 10-shot (template5) $T{=}0.6$ & 64.8 & 62.4 & 66.8 & 68.4 & 64.7 & 62.2 & 64.9 \\
+\cmidrule(lr){2-10}
+ & \multirow{2}{*}{3.1} & 10-shot (template5) $T{=}0$ & \textbf{67.8} & 64.8 & 70.3 & 70.1 & 67.8 & 65.9 & 67.8 \\
+ &  & 10-shot (template5) $T{=}0.6$ & 67.4 & 64.7 & 70.1 & 69.9 & 67.5 & 65.7 & 67.6 \\
+\cmidrule(lr){1-10}
+\multirow{4}{*}{GPT} & \multirow{2}{*}{4o} & 10-shot (template3) $T{=}0$ & 53.9 & 63.4 & 68.3 & 68.6 & 65.0 & 65.4 & 64.1 \\
+ &  & 10-shot (template3) $T{=}0.6$ & 51.9 & 62.8 & 67.8 & 68.1 & 64.6 & 65.2 & 63.4 \\
+\cmidrule(lr){2-10}
+ & \multirow{2}{*}{5.4} & 10-shot (template5) $T{=}0$ & 66.6 & 64.8 & 70.6 & 70.7 & \textbf{68.0} & 66.2 & 67.8 \\
+ &  & 10-shot (template5) $T{=}0.6$ & 67.2 & \textbf{65.0} & \textbf{70.8} & \textbf{70.7} & 67.9 & \textbf{66.2} & \textbf{68.0} \\
 \bottomrule
 \end{tabular}
-\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (COMET). \textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} numbers from Table~\ref{tab:open_vs_closed_icl_comet} for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) at their headline templated 10-shot configuration (Gemini-1.5: \texttt{template5\textunderscore{}10shot}; GPT-4o: \texttt{template3\textunderscore{}10shot}; latest: \texttt{template5\textunderscore{}10shot}). \textit{Retrieval ablation} contrasts the same templated 10-shot run against semantic-similarity 10-shot exemplars at $T{=}0$. \textit{Temperature ablation} replays each model's headline templated configuration at $T{=}0.6$ to isolate temperature. All ablations are \texttt{eng}$\to$\texttt{xxx} only (no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). \textbf{Bold}: column maximum within the block.}
+\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (COMET). \textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} numbers from Table~\ref{tab:open_vs_closed_icl_comet} for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) at their best templated 10-shot configuration (Gemini-1.5: \texttt{template5\textunderscore{}10shot}; GPT-4o: \texttt{template3\textunderscore{}10shot}; latest: \texttt{template5\textunderscore{}10shot}). \textit{Retrieval ablation} contrasts the same templated 10-shot run against semantic-similarity 10-shot exemplars at $T{=}0$. \textit{Temperature ablation} replays each model's best templated configuration at $T{=}0.6$ to isolate temperature (ZS at $T{=}0.6$ is omitted: only Gemini-1.5 has a genuine vanilla rerun at $T{=}0.6$, and the templated row is the comparable contrast across all four APIs). All ablations are \texttt{eng}$\to$\texttt{xxx} only (no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). \textbf{Bold}: column maximum within the block.}
 \label{tab:closed_ablations_comet}
 \end{table*}
