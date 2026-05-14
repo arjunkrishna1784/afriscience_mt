@@ -1,0 +1,28 @@
+% ---- closed_evolution ----
+\begin{table*}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{lrrrrrr}
+\toprule
+\textbf{Model} & \multicolumn{3}{c}{\textbf{chrF}} & \multicolumn{3}{c}{\textbf{COMET}} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+ & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg} & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg} \\
+\midrule
+\multicolumn{7}{l}{\textit{Sentence-level ICL (template~5, 10-shot, $T{=}0$)}} \\
+\quad Gemini-1.5 & 44.0 & 55.5 & 49.7 & 64.9 & 67.0 & 65.9 \\
+\quad GPT-4o & 43.9 & 57.0 & 50.5 & 63.5 & 67.4 & 65.4 \\
+\quad Gemini-3.1 & \textbf{48.8} & \textbf{61.2} & \textbf{55.0} & 67.8 & 68.1 & 68.0 \\
+\quad GPT-5.4 & 48.5 & 57.7 & 53.1 & \textbf{67.8} & \textbf{68.7} & \textbf{68.3} \\
+\midrule
+\multicolumn{7}{l}{\textit{Document-level (vanilla \texttt{doc\_0shot})}} \\
+\quad Gemini-1.5 & 27.1 & 66.4 & 46.8 & 28.8 & 40.2 & 34.5 \\
+\quad GPT-4o & 40.9 & 68.0 & 54.4 & 25.9 & 38.4 & 32.1 \\
+\quad Gemini-3.1 & 47.1 & 67.7 & 57.4 & 45.2 & \textbf{51.4} & \textbf{48.3} \\
+\quad GPT-5.4 & \textbf{50.0} & \textbf{70.8} & \textbf{60.4} & \textbf{45.4} & 51.1 & 48.3 \\
+\bottomrule
+\end{tabular}
+\caption{Closed-API evolution. Two legacy models (GPT-4o, Gemini-1.5) and two latest models (GPT-5.4, Gemini-3.1-Flash-Lite) at the headline sentence-level configuration (template~5, 10-shot, $T{=}0$) and the headline document-level configuration (vanilla \texttt{doc\_0shot}). Per-direction averages over the six target languages, plus an overall Avg. Both directions move in favour of the latest models on COMET. \textbf{Bold}: column maximum within each block (sentence vs.\ document).}
+\label{tab:closed_evolution}
+\end{table*}

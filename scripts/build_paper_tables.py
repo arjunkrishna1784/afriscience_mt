@@ -50,6 +50,12 @@ MODEL_DISP = {
     "translategemma_12b":     "TranslateGemma-12B",
     "gpt4o":                  "GPT-4o",
     "gemini_15_flash":        "Gemini-1.5",
+    # Latest closed APIs (added 2026-05-13). Short forms here mirror the
+    # legacy "GPT-4o" / "Gemini-1.5" labels; the full names
+    # ("Gemini-3.1-Flash-Lite", "gpt-5.4") are spelled out only in the
+    # methods / model-list paragraphs.
+    "gpt54":                  "GPT-5.4",
+    "gemini_31_flash_lite":   "Gemini-3.1",
     # Synthetic row label (no underlying model_short).
     "best_open":              "Best open",
 }
@@ -397,11 +403,12 @@ def build_lora(rows, metric):
 
 def build_doc(rows, metric):
     """**Main paper Table 4 (or appendix).** Document-level zero-shot vs.\
-    1-shot ICL. Two major groups; each has closed (Gemini-1.5, GPT-4o) and
-    open (7 LLMs incl. TranslateGemma-12B) sub-blocks. Same hierarchical
-    bolding as Tables 1/2 and an Avg column."""
+    1-shot ICL. Two major groups; each has closed (Gemini-1.5, GPT-4o,
+    Gemini-3.1-Flash-Lite, GPT-5.4) and open (7 LLMs incl. TranslateGemma-12B)
+    sub-blocks. Same hierarchical bolding as Tables 1/2 and an Avg column."""
     metric_label = "chrF" if metric == "chrf" else "COMET"
-    closed_models = ["gemini_15_flash", "gpt4o"]
+    closed_models = ["gemini_15_flash", "gpt4o",
+                     "gemini_31_flash_lite", "gpt54"]
     open_models = LLM_MODELS  # already includes translategemma_12b
 
     def by_disp(model_list):
@@ -544,7 +551,11 @@ def build_open_vs_closed_icl(rows, metric):
                     out[p] = v
         return out
 
-    closed = ["gemini_15_flash", "gpt4o"]
+    # Both legacy (gpt-4o, gemini-1.5-flash) and latest (gpt-5.4,
+    # gemini-3.1-flash-lite) closed APIs side-by-side so the table shows
+    # closed-API evolution rather than replacing the legacy numbers.
+    closed = ["gemini_15_flash", "gpt4o",
+              "gemini_31_flash_lite", "gpt54"]
     closed_zs_rows  = [(m, vec(closed_zs(m))) for m in by_disp(closed)]
     closed_icl_rows = [(m, vec(llm_icl(m)))   for m in by_disp(closed)]
     open_icl_rows   = [(m, vec(llm_icl(m)))   for m in by_disp(open_models)]
@@ -602,11 +613,16 @@ def build_closed_ablations(rows, metric):
     metric_label = "chrF" if metric == "chrf" else "COMET"
 
     # Per-model headline templated config (computed from summary.csv on
-    # 2026-05-08; see PAPER_TODOS bookmark "Template-vs-shot dependence"):
+    # 2026-05-08; see PAPER_TODOS bookmark "Template-vs-shot dependence").
+    # Latest closed APIs use template5_10shot, the locked universal config.
     HEADLINE_STRATEGY = {
-        "gemini_15_flash": "template5_10shot",   # avg 65.96
-        "gpt4o":            "template3_10shot",  # avg 65.87 (template5_10shot is 65.77)
+        "gemini_15_flash":      "template5_10shot",   # avg 65.96
+        "gpt4o":                 "template3_10shot",  # avg 65.87 (template5_10shot is 65.77)
+        "gemini_31_flash_lite": "template5_10shot",   # locked headline
+        "gpt54":                 "template5_10shot",  # locked headline
     }
+    CLOSED = ("gemini_15_flash", "gpt4o",
+              "gemini_31_flash_lite", "gpt54")
 
     def pull(model, etype, temp, *, strategies, pairs):
         merged = {}
@@ -637,7 +653,7 @@ def build_closed_ablations(rows, metric):
     # Whole table is eng->xxx only because Blocks 2 and 3 only have data
     # for that direction (no closed-API ablation runs on xxx->eng).
     reported = []
-    for m in ("gemini_15_flash", "gpt4o"):
+    for m in CLOSED:
         s = HEADLINE_STRATEGY[m]
         reported.append(row(m, "ZS",
                             "llm_zero_shot", "t0", (None,), PAIRS_E2X))
@@ -647,7 +663,7 @@ def build_closed_ablations(rows, metric):
     # ---- block 2: retrieval ablation (eng->xxx, T=0).
     # Per-model templated 10-shot vs semantic_10shot.
     retrieval_abl = []
-    for m in ("gemini_15_flash", "gpt4o"):
+    for m in CLOSED:
         s = HEADLINE_STRATEGY[m]
         retrieval_abl.append(row(m, f"10-shot (templated, {s.split('_')[0]})",
                                  "llm_icl", "t0", (s,), PAIRS_E2X))
@@ -659,7 +675,7 @@ def build_closed_ablations(rows, metric):
     # for both models since we have GPT-4o templated coverage at both
     # temperatures.
     temp_abl = []
-    for m in ("gemini_15_flash", "gpt4o"):
+    for m in CLOSED:
         s = HEADLINE_STRATEGY[m]
         temp_abl.append(row(m, "ZS ($T{=}0$)",
                             "llm_zero_shot", "t0",  (None,), PAIRS_E2X))
@@ -762,7 +778,13 @@ def build_template_shot_ablation(rows, metric):
     the caption (see docs/PAPER_TODOS.md "2026-05-08 -- DECISION").
     """
     metric_label = "chrF" if metric == "chrf" else "COMET"
-    AB_MODELS = ["gemini_15_flash", "gpt4o", "llama3_8b", "gemma2_9b_it"]
+    # Reference models with bidirectional templated coverage at T=0.
+    # Both legacy (gpt-4o, gemini-1.5) and latest (gpt-5.4, gemini-3.1) closed
+    # APIs are included so the template/shot ablation surfaces closed-API
+    # evolution alongside the two open-LLM reference models.
+    AB_MODELS = ["gemini_15_flash", "gpt4o",
+                 "gemini_31_flash_lite", "gpt54",
+                 "llama3_8b", "gemma2_9b_it"]
 
     # Configs sorted: by template number, then by shot count. Templates
     # 1, 2, 4 are 0-shot only; templates 3 and 5 carry the shot sweep.
@@ -926,7 +948,10 @@ def build_doc_template_shot_ablation(rows, metric):
     pair columns (eng->xxx then xxx->eng), per-row Avg.
     """
     metric_label = "chrF" if metric == "chrf" else "COMET"
-    AB_MODELS = ["gemini_15_flash", "gpt4o"]
+    # Both legacy (gpt-4o, gemini-1.5) and latest (gpt-5.4, gemini-3.1)
+    # closed APIs share the same 3-template x 3-shot doc-level grid.
+    AB_MODELS = ["gemini_15_flash", "gpt4o",
+                 "gemini_31_flash_lite", "gpt54"]
 
     # 9 configs: every (template, shots) combination
     CONFIGS = []
@@ -1400,6 +1425,158 @@ def build_multilingual_vs_bilingual(rows, metric=None):
     return "\n".join(lines) + "\n"
 
 
+def build_closed_evolution(rows, metric=None):
+    """**Appendix.** Closed-API evolution: legacy (gpt-4o, gemini-1.5-flash)
+    against latest (gpt-5.4, gemini-3.1-flash-lite) at the headline
+    sentence-level and document-level configurations. Single combined
+    table with chrF and SSA-COMET side-by-side and a per-row Avg.
+
+    The point of this table is to make the closed-API improvement-over-time
+    visible at a glance, so a reader can see why the body's "fine-tuning
+    beats closed APIs" finding (anchored on the legacy column) softens at
+    the latest column.
+
+    Layout, per row (metric pair):
+       chrF eng-> | chrF ->eng | chrF Avg | COMET eng-> | COMET ->eng | COMET Avg
+
+    Two blocks:
+      - Sentence-level at the locked template5_10shot config (T=0).
+      - Document-level at doc_0shot vanilla (matches what tab:doc_comet
+        reports for these models).
+    """
+    PAIRS_E2X = ['eng-amh','eng-hau','eng-lug','eng-nso','eng-yor','eng-zul']
+    PAIRS_X2E = ['amh-eng','hau-eng','lug-eng','nso-eng','yor-eng','zul-eng']
+
+    LEGACY = ["gemini_15_flash", "gpt4o"]
+    LATEST = ["gemini_31_flash_lite", "gpt54"]
+    ALL = LEGACY + LATEST
+
+    def avg_(vs):
+        nums = [v for v in vs if v is not None]
+        return sum(nums) / len(nums) if nums else None
+
+    def cell_avg(model, *, metric_, etype, strategies, pairs):
+        """Average a metric over a set of pairs for one (model, strategy).
+        ``strategies`` is a tuple of candidate prompt_strategy values; the
+        first one with data wins (matches build_doc's first_with_pred
+        fallback so latest models use ``doc_0shot`` and legacy models fall
+        through to ``doc_0shot_legacy``)."""
+        d = first_with_pred(rows, metric=metric_, candidates=[
+            dict(model_short=model, experiment_type=etype, prompt_strategy=s)
+            for s in strategies
+        ])
+        return avg_([d.get(p) for p in pairs])
+
+    def sent_row(model):
+        # Sent-level: template5_10shot at T=0 (locked headline).
+        out = {}
+        for metric_ in ("chrf", "ssa_comet"):
+            out[(metric_, "e2x")] = cell_avg(
+                model, metric_=metric_, etype="llm_icl",
+                strategies=("template5_10shot",), pairs=PAIRS_E2X)
+            out[(metric_, "x2e")] = cell_avg(
+                model, metric_=metric_, etype="llm_icl",
+                strategies=("template5_10shot",), pairs=PAIRS_X2E)
+        return out
+
+    def doc_row(model):
+        # Doc-level "vanilla" (basic prompt, no template variant). Latest
+        # closed APIs land at doc_0shot; legacy closed APIs only have
+        # doc_0shot_legacy (the original pre-template doc runs) -- same
+        # fallback build_doc uses so closed-API rows in the headline
+        # tab:doc_comet match what we report here.
+        out = {}
+        for metric_ in ("chrf", "ssa_comet"):
+            out[(metric_, "e2x")] = cell_avg(
+                model, metric_=metric_, etype="llm_doc",
+                strategies=("doc_0shot", "doc_0shot_legacy"),
+                pairs=PAIRS_E2X)
+            out[(metric_, "x2e")] = cell_avg(
+                model, metric_=metric_, etype="llm_doc",
+                strategies=("doc_0shot", "doc_0shot_legacy"),
+                pairs=PAIRS_X2E)
+        return out
+
+    # Pre-build all rows so we can compute column maxes.
+    sent_rows = [(m, sent_row(m)) for m in ALL]
+    doc_rows  = [(m, doc_row(m))  for m in ALL]
+
+    def fmt(v):
+        return "--" if v is None else f"{v:.1f}"
+
+    def to_cells(row, group_label):
+        # Returns 6 cells: chrF e2x, x2e, Avg, COMET e2x, x2e, Avg.
+        ch_e = row[("chrf", "e2x")]
+        ch_x = row[("chrf", "x2e")]
+        co_e = row[("ssa_comet", "e2x")]
+        co_x = row[("ssa_comet", "x2e")]
+        ch_avg = avg_([ch_e, ch_x])
+        co_avg = avg_([co_e, co_x])
+        return [ch_e, ch_x, ch_avg, co_e, co_x, co_avg]
+
+    def col_maxes(block_rows):
+        cols = list(zip(*[to_cells(r, lbl) for lbl, r in block_rows]))
+        return [max((v for v in c if v is not None), default=None) for c in cols]
+
+    def render_row(model, row, maxes):
+        cells = to_cells(row, MODEL_DISP.get(model, model))
+        out = []
+        for v, mx in zip(cells, maxes):
+            s = fmt(v)
+            if v is not None and mx is not None and abs(v - mx) < 1e-9:
+                s = r"\textbf{" + s + r"}"
+            out.append(s)
+        return r"\quad " + MODEL_DISP.get(model, model) + " & " + " & ".join(out) + r" \\"
+
+    sent_maxes = col_maxes([(MODEL_DISP.get(m, m), r) for m, r in sent_rows])
+    doc_maxes  = col_maxes([(MODEL_DISP.get(m, m), r) for m, r in doc_rows])
+
+    n_data_cols = 6
+    lines = [
+        r"% ---- closed_evolution ----",
+        r"\begin{table*}[t]",
+        r"\centering",
+        r"\small",
+        r"\setlength{\tabcolsep}{4pt}",
+        r"\renewcommand{\arraystretch}{1.05}",
+        r"\begin{tabular}{l" + "r" * n_data_cols + r"}",
+        r"\toprule",
+        (r"\textbf{Model} & \multicolumn{3}{c}{\textbf{chrF}}"
+         r" & \multicolumn{3}{c}{\textbf{COMET}} \\"),
+        r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}",
+        (r" & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg}"
+         r" & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg} \\"),
+        r"\midrule",
+        r"\multicolumn{" + str(n_data_cols + 1) + r"}{l}{\textit{"
+        r"Sentence-level ICL (template~5, 10-shot, $T{=}0$)}} \\",
+    ]
+    for m, r in sent_rows:
+        lines.append(render_row(m, r, sent_maxes))
+    lines += [
+        r"\midrule",
+        r"\multicolumn{" + str(n_data_cols + 1) + r"}{l}{\textit{"
+        r"Document-level (vanilla \texttt{doc\_0shot})}} \\",
+    ]
+    for m, r in doc_rows:
+        lines.append(render_row(m, r, doc_maxes))
+    lines += [
+        r"\bottomrule",
+        r"\end{tabular}",
+        (r"\caption{Closed-API evolution. Two legacy models "
+         r"(GPT-4o, Gemini-1.5) and two latest models (GPT-5.4, "
+         r"Gemini-3.1-Flash-Lite) at the headline sentence-level "
+         r"configuration (template~5, 10-shot, $T{=}0$) and the headline "
+         r"document-level configuration (vanilla \texttt{doc\_0shot}). "
+         r"Per-direction averages over the six target languages, plus an "
+         r"overall Avg. Both directions move in favour of the latest "
+         r"models on COMET. \textbf{Bold}: column maximum within each "
+         r"block (sentence vs.\ document).}"),
+        r"\label{tab:closed_evolution}",
+        r"\end{table*}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 # ---------------- main ----------------
 
 def main():
@@ -1420,6 +1597,7 @@ def main():
     combined_builders = [
         ("prompt_engineering_open",   build_prompt_engineering_open),
         ("multilingual_vs_bilingual", build_multilingual_vs_bilingual),
+        ("closed_evolution",          build_closed_evolution),
     ]
     written = []
     for name, fn in builders:
