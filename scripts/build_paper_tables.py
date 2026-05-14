@@ -574,7 +574,7 @@ def build_open_vs_closed_icl(rows, metric):
         label=f"tab:open_vs_closed_icl_{'chrf' if metric=='chrf' else 'comet'}",
         caption=("Open vs. closed-source LLMs at sentence-level "
                  f"in-context learning ({metric_label}), all rows at the "
-                 "uniform \\texttt{template5\\_10shot} configuration "
+                 "uniform \\texttt{template5\\textunderscore{}10shot} configuration "
                  "(see \\Cref{tab:template_shot_ablation_" +
                  ("chrf" if metric == "chrf" else "comet") + "} for the "
                  "template/shot ablation that selected this config). "
@@ -755,10 +755,12 @@ def build_closed_ablations(rows, metric):
          f"({metric_label}). "
          r"\textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} "
          r"numbers from Table~\ref{tab:open_vs_closed_icl_" +
-         ("chrf" if metric == "chrf" else "comet") + r"} for these two "
-         r"models at their headline templated 10-shot configuration "
-         r"(Gemini-1.5: \texttt{template5\_10shot}, "
-         r"GPT-4o: \texttt{template3\_10shot}). "
+         ("chrf" if metric == "chrf" else "comet") + r"} for the four "
+         r"closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, "
+         r"GPT-5.4) at their headline templated 10-shot configuration "
+         r"(Gemini-1.5: \texttt{template5\textunderscore{}10shot}; "
+         r"GPT-4o: \texttt{template3\textunderscore{}10shot}; "
+         r"latest: \texttt{template5\textunderscore{}10shot}). "
          r"\textit{Retrieval ablation} contrasts the same templated "
          r"10-shot run against semantic-similarity 10-shot exemplars at "
          r"$T{=}0$. "
@@ -774,9 +776,10 @@ def build_closed_ablations(rows, metric):
 
 
 def build_template_shot_ablation(rows, metric):
-    """**Appendix.** Template/shot ablation across the four reference
-    models with full templated coverage at T=0
-    (Gemini-1.5-Flash, GPT-4o, Llama3-8B, Gemma2-9B-IT).
+    """**Appendix.** Template/shot ablation across the six reference
+    models with full templated coverage at T=0: legacy closed APIs
+    (Gemini-1.5-Flash, GPT-4o), latest closed APIs (Gemini-3.1-Flash-Lite,
+    GPT-5.4), and two open LLMs (Llama3-8B, Gemma2-9B-IT).
 
     Layout follows Tables 11/12 of the existing draft
     (tab:models_performances_templates_*): per-model multirow block,
@@ -925,8 +928,10 @@ def build_template_shot_ablation(rows, metric):
         r"\bottomrule",
         r"\end{tabular}",
         r"}",
-        (r"\caption{Template/shot ablation for the four reference models "
-         "with bidirectional templated coverage at $T{=}0$ "
+        (r"\caption{Template/shot ablation for the six reference models "
+         "with bidirectional templated coverage at $T{=}0$ -- two open "
+         "(Llama3-8B, Gemma2-9B-IT) and four closed APIs (legacy: "
+         "Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) "
          f"({metric_label}). Each row is a (template, shot-count) "
          r"configuration (template number first, shot count as subscript "
          r"$s$); the underlined row \texttt{5}$_{s=10}$ is the "
@@ -1064,13 +1069,14 @@ def build_doc_template_shot_ablation(rows, metric):
         r"\bottomrule",
         r"\end{tabular}",
         r"}",
-        (r"\caption{Document-level template/shot ablation for the two "
-         r"closed APIs with the full 3-template $\times$ 3-shot grid "
+        (r"\caption{Document-level template/shot ablation for the four "
+         r"closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, "
+         r"GPT-5.4) across the 3-template $\times$ 3-shot grid "
          f"({metric_label}). Each row is a (template, shot-count) "
          r"configuration for that model (template number first, shot "
          r"count as subscript $s$). Open-source LLMs are not included "
-         r"here -- they only have a single \texttt{doc\_0shot} / "
-         r"\texttt{doc\_1shot} configuration each (no template "
+         r"here -- they only have a single \texttt{doc\textunderscore{}0shot} / "
+         r"\texttt{doc\textunderscore{}1shot} configuration each (no template "
          r"variants); see \Cref{tab:doc_comet} for the headline "
          r"open-vs-closed doc-level comparison. SSA-COMET is reported "
          r"throughout (no rescore needed; values were already in the "
@@ -1206,8 +1212,8 @@ def build_prompt_engineering_open(rows, metric=None):
          r"bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$"
          r"\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. "
          r"V$_0$: vanilla 0-shot (\texttt{basic}); "
-         r"V$_5$: vanilla 5-shot (\texttt{few\_shot}, random retrieval); "
-         r"T$_{10}$: \texttt{template5\_10shot} (the locked body "
+         r"V$_5$: vanilla 5-shot (\texttt{few\textunderscore{}shot}, random retrieval); "
+         r"T$_{10}$: \texttt{template5\textunderscore{}10shot} (the locked body "
          r"configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the "
          r"headline lift from vanilla to templated; "
          r"$\Delta_{T_{\text{shot}}} = $T$_{10} - $T$_5$ isolates the "
@@ -1565,7 +1571,7 @@ def build_closed_evolution(rows, metric=None):
     lines += [
         r"\midrule",
         r"\multicolumn{" + str(n_data_cols + 1) + r"}{l}{\textit{"
-        r"Document-level (vanilla \texttt{doc\_0shot})}} \\",
+        r"Document-level (vanilla \texttt{doc\textunderscore{}0shot})}} \\",
     ]
     for m, r in doc_rows:
         lines.append(render_row(m, r, doc_maxes))
@@ -1576,7 +1582,7 @@ def build_closed_evolution(rows, metric=None):
          r"(GPT-4o, Gemini-1.5) and two latest models (GPT-5.4, "
          r"Gemini-3.1-Flash-Lite) at the headline sentence-level "
          r"configuration (template~5, 10-shot, $T{=}0$) and the headline "
-         r"document-level configuration (vanilla \texttt{doc\_0shot}). "
+         r"document-level configuration (vanilla \texttt{doc\textunderscore{}0shot}). "
          r"Per-direction averages over the six target languages, plus an "
          r"overall Avg. Both directions move in favour of the latest "
          r"models on COMET. \textbf{Bold}: column maximum within each "

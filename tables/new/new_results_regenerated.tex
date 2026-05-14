@@ -124,7 +124,7 @@ Tiny-Aya-G & \emph{27.6} & 51.3 & 8.2 & 8.0 & 14.8 & 46.9 & 50.7 & 51.2 & 25.6 &
 TranslateGemma-12B & 6.6 & 25.9 & 15.5 & 19.0 & 11.9 & 26.9 & 0.5 & 10.5 & 7.8 & 7.5 & 3.6 & 11.1 & 12.2 \\
 \bottomrule
 \end{tabular}
-\caption{Open vs. closed-source LLMs at sentence-level in-context learning (chrF), all rows at the uniform \texttt{template5\_10shot} configuration (see \Cref{tab:template_shot_ablation_chrf} for the template/shot ablation that selected this config). \textit{Best open} in the zero-shot block is the per-cell maximum across the seven open LLMs in \Cref{tab:main_zs_ft_chrf}. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B degenerate at this prompt (visible as COMET~$\gg$~ChrF in their rows); see \Cref{tab:prompt_engineering_open_chrf} for their vanilla-prompt baseline. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{ICL}; \emph{italic}: best performance within open or closed model group.}
+\caption{Open vs. closed-source LLMs at sentence-level in-context learning (chrF), all rows at the uniform \texttt{template5\textunderscore{}10shot} configuration (see \Cref{tab:template_shot_ablation_chrf} for the template/shot ablation that selected this config). \textit{Best open} in the zero-shot block is the per-cell maximum across the seven open LLMs in \Cref{tab:main_zs_ft_chrf}. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B degenerate at this prompt (visible as COMET~$\gg$~ChrF in their rows); see \Cref{tab:prompt_engineering_open_chrf} for their vanilla-prompt baseline. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{ICL}; \emph{italic}: best performance within open or closed model group.}
 \label{tab:open_vs_closed_icl_chrf}
 \end{table*}
 
@@ -164,7 +164,7 @@ Tiny-Aya-G & \emph{55.8} & 56.1 & 35.9 & 30.6 & \emph{61.7} & \emph{59.2} & 66.2
 TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.2 & 39.2 & 45.8 & 43.6 & 31.6 & 39.4 & 45.7 \\
 \bottomrule
 \end{tabular}
-\caption{Open vs. closed-source LLMs at sentence-level in-context learning (COMET), all rows at the uniform \texttt{template5\_10shot} configuration (see \Cref{tab:template_shot_ablation_comet} for the template/shot ablation that selected this config). \textit{Best open} in the zero-shot block is the per-cell maximum across the seven open LLMs in \Cref{tab:main_zs_ft_comet}. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B degenerate at this prompt (visible as COMET~$\gg$~ChrF in their rows); see \Cref{tab:prompt_engineering_open_comet} for their vanilla-prompt baseline. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{ICL}; \emph{italic}: best performance within open or closed model group.}
+\caption{Open vs. closed-source LLMs at sentence-level in-context learning (COMET), all rows at the uniform \texttt{template5\textunderscore{}10shot} configuration (see \Cref{tab:template_shot_ablation_comet} for the template/shot ablation that selected this config). \textit{Best open} in the zero-shot block is the per-cell maximum across the seven open LLMs in \Cref{tab:main_zs_ft_comet}. AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B degenerate at this prompt (visible as COMET~$\gg$~ChrF in their rows); see \Cref{tab:prompt_engineering_open_comet} for their vanilla-prompt baseline. \textbf{Bold}: best performance across \textit{zero-shot} and \textit{ICL}; \emph{italic}: best performance within open or closed model group.}
 \label{tab:open_vs_closed_icl_comet}
 \end{table*}
 
@@ -525,7 +525,7 @@ GPT-5.4 & 10-shot (template5) $T{=}0$ & 39.6 & 59.7 & \textbf{50.4} & 55.3 & \te
 GPT-5.4 & 10-shot (template5) $T{=}0.6$ & -- & -- & -- & -- & -- & -- & -- \\
 \bottomrule
 \end{tabular}
-\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (chrF). \textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} numbers from Table~\ref{tab:open_vs_closed_icl_chrf} for these two models at their headline templated 10-shot configuration (Gemini-1.5: \texttt{template5\_10shot}, GPT-4o: \texttt{template3\_10shot}). \textit{Retrieval ablation} contrasts the same templated 10-shot run against semantic-similarity 10-shot exemplars at $T{=}0$. \textit{Temperature ablation} replays each model's headline templated configuration at $T{=}0.6$ to isolate temperature. All ablations are \texttt{eng}$\to$\texttt{xxx} only (no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). \textbf{Bold}: column maximum within the block.}
+\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (chrF). \textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} numbers from Table~\ref{tab:open_vs_closed_icl_chrf} for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) at their headline templated 10-shot configuration (Gemini-1.5: \texttt{template5\textunderscore{}10shot}; GPT-4o: \texttt{template3\textunderscore{}10shot}; latest: \texttt{template5\textunderscore{}10shot}). \textit{Retrieval ablation} contrasts the same templated 10-shot run against semantic-similarity 10-shot exemplars at $T{=}0$. \textit{Temperature ablation} replays each model's headline templated configuration at $T{=}0.6$ to isolate temperature. All ablations are \texttt{eng}$\to$\texttt{xxx} only (no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). \textbf{Bold}: column maximum within the block.}
 \label{tab:closed_ablations_chrf}
 \end{table*}
 
@@ -582,7 +582,7 @@ GPT-5.4 & 10-shot (template5) $T{=}0$ & 66.6 & 64.8 & \textbf{70.6} & \textbf{70
 GPT-5.4 & 10-shot (template5) $T{=}0.6$ & -- & -- & -- & -- & -- & -- & -- \\
 \bottomrule
 \end{tabular}
-\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (COMET). \textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} numbers from Table~\ref{tab:open_vs_closed_icl_comet} for these two models at their headline templated 10-shot configuration (Gemini-1.5: \texttt{template5\_10shot}, GPT-4o: \texttt{template3\_10shot}). \textit{Retrieval ablation} contrasts the same templated 10-shot run against semantic-similarity 10-shot exemplars at $T{=}0$. \textit{Temperature ablation} replays each model's headline templated configuration at $T{=}0.6$ to isolate temperature. All ablations are \texttt{eng}$\to$\texttt{xxx} only (no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). \textbf{Bold}: column maximum within the block.}
+\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (COMET). \textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} numbers from Table~\ref{tab:open_vs_closed_icl_comet} for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) at their headline templated 10-shot configuration (Gemini-1.5: \texttt{template5\textunderscore{}10shot}; GPT-4o: \texttt{template3\textunderscore{}10shot}; latest: \texttt{template5\textunderscore{}10shot}). \textit{Retrieval ablation} contrasts the same templated 10-shot run against semantic-similarity 10-shot exemplars at $T{=}0$. \textit{Temperature ablation} replays each model's headline templated configuration at $T{=}0.6$ to isolate temperature. All ablations are \texttt{eng}$\to$\texttt{xxx} only (no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). \textbf{Bold}: column maximum within the block.}
 \label{tab:closed_ablations_comet}
 \end{table*}
 
@@ -673,7 +673,7 @@ GPT-5.4 & 10-shot (template5) $T{=}0.6$ & -- & -- & -- & -- & -- & -- & -- \\
 \bottomrule
 \end{tabular}
 }
-\caption{Template/shot ablation for the four reference models with bidirectional templated coverage at $T{=}0$ (chrF). Each row is a (template, shot-count) configuration (template number first, shot count as subscript $s$); the underlined row \texttt{5}$_{s=10}$ is the configuration we use throughout the body of the paper. \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations. We cap shot count at 20: the gain from 10$\to$20 shots is at most $0.2$ COMET, well below the $1$-COMET threshold we set for adopting a higher shot count.}
+\caption{Template/shot ablation for the six reference models with bidirectional templated coverage at $T{=}0$ -- two open (Llama3-8B, Gemma2-9B-IT) and four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) (chrF). Each row is a (template, shot-count) configuration (template number first, shot count as subscript $s$); the underlined row \texttt{5}$_{s=10}$ is the configuration we use throughout the body of the paper. \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations. We cap shot count at 20: the gain from 10$\to$20 shots is at most $0.2$ COMET, well below the $1$-COMET threshold we set for adopting a higher shot count.}
 \label{tab:template_shot_ablation_chrf}
 \end{table*}
 
@@ -764,7 +764,7 @@ GPT-5.4 & 10-shot (template5) $T{=}0.6$ & -- & -- & -- & -- & -- & -- & -- \\
 \bottomrule
 \end{tabular}
 }
-\caption{Template/shot ablation for the four reference models with bidirectional templated coverage at $T{=}0$ (COMET). Each row is a (template, shot-count) configuration (template number first, shot count as subscript $s$); the underlined row \texttt{5}$_{s=10}$ is the configuration we use throughout the body of the paper. \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations. We cap shot count at 20: the gain from 10$\to$20 shots is at most $0.2$ COMET, well below the $1$-COMET threshold we set for adopting a higher shot count.}
+\caption{Template/shot ablation for the six reference models with bidirectional templated coverage at $T{=}0$ -- two open (Llama3-8B, Gemma2-9B-IT) and four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) (COMET). Each row is a (template, shot-count) configuration (template number first, shot count as subscript $s$); the underlined row \texttt{5}$_{s=10}$ is the configuration we use throughout the body of the paper. \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations. We cap shot count at 20: the gain from 10$\to$20 shots is at most $0.2$ COMET, well below the $1$-COMET threshold we set for adopting a higher shot count.}
 \label{tab:template_shot_ablation_comet}
 \end{table*}
 
@@ -831,7 +831,7 @@ GPT-5.4 & 10-shot (template5) $T{=}0.6$ & -- & -- & -- & -- & -- & -- & -- \\
 \bottomrule
 \end{tabular}
 }
-\caption{Document-level template/shot ablation for the two closed APIs with the full 3-template $\times$ 3-shot grid (chrF). Each row is a (template, shot-count) configuration for that model (template number first, shot count as subscript $s$). Open-source LLMs are not included here -- they only have a single \texttt{doc\_0shot} / \texttt{doc\_1shot} configuration each (no template variants); see \Cref{tab:doc_comet} for the headline open-vs-closed doc-level comparison. SSA-COMET is reported throughout (no rescore needed; values were already in the per-result JSONs from the closed-API doc-level imports). \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations.}
+\caption{Document-level template/shot ablation for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) across the 3-template $\times$ 3-shot grid (chrF). Each row is a (template, shot-count) configuration for that model (template number first, shot count as subscript $s$). Open-source LLMs are not included here -- they only have a single \texttt{doc\textunderscore{}0shot} / \texttt{doc\textunderscore{}1shot} configuration each (no template variants); see \Cref{tab:doc_comet} for the headline open-vs-closed doc-level comparison. SSA-COMET is reported throughout (no rescore needed; values were already in the per-result JSONs from the closed-API doc-level imports). \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations.}
 \label{tab:doc_template_shot_ablation_chrf}
 \end{table*}
 
@@ -898,7 +898,7 @@ GPT-5.4 & 10-shot (template5) $T{=}0.6$ & -- & -- & -- & -- & -- & -- & -- \\
 \bottomrule
 \end{tabular}
 }
-\caption{Document-level template/shot ablation for the two closed APIs with the full 3-template $\times$ 3-shot grid (COMET). Each row is a (template, shot-count) configuration for that model (template number first, shot count as subscript $s$). Open-source LLMs are not included here -- they only have a single \texttt{doc\_0shot} / \texttt{doc\_1shot} configuration each (no template variants); see \Cref{tab:doc_comet} for the headline open-vs-closed doc-level comparison. SSA-COMET is reported throughout (no rescore needed; values were already in the per-result JSONs from the closed-API doc-level imports). \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations.}
+\caption{Document-level template/shot ablation for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) across the 3-template $\times$ 3-shot grid (COMET). Each row is a (template, shot-count) configuration for that model (template number first, shot count as subscript $s$). Open-source LLMs are not included here -- they only have a single \texttt{doc\textunderscore{}0shot} / \texttt{doc\textunderscore{}1shot} configuration each (no template variants); see \Cref{tab:doc_comet} for the headline open-vs-closed doc-level comparison. SSA-COMET is reported throughout (no rescore needed; values were already in the per-result JSONs from the closed-API doc-level imports). \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations.}
 \label{tab:doc_template_shot_ablation_comet}
 \end{table*}
 
@@ -923,7 +923,7 @@ Tiny-Aya-G & 36.3 & \textbf{46.6} & 55.1 & +8.6 & -- & 30.8 & 35.6 & 33.8 & -1.9
 TranslateGemma-12B & 37.7 & 37.6 & 45.7 & +8.2 & -- & \textbf{32.9} & \textbf{36.1} & 12.2 & -23.9 & -- \\
 \bottomrule
 \end{tabular}
-\caption{Vanilla vs.\ templated ICL on the seven open LLMs, bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. V$_0$: vanilla 0-shot (\texttt{basic}); V$_5$: vanilla 5-shot (\texttt{few\_shot}, random retrieval); T$_{10}$: \texttt{template5\_10shot} (the locked body configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the headline lift from vanilla to templated; $\Delta_{T_{\text{shot}}} = $T$_{10} - $T$_5$ isolates the shot-count effect (template fixed at \texttt{template5}). Only Llama3-8B and Gemma2-9B-IT have T$_5$ data among the open LLMs; for those two $\Delta_{T_{\text{shot}}}$ is small ($\le 1.5$ COMET, $\le 2.4$ chrF), so almost all the V$_5\to$T$_{10}$ jump is from prompt templating rather than the shot-count increase. The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration signal: large positive $\Delta_{V\to T}$ COMET paired with large negative $\Delta_{V\to T}$ chrF ($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target generations rather than real translations. \textbf{Bold}: column maximum.}
+\caption{Vanilla vs.\ templated ICL on the seven open LLMs, bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. V$_0$: vanilla 0-shot (\texttt{basic}); V$_5$: vanilla 5-shot (\texttt{few\textunderscore{}shot}, random retrieval); T$_{10}$: \texttt{template5\textunderscore{}10shot} (the locked body configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the headline lift from vanilla to templated; $\Delta_{T_{\text{shot}}} = $T$_{10} - $T$_5$ isolates the shot-count effect (template fixed at \texttt{template5}). Only Llama3-8B and Gemma2-9B-IT have T$_5$ data among the open LLMs; for those two $\Delta_{T_{\text{shot}}}$ is small ($\le 1.5$ COMET, $\le 2.4$ chrF), so almost all the V$_5\to$T$_{10}$ jump is from prompt templating rather than the shot-count increase. The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration signal: large positive $\Delta_{V\to T}$ COMET paired with large negative $\Delta_{V\to T}$ chrF ($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target generations rather than real translations. \textbf{Bold}: column maximum.}
 \label{tab:prompt_engineering_open}
 \end{table*}
 
@@ -1006,13 +1006,13 @@ TranslateGemma-12B & 37.7 & 37.6 & 45.7 & +8.2 & -- & \textbf{32.9} & \textbf{36
 \quad Gemini-3.1 & \textbf{48.8} & \textbf{61.2} & \textbf{55.0} & 67.8 & 68.1 & 68.0 \\
 \quad GPT-5.4 & 48.5 & 57.7 & 53.1 & \textbf{67.8} & \textbf{68.7} & \textbf{68.3} \\
 \midrule
-\multicolumn{7}{l}{\textit{Document-level (vanilla \texttt{doc\_0shot})}} \\
+\multicolumn{7}{l}{\textit{Document-level (vanilla \texttt{doc\textunderscore{}0shot})}} \\
 \quad Gemini-1.5 & 27.1 & 66.4 & 46.8 & 28.8 & 40.2 & 34.5 \\
 \quad GPT-4o & 40.9 & 68.0 & 54.4 & 25.9 & 38.4 & 32.1 \\
 \quad Gemini-3.1 & 47.1 & 67.7 & 57.4 & 45.2 & \textbf{51.4} & \textbf{48.3} \\
 \quad GPT-5.4 & \textbf{50.0} & \textbf{70.8} & \textbf{60.4} & \textbf{45.4} & 51.1 & 48.3 \\
 \bottomrule
 \end{tabular}
-\caption{Closed-API evolution. Two legacy models (GPT-4o, Gemini-1.5) and two latest models (GPT-5.4, Gemini-3.1-Flash-Lite) at the headline sentence-level configuration (template~5, 10-shot, $T{=}0$) and the headline document-level configuration (vanilla \texttt{doc\_0shot}). Per-direction averages over the six target languages, plus an overall Avg. Both directions move in favour of the latest models on COMET. \textbf{Bold}: column maximum within each block (sentence vs.\ document).}
+\caption{Closed-API evolution. Two legacy models (GPT-4o, Gemini-1.5) and two latest models (GPT-5.4, Gemini-3.1-Flash-Lite) at the headline sentence-level configuration (template~5, 10-shot, $T{=}0$) and the headline document-level configuration (vanilla \texttt{doc\textunderscore{}0shot}). Per-direction averages over the six target languages, plus an overall Avg. Both directions move in favour of the latest models on COMET. \textbf{Bold}: column maximum within each block (sentence vs.\ document).}
 \label{tab:closed_evolution}
 \end{table*}
