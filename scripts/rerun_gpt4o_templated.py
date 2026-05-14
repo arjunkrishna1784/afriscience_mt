@@ -58,64 +58,9 @@ from tqdm import tqdm
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 
-# --- Brevo email notifier (mirrors scripts/rerun_gemini_newer.py) ----------
-
-def _send_brevo_email(*, api_key: str, sender: str, recipient: str,
-                      subject: str, body: str) -> bool:
-    import urllib.request
-    payload = json.dumps({
-        "sender": {"email": sender, "name": "AfriScience-MT"},
-        "to": [{"email": recipient}],
-        "subject": subject,
-        "textContent": body,
-    }).encode("utf-8")
-    req = urllib.request.Request(
-        "https://api.brevo.com/v3/smtp/email",
-        data=payload,
-        headers={
-            "accept": "application/json",
-            "api-key": api_key,
-            "content-type": "application/json",
-        },
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=15) as r:
-            return r.status < 300
-    except Exception as e:
-        print(f"  ✗ brevo notify failed: {e}", file=sys.stderr)
-        return False
-
-
-class Notifier:
-    def __init__(self, *, api_key, sender, recipient, every_n):
-        self.api_key = api_key
-        self.sender = sender
-        self.recipient = recipient
-        self.every_n = every_n
-        self.enabled = bool(api_key and sender and recipient)
-        self.last_t = time.time()
-
-    def send(self, subject, body):
-        if not self.enabled:
-            return
-        ok = _send_brevo_email(
-            api_key=self.api_key, sender=self.sender, recipient=self.recipient,
-            subject=f"[AfriScience-MT] {subject}", body=body,
-        )
-        if ok:
-            print(f"  ✉ notified {self.recipient}: {subject}")
-        self.last_t = time.time()
-
-    def maybe_progress(self, *, i, total, last_cfg):
-        if not self.enabled:
-            return
-        if i % self.every_n == 0 or (time.time() - self.last_t) > 3600:
-            self.send(
-                f"Progress: {i}/{total} configs",
-                f"Last completed: {last_cfg}\n"
-                f"Elapsed since last update: {time.time()-self.last_t:.0f}s",
-            )
+# Brevo email notifier — re-exported here so existing
+# `from rerun_gpt4o_templated import Notifier` callers keep working.
+from afriscience_mt.utils.notifier import Notifier  # noqa: E402,F401
 
 ROOT = Path(__file__).resolve().parents[1]
 TEST_DIR = ROOT / "data" / "processed_files" / "test"
