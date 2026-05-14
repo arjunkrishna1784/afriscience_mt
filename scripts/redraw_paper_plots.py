@@ -625,9 +625,11 @@ def fig_spider_per_pair_subdir(metric: str = "chrf"):
     nllb_base   = EXP_DIR / "seq2seq" / "finetune" / "nllb_200_1_3b" / "dcs"
     gemma_base  = EXP_DIR / "llm" / "open" / "finetune" / "gemma2_9b_it" / "r64"
     aya_base    = EXP_DIR / "llm" / "open" / "finetune" / "tiny_aya_earth" / "r64"
-    # GPT-4o template5_10shot at T=0 in both directions (per-domain rescored
-    # 2026-05-09, commit 81083391).
-    gpt_e2x     = EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt4o" / "template5_10shot"
+    # Best closed: GPT-5.4 template5_10shot at T=0 in both directions
+    # (the locked body config; needs scripts/rescore_per_domain_ssa.py
+    # to populate per_domain SSA-COMET in results.json for the COMET
+    # variant).
+    gpt_e2x     = EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt54" / "template5_10shot"
     gpt_x2e     = gpt_e2x
 
     # Each system: (name, base_dir, line_color, fill_color, linestyle, marker).
@@ -638,7 +640,7 @@ def fig_spider_per_pair_subdir(metric: str = "chrf"):
         return [
             ("NLLB-1.3B",        nllb_base,  "#3b67c4", "#a9bde6", "-",  "o"),
             ("Gemma2-9B (LoRA)", gemma_base, "#2ca25f", "#b8e0c8", "--", "s"),
-            ("GPT-4o",           gpt_base,   "#d24a4a", "#f5c1c1", ":",  "^"),
+            ("GPT-5.4",          gpt_base,   "#d24a4a", "#f5c1c1", ":",  "^"),
         ]
 
     def systems4(pair: str):
@@ -647,7 +649,7 @@ def fig_spider_per_pair_subdir(metric: str = "chrf"):
             ("NLLB-1.3B",        nllb_base,  "#3b67c4", "#a9bde6", "-",   "o"),
             ("Gemma2-9B (LoRA)", gemma_base, "#2ca25f", "#b8e0c8", "--",  "s"),
             ("Tiny-Aya-E (LoRA)", aya_base,  "#9467bd", "#d8c8e8", "-.",  "^"),
-            ("GPT-4o",           gpt_base,   "#d24a4a", "#f5c1c1", ":",   "D"),
+            ("GPT-5.4",          gpt_base,   "#d24a4a", "#f5c1c1", ":",   "D"),
         ]
 
     pairs = [f"eng-{l}" for l in LANGS] + [f"{l}-eng" for l in LANGS]
@@ -792,18 +794,19 @@ def fig_spider_per_pair():
 
 
 def fig_per_domain_radar():
-    """Per-domain chrF radar — selected systems × 11 domains, eng-X averaged."""
-    # GPT-4o eng-X predictions live under t0/icl/gpt4o/5shot_semantic/
-    # (zero_shot/ holds only results.json — predictions weren't archived).
+    """Per-domain chrF radar — selected systems x 11 domains, eng-X averaged.
+
+    Three systems following the per-pair spider:
+    NLLB-1.3B (fine-tuned), Gemma2-9B-IT LoRA r=64 (best open),
+    GPT-5.4 template5_10shot (best closed)."""
     systems = [
-        ("NLLB-1.3B (zero-shot)",
-         EXP_DIR / "seq2seq" / "zero_shot" / "nllb_200_1_3b",        "#9ecae1"),
         ("NLLB-1.3B (fine-tuned)",
          EXP_DIR / "seq2seq" / "finetune" / "nllb_200_1_3b" / "dcs", "#3182bd"),
-        ("LLaMA-3.1-8B LoRA r=64",
-         EXP_DIR / "llm" / "open" / "finetune" / "llama3_8b" / "r64", "#e6550d"),
-        ("GPT-4o (5-shot ICL)",
-         EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt4o" / "5shot_semantic",
+        ("Gemma2-9B-IT LoRA r=64",
+         EXP_DIR / "llm" / "open" / "finetune" / "gemma2_9b_it" / "r64",
+         "#e6550d"),
+        ("GPT-5.4 (10-shot, template5)",
+         EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt54" / "template5_10shot",
          "#74c476"),
     ]
 
@@ -854,7 +857,7 @@ def fig_per_domain_weighted():
     Systems:
       - NLLB-1.3B (fine-tuned)         -- best seq2seq
       - Gemma2-9B-IT LoRA $r{=}64$     -- best open LLM
-      - GPT-4o (10-shot, template5)    -- closed-API headline config
+      - GPT-5.4 (10-shot, template5)   -- best closed
     """
     domain_sizes = {
         "chemistry": 46, "Indigenous knowledge": 92, "engineering": 93,
@@ -870,8 +873,8 @@ def fig_per_domain_weighted():
         ("Gemma2-9B-IT LoRA $r{=}64$",
          EXP_DIR / "llm" / "open" / "finetune" / "gemma2_9b_it" / "r64",
          "#e6550d"),
-        ("GPT-4o (10-shot, template5)",
-         EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt4o" / "template5_10shot",
+        ("GPT-5.4 (10-shot, template5)",
+         EXP_DIR / "llm" / "closed" / "t0" / "icl" / "gpt54" / "template5_10shot",
          "#74c476"),
     ]
 

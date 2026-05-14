@@ -39,8 +39,8 @@ FIG_DIR.mkdir(parents=True, exist_ok=True)
 LANGS = ["amh", "hau", "lug", "nso", "yor", "zul"]
 SHOTS = [0, 5, 10, 20]
 TEMPLATES = [1, 2, 3, 4, 5]
-MODELS = [("gemini_15_flash", "gemini"),
-          ("gpt4o",            "gpt-4o")]
+MODELS = [("gemini_31_flash_lite", "gemini-3.1"),
+          ("gpt54",                "gpt-5.4")]
 
 # Match the existing Figure 4 colour palette closely.
 TPL_COLOR = {
@@ -69,14 +69,23 @@ plt.rcParams.update({
 
 def metric_at(model: str, temp_setting: str, prompt_strategy: str,
               pair: str, metric: str) -> float | None:
-    p = (CLOSED / temp_setting / "icl" / model / prompt_strategy / pair
-         / "results.json")
-    if not p.exists():
-        return None
-    v = json.loads(p.read_text()).get("metrics", {}).get(metric)
-    if v is None:
-        return None
-    return v * 100 if metric == "ssa_comet" else v
+    # Legacy closed APIs (gpt4o, gemini_15_flash) store T=0.6 dumps under
+    # ``t06``; the latest pair (gpt54, gemini_31_flash_lite) stores them
+    # under ``t6``. Try the requested setting first, then the alternate.
+    candidates = [temp_setting]
+    if temp_setting == "t06":
+        candidates.append("t6")
+    elif temp_setting == "t6":
+        candidates.append("t06")
+    for ts in candidates:
+        p = (CLOSED / ts / "icl" / model / prompt_strategy / pair
+             / "results.json")
+        if p.exists():
+            v = json.loads(p.read_text()).get("metrics", {}).get(metric)
+            if v is None:
+                return None
+            return v * 100 if metric == "ssa_comet" else v
+    return None
 
 
 def metric_curve(model: str, temp_setting: str, template: int, pair: str,
@@ -112,7 +121,9 @@ def _setup_subplot(ax, *, ylim=None, model_label=None):
 def _plot_pair_cell(axL, axR, *, eng_to_x: bool, lang: str, metric: str):
     """Two subplots side-by-side: gemini (left) | gpt-4o (right) for one pair."""
     pair = f"eng-{lang}" if eng_to_x else f"{lang}-eng"
-    temp_setting = "t06" if eng_to_x else "t0"
+    # Both directions at T=0 (the locked-config used throughout the
+    # paper body); metric_at falls back to t06/t6 only if t0 is missing.
+    temp_setting = "t0"
 
     all_vals = []
     for (model, _disp) in MODELS:
