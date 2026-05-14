@@ -682,17 +682,58 @@ def build_closed_ablations(rows, metric):
         v = vec(pull(model, etype, temp, strategies=strategies, pairs=pairs), pairs)
         return (model, label, v + [avg_(v)])
 
-    # ---- block 1: Reported headline at T=0 (eng->xxx half).
-    # Per-model best templated 10-shot, capped at 10 per the project rule.
-    # Whole table is eng->xxx only because Blocks 2 and 3 only have data
-    # for that direction (no closed-API ablation runs on xxx->eng).
-    reported = []
+    # ---- blocks 1a + 1b: Reported at T=0, vanilla and templated split.
+    # Each sub-block has TWO rows per model so the ZS vs ICL contrast is
+    # explicit within the same prompt-style class:
+    #   * Vanilla:   ZS = vanilla 0shot;  ICL = vanilla 5shot
+    #   * Templated: ZS = mean of template{1,2,4}_0shot;
+    #                ICL = best templated 10-shot per model
+    # The legacy closed APIs (gpt-4o, gemini-1.5) never had a vanilla
+    # 5-shot run on the closed-API side; those cells render as "--".
+    # Whole table is eng->xxx only because the ablation blocks only
+    # have data for that direction (no closed-API ablation runs on xxx->eng).
+    ZS_TEMPLATES = ("template1_0shot", "template2_0shot", "template4_0shot")
+
+    def merge_pair_means(model, etype, temp, strategies):
+        """Per-pair mean over `strategies`; returns {pair: avg} dict."""
+        per_strat = [pull(model, etype, temp, strategies=(s,),
+                          pairs=PAIRS_E2X) for s in strategies]
+        merged = {}
+        for p in PAIRS_E2X:
+            vs = [d[p] for d in per_strat if p in d]
+            if vs:
+                merged[p] = sum(vs) / len(vs)
+        return merged
+
+    def avg_row(model, label, etype, temp, strategies):
+        d = merge_pair_means(model, etype, temp, strategies)
+        v = vec(d, PAIRS_E2X)
+        return (model, label, v + [avg_(v)])
+
+    def keep_present(rows_list):
+        """Drop rows whose data cells (excluding the trailing avg) are all None."""
+        return [r for r in rows_list if any(v is not None for v in r[2][:-1])]
+
+    reported_vanilla = []
+    for m in CLOSED:
+        reported_vanilla.append(row(m, "ZS",
+                                    "llm_zero_shot", "t0", (None,),
+                                    PAIRS_E2X))
+        reported_vanilla.append(row(m, "ICL (5-shot)",
+                                    "llm_icl", "t0", ("5shot",),
+                                    PAIRS_E2X))
+    reported_vanilla = keep_present(reported_vanilla)
+
+    reported_templated = []
     for m in CLOSED:
         s = HEADLINE_STRATEGY[m]
-        reported.append(row(m, "ZS",
-                            "llm_zero_shot", "t0", (None,), PAIRS_E2X))
-        reported.append(row(m, f"10-shot ({s.split('_')[0]})",
-                            "llm_icl", "t0", (s,), PAIRS_E2X))
+        reported_templated.append(avg_row(m,
+            r"ZS (avg \texttt{template\{1,2,4\}})",
+            "llm_icl", "t0", ZS_TEMPLATES))
+        reported_templated.append(row(m,
+            f"ICL (10-shot, {s.split('_')[0]})",
+            "llm_icl", "t0", (s,), PAIRS_E2X))
+    reported_templated = keep_present(reported_templated)
 
     # ---- block 2: retrieval ablation (eng->xxx, T=0).
     # Per-model templated 10-shot vs semantic_10shot.
@@ -705,18 +746,18 @@ def build_closed_ablations(rows, metric):
                                  "llm_icl", "t0", ("semantic_10shot",), PAIRS_E2X))
 
     # ---- block 3: temperature ablation (eng->xxx, T=0 vs T=0.6).
-    # Only the templated 10-shot row is shown so the ablation is
-    # comparable across all four closed APIs:
-    #   * Gemini-1.5 has a genuine vanilla ZS rerun at T=0.6;
-    #   * GPT-4o's "ZS T=0.6" in the legacy dump is literally identical
-    #     to its ZS T=0 (no separate rerun was performed);
-    #   * Gemini-3.1 and GPT-5.4 were not run at vanilla 0shot T=0.6
-    #     (the new closed-API vanilla pass is T=0 only).
-    # The templated 10-shot config IS rerun at T=0.6 for all four.
+    # Two templated configurations comparable across all four closed APIs:
+    #   * ZS = mean of template{1,2,4}_0shot (paper templates 1/2/4
+    #     are 0-shot prompts). Vanilla 0shot is excluded because
+    #     GPT-4o's t06 dump duplicates its t0 numbers and the latest
+    #     closed APIs have no vanilla 0shot at T=0.6.
+    #   * 10-shot at each model's best templated config.
     temp_abl = []
     for m in CLOSED:
         s = HEADLINE_STRATEGY[m]
         candidates = [
+            avg_row(m, "ZS ($T{=}0$)",   "llm_icl", "t0",  ZS_TEMPLATES),
+            avg_row(m, "ZS ($T{=}0.6$)", "llm_icl", "t06", ZS_TEMPLATES),
             row(m, f"10-shot ({s.split('_')[0]}) $T{{=}}0$",
                 "llm_icl", "t0",  (s,), PAIRS_E2X),
             row(m, f"10-shot ({s.split('_')[0]}) $T{{=}}0.6$",
@@ -788,6 +829,19 @@ def build_closed_ablations(rows, metric):
                 if not rows_here:
                     continue
                 ver_n = len(rows_here)
+                # Per-(version) per-column max for italic emphasis: highlights
+                # the better of the within-model rows (e.g. ZS vs ICL inside
+                # one model's vanilla block) so the reader can scan whether
+                # ICL beats ZS for that model. Only emit italic when the
+                # column has >=2 present values among the model's rows
+                # (otherwise there's nothing to compare against).
+                ver_col_max = []
+                ver_col_n   = []
+                for ci in range(7):
+                    cv = [vals[ci] for _, vals in rows_here
+                          if vals[ci] is not None]
+                    ver_col_max.append(max(cv) if cv else None)
+                    ver_col_n.append(len(cv))
                 if vi > 0:
                     # divider between versions within a family
                     lines.append(r"\cmidrule(lr){2-" + str(n_cols) + "}")
@@ -795,6 +849,10 @@ def build_closed_ablations(rows, metric):
                     cells = []
                     for ci, v in enumerate(vals):
                         s = fmt(v)
+                        if (v is not None and ver_col_max[ci] is not None
+                                and abs(v - ver_col_max[ci]) < 1e-9
+                                and ver_col_n[ci] >= 2):
+                            s = f"\\emph{{{s}}}"
                         if (v is not None and cmax[ci] is not None
                                 and abs(v - cmax[ci]) < 1e-9):
                             s = f"\\textbf{{{s}}}"
@@ -814,45 +872,90 @@ def build_closed_ablations(rows, metric):
                                  f"{setting_label} & "
                                  + " & ".join(cells) + r" \\")
 
-    rep_max  = col_max(reported)
-    ret_max  = col_max(retrieval_abl)
-    temp_max = col_max(temp_abl)
+    rep_v_max = col_max(reported_vanilla)
+    rep_t_max = col_max(reported_templated)
+    ret_max   = col_max(retrieval_abl)
+    temp_max  = col_max(temp_abl)
 
-    emit_block("Reported ($T{=}0$)",
-               reported, rep_max, first=True)
+    emit_block("Reported, vanilla prompts ($T{=}0$): ZS vs ICL (5-shot)",
+               reported_vanilla, rep_v_max, first=True)
+    emit_block(r"Reported, templated prompts ($T{=}0$): ZS (avg "
+               r"\texttt{template\{1,2,4\}\textunderscore{}0shot}) vs ICL (best 10-shot)",
+               reported_templated, rep_t_max)
     emit_block("Retrieval ablation: templated vs. semantic-similarity, $T{=}0$",
                retrieval_abl, ret_max)
-    emit_block("Temperature ablation ($T{=}0$ vs $T{=}0.6$)",
+    emit_block("Temperature ablation ($T{=}0$ vs $T{=}0.6$, all templated)",
                temp_abl, temp_max)
 
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
         (r"\caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} "
-         f"({metric_label}). "
-         r"\textit{Reported} duplicates the \texttt{eng}$\to$\texttt{xxx} "
-         r"numbers from Table~\ref{tab:open_vs_closed_icl_" +
-         ("chrf" if metric == "chrf" else "comet") + r"} for the four "
-         r"closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, "
-         r"GPT-5.4) at their best templated 10-shot configuration "
-         r"(Gemini-1.5: \texttt{template5\textunderscore{}10shot}; "
-         r"GPT-4o: \texttt{template3\textunderscore{}10shot}; "
-         r"latest: \texttt{template5\textunderscore{}10shot}). "
-         r"\textit{Retrieval ablation} contrasts the same templated "
-         r"10-shot run against semantic-similarity 10-shot exemplars at "
-         r"$T{=}0$. "
-         r"\textit{Temperature ablation} replays each model's best "
-         r"templated configuration at $T{=}0.6$ to isolate temperature "
-         r"(ZS at $T{=}0.6$ is omitted: only Gemini-1.5 has a genuine "
-         r"vanilla rerun at $T{=}0.6$, and the templated row is the "
-         r"comparable contrast across all four APIs). "
-         r"All ablations are \texttt{eng}$\to$\texttt{xxx} only "
-         r"(no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}). "
-         r"\textbf{Bold}: column maximum within the block.}"),
+         f"({metric_label}) for the four closed APIs "
+         r"(legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4). "
+         r"Four blocks: vanilla ZS vs ICL; templated ZS vs ICL; retrieval "
+         r"(templated vs semantic 10-shot); and temperature ($T{=}0$ vs "
+         r"$T{=}0.6$, all templated). \textbf{Bold}: per-block column "
+         r"maximum. \emph{Italic}: per-version best across that model's "
+         r"rows. See \Cref{app:closed_ablations_notes} for the full "
+         r"setup and the rationale behind each block.}"),
         r"\label{tab:closed_ablations_" + ("chrf" if metric == "chrf" else "comet") + "}",
         r"\end{table*}",
     ]
     return "\n".join(lines) + "\n"
+
+
+def build_closed_ablations_notes():
+    """Appendix paragraph that accompanies tab:closed_ablations_*. The
+    table caption is intentionally short to avoid breaking the page; the
+    full setup + rationale lives here so it can be \\input{} as a
+    standalone subsection in the appendix."""
+    return "\n".join([
+        r"\subsection{Closed-API ablation setup}",
+        r"\label{app:closed_ablations_notes}",
+        r"",
+        r"\Cref{tab:closed_ablations_comet} and "
+        r"\Cref{tab:closed_ablations_chrf} report the closed-API "
+        r"ablation on \texttt{eng}$\to$\texttt{xxx} only; no closed-API "
+        r"ablation runs on \texttt{xxx}$\to$\texttt{eng}. The four "
+        r"blocks are constructed so vanilla and templated numbers are "
+        r"never compared inside the same block.",
+        r"",
+        r"\paragraph{Reported, vanilla.} Vanilla ZS (\texttt{0shot}) vs "
+        r"vanilla ICL (\texttt{5shot}) at $T{=}0$. The legacy closed "
+        r"APIs (Gemini-1.5, GPT-4o) have no vanilla 5-shot run on the "
+        r"closed-API side, so they appear as ZS only; the latest pair "
+        r"(Gemini-3.1, GPT-5.4) has both rows.",
+        r"",
+        r"\paragraph{Reported, templated.} Templated ZS vs templated ICL "
+        r"at $T{=}0$. Templated ZS is the per-pair mean of "
+        r"\texttt{template\{1,2,4\}\textunderscore{}0shot} (the three 0-shot "
+        r"paper templates). Templated ICL is each model's best 10-shot "
+        r"configuration: \texttt{template5\textunderscore{}10shot} for "
+        r"Gemini-1.5, the latest Gemini, and the latest GPT; "
+        r"\texttt{template3\textunderscore{}10shot} for GPT-4o.",
+        r"",
+        r"\paragraph{Retrieval ablation.} The same templated 10-shot "
+        r"run as in the previous block, contrasted against "
+        r"semantic-similarity 10-shot exemplars at $T{=}0$.",
+        r"",
+        r"\paragraph{Temperature ablation.} $T{=}0$ vs $T{=}0.6$ at the "
+        r"two templated configurations comparable across all four APIs: "
+        r"templated ZS (\texttt{template\{1,2,4\}\textunderscore{}0shot} mean) "
+        r"and each model's best templated 10-shot. Vanilla 0-shot at "
+        r"$T{=}0.6$ is excluded: only Gemini-1.5 has a genuine vanilla "
+        r"rerun there; GPT-4o's $t_{0.6}$ dump duplicates its $t_0$ "
+        r"numbers, and the latest closed APIs have no vanilla 0-shot at "
+        r"$T{=}0.6$.",
+        r"",
+        r"\paragraph{Highlighting.} \textbf{Bold} marks the per-column "
+        r"maximum within a block. \emph{Italic} marks the per-language "
+        r"best across the rows of one model version (e.g.\ ICL vs ZS "
+        r"within the same prompt-style class for that model); italic is "
+        r"suppressed when only one row in the model's group has data "
+        r"for that column.",
+        r"",
+    ])
 
 
 def build_template_shot_ablation(rows, metric):
@@ -1177,7 +1280,7 @@ def build_doc_template_shot_ablation(rows, metric):
 
 
 def build_prompt_engineering_open(rows, metric=None):
-    """**Appendix.** Per-open-LLM vanilla vs. templated ICL ablation,
+    """**Appendix.** Per-LLM vanilla vs. templated ICL ablation,
     with COMET and chrF shown side-by-side in two column groups, and
     the prompt-vs-shot effects disentangled.
 
@@ -1190,11 +1293,16 @@ def build_prompt_engineering_open(rows, metric=None):
     template5_10shot, Dp = T5 - V5 (prompt effect, shot count fixed
     at 5), Ds = T10 - T5 (shot effect, template fixed at 5).
 
+    Two model groups separated by a midrule: seven open LLMs followed
+    by the latest two closed APIs (Gemini-3.1, GPT-5.4). The legacy
+    closed pair (Gemini-1.5, GPT-4o) is excluded because they have no
+    vanilla 5-shot run, which would collapse V5 / Dp to "--". Open and
+    closed groups use different vanilla-5shot tags in summary.csv
+    (open: ``icl_5shot``; closed-latest: ``5shot``).
+
     Only Llama3-8B and Gemma2-9B-IT have T5 data among the open LLMs;
-    rows for the other 5 show -- for T5/Dp/Ds. The two clean rows show
-    that the prompt jump (Dp) is roughly +5-10 COMET while the shot
-    jump (Ds) is +0.5-1.5 COMET --- i.e. most of the gain comes from
-    templating, not from going to 10 shots.
+    rows for the other 5 show -- for T5/Dp/Ds. The two latest closed
+    APIs have full T5 + V5 coverage, so every column is populated.
 
     The metric-pair layout exposes the COMET-much-greater-than-chrF
     degeneration signal for AfriqueLlama-8B, AfriqueQwen-8B, and
@@ -1209,6 +1317,10 @@ def build_prompt_engineering_open(rows, metric=None):
     OPEN = ["afriquellama_8b", "afriqueqwen_8b", "gemma2_9b_it",
             "llama3_8b", "tiny_aya_earth", "tiny_aya_global",
             "translategemma_12b"]
+    # Latest closed APIs only — the legacy pair (Gemini-1.5, GPT-4o) is
+    # excluded because they have no vanilla 5-shot run, which collapses
+    # the V5 / Delta_{V->T} columns to "--" for those rows.
+    CLOSED = ["gemini_31_flash_lite", "gpt54"]
 
     def by_disp(model_list):
         return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
@@ -1218,29 +1330,58 @@ def build_prompt_engineering_open(rows, metric=None):
         return sum(nums) / len(nums) if nums else None
 
     def pull_zs(model, m):
-        return lookup(rows, metric=m, model_short=model,
-                      experiment_type="llm_zero_shot", is_ablation="False")
+        # Legacy closed APIs and the open LLMs store vanilla ZS under
+        # llm_zero_shot; the latest closed APIs (gpt54, gemini-3.1)
+        # store the same vanilla ZS run under llm_icl/0shot.
+        return first_with_pred(rows, metric=m, candidates=[
+            dict(model_short=model, experiment_type="llm_zero_shot",
+                 is_ablation="False"),
+            dict(model_short=model, experiment_type="llm_icl",
+                 prompt_strategy="0shot"),
+        ])
 
-    def pull_icl(model, strategy, m):
-        return lookup(rows, metric=m, model_short=model,
-                      experiment_type="llm_icl", prompt_strategy=strategy)
+    def pull_icl(model, strategies, m):
+        # ``strategies`` is a tuple of fallback prompt_strategy values
+        # tried in order; the first present wins (matches the
+        # closed-API split where the latest closed APIs use ``5shot``
+        # while the open LLMs use ``icl_5shot``).
+        return first_with_pred(rows, metric=m, candidates=[
+            dict(model_short=model, experiment_type="llm_icl",
+                 prompt_strategy=s)
+            for s in strategies
+        ])
 
     # For each model: [(v0, v5, t10, d_v5_t10, d_t5_t10) per metric]
-    # The headline delta (d_v5_t10) is V5 -> T10 -- this is what shows
-    # the chrF degeneration on the broken models. The shot-only delta
-    # (d_t5_t10) is T10 - T5, available only for models with T5 data.
-    table_rows = []
-    for model in by_disp(OPEN):
+    raw_rows = []
+    grouped_models = ([(m, "open")   for m in by_disp(OPEN)] +
+                      [(m, "closed") for m in CLOSED])
+    for model, group in grouped_models:
         per_metric = []
+        v5_strats = ("icl_5shot", "5shot")
         for m in ("ssa_comet", "chrf"):
             v0  = avg_(pull_zs(model, m))
-            v5  = avg_(pull_icl(model, "icl_5shot", m))
-            t5  = avg_(pull_icl(model, "template5_5shot", m))
-            t10 = avg_(pull_icl(model, "template5_10shot", m))
+            v5  = avg_(pull_icl(model, v5_strats, m))
+            t5  = avg_(pull_icl(model, ("template5_5shot",), m))
+            t10 = avg_(pull_icl(model, ("template5_10shot",), m))
             d_v5_t10 = (t10 - v5) if (t10 is not None and v5 is not None) else None
             d_t5_t10 = (t10 - t5) if (t10 is not None and t5 is not None) else None
             per_metric.append((v0, v5, t10, d_v5_t10, d_t5_t10))
-        table_rows.append((model, per_metric))
+        raw_rows.append((model, group, per_metric))
+
+    # Within each group, sort models with complete columns first
+    # (no -- in either metric block), then by display name.
+    def is_complete(per_metric):
+        return all(v is not None for vals in per_metric for v in vals)
+
+    def sort_key(entry):
+        model, _, per_metric = entry
+        return (0 if is_complete(per_metric) else 1,
+                MODEL_DISP.get(model, model).lower())
+
+    table_rows = []
+    for grp in ("open", "closed"):
+        in_grp = [r for r in raw_rows if r[1] == grp]
+        table_rows.extend(sorted(in_grp, key=sort_key))
 
     # 10 cols: 5 per metric block
     n_per = 5
@@ -1249,8 +1390,8 @@ def build_prompt_engineering_open(rows, metric=None):
     for ci in range(n_cols):
         metric_idx = 0 if ci < n_per else 1
         cell_idx = ci % n_per
-        vals = [r[1][metric_idx][cell_idx] for r in table_rows
-                if r[1][metric_idx][cell_idx] is not None]
+        vals = [r[2][metric_idx][cell_idx] for r in table_rows
+                if r[2][metric_idx][cell_idx] is not None]
         col_max.append(max(vals) if vals else None)
 
     def fmt_v(v):
@@ -1272,11 +1413,22 @@ def build_prompt_engineering_open(rows, metric=None):
         (r"\textbf{Model} & \multicolumn{5}{c}{\textbf{COMET}} & "
          r"\multicolumn{5}{c}{\textbf{chrF}} \\"),
         r"\cmidrule(lr){2-6}\cmidrule(lr){7-11}",
-        (r" & V$_0$ & V$_5$ & T$_{10}$ & $\Delta_{V\to T}$ & $\Delta_{T_{\text{shot}}}$ "
-         r"& V$_0$ & V$_5$ & T$_{10}$ & $\Delta_{V\to T}$ & $\Delta_{T_{\text{shot}}}$ \\"),
+        (r" & V$_0$ & V$_5$ & T$_{10}$ & $\Delta_{V\to T}$ & $\Delta_{T_{5\to 10}}$ "
+         r"& V$_0$ & V$_5$ & T$_{10}$ & $\Delta_{V\to T}$ & $\Delta_{T_{5\to 10}}$ \\"),
         r"\midrule",
     ]
-    for model, per_metric in table_rows:
+    last_group = None
+    last_complete = None
+    for model, group, per_metric in table_rows:
+        complete = is_complete(per_metric)
+        if last_group is not None and group != last_group:
+            lines.append(r"\midrule")
+        elif (last_complete is not None and complete != last_complete
+              and last_group == group):
+            # within-group: thin rule between complete- and incomplete-cols
+            lines.append(r"\cmidrule(lr){1-" + str(n_cols + 1) + "}")
+        last_group = group
+        last_complete = complete
         cells_out = []
         ci = 0
         for vals in per_metric:
@@ -1293,27 +1445,31 @@ def build_prompt_engineering_open(rows, metric=None):
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
-        (r"\caption{Vanilla vs.\ templated ICL on the seven open LLMs, "
-         r"bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$"
-         r"\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. "
-         r"V$_0$: vanilla 0-shot (\texttt{basic}); "
-         r"V$_5$: vanilla 5-shot (\texttt{few\textunderscore{}shot}, random retrieval); "
+        (r"\caption{Vanilla vs.\ templated ICL on the seven open LLMs "
+         r"(top) and the two latest closed APIs (bottom: Gemini-3.1, "
+         r"GPT-5.4), bidirectional avg over the 12 "
+         r"\texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$, "
+         r"COMET and chrF side-by-side. V$_0$: vanilla 0-shot "
+         r"(\texttt{basic}); V$_5$: vanilla 5-shot "
+         r"(\texttt{few\textunderscore{}shot}, random retrieval); "
          r"T$_{10}$: \texttt{template5\textunderscore{}10shot} (the locked body "
          r"configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the "
          r"main lift from vanilla to templated; "
-         r"$\Delta_{T_{\text{shot}}} = $T$_{10} - $T$_5$ isolates the "
+         r"$\Delta_{T_{5\to 10}} = $T$_{10} - $T$_5$ isolates the "
          r"shot-count effect (template fixed at \texttt{template5}). "
-         r"Only Llama3-8B and Gemma2-9B-IT have T$_5$ data among the "
-         r"open LLMs; for those two $\Delta_{T_{\text{shot}}}$ is small "
-         r"($\le 1.5$ COMET, $\le 2.4$ chrF), so almost all the V$_5\to$T$_{10}$ "
-         r"jump is from prompt templating rather than the shot-count "
-         r"increase. The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, "
+         r"Within each group, models with complete columns are listed "
+         r"above the within-group divider (Gemma2-9B-IT, Llama3-8B "
+         r"for open; Gemini-3.1, GPT-5.4 for closed); the remaining "
+         r"open LLMs lack T$_5$ data and render as ``--'' for "
+         r"T$_5$-derived cells. The legacy closed pair (Gemini-1.5, "
+         r"GPT-4o) is omitted because they have no vanilla 5-shot run. "
+         r"The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, "
          r"AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration "
          r"signal: large positive $\Delta_{V\to T}$ COMET paired with "
          r"large negative $\Delta_{V\to T}$ chrF "
          r"($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target "
          r"generations rather than real translations. \textbf{Bold}: "
-         r"column maximum.}"),
+         r"column maximum across all 9 models.}"),
         r"\label{tab:prompt_engineering_open}",
         r"\end{table*}",
     ]
@@ -1719,6 +1875,11 @@ def main():
         out = OUT_DIR / f"{name}.tex"
         out.write_text(content)
         written.append(out)
+
+    # Standalone appendix-paragraph file that accompanies tab:closed_ablations_*.
+    notes_path = OUT_DIR / "closed_ablations_notes.tex"
+    notes_path.write_text(build_closed_ablations_notes())
+    written.append(notes_path)
 
     # Concatenate into a single sheet that mirrors new_results.tex
     sheet = "\n".join(p.read_text() for p in written)
