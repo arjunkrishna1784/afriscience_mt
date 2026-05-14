@@ -1132,6 +1132,130 @@ comparison, or is the templated proxy acceptable?
 
 ---
 
+## 2026-05-13 09:15 — Closed-API rerun execution snapshot (mid-run)
+
+**Status:** All audit-flagged jobs were launched ~05:08; gemini side
+finished its T=0 stage cleanly and chained into the T=0.6 e2x ablation
+at 08:59. gpt54 doc + vanilla still in-flight on OpenAI batch (latency-
+bound, not stalled). gpt54 T=0.6 ablation was already complete from
+2026-05-12 (writes to `t6/`, not `t06/`, due to `temp_setting()` quirk
+in `rerun_gpt4o_templated.py:221`).
+
+### Active processes
+
+| PID | Job | Started | Notes |
+|---|---|---|---|
+| 3308418 | wrapper `run_rerun_gemini_31_flash_lite.sh` | May 12 | parent of 3396573 |
+| 3367683 | `rerun_openai_doc.py --temperature 0.0` (gpt54) | 05:08 | 3 OpenAI batches in-flight |
+| 3367688 | `rerun_openai_vanilla.py --temperature 0.0` (gpt54) | 05:08 | 3 OpenAI batches in-flight |
+| 3396573 | `rerun_gemini_newer.py --temperature 0.6 --direction e2x` (gemini) | 08:59 | 6 Gemini batches in-flight |
+
+### Completed configs (on disk)
+
+| Model  | ICL T=0 | doc T=0 (templ 1+2+3) | vanilla sent (0+5) | vanilla doc (0+1) | T=0.6 e2x ablation |
+|---|---|---|---|---|---|
+| **gpt54**  | 126 / 126 ✅ | 34 / 72 | 8 / 24 | 0 / 24 | **54 / 54 ✅** |
+| **gemini** | 126 / 126 ✅ | 72 / 72 ✅ | 24 / 24 ✅ | 24 / 24 ✅ | 1 / 54 |
+
+**Total remaining: 131 cells** = 38 (gpt54 doc) + 16 (gpt54 vsent) + 24
+(gpt54 vdoc) + 53 (gemini t6 e2x).
+
+### Output-path gotcha
+
+`temp_setting(0.6) = "t6"` not `"t06"` — both `rerun_gpt4o_templated.py`
+and `rerun_gemini_newer.py` use this. So all T=0.6 outputs land under
+`experiments/llm/closed/t6/icl/<short>/`. Anyone looking for `t06/gpt54`
+will see no results; the data is at `t6/icl/gpt54/` (54 cells, untracked
+in git as of this snapshot).
+
+### Quality verification
+
+Sampled 6 gemini configs across ICL / doc / vanilla / sent. All show
+real translations (avg hyp len 148–4786 chars, 0–1 empty samples per
+config out of 28–970). Healthy — not a fail mode.
+
+### What's still missing
+
+- gpt54 doc + vanilla completion (OpenAI batch wall time ~ hours-to-day).
+- gemini t6 e2x ablation completion (~3–4 h based on stage 1 pace).
+- Commit + push the `t6/` and `doc/`/`t0/icl/` new outputs once jobs
+  drain (currently untracked in git).
+- After all 5 remaining jobs settle: run `python -m afriscience_mt
+  aggregate --out experiments/summary.csv` then SSA-COMET rescore
+  (`scripts/rescore_per_domain_ssa.py`) on the new closed configs.
+
+### Cross-refs
+
+- Scope policy: see prior 2026-05-13 audit bookmark above.
+- Output-path memory: [[closed-api-rerun-scope]] (also notes 50-shot,
+  template5_0shot, semantic xxx→eng exclusions).
+
+---
+
+## 2026-05-13 13:00 — GPT-5 silent-empty-hyp lesson (advice for the paper)
+
+**Status:** During gpt-5.4 reruns we discovered the model silently returns
+empty completions when `max_completion_tokens` is too small relative to
+the (reasoning + visible-output) budget. This costs API credits, breaks
+chrF/BLEU/COMET, and is **not flagged as an error** by the API. Worth a
+short methodological warning in the paper so others avoid the trap.
+
+### What happened
+
+| Cell | empty/n |
+|---|---|
+| `gpt54 doc_0shot_template1 eng-amh` | 26/28 (93%) |
+| `gpt54 template5_5shot yor-eng` | 231/970 (24%) |
+| `gpt54 semantic_20shot eng-amh` | 355/970 (37%) |
+
+Default `max_completion_tokens` was 4096 (doc) / 2048 (sentence). Combined
+with gpt-5's reasoning tokens consuming the same budget and Amharic's
+~3-4 tokens/character cost in Ethiopic script, the model exhausted its
+output budget on reasoning alone and returned empty `content` for many
+prompts. The OpenAI batch API reported these as `completed` (no failure).
+
+### Fix applied (verified in this run)
+
+1. `max_completion_tokens=16384` for all gpt-5 translation calls.
+2. `reasoning_effort=low` (translation rarely benefits from heavy CoT,
+   and low effort frees ~3-5× more visible-output budget for the same
+   token cap, **and is meaningfully cheaper per call**).
+3. Explicit per-row empty-hyp audit before trusting metrics.
+
+### Proposed paper text (Methods or Limitations)
+
+> "We observed that GPT-5 series models can silently return empty
+> completions when `max_completion_tokens` is set too low: reasoning
+> tokens consume the same budget as visible output, and translations
+> into morphologically rich or non-Latin-script targets (Amharic, Yorùbá,
+> Northern Sotho) routinely exceed the GPT-4-era 4096 default. The API
+> returns no error; the empties surface only as zero metric scores.
+> We set `max_completion_tokens=16384` and `reasoning_effort=low` for
+> all GPT-5 calls. We also recommend that future closed-API translation
+> work explicitly audit prediction files for empty hypotheses before
+> aggregating metrics."
+
+### What's still missing
+
+- Confirm the reasoning_effort=low + max_completion_tokens=16384 fix
+  produces 0/970 empties in the rerun currently in flight (gpt54 ICL +
+  doc + vanilla, kicked off 2026-05-13 13:00).
+- Cells found bad (201 total: 136 t0 ICL + 49 t6 ICL + 16 doc) were
+  *moved* to `experiments/llm/closed/discarded/<original_path>/` so the
+  failure data is preserved for diagnostic / paper figures.
+- Cite the OpenAI docs page that documents reasoning-token budget
+  semantics (search needed).
+
+### Cross-refs
+
+- Memory: [[closed-api-max-tokens-lesson]] (operational summary).
+- Code: `afriscience_mt/api/openai_client.py` reads
+  `OPENAI_REASONING_EFFORT` env var (default "medium"); wrappers set
+  it to "low".
+- Audit: 201 bad cells under `experiments/llm/closed/discarded/`.
+
+---
+
 ## How to add a new bookmark
 
 1. Add a dated `## YYYY-MM-DD — short title` heading.

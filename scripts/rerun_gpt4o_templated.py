@@ -49,6 +49,10 @@ import warnings
 from datetime import datetime
 from pathlib import Path
 
+# Make ``afriscience_mt`` importable when the script is launched from a
+# wrapper that doesn't set PYTHONPATH (e.g. ``bash scripts/run_rerun_gpt54.sh``).
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from tqdm import tqdm
 
 warnings.filterwarnings("ignore", category=FutureWarning)

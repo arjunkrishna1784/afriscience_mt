@@ -38,6 +38,10 @@ SHORT="gpt54"
 TS="$(date +%Y%m%d_%H%M%S)"
 mkdir -p logs
 
+# Reasoning-effort low: cheaper credits + bigger output budget for the same
+# max_completion_tokens (less chance of empty hyps from reasoning starvation).
+export OPENAI_REASONING_EFFORT=low
+
 # Args: <tag> <python-args...>
 run_stage() {
     local tag="$1"; shift
@@ -49,6 +53,7 @@ run_stage() {
         --use-batch \
         --skip-existing \
         --notify-every 25 \
+        --max-tokens 16384 \
         "$@" \
         2>&1 | tee "$log"
     echo "[$(date '+%F %T')] finished $MODEL stage=$tag"

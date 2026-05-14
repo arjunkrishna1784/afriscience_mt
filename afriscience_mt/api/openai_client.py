@@ -4,8 +4,13 @@ Updated for 2026 standards with full translation evaluation suites.
 """
 
 import asyncio
+import os
 import re
 from typing import Any, Dict, List, Optional
+
+
+def _reasoning_effort_default() -> str:
+    return os.environ.get("OPENAI_REASONING_EFFORT", "medium")
 
 from tenacity import (
     retry,
@@ -74,7 +79,7 @@ class OpenAIClient(APIClient):
             # max_completion_tokens accounts for internal reasoning tokens
             generation_kwargs["max_completion_tokens"] = kwargs.get("max_tokens", self.config.max_tokens)
             # reasoning_effort is the 2026 standard for intelligence control
-            generation_kwargs["reasoning_effort"] = kwargs.get("reasoning_effort", "medium")
+            generation_kwargs["reasoning_effort"] = kwargs.get("reasoning_effort", _reasoning_effort_default())
         else:
             generation_kwargs["max_tokens"] = kwargs.get("max_tokens", self.config.max_tokens)
             generation_kwargs["temperature"] = kwargs.get("temperature", self.config.temperature)
@@ -110,7 +115,7 @@ class OpenAIClient(APIClient):
             }
             if is_reasoning:
                 gen_kwargs["max_completion_tokens"] = self.config.max_tokens
-                gen_kwargs["reasoning_effort"] = "medium"
+                gen_kwargs["reasoning_effort"] = _reasoning_effort_default()
             else:
                 gen_kwargs["max_tokens"] = self.config.max_tokens
                 gen_kwargs["temperature"] = self.config.temperature
@@ -189,7 +194,7 @@ class OpenAIClient(APIClient):
             }
             if is_reasoning:
                 body["max_completion_tokens"] = self.config.max_tokens
-                body["reasoning_effort"] = "medium"
+                body["reasoning_effort"] = _reasoning_effort_default()
             else:
                 body["max_tokens"] = self.config.max_tokens
                 body["temperature"] = self.config.temperature

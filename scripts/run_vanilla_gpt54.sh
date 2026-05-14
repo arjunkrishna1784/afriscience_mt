@@ -31,6 +31,10 @@ SHORT="gpt54"
 TS="$(date +%Y%m%d_%H%M%S)"
 mkdir -p logs
 
+# Reasoning-effort low: cheaper credits + bigger output budget for the same
+# max_completion_tokens (less chance of empty hyps from reasoning starvation).
+export OPENAI_REASONING_EFFORT=low
+
 LOG="logs/${SHORT}_vanilla_${TS}.log"
 echo "[$(date '+%F %T')] starting $MODEL vanilla (sent+doc) @ T=0  ->  $LOG"
 python scripts/rerun_openai_vanilla.py \
@@ -40,5 +44,6 @@ python scripts/rerun_openai_vanilla.py \
     --use-batch \
     --skip-existing \
     --notify-every 10 \
+    --max-tokens 16384 \
     2>&1 | tee "$LOG"
 echo "[$(date '+%F %T')] finished $MODEL vanilla."
