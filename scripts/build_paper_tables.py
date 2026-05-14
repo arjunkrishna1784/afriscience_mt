@@ -950,7 +950,7 @@ def build_closed_ablations_notes():
         r"",
         r"\paragraph{Highlighting.} \textbf{Bold} marks the per-column "
         r"maximum within a block. \emph{Italic} marks the per-language "
-        r"best across the rows of one model version (e.g.\ ICL vs ZS "
+        r"best across the rows of one model version (e.g. ICL vs ZS "
         r"within the same prompt-style class for that model); italic is "
         r"suppressed when only one row in the model's group has data "
         r"for that column.",
@@ -1445,7 +1445,7 @@ def build_prompt_engineering_open(rows, metric=None):
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
-        (r"\caption{Vanilla vs.\ templated ICL on the seven open LLMs "
+        (r"\caption{Vanilla vs. templated ICL on the seven open LLMs "
          r"(top) and the two latest closed APIs (bottom: Gemini-3.1, "
          r"GPT-5.4), bidirectional avg over the 12 "
          r"\texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$, "
@@ -1704,9 +1704,16 @@ def build_closed_evolution(rows, metric=None):
     PAIRS_E2X = ['eng-amh','eng-hau','eng-lug','eng-nso','eng-yor','eng-zul']
     PAIRS_X2E = ['amh-eng','hau-eng','lug-eng','nso-eng','yor-eng','zul-eng']
 
-    LEGACY = ["gemini_15_flash", "gpt4o"]
-    LATEST = ["gemini_31_flash_lite", "gpt54"]
-    ALL = LEGACY + LATEST
+    # Family + version ordering so each family reads legacy -> latest -> Delta
+    # top-to-bottom. Renders with \multirow on the Model column so the
+    # evolution is visible at a glance.
+    FAMILIES = [
+        ("Gemini", [("1.5", "gemini_15_flash"),
+                    ("3.1", "gemini_31_flash_lite")]),
+        ("GPT",    [("4o",  "gpt4o"),
+                    ("5.4", "gpt54")]),
+    ]
+    ALL = [m for _, vs in FAMILIES for _, m in vs]
 
     def avg_(vs):
         nums = [v for v in vs if v is not None]
@@ -1775,20 +1782,48 @@ def build_closed_evolution(rows, metric=None):
         cols = list(zip(*[to_cells(r, lbl) for lbl, r in block_rows]))
         return [max((v for v in c if v is not None), default=None) for c in cols]
 
-    def render_row(model, row, maxes):
-        cells = to_cells(row, MODEL_DISP.get(model, model))
-        out = []
-        for v, mx in zip(cells, maxes):
-            s = fmt(v)
-            if v is not None and mx is not None and abs(v - mx) < 1e-9:
-                s = r"\textbf{" + s + r"}"
-            out.append(s)
-        return r"\quad " + MODEL_DISP.get(model, model) + " & " + " & ".join(out) + r" \\"
+    def delta_cells(legacy_row, latest_row):
+        l = to_cells(legacy_row, "")
+        n = to_cells(latest_row, "")
+        return [(b - a) if (a is not None and b is not None) else None
+                for a, b in zip(l, n)]
+
+    def fmt_d(v):
+        return "--" if v is None else f"{v:+.1f}"
 
     sent_maxes = col_maxes([(MODEL_DISP.get(m, m), r) for m, r in sent_rows])
     doc_maxes  = col_maxes([(MODEL_DISP.get(m, m), r) for m, r in doc_rows])
+    by_model = {"sent": dict(sent_rows), "doc": dict(doc_rows)}
 
     n_data_cols = 6
+    n_cols = 2 + n_data_cols  # Model + Version + 6 data
+
+    def render_block_rows(block_key, maxes):
+        out = []
+        for fi, (fam, versions) in enumerate(FAMILIES):
+            if fi > 0:
+                out.append(r"\cmidrule(lr){1-" + str(n_cols) + "}")
+            # 3 rows per family: legacy, latest, Delta
+            rowspan = len(versions) + 1
+            rows_by_ver = [(ver, by_model[block_key][model])
+                           for ver, model in versions]
+            d = delta_cells(rows_by_ver[0][1], rows_by_ver[-1][1])
+            for vi, (ver, rdata) in enumerate(rows_by_ver):
+                cells = to_cells(rdata, "")
+                cell_strs = []
+                for v, mx in zip(cells, maxes):
+                    s = fmt(v)
+                    if v is not None and mx is not None and abs(v - mx) < 1e-9:
+                        s = r"\textbf{" + s + r"}"
+                    cell_strs.append(s)
+                if vi == 0:
+                    fam_cell = r"\multirow{" + str(rowspan) + r"}{*}{" + fam + r"}"
+                else:
+                    fam_cell = ""
+                out.append(fam_cell + " & " + ver + " & " + " & ".join(cell_strs) + r" \\")
+            out.append(r" & $\Delta$ & " + " & ".join(fmt_d(v) for v in d) + r" \\")
+        return out
+
     lines = [
         r"% ---- closed_evolution ----",
         r"\begin{table*}[t]",
@@ -1796,38 +1831,41 @@ def build_closed_evolution(rows, metric=None):
         r"\small",
         r"\setlength{\tabcolsep}{4pt}",
         r"\renewcommand{\arraystretch}{1.05}",
-        r"\begin{tabular}{l" + "r" * n_data_cols + r"}",
+        r"\begin{tabular}{ll" + "r" * n_data_cols + r"}",
         r"\toprule",
-        (r"\textbf{Model} & \multicolumn{3}{c}{\textbf{chrF}}"
+        (r"\textbf{Model} & \textbf{Version} & \multicolumn{3}{c}{\textbf{chrF}}"
          r" & \multicolumn{3}{c}{\textbf{COMET}} \\"),
-        r"\cmidrule(lr){2-4}\cmidrule(lr){5-7}",
-        (r" & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg}"
+        r"\cmidrule(lr){3-5}\cmidrule(lr){6-8}",
+        (r" &  & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg}"
          r" & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg} \\"),
         r"\midrule",
-        r"\multicolumn{" + str(n_data_cols + 1) + r"}{l}{\textit{"
+        r"\multicolumn{" + str(n_cols) + r"}{l}{\textit{"
         r"Sentence-level ICL (template~5, 10-shot, $T{=}0$)}} \\",
-    ]
-    for m, r in sent_rows:
-        lines.append(render_row(m, r, sent_maxes))
-    lines += [
         r"\midrule",
-        r"\multicolumn{" + str(n_data_cols + 1) + r"}{l}{\textit{"
-        r"Document-level (vanilla \texttt{doc\textunderscore{}0shot})}} \\",
     ]
-    for m, r in doc_rows:
-        lines.append(render_row(m, r, doc_maxes))
+    lines.extend(render_block_rows("sent", sent_maxes))
+    lines += [
+        r"\midrule\midrule",
+        r"\multicolumn{" + str(n_cols) + r"}{l}{\textit{"
+        r"Document-level (vanilla \texttt{doc\textunderscore{}0shot})}} \\",
+        r"\midrule",
+    ]
+    lines.extend(render_block_rows("doc", doc_maxes))
     lines += [
         r"\bottomrule",
         r"\end{tabular}",
-        (r"\caption{Closed-API evolution. Two legacy models "
-         r"(GPT-4o, Gemini-1.5) and two latest models (GPT-5.4, "
-         r"Gemini-3.1-Flash-Lite) at the main sentence-level "
-         r"configuration (template~5, 10-shot, $T{=}0$) and the main "
-         r"document-level configuration (vanilla \texttt{doc\textunderscore{}0shot}). "
-         r"Per-direction averages over the six target languages, plus an "
-         r"overall Avg. Both directions move in favour of the latest "
-         r"models on COMET. \textbf{Bold}: column maximum within each "
-         r"block (sentence vs.\ document).}"),
+        (r"\caption{Closed-API evolution, grouped by family (Gemini, GPT) "
+         r"with legacy $\to$ latest top-to-bottom and a $\Delta$ row "
+         r"reporting (latest $-$ legacy) per column. Two blocks: the main "
+         r"sentence-level configuration (\texttt{template5\textunderscore{}10shot}, "
+         r"$T{=}0$) and the main document-level configuration (vanilla "
+         r"\texttt{doc\textunderscore{}0shot}). Per-direction averages over the six "
+         r"target languages, plus an overall Avg. The $\Delta$ rows make "
+         r"the closed-API generation-over-generation improvement visible "
+         r"at a glance; both families improve on COMET in both directions, "
+         r"with the doc-level COMET gain (+13--16) much larger than the "
+         r"sentence-level gain (+2--3). \textbf{Bold}: column maximum "
+         r"within each block.}"),
         r"\label{tab:closed_evolution}",
         r"\end{table*}",
     ]

@@ -945,7 +945,7 @@ Gemini-3.1 & 57.0 & 60.3 & 68.0 & +7.6 & +0.0 & 44.1 & 54.5 & \textbf{55.0} & +0
 GPT-5.4 & \textbf{65.0} & \textbf{66.0} & \textbf{68.3} & +2.2 & +0.0 & \textbf{54.0} & \textbf{55.3} & 53.1 & -2.2 & +0.4 \\
 \bottomrule
 \end{tabular}
-\caption{Vanilla vs.\ templated ICL on the seven open LLMs (top) and the two latest closed APIs (bottom: Gemini-3.1, GPT-5.4), bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. V$_0$: vanilla 0-shot (\texttt{basic}); V$_5$: vanilla 5-shot (\texttt{few\textunderscore{}shot}, random retrieval); T$_{10}$: \texttt{template5\textunderscore{}10shot} (the locked body configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the main lift from vanilla to templated; $\Delta_{T_{5\to 10}} = $T$_{10} - $T$_5$ isolates the shot-count effect (template fixed at \texttt{template5}). Within each group, models with complete columns are listed above the within-group divider (Gemma2-9B-IT, Llama3-8B for open; Gemini-3.1, GPT-5.4 for closed); the remaining open LLMs lack T$_5$ data and render as ``--'' for T$_5$-derived cells. The legacy closed pair (Gemini-1.5, GPT-4o) is omitted because they have no vanilla 5-shot run. The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration signal: large positive $\Delta_{V\to T}$ COMET paired with large negative $\Delta_{V\to T}$ chrF ($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target generations rather than real translations. \textbf{Bold}: column maximum across all 9 models.}
+\caption{Vanilla vs. templated ICL on the seven open LLMs (top) and the two latest closed APIs (bottom: Gemini-3.1, GPT-5.4), bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. V$_0$: vanilla 0-shot (\texttt{basic}); V$_5$: vanilla 5-shot (\texttt{few\textunderscore{}shot}, random retrieval); T$_{10}$: \texttt{template5\textunderscore{}10shot} (the locked body configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the main lift from vanilla to templated; $\Delta_{T_{5\to 10}} = $T$_{10} - $T$_5$ isolates the shot-count effect (template fixed at \texttt{template5}). Within each group, models with complete columns are listed above the within-group divider (Gemma2-9B-IT, Llama3-8B for open; Gemini-3.1, GPT-5.4 for closed); the remaining open LLMs lack T$_5$ data and render as ``--'' for T$_5$-derived cells. The legacy closed pair (Gemini-1.5, GPT-4o) is omitted because they have no vanilla 5-shot run. The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration signal: large positive $\Delta_{V\to T}$ COMET paired with large negative $\Delta_{V\to T}$ chrF ($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target generations rather than real translations. \textbf{Bold}: column maximum across all 9 models.}
 \label{tab:prompt_engineering_open}
 \end{table*}
 
@@ -1016,26 +1016,34 @@ GPT-5.4 & \textbf{65.0} & \textbf{66.0} & \textbf{68.3} & +2.2 & +0.0 & \textbf{
 \small
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.05}
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{llrrrrrr}
 \toprule
-\textbf{Model} & \multicolumn{3}{c}{\textbf{chrF}} & \multicolumn{3}{c}{\textbf{COMET}} \\
-\cmidrule(lr){2-4}\cmidrule(lr){5-7}
- & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg} & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg} \\
+\textbf{Model} & \textbf{Version} & \multicolumn{3}{c}{\textbf{chrF}} & \multicolumn{3}{c}{\textbf{COMET}} \\
+\cmidrule(lr){3-5}\cmidrule(lr){6-8}
+ &  & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg} & \texttt{eng$\to$} & \texttt{$\to$eng} & \textbf{Avg} \\
 \midrule
-\multicolumn{7}{l}{\textit{Sentence-level ICL (template~5, 10-shot, $T{=}0$)}} \\
-\quad Gemini-1.5 & 44.0 & 55.5 & 49.7 & 64.9 & 67.0 & 65.9 \\
-\quad GPT-4o & 43.9 & 57.0 & 50.5 & 63.5 & 67.4 & 65.4 \\
-\quad Gemini-3.1 & \textbf{48.8} & \textbf{61.2} & \textbf{55.0} & 67.8 & 68.1 & 68.0 \\
-\quad GPT-5.4 & 48.5 & 57.7 & 53.1 & \textbf{67.8} & \textbf{68.7} & \textbf{68.3} \\
+\multicolumn{8}{l}{\textit{Sentence-level ICL (template~5, 10-shot, $T{=}0$)}} \\
 \midrule
-\multicolumn{7}{l}{\textit{Document-level (vanilla \texttt{doc\textunderscore{}0shot})}} \\
-\quad Gemini-1.5 & 27.1 & 66.4 & 46.8 & 28.8 & 40.2 & 34.5 \\
-\quad GPT-4o & 40.9 & 68.0 & 54.4 & 25.9 & 38.4 & 32.1 \\
-\quad Gemini-3.1 & 47.1 & 67.7 & 57.4 & 45.2 & \textbf{51.4} & \textbf{48.3} \\
-\quad GPT-5.4 & \textbf{50.0} & \textbf{70.8} & \textbf{60.4} & \textbf{45.4} & 51.1 & 48.3 \\
+\multirow{3}{*}{Gemini} & 1.5 & 44.0 & 55.5 & 49.7 & 64.9 & 67.0 & 65.9 \\
+ & 3.1 & \textbf{48.8} & \textbf{61.2} & \textbf{55.0} & 67.8 & 68.1 & 68.0 \\
+ & $\Delta$ & +4.8 & +5.8 & +5.3 & +2.9 & +1.2 & +2.0 \\
+\cmidrule(lr){1-8}
+\multirow{3}{*}{GPT} & 4o & 43.9 & 57.0 & 50.5 & 63.5 & 67.4 & 65.4 \\
+ & 5.4 & 48.5 & 57.7 & 53.1 & \textbf{67.8} & \textbf{68.7} & \textbf{68.3} \\
+ & $\Delta$ & +4.6 & +0.6 & +2.6 & +4.3 & +1.3 & +2.8 \\
+\midrule\midrule
+\multicolumn{8}{l}{\textit{Document-level (vanilla \texttt{doc\textunderscore{}0shot})}} \\
+\midrule
+\multirow{3}{*}{Gemini} & 1.5 & 27.1 & 66.4 & 46.8 & 28.8 & 40.2 & 34.5 \\
+ & 3.1 & 47.1 & 67.7 & 57.4 & 45.2 & \textbf{51.4} & \textbf{48.3} \\
+ & $\Delta$ & +20.0 & +1.3 & +10.6 & +16.4 & +11.2 & +13.8 \\
+\cmidrule(lr){1-8}
+\multirow{3}{*}{GPT} & 4o & 40.9 & 68.0 & 54.4 & 25.9 & 38.4 & 32.1 \\
+ & 5.4 & \textbf{50.0} & \textbf{70.8} & \textbf{60.4} & \textbf{45.4} & 51.1 & 48.3 \\
+ & $\Delta$ & +9.2 & +2.8 & +6.0 & +19.5 & +12.7 & +16.1 \\
 \bottomrule
 \end{tabular}
-\caption{Closed-API evolution. Two legacy models (GPT-4o, Gemini-1.5) and two latest models (GPT-5.4, Gemini-3.1-Flash-Lite) at the main sentence-level configuration (template~5, 10-shot, $T{=}0$) and the main document-level configuration (vanilla \texttt{doc\textunderscore{}0shot}). Per-direction averages over the six target languages, plus an overall Avg. Both directions move in favour of the latest models on COMET. \textbf{Bold}: column maximum within each block (sentence vs.\ document).}
+\caption{Closed-API evolution, grouped by family (Gemini, GPT) with legacy $\to$ latest top-to-bottom and a $\Delta$ row reporting (latest $-$ legacy) per column. Two blocks: the main sentence-level configuration (\texttt{template5\textunderscore{}10shot}, $T{=}0$) and the main document-level configuration (vanilla \texttt{doc\textunderscore{}0shot}). Per-direction averages over the six target languages, plus an overall Avg. The $\Delta$ rows make the closed-API generation-over-generation improvement visible at a glance; both families improve on COMET in both directions, with the doc-level COMET gain (+13--16) much larger than the sentence-level gain (+2--3). \textbf{Bold}: column maximum within each block.}
 \label{tab:closed_evolution}
 \end{table*}
 
@@ -1052,4 +1060,4 @@ GPT-5.4 & \textbf{65.0} & \textbf{66.0} & \textbf{68.3} & +2.2 & +0.0 & \textbf{
 
 \paragraph{Temperature ablation.} $T{=}0$ vs $T{=}0.6$ at the two templated configurations comparable across all four APIs: templated ZS (\texttt{template\{1,2,4\}\textunderscore{}0shot} mean) and each model's best templated 10-shot. Vanilla 0-shot at $T{=}0.6$ is excluded: only Gemini-1.5 has a genuine vanilla rerun there; GPT-4o's $t_{0.6}$ dump duplicates its $t_0$ numbers, and the latest closed APIs have no vanilla 0-shot at $T{=}0.6$.
 
-\paragraph{Highlighting.} \textbf{Bold} marks the per-column maximum within a block. \emph{Italic} marks the per-language best across the rows of one model version (e.g.\ ICL vs ZS within the same prompt-style class for that model); italic is suppressed when only one row in the model's group has data for that column.
+\paragraph{Highlighting.} \textbf{Bold} marks the per-column maximum within a block. \emph{Italic} marks the per-language best across the rows of one model version (e.g. ICL vs ZS within the same prompt-style class for that model); italic is suppressed when only one row in the model's group has data for that column.

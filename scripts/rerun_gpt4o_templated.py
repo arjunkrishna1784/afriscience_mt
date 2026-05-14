@@ -183,10 +183,28 @@ def parse_prompt(saved: str) -> tuple[str, str]:
 
 
 def read_prompts(tsv: Path) -> list[tuple[str, str]]:
+    """Return [(system, user), ...] for one config TSV.
+
+    The legacy DCS-MT semantic dumps store the prompt template WITHOUT the
+    source text — the source lives in a separate ``text`` column and was
+    injected at API call time as a LangChain Human message. The templated
+    dumps embed the source inline (with a literal ``\\nHuman: <src>`` tail).
+    For semantic rows, the in-context examples alone were enough for
+    GPT-4o to hallucinate plausible translations, but GPT-5.4's reasoning
+    mode refuses (~60% empty hyps) when no source is present.
+
+    Fix: when a row's prompt has no ``Human:`` tail and a ``text`` /
+    ``src_text`` column is non-empty, append ``\\nHuman: <text>`` so
+    parse_prompt routes the source as the user message.
+    """
     out = []
     with open(tsv, newline="", encoding="utf-8") as f:
         for r in csv.DictReader(f, delimiter="\t"):
             p = r.get("prompt") or ""
+            if "\nHuman: " not in p:
+                src = (r.get("text") or r.get("src_text") or "").strip()
+                if src:
+                    p = p.rstrip() + "\nHuman: " + src
             out.append(parse_prompt(p))
     return out
 

@@ -195,11 +195,23 @@ def parse_prompt(saved: str) -> tuple[str, str]:
 
 def read_prompts(tsv: Path) -> list[tuple[str, str]]:
     """Return [(system, user), ...] in row order, parsed from the TSV's
-    `prompt` column. Pads with empties if a row is missing prompt."""
+    `prompt` column. Pads with empties if a row is missing prompt.
+
+    Legacy semantic TSVs save the prompt template WITHOUT the source text
+    (the source lives in the ``text`` / ``src_text`` column and was
+    injected at API call time as a LangChain Human message). When we
+    replay those prompts on a newer model the source has to be appended,
+    otherwise the model is asked to translate nothing and either refuses
+    or hallucinates from the in-context examples alone.
+    """
     out = []
     with open(tsv, newline="", encoding="utf-8") as f:
         for r in csv.DictReader(f, delimiter="\t"):
             p = r.get("prompt") or ""
+            if "\nHuman: " not in p:
+                src = (r.get("text") or r.get("src_text") or "").strip()
+                if src:
+                    p = p.rstrip() + "\nHuman: " + src
             out.append(parse_prompt(p))
     return out
 

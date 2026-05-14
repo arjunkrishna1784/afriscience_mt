@@ -12,7 +12,7 @@ so it can be edited later without re-deriving the argument.
 - **Never use the LaTeX `.\` construct** (period followed by backslash-space)
   in captions or prose. Plain `. ` is correct -- the spacing is handled
   by `\frenchspacing` or normal LaTeX. This rule was set 2026-05-08;
-  earlier captions with `vs.\ ` etc. have been swept and replaced with
+  earlier captions with `vs. ` etc. have been swept and replaced with
   plain `vs. `.
 
 ---
@@ -59,7 +59,7 @@ The summary below is over `(model, pair, n_shots, temperature)` cells (i.e. one
 | Gemini-1.5-Flash | 90 | 0.8 | 4.1 | **5.2** |
 
 **Largest gap observed:** GPT-4o, eng→amh, 0-shot — template 5 = 27.2 chrF
-vs.\ template 2 = 21.0 chrF (Δ 6.3).
+vs. template 2 = 21.0 chrF (Δ 6.3).
 
 **Best-template frequency (which template wins each cell):**
 - GPT-4o: template 3 wins **53%**, template 5 wins **33%**.
@@ -92,7 +92,7 @@ the median or p90, not the max.
 > their reported numbers may therefore be a lower bound on what is achievable
 > with prompt engineering. For the closed APIs, template choice moves ChrF
 > by a median of $\sim$1 point but as much as 6 points on hard pairs
-> (e.g.\ \texttt{eng→amh}, \texttt{eng→yor}).
+> (e.g. \texttt{eng→amh}, \texttt{eng→yor}).
 
 ---
 
@@ -204,7 +204,7 @@ methodology paragraph and Figure 4 caption. Numbers already in the
 | T4 | Translation with glossary | No | Yes | **0-shot only** |
 | T5 | Translation with examples + glossary | **Yes** | Yes | Yes |
 
-Plus a **"Template 5 (sem.\ prompt)"** variant: identical to T5 but with
+Plus a **"Template 5 (sem. prompt)"** variant: identical to T5 but with
 **semantically-retrieved** few-shot examples instead of randomly-sampled
 ones, evaluated only on Eng→xxx (no semantic ICL run for X→Eng).
 
@@ -219,7 +219,7 @@ paper-internal collision worth disambiguating.
    them as isolated points at $x=0$ while T3 / T5 / T5-sem show full
    curves across shots. Without explanation, a reader sees "three flat
    lines" and wonders if the data is missing.
-2. **Template 5 (sem.\ prompt)** is template 5 with semantic-retrieval,
+2. **Template 5 (sem. prompt)** is template 5 with semantic-retrieval,
    not a 6th template — the figure legend phrasing already implies
    this but the methodology section doesn't.
 3. **Doc-level Template 3 ≠ sentence-level Template 3.** They share a
@@ -233,7 +233,7 @@ paper-internal collision worth disambiguating.
 > Sentence-level closed-API templates differ in what context they admit:
 > templates 1, 2, and 4 contain no \texttt{\{examples\}} placeholder and
 > are reported at 0-shot only; templates 3 and 5 vary across shot counts.
-> "Template 5 (sem.\ prompt)" denotes template 5 with
+> "Template 5 (sem. prompt)" denotes template 5 with
 > semantically-retrieved few-shot examples in place of randomly-sampled
 > ones, evaluated only on \texttt{eng}$\to$\texttt{xxx}.
 
@@ -243,8 +243,8 @@ paper-internal collision worth disambiguating.
 > Gemini-1.5-Flash on \texttt{eng}$\to$\texttt{xxx}, across five prompt
 > templates and shot counts $\in\{0, 5, 10, 20, 50\}$. Templates 1, 2,
 > and 4 contain no \texttt{\{examples\}} slot and are reported at
-> 0-shot only (single markers); templates 3, 5, and 5 (sem.\ prompt)
-> vary across shot counts (full curves). 5 (sem.\ prompt) uses
+> 0-shot only (single markers); templates 3, 5, and 5 (sem. prompt)
+> vary across shot counts (full curves). 5 (sem. prompt) uses
 > semantically-retrieved few-shot examples; templates 3 and 5 use
 > randomly-sampled ones.
 
@@ -787,7 +787,7 @@ COMET tables are inputted; we add chrF only where it earns the page.
   table for the cross-domain transfer story.
 - The Tiny-Aya-G appendix paragraph (Decoding controls and manual
   inspection) cites concrete chrF numbers inline (lug-eng:
-  $47.0 \to 44.9$ chrF vs.\ $63.9 \to 21.9$ COMET).
+  $47.0 \to 44.9$ chrF vs. $63.9 \to 21.9$ COMET).
 
 **Where chrF mirrors are *generated but not inputted*:**
 

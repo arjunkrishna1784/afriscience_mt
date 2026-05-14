@@ -37,8 +37,8 @@ component.
 | File | What it shows | Suggested LaTeX caption |
 |---|---|---|
 | `zs_vs_ft_delta.pdf` | Per-language COMET (avg both directions) for NLLB-1.3B and LLaMA-3.1-8B, before vs after fine-tuning. | Effect of in-domain fine-tuning on AfriScience-MT for the strongest seq2seq backbone (NLLB-1.3B) and the per-pair LoRA on LLaMA-3.1-8B. Bars show pre-/post-FT COMET averaged over both translation directions. |
-| `lora_rank_curve.pdf` | Avg COMET vs LoRA rank (LLaMA-3.1-8B), separate Eng→X and X→Eng curves. | LoRA rank vs.\ COMET on LLaMA-3.1-8B fine-tuned on AfriScience-MT. Note: $r{=}4$ and $r{=}64$ use the vanilla \texttt{Llama-3.1-8B-Instruct} base; other ranks use Unsloth 4-bit, so absolute levels across bases are not directly comparable. |
-| `gpt-vs-gemini/comet/eng_xxx.pdf` | 6 lang × (Gemini \| GPT-4o), COMET vs shots, lines for Templates 1–5 + Template 5 (sem.). | COMET on Eng→xxx for Gemini-1.5-Flash and GPT-4o across five prompt templates and shot counts $\in\{0,5,10,20,50\}$. Template 5 (sem.\ prompt) is the semantic-similarity-retrieved variant available only for this direction. |
+| `lora_rank_curve.pdf` | Avg COMET vs LoRA rank (LLaMA-3.1-8B), separate Eng→X and X→Eng curves. | LoRA rank vs. COMET on LLaMA-3.1-8B fine-tuned on AfriScience-MT. Note: $r{=}4$ and $r{=}64$ use the vanilla \texttt{Llama-3.1-8B-Instruct} base; other ranks use Unsloth 4-bit, so absolute levels across bases are not directly comparable. |
+| `gpt-vs-gemini/comet/eng_xxx.pdf` | 6 lang × (Gemini \| GPT-4o), COMET vs shots, lines for Templates 1–5 + Template 5 (sem.). | COMET on Eng→xxx for Gemini-1.5-Flash and GPT-4o across five prompt templates and shot counts $\in\{0,5,10,20,50\}$. Template 5 (sem. prompt) is the semantic-similarity-retrieved variant available only for this direction. |
 | `gpt-vs-gemini/comet/xxx_eng.pdf` | Same shape for X→Eng. | COMET on xxx→Eng for Gemini-1.5-Flash and GPT-4o across five prompt templates and shot counts. |
 | `fig7/comet/m2m100_1_2b.pdf` | M2M100-1.2B 7×7 panels: zero-shot \| fine-tuned, COMET. Fine-tuned X↔X cells empty. | Sentence-level COMET for M2M100-1.2B before and after fine-tuning on AfriScience-MT. African↔African fine-tunes were not run for the larger backbone. |
 | `fig7/comet/nllb_1_3b.pdf` | NLLB-1.3B 7×7, same caveat. | Sentence-level COMET for NLLB-1.3B before and after fine-tuning on AfriScience-MT. |
@@ -49,10 +49,10 @@ component.
 
 | File | Suggested LaTeX caption |
 |---|---|
-| `seq2seq_comet.tex` (`tab:seq2seq_comet`) | Sentence-level COMET on AfriScience-MT for the larger Seq2Seq backbones (M2M100-1.2B, NLLB-1.3B), zero-shot vs.\ fine-tuned, across all 12 directional pairs. Best per column in bold. |
+| `seq2seq_comet.tex` (`tab:seq2seq_comet`) | Sentence-level COMET on AfriScience-MT for the larger Seq2Seq backbones (M2M100-1.2B, NLLB-1.3B), zero-shot vs. fine-tuned, across all 12 directional pairs. Best per column in bold. |
 | `llm_sentence_comet.tex` (`tab:llm_sentence_comet`) | Sentence-level COMET for open-source LLMs in zero-shot and 5-shot ICL across all 12 pairs. Best per column in bold. |
-| `lora_comet.tex` (`tab:lora_comet`) | LoRA fine-tuning of open-source LLMs on AfriScience-MT, $r{=}4$ vs.\ $r{=}64$, COMET. Best per column in bold. |
-| `doc_comet.tex` (`tab:doc_comet`) | Document-level COMET for open-source LLMs, zero-shot vs.\ 1-shot. Best per column in bold. |
+| `lora_comet.tex` (`tab:lora_comet`) | LoRA fine-tuning of open-source LLMs on AfriScience-MT, $r{=}4$ vs. $r{=}64$, COMET. Best per column in bold. |
+| `doc_comet.tex` (`tab:doc_comet`) | Document-level COMET for open-source LLMs, zero-shot vs. 1-shot. Best per column in bold. |
 | `balance_comet.tex` (`tab:balance_comet`) | Domain-balance ablation on NLLB-1.3B fine-tuned on AfriScience-MT (COMET). $\tau{=}1$ uses the natural domain proportions; $\tau{=}2$ applies sqrt smoothing; $\tau{=}\infty$ samples uniformly across all 11 domains. Best per column in bold. |
 | `mafand_nllb.tex` (`tab:mafand_nllb`) | Cross-domain transfer for NLLB-1.3B fine-tuned on AfriScience-MT (AS-MT), MAFAND-MT (MF), or their union (\texttt{+MF}); COMET (top block) and ChrF (bottom block) on the four MAFAND-supported language pairs in both directions. Best per column within each metric block is in bold. **Note:** the two metrics disagree — under COMET, AS-MT alone wins every cell over AS-MT+MF; under ChrF, AS-MT+MF wins most cells. Worth one sentence in §3 prose. |
 
@@ -84,21 +84,21 @@ component.
 |---|---|---|
 | `gpt-vs-gemini/chrf/eng_xxx.pdf` | ChrF mirror of `gpt-vs-gemini/comet/eng_xxx.pdf`. | ChrF scores comparison of GPT and Gemini models across different templates and in-context examples on Eng→xxx (cross-metric reference for the COMET version above). |
 | `gpt-vs-gemini/chrf/xxx_eng.pdf` | ChrF mirror of `gpt-vs-gemini/comet/xxx_eng.pdf`. | ChrF scores comparison of GPT and Gemini models across different templates and in-context examples on xxx→Eng. |
-| `fig7/chrf/m2m100_1_2b.pdf` | ChrF mirror of fig7 main. | ChrF for M2M100-1.2B zero-shot vs.\ fine-tuned (cf.\ Fig.~\ref{fig:fig7_m2m100_1_2b_comet}). |
-| `fig7/chrf/nllb_1_3b.pdf` | ChrF mirror of fig7 main. | ChrF for NLLB-1.3B zero-shot vs.\ fine-tuned. |
-| `fig7/comet/m2m100_418m.pdf` | M2M100-418M 7×7. **Both panels filled** (X↔X imported from `dcs_n2n/`). | Smaller M2M100 backbone (418M): zero-shot vs.\ fine-tuned COMET over the full eng+African 7×7 grid. Reported for completeness alongside the larger M2M100-1.2B. |
+| `fig7/chrf/m2m100_1_2b.pdf` | ChrF mirror of fig7 main. | ChrF for M2M100-1.2B zero-shot vs. fine-tuned (cf. Fig.~\ref{fig:fig7_m2m100_1_2b_comet}). |
+| `fig7/chrf/nllb_1_3b.pdf` | ChrF mirror of fig7 main. | ChrF for NLLB-1.3B zero-shot vs. fine-tuned. |
+| `fig7/comet/m2m100_418m.pdf` | M2M100-418M 7×7. **Both panels filled** (X↔X imported from `dcs_n2n/`). | Smaller M2M100 backbone (418M): zero-shot vs. fine-tuned COMET over the full eng+African 7×7 grid. Reported for completeness alongside the larger M2M100-1.2B. |
 | `fig7/chrf/m2m100_418m.pdf` | ChrF mirror. | Same panel, ChrF. |
-| `fig7/comet/nllb_600m.pdf` | NLLB-600M 7×7, both panels filled. | Smaller NLLB backbone (600M): zero-shot vs.\ fine-tuned COMET over the full 7×7 grid. |
+| `fig7/comet/nllb_600m.pdf` | NLLB-600M 7×7, both panels filled. | Smaller NLLB backbone (600M): zero-shot vs. fine-tuned COMET over the full 7×7 grid. |
 | `fig7/chrf/nllb_600m.pdf` | ChrF mirror. | Same panel, ChrF. |
 | `fig8/gemma2_9b_r64.pdf` | Gemma2-9B LoRA $r{=}64$, 7×7 fine-tuned only, COMET \| ChrF side-by-side. | Gemma2-9B fine-tuned with LoRA $r{=}64$: COMET (left) and ChrF (right) over the 7×7 grid. African↔African cells are not populated (no LoRA n×n fine-tunes). |
 | `multilingual-nllb.pdf` | Multilingual NLLB-600M, ChrF across 4 training-update checkpoints (40k, 80k, 200k, 400k), Eng→X and X→Eng panels. | Multilingual NLLB-600M ChrF as a function of fairseq training updates. Shown for completeness; the main paper's bilingual–multilingual comparison uses LLaMA-3.1-8B (matched backbone). |
 | `n2n_zero_shot_heatmap.pdf` | African↔African zero-shot 6×6 heatmaps (diagonals masked) for NLLB-1.3B and M2M100-1.2B, ChrF and COMET. | Zero-shot direct African→African translation by the larger seq2seq backbones; diagonal cells (src=tgt) omitted. |
-| `m2m100_heatmaps.pdf` | M2M100 (418M, 1.2B) zero-shot vs.\ fine-tuned, ChrF + COMET, 12-pair layout. | Pair-level performance of M2M100 backbones on AfriScience-MT (zero-shot vs.\ fine-tuned). |
-| `nllb_heatmaps.pdf` | NLLB (600M, 1.3B) zero-shot vs.\ fine-tuned, same shape. | Pair-level performance of NLLB backbones. |
-| `gemma_m2m_heatmaps.pdf` | LoRA $r{=}64$: Gemma2-9B vs.\ LLaMA-3.1-8B, ChrF + COMET, 12-pair layout. | LoRA $r{=}64$ fine-tunes for Gemma2-9B and LLaMA-3.1-8B. |
+| `m2m100_heatmaps.pdf` | M2M100 (418M, 1.2B) zero-shot vs. fine-tuned, ChrF + COMET, 12-pair layout. | Pair-level performance of M2M100 backbones on AfriScience-MT (zero-shot vs. fine-tuned). |
+| `nllb_heatmaps.pdf` | NLLB (600M, 1.3B) zero-shot vs. fine-tuned, same shape. | Pair-level performance of NLLB backbones. |
+| `gemma_m2m_heatmaps.pdf` | LoRA $r{=}64$: Gemma2-9B vs. LLaMA-3.1-8B, ChrF + COMET, 12-pair layout. | LoRA $r{=}64$ fine-tunes for Gemma2-9B and LLaMA-3.1-8B. |
 | `radar_chart_domain_chrf.pdf` | Per-domain ChrF radar (avg over the 6 Eng→X pairs) for four selected systems. | Per-domain ChrF averaged across Eng→xxx pairs for selected systems. |
 | `weighted_chrf_score.pdf` | Per-domain ChrF bar chart, domains ordered by training-set size $N_d$. | Per-domain ChrF for selected systems, domains ordered by training-set size. |
-| `spider_per_pair/3sys/chrf/<pair>.pdf` (12 files) | ChrF mirror of the 3-system spiders. | ChrF version of the 3-system per-pair domain comparison (cf.\ `spider_per_pair/3sys/comet/`). |
+| `spider_per_pair/3sys/chrf/<pair>.pdf` (12 files) | ChrF mirror of the 3-system spiders. | ChrF version of the 3-system per-pair domain comparison (cf. `spider_per_pair/3sys/comet/`). |
 | `spider_per_pair/4sys/chrf/<pair>.pdf` (12 files) | ChrF mirror, 4-system. | ChrF version of the 4-system per-pair domain comparison. |
 | `spider_per_pair_eng_xxx.pdf` | Single-PDF 3×2 grid alternative to the per-pair subdir. | Per-domain ChrF for NLLB-1.3B (fine-tuned) and GPT-4o (5-shot ICL) on Eng→xxx translation, broken down by scientific domain. |
 
@@ -107,7 +107,7 @@ component.
 | File | Suggested LaTeX caption |
 |---|---|
 | `seq2seq_chrf.tex` (`tab:seq2seq_chrf`) | ChrF version of `tab:seq2seq_comet` for the larger Seq2Seq backbones; reported for completeness. |
-| `seq2seq_smaller_comet.tex` / `seq2seq_smaller_chrf.tex` (`tab:seq2seq_smaller_*`) | Smaller Seq2Seq backbones (M2M100-418M, NLLB-600M): zero-shot vs.\ fine-tuned, full 12-pair grid. Reported for completeness; the main paper discusses the larger M2M100-1.2B and NLLB-1.3B. |
+| `seq2seq_smaller_comet.tex` / `seq2seq_smaller_chrf.tex` (`tab:seq2seq_smaller_*`) | Smaller Seq2Seq backbones (M2M100-418M, NLLB-600M): zero-shot vs. fine-tuned, full 12-pair grid. Reported for completeness; the main paper discusses the larger M2M100-1.2B and NLLB-1.3B. |
 | `llm_sentence_chrf.tex` (`tab:llm_sentence_chrf`) | ChrF version of `tab:llm_sentence_comet`. |
 | `lora_chrf.tex` (`tab:lora_chrf`) | ChrF version of `tab:lora_comet`. |
 | `doc_chrf.tex` (`tab:doc_chrf`) | ChrF version of `tab:doc_comet`. |
