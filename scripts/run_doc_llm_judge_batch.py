@@ -128,6 +128,68 @@ def _build_manifest(
     return prompts, manifest
 
 
+def _chunk_at_cell_boundaries(
+    prompts: list[str], manifest: list[dict],
+    *, max_bytes: int, max_requests: int,
+) -> list[tuple[list[str], list[dict]]]:
+    """Group prompts/manifest entries by cell, then bin-pack whole cells
+    into chunks until either max_bytes or max_requests is hit.
+
+    Splitting at cell boundaries keeps fan-out simple (a cell's papers
+    never straddle two batches) and matches OpenAI's 200 MB JSONL +
+    50K request caps.
+    """
+    if not prompts:
+        return []
+
+    # Group by cell preserving original order.
+    cell_groups: dict[str, list[int]] = {}
+    cell_order: list[str] = []
+    for i, m in enumerate(manifest):
+        cp = m["cell"]
+        if cp not in cell_groups:
+            cell_groups[cp] = []
+            cell_order.append(cp)
+        cell_groups[cp].append(i)
+
+    # Pre-compute per-cell sizes (UTF-8 bytes of prompts + a rough
+    # per-line JSON-overhead estimate of 200 B).
+    JSON_OVERHEAD_PER_LINE = 200
+    cell_sizes: dict[str, int] = {}
+    for cp, idxs in cell_groups.items():
+        cell_sizes[cp] = sum(
+            len(prompts[i].encode("utf-8")) + JSON_OVERHEAD_PER_LINE
+            for i in idxs
+        )
+
+    chunks: list[tuple[list[str], list[dict]]] = []
+    cur_idxs: list[int] = []
+    cur_bytes = 0
+    for cp in cell_order:
+        size = cell_sizes[cp]
+        n = len(cell_groups[cp])
+        if cur_idxs and (
+            cur_bytes + size > max_bytes
+            or len(cur_idxs) + n > max_requests
+        ):
+            chunks.append((
+                [prompts[i] for i in cur_idxs],
+                [manifest[i] for i in cur_idxs],
+            ))
+            cur_idxs, cur_bytes = [], 0
+        # Even a single cell may exceed max_bytes — accept it; OpenAI
+        # will reject if so, but in practice no single cell is anywhere
+        # near 150 MB (~84 prompts * ~13 KB = ~1.1 MB).
+        cur_idxs.extend(cell_groups[cp])
+        cur_bytes += size
+    if cur_idxs:
+        chunks.append((
+            [prompts[i] for i in cur_idxs],
+            [manifest[i] for i in cur_idxs],
+        ))
+    return chunks
+
+
 def _fan_out_and_save(
     *, manifest: list[dict], results: list[str],
     judge_model: str, out_name: str,
@@ -218,11 +280,16 @@ def main() -> int:
     ap.add_argument("--max-output-tokens", type=int, default=1024)
     ap.add_argument("--temperature", type=float, default=0.0)
     ap.add_argument("--batch-state-file", default=None,
-                    help="Where to persist the in-flight batch ID + "
+                    help="Where to persist the in-flight batch ID(s) + "
                          "manifest. Defaults to "
                          "experiments/_judge_<short>_batch_state.json")
     ap.add_argument("--batch-poll-seconds", type=float, default=60.0,
                     help="Seconds between batch status polls.")
+    ap.add_argument("--max-batch-bytes", type=int, default=150 * 1024 * 1024,
+                    help="Max serialized JSONL bytes per batch. OpenAI's "
+                         "limit is 200 MB; default 150 MB leaves headroom. "
+                         "Chunks split at cell boundaries so a cell's "
+                         "papers never straddle two batches.")
     ap.add_argument("--no-submit", action="store_true",
                     help="Skip the submit step; only poll an existing "
                          "batch in the state file.")
@@ -283,7 +350,7 @@ def main() -> int:
         print("notify: disabled")
 
     # ---- Submit phase --------------------------------------------------
-    if "batch" not in state and not args.no_submit:
+    if "batches" not in state and not args.no_submit:
         if not cells:
             print("nothing to do.")
             return 0
@@ -295,79 +362,111 @@ def main() -> int:
             print("nothing to do (all papers already judged).")
             return 0
 
-        if len(prompts) > 50_000:
-            print(f"error: {len(prompts)} prompts exceeds OpenAI batch "
-                  f"limit (50,000). Narrow --src or run in chunks.",
-                  file=sys.stderr)
-            return 2
+        chunks = _chunk_at_cell_boundaries(
+            prompts, manifest,
+            max_bytes=args.max_batch_bytes,
+            max_requests=50_000,
+        )
+        print(f"  -> split into {len(chunks)} batch(es) "
+              f"(max {args.max_batch_bytes // (1024*1024)} MB each, "
+              f"split at cell boundaries)")
 
-        job_name = f"judge_{args.judge_model}_{args.out_name}"
-        print(f"submitting batch ({provider})...")
-        try:
-            job_id = judge.submit_batch_job(
-                prompts=prompts, job_name=job_name, system_prompt=None,
-            )
-        except Exception as e:
-            notifier.send(
-                f"Judge batch SUBMIT FAILED ({args.judge_model})",
-                f"{type(e).__name__}: {e}\n\n{traceback.format_exc()}",
-            )
-            raise
-        print(f"  submitted: {job_id}")
+        job_name_base = f"judge_{args.judge_model}_{args.out_name}"
+        submitted: list[dict] = []
+        for ci, (chunk_prompts, chunk_manifest) in enumerate(chunks, 1):
+            est_mb = sum(len(p.encode('utf-8')) for p in chunk_prompts) / (1024*1024)
+            print(f"  submitting chunk {ci}/{len(chunks)}: "
+                  f"{len(chunk_prompts)} prompts (~{est_mb:.1f} MB)...")
+            try:
+                job_id = judge.submit_batch_job(
+                    prompts=chunk_prompts,
+                    job_name=f"{job_name_base}_chunk{ci}",
+                    system_prompt=None,
+                )
+            except Exception as e:
+                notifier.send(
+                    f"Judge batch SUBMIT FAILED ({args.judge_model}) "
+                    f"chunk {ci}/{len(chunks)}",
+                    f"{type(e).__name__}: {e}\n\n{traceback.format_exc()}",
+                )
+                raise
+            print(f"    submitted: {job_id}")
+            submitted.append({
+                "job_id": job_id,
+                "n_prompts": len(chunk_prompts),
+                "manifest": chunk_manifest,
+            })
 
         state = {
             "judge_model": args.judge_model,
             "out_name": args.out_name,
             "provider": provider,
             "submitted_at": datetime.now(timezone.utc).isoformat(),
-            "batch": {
-                "job_id": job_id,
-                "n_prompts": len(prompts),
-                "manifest": manifest,
-            },
+            "batches": submitted,
         }
         state_file.parent.mkdir(parents=True, exist_ok=True)
         state_file.write_text(json.dumps(state, indent=2, ensure_ascii=False))
         notifier.send(
-            f"Judge batch submitted ({args.judge_model})",
-            f"job_id: {job_id}\nprompts: {len(prompts)}\n"
-            f"papers: {len(manifest)//3}\ncells: {len(cells)}",
+            f"Judge batches submitted ({args.judge_model})",
+            f"chunks: {len(submitted)}\n"
+            f"prompts total: {len(prompts)}\n"
+            f"papers: {len(manifest)//3}\ncells: {len(cells)}\n"
+            f"job_ids:\n" + "\n".join(b['job_id'] for b in submitted),
         )
-    elif "batch" not in state and args.no_submit:
-        print("--no-submit set and no in-flight batch in state. Nothing to do.")
+    elif "batches" not in state and args.no_submit:
+        print("--no-submit set and no in-flight batches in state. Nothing to do.")
         return 0
     else:
-        b = state["batch"]
-        print(f"resuming: job_id={b['job_id']}  n_prompts={b['n_prompts']}")
+        bs = state["batches"]
+        print(f"resuming: {len(bs)} batch(es), "
+              f"total prompts={sum(b['n_prompts'] for b in bs)}")
 
     # ---- Poll phase ----------------------------------------------------
-    job_id = state["batch"]["job_id"]
-    manifest = state["batch"]["manifest"]
-    print(f"polling every {args.batch_poll_seconds}s...")
+    batches = state["batches"]
+    print(f"polling {len(batches)} batch(es) every {args.batch_poll_seconds}s...")
     t0 = time.time()
     last_progress_t = t0
-    while True:
-        try:
-            results = judge.retrieve_batch_results(job_id)
-        except Exception as e:
-            notifier.send(
-                f"Judge batch RETRIEVE FAILED ({args.judge_model})",
-                f"job_id: {job_id}\n{type(e).__name__}: {e}\n\n"
-                f"{traceback.format_exc()}",
-            )
-            raise
-        if results is not None:
-            break
-        # Periodic heartbeat (every hour) so the user knows we're alive.
-        if time.time() - last_progress_t > 3600:
-            notifier.send(
-                f"Judge batch still running ({args.judge_model})",
-                f"job_id: {job_id}\nelapsed: {time.time()-t0:.0f}s",
-            )
-            last_progress_t = time.time()
-        time.sleep(args.batch_poll_seconds)
+    pending = list(range(len(batches)))
+    results_by_idx: dict[int, list[str]] = {}
+    while pending:
+        still_pending = []
+        for bi in pending:
+            b = batches[bi]
+            try:
+                r = judge.retrieve_batch_results(b["job_id"])
+            except Exception as e:
+                notifier.send(
+                    f"Judge batch RETRIEVE FAILED ({args.judge_model}) "
+                    f"chunk {bi+1}/{len(batches)}",
+                    f"job_id: {b['job_id']}\n{type(e).__name__}: {e}\n\n"
+                    f"{traceback.format_exc()}",
+                )
+                raise
+            if r is None:
+                still_pending.append(bi)
+            else:
+                print(f"  chunk {bi+1}/{len(batches)} complete "
+                      f"({len(r)} responses)")
+                results_by_idx[bi] = r
+        pending = still_pending
+        if pending:
+            if time.time() - last_progress_t > 3600:
+                notifier.send(
+                    f"Judge batches still running ({args.judge_model})",
+                    f"pending chunks: {len(pending)}/{len(batches)}\n"
+                    f"elapsed: {time.time()-t0:.0f}s",
+                )
+                last_progress_t = time.time()
+            time.sleep(args.batch_poll_seconds)
 
-    print(f"batch complete: {len(results)} responses in "
+    # Concat results + manifest in batch order.
+    results: list[str] = []
+    manifest: list[dict] = []
+    for bi in range(len(batches)):
+        results.extend(results_by_idx[bi])
+        manifest.extend(batches[bi]["manifest"])
+
+    print(f"all batches complete: {len(results)} responses in "
           f"{time.time()-t0:.0f}s of polling")
 
     # ---- Fan out + save ------------------------------------------------
@@ -378,14 +477,16 @@ def main() -> int:
     print(f"wrote {args.out_name}.json for {n_cells} cells")
 
     # Clear state so re-running the script is a no-op.
-    state.pop("batch", None)
+    job_ids = [b["job_id"] for b in batches]
+    state.pop("batches", None)
     state["completed_at"] = datetime.now(timezone.utc).isoformat()
     state_file.write_text(json.dumps(state, indent=2, ensure_ascii=False))
 
     notifier.send(
-        f"Judge batch done ({args.judge_model})",
-        f"job_id: {job_id}\ncells written: {n_cells}\n"
-        f"papers judged: {len(manifest)//3}",
+        f"Judge batches done ({args.judge_model})",
+        f"chunks: {len(job_ids)}\ncells written: {n_cells}\n"
+        f"papers judged: {len(manifest)//3}\n"
+        f"job_ids:\n" + "\n".join(job_ids),
     )
     print("done.")
     return 0
