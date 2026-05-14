@@ -1,16 +1,31 @@
 % ---- template_shot_ablation_chrf ----
-\begin{table*}[t]
-\centering
+% Requires \usepackage{longtable}. For 2-column ACL layouts wrap
+% the \input{...} of this file in \onecolumn ... \twocolumn so
+% the 15-column table can span the page.
+\begingroup
 \footnotesize
 \setlength{\tabcolsep}{4pt}
 \renewcommand{\arraystretch}{1.05}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{llrrrrrrrrrrrrr}
+\begin{longtable}{llrrrrrrrrrrrrr}
 \toprule
 \textbf{Model} & \textbf{Config} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$eng}} & \\
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
   &   & \textbf{\texttt{amh}} & \textbf{\texttt{hau}} & \textbf{\texttt{lug}} & \textbf{\texttt{nso}} & \textbf{\texttt{yor}} & \textbf{\texttt{zul}} & \textbf{\texttt{amh}} & \textbf{\texttt{hau}} & \textbf{\texttt{lug}} & \textbf{\texttt{nso}} & \textbf{\texttt{yor}} & \textbf{\texttt{zul}} & \textbf{Avg} \\
 \midrule
+\endfirsthead
+\multicolumn{15}{l}{\textit{(continued)}} \\
+\toprule
+\textbf{Model} & \textbf{Config} & \multicolumn{6}{c}{\textbf{eng$\to$}} & \multicolumn{6}{c}{\textbf{$\to$eng}} & \\
+\cmidrule(lr){3-8}\cmidrule(lr){9-14}
+  &   & \textbf{\texttt{amh}} & \textbf{\texttt{hau}} & \textbf{\texttt{lug}} & \textbf{\texttt{nso}} & \textbf{\texttt{yor}} & \textbf{\texttt{zul}} & \textbf{\texttt{amh}} & \textbf{\texttt{hau}} & \textbf{\texttt{lug}} & \textbf{\texttt{nso}} & \textbf{\texttt{yor}} & \textbf{\texttt{zul}} & \textbf{Avg} \\
+\midrule
+\endhead
+\midrule
+\multicolumn{15}{r}{\textit{(continued on next page)}} \\
+\endfoot
+\bottomrule
+\caption{Template/shot ablation at $T{=}0$ for the six reference models -- two open (Llama3-8B, Gemma2-9B-IT) and four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) (chrF). Each row is a (template, shot-count) configuration (template number first, shot count as subscript $s$); the underlined row \texttt{5}$_{s=10}$ is the configuration used throughout the paper. \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations. Shot counts are capped at 20; the gain from 10$\to$20 shots is at most $0.2$ COMET.} \label{tab:template_shot_ablation_chrf} \\
+\endlastfoot
 \multirow{10}{*}{\rotatebox{90}{Gemini-1.5}} & 1 & 36.4 & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & 58.5 & 56.7 & 47.6 & 52.1 & 42.0 & 60.3 & 46.4 \\
  & 2 & 37.0 & 54.8 & 37.8 & 47.6 & 15.2 & 50.1 & 57.5 & 55.9 & 46.9 & 52.6 & 41.9 & 59.9 & 46.4 \\
  & 3$_{s=5}$ & 38.8 & 56.9 & 40.0 & 47.9 & 17.5 & 51.7 & 60.1 & 58.9 & 49.1 & 55.5 & 45.2 & 63.2 & 48.7 \\
@@ -82,9 +97,5 @@
  & 5$_{s=20}$ & \textbf{16.6} & \textbf{45.1} & \textbf{17.4} & \textbf{28.8} & 13.9 & \textbf{30.7} & \textbf{46.0} & \textbf{53.7} & \textbf{38.8} & \textbf{42.7} & \textbf{35.6} & \textbf{53.0} & \textbf{35.2} \\
 \cmidrule(l){2-15}
  & \textbf{avg} & 14.5 & 42.8 & 15.5 & 25.0 & 12.3 & 28.5 & 44.6 & 51.9 & 37.0 & 40.2 & 33.0 & 50.7 & 33.0 \\
-\bottomrule
-\end{tabular}
-}
-\caption{Template/shot ablation for the six reference models with bidirectional templated coverage at $T{=}0$ -- two open (Llama3-8B, Gemma2-9B-IT) and four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) (chrF). Each row is a (template, shot-count) configuration (template number first, shot count as subscript $s$); the underlined row \texttt{5}$_{s=10}$ is the configuration we use throughout the body of the paper. \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations. We cap shot count at 20: the gain from 10$\to$20 shots is at most $0.2$ COMET, well below the $1$-COMET threshold we set for adopting a higher shot count.}
-\label{tab:template_shot_ablation_chrf}
-\end{table*}
+\end{longtable}
+\endgroup

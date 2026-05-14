@@ -49,6 +49,6 @@
 \bottomrule
 \end{tabular}
 }
-\caption{Document-level template/shot ablation for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) across the 3-template $\times$ 2-shot grid (chrF). Each row is a (template, shot-count) configuration for that model (template number first, shot count as subscript $s$). Open-source LLMs are not included here -- they only have a single \texttt{doc\textunderscore{}0shot} / \texttt{doc\textunderscore{}1shot} configuration each (no template variants); see \Cref{tab:doc_comet} for the main open-vs-closed doc-level comparison. SSA-COMET is reported throughout (no rescore needed; values were already in the per-result JSONs from the closed-API doc-level imports). \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations.}
+\caption{Document-level template/shot ablation for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) across the 3-template $\times$ 2-shot grid (chrF). Each row is a (template, shot-count) configuration for that model (template number first, shot count as subscript $s$). Open LLMs use a single doc-level configuration each (no template variants); see \Cref{tab:doc_comet} for the open-vs-closed doc-level comparison. \textbf{Bold}: per-language column maximum within each model block. The bottom \textbf{avg} row of each block reports the per-language average across configurations.}
 \label{tab:doc_template_shot_ablation_chrf}
 \end{table*}

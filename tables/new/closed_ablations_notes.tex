@@ -1,14 +1,14 @@
 \subsection{Closed-API ablation setup}
 \label{app:closed_ablations_notes}
 
-\Cref{tab:closed_ablations_comet} and \Cref{tab:closed_ablations_chrf} report the closed-API ablation on \texttt{eng}$\to$\texttt{xxx} only; no closed-API ablation runs on \texttt{xxx}$\to$\texttt{eng}. The four blocks are constructed so vanilla and templated numbers are never compared inside the same block.
+The closed-API ablation is reported on \texttt{eng}$\to$\texttt{xxx} only. The four blocks are constructed so vanilla and templated numbers are never compared inside the same block.
 
-\paragraph{Reported, vanilla.} Vanilla ZS (\texttt{0shot}) vs vanilla ICL (\texttt{5shot}) at $T{=}0$. The legacy closed APIs (Gemini-1.5, GPT-4o) have no vanilla 5-shot run on the closed-API side, so they appear as ZS only; the latest pair (Gemini-3.1, GPT-5.4) has both rows.
+\paragraph{Reported, vanilla.} Vanilla ZS (\texttt{0shot}) vs vanilla ICL (\texttt{5shot}) at $T{=}0$. Vanilla 5-shot is available only for Gemini-3.1 and GPT-5.4; Gemini-1.5 and GPT-4o appear as ZS only.
 
 \paragraph{Reported, templated.} Templated ZS vs templated ICL at $T{=}0$. Templated ZS is the per-pair mean of \texttt{template\{1,2,4\}\textunderscore{}0shot} (the three 0-shot paper templates). Templated ICL is each model's best 10-shot configuration: \texttt{template5\textunderscore{}10shot} for Gemini-1.5, the latest Gemini, and the latest GPT; \texttt{template3\textunderscore{}10shot} for GPT-4o.
 
 \paragraph{Retrieval ablation.} The same templated 10-shot run as in the previous block, contrasted against semantic-similarity 10-shot exemplars at $T{=}0$.
 
-\paragraph{Temperature ablation.} $T{=}0$ vs $T{=}0.6$ at the two templated configurations comparable across all four APIs: templated ZS (\texttt{template\{1,2,4\}\textunderscore{}0shot} mean) and each model's best templated 10-shot. Vanilla 0-shot at $T{=}0.6$ is excluded: only Gemini-1.5 has a genuine vanilla rerun there; GPT-4o's $t_{0.6}$ dump duplicates its $t_0$ numbers, and the latest closed APIs have no vanilla 0-shot at $T{=}0.6$.
+\paragraph{Temperature ablation.} $T{=}0$ vs $T{=}0.6$ at the two templated configurations comparable across all four APIs: templated ZS (\texttt{template\{1,2,4\}\textunderscore{}0shot} mean) and each model's best templated 10-shot. Vanilla 0-shot at $T{=}0.6$ is excluded for comparability across all four APIs.
 
 \paragraph{Highlighting.} \textbf{Bold} marks the per-column maximum within a block. \emph{Italic} marks the per-language best across the rows of one model version (e.g. ICL vs ZS within the same prompt-style class for that model); italic is suppressed when only one row in the model's group has data for that column.

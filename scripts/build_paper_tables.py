@@ -914,18 +914,15 @@ def build_closed_ablations_notes():
         r"\subsection{Closed-API ablation setup}",
         r"\label{app:closed_ablations_notes}",
         r"",
-        r"\Cref{tab:closed_ablations_comet} and "
-        r"\Cref{tab:closed_ablations_chrf} report the closed-API "
-        r"ablation on \texttt{eng}$\to$\texttt{xxx} only; no closed-API "
-        r"ablation runs on \texttt{xxx}$\to$\texttt{eng}. The four "
-        r"blocks are constructed so vanilla and templated numbers are "
-        r"never compared inside the same block.",
+        r"The closed-API ablation is reported on \texttt{eng}$\to$"
+        r"\texttt{xxx} only. The four blocks are constructed so vanilla "
+        r"and templated numbers are never compared inside the same "
+        r"block.",
         r"",
         r"\paragraph{Reported, vanilla.} Vanilla ZS (\texttt{0shot}) vs "
-        r"vanilla ICL (\texttt{5shot}) at $T{=}0$. The legacy closed "
-        r"APIs (Gemini-1.5, GPT-4o) have no vanilla 5-shot run on the "
-        r"closed-API side, so they appear as ZS only; the latest pair "
-        r"(Gemini-3.1, GPT-5.4) has both rows.",
+        r"vanilla ICL (\texttt{5shot}) at $T{=}0$. Vanilla 5-shot is "
+        r"available only for Gemini-3.1 and GPT-5.4; Gemini-1.5 and "
+        r"GPT-4o appear as ZS only.",
         r"",
         r"\paragraph{Reported, templated.} Templated ZS vs templated ICL "
         r"at $T{=}0$. Templated ZS is the per-pair mean of "
@@ -943,10 +940,7 @@ def build_closed_ablations_notes():
         r"two templated configurations comparable across all four APIs: "
         r"templated ZS (\texttt{template\{1,2,4\}\textunderscore{}0shot} mean) "
         r"and each model's best templated 10-shot. Vanilla 0-shot at "
-        r"$T{=}0.6$ is excluded: only Gemini-1.5 has a genuine vanilla "
-        r"rerun there; GPT-4o's $t_{0.6}$ dump duplicates its $t_0$ "
-        r"numbers, and the latest closed APIs have no vanilla 0-shot at "
-        r"$T{=}0.6$.",
+        r"$T{=}0.6$ is excluded for comparability across all four APIs.",
         r"",
         r"\paragraph{Highlighting.} \textbf{Bold} marks the per-column "
         r"maximum within a block. \emph{Italic} marks the per-language "
@@ -1025,25 +1019,65 @@ def build_template_shot_ablation(rows, metric):
     # Build column spec: model, config, 12 lang cols, Avg
     col_spec = "ll" + "r" * n_lang_cols + "r"
 
+    # Longtable lets the appendix render this across page breaks.
+    # Requires \usepackage{longtable} in the preamble. For a
+    # 2-column-wide ACL layout, wrap the \input{...} of this file in
+    # an \onecolumn ... \twocolumn switch (or use the cuted/xltabular
+    # packages if available) so the 15-column table spans the page.
+    direction_hdr = (r"\textbf{Model} & \textbf{Config} & "
+                     r"\multicolumn{6}{c}{\textbf{eng$\to$}} & "
+                     r"\multicolumn{6}{c}{\textbf{$\to$eng}} & \\")
+    cmidrules = r"\cmidrule(lr){3-8}\cmidrule(lr){9-14}"
+    lang_hdr = (r"  &   & " + " & ".join(lang_cols_e2x + lang_cols_x2e)
+                + r" & \textbf{Avg} \\")
+    n_total_cols = 2 + n_lang_cols + 1   # Model + Config + 12 + Avg
+
+    caption_text = (
+        r"\caption{Template/shot ablation at $T{=}0$ for the six reference "
+        r"models -- two open (Llama3-8B, Gemma2-9B-IT) and four closed "
+        r"APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) "
+        f"({metric_label}). Each row is a (template, shot-count) "
+        r"configuration (template number first, shot count as subscript "
+        r"$s$); the underlined row \texttt{5}$_{s=10}$ is the "
+        r"configuration used throughout the paper. "
+        r"\textbf{Bold}: per-language column maximum within each model "
+        r"block. The bottom \textbf{avg} row of each block reports the "
+        r"per-language average across configurations. Shot counts are "
+        r"capped at 20; the gain from 10$\to$20 shots is at most $0.2$ "
+        r"COMET.}"
+    )
+    label = (r"\label{tab:template_shot_ablation_"
+             + ("chrf" if metric == "chrf" else "comet") + "}")
+
     lines = [
         f"% ---- template_shot_ablation_{'chrf' if metric=='chrf' else 'comet'} ----",
-        r"\begin{table*}[t]",
-        r"\centering",
+        r"% Requires \usepackage{longtable}. For 2-column ACL layouts wrap",
+        r"% the \input{...} of this file in \onecolumn ... \twocolumn so",
+        r"% the 15-column table can span the page.",
+        r"\begingroup",
         r"\footnotesize",
         r"\setlength{\tabcolsep}{4pt}",
         r"\renewcommand{\arraystretch}{1.05}",
-        r"\resizebox{\textwidth}{!}{",
-        r"\begin{tabular}{" + col_spec + r"}",
+        r"\begin{longtable}{" + col_spec + r"}",
         r"\toprule",
-        # Direction header row spanning the 12 lang cols
-        (r"\textbf{Model} & \textbf{Config} & "
-         r"\multicolumn{6}{c}{\textbf{eng$\to$}} & "
-         r"\multicolumn{6}{c}{\textbf{$\to$eng}} & \\"),
-        r"\cmidrule(lr){3-8}\cmidrule(lr){9-14}",
-        # Lang headers
-        (r"  &   & " + " & ".join(lang_cols_e2x + lang_cols_x2e)
-         + r" & \textbf{Avg} \\"),
+        direction_hdr,
+        cmidrules,
+        lang_hdr,
         r"\midrule",
+        r"\endfirsthead",
+        r"\multicolumn{" + str(n_total_cols) + r"}{l}{\textit{(continued)}} \\",
+        r"\toprule",
+        direction_hdr,
+        cmidrules,
+        lang_hdr,
+        r"\midrule",
+        r"\endhead",
+        r"\midrule",
+        r"\multicolumn{" + str(n_total_cols) + r"}{r}{\textit{(continued on next page)}} \\",
+        r"\endfoot",
+        r"\bottomrule",
+        caption_text + " " + label + r" \\",
+        r"\endlastfoot",
     ]
 
     for mi, model in enumerate(AB_MODELS):
@@ -1108,25 +1142,8 @@ def build_template_shot_ablation(rows, metric):
                      + " & ".join(avg_cells) + r" \\")
 
     lines += [
-        r"\bottomrule",
-        r"\end{tabular}",
-        r"}",
-        (r"\caption{Template/shot ablation for the six reference models "
-         "with bidirectional templated coverage at $T{=}0$ -- two open "
-         "(Llama3-8B, Gemma2-9B-IT) and four closed APIs (legacy: "
-         "Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4) "
-         f"({metric_label}). Each row is a (template, shot-count) "
-         r"configuration (template number first, shot count as subscript "
-         r"$s$); the underlined row \texttt{5}$_{s=10}$ is the "
-         r"configuration we use throughout the body of the paper. "
-         r"\textbf{Bold}: per-language column maximum within each model "
-         r"block. The bottom \textbf{avg} row of each block reports the "
-         r"per-language average across configurations. We cap shot count "
-         r"at 20: the gain from 10$\to$20 shots is at most $0.2$ COMET, "
-         r"well below the $1$-COMET threshold we set for adopting a "
-         r"higher shot count.}"),
-        r"\label{tab:template_shot_ablation_" + ("chrf" if metric == "chrf" else "comet") + "}",
-        r"\end{table*}",
+        r"\end{longtable}",
+        r"\endgroup",
     ]
     return "\n".join(lines) + "\n"
 
@@ -1262,16 +1279,13 @@ def build_doc_template_shot_ablation(rows, metric):
          r"GPT-5.4) across the 3-template $\times$ 2-shot grid "
          f"({metric_label}). Each row is a (template, shot-count) "
          r"configuration for that model (template number first, shot "
-         r"count as subscript $s$). Open-source LLMs are not included "
-         r"here -- they only have a single \texttt{doc\textunderscore{}0shot} / "
-         r"\texttt{doc\textunderscore{}1shot} configuration each (no template "
-         r"variants); see \Cref{tab:doc_comet} for the main "
-         r"open-vs-closed doc-level comparison. SSA-COMET is reported "
-         r"throughout (no rescore needed; values were already in the "
-         r"per-result JSONs from the closed-API doc-level imports). "
-         r"\textbf{Bold}: per-language column maximum within each "
-         r"model block. The bottom \textbf{avg} row of each block "
-         r"reports the per-language average across configurations.}"),
+         r"count as subscript $s$). Open LLMs use a single doc-level "
+         r"configuration each (no template variants); see "
+         r"\Cref{tab:doc_comet} for the open-vs-closed doc-level "
+         r"comparison. \textbf{Bold}: per-language column maximum "
+         r"within each model block. The bottom \textbf{avg} row of "
+         r"each block reports the per-language average across "
+         r"configurations.}"),
         r"\label{tab:doc_template_shot_ablation_"
         + ("chrf" if metric == "chrf" else "comet") + "}",
         r"\end{table*}",
@@ -1457,12 +1471,10 @@ def build_prompt_engineering_open(rows, metric=None):
          r"main lift from vanilla to templated; "
          r"$\Delta_{T_{5\to 10}} = $T$_{10} - $T$_5$ isolates the "
          r"shot-count effect (template fixed at \texttt{template5}). "
-         r"Within each group, models with complete columns are listed "
-         r"above the within-group divider (Gemma2-9B-IT, Llama3-8B "
-         r"for open; Gemini-3.1, GPT-5.4 for closed); the remaining "
-         r"open LLMs lack T$_5$ data and render as ``--'' for "
-         r"T$_5$-derived cells. The legacy closed pair (Gemini-1.5, "
-         r"GPT-4o) is omitted because they have no vanilla 5-shot run. "
+         r"Within each group, models with all columns populated are "
+         r"listed above the within-group divider (Gemma2-9B-IT, "
+         r"Llama3-8B for open; Gemini-3.1, GPT-5.4 for closed); the "
+         r"remaining open LLMs render ``--'' for T$_5$-derived cells. "
          r"The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, "
          r"AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration "
          r"signal: large positive $\Delta_{V\to T}$ COMET paired with "
@@ -1657,25 +1669,17 @@ def build_multilingual_vs_bilingual(rows, metric=None):
         r"\end{tabular}",
         (r"\caption{Bilingual vs. multilingual fine-tuning on "
          r"\texttt{eng}$\to$\texttt{xxx} (chrF and COMET side-by-side). "
-         r"Restricted to \texttt{eng}$\to$\texttt{xxx} because the "
-         r"Llama and Gemma multilingual LoRA runs were trained in this "
-         r"direction only, so the reverse direction has no MMT side to "
-         r"compare against. Three model families: NLLB-600M "
-         r"(multilingual checkpoint sweep against NLLB-600M and 1.3B "
-         r"bilingual fine-tunes); Llama-3.1-8B-Instruct (same instruct "
-         r"model on both sides); Gemma-2-9B non-instruct base (same "
-         r"base both sides; the Gemma2-9B-IT instruct variant used in "
-         r"the main tables is a different base). For NLLB, bilingual "
-         r"fine-tuning is dramatically stronger than the (short, "
-         r"early-stage) multilingual checkpoints. For Gemma LoRA, "
-         r"bilingual leads by $\sim$3.7 COMET / $\sim$5 chrF at the "
-         r"best rank. For Llama LoRA, bilingual and multilingual end "
-         r"up essentially tied at COMET ($\sim$57) -- Llama is the "
-         r"outlier; the r=64 bilingual row also shows a "
-         r"chrF-up/COMET-down degeneration pattern relative to the "
-         r"other Llama bilingual ranks. \textbf{Bold}: best score for "
-         r"that target language (or Avg) within each metric, across "
-         r"all rows of the table.}"),
+         r"Three model families: NLLB-600M (multilingual checkpoint "
+         r"sweep against NLLB-600M and 1.3B bilingual fine-tunes); "
+         r"Llama-3.1-8B-Instruct (same instruct model on both sides); "
+         r"Gemma-2-9B non-instruct base. For NLLB, bilingual "
+         r"fine-tuning is substantially stronger than the multilingual "
+         r"checkpoints. For Gemma LoRA, bilingual leads by $\sim$3.7 "
+         r"COMET / $\sim$5 chrF at the best rank. For Llama LoRA, "
+         r"bilingual and multilingual end up essentially tied at COMET "
+         r"($\sim$57). \textbf{Bold}: best score for that target "
+         r"language (or Avg) within each metric, across all rows of "
+         r"the table.}"),
         r"\label{tab:multilingual_vs_bilingual}",
         r"\end{table*}",
     ]
@@ -1872,6 +1876,200 @@ def build_closed_evolution(rows, metric=None):
     return "\n".join(lines) + "\n"
 
 
+def build_doc_evaluation():
+    """**Appendix.** LLM-judge evaluation of all four closed APIs on
+    the six common doc-level template configurations
+    (\\texttt{doc\\_\\{0,1\\}shot\\_template\\{1,2,3\\}}).
+
+    Scores are the per-cell mean of two judges (GPT-5.5 reading
+    ``judge.json`` and Gemini-3.1-Flash-Lite reading
+    ``judge_gemini.json``). The table contains two direction
+    sub-blocks (\\texttt{eng}$\\to$\\texttt{xxx},
+    \\texttt{xxx}$\\to$\\texttt{eng}); within each sub-block, all four
+    closed APIs are listed (Gemini-1.5, Gemini-3.1, GPT-4o, GPT-5.4),
+    each with one row per (template, shot) configuration plus a
+    per-model avg row.
+
+    Restricted to the six configs common to legacy and latest closed
+    APIs so legacy-vs-latest comparison is apples-to-apples (legacy
+    has additional 5-shot configs and latest has vanilla 0/1-shot;
+    both are excluded). Emitted as a longtable so the ~56 data rows
+    can break across pages.
+    """
+    import json
+    from pathlib import Path
+
+    JUDGE_FILES = ("judge.json", "judge_gemini.json")
+    # Family-grouped: Gemini family then GPT family; within each,
+    # legacy then latest.
+    models = [
+        ("Gemini-1.5", "gemini_15_flash"),
+        ("Gemini-3.1", "gemini_31_flash_lite"),
+        ("GPT-4o",     "gpt4o"),
+        ("GPT-5.4",    "gpt54"),
+    ]
+
+    # Six configurations common to all four closed APIs.
+    STRATEGIES = [
+        ("1_0", "doc_0shot_template1"), ("1_1", "doc_1shot_template1"),
+        ("2_0", "doc_0shot_template2"), ("2_1", "doc_1shot_template2"),
+        ("3_0", "doc_0shot_template3"), ("3_1", "doc_1shot_template3"),
+    ]
+    METRICS = [
+        ("fluency_mean",              "fluency"),
+        ("accuracy_mistakes_mean",    "accuracy errors"),
+        ("lexical_mistakes_mean",     "lexical mistakes"),
+        ("grammatical_mistakes_mean", "grammatical mistakes"),
+    ]
+    LANGS_LOCAL = ["amh", "hau", "lug", "nso", "yor", "zul"]
+    DIRECTIONS = [
+        ("e2x", r"eng$\to$"),
+        ("x2e", r"$\to$eng"),
+    ]
+
+    def judge_value(model_short, strat_dir, lang_pair, metric_key, judge_file):
+        p = (Path("experiments/llm/closed/doc") / model_short / strat_dir
+             / lang_pair / judge_file)
+        if not p.exists():
+            return None
+        try:
+            d = json.loads(p.read_text())
+        except (json.JSONDecodeError, OSError):
+            return None
+        agg = d.get("aggregate") or {}
+        v = agg.get(metric_key)
+        return v if isinstance(v, (int, float)) else None
+
+    def averaged_value(model_short, strat_dir, lang_pair, metric_key):
+        vs = [judge_value(model_short, strat_dir, lang_pair,
+                          metric_key, jf) for jf in JUDGE_FILES]
+        vs = [v for v in vs if v is not None]
+        return (sum(vs) / len(vs)) if vs else None
+
+    def fmt_v(v):
+        return "--" if v is None else f"{v:.1f}"
+
+    # Pre-compute every cell:
+    #   data[direction][model_short][strat_label][metric_key][lang]
+    data = {}
+    for direction_key, _ in DIRECTIONS:
+        data[direction_key] = {}
+        for _, model_short in models:
+            data[direction_key][model_short] = {}
+            for strat_label, strat_dir in STRATEGIES:
+                data[direction_key][model_short][strat_label] = {}
+                for metric_key, _ in METRICS:
+                    data[direction_key][model_short][strat_label][metric_key] = {}
+                    for lang in LANGS_LOCAL:
+                        pair = (f"eng-{lang}" if direction_key == "e2x"
+                                else f"{lang}-eng")
+                        data[direction_key][model_short][strat_label][metric_key][lang] = \
+                            averaged_value(model_short, strat_dir, pair, metric_key)
+
+    n_data = 6 * len(METRICS)
+    n_cols = 3 + n_data    # direction + model + setting + data
+    col_spec = "lll|" + "|".join(["rrrrrr"] * len(METRICS))
+
+    lang_hdr_chunk = " & ".join(r"\textbf{\texttt{" + l + r"}}"
+                                for l in LANGS_LOCAL)
+
+    lines = [
+        r"% ---- doc_evaluation ----",
+        r"\begin{table*}[t]",
+        r"\centering",
+        r"\resizebox{\textwidth}{!}{",
+        r"\begin{tabular}{" + col_spec + r"}",
+        r"\toprule",
+        (r"\multirow{2}{*}{\textbf{dir}} & "
+         r"\multirow{2}{*}{\textbf{model}} & "
+         r"\multirow{2}{*}{\textbf{setting}} & "
+         + " & ".join(r"\multicolumn{6}{l|}{\textbf{" + label + r"}}"
+                      if i < len(METRICS) - 1
+                      else r"\multicolumn{6}{l}{\textbf{" + label + r"}}"
+                      for i, (_, label) in enumerate(METRICS))
+         + r" \\"),
+        " ".join(
+            (r"\cmidrule(lr){" + str(4 + 6*i) + "-" + str(9 + 6*i) + "}")
+            for i in range(len(METRICS))
+        ),
+        (r"& & & " + " & ".join([lang_hdr_chunk] * len(METRICS)) + r" \\"),
+        r"\midrule",
+    ]
+
+    def cells_for_row(direction_key, model_short, strat_label):
+        out = []
+        for metric_key, _ in METRICS:
+            for lang in LANGS_LOCAL:
+                v = data[direction_key][model_short][strat_label][metric_key][lang]
+                out.append(fmt_v(v))
+        return out
+
+    def avg_cells_for_model(direction_key, model_short):
+        out = []
+        for metric_key, _ in METRICS:
+            for lang in LANGS_LOCAL:
+                vs = [data[direction_key][model_short][s][metric_key][lang]
+                      for s, _ in STRATEGIES
+                      if data[direction_key][model_short][s][metric_key][lang] is not None]
+                v = (sum(vs) / len(vs)) if vs else None
+                out.append(fmt_v(v))
+        return out
+
+    rows_per_model = len(STRATEGIES) + 1   # 6 strategies + avg
+    rows_per_direction = rows_per_model * len(models)
+
+    for di, (dir_key, dir_disp) in enumerate(DIRECTIONS):
+        if di > 0:
+            lines.append(r"\midrule")
+        # The direction cell spans every row of this sub-block.
+        for mi, (mdisp, ms) in enumerate(models):
+            if mi > 0:
+                lines.append(r"\cmidrule{2-" + str(n_cols) + "}")
+            for ri, (strat_label, _) in enumerate(STRATEGIES):
+                row_cells = cells_for_row(dir_key, ms, strat_label)
+                # direction multirow on the very first row of the block
+                if mi == 0 and ri == 0:
+                    dir_cell = (r"\multirow{" + str(rows_per_direction)
+                                + r"}{*}{" + dir_disp + r"}")
+                else:
+                    dir_cell = ""
+                # model multirow on the first row of each model's sub-section
+                if ri == 0:
+                    model_cell = (r"\multirow{" + str(rows_per_model)
+                                  + r"}{*}{" + mdisp + r"}")
+                else:
+                    model_cell = ""
+                tmpl, shot = strat_label.split("_")
+                row_label = f"${tmpl}_{{{shot}}}$"
+                lines.append(f"{dir_cell} & {model_cell} & {row_label} & "
+                             + " & ".join(row_cells) + r" \\")
+            # per-model avg row inside this model's sub-section
+            lines.append(r"\cmidrule{3-" + str(n_cols) + "}")
+            lines.append(" & & avg & "
+                         + " & ".join(avg_cells_for_model(dir_key, ms))
+                         + r" \\")
+
+    caption = (
+        r"\caption{LLM-judge evaluation of the four closed APIs' "
+        r"document-level translations on the six template configurations "
+        r"common to legacy and latest "
+        r"(\texttt{doc\textunderscore{}\{0,1\}shot\textunderscore{}template\{1,2,3\}}). "
+        r"Scores are the per-cell mean of two judges (GPT-5.5 and "
+        r"Gemini-3.1-Flash-Lite). Higher fluency is better; lower "
+        r"accuracy / lexical / grammatical mistake counts are better.}"
+    )
+    label = r"\label{tab:doc_evaluation}"
+    lines += [
+        r"\bottomrule",
+        r"\end{tabular}",
+        r"}",
+        caption,
+        label,
+        r"\end{table*}",
+    ]
+    return "\n".join(lines) + "\n"
+
+
 # ---------------- main ----------------
 
 def main():
@@ -1918,6 +2116,16 @@ def main():
     notes_path = OUT_DIR / "closed_ablations_notes.tex"
     notes_path.write_text(build_closed_ablations_notes())
     written.append(notes_path)
+
+    # Doc-level LLM-judge table: all four closed APIs (Gemini family
+    # then GPT family), 2 judges averaged, both directions in one table.
+    for stale in (OUT_DIR / "doc_evaluation_gpt.tex",
+                  OUT_DIR / "doc_evaluation_gemini.tex"):
+        if stale.exists():
+            stale.unlink()
+    out = OUT_DIR / "doc_evaluation.tex"
+    out.write_text(build_doc_evaluation())
+    written.append(out)
 
     # Concatenate into a single sheet that mirrors new_results.tex
     sheet = "\n".join(p.read_text() for p in written)
