@@ -526,8 +526,18 @@ def build_open_vs_closed_icl(rows, metric):
         return sorted(model_list, key=lambda m: MODEL_DISP.get(m, m).lower())
 
     def closed_zs(model):
-        return lookup(rows, metric=metric, model_short=model,
-                      experiment_type="llm_zero_shot", is_ablation="False")
+        # Legacy closed APIs (gpt-4o, gemini-1.5) have a dedicated
+        # experiment_type=llm_zero_shot. The latest closed APIs (gpt-5.4,
+        # gemini-3.1) were collected via the vanilla rerun script which
+        # writes everything under experiment_type=llm_icl with
+        # prompt_strategy=0shot for the zero-shot cells. Fall back to that
+        # so both eras populate the zero-shot row.
+        return first_with_pred(rows, metric=metric, candidates=[
+            dict(model_short=model, experiment_type="llm_zero_shot",
+                 is_ablation="False"),
+            dict(model_short=model, experiment_type="llm_icl",
+                 prompt_strategy="0shot"),
+        ])
 
     def llm_icl(model):
         # No is_ablation filter: template5_10shot for the 4 reference models
