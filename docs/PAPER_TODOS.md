@@ -1262,3 +1262,32 @@ prompts. The OpenAI batch API reported these as `completed` (no failure).
 2. Open with **Status:** + a one-line "what we're waiting on".
 3. Paste the proposed wording verbatim under a `### Proposed text` header.
 4. Note **What's still missing** so future-you knows the unblocker.
+
+---
+
+## 2026-05-13 — Gemini-3.1 vanilla 0-shot is weaker than Gemini-1.5
+
+**Status:** finding to surface in the closed-API discussion paragraph.
+
+While filling the zero-shot row in `tab:open_vs_closed_icl_comet` for the
+latest closed APIs, we noticed:
+
+| Model | vanilla 0-shot avg COMET | template5_10shot avg COMET |
+|---|---|---|
+| Gemini-1.5-Flash | 58.7 | 65.9 |
+| Gemini-3.1-Flash-Lite | **57.0** | 68.0 |
+| GPT-4o | 58.0 | 65.4 |
+| GPT-5.4 | **65.0** | 68.3 |
+
+Gemini-3.1 vanilla 0-shot is **slightly worse** than Gemini-1.5 vanilla 0-shot
+(57.0 vs 58.7) but jumps to 68.0 with template5_10shot — the templating lift
+is +11.0 COMET, much larger than Gemini-1.5's +7.2 lift. The "Lite" variant
+appears more dependent on prompt scaffolding than its predecessor.
+
+GPT-5.4 in contrast posts a strong vanilla 0-shot (65.0, +7.0 over GPT-4o)
+and a smaller templating lift (+3.3) — it's already most of the way there
+without scaffolding.
+
+**Where to mention:** the closed-API discussion paragraph that already
+covers the prompt-template-vs-shot effect. One sentence is enough; the
+table itself shows the numbers.
