@@ -74,7 +74,12 @@ LORA_MODELS = ["afriquellama_8b", "afriqueqwen_8b", "gemma2_9b_it",
 # ---------------- IO ----------------
 
 def load_rows() -> list[dict]:
-    rows = []
+    """Load summary.csv and dedupe to one row per
+    (model_short, experiment_type, prompt_strategy, lang_pair, temp_setting,
+    is_ablation, lora_rank). When the same cell appears multiple times
+    (e.g.\\ the broken semantic dump + the patched re-run), keep the row
+    with the latest timestamp."""
+    raw = []
     with open(CSV_PATH) as f:
         for r in csv.DictReader(f):
             for k in ("bleu", "chrf", "ssa_comet"):
@@ -84,8 +89,19 @@ def load_rows() -> list[dict]:
                 r["temp_setting"] = "t0"
             elif r["temp_setting"] == "t6":
                 r["temp_setting"] = "t06"
-            rows.append(r)
-    return rows
+            raw.append(r)
+
+    by_key = {}
+    for r in raw:
+        key = (r.get("model_short", ""), r.get("experiment_type", ""),
+               r.get("prompt_strategy", ""), r.get("lang_pair", ""),
+               r.get("temp_setting", ""), r.get("is_ablation", ""),
+               r.get("lora_rank", ""))
+        prev = by_key.get(key)
+        if prev is None or (r.get("timestamp", "") >
+                            prev.get("timestamp", "")):
+            by_key[key] = r
+    return list(by_key.values())
 
 
 def metric_val(r: dict, metric: str) -> float | None:

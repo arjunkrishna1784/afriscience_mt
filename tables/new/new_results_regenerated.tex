@@ -28,15 +28,15 @@ TranslateGemma-12B & 18.8 & 38.3 & 17.3 & \emph{23.7} & 13.5 & 39.4 & \emph{51.0
 \midrule
 M2M100\textunderscore{}1.2B & 39.0 & 63.1 & 49.5 & 62.4 & 16.6 & 58.4 & 46.9 & 55.2 & 48.0 & 57.0 & 43.3 & 52.2 & 49.3 \\
 M2M100\textunderscore{}418M & 38.8 & 62.9 & 48.6 & 61.1 & 16.6 & 55.8 & 50.7 & 54.3 & 46.8 & 53.9 & 45.1 & 55.7 & 49.2 \\
-NLLB\textunderscore{}1.3B & \textbf{45.5} & \textbf{67.7} & \textbf{51.5} & \textbf{64.3} & \emph{17.7} & \textbf{67.2} & \textbf{63.1} & \textbf{64.3} & \textbf{55.4} & \textbf{65.8} & \textbf{53.3} & \textbf{68.6} & \textbf{57.0} \\
-NLLB\textunderscore{}600M & 44.4 & 66.9 & 50.6 & 64.2 & 17.6 & 66.3 & 60.1 & 62.1 & 53.2 & 63.2 & 50.7 & 66.6 & 55.5 \\
+NLLB\textunderscore{}1.3B & \textbf{45.5} & -- & -- & \textbf{64.3} & -- & -- & \textbf{63.1} & -- & -- & \textbf{65.8} & -- & -- & \textbf{59.7} \\
+NLLB\textunderscore{}600M & 44.4 & \textbf{66.9} & \textbf{50.6} & 64.2 & \emph{17.6} & \textbf{66.3} & 60.1 & \emph{62.1} & \emph{53.2} & 63.2 & \textbf{50.7} & \textbf{66.6} & 55.5 \\
 \midrule
 AfriqueLlama-8B & 36.1 & 59.8 & 45.5 & 54.9 & 20.9 & 53.3 & \emph{59.3} & 56.6 & 47.0 & 58.6 & \emph{50.7} & 62.4 & 50.4 \\
 AfriqueQwen-8B & 27.7 & 59.2 & 39.1 & 59.2 & 13.4 & 35.5 & 40.4 & 34.6 & 24.0 & 29.9 & 35.2 & 35.7 & 36.1 \\
-Gemma2-9B & \emph{39.7} & 58.8 & \emph{50.1} & \emph{61.6} & \textbf{41.6} & 50.2 & 58.6 & \emph{62.7} & \emph{54.3} & \emph{62.5} & 50.7 & \emph{65.3} & \emph{54.7} \\
+Gemma2-9B & \emph{39.7} & 58.8 & \emph{50.1} & \emph{61.6} & \textbf{41.6} & 50.2 & 58.6 & \textbf{62.7} & \textbf{54.3} & \emph{62.5} & 50.7 & \emph{65.3} & \emph{54.7} \\
 Llama3-8B & 32.9 & 60.3 & 49.3 & 59.0 & 39.9 & 52.4 & 53.0 & 60.3 & 52.6 & 60.2 & 48.8 & 61.2 & 52.5 \\
-Tiny-Aya-E & 37.8 & \emph{62.0} & 46.9 & 57.7 & 39.5 & \emph{56.1} & 58.5 & 61.6 & 50.4 & 57.1 & 46.2 & 64.7 & 53.2 \\
-Tiny-Aya-G & 37.9 & 62.0 & 46.7 & 57.8 & 39.4 & 55.3 & 47.4 & 40.9 & 47.0 & 22.4 & 39.3 & 49.6 & 45.5 \\
+Tiny-Aya-E & 37.8 & \emph{62.0} & 46.9 & 57.7 & 39.5 & 56.1 & 58.5 & 61.6 & 50.4 & 57.1 & 46.2 & 64.7 & 53.2 \\
+Tiny-Aya-G & 38.1 & 60.9 & 47.3 & 57.6 & 38.3 & \emph{56.2} & 56.9 & 60.1 & 49.2 & 55.9 & 48.2 & 63.4 & 52.7 \\
 \bottomrule
 \end{tabular}
 \caption{Sentence-level zero-shot vs. fine-tuned performance (chrF). The four seq2seq models (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; the \textit{Zero-shot} group additionally includes TranslateGemma-12B (evaluated but not fine-tuned). LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
@@ -73,15 +73,15 @@ TranslateGemma-12B & 29.5 & 33.7 & 37.5 & 37.8 & 37.9 & 33.6 & 40.7 & \emph{42.8
 \midrule
 M2M100\textunderscore{}1.2B & 59.7 & 59.8 & 66.0 & 68.0 & 64.5 & 61.9 & 60.0 & 63.8 & 61.7 & 65.0 & 59.6 & 61.1 & 62.6 \\
 M2M100\textunderscore{}418M & 58.6 & 58.8 & 65.2 & 66.8 & 64.4 & 59.7 & 61.9 & 63.0 & 61.2 & 63.4 & 60.0 & 62.5 & 62.1 \\
-NLLB\textunderscore{}1.3B & \textbf{66.0} & \textbf{63.3} & \textbf{70.0} & \textbf{70.7} & \textbf{67.3} & \textbf{66.0} & \textbf{68.6} & \textbf{68.0} & \textbf{65.9} & \textbf{69.0} & \textbf{64.8} & \textbf{68.2} & \textbf{67.3} \\
-NLLB\textunderscore{}600M & 65.1 & 62.9 & 69.5 & 70.3 & 66.8 & 65.7 & 68.0 & 67.3 & 65.1 & 68.3 & 63.9 & 67.8 & 66.7 \\
+NLLB\textunderscore{}1.3B & \textbf{66.0} & -- & -- & \textbf{70.7} & -- & -- & \textbf{68.6} & -- & -- & \textbf{69.0} & -- & -- & \textbf{68.6} \\
+NLLB\textunderscore{}600M & 65.1 & \textbf{62.9} & \textbf{69.5} & 70.3 & \textbf{66.8} & \textbf{65.7} & 68.0 & \textbf{67.3} & \textbf{65.1} & 68.3 & \textbf{63.9} & \textbf{67.8} & 66.7 \\
 \midrule
 AfriqueLlama-8B & 49.6 & 51.5 & 58.7 & 58.7 & 55.5 & 51.6 & 60.9 & 53.5 & 54.7 & 58.7 & 55.7 & 56.4 & 55.5 \\
 AfriqueQwen-8B & 23.8 & 37.2 & 45.1 & 52.1 & 21.2 & 28.7 & 36.6 & 28.2 & 22.8 & 25.8 & 41.3 & 26.5 & 32.4 \\
-Gemma2-9B & 54.0 & 50.5 & 62.7 & 62.8 & 58.9 & 48.4 & 60.4 & 60.6 & 58.4 & \emph{61.1} & 56.3 & 60.4 & 57.9 \\
+Gemma2-9B & 54.0 & 50.5 & 62.7 & 62.8 & 58.9 & 48.4 & 60.4 & 60.6 & 58.4 & 61.1 & 56.3 & 60.4 & 57.9 \\
 Llama3-8B & 42.4 & 51.3 & 61.1 & 60.6 & 56.8 & 50.3 & 58.1 & 60.2 & 57.7 & 60.4 & 55.6 & 59.0 & 56.1 \\
-Tiny-Aya-E & 54.3 & 54.3 & 59.8 & 59.2 & 57.1 & 55.7 & 57.8 & \emph{61.0} & 56.5 & 58.7 & 50.2 & 60.5 & 57.1 \\
-Tiny-Aya-G & \emph{60.8} & \emph{61.7} & \emph{65.0} & \emph{65.2} & \emph{63.8} & \emph{61.8} & \emph{64.8} & 59.4 & \emph{63.9} & 48.5 & \emph{61.2} & \emph{63.5} & \emph{61.6} \\
+Tiny-Aya-E & 54.3 & 54.3 & 59.8 & 59.2 & 57.1 & 55.7 & 57.8 & 61.0 & 56.5 & 58.7 & 50.2 & 60.5 & 57.1 \\
+Tiny-Aya-G & \emph{61.9} & \emph{61.6} & \emph{65.7} & \emph{65.3} & \emph{65.2} & \emph{63.1} & \emph{67.3} & \emph{67.2} & \emph{64.3} & \emph{66.4} & \emph{63.8} & \emph{67.2} & \emph{64.9} \\
 \bottomrule
 \end{tabular}
 \caption{Sentence-level zero-shot vs. fine-tuned performance (COMET). The four seq2seq models (M2M100-418M, NLLB-600M, M2M100-1.2B, NLLB-1.3B) and six open-source LLMs appear in both major groups; the \textit{Zero-shot} group additionally includes TranslateGemma-12B (evaluated but not fine-tuned). LLMs in the \textit{Fine-tuned} group use per-pair LoRA $r{=}64$. Models are alphabetically sorted within each sub-block. \textbf{Bold}: column maximum within the major group (\textit{Zero-shot} or \textit{Fine-tuned}); \emph{italic}: column maximum within the sub-block (seq2seq or LLM).}
@@ -106,14 +106,14 @@ Best open & \emph{28.1} & \emph{52.5} & \emph{17.7} & \emph{23.7} & \emph{14.5} 
 Gemini-1.5 & 36.4 & 53.9 & 37.3 & 46.9 & 15.2 & 49.5 & 58.5 & 56.7 & 47.6 & 52.1 & 42.0 & 60.3 & 46.4 \\
 Gemini-3.1 & 35.7 & 50.3 & 36.4 & 45.9 & 15.6 & 45.4 & 47.5 & 54.1 & 44.7 & 51.1 & 42.2 & 60.3 & 44.1 \\
 GPT-4o & 21.1 & 58.0 & 41.9 & 47.3 & 16.3 & 58.5 & 53.0 & 60.7 & 51.1 & 58.5 & 49.0 & 65.8 & 48.4 \\
-GPT-5.4 & \textbf{38.5} & \textbf{58.4} & \textbf{48.9} & \textbf{53.9} & \textbf{16.3} & \textbf{62.8} & \textbf{64.4} & \textbf{65.1} & \textbf{55.0} & \textbf{63.3} & \textbf{51.8} & \textbf{69.4} & \textbf{54.0} \\
+GPT-5.4 & \textbf{37.6} & \textbf{58.4} & \textbf{48.9} & \textbf{53.9} & \textbf{16.3} & \textbf{62.8} & \textbf{63.5} & \textbf{64.9} & \textbf{55.4} & \textbf{63.0} & \textbf{53.8} & \textbf{69.4} & \textbf{54.0} \\
 \midrule\midrule
 \multicolumn{14}{l}{\textit{template5, 10-shot ICL}} \\
 \midrule
 Gemini-1.5 & 39.1 & 57.2 & 42.9 & 51.8 & 22.7 & 50.1 & 59.7 & 59.1 & 49.1 & 55.6 & 46.7 & 62.7 & 49.7 \\
-Gemini-3.1 & \textbf{41.6} & \textbf{61.1} & 49.5 & \textbf{55.9} & 22.9 & 61.8 & \textbf{63.1} & \textbf{64.1} & \textbf{54.4} & \textbf{63.0} & \textbf{54.6} & \textbf{68.3} & \textbf{55.0} \\
+Gemini-3.1 & \textbf{41.6} & \textbf{61.1} & \textbf{49.5} & \textbf{55.9} & \textbf{22.9} & \textbf{61.8} & \textbf{63.1} & \textbf{64.1} & \textbf{54.4} & \textbf{63.0} & \textbf{54.6} & \textbf{68.3} & \textbf{55.0} \\
 GPT-4o & 28.4 & 60.1 & 43.6 & 50.5 & 21.5 & 59.5 & 53.4 & 61.1 & 51.8 & 59.4 & 50.5 & 66.0 & 50.5 \\
-GPT-5.4 & 39.6 & 59.7 & \textbf{50.4} & 55.3 & \textbf{23.5} & \textbf{62.7} & 60.0 & 61.9 & 52.8 & 58.8 & 44.9 & 67.4 & 53.1 \\
+GPT-5.4 & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
 \midrule
 AfriqueLlama-8B & 2.7 & 9.4 & 8.9 & 10.6 & 6.3 & 9.8 & 1.1 & 7.8 & 6.8 & 7.4 & 7.1 & 9.6 & 7.3 \\
 AfriqueQwen-8B & 6.7 & 16.4 & 11.3 & 12.5 & 7.5 & 14.7 & 15.6 & 13.7 & 10.5 & 9.7 & 11.5 & 14.0 & 12.0 \\
@@ -146,14 +146,14 @@ Best open & \emph{35.7} & \emph{36.2} & \emph{42.2} & \emph{40.4} & \emph{40.4} 
 Gemini-1.5 & 57.9 & 55.8 & 59.4 & 62.2 & \textbf{57.5} & 53.9 & 62.6 & 61.4 & 58.1 & 59.8 & 54.8 & 60.8 & 58.7 \\
 Gemini-3.1 & 55.6 & 55.1 & 58.7 & 53.0 & 53.0 & 52.2 & 58.7 & 61.0 & 58.5 & 60.2 & 57.9 & 60.8 & 57.0 \\
 GPT-4o & 39.4 & 56.8 & 60.7 & 62.6 & 54.6 & 58.3 & 60.5 & 62.3 & 59.3 & 62.0 & 57.8 & 62.1 & 58.0 \\
-GPT-5.4 & \textbf{61.7} & \textbf{58.4} & \textbf{64.3} & \textbf{66.7} & 55.9 & \textbf{63.2} & \textbf{69.1} & \textbf{69.0} & \textbf{67.1} & \textbf{69.5} & \textbf{66.2} & \textbf{68.8} & \textbf{65.0} \\
+GPT-5.4 & \textbf{60.1} & \textbf{58.4} & \textbf{64.3} & \textbf{66.7} & 55.9 & \textbf{63.2} & \textbf{68.2} & \textbf{68.6} & \textbf{66.6} & \textbf{69.0} & \textbf{65.3} & \textbf{68.7} & \textbf{64.6} \\
 \midrule\midrule
 \multicolumn{14}{l}{\textit{template5, 10-shot ICL}} \\
 \midrule
 Gemini-1.5 & 64.8 & 62.4 & 66.8 & 68.4 & 64.7 & 62.2 & 68.7 & 67.9 & 65.6 & 67.5 & 64.5 & 67.6 & 65.9 \\
-Gemini-3.1 & \textbf{67.8} & \textbf{64.8} & 70.3 & 70.1 & 67.8 & 65.9 & 69.3 & 68.7 & 66.8 & 69.1 & 66.4 & 68.4 & 68.0 \\
+Gemini-3.1 & \textbf{67.8} & \textbf{64.8} & 70.3 & 70.1 & 67.8 & 65.9 & 69.3 & 68.7 & 66.8 & 69.1 & \textbf{66.4} & 68.4 & 68.0 \\
 GPT-4o & 52.7 & 62.2 & 68.0 & 68.3 & 65.4 & 64.6 & 67.2 & 68.4 & 66.3 & 68.4 & 65.6 & 68.3 & 65.4 \\
-GPT-5.4 & 66.6 & 64.8 & \textbf{70.6} & \textbf{70.7} & \textbf{68.0} & \textbf{66.2} & \textbf{69.7} & \textbf{69.1} & \textbf{67.5} & \textbf{69.9} & \textbf{67.4} & \textbf{68.7} & \textbf{68.3} \\
+GPT-5.4 & 66.7 & 64.5 & \textbf{70.7} & \textbf{70.8} & \textbf{67.9} & \textbf{66.1} & \textbf{69.4} & \textbf{68.9} & \textbf{67.1} & \textbf{69.4} & 66.4 & \textbf{68.7} & \textbf{68.0} \\
 \midrule
 AfriqueLlama-8B & 50.1 & 49.0 & 48.7 & 49.1 & 49.8 & 48.5 & 36.6 & 50.4 & 53.6 & 52.4 & 47.1 & 50.4 & 48.8 \\
 AfriqueQwen-8B & 43.8 & 42.9 & 41.2 & 44.0 & 47.8 & 43.5 & 42.8 & 41.3 & 43.0 & 43.5 & 44.4 & 41.0 & 43.3 \\
@@ -180,10 +180,10 @@ TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.
   &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
 \multirow{2}{*}{\textit{Zero-shot}} & M2M100\textunderscore{}1.2B & 11.9 & 30.6 & 6.1 & 15.1 & \emph{13.3} & 30.3 & 36.6 & 39.7 & 20.3 & 18.9 & 15.7 & 45.8 \\
- & NLLB\textunderscore{}1.3B & \emph{37.4} & \emph{59.4} & \emph{43.2} & \emph{51.4} & 13.0 & \emph{60.1} & \emph{57.6} & \emph{57.5} & \emph{49.5} & \emph{58.5} & \emph{46.0} & \emph{63.2} \\
+ & NLLB\textunderscore{}1.3B & \emph{37.4} & \emph{59.4} & \emph{43.2} & \emph{51.4} & 13.0 & \textbf{60.1} & \emph{57.6} & \textbf{57.5} & \textbf{49.5} & \emph{58.5} & \textbf{46.0} & \textbf{63.2} \\
 \midrule
-\multirow{2}{*}{\textit{Fine-tuned}} & M2M100\textunderscore{}1.2B & 39.0 & 63.1 & 49.5 & 62.4 & 16.6 & 58.4 & 46.9 & 55.2 & 48.0 & 57.0 & 43.3 & 52.2 \\
- & NLLB\textunderscore{}1.3B & \textbf{45.5} & \textbf{67.7} & \textbf{51.5} & \textbf{64.3} & \textbf{17.7} & \textbf{67.2} & \textbf{63.1} & \textbf{64.3} & \textbf{55.4} & \textbf{65.8} & \textbf{53.3} & \textbf{68.6} \\
+\multirow{2}{*}{\textit{Fine-tuned}} & M2M100\textunderscore{}1.2B & 39.0 & \textbf{63.1} & \textbf{49.5} & 62.4 & \textbf{16.6} & \emph{58.4} & 46.9 & \emph{55.2} & \emph{48.0} & 57.0 & \emph{43.3} & \emph{52.2} \\
+ & NLLB\textunderscore{}1.3B & \textbf{45.5} & -- & -- & \textbf{64.3} & -- & -- & \textbf{63.1} & -- & -- & \textbf{65.8} & -- & -- \\
 \bottomrule
 \end{tabular}
 \caption{Seq2Seq: zero-shot vs. fine-tuned (chrF)}
@@ -202,10 +202,10 @@ TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.
   &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
 \multirow{2}{*}{\textit{Zero-shot}} & M2M100\textunderscore{}1.2B & 31.7 & 36.1 & 31.6 & 32.8 & 42.1 & 43.9 & 53.6 & 55.6 & 42.0 & 40.1 & 42.9 & 58.4 \\
- & NLLB\textunderscore{}1.3B & \emph{62.8} & \emph{61.9} & \emph{67.7} & \textbf{70.7} & \emph{61.9} & \emph{66.0} & \emph{67.8} & \emph{67.3} & \emph{65.0} & \emph{68.3} & \emph{63.3} & \emph{67.8} \\
+ & NLLB\textunderscore{}1.3B & \emph{62.8} & \textbf{61.9} & \textbf{67.7} & \textbf{70.7} & \emph{61.9} & \textbf{66.0} & \emph{67.8} & \textbf{67.3} & \textbf{65.0} & \emph{68.3} & \textbf{63.3} & \textbf{67.8} \\
 \midrule
-\multirow{2}{*}{\textit{Fine-tuned}} & M2M100\textunderscore{}1.2B & 59.7 & 59.8 & 66.0 & 68.0 & 64.5 & 61.9 & 60.0 & 63.8 & 61.7 & 65.0 & 59.6 & 61.1 \\
- & NLLB\textunderscore{}1.3B & \textbf{66.0} & \textbf{63.3} & \textbf{70.0} & \emph{70.7} & \textbf{67.3} & \textbf{66.0} & \textbf{68.6} & \textbf{68.0} & \textbf{65.9} & \textbf{69.0} & \textbf{64.8} & \textbf{68.2} \\
+\multirow{2}{*}{\textit{Fine-tuned}} & M2M100\textunderscore{}1.2B & 59.7 & \emph{59.8} & \emph{66.0} & 68.0 & \textbf{64.5} & \emph{61.9} & 60.0 & \emph{63.8} & \emph{61.7} & 65.0 & \emph{59.6} & \emph{61.1} \\
+ & NLLB\textunderscore{}1.3B & \textbf{66.0} & -- & -- & \emph{70.7} & -- & -- & \textbf{68.6} & -- & -- & \textbf{69.0} & -- & -- \\
 \bottomrule
 \end{tabular}
 \caption{Seq2Seq: zero-shot vs. fine-tuned (COMET)}
@@ -342,8 +342,8 @@ TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.
  & AfriqueQwen-8B & 27.7 & 59.2 & 39.1 & 59.2 & 13.4 & 35.5 & 40.4 & 34.6 & 24.0 & 29.9 & 35.2 & 35.7 \\
  & Gemma2-9B & \textbf{39.7} & 58.8 & \textbf{50.1} & \textbf{61.6} & \textbf{41.6} & 50.2 & 58.6 & \emph{62.7} & \textbf{54.3} & \textbf{62.5} & 50.7 & \textbf{65.3} \\
  & Llama3-8B & 32.9 & 60.3 & 49.3 & 59.0 & 39.9 & 52.4 & 53.0 & 60.3 & 52.6 & 60.2 & 48.8 & 61.2 \\
- & Tiny-Aya-E & 37.8 & \emph{62.0} & 46.9 & 57.7 & 39.5 & \emph{56.1} & 58.5 & 61.6 & 50.4 & 57.1 & 46.2 & 64.7 \\
- & Tiny-Aya-G & 37.9 & 62.0 & 46.7 & 57.8 & 39.4 & 55.3 & 47.4 & 40.9 & 47.0 & 22.4 & 39.3 & 49.6 \\
+ & Tiny-Aya-E & 37.8 & \emph{62.0} & 46.9 & 57.7 & 39.5 & 56.1 & 58.5 & 61.6 & 50.4 & 57.1 & 46.2 & 64.7 \\
+ & Tiny-Aya-G & 38.1 & 60.9 & 47.3 & 57.6 & 38.3 & \emph{56.2} & 56.9 & 60.1 & 49.2 & 55.9 & 48.2 & 63.4 \\
 \bottomrule
 \end{tabular}
 \caption{LoRA fine-tuning of six open-source LLMs at two ranks (chrF). Each cell is one (language, direction) pair; each model is fine-tuned bilingually per pair for 10 epochs with early stopping. Comparing $r{=}4$ (low-rank, parameter-efficient) against $r{=}64$ (the main rank used elsewhere in the paper) isolates the effect of adapter capacity. \textbf{Bold}: best score for that (language, direction) pair across both ranks; \emph{italic}: best score for that pair within a single rank block.}
@@ -361,7 +361,7 @@ TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.
 \cmidrule(lr){3-8}\cmidrule(lr){9-14}
   &   & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} & \texttt{amh} & \texttt{hau} & \texttt{lug} & \texttt{nso} & \texttt{yor} & \texttt{zul} \\
 \midrule
-\multirow{6}{*}{\textit{LoRA $r{=}4$}} & AfriqueLlama-8B & \emph{58.3} & \emph{59.9} & 56.3 & \emph{60.1} & \emph{57.2} & 54.5 & \textbf{67.6} & \textbf{65.7} & 53.5 & 59.8 & 55.8 & 57.0 \\
+\multirow{6}{*}{\textit{LoRA $r{=}4$}} & AfriqueLlama-8B & \emph{58.3} & \emph{59.9} & 56.3 & \emph{60.1} & \emph{57.2} & 54.5 & \textbf{67.6} & \emph{65.7} & 53.5 & 59.8 & 55.8 & 57.0 \\
  & AfriqueQwen-8B & 43.7 & 40.5 & 53.5 & 57.3 & 49.2 & 34.5 & 51.0 & 53.1 & 32.0 & 36.3 & 39.2 & 12.3 \\
  & Gemma2-9B & 48.9 & 49.8 & \emph{57.5} & 59.1 & 55.7 & 46.9 & 60.2 & 60.7 & \emph{58.0} & \emph{60.8} & \emph{56.3} & 60.4 \\
  & Llama3-8B & 29.1 & 47.4 & 54.6 & 51.0 & 50.6 & 40.3 & 56.2 & 59.7 & 56.9 & 58.7 & 54.7 & 57.4 \\
@@ -370,10 +370,10 @@ TranslateGemma-12B & 53.6 & 52.4 & \emph{50.1} & \emph{50.3} & 51.0 & 50.6 & 41.
 \midrule
 \multirow{6}{*}{\textit{LoRA $r{=}64$}} & AfriqueLlama-8B & 49.6 & 51.5 & 58.7 & 58.7 & 55.5 & 51.6 & 60.9 & 53.5 & 54.7 & 58.7 & 55.7 & 56.4 \\
  & AfriqueQwen-8B & 23.8 & 37.2 & 45.1 & 52.1 & 21.2 & 28.7 & 36.6 & 28.2 & 22.8 & 25.8 & 41.3 & 26.5 \\
- & Gemma2-9B & 54.0 & 50.5 & 62.7 & 62.8 & 58.9 & 48.4 & 60.4 & 60.6 & 58.4 & \textbf{61.1} & 56.3 & 60.4 \\
+ & Gemma2-9B & 54.0 & 50.5 & 62.7 & 62.8 & 58.9 & 48.4 & 60.4 & 60.6 & 58.4 & 61.1 & 56.3 & 60.4 \\
  & Llama3-8B & 42.4 & 51.3 & 61.1 & 60.6 & 56.8 & 50.3 & 58.1 & 60.2 & 57.7 & 60.4 & 55.6 & 59.0 \\
- & Tiny-Aya-E & 54.3 & 54.3 & 59.8 & 59.2 & 57.1 & 55.7 & 57.8 & \emph{61.0} & 56.5 & 58.7 & 50.2 & 60.5 \\
- & Tiny-Aya-G & \textbf{60.8} & \textbf{61.7} & \textbf{65.0} & \textbf{65.2} & \textbf{63.8} & \textbf{61.8} & \emph{64.8} & 59.4 & \textbf{63.9} & 48.5 & \textbf{61.2} & \textbf{63.5} \\
+ & Tiny-Aya-E & 54.3 & 54.3 & 59.8 & 59.2 & 57.1 & 55.7 & 57.8 & 61.0 & 56.5 & 58.7 & 50.2 & 60.5 \\
+ & Tiny-Aya-G & \textbf{61.9} & \textbf{61.6} & \textbf{65.7} & \textbf{65.3} & \textbf{65.2} & \textbf{63.1} & \emph{67.3} & \textbf{67.2} & \textbf{64.3} & \textbf{66.4} & \textbf{63.8} & \textbf{67.2} \\
 \bottomrule
 \end{tabular}
 \caption{LoRA fine-tuning of six open-source LLMs at two ranks (COMET). Each cell is one (language, direction) pair; each model is fine-tuned bilingually per pair for 10 epochs with early stopping. Comparing $r{=}4$ (low-rank, parameter-efficient) against $r{=}64$ (the main rank used elsewhere in the paper) isolates the effect of adapter capacity. \textbf{Bold}: best score for that (language, direction) pair across both ranks; \emph{italic}: best score for that pair within a single rank block.}
@@ -492,8 +492,8 @@ TranslateGemma-12B & 36.9 & 30.9 & \emph{40.5} & 41.0 & \emph{43.7} & 36.4 & \em
 \cmidrule(lr){1-10}
 \multirow{3}{*}{GPT} & \multirow{1}{*}{4o} & ZS & 21.1 & 58.0 & 41.9 & 47.3 & 16.3 & 58.5 & 40.5 \\
 \cmidrule(lr){2-10}
- & \multirow{2}{*}{5.4} & ZS & 38.5 & 58.4 & 48.9 & 53.9 & 16.3 & 62.8 & 46.5 \\
- &  & ICL (5-shot) & \emph{39.4} & \emph{59.6} & \textbf{\emph{50.2}} & \textbf{\emph{55.5}} & \emph{23.6} & \textbf{\emph{63.4}} & \textbf{\emph{48.6}} \\
+ & \multirow{2}{*}{5.4} & ZS & 37.6 & 58.4 & 48.9 & 53.9 & 16.3 & 62.8 & 46.3 \\
+ &  & ICL (5-shot) & \emph{39.5} & \emph{59.6} & \textbf{\emph{50.2}} & \textbf{\emph{55.5}} & \emph{23.6} & \textbf{\emph{63.4}} & \textbf{\emph{48.6}} \\
 \midrule\midrule
 \multicolumn{10}{l}{\textit{Reported, templated prompts ($T{=}0$): ZS (avg \texttt{template\{1,2,4\}\textunderscore{}0shot}) vs ICL (best 10-shot)}} \\
 \midrule
@@ -501,27 +501,26 @@ TranslateGemma-12B & 36.9 & 30.9 & \emph{40.5} & 41.0 & \emph{43.7} & 36.4 & \em
  &  & ICL (10-shot, template5) & \emph{39.5} & \emph{57.7} & \emph{41.0} & \emph{50.9} & \emph{22.2} & \emph{49.5} & \emph{43.5} \\
 \cmidrule(lr){2-10}
  & \multirow{2}{*}{3.1} & ZS (avg \texttt{template\{1,2,4\}}) & 38.9 & 58.1 & 47.0 & 53.1 & 18.1 & 60.8 & 46.0 \\
- &  & ICL (10-shot, template5) & \textbf{\emph{41.6}} & \textbf{\emph{61.1}} & \emph{49.5} & \textbf{\emph{55.9}} & \emph{22.9} & \emph{61.8} & \textbf{\emph{48.8}} \\
+ &  & ICL (10-shot, template5) & \textbf{\emph{41.6}} & \textbf{\emph{61.1}} & \textbf{\emph{49.5}} & \textbf{\emph{55.9}} & \textbf{\emph{22.9}} & \emph{61.8} & \emph{48.8} \\
 \cmidrule(lr){1-10}
-\multirow{4}{*}{GPT} & \multirow{2}{*}{4o} & ZS (avg \texttt{template\{1,2,4\}}) & 27.5 & 59.2 & 43.1 & 50.5 & 17.2 & 59.8 & 42.9 \\
+\multirow{3}{*}{GPT} & \multirow{2}{*}{4o} & ZS (avg \texttt{template\{1,2,4\}}) & 27.5 & 59.2 & 43.1 & 50.5 & 17.2 & 59.8 & 42.9 \\
  &  & ICL (10-shot, template3) & \emph{30.0} & \emph{60.8} & \emph{45.2} & \emph{53.1} & \emph{19.9} & \emph{60.9} & \emph{45.0} \\
 \cmidrule(lr){2-10}
- & \multirow{2}{*}{5.4} & ZS (avg \texttt{template\{1,2,4\}}) & 38.3 & 58.9 & 49.6 & 54.0 & 17.5 & 62.6 & 46.8 \\
- &  & ICL (10-shot, template5) & \emph{39.6} & \emph{59.7} & \textbf{\emph{50.4}} & \emph{55.3} & \textbf{\emph{23.5}} & \textbf{\emph{62.7}} & \emph{48.5} \\
+ & \multirow{1}{*}{5.4} & ZS (avg \texttt{template\{1,2,4\}}) & -- & 57.9 & -- & -- & -- & \textbf{62.6} & \textbf{60.3} \\
 \midrule\midrule
 \multicolumn{10}{l}{\textit{Retrieval ablation: templated vs. semantic-similarity, $T{=}0$}} \\
 \midrule
 \multirow{4}{*}{Gemini} & \multirow{2}{*}{1.5} & 10-shot (templated, template5) & 39.5 & 57.7 & 41.0 & 50.9 & 22.2 & 49.5 & 43.5 \\
- &  & 10-shot (semantic similarity) & \emph{40.9} & \emph{58.1} & \emph{46.0} & \emph{54.9} & \textbf{\emph{24.6}} & \emph{52.0} & \emph{46.1} \\
+ &  & 10-shot (semantic similarity) & \emph{40.9} & \emph{58.1} & \emph{46.0} & \emph{54.9} & \emph{24.6} & \emph{52.0} & \emph{46.1} \\
 \cmidrule(lr){2-10}
- & \multirow{2}{*}{3.1} & 10-shot (templated, template5) & \textbf{\emph{41.6}} & \emph{61.1} & \emph{49.5} & \emph{55.9} & \emph{22.9} & \emph{61.8} & \textbf{\emph{48.8}} \\
- &  & 10-shot (semantic similarity) & 6.7 & 20.3 & 19.9 & 20.9 & 14.8 & 18.3 & 16.8 \\
+ & \multirow{2}{*}{3.1} & 10-shot (templated, template5) & 41.6 & 61.1 & 49.5 & 55.9 & 22.9 & 61.8 & 48.8 \\
+ &  & 10-shot (semantic similarity) & \textbf{\emph{43.6}} & \textbf{\emph{62.9}} & \emph{52.5} & \emph{58.9} & \textbf{\emph{30.5}} & \emph{62.7} & \emph{51.9} \\
 \cmidrule(lr){1-10}
 \multirow{4}{*}{GPT} & \multirow{2}{*}{4o} & 10-shot (templated, template3) & \emph{30.0} & 60.8 & 45.2 & 53.1 & 19.9 & 60.9 & 45.0 \\
- &  & 10-shot (semantic similarity) & 28.7 & \textbf{\emph{62.8}} & \emph{48.2} & \textbf{\emph{57.5}} & \emph{20.4} & \emph{61.9} & \emph{46.6} \\
+ &  & 10-shot (semantic similarity) & 28.7 & \emph{62.8} & \emph{48.2} & \emph{57.5} & \emph{20.4} & \emph{61.9} & \emph{46.6} \\
 \cmidrule(lr){2-10}
- & \multirow{2}{*}{5.4} & 10-shot (templated, template5) & \emph{39.6} & \emph{59.7} & \textbf{\emph{50.4}} & \emph{55.3} & \emph{23.5} & \textbf{\emph{62.7}} & \emph{48.5} \\
- &  & 10-shot (semantic similarity) & 1.9 & 9.7 & 9.1 & 9.5 & 5.0 & 8.0 & 7.2 \\
+ & \multirow{2}{*}{5.4} & 10-shot (templated, template5) & -- & -- & -- & -- & -- & -- & -- \\
+ &  & 10-shot (semantic similarity) & 42.2 & 62.1 & \textbf{53.5} & \textbf{59.7} & 30.5 & \textbf{64.2} & \textbf{52.0} \\
 \midrule\midrule
 \multicolumn{10}{l}{\textit{Temperature ablation ($T{=}0$ vs $T{=}0.6$, all templated)}} \\
 \midrule
@@ -532,18 +531,16 @@ TranslateGemma-12B & 36.9 & 30.9 & \emph{40.5} & 41.0 & \emph{43.7} & 36.4 & \em
 \cmidrule(lr){2-10}
  & \multirow{4}{*}{3.1} & ZS ($T{=}0$) & 38.9 & 58.1 & 47.0 & 53.1 & 18.1 & 60.8 & 46.0 \\
  &  & ZS ($T{=}0.6$) & 38.5 & 57.4 & 45.8 & 52.5 & 18.0 & 59.8 & 45.3 \\
- &  & 10-shot (template5) $T{=}0$ & \textbf{\emph{41.6}} & \textbf{\emph{61.1}} & \emph{49.5} & \textbf{\emph{55.9}} & \emph{22.9} & \emph{61.8} & \textbf{\emph{48.8}} \\
+ &  & 10-shot (template5) $T{=}0$ & \textbf{\emph{41.6}} & \textbf{\emph{61.1}} & \textbf{\emph{49.5}} & \textbf{\emph{55.9}} & \textbf{\emph{22.9}} & \emph{61.8} & \emph{48.8} \\
  &  & 10-shot (template5) $T{=}0.6$ & 41.0 & 60.5 & 49.0 & 55.2 & 22.8 & 61.0 & 48.3 \\
 \cmidrule(lr){1-10}
-\multirow{8}{*}{GPT} & \multirow{4}{*}{4o} & ZS ($T{=}0$) & 27.5 & 59.2 & 43.1 & 50.5 & 17.2 & 59.8 & 42.9 \\
+\multirow{6}{*}{GPT} & \multirow{4}{*}{4o} & ZS ($T{=}0$) & 27.5 & 59.2 & 43.1 & 50.5 & 17.2 & 59.8 & 42.9 \\
  &  & ZS ($T{=}0.6$) & 22.0 & 58.5 & 41.8 & 47.8 & 17.4 & 58.7 & 41.0 \\
  &  & 10-shot (template3) $T{=}0$ & \emph{30.0} & \emph{60.8} & \emph{45.2} & \emph{53.1} & \emph{19.9} & \emph{60.9} & \emph{45.0} \\
  &  & 10-shot (template3) $T{=}0.6$ & 25.0 & 60.2 & 44.6 & 49.3 & 18.7 & 60.0 & 43.0 \\
 \cmidrule(lr){2-10}
- & \multirow{4}{*}{5.4} & ZS ($T{=}0$) & 38.3 & 58.9 & 49.6 & 54.0 & 17.5 & 62.6 & 46.8 \\
- &  & ZS ($T{=}0.6$) & 38.5 & 58.9 & 49.6 & 54.0 & 17.7 & 62.6 & 46.9 \\
- &  & 10-shot (template5) $T{=}0$ & \emph{39.6} & 59.7 & 50.4 & 55.3 & 23.5 & \textbf{\emph{62.7}} & 48.5 \\
- &  & 10-shot (template5) $T{=}0.6$ & 39.3 & \emph{59.9} & \textbf{\emph{51.0}} & \emph{55.5} & \textbf{\emph{23.7}} & 62.4 & \emph{48.6} \\
+ & \multirow{2}{*}{5.4} & ZS ($T{=}0$) & -- & 57.9 & -- & -- & -- & 62.6 & \textbf{\emph{60.3}} \\
+ &  & ZS ($T{=}0.6$) & -- & \emph{59.0} & -- & -- & 16.5 & \textbf{\emph{62.9}} & 46.1 \\
 \bottomrule
 \end{tabular}
 \caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (chrF) for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4). Four blocks: vanilla ZS vs ICL; templated ZS vs ICL; retrieval (templated vs semantic 10-shot); and temperature ($T{=}0$ vs $T{=}0.6$, all templated). \textbf{Bold}: per-block column maximum. \emph{Italic}: per-version best across that model's rows. See \Cref{app:closed_ablations_notes} for the full setup and the rationale behind each block.}
@@ -570,8 +567,8 @@ TranslateGemma-12B & 36.9 & 30.9 & \emph{40.5} & 41.0 & \emph{43.7} & 36.4 & \em
 \cmidrule(lr){1-10}
 \multirow{3}{*}{GPT} & \multirow{1}{*}{4o} & ZS & 39.4 & 56.8 & 60.7 & 62.6 & 54.6 & 58.3 & 55.4 \\
 \cmidrule(lr){2-10}
- & \multirow{2}{*}{5.4} & ZS & 61.7 & 58.4 & 64.3 & \textbf{\emph{66.7}} & 55.9 & 63.2 & 61.7 \\
- &  & ICL (5-shot) & \textbf{\emph{64.7}} & \textbf{\emph{62.5}} & \textbf{\emph{65.8}} & 65.6 & \textbf{\emph{61.1}} & \textbf{\emph{65.2}} & \textbf{\emph{64.1}} \\
+ & \multirow{2}{*}{5.4} & ZS & 60.1 & 58.4 & 64.3 & \textbf{\emph{66.7}} & 55.9 & 63.2 & 61.4 \\
+ &  & ICL (5-shot) & \textbf{\emph{62.8}} & \textbf{\emph{62.5}} & \textbf{\emph{65.8}} & 65.6 & \textbf{\emph{61.1}} & \textbf{\emph{65.2}} & \textbf{\emph{63.8}} \\
 \midrule\midrule
 \multicolumn{10}{l}{\textit{Reported, templated prompts ($T{=}0$): ZS (avg \texttt{template\{1,2,4\}\textunderscore{}0shot}) vs ICL (best 10-shot)}} \\
 \midrule
@@ -579,27 +576,27 @@ TranslateGemma-12B & 36.9 & 30.9 & \emph{40.5} & 41.0 & \emph{43.7} & 36.4 & \em
  &  & ICL (10-shot, template5) & \emph{64.9} & \emph{62.5} & \emph{67.0} & \emph{68.5} & \emph{64.6} & \emph{62.2} & \emph{65.0} \\
 \cmidrule(lr){2-10}
  & \multirow{2}{*}{3.1} & ZS (avg \texttt{template\{1,2,4\}}) & 67.7 & \textbf{\emph{65.8}} & 69.6 & 69.9 & 67.3 & \emph{66.2} & 67.8 \\
- &  & ICL (10-shot, template5) & \textbf{\emph{67.8}} & 64.8 & \emph{70.3} & \emph{70.1} & \emph{67.8} & 65.9 & \emph{67.8} \\
+ &  & ICL (10-shot, template5) & \textbf{\emph{67.8}} & 64.8 & \emph{70.3} & \emph{70.1} & \emph{67.8} & 65.9 & \textbf{\emph{67.8}} \\
 \cmidrule(lr){1-10}
 \multirow{4}{*}{GPT} & \multirow{2}{*}{4o} & ZS (avg \texttt{template\{1,2,4\}}) & 51.5 & 63.3 & 67.0 & 67.8 & 62.6 & 65.3 & 62.9 \\
  &  & ICL (10-shot, template3) & \emph{53.9} & \emph{63.4} & \emph{68.3} & \emph{68.6} & \emph{65.0} & \emph{65.4} & \emph{64.1} \\
 \cmidrule(lr){2-10}
- & \multirow{2}{*}{5.4} & ZS (avg \texttt{template\{1,2,4\}}) & 66.4 & \emph{65.2} & 70.5 & \textbf{\emph{71.0}} & \textbf{\emph{68.0}} & \textbf{\emph{66.5}} & \textbf{\emph{67.9}} \\
- &  & ICL (10-shot, template5) & \emph{66.6} & 64.8 & \textbf{\emph{70.6}} & 70.7 & 68.0 & 66.2 & 67.8 \\
+ & \multirow{2}{*}{5.4} & ZS (avg \texttt{template\{1,2,4\}}) & 66.0 & \emph{65.0} & 70.3 & \textbf{\emph{71.0}} & \textbf{\emph{67.9}} & \textbf{\emph{66.5}} & \emph{67.8} \\
+ &  & ICL (10-shot, template5) & \emph{66.7} & 64.5 & \textbf{\emph{70.7}} & 70.8 & 67.9 & 66.1 & 67.8 \\
 \midrule\midrule
 \multicolumn{10}{l}{\textit{Retrieval ablation: templated vs. semantic-similarity, $T{=}0$}} \\
 \midrule
 \multirow{4}{*}{Gemini} & \multirow{2}{*}{1.5} & 10-shot (templated, template5) & 64.9 & 62.5 & 67.0 & 68.5 & 64.6 & 62.2 & 65.0 \\
  &  & 10-shot (semantic similarity) & \emph{65.0} & \emph{62.9} & \emph{68.4} & \emph{69.5} & \emph{65.8} & \emph{63.5} & \emph{65.8} \\
 \cmidrule(lr){2-10}
- & \multirow{2}{*}{3.1} & 10-shot (templated, template5) & \textbf{\emph{67.8}} & \textbf{\emph{64.8}} & \emph{70.3} & \emph{70.1} & \emph{67.8} & \emph{65.9} & \emph{67.8} \\
- &  & 10-shot (semantic similarity) & 55.6 & 56.5 & 57.3 & 56.5 & 58.1 & 56.0 & 56.7 \\
+ & \multirow{2}{*}{3.1} & 10-shot (templated, template5) & \textbf{\emph{67.8}} & 64.8 & 70.3 & 70.1 & \emph{67.8} & 65.9 & 67.8 \\
+ &  & 10-shot (semantic similarity) & 67.6 & \textbf{\emph{65.3}} & \emph{70.5} & \emph{70.9} & 67.4 & \emph{66.1} & \textbf{\emph{68.0}} \\
 \cmidrule(lr){1-10}
 \multirow{4}{*}{GPT} & \multirow{2}{*}{4o} & 10-shot (templated, template3) & 53.9 & \emph{63.4} & 68.3 & 68.6 & 65.0 & \emph{65.4} & 64.1 \\
  &  & 10-shot (semantic similarity) & \emph{57.2} & 63.4 & \emph{69.2} & \emph{69.8} & \emph{65.1} & 65.3 & \emph{65.0} \\
 \cmidrule(lr){2-10}
- & \multirow{2}{*}{5.4} & 10-shot (templated, template5) & \emph{66.6} & \emph{64.8} & \textbf{\emph{70.6}} & \textbf{\emph{70.7}} & \textbf{\emph{68.0}} & \textbf{\emph{66.2}} & \textbf{\emph{67.8}} \\
- &  & 10-shot (semantic similarity) & 14.6 & 21.8 & 36.6 & 33.4 & 35.7 & 24.9 & 27.8 \\
+ & \multirow{2}{*}{5.4} & 10-shot (templated, template5) & \emph{66.7} & 64.5 & 70.7 & 70.8 & \textbf{\emph{67.9}} & 66.1 & 67.8 \\
+ &  & 10-shot (semantic similarity) & 66.6 & \emph{64.6} & \textbf{\emph{70.8}} & \textbf{\emph{71.2}} & 67.5 & \textbf{\emph{66.3}} & \emph{67.8} \\
 \midrule\midrule
 \multicolumn{10}{l}{\textit{Temperature ablation ($T{=}0$ vs $T{=}0.6$, all templated)}} \\
 \midrule
@@ -618,10 +615,10 @@ TranslateGemma-12B & 36.9 & 30.9 & \emph{40.5} & 41.0 & \emph{43.7} & 36.4 & \em
  &  & 10-shot (template3) $T{=}0$ & \emph{53.9} & \emph{63.4} & \emph{68.3} & \emph{68.6} & \emph{65.0} & \emph{65.4} & \emph{64.1} \\
  &  & 10-shot (template3) $T{=}0.6$ & 51.9 & 62.8 & 67.8 & 68.1 & 64.6 & 65.2 & 63.4 \\
 \cmidrule(lr){2-10}
- & \multirow{4}{*}{5.4} & ZS ($T{=}0$) & 66.4 & 65.2 & 70.5 & 71.0 & \textbf{\emph{68.0}} & \textbf{\emph{66.5}} & 67.9 \\
- &  & ZS ($T{=}0.6$) & 66.5 & \emph{65.2} & 70.5 & \textbf{\emph{71.1}} & 68.0 & 66.5 & 68.0 \\
- &  & 10-shot (template5) $T{=}0$ & 66.6 & 64.8 & 70.6 & 70.7 & 68.0 & 66.2 & 67.8 \\
- &  & 10-shot (template5) $T{=}0.6$ & \emph{67.2} & 65.0 & \textbf{\emph{70.8}} & 70.7 & 67.9 & 66.2 & \textbf{\emph{68.0}} \\
+ & \multirow{4}{*}{5.4} & ZS ($T{=}0$) & 66.0 & 65.0 & 70.3 & 71.0 & 67.9 & \textbf{\emph{66.5}} & 67.8 \\
+ &  & ZS ($T{=}0.6$) & 66.0 & \emph{65.2} & 70.2 & \textbf{\emph{71.0}} & 67.9 & 66.5 & \textbf{\emph{67.8}} \\
+ &  & 10-shot (template5) $T{=}0$ & \emph{66.7} & 64.5 & \textbf{\emph{70.7}} & 70.8 & 67.9 & 66.1 & 67.8 \\
+ &  & 10-shot (template5) $T{=}0.6$ & 66.7 & 64.4 & 70.6 & 70.7 & \textbf{\emph{68.0}} & 66.0 & 67.7 \\
 \bottomrule
 \end{tabular}
 \caption{Closed-API ablations on \texttt{eng}$\to$\texttt{xxx} (COMET) for the four closed APIs (legacy: Gemini-1.5, GPT-4o; latest: Gemini-3.1, GPT-5.4). Four blocks: vanilla ZS vs ICL; templated ZS vs ICL; retrieval (templated vs semantic 10-shot); and temperature ($T{=}0$ vs $T{=}0.6$, all templated). \textbf{Bold}: per-block column maximum. \emph{Italic}: per-version best across that model's rows. See \Cref{app:closed_ablations_notes} for the full setup and the rationale behind each block.}
@@ -692,17 +689,17 @@ TranslateGemma-12B & 36.9 & 30.9 & \emph{40.5} & 41.0 & \emph{43.7} & 36.4 & \em
 \cmidrule(l){2-15}
  & \textbf{avg} & 40.6 & 60.3 & 48.4 & 54.7 & 20.1 & 61.9 & 63.4 & 64.1 & 54.5 & 62.9 & 54.3 & 68.8 & 54.5 \\
 \midrule
-\multirow{10}{*}{\rotatebox{90}{GPT-5.4}} & 1 & 37.3 & 57.9 & 48.9 & 53.4 & 16.5 & 61.5 & 62.1 & 62.8 & 52.9 & 60.7 & 45.9 & 68.1 & 52.3 \\
- & 2 & 39.1 & 60.0 & 49.3 & 54.1 & 16.4 & 63.9 & 60.9 & 63.9 & 52.4 & 59.6 & 42.9 & 69.2 & 52.6 \\
- & 3$_{s=5}$ & 39.1 & 60.1 & 49.2 & 54.2 & 20.1 & \textbf{64.3} & 60.6 & 63.6 & 53.3 & 60.2 & 43.5 & 69.2 & 53.1 \\
- & 3$_{s=10}$ & 38.6 & \textbf{60.6} & 49.3 & 55.0 & \textbf{25.2} & 63.9 & 61.6 & 63.0 & 53.2 & 59.3 & 44.6 & 68.0 & 53.5 \\
- & 3$_{s=20}$ & 39.0 & 60.3 & 49.9 & 54.9 & 23.8 & 63.8 & \textbf{62.3} & \textbf{64.5} & \textbf{54.5} & \textbf{61.0} & 44.9 & \textbf{70.2} & \textbf{54.1} \\
- & 4 & 38.6 & 58.6 & \textbf{50.7} & 54.5 & 19.7 & 62.3 & 59.7 & 63.4 & 53.1 & 58.7 & \textbf{46.5} & 67.3 & 52.8 \\
- & 5$_{s=5}$ & \textbf{39.8} & 59.7 & 50.2 & 55.0 & 21.4 & 63.0 & 59.2 & 62.4 & 52.5 & 58.7 & 42.5 & 67.6 & 52.7 \\
- & \underline{5$_{s=10}$} & 39.6 & 59.7 & 50.4 & 55.3 & 23.5 & 62.7 & 60.0 & 61.9 & 52.8 & 58.8 & 44.9 & 67.4 & 53.1 \\
- & 5$_{s=20}$ & 39.5 & 60.1 & 50.3 & \textbf{56.2} & 22.6 & 63.0 & 60.7 & 63.3 & 53.6 & 59.6 & 43.9 & 68.1 & 53.4 \\
+\multirow{10}{*}{\rotatebox{90}{GPT-5.4}} & 1 & -- & \textbf{57.9} & -- & -- & -- & 61.5 & -- & -- & -- & -- & -- & -- & 59.7 \\
+ & 2 & -- & -- & -- & -- & -- & \textbf{63.9} & -- & -- & -- & -- & -- & -- & \textbf{63.9} \\
+ & 3$_{s=5}$ & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & 3$_{s=10}$ & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & 3$_{s=20}$ & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & 4 & -- & -- & -- & -- & -- & 62.3 & -- & -- & -- & -- & -- & -- & 62.3 \\
+ & 5$_{s=5}$ & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & \underline{5$_{s=10}$} & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+ & 5$_{s=20}$ & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
 \cmidrule(l){2-15}
- & \textbf{avg} & 38.9 & 59.7 & 49.8 & 54.7 & 21.0 & 63.2 & 60.8 & 63.2 & 53.1 & 59.6 & 44.4 & 68.3 & 53.1 \\
+ & \textbf{avg} & -- & 57.9 & -- & -- & -- & 62.6 & -- & -- & -- & -- & -- & -- & 62.0 \\
 \midrule
 \multirow{10}{*}{\rotatebox{90}{Llama3-8B}} & 1 & 6.4 & 31.3 & 19.1 & 20.0 & 10.0 & 21.3 & 29.9 & 45.6 & 28.9 & 27.5 & 25.2 & \textbf{33.5} & 24.9 \\
  & 2 & 6.2 & 30.9 & 19.0 & 19.6 & 10.2 & 21.0 & 30.6 & 46.1 & 30.8 & \textbf{28.3} & 26.5 & 33.3 & 25.2 \\
@@ -794,17 +791,17 @@ TranslateGemma-12B & 36.9 & 30.9 & \emph{40.5} & 41.0 & \emph{43.7} & 36.4 & \em
 \cmidrule(l){2-15}
  & \textbf{avg} & 67.8 & 65.5 & 70.0 & 70.0 & 67.6 & 66.2 & 69.4 & 68.8 & 66.9 & 69.1 & 66.4 & 68.6 & 68.0 \\
 \midrule
-\multirow{10}{*}{\rotatebox{90}{GPT-5.4}} & 1 & \textbf{66.8} & \textbf{66.0} & 70.6 & \textbf{71.2} & \textbf{68.4} & 66.9 & 69.8 & 69.2 & 67.4 & 69.8 & 67.4 & 69.0 & \textbf{68.5} \\
- & 2 & 66.1 & 64.9 & 70.4 & 70.8 & 67.8 & 66.6 & 69.8 & 69.2 & 67.5 & 69.9 & 67.5 & 68.9 & 68.3 \\
- & 3$_{s=5}$ & 66.6 & 65.6 & 70.3 & 70.6 & 67.6 & 66.9 & 69.9 & 69.2 & \textbf{67.5} & 70.0 & \textbf{67.6} & 69.0 & 68.4 \\
- & 3$_{s=10}$ & 66.6 & 65.5 & 70.3 & 70.9 & 67.7 & 66.9 & 70.0 & 69.1 & 67.4 & \textbf{70.1} & 67.5 & 69.0 & 68.4 \\
- & 3$_{s=20}$ & 66.7 & 65.3 & 70.6 & 70.8 & 67.8 & \textbf{66.9} & \textbf{70.1} & 69.2 & 67.5 & 70.1 & 67.6 & \textbf{69.1} & 68.5 \\
- & 4 & 66.3 & 64.7 & \textbf{70.7} & 70.9 & 67.9 & 66.0 & 69.5 & 69.1 & 67.4 & 69.6 & 67.1 & 68.6 & 68.1 \\
- & 5$_{s=5}$ & 66.6 & 64.8 & 70.7 & 70.7 & 67.9 & 66.1 & 69.6 & 69.1 & 67.5 & 69.9 & 67.4 & 68.8 & 68.2 \\
- & \underline{5$_{s=10}$} & 66.6 & 64.8 & 70.6 & 70.7 & 68.0 & 66.2 & 69.7 & 69.1 & 67.5 & 69.9 & 67.4 & 68.7 & 68.3 \\
- & 5$_{s=20}$ & 66.7 & 64.6 & 70.5 & 70.9 & 68.0 & 66.3 & 69.8 & \textbf{69.2} & 67.5 & 69.9 & 67.6 & 68.8 & 68.3 \\
+\multirow{10}{*}{\rotatebox{90}{GPT-5.4}} & 1 & 66.5 & \textbf{66.0} & 70.2 & \textbf{71.1} & \textbf{68.3} & \textbf{66.9} & 69.6 & \textbf{69.0} & 67.1 & 69.5 & 66.4 & 68.9 & \textbf{68.3} \\
+ & 2 & 65.6 & 64.7 & 69.9 & 70.9 & 67.6 & 66.6 & 69.5 & 69.0 & 67.0 & 69.4 & 66.1 & 68.9 & 67.9 \\
+ & 3$_{s=5}$ & 66.6 & 65.2 & 70.2 & 70.8 & 67.7 & 66.7 & 69.6 & 68.9 & 67.0 & 69.5 & 66.3 & 68.8 & 68.1 \\
+ & 3$_{s=10}$ & 66.9 & 65.2 & 70.4 & 70.9 & 67.5 & 66.8 & 69.6 & 68.9 & 67.0 & 69.5 & 66.4 & 68.9 & 68.2 \\
+ & 3$_{s=20}$ & \textbf{67.0} & 65.1 & 70.3 & 70.9 & 67.5 & 66.8 & \textbf{69.8} & 69.0 & 67.1 & \textbf{69.6} & 66.4 & \textbf{68.9} & 68.2 \\
+ & 4 & 65.9 & 64.4 & 70.6 & 70.9 & 67.9 & 66.0 & 69.1 & 68.8 & 66.9 & 69.1 & 66.1 & 68.5 & 67.9 \\
+ & 5$_{s=5}$ & 66.4 & 64.5 & 70.5 & 70.9 & 67.9 & 66.1 & 69.3 & 68.9 & 67.0 & 69.4 & 66.3 & 68.7 & 68.0 \\
+ & \underline{5$_{s=10}$} & 66.7 & 64.5 & 70.7 & 70.8 & 67.9 & 66.1 & 69.4 & 68.9 & 67.1 & 69.4 & 66.4 & 68.7 & 68.0 \\
+ & 5$_{s=20}$ & 66.9 & 64.6 & \textbf{70.7} & 70.7 & 68.0 & 66.1 & 69.4 & 68.9 & \textbf{67.1} & 69.4 & \textbf{66.5} & 68.7 & 68.1 \\
 \cmidrule(l){2-15}
- & \textbf{avg} & 66.5 & 65.1 & 70.5 & 70.8 & 67.9 & 66.5 & 69.8 & 69.2 & 67.5 & 69.9 & 67.5 & 68.9 & 68.3 \\
+ & \textbf{avg} & 66.5 & 64.9 & 70.4 & 70.9 & 67.8 & 66.5 & 69.5 & 68.9 & 67.0 & 69.4 & 66.3 & 68.8 & 68.1 \\
 \midrule
 \multirow{10}{*}{\rotatebox{90}{Llama3-8B}} & 1 & 24.0 & 33.9 & 40.7 & 37.0 & 34.6 & 30.9 & 53.6 & 63.0 & 54.0 & 52.8 & 54.1 & 54.6 & 44.4 \\
  & 2 & 23.9 & 33.7 & 41.1 & 37.3 & 34.9 & 31.3 & 54.3 & 62.9 & 54.9 & 53.4 & 55.4 & 54.9 & 44.8 \\
@@ -964,7 +961,8 @@ Tiny-Aya-G & 36.3 & 46.6 & 55.1 & +8.6 & -- & 30.8 & 35.6 & 33.8 & -1.9 & -- \\
 TranslateGemma-12B & 37.7 & 37.6 & 45.7 & +8.2 & -- & 32.9 & 36.1 & 12.2 & -23.9 & -- \\
 \midrule
 Gemini-3.1 & 57.0 & 60.3 & 68.0 & +7.6 & +0.0 & 44.1 & 54.5 & \textbf{55.0} & +0.5 & +0.3 \\
-GPT-5.4 & \textbf{65.0} & \textbf{66.0} & \textbf{68.3} & +2.2 & +0.0 & \textbf{54.0} & \textbf{55.3} & 53.1 & -2.2 & +0.4 \\
+\cmidrule(lr){1-11}
+GPT-5.4 & \textbf{64.6} & \textbf{65.8} & \textbf{68.0} & +2.3 & +0.1 & \textbf{54.0} & \textbf{55.6} & -- & -- & -- \\
 \bottomrule
 \end{tabular}
 \caption{Vanilla vs. templated ICL on the seven open LLMs (top) and the two latest closed APIs (bottom: Gemini-3.1, GPT-5.4), bidirectional avg over the 12 \texttt{eng}$\leftrightarrow$\texttt{xxx} pairs at $T{=}0$, COMET and chrF side-by-side. V$_0$: vanilla 0-shot (\texttt{basic}); V$_5$: vanilla 5-shot (\texttt{few\textunderscore{}shot}, random retrieval); T$_{10}$: \texttt{template5\textunderscore{}10shot} (the locked body configuration); $\Delta_{V\to T} = $T$_{10} - $V$_5$ is the main lift from vanilla to templated; $\Delta_{T_{5\to 10}} = $T$_{10} - $T$_5$ isolates the shot-count effect (template fixed at \texttt{template5}). Within each group, models with all columns populated are listed above the within-group divider (Gemma2-9B-IT, Llama3-8B for open; Gemini-3.1, GPT-5.4 for closed); the remaining open LLMs render ``--'' for T$_5$-derived cells. The COMET~$\gg$~chrF divergence on AfriqueLlama-8B, AfriqueQwen-8B, and TranslateGemma-12B exposes a degeneration signal: large positive $\Delta_{V\to T}$ COMET paired with large negative $\Delta_{V\to T}$ chrF ($-21.7$ / $-5.9$ / $-23.9$), indicating fluent off-target generations rather than real translations. \textbf{Bold}: column maximum across all 9 models.}
@@ -986,13 +984,13 @@ GPT-5.4 & \textbf{65.0} & \textbf{66.0} & \textbf{68.3} & +2.2 & +0.0 & \textbf{
 \multicolumn{15}{l}{\textbf{NLLB-600M / 1.3B}} \\
 \cmidrule(l){1-15}
 \multicolumn{15}{l}{\textit{\,Bilingual fine-tune}} \\
-\quad NLLB-1.3B & \textbf{45.5} & \textbf{67.7} & \textbf{51.5} & \textbf{64.3} & 17.7 & \textbf{67.2} & \textbf{52.3} & \textbf{66.0} & \textbf{63.3} & \textbf{70.0} & \textbf{70.7} & \textbf{67.3} & \textbf{66.0} & \textbf{67.2} \\
-\quad NLLB-600M & 44.4 & 66.9 & 50.6 & 64.2 & 17.6 & 66.3 & 51.7 & 65.1 & 62.9 & 69.5 & 70.3 & 66.8 & 65.7 & 66.7 \\
+\quad NLLB-1.3B & \textbf{45.5} & -- & -- & \textbf{64.3} & -- & -- & \textbf{54.9} & \textbf{66.0} & -- & -- & \textbf{70.7} & -- & -- & \textbf{68.3} \\
+\quad NLLB-600M & 44.4 & \textbf{66.9} & \textbf{50.6} & 64.2 & 17.6 & \textbf{66.3} & 51.7 & 65.1 & \textbf{62.9} & \textbf{69.5} & 70.3 & \textbf{66.8} & \textbf{65.7} & 66.7 \\
 \cmidrule(l){1-15}
 \multicolumn{15}{l}{\textit{\,Multilingual fine-tune (NLLB-600M, training updates)}} \\
-\quad @ 40k & 8.1 & 24.6 & 22.1 & 24.0 & 8.9 & 17.6 & 17.6 & 23.4 & 25.7 & 39.0 & 34.9 & 28.2 & 28.5 & 30.0 \\
-\quad @ 80k & 10.7 & 30.0 & 24.9 & 30.7 & 10.6 & 22.2 & 21.5 & 24.9 & 28.3 & 40.3 & 37.8 & 33.3 & 30.8 & 32.5 \\
-\quad @ 200k & 13.5 & 36.8 & 29.3 & 37.6 & 12.1 & 28.3 & 26.3 & 27.0 & 32.3 & 42.6 & 41.6 & 39.5 & 34.0 & 36.2 \\
+\quad @ 40k & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+\quad @ 80k & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
+\quad @ 200k & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- & -- \\
 \quad @ 400k & 16.4 & 42.4 & 33.9 & 42.7 & 13.1 & 32.9 & 30.2 & 30.3 & 35.6 & 46.2 & 45.1 & 44.6 & 37.0 & 39.8 \\
 \midrule
 \multicolumn{15}{l}{\textbf{Llama-3.1-8B-Instruct (same model both sides, LoRA rank sweep)}} \\
@@ -1047,12 +1045,12 @@ GPT-5.4 & \textbf{65.0} & \textbf{66.0} & \textbf{68.3} & +2.2 & +0.0 & \textbf{
 \multicolumn{8}{l}{\textit{Sentence-level ICL (template~5, 10-shot, $T{=}0$)}} \\
 \midrule
 \multirow{3}{*}{Gemini} & 1.5 & 44.0 & 55.5 & 49.7 & 64.9 & 67.0 & 65.9 \\
- & 3.1 & \textbf{48.8} & \textbf{61.2} & \textbf{55.0} & 67.8 & 68.1 & 68.0 \\
+ & 3.1 & \textbf{48.8} & \textbf{61.2} & \textbf{55.0} & \textbf{67.8} & 68.1 & 68.0 \\
  & $\Delta$ & +4.8 & +5.8 & +5.3 & +2.9 & +1.2 & +2.0 \\
 \cmidrule(lr){1-8}
 \multirow{3}{*}{GPT} & 4o & 43.9 & 57.0 & 50.5 & 63.5 & 67.4 & 65.4 \\
- & 5.4 & 48.5 & 57.7 & 53.1 & \textbf{67.8} & \textbf{68.7} & \textbf{68.3} \\
- & $\Delta$ & +4.6 & +0.6 & +2.6 & +4.3 & +1.3 & +2.8 \\
+ & 5.4 & -- & -- & -- & 67.8 & \textbf{68.3} & \textbf{68.0} \\
+ & $\Delta$ & -- & -- & -- & +4.2 & +0.9 & +2.6 \\
 \midrule\midrule
 \multicolumn{8}{l}{\textit{Document-level (vanilla \texttt{doc\textunderscore{}0shot})}} \\
 \midrule

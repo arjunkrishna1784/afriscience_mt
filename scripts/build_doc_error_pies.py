@@ -3,9 +3,11 @@
 For each direction, draws one pie per closed API showing the proportion
 of accuracy errors by category (Wrong Translation / Omission / Addition
 / Others), aggregated over all 6 common doc-level template
-configurations and all 6 language pairs in that direction. Categories
-are extracted from the natural-language mistake strings inside
-``judge.json`` (GPT-5.5 judge); compound categories like
+configurations and all 6 language pairs in that direction. Mistake
+counts are summed across BOTH judges (``judge.json`` -- GPT-5.5; and
+``judge_gemini.json`` -- Gemini-3.1-Flash-Lite); the n=... annotation
+on each pie is the per-judge mean count. Categories are extracted from
+the natural-language mistake strings; compound categories like
 ``Wrong Translation/Omission`` are bucketed into their first listed
 category.
 
@@ -66,13 +68,19 @@ def categorise(mistake: str) -> str:
     return "Others"
 
 
-def counts_for(model_short: str, direction: str) -> Counter:
-    """Sum mistake counts across all common strategies + 6 langs in this dir."""
+JUDGE_FILES = ("judge.json", "judge_gemini.json")
+
+
+def counts_for(model_short: str, direction: str) -> tuple[Counter, int]:
+    """Aggregate mistake counts across all common strategies + 6 langs in
+    this direction, summing over BOTH judges. Returns (counter,
+    n_judges_present) so the caller can report per-judge mean counts."""
     pair_filter = (
         (lambda p: p.startswith("eng-")) if direction == "e2x"
         else (lambda p: p.endswith("-eng"))
     )
     cnt = Counter()
+    n_judge_files_seen = 0
     for strat in COMMON_STRATEGIES:
         strat_dir = DOC_DIR / model_short / strat
         if not strat_dir.is_dir():
@@ -80,18 +88,20 @@ def counts_for(model_short: str, direction: str) -> Counter:
         for pair_dir in strat_dir.iterdir():
             if not pair_filter(pair_dir.name):
                 continue
-            jf = pair_dir / "judge.json"
-            if not jf.exists():
-                continue
-            try:
-                d = json.loads(jf.read_text())
-            except (json.JSONDecodeError, OSError):
-                continue
-            for paper in d.get("papers", []):
-                for mistake in paper.get("accuracy", {}).get("mistakes", []):
-                    if isinstance(mistake, str):
-                        cnt[categorise(mistake)] += 1
-    return cnt
+            for jfile in JUDGE_FILES:
+                jf = pair_dir / jfile
+                if not jf.exists():
+                    continue
+                try:
+                    d = json.loads(jf.read_text())
+                except (json.JSONDecodeError, OSError):
+                    continue
+                n_judge_files_seen += 1
+                for paper in d.get("papers", []):
+                    for mistake in paper.get("accuracy", {}).get("mistakes", []):
+                        if isinstance(mistake, str):
+                            cnt[categorise(mistake)] += 1
+    return cnt, n_judge_files_seen
 
 
 def render(direction: str, out_path: Path) -> None:
@@ -100,10 +110,16 @@ def render(direction: str, out_path: Path) -> None:
     fig, axes = plt.subplots(1, len(MODELS),
                              figsize=(4.6 * len(MODELS), 4.8))
     for ax, (disp, ms) in zip(axes, MODELS):
-        cnt = counts_for(ms, direction)
+        cnt, n_judge_files = counts_for(ms, direction)
         sizes = [cnt.get(c, 0) for c in CATEGORIES]
         total = sum(sizes)
-        title = f"{disp}  (n={total})"
+        # n_judge_files = (judge files seen) = (cells * judges_per_cell);
+        # avg per judge = total / (judges_per_cell * n_cells / n_cells) =
+        # total / (n_judge_files / n_cells), but more simply: total /
+        # number_of_judges_seen_per_cell. With both judges always present
+        # the per-judge mean count is total / 2.
+        per_judge_mean = round(total / max(1, len(JUDGE_FILES)))
+        title = f"{disp}  (n={per_judge_mean})"
         if total == 0:
             ax.text(0.5, 0.5, "no data", ha="center", va="center",
                     transform=ax.transAxes)
