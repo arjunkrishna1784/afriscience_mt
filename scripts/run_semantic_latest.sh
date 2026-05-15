@@ -42,6 +42,13 @@ if [ -f "$REPO_ROOT/.env" ]; then
     set +a
 fi
 
+# Activate the project conda env so afriscience_mt + omegaconf resolve.
+if command -v conda >/dev/null 2>&1; then
+    # shellcheck disable=SC1091
+    source "$(conda info --base)/etc/profile.d/conda.sh"
+    conda activate dcs
+fi
+
 TS="$(date +%Y%m%d_%H%M%S)"
 mkdir -p logs
 
