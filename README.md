@@ -2,7 +2,57 @@
 
 Single-CLI machine-translation framework for African scientific text.
 Harmonizes result schemas across all experiment types (zero-shot, seq2seq
-fine-tune, LoRA fine-tune, LLM zero-shot / ICL / document-level).
+fine-tune, LoRA fine-tune, LLM zero-shot / ICL / document-level), and
+reproduces every table and figure in the accompanying paper from a single
+aggregated CSV.
+
+- **Code (this repo):** the `afriscience-mt` CLI, training/inference/eval pipelines, and the `afriscience_mt.paper` modules that rebuild every paper table and figure.
+- **Data and predictions:** Hugging Face, [`dsfsi/afriscience_mt`](https://huggingface.co/datasets/dsfsi/afriscience_mt).
+- **Paper:** to appear (citation forthcoming).
+- **License:** Apache-2.0 (see [`LICENSE`](LICENSE)).
+
+## Hugging Face dataset
+
+The parallel corpus and every evaluation prediction live in one HF dataset
+repo, exposed as two configurations:
+
+```python
+from datasets import load_dataset
+
+# (1) The parallel scientific corpus -- English + six African targets
+#     (amh, hau, lug, nso, yor, zul), 11 domains, sentence- and
+#     document-aligned. Default configuration.
+corpus = load_dataset("dsfsi/afriscience_mt", "corpus")
+corpus["train"], corpus["dev"], corpus["test"]
+
+# (2) Model outputs for every system we evaluate
+#     (four seq2seq, seven open-weight LLMs, four closed models) across
+#     zero-shot, in-context-learning, and document-level configurations,
+#     plus the per-run aggregate metrics that drive every paper table.
+preds = load_dataset("dsfsi/afriscience_mt", "predictions")
+preds["outputs"]   # one row per (model, config, lang_pair, sentence_id)
+preds["metrics"]   # one row per (model, config, lang_pair): chrF, COMET, BLEU
+```
+
+Every `outputs` row carries enough metadata to join back to the test split
+of the corpus (`lang_pair`, `split`, `sentence_id`) and to filter by
+`model_short`, `experiment_type`, `prompt_strategy`, `lora_rank`,
+`temp_setting`, `dataset`, `is_ablation`. The `metrics` split is the
+canonical source for `experiments/summary.csv`, which the
+`afriscience-mt paper` builders read.
+
+## Reproducing the paper
+
+Rebuild any paper asset from the aggregated metrics:
+
+```bash
+afriscience-mt paper tables       # LaTeX tables (sentence, doc, ablations)
+afriscience-mt paper plots        # paper plots
+afriscience-mt paper doc-errors   # document-level accuracy-error pies
+afriscience-mt paper balance      # domain-balance heatmap + delta-by-size
+afriscience-mt paper figure4      # Figure 4
+afriscience-mt paper assets       # rebuild everything
+```
 
 ## Layout
 
@@ -159,3 +209,13 @@ The new training script writes intermediate checkpoints to `./checkpoints/`
 (git-ignored) and deletes them after evaluation unless you pass
 `--keep-checkpoints`. Final results.json and predictions.json land under
 `experiments/seq2seq_finetune/<model>/<setup>/<pair>/` and DO get committed.
+
+## Citation
+
+```bibtex
+@misc{afriscience-mt-2026,
+  title  = {AfriScience-MT: Towards Decolonizing Science in Africa through Text Translation},
+  author = {Idris Abdulmumin and Tajuddeen Gwadabe and Shamsuddeen Hassan Muhammad and David Ifeoluwa Adelani and Nomonde Khalo and Ibrahim Said Ahmad and Abiodun Modupe and Anina Mumm and Sibusiso Biyela and Michelle Rabie and Johanna Havemann and Marek Rei and Jade Abbott and Vukosi Marivate},
+  year   = {2026}
+}
+```

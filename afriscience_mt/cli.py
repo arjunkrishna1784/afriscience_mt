@@ -6,6 +6,7 @@ Subcommands:
     aggregate  collect results.json across experiments into one CSV/JSON
     table      generate paper-ready tables (markdown, LaTeX) from aggregations
     plot       generate paper-ready plots (heatmaps, bars, radar) from aggregations
+    paper      build paper tables and figures from experiments/summary.csv
     migrate    one-time: harmonize legacy results into canonical schema
 """
 
@@ -20,6 +21,7 @@ SUBCOMMANDS = {
     "aggregate": ("afriscience_mt.commands.aggregate", "Collect canonical results into a CSV/JSON summary"),
     "table":     ("afriscience_mt.commands.table",     "Render paper-ready markdown / LaTeX tables"),
     "plot":      ("afriscience_mt.commands.plot",      "Render paper-ready figures (heatmap, bars, radar)"),
+    "paper":     ("afriscience_mt.commands.paper",     "Build paper tables and figures from summary.csv"),
     "migrate":   ("afriscience_mt.commands.migrate",   "Migrate legacy result files to the canonical schema"),
 }
 

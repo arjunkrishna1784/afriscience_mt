@@ -60,11 +60,12 @@ chat_template.json
 preprocessor_config.json
 processor_config.json
 
-# Migration backup (kept locally, not for git)
-experiments_legacy/
-
 # Symlinks that point to large external dirs
 hf_cache
 lora_adapters
 
-_ACL2026__Decolonizing_Science_in_Africa_through_Text_Translation_/
+# Data and predictions live on Hugging Face (dsfsi/afriscience_mt),
+# not in this GitHub repo. Local copies stay on disk for development
+# but are not tracked.
+experiments/
+data/processed_files/
