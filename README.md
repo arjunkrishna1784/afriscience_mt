@@ -54,60 +54,111 @@ afriscience-mt paper figure4      # Figure 4
 afriscience-mt paper assets       # rebuild everything
 ```
 
-## Layout
+## Quickstart on the released dataset
 
-```
-AfriScience-MT-Latest/
-├── afriscience_mt/             python package (CLI: afriscience-mt)
-├── scripts/
-├── experiments/
-│   ├── seq2seq/
-│   │   ├── zero_shot/<model>/<pair>/
-│   │   └── finetune/<model>/<dataset>/<pair>/    # dataset: dcs | mafand | mafand_pp
-│   └── llm/
-│       ├── open/
-│       │   ├── zero_shot/<model>/<pair>/
-│       │   ├── icl/<model>/<strategy>/<pair>/    # strategy: 0shot | 5shot | 5shot_semantic
-│       │   ├── doc/<model>/<strategy>/<pair>/    # strategy: 0shot | 1shot
-│       │   └── finetune/<model>/r<N>/<pair>/     # LoRA ranks
-│       └── closed/
-│           ├── t0/                               # default-temperature: "actual"
-│           │   ├── zero_shot/<model>/<pair>/
-│           │   ├── icl/<model>/<strategy>/<pair>/
-│           │   └── doc/<model>/<strategy>/<pair>/
-│           └── t06/                              # temperature 0.6: ablation
-│               └── (same shape as t0)
-└── data/                       processed_files, glossary, raw_files
-
-# Ablation runs are flagged in each results.json via metadata.is_ablation = true:
-#   - dataset == "mafand_pp"   (MAFAND++ DCS-augmented finetune)
-#   - closed-LLM with t06      (temperature 0.6)
-# `afriscience-mt table` excludes these by default; pass --ablation for ablation
-# only or --include-both for combined.
-
-# Model files are NEVER shipped. .gitignore excludes:
-#   - checkpoints/, runs/, wandb/, outputs/  (local training output)
-#   - *.bin / *.safetensors / *.pt / *.gguf  (any weight format)
-#   - hf_cache/, adapter/                    (HF cache, adapter weight dirs)
-#   - experiments_legacy/                    (pre-migration backup; safe to delete
-#                                             once you've verified the migration)
-# Only code, configs, predictions, results, and data ship.
-```
-
-## CLI
+End-to-end loop on the corpus published at [`dsfsi/afriscience_mt`](https://huggingface.co/datasets/dsfsi/afriscience_mt):
 
 ```bash
-afriscience-mt train      --mode {mafand|seq2seq|lora|multi}    # train
+# 1. Install
+pip install -e .
+
+# 2. Pull the corpus from Hugging Face into the local cache used by the
+#    training/eval pipelines.
+python -c "from datasets import load_dataset; \
+           load_dataset('dsfsi/afriscience_mt', 'corpus')"
+
+# 3. Fine-tune NLLB-200 on (eng, hau) using the train/dev splits.
+afriscience-mt train \
+    --mode seq2seq \
+    --model facebook/nllb-200-distilled-600M \
+    --langs hau --directions eng2x \
+    --num-epochs 5 --batch-size 16
+
+# 4. Score every system you have under experiments/ on the test split.
+afriscience-mt evaluate --mode finetuned
+
+# 5. Aggregate per-run metrics into one CSV ready for the paper builders.
+afriscience-mt aggregate --src experiments --out experiments/summary.csv
+
+# 6. Regenerate paper-style tables and figures from that CSV.
+afriscience-mt paper tables
+afriscience-mt paper plots
+```
+
+For LLM evaluation (no fine-tuning), use `afriscience-mt evaluate --mode zero_shot` or the in-context-learning runners in `afriscience_mt/inference/`; the prompt templates are configurable per language pair.
+
+## Using your own dataset
+
+The same pipelines work on any parallel corpus formatted as one CSV per source document (the format used by `data/raw_files/`):
+
+```
+Paper#, Seg.#, Source, <Target1>, <Target2>, ...
+1, 1, "English sentence ...", "Translation 1 ...", "Translation 2 ...", ...
+1, 2, ...
+```
+
+- `Paper#` is a document identifier (used for paper-level train/dev/test splits).
+- `Seg.#` is the sentence index within the document.
+- `Source` is the source-language sentence (English in our setup; can be any language).
+- One column per target language; the column header is the language name and is mapped to its ISO 639-3 code via [`afriscience_mt/utils/language_utils.py`](afriscience_mt/utils/language_utils.py).
+
+Point the pipelines at your own data with the path environment variable:
+
+```bash
+export DCSMT_DATA_DIR=/path/to/your/data        # holds raw_files/, glossary/
+export DCSMT_EXPERIMENTS_DIR=/path/to/runs      # where results.json/predictions.json land
+
+# Train on your CSVs the same way:
+afriscience-mt train --mode seq2seq \
+    --model facebook/nllb-200-distilled-600M \
+    --langs <your-targets> --directions both
+
+# Evaluate, aggregate, and build paper-style tables on your own runs:
+afriscience-mt evaluate --mode finetuned
+afriscience-mt aggregate --src $DCSMT_EXPERIMENTS_DIR
+afriscience-mt paper tables
+```
+
+If your domain doesn't match the 11 scientific domains used here, that's fine -- the splits are made at the *document* level so the framework only cares about `Paper#` and `Seg.#`. Glossaries are optional; drop TSVs into `<your-data-dir>/glossary/<lang>.tsv` (`eng\t<target>` per row) to enable terminology-aware evaluation.
+
+## CLI reference
+
+```bash
+afriscience-mt train      --mode {seq2seq|lora|multi|mafand}    # train MT model
 afriscience-mt evaluate   --mode {zero_shot|finetuned|rescore}  # eval / re-score
 afriscience-mt aggregate  --src experiments --out experiments/summary.csv
 afriscience-mt table      --metric ssa_comet --layout model_x_pair --bold-best --format tex
-                          # add --ablation to show only ablation runs
-                          # add --include-both to combine actual + ablation
+                          # --ablation       show only ablation runs
+                          # --include-both   combine main + ablation runs
 afriscience-mt plot       --kind heatmap --metric ssa_comet --out figs/zs_heat.pdf
+afriscience-mt paper <target>   # tables | plots | doc-errors | balance | figure4 | assets
 afriscience-mt migrate    --src OLD --dst NEW                   # one-time
 ```
 
-Run any subcommand with `--help` for details.
+Run any subcommand with `--help` for full options.
+
+## Repository layout
+
+```
+AfriScience-MT/
+├── afriscience_mt/              python package + CLI (afriscience-mt)
+│   ├── commands/                CLI subcommands (train, evaluate, paper, ...)
+│   ├── inference/               vLLM / API clients, ICL prompt builders
+│   ├── training/                seq2seq + LoRA + multilingual trainers
+│   ├── evaluation/              metrics (BLEU, chrF, SSA-COMET) + LLM judges
+│   ├── paper/                   paper-asset builders (tables, plots, pies)
+│   └── ...
+├── scripts/                     one-off and orchestration scripts
+├── configs/                     YAML configs (models, prompts, evaluation)
+├── templates/                   ICL prompt templates
+├── data/                        glossaries + raw parallel CSVs (corpus and
+│                                predictions live on HF, not here)
+├── docs/EXPERIMENTS.md          experiment-layout reference
+└── pyproject.toml
+```
+
+Local development outputs that **stay on disk and are git-ignored**:
+`checkpoints/`, `runs/`, `wandb/`, `outputs/`, `*.bin` / `*.safetensors` / `*.pt`, `hf_cache/`, `experiments/` (predictions and results), `data/processed_files/` (regenerable).
 
 ## Canonical result schema
 
@@ -138,52 +189,13 @@ Fields:
 `predictions.json` (sibling) is a `PredictionFile`: list of
 `{src, ref, hyp, doc_id?, domain?}`.
 
-## Filling the MAFAND gap
-
-The single-script entry that completes the "with vs without AfriScience"
-ablation is:
-
-```bash
-# Full comparison: 3 setups × 4 langs × 2 directions × 1 model = 24 runs
-python scripts/train_mafand_comparison.py \
-    --model facebook/nllb-200-distilled-600M \
-    --setup all --langs hau lug yor zul --directions both \
-    --num-epochs 5 --batch-size 16
-```
-
-After that, regenerate the comparison table (uses `--include-both` so the
-mafand baseline and the mafand_pp ablation appear side by side):
-
-```bash
-afriscience-mt aggregate --src experiments
-afriscience-mt table --filter-type seq2seq_finetune \
-            --filter-model nllb_200_distilled_600m \
-            --layout dataset_compare --metric chrf \
-            --include-both \
-            --format tex --bold-best --out tables/mafand_compare.tex
-```
-
-## Migration from legacy
-
-The migration is already complete; `experiments_legacy/` holds the old layout
-for reference. To re-run:
-
-```bash
-afriscience-mt migrate --src experiments_legacy --dst experiments
-```
-
-The migrator fans out aggregated zero-shot files, preserves LoRA ranks under
-`r{N}/`, and disambiguates LLM prompt strategies (doc_0shot, doc_1shot,
-icl_0shot, icl_5shot, icl_5shot_semantic) under `<strategy>/`. Original
-file paths are recorded in `metadata.original_path`.
-
 ## Setup
 
 Requires Python ≥ 3.9.
 
 ```bash
-git clone https://github.com/abumafrim/AfriScience-MT-Latest.git
-cd AfriScience-MT-Latest
+git clone https://github.com/dsfsi/afriscience_mt.git
+cd afriscience_mt
 pip install -e .
 # Or, if dependencies are already satisfied in your env:
 pip install -e . --no-deps
