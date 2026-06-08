@@ -49,7 +49,7 @@ Alongside the corpus we release **every model prediction and per-run metric** be
 
 - **Source code:** the `afriscience-mt` CLI at https://github.com/dsfsi/AfriScience-MT.
 - **License:** Apache-2.0.
-- **Paper:** to appear (citation forthcoming).
+- **Paper:** [AfriScience-MT: Towards Decolonizing Science in Africa through Text Translation](https://arxiv.org/abs/2605.29741) (arXiv:2605.29741).
 
 ## Configurations
 
@@ -188,10 +188,14 @@ Full preprocessing details (untranslated-sentence removal, single-word filtering
 ## Citation
 
 ```bibtex
-@misc{afriscience-mt-2026,
-  title  = {AfriScience-MT: Towards Decolonizing Science in Africa through Text Translation},
-  author = {Idris Abdulmumin and Tajuddeen Gwadabe and Shamsuddeen Hassan Muhammad and David Ifeoluwa Adelani and Nomonde Khalo and Ibrahim Said Ahmad and Abiodun Modupe and Anina Mumm and Sibusiso Biyela and Michelle Rabie and Johanna Havemann and Marek Rei and Jade Abbott and Vukosi Marivate},
-  year   = {2026}
+@misc{abdulmumin2026afriscience,
+  title         = {AfriScience-MT: Towards Decolonizing Science in Africa through Text Translation},
+  author        = {Idris Abdulmumin and Tajuddeen Gwadabe and Shamsuddeen Hassan Muhammad and David Ifeoluwa Adelani and Nomonde Khalo and Ibrahim Said Ahmad and Abiodun Modupe and Anina Mumm and Sibusiso Biyela and Michelle Rabie and Johanna Havemann and Marek Rei and Jade Abbott and Vukosi Marivate},
+  year          = {2026},
+  eprint        = {2605.29741},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2605.29741}
 }
 ```
 
