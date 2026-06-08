@@ -140,7 +140,7 @@ Run any subcommand with `--help` for full options.
 ## Repository layout
 
 ```
-AfriScience-MT/
+afriscience_mt/
 ├── afriscience_mt/              python package + CLI (afriscience-mt)
 │   ├── commands/                CLI subcommands (train, evaluate, paper, ...)
 │   ├── inference/               vLLM / API clients, ICL prompt builders

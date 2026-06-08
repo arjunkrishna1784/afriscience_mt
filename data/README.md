@@ -47,7 +47,7 @@ A parallel scientific machine-translation corpus for **English + six African lan
 
 Alongside the corpus we release **every model prediction and per-run metric** behind the accompanying paper, so the benchmark can be reproduced and extended without re-running any experiments.
 
-- **Source code:** the `afriscience-mt` CLI at https://github.com/dsfsi/AfriScience-MT.
+- **Source code:** the `afriscience-mt` CLI at https://github.com/dsfsi/afriscience_mt.
 - **License:** Apache-2.0.
 - **Paper:** [AfriScience-MT: Towards Decolonizing Science in Africa through Text Translation](https://arxiv.org/abs/2605.29741) (arXiv:2605.29741).
 
