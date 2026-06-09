@@ -49,7 +49,7 @@ A parallel scientific machine-translation corpus for **English + six African lan
 
 Alongside the corpus we release **every model prediction and per-run metric** behind the accompanying paper, so the benchmark can be reproduced and extended without re-running any experiments.
 
-- **Source code:** the `afriscience-mt` CLI at https://github.com/dsfsi/afriscience_mt.
+- **Source code:** the `afriscience-mt` CLI at https://github.com/masakhane-io/afriscience_mt.
 - **License:** Apache-2.0.
 - **Paper:** [AfriScience-MT: Towards Decolonizing Science in Africa through Text Translation](https://arxiv.org/abs/2605.29741) (arXiv:2605.29741).
 
@@ -129,22 +129,22 @@ Single split: `terms`. Counts per language: Amharic 333 · Hausa 130 · Luganda 
 from datasets import load_dataset
 
 # Parallel corpus, default config.
-corpus = load_dataset("dsfsi/afriscience_mt", "corpus")
+corpus = load_dataset("masakhane/afriscience_mt", "corpus")
 corpus["train"][0]
 # {'paper_id': '...', 'domain': 'Health', 'sentence_id': 0,
 #  'lang_pair': 'eng-amh', 'source_lang': 'eng', 'target_lang': 'amh',
 #  'source': '...', 'target': '...'}
 
 # Per-sentence model outputs.
-preds = load_dataset("dsfsi/afriscience_mt", "predictions")
+preds = load_dataset("masakhane/afriscience_mt", "predictions")
 preds["outputs"][0]   # one model output per row
 
 # Per-run aggregated metrics.
-metrics = load_dataset("dsfsi/afriscience_mt", "metrics")
+metrics = load_dataset("masakhane/afriscience_mt", "metrics")
 metrics["summary"][0] # one (model, config, lang_pair) row
 
 # Bilingual scientific glossaries.
-gloss = load_dataset("dsfsi/afriscience_mt", "glossary")
+gloss = load_dataset("masakhane/afriscience_mt", "glossary")
 gloss["terms"][0]
 # {'target_lang': 'yor', 'eng': '...', 'target': '...'}
 ```

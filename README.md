@@ -7,7 +7,7 @@ reproduces every table and figure in the accompanying paper from a single
 aggregated CSV.
 
 - **Code (this repo):** the `afriscience-mt` CLI, training/inference/eval pipelines, and the `afriscience_mt.paper` modules that rebuild every paper table and figure.
-- **Data and predictions:** Hugging Face, [`dsfsi/afriscience_mt`](https://huggingface.co/datasets/dsfsi/afriscience_mt).
+- **Data and predictions:** Hugging Face, [`masakhane/afriscience_mt`](https://huggingface.co/datasets/masakhane/afriscience_mt).
 - **Paper:** [AfriScience-MT: Towards Decolonizing Science in Africa through Text Translation](https://arxiv.org/abs/2605.29741) (arXiv:2605.29741).
 - **License:** Apache-2.0 (see [`LICENSE`](LICENSE)).
 
@@ -22,21 +22,21 @@ from datasets import load_dataset
 # (1) Parallel scientific corpus -- English + six African targets
 #     (amh, hau, lug, nso, yor, zul), 11 domains, sentence- and
 #     document-aligned. Default configuration.
-corpus = load_dataset("dsfsi/afriscience_mt", "corpus")
+corpus = load_dataset("masakhane/afriscience_mt", "corpus")
 corpus["train"], corpus["dev"], corpus["test"]
 
 # (2) Per-sentence model outputs for every system we evaluate
 #     (four seq2seq, seven open-weight LLMs, four closed models) across
 #     zero-shot, in-context-learning, and document-level configurations.
-preds = load_dataset("dsfsi/afriscience_mt", "predictions")
+preds = load_dataset("masakhane/afriscience_mt", "predictions")
 preds["outputs"]   # one row per (model, config, lang_pair, sentence_id)
 
 # (3) Per-run aggregated metrics that drive every paper table.
-metrics = load_dataset("dsfsi/afriscience_mt", "metrics")
+metrics = load_dataset("masakhane/afriscience_mt", "metrics")
 metrics["summary"] # one row per (model, config, lang_pair): chrF, COMET, BLEU
 
 # (4) Co-developed bilingual scientific glossaries.
-gloss = load_dataset("dsfsi/afriscience_mt", "glossary")
+gloss = load_dataset("masakhane/afriscience_mt", "glossary")
 gloss["terms"]     # one row per (target_lang, eng term, target translation)
 ```
 
@@ -62,7 +62,7 @@ afriscience-mt paper assets       # rebuild everything
 
 ## Quickstart on the released dataset
 
-End-to-end loop on the corpus published at [`dsfsi/afriscience_mt`](https://huggingface.co/datasets/dsfsi/afriscience_mt):
+End-to-end loop on the corpus published at [`masakhane/afriscience_mt`](https://huggingface.co/datasets/masakhane/afriscience_mt):
 
 ```bash
 # 1. Install
@@ -71,7 +71,7 @@ pip install -e .
 # 2. Pull the corpus from Hugging Face into the local cache used by the
 #    training/eval pipelines.
 python -c "from datasets import load_dataset; \
-           load_dataset('dsfsi/afriscience_mt', 'corpus')"
+           load_dataset('masakhane/afriscience_mt', 'corpus')"
 
 # 3. Fine-tune NLLB-200 on (eng, hau) using the train/dev splits.
 afriscience-mt train \
@@ -200,7 +200,7 @@ Fields:
 Requires Python ≥ 3.9.
 
 ```bash
-git clone https://github.com/dsfsi/afriscience_mt.git
+git clone https://github.com/masakhane-io/afriscience_mt.git
 cd afriscience_mt
 pip install -e .
 # Or, if dependencies are already satisfied in your env:

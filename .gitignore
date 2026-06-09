@@ -68,4 +68,4 @@ lora_adapters
 # not in this GitHub repo. Local copies stay on disk for development
 # but are not tracked.
 experiments/
-data/processed_files/
+data/processed_files/hf_staging/
