@@ -14,31 +14,37 @@ aggregated CSV.
 ## Hugging Face dataset
 
 The parallel corpus and every evaluation prediction live in one HF dataset
-repo, exposed as two configurations:
+repo, exposed as four configurations:
 
 ```python
 from datasets import load_dataset
 
-# (1) The parallel scientific corpus -- English + six African targets
+# (1) Parallel scientific corpus -- English + six African targets
 #     (amh, hau, lug, nso, yor, zul), 11 domains, sentence- and
 #     document-aligned. Default configuration.
 corpus = load_dataset("dsfsi/afriscience_mt", "corpus")
 corpus["train"], corpus["dev"], corpus["test"]
 
-# (2) Model outputs for every system we evaluate
+# (2) Per-sentence model outputs for every system we evaluate
 #     (four seq2seq, seven open-weight LLMs, four closed models) across
-#     zero-shot, in-context-learning, and document-level configurations,
-#     plus the per-run aggregate metrics that drive every paper table.
+#     zero-shot, in-context-learning, and document-level configurations.
 preds = load_dataset("dsfsi/afriscience_mt", "predictions")
 preds["outputs"]   # one row per (model, config, lang_pair, sentence_id)
-preds["metrics"]   # one row per (model, config, lang_pair): chrF, COMET, BLEU
+
+# (3) Per-run aggregated metrics that drive every paper table.
+metrics = load_dataset("dsfsi/afriscience_mt", "metrics")
+metrics["summary"] # one row per (model, config, lang_pair): chrF, COMET, BLEU
+
+# (4) Co-developed bilingual scientific glossaries.
+gloss = load_dataset("dsfsi/afriscience_mt", "glossary")
+gloss["terms"]     # one row per (target_lang, eng term, target translation)
 ```
 
 Every `outputs` row carries enough metadata to join back to the test split
 of the corpus (`lang_pair`, `split`, `sentence_id`) and to filter by
 `model_short`, `experiment_type`, `prompt_strategy`, `lora_rank`,
-`temp_setting`, `dataset`, `is_ablation`. The `metrics` split is the
-canonical source for `experiments/summary.csv`, which the
+`temp_setting`, `dataset`, `is_ablation`. The `metrics` configuration is
+the canonical source for `experiments/summary.csv`, which the
 `afriscience-mt paper` builders read.
 
 ## Reproducing the paper

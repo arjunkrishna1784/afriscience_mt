@@ -33,7 +33,9 @@ configs:
     data_files:
       - split: outputs
         path: predictions/outputs-*
-      - split: metrics
+  - config_name: metrics
+    data_files:
+      - split: summary
         path: predictions/metrics-*
   - config_name: glossary
     data_files:
@@ -53,7 +55,7 @@ Alongside the corpus we release **every model prediction and per-run metric** be
 
 ## Configurations
 
-This repo exposes two configurations.
+This repo exposes four configurations: `corpus` (default), `predictions`, `metrics`, and `glossary`.
 
 ### `corpus` (default)
 The parallel scientific corpus. 230 papers, 7,605 English source sentences, each translated into the six African target languages and aligned at both the sentence and document level. Splits are made at the *document* level within each domain so every split contains documents from every domain and no within-paper sentences leak across splits.
@@ -74,11 +76,9 @@ Fields per row:
 Splits: `train` (5,792 sentences / 177 papers) · `dev` (843 / 25) · `test` (970 / 28).
 
 ### `predictions`
-Model outputs and per-run metrics for every system evaluated in the paper: four seq2seq models (M2M100-418M/1.2B, NLLB-600M/1.3B), seven open-weight LLMs (Llama3-8B, Gemma2-9B-IT, AfriqueLlama-8B, AfriqueQwen-8B, Tiny-Aya-Earth, Tiny-Aya-Global, TranslateGemma-12B), and four closed models (GPT-4o, Gemini-1.5-Flash, GPT-5.4, Gemini-3.1-Flash-Lite), across zero-shot, in-context-learning, and document-level configurations.
+Per-sentence model outputs for every system evaluated in the paper: four seq2seq models (M2M100-418M/1.2B, NLLB-600M/1.3B), seven open-weight LLMs (Llama3-8B, Gemma2-9B-IT, AfriqueLlama-8B, AfriqueQwen-8B, Tiny-Aya-Earth, Tiny-Aya-Global, TranslateGemma-12B), and four closed models (GPT-4o, Gemini-1.5-Flash, GPT-5.4, Gemini-3.1-Flash-Lite), across zero-shot, in-context-learning, and document-level configurations. One row per (model, configuration, language pair, sentence). Carries enough metadata to join back to the test split of the `corpus` config via (`lang_pair`, `split`, `sentence_id`).
 
-Two splits:
-
-- **`outputs`** — one row per (model, configuration, language pair, sentence). Carries enough metadata to join back to the test split of the `corpus` config via (`lang_pair`, `split`, `sentence_id`).
+Single split: `outputs` (1,982,558 rows).
 
 | field | type | description |
 |---|---|---|
@@ -98,6 +98,20 @@ Two splits:
 | `prediction` | string | model output |
 | `is_ablation` | bool | excluded from the main results when true |
 
+### `metrics`
+Per-run aggregated metrics: one row per (model, configuration, language pair). This is the canonical source for `experiments/summary.csv`, which the paper builders read.
+
+| field | type | description |
+|---|---|---|
+| `model_short` / `experiment_type` / `prompt_strategy` / `lora_rank` / `temp_setting` / `dataset` / `lang_pair` / `split` / `is_ablation` | — | same join keys as `predictions` |
+| `bleu` | float | BLEU |
+| `chrf` | float | chrF |
+| `ssa_comet` | float | SSA-COMET (the paper's primary metric) |
+| `num_samples` | int | sentences scored |
+| `val_bleu` / `val_chrf` / `val_ssa_comet` | float | validation-split metrics where available |
+
+Single split: `summary`.
+
 ### `glossary`
 The co-developed bilingual scientific glossaries built during translation, one row per (English term, target-language translation) pair, stacked across all six target languages.
 
@@ -108,17 +122,6 @@ The co-developed bilingual scientific glossaries built during translation, one r
 | `target` | string | translation in the target language |
 
 Single split: `terms`. Counts per language: Amharic 333 · Hausa 130 · Luganda 181 · Northern Sotho 263 · Yorùbá 587 · isiZulu 385. The largest glossaries (Yorùbá, isiZulu) correspond to the languages for which standardised scientific terminology was scarcest.
-
-- **`metrics`** — one row per (model, configuration, language pair); the aggregated table that drives every paper figure.
-
-| field | type | description |
-|---|---|---|
-| `model_short` / `experiment_type` / `prompt_strategy` / `lora_rank` / `temp_setting` / `dataset` / `lang_pair` / `split` / `is_ablation` | — | same join keys as `outputs` |
-| `bleu` | float | BLEU |
-| `chrf` | float | chrF |
-| `ssa_comet` | float | SSA-COMET (the paper's primary metric) |
-| `num_samples` | int | sentences scored |
-| `val_bleu` / `val_chrf` / `val_ssa_comet` | float | validation-split metrics where available |
 
 ## Loading
 
@@ -132,10 +135,13 @@ corpus["train"][0]
 #  'lang_pair': 'eng-amh', 'source_lang': 'eng', 'target_lang': 'amh',
 #  'source': '...', 'target': '...'}
 
-# Predictions + metrics.
+# Per-sentence model outputs.
 preds = load_dataset("dsfsi/afriscience_mt", "predictions")
 preds["outputs"][0]   # one model output per row
-preds["metrics"][0]   # one (model, config, lang_pair) row
+
+# Per-run aggregated metrics.
+metrics = load_dataset("dsfsi/afriscience_mt", "metrics")
+metrics["summary"][0] # one (model, config, lang_pair) row
 
 # Bilingual scientific glossaries.
 gloss = load_dataset("dsfsi/afriscience_mt", "glossary")
@@ -149,7 +155,7 @@ Common joins:
 import pandas as pd
 test_corpus = corpus["test"].to_pandas()
 outputs     = preds["outputs"].to_pandas()
-metrics     = preds["metrics"].to_pandas()
+metrics_df  = metrics["summary"].to_pandas()
 
 # Predictions paired with the source/reference from the corpus test split.
 joined = outputs.merge(
