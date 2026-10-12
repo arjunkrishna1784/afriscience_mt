@@ -4,6 +4,8 @@ import gc
 from typing import Any, Dict, List, Optional, Union
 import torch
 
+from ..core.validation import validate_parallel_inputs
+
 from ..utils.logging import get_logger
 
 logger = get_logger(__name__)
@@ -53,6 +55,7 @@ def compute_bleu(
     Returns:
         Dict with BLEU score and n-gram precisions
     """
+    validate_parallel_inputs(hypotheses=hypotheses, references=references)
     try:
         import sacrebleu
     except ImportError:
@@ -92,6 +95,7 @@ def compute_chrf(
     Returns:
         Dict with chrF score
     """
+    validate_parallel_inputs(hypotheses=hypotheses, references=references)
     try:
         import sacrebleu
     except ImportError:
@@ -130,6 +134,7 @@ def compute_comet(
     Returns:
         Dict with COMET score and per-sample scores
     """
+    validate_parallel_inputs(sources=sources, hypotheses=hypotheses, references=references)
     try:
         from comet import download_model, load_from_checkpoint
     except ImportError:
@@ -181,6 +186,7 @@ def compute_ssa_comet(
     Returns:
         Dict with SSA-COMET score and per-sample scores
     """
+    validate_parallel_inputs(sources=sources, hypotheses=hypotheses, references=references)
     try:
         from comet import download_model, load_from_checkpoint
     except ImportError:
@@ -242,6 +248,7 @@ def compute_all_metrics(
     Returns:
         Dict with all metric scores
     """
+    validate_parallel_inputs(sources=sources, hypotheses=hypotheses, references=references)
     results = {}
 
     if "bleu" in metrics:
@@ -345,6 +352,7 @@ class SSACOMETScorer:
         Returns:
             Dict with system score and per-sample scores
         """
+        validate_parallel_inputs(sources=sources, hypotheses=hypotheses, references=references)
         model = self._load_model()
         batch_size = batch_size or self.batch_size
 
@@ -456,6 +464,7 @@ class MetricsCalculator:
         Returns:
             Dict with all metric scores
         """
+        validate_parallel_inputs(sources=sources, hypotheses=hypotheses, references=references)
         results = {}
 
         if "bleu" in self.metrics:
@@ -507,6 +516,7 @@ class MetricsCalculator:
         Returns:
             List of metric dicts for each sample
         """
+        validate_parallel_inputs(sources=sources, hypotheses=hypotheses, references=references)
         # Compute corpus-level first for neural metric scores
         corpus_metrics = self.compute(sources, hypotheses, references)
 
