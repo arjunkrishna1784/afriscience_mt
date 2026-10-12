@@ -18,6 +18,8 @@ summarizes averages.
 from __future__ import annotations
 
 import json
+import os
+import tempfile
 from dataclasses import dataclass, field, asdict
 from datetime import datetime
 from pathlib import Path
@@ -138,8 +140,18 @@ class PredictionFile:
 def save_result(result: ExperimentResult, path: str | Path) -> None:
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    with open(path, "w") as f:
-        json.dump(result.asdict(), f, indent=2, ensure_ascii=False, default=_jsonable)
+    temporary = None
+    try:
+        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent,
+                                         prefix=f".{path.name}.", delete=False) as f:
+            temporary = Path(f.name)
+            json.dump(result.asdict(), f, indent=2, ensure_ascii=False, default=_jsonable)
+            f.flush()
+            os.fsync(f.fileno())
+        os.replace(temporary, path)
+    finally:
+        if temporary is not None:
+            temporary.unlink(missing_ok=True)
 
 
 def load_result(path: str | Path) -> ExperimentResult:
