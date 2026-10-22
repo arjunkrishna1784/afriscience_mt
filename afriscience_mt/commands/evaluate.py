@@ -79,7 +79,17 @@ def _rescore(argv: list[str]) -> int:
                    help="override metric label (default: same as --metric)")
     p.add_argument("--skip-existing", action="store_true",
                    help="skip files whose results.json already has this metric set")
+    p.add_argument("--reference-manifest", type=Path,
+                   help="JSON manifest recorded before inference; require fingerprint and exact sample IDs")
     args = p.parse_args(argv)
+    manifest = None
+    if args.reference_manifest:
+        from afriscience_mt.core.alignment import load_manifest
+        try:
+            manifest = load_manifest(args.reference_manifest)
+        except (OSError, ValueError, TypeError) as exc:
+            print(f"Invalid reference manifest: {exc}", file=sys.stderr)
+            return 1
     label = args.metric_name or args.metric
 
     pred_paths = sorted(Path(args.src).rglob("predictions.json"))
@@ -99,11 +109,21 @@ def _rescore(argv: list[str]) -> int:
                 result.experiment_id, result.source_lang, result.target_lang
             ):
                 raise ValueError("Prediction/result experiment or language mismatch")
-            sources, hypotheses, references = _rescore_inputs(predictions, result)
+            if manifest is not None:
+                from afriscience_mt.core.alignment import aligned_inputs, manifest_fingerprint
+                sources, hypotheses, references = aligned_inputs(predictions, result, manifest)
+                alignment = {"mode": "sample_id", "reference_fingerprint": manifest_fingerprint(manifest)}
+            else:
+                if predictions.reference_fingerprint is not None or any(
+                    isinstance(sample, dict) and "sample_id" in sample for sample in predictions.samples
+                ):
+                    raise ValueError("ID-bearing predictions require --reference-manifest")
+                sources, hypotheses, references = _rescore_inputs(predictions, result)
+                alignment = {"mode": "legacy_positional_unverified"}
             if args.skip_existing and _metric_present(result, label):
                 n_skip += 1
                 continue
-            prepared.append((result_path, result, sources, hypotheses, references))
+            prepared.append((result_path, result, sources, hypotheses, references, alignment))
         except (OSError, ValueError, TypeError, KeyError, AttributeError) as exc:
             print(f"Invalid artifact {pred_path}: {exc}", file=sys.stderr)
             return 1
@@ -115,7 +135,7 @@ def _rescore(argv: list[str]) -> int:
     from afriscience_mt.evaluation.metrics import compute_bleu, compute_chrf, MetricsCalculator
     calc = MetricsCalculator(metrics=["ssa_comet"]) if args.metric == "ssa_comet" else None
     n_done = 0
-    for result_path, result, sources, hypotheses, references in prepared:
+    for result_path, result, sources, hypotheses, references, alignment in prepared:
         try:
             if args.metric == "bleu":
                 value = compute_bleu(hypotheses, references)["bleu"]
@@ -133,6 +153,7 @@ def _rescore(argv: list[str]) -> int:
             result.metadata.setdefault("rescored", []).append({
                 "metric": label, "value": value,
                 "timestamp": datetime.utcnow().isoformat(),
+                "alignment": alignment,
             })
             save_result(result, result_path)
         except Exception as exc:
@@ -148,7 +169,7 @@ def _rescore_inputs(predictions, result):
     """Resolve legacy positional inputs only against an exact-length DCS test set.
 
     Equal lengths cannot establish order/provenance for hypothesis-only files.
-    Stable sample IDs require a separate schema migration.
+    This path is explicitly recorded as unverified positional alignment.
     """
     from afriscience_mt.core.validation import validate_parallel_inputs
 
