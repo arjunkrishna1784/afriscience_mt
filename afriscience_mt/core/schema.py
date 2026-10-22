@@ -130,6 +130,7 @@ class PredictionFile:
     target_lang: str
     samples: list[dict[str, Any]]   # [{"src", "ref", "hyp", "doc_id"?, "domain"?}]
     schema_version: str = SCHEMA_VERSION
+    reference_fingerprint: Optional[str] = None
 
     def asdict(self) -> dict[str, Any]:
         return asdict(self)
